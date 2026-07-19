@@ -5,3 +5,7 @@ venv/
 .idea/
 .vscode/
 .DS_Store
+
+# Explorer raw definition cache (regenerable from the upstream endpoint;
+# only catalog.json + index.json are committed)
+raw/explorer/defs/

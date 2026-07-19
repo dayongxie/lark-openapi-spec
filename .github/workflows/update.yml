@@ -34,7 +34,7 @@ jobs:
         run: pip install -r tools/requirements.txt
 
       # ------------------------------------------------------------------
-      # 1. Registry (typed API metadata) — incremental check by data_version.
+      # 1. lark-cli registry track — incremental check by data_version.
       #    The endpoint returns an empty payload when nothing changed.
       # ------------------------------------------------------------------
       - name: Check registry for updates
@@ -48,7 +48,7 @@ jobs:
           fi
           python tools/fetch_registry.py --check >> "$GITHUB_OUTPUT"
 
-      - name: Rebuild OpenAPI specs
+      - name: Rebuild OpenAPI specs (lark-cli track)
         if: steps.registry.outputs.changed == 'true'
         run: |
           PYTHONPATH=tools python tools/build_openapi.py
@@ -56,7 +56,41 @@ jobs:
             --version "${{ steps.registry.outputs.version }}" --prepend CHANGELOG.md
 
       # ------------------------------------------------------------------
-      # 2. Shortcut reference — follows lark-cli releases.
+      # 2. Full track (official API Explorer, ~1600 APIs).
+      #    No upstream versioning — content-hash change detection: every run
+      #    re-fetches all definitions and compares sha256 with the committed
+      #    index. Nothing is committed when hashes are unchanged.
+      # ------------------------------------------------------------------
+      - name: Refresh Explorer catalog + definitions
+        id: explorer
+        run: |
+          mkdir -p raw/explorer
+          if [ -f raw/explorer/index.json ]; then
+            cp raw/explorer/index.json /tmp/explorer.old.json
+          else
+            echo '{}' > /tmp/explorer.old.json
+          fi
+          python tools/fetch_explorer.py --workers 6 > /tmp/explorer_summary.json
+          python3 - <<'EOF' >> "$GITHUB_OUTPUT"
+          import json
+          with open('/tmp/explorer_summary.json') as f:
+              s = json.load(f)
+          changed = bool(s['added'] or s['removed'] or s['changed'])
+          print(f"changed={'true' if changed else 'false'}")
+          print(f"added={len(s['added'])}")
+          print(f"removed={len(s['removed'])}")
+          print(f"modified={len(s['changed'])}")
+          EOF
+
+      - name: Rebuild full-track specs
+        if: steps.explorer.outputs.changed == 'true'
+        run: |
+          python tools/build_openapi_full.py
+          python tools/diff_explorer.py /tmp/explorer.old.json raw/explorer/index.json \
+            --prepend CHANGELOG.md
+
+      # ------------------------------------------------------------------
+      # 3. Shortcut reference — follows lark-cli releases.
       # ------------------------------------------------------------------
       - name: Check lark-cli release
         id: cli
@@ -81,17 +115,20 @@ jobs:
           python tools/extract_shortcuts.py --cli /tmp/lark-cli --cli-version "${VER#v}"
 
       # ------------------------------------------------------------------
-      # 3. Commit everything that changed in one go.
+      # 4. Commit everything that changed in one go.
       # ------------------------------------------------------------------
       - name: Commit updates
-        if: steps.registry.outputs.changed == 'true' || steps.cli.outputs.changed == 'true'
+        if: steps.registry.outputs.changed == 'true' || steps.cli.outputs.changed == 'true' || steps.explorer.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add raw openapi shortcuts manifest.yaml CHANGELOG.md
+          git add raw openapi openapi-full shortcuts manifest.yaml CHANGELOG.md
           MSG=""
           if [ "${{ steps.registry.outputs.changed }}" = "true" ]; then
             MSG="registry v${{ steps.registry.outputs.version }}"
+          fi
+          if [ "${{ steps.explorer.outputs.changed }}" = "true" ]; then
+            MSG="${MSG:+$MSG, }explorer: +${{ steps.explorer.outputs.added }}/-${{ steps.explorer.outputs.removed }}/~${{ steps.explorer.outputs.modified }}"
           fi
           if [ "${{ steps.cli.outputs.changed }}" = "true" ]; then
             MSG="${MSG:+$MSG, }shortcuts @ lark-cli ${{ steps.cli.outputs.latest }}"

@@ -1,5 +1,18 @@
 # CHANGELOG
 
+# CHANGELOG
+
+## explorer 全量轨道上线（2026-07-19）
+
+新增第二数据源：飞书官方 API Explorer（`/api_explorer/v1`，开放平台在线调试工具的
+数据接口）。首次导入 **55 个项目、1627 个接口**，产物位于 `openapi-full/`。
+
+与 lark-cli 轨道（`openapi/`，239 个精选接口）的差异：
+
+- 覆盖面：1627 vs 239，包含 lark-cli 未收录的接口（如发消息 `POST /open-apis/im/v1/messages`）；
+- 字段：额外包含错误码表（x-lark-error-mappings）、限流档位（x-lark-rate-limit）、分页标记；
+- 变更检测：上游无版本号，改为每日全量抓取 + 内容 hash 比对，有变化才提交。
+
 ## registry v1.0.0（2026-07-19）
 
 新增 239 · 移除 0 · 变更 0

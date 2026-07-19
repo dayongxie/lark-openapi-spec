@@ -15,6 +15,11 @@ build:
 shortcuts:
 	$(PYTHON) tools/extract_shortcuts.py --cli $(CLI)
 
+## explorer: fetch official Explorer catalog + definitions, rebuild openapi-full/
+explorer:
+	$(PYTHON) tools/fetch_explorer.py --workers 6
+	$(PYTHON) tools/build_openapi_full.py
+
 ## update: fetch + build in one go
 update: fetch build
 
