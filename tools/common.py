@@ -12,7 +12,7 @@ REGISTRY_URL_FEISHU = "https://open.feishu.cn/api/tools/open/api_definition"
 REGISTRY_URL_LARK = "https://open.larksuite.com/api/tools/open/api_definition"
 
 RAW_REGISTRY_PATH = PROJECT_ROOT / "raw" / "registry.json"
-OPENAPI_DIR = PROJECT_ROOT / "openapi"
+OPENAPI_DIR = PROJECT_ROOT / "openapi-curated"
 SHORTCUTS_DIR = PROJECT_ROOT / "shortcuts"
 MANIFEST_PATH = PROJECT_ROOT / "manifest.yaml"
 CHANGELOG_PATH = PROJECT_ROOT / "CHANGELOG.md"

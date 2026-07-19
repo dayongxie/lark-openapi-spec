@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Convert the lark-cli API registry (raw/registry.json) into OpenAPI 3.0 YAML.
 
-One self-contained OpenAPI document is emitted per service into ``openapi/``.
+One self-contained OpenAPI document is emitted per service into ``openapi-curated/``.
 Feishu/Lark-specific attributes that have no OpenAPI equivalent are preserved
 as ``x-lark-*`` extensions:
 
@@ -309,8 +309,7 @@ def method_to_operation(svc: dict, resource: str, mname: str, method: dict) -> d
 # Service document
 # --------------------------------------------------------------------------
 
-def build_service_document(svc: dict, registry_version: str,
-                           generated_at: str) -> dict:
+def build_service_document(svc: dict, registry_version: str) -> dict:
     title = svc.get("title") or svc["name"]
     info_desc_parts = [clean_description(svc.get("description"))]
     info_desc_parts.append(
@@ -327,7 +326,6 @@ def build_service_document(svc: dict, registry_version: str,
             "x-lark-service": svc["name"],
             "x-lark-service-api-version": svc.get("version"),
             "x-lark-registry-version": registry_version,
-            "x-lark-generated-at": generated_at,
             "x-generator": GENERATOR,
         },
         "servers": SERVERS,
@@ -363,7 +361,7 @@ def build_manifest(registry: dict, generated_at: str) -> dict:
             "api_version": svc.get("version"),
             "service_path": svc.get("servicePath"),
             "methods": count,
-            "file": f"openapi/{svc['name']}.yaml",
+            "file": f"openapi-curated/{svc['name']}.yaml",
         })
     return {
         "registry_version": registry.get("version"),
@@ -394,7 +392,7 @@ def main() -> int:
 
     count = 0
     for svc in registry.get("services") or []:
-        doc = build_service_document(svc, registry_version, generated_at)
+        doc = build_service_document(svc, registry_version)
         out = args.out_dir / f"{svc['name']}.yaml"
         dump_yaml(doc, out)
         n_ops = sum(len(p) for p in doc["paths"].values())

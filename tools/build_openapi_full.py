@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Convert official API Explorer definitions (raw/explorer/) into OpenAPI 3.0.
 
-One document per project is emitted into ``openapi-full/``. Differences from
+One document per project is emitted into ``openapi/``. Differences from
 the lark-cli track (tools/build_openapi.py):
 
 - Explorer property lists are arrays of nodes (not maps) and include the
@@ -28,7 +28,7 @@ GENERATOR = "lark-openapi-spec tools/build_openapi_full.py"
 
 INDEX_PATH = Path("raw/explorer/index.json")
 DEFS_DIR = Path("raw/explorer/defs")
-OUT_DIR = Path("openapi-full")
+OUT_DIR = Path("openapi")
 MANIFEST_PATH = Path("manifest.yaml")
 
 SERVERS = [
@@ -409,7 +409,7 @@ def main() -> int:
         "source": "https://open.feishu.cn/api_explorer/v1 (official API Explorer)",
         "generated_at": generated_at,
         "stats": {"projects": len(projects), "operations": total_ops},
-        "directory": "openapi-full/",
+        "directory": "openapi/",
     }
     dump_yaml(manifest, args.manifest)
     print(f"\n{len(projects)} project documents, {total_ops} operations total.")

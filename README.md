@@ -5,9 +5,9 @@ English | [中文](README.zh.md)
 **OpenAPI 3.0 YAML specifications for the Feishu / Lark Open Platform**,
 generated from two data tracks and **updated daily by CI**:
 
-- **Full track (`openapi-full/`)** — from the official API Explorer data
+- **Full track (`openapi/`)** — from the official API Explorer data
   endpoints: **55 projects, 1627 operations**;
-- **Curated track (`openapi/`)** — from the API registry embedded in the
+- **Curated track (`openapi-curated/`)** — from the API registry embedded in the
   official [lark-cli](https://github.com/larksuite/cli) tool: 15 services,
   239 curated operations (with exclusive risk-level metadata).
 
@@ -28,8 +28,8 @@ structured API metadata into standard OpenAPI 3.0 documents so you can:
 
 | Artifact | Source | Content | Size |
 |---|---|---|---|
-| `openapi-full/*.yaml` | Official API Explorer (`/api_explorer/v1`) | Every documented server API: params / bodies / responses, plus error-code tables, rate-limit tiers, pagination flags | 55 projects, 1627 operations |
-| `openapi/*.yaml` | lark-cli API registry (`/api/tools/open/api_definition`) | Curated typed APIs with risk levels, danger flags, usage tips | 15 services, 239 operations |
+| `openapi/*.yaml` | Official API Explorer (`/api_explorer/v1`) | Every documented server API: params / bodies / responses, plus error-code tables, rate-limit tiers, pagination flags | 55 projects, 1627 operations |
+| `openapi-curated/*.yaml` | lark-cli API registry (`/api/tools/open/api_definition`) | Curated typed APIs with risk levels, danger flags, usage tips | 15 services, 239 operations |
 | `shortcuts/*.yaml` | lark-cli `+` shortcut commands (from CLI help) | CLI contract reference (not HTTP interfaces) | 18 domains, 412 commands |
 
 Repeated shared structures (e.g. docx Blocks) are automatically extracted into each file's `components/schemas` and referenced via `$ref`, shrinking the documents by ~76%.
@@ -41,8 +41,8 @@ are unique to it. Where they disagree, prefer the full track (official source).
 ## Layout
 
 ```
-├── openapi-full/       # full track: one OpenAPI 3.0 doc per project (55)
-├── openapi/            # curated track: one OpenAPI 3.0 doc per service (15)
+├── openapi/            # full track: one OpenAPI 3.0 doc per project (55)
+├── openapi-curated/    # curated track: one OpenAPI 3.0 doc per service (15)
 ├── shortcuts/          # lark-cli shortcut reference (one YAML per domain)
 ├── raw/
 │   ├── registry.json       # lark-cli registry snapshot
@@ -58,11 +58,11 @@ Generate a Python client:
 
 ```bash
 openapi-generator-cli generate \
-  -i https://raw.githubusercontent.com/dayongxie/lark-openapi-spec/main/openapi-full/im.yaml \
+  -i https://raw.githubusercontent.com/dayongxie/lark-openapi-spec/main/openapi/im.yaml \
   -g python -o ./lark-im-client
 ```
 
-Or drop `openapi-full/im.yaml` into [Swagger Editor](https://editor.swagger.io/)
+Or drop `openapi/im.yaml` into [Swagger Editor](https://editor.swagger.io/)
 for interactive documentation.
 
 ## `x-lark-*` extension fields

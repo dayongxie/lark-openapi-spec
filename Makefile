@@ -7,7 +7,7 @@ CLI ?= lark-cli
 fetch:
 	$(PYTHON) tools/fetch_registry.py
 
-## build: regenerate openapi/*.yaml + manifest.yaml from the raw registry
+## build: regenerate openapi-curated/*.yaml + manifest.yaml from the raw registry
 build:
 	PYTHONPATH=tools $(PYTHON) tools/build_openapi.py
 
@@ -15,7 +15,7 @@ build:
 shortcuts:
 	$(PYTHON) tools/extract_shortcuts.py --cli $(CLI)
 
-## explorer: fetch official Explorer catalog + definitions, rebuild openapi-full/
+## explorer: fetch official Explorer catalog + definitions, rebuild openapi/
 explorer:
 	$(PYTHON) tools/fetch_explorer.py --workers 6
 	$(PYTHON) tools/build_openapi_full.py
@@ -27,5 +27,5 @@ update: fetch build
 validate:
 	$(PYTHON) -c "\
 import glob, yaml; \
-[yaml.safe_load(open(f)) for f in glob.glob('openapi/*.yaml') + glob.glob('shortcuts/*.yaml') + ['manifest.yaml']]; \
+[yaml.safe_load(open(f)) for f in glob.glob('openapi/*.yaml') + glob.glob('openapi-curated/*.yaml') + glob.glob('shortcuts/*.yaml') + ['manifest.yaml']]; \
 print('all YAML files parse OK')"

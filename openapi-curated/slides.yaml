@@ -13,7 +13,6 @@ info:
   x-lark-service: slides
   x-lark-service-api-version: v1
   x-lark-registry-version: 1.0.0
-  x-lark-generated-at: '2026-07-19T00:03:55Z'
   x-generator: lark-openapi-spec tools/build_openapi.py
 servers:
 - url: https://open.feishu.cn
