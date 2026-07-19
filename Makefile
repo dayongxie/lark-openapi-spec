@@ -15,6 +15,10 @@ build:
 shortcuts:
 	$(PYTHON) tools/extract_shortcuts.py --cli $(CLI)
 
+## go-apis: regenerate openapi-go/*.yaml from a lark-cli source tree (SRC=...)
+go-apis:
+	$(PYTHON) tools/extract_go_apis.py --src $(SRC) --cli-version $(VER)
+
 ## explorer: fetch official Explorer catalog + definitions, rebuild openapi/
 explorer:
 	$(PYTHON) tools/fetch_explorer.py --workers 6
@@ -27,5 +31,5 @@ update: fetch build
 validate:
 	$(PYTHON) -c "\
 import glob, yaml; \
-[yaml.safe_load(open(f)) for f in glob.glob('openapi/*.yaml') + glob.glob('openapi-curated/*.yaml') + glob.glob('shortcuts/*.yaml') + ['manifest.yaml']]; \
+[yaml.safe_load(open(f)) for f in glob.glob('openapi/*.yaml') + glob.glob('openapi-curated/*.yaml') + glob.glob('openapi-go/*.yaml') + glob.glob('shortcuts/*.yaml') + ['manifest.yaml']]; \
 print('all YAML files parse OK')"

@@ -1,5 +1,21 @@
 # CHANGELOG
 
+## Go 源码轨道上线（2026-07-19）
+
+新增第三数据源：lark-cli 快捷命令的 **Go 源码实现**（`shortcuts/` 目录）。这些
+`common.Shortcut` 结构体带有描述、风险分级、权限 scopes、调用身份、flag 定义和
+使用提示，并硬编码了实际调用的 HTTP 方法和路径。首次提取（lark-cli v1.0.72）：
+**18 个服务、228 个接口**，产物位于 `openapi-go/`。
+
+其中 **102 个接口路径官方 API Explorer 未收录**——包括几乎整套未文档化的
+Base v3 家族（约 45 个端点）、`docs_ai`、`slides_ai`、`sheet_ai`、`spark`，以及
+drive/im/calendar/vc/sheets 等域的零散内部端点。
+
+说明：提取为启发式（正则解析而非完整 AST），flag → 参数的映射是近似推断，
+响应体为通用信封；每条操作带有 `x-lark-source: lark-cli-go` 与
+`x-lark-cli-command` 标记。少量深度抽象的命令（sheets/mail 的部分辅助层）
+暂未覆盖。
+
 ## 仓库结构调整（2026-07-19）
 
 - 全量轨道目录由 `openapi-full/` 更名为 **`openapi/`**（项目主体：55 个项目、1627 个接口）；

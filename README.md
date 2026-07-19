@@ -9,7 +9,11 @@ generated from two data tracks and **updated daily by CI**:
   endpoints: **55 projects, 1627 operations**;
 - **Curated track (`openapi-curated/`)** — from the API registry embedded in the
   official [lark-cli](https://github.com/larksuite/cli) tool: 15 services,
-  239 curated operations (with exclusive risk-level metadata).
+  239 curated operations (with exclusive risk-level metadata);
+- **Go source track (`openapi-go/`)** — extracted from lark-cli's shortcut
+  command implementations in Go: 18 services, 228 operations, **102 of which
+  the official API Explorer does not document** (the Base v3 family,
+  docs_ai, slides_ai, sheet_ai, ...).
 
 ## Why
 
@@ -30,6 +34,7 @@ structured API metadata into standard OpenAPI 3.0 documents so you can:
 |---|---|---|---|
 | `openapi/*.yaml` | Official API Explorer (`/api_explorer/v1`) | Every documented server API: params / bodies / responses, plus error-code tables, rate-limit tiers, pagination flags | 55 projects, 1627 operations |
 | `openapi-curated/*.yaml` | lark-cli API registry (`/api/tools/open/api_definition`) | Curated typed APIs with risk levels, danger flags, usage tips | 15 services, 239 operations |
+| `openapi-go/*.yaml` | lark-cli Go source (`shortcuts/` dir) | HTTP endpoints actually called by shortcut commands, incl. ones the Explorer does not document; heuristic extraction, fields are approximations | 18 services, 228 operations |
 | `shortcuts/*.yaml` | lark-cli `+` shortcut commands (from CLI help) | CLI contract reference (not HTTP interfaces) | 18 domains, 412 commands |
 
 Repeated shared structures (e.g. docx Blocks) are automatically extracted into each file's `components/schemas` and referenced via `$ref`, shrinking the documents by ~76%.
@@ -43,6 +48,7 @@ are unique to it. Where they disagree, prefer the full track (official source).
 ```
 ├── openapi/            # full track: one OpenAPI 3.0 doc per project (55)
 ├── openapi-curated/    # curated track: one OpenAPI 3.0 doc per service (15)
+├── openapi-go/         # Go source track: one OpenAPI 3.0 doc per service (18)
 ├── shortcuts/          # lark-cli shortcut reference (one YAML per domain)
 ├── raw/
 │   ├── registry.json       # lark-cli registry snapshot
@@ -95,7 +101,9 @@ A GitHub Actions workflow runs daily:
    field-scope list before hashing, and the output is fully deterministic:
    `info.version` is a content hash (`1.0.0+<hash>`) with no build
    timestamps, so rebuilding an unchanged document is byte-identical.
-3. **Shortcuts** — re-extracted whenever lark-cli publishes a new release.
+3. **Shortcuts + Go source track** — re-extracted whenever lark-cli publishes
+   a new release (the matching source tag is downloaded and its Go code
+   re-parsed).
 
 Pushing changes to `tools/` or the workflow itself also triggers a rebuild.
 

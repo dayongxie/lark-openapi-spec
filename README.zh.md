@@ -9,7 +9,10 @@
   覆盖 **55 个项目、1627 个接口**；
 - **精选轨道（`openapi-curated/`）**：来自官方命令行工具
   [lark-cli](https://github.com/larksuite/cli) 内置的 API 注册表，
-  覆盖 15 个服务、239 个精选接口（含风险分级等独有信息）。
+  覆盖 15 个服务、239 个精选接口（含风险分级等独有信息）；
+- **Go 源码轨道（`openapi-go/`）**：从 lark-cli 快捷命令的 Go 实现中
+  提取，覆盖 18 个服务、228 个接口——其中 **102 个接口官方 API Explorer
+  未收录**（Base v3 家族、docs_ai、slides_ai、sheet_ai 等）。
 
 ## 为什么做这个
 
@@ -28,6 +31,7 @@
 |---|---|---|---|
 | `openapi/*.yaml` | 官方 API Explorer（`/api_explorer/v1`） | 全量服务端 API：参数/请求体/响应体（含错误码表、限流档位、分页标记） | 55 个项目、1627 个接口 |
 | `openapi-curated/*.yaml` | lark-cli API 注册表（`/api/tools/open/api_definition`） | 精选 typed API（含风险分级、高危标记、操作提示） | 15 个服务、239 个接口 |
+| `openapi-go/*.yaml` | lark-cli Go 源码（`shortcuts/` 目录） | 快捷命令实际调用的 HTTP 接口（含 Explorer 未收录接口；启发式提取，字段为近似推断） | 18 个服务、228 个接口 |
 | `shortcuts/*.yaml` | lark-cli `+` 快捷命令（从 CLI help 提取） | 命令行契约参考（非 HTTP 接口定义） | 18 个域、412 条命令 |
 
 重复出现的公共结构（如 docx 的 Block）已自动提取到各文件的 `components/schemas` 并以 `$ref` 引用，文档体积因此减少约 76%。
@@ -41,6 +45,7 @@ write / high-risk-write）和操作提示是其独有信息。同一接口在两
 ```
 ├── openapi/            # 全量轨道：每个项目一个 OpenAPI 3.0 文档（55 个）
 ├── openapi-curated/    # 精选轨道：每个服务一个 OpenAPI 3.0 文档（15 个）
+├── openapi-go/         # Go 源码轨道：每个服务一个 OpenAPI 3.0 文档（18 个）
 ├── shortcuts/          # lark-cli 快捷命令参考（每域一个 YAML）
 ├── raw/
 │   ├── registry.json       # lark-cli 注册表快照
@@ -91,7 +96,8 @@ GitHub Actions 每日运行：
    抓取时对上游顺序随机的字段级权限列表排序后再算 hash，产物完全确定性：
    `info.version` 为内容哈希（`1.0.0+<hash>`），无构建时间戳，
    接口未变动的文档重建后字节级不变；
-3. **快捷命令**：lark-cli 发布新版本时重新提取。
+3. **快捷命令 + Go 源码轨道**：lark-cli 发布新版本时重新提取（同时下载
+   对应 tag 的源码，重新解析 Go 实现）。
 
 推送 `tools/` 或 workflow 本身的改动也会触发重新生成。
 
