@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:06:47Z'
+  version: '2026-07-19T03:22:04Z'
   x-lark-project: drive
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:06:47Z'
+  x-lark-generated-at: '2026-07-19T03:22:04Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -8262,10 +8262,10 @@ paths:
       - bitable:app
       - docs:permission.member:retrieve
       x-lark-field-scopes:
-      - contact:user.base:readonly
-      - contact:contact:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
+      - contact:user.base:readonly
+      - contact:contact:readonly
       x-lark-error-mappings:
       - code: 1063001
         httpCode: 400
@@ -9914,11 +9914,11 @@ paths:
       x-lark-scopes:
       - drive:file.like:readonly
       x-lark-field-scopes:
+      - contact:contact:readonly_as_app
       - contact:user.employee_id:readonly
       - contact:user.base:readonly
       - contact:contact:readonly
       - contact:contact:access_as_app
-      - contact:contact:readonly_as_app
       x-lark-error-mappings:
       - code: 1061001
         httpCode: 500

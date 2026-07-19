@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:06:47Z'
+  version: '2026-07-19T03:22:04Z'
   x-lark-project: contact
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:06:47Z'
+  x-lark-generated-at: '2026-07-19T03:22:04Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -351,13 +351,13 @@ paths:
       x-lark-scopes:
       - contact:contact.base:readonly
       x-lark-field-scopes:
+      - contact:department.hrbp:readonly
+      - contact:user.employee_id:readonly
       - contact:contact:readonly
       - contact:department.base:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
       - contact:department.organize:readonly
-      - contact:department.hrbp:readonly
-      - contact:user.employee_id:readonly
       x-lark-error-mappings:
       - code: 40001
         httpCode: 400
@@ -612,13 +612,13 @@ paths:
       - contact:contact:readonly
       - contact:contact:readonly_as_app
       x-lark-field-scopes:
+      - contact:department.hrbp:readonly
+      - contact:user.employee_id:readonly
       - contact:contact:readonly
       - contact:department.base:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
       - contact:department.organize:readonly
-      - contact:department.hrbp:readonly
-      - contact:user.employee_id:readonly
       x-lark-error-mappings:
       - code: 43010
         httpCode: 400
@@ -1241,13 +1241,13 @@ paths:
       - contact:contact:readonly
       - contact:contact:readonly_as_app
       x-lark-field-scopes:
+      - contact:contact:readonly
       - contact:department.base:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
       - contact:department.organize:readonly
       - contact:department.hrbp:readonly
       - contact:user.employee_id:readonly
-      - contact:contact:readonly
       x-lark-error-mappings:
       - code: 43010
         httpCode: 400
@@ -1550,13 +1550,13 @@ paths:
       - contact:contact:readonly
       - contact:contact:readonly_as_app
       x-lark-field-scopes:
+      - contact:department.hrbp:readonly
+      - contact:user.employee_id:readonly
       - contact:contact:readonly
       - contact:department.base:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
       - contact:department.organize:readonly
-      - contact:department.hrbp:readonly
-      - contact:user.employee_id:readonly
       x-lark-error-mappings:
       - code: 40001
         httpCode: 400
@@ -1831,13 +1831,13 @@ paths:
       x-lark-scopes:
       - contact:contact
       x-lark-field-scopes:
-      - contact:contact:access_as_app
-      - contact:contact:readonly_as_app
-      - contact:department.organize:readonly
       - contact:department.hrbp:readonly
       - contact:user.employee_id:readonly
       - contact:contact:readonly
       - contact:department.base:readonly
+      - contact:contact:access_as_app
+      - contact:contact:readonly_as_app
+      - contact:department.organize:readonly
       x-lark-error-mappings:
       - code: 43005
         httpCode: 400
@@ -2179,12 +2179,12 @@ paths:
       x-lark-scopes:
       - contact:contact
       x-lark-field-scopes:
-      - contact:contact:readonly_as_app
-      - contact:department.organize:readonly
       - contact:user.employee_id:readonly
       - contact:contact:readonly
       - contact:department.base:readonly
       - contact:contact:access_as_app
+      - contact:contact:readonly_as_app
+      - contact:department.organize:readonly
       x-lark-error-mappings:
       - code: 43005
         httpCode: 400
@@ -2494,13 +2494,13 @@ paths:
       - contact:contact:readonly
       - contact:contact:readonly_as_app
       x-lark-field-scopes:
-      - contact:contact:readonly_as_app
       - contact:department.organize:readonly
       - contact:department.hrbp:readonly
       - contact:user.employee_id:readonly
       - contact:contact:readonly
       - contact:department.base:readonly
       - contact:contact:access_as_app
+      - contact:contact:readonly_as_app
       x-lark-error-mappings:
       - code: 43001
         httpCode: 409
@@ -8013,26 +8013,26 @@ paths:
       x-lark-scopes:
       - contact:contact.base:readonly
       x-lark-field-scopes:
-      - contact:user.email:readonly
-      - contact:user.phone:readonly
-      - contact:user.assign_info:read
-      - contact:user.employee:readonly
-      - contact:user.department:readonly
-      - contact:user.dotted_line_leader_info.read
-      - contact:user.subscription_ids:write
-      - contact:contact:readonly
-      - contact:user.job_level:readonly
-      - contact:user.department_path:readonly
-      - contact:user.employee_number:read
-      - contact:user.user_geo
-      - contact:user.job_family:readonly
-      - contact:user.base:readonly
-      - contact:contact:access_as_app
-      - contact:contact:readonly_as_app
-      - contact:user.gender:readonly
-      - contact:user.union_id:readonly
       - directory:employee.base.email:read
+      - contact:user.user_geo
+      - contact:contact:readonly
+      - contact:contact:access_as_app
+      - contact:user.employee_number:read
+      - contact:user.email:readonly
+      - contact:user.gender:readonly
       - contact:user.employee_id:readonly
+      - contact:user.union_id:readonly
+      - contact:user.job_family:readonly
+      - contact:user.assign_info:read
+      - contact:user.department:readonly
+      - contact:user.employee:readonly
+      - contact:user.subscription_ids:write
+      - contact:user.department_path:readonly
+      - contact:user.job_level:readonly
+      - contact:user.dotted_line_leader_info.read
+      - contact:contact:readonly_as_app
+      - contact:user.phone:readonly
+      - contact:user.base:readonly
       x-lark-error-mappings:
       - code: 40001
         httpCode: 400
@@ -8175,11 +8175,11 @@ paths:
       x-lark-scopes:
       - contact:user.id:readonly
       x-lark-field-scopes:
-      - contact:user.employee_id:readonly
-      - contact:user.employee:readonly
       - contact:contact:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
+      - contact:user.employee_id:readonly
+      - contact:user.employee:readonly
       x-lark-rate-limit:
         tier: 4
   /open-apis/contact/v3/users:
@@ -8661,23 +8661,23 @@ paths:
       x-lark-scopes:
       - contact:contact
       x-lark-field-scopes:
-      - contact:contact:access_as_app
+      - contact:user.employee:readonly
+      - contact:user.email:readonly
       - contact:user.user_geo
+      - contact:user.gender:readonly
+      - contact:user.employee_id:readonly
+      - contact:user.department:readonly
+      - contact:user.base:readonly
+      - contact:contact:readonly_as_app
+      - contact:user.dotted_line_leader_info.read
       - contact:user.job_level:readonly
       - contact:user.phone:readonly
-      - contact:user.dotted_line_leader_info.read
-      - contact:contact:readonly_as_app
-      - contact:user.gender:readonly
+      - contact:contact:readonly
+      - contact:contact:access_as_app
       - contact:user.employee_number:read
       - contact:user.job_family:readonly
-      - directory:employee.base.email:read
-      - contact:user.employee:readonly
-      - contact:user.employee_id:readonly
       - contact:user.union_id:readonly
-      - contact:user.email:readonly
-      - contact:user.base:readonly
-      - contact:contact:readonly
-      - contact:user.department:readonly
+      - directory:employee.base.email:read
       x-lark-error-mappings:
       - code: 40001
         httpCode: 400
@@ -9447,25 +9447,25 @@ paths:
       - contact:contact:readonly
       - contact:contact:readonly_as_app
       x-lark-field-scopes:
-      - contact:user.employee_id:readonly
+      - contact:contact:access_as_app
+      - contact:user.employee_number:read
+      - contact:user.base:readonly
+      - contact:user.assign_info:read
       - contact:user.department_path:readonly
+      - contact:user.email:readonly
+      - contact:user.phone:readonly
+      - contact:user.job_family:readonly
+      - contact:user.dotted_line_leader_info.read
+      - contact:user.user_geo
+      - contact:user.job_level:readonly
+      - contact:user.employee:readonly
+      - contact:contact:readonly_as_app
+      - contact:user.employee_id:readonly
+      - contact:contact:readonly
+      - contact:user.gender:readonly
       - directory:employee.base.email:read
       - contact:user.department:readonly
-      - contact:user.base:readonly
-      - contact:contact:readonly_as_app
-      - contact:user.job_level:readonly
-      - contact:user.dotted_line_leader_info.read
-      - contact:user.employee_number:read
-      - contact:user.phone:readonly
       - contact:user.union_id:readonly
-      - contact:user.job_family:readonly
-      - contact:user.assign_info:read
-      - contact:user.gender:readonly
-      - contact:contact:readonly
-      - contact:contact:access_as_app
-      - contact:user.employee:readonly
-      - contact:user.user_geo
-      - contact:user.email:readonly
       x-lark-error-mappings:
       - code: 41050
         httpCode: 400
@@ -10109,25 +10109,25 @@ paths:
       - contact:contact:readonly
       - contact:contact:readonly_as_app
       x-lark-field-scopes:
-      - contact:user.employee:readonly
-      - contact:user.union_id:readonly
-      - contact:user.job_level:readonly
-      - contact:user.email:readonly
-      - directory:employee.base.email:read
-      - contact:user.phone:readonly
       - contact:user.assign_info:read
       - contact:contact:access_as_app
-      - contact:contact:readonly_as_app
-      - contact:user.dotted_line_leader_info.read
-      - contact:user.department:readonly
-      - contact:user.employee_number:read
-      - contact:user.gender:readonly
-      - contact:user.employee_id:readonly
-      - contact:user.base:readonly
-      - contact:contact:readonly
-      - contact:user.job_family:readonly
-      - contact:user.department_path:readonly
       - contact:user.user_geo
+      - contact:user.department_path:readonly
+      - contact:user.union_id:readonly
+      - contact:user.employee_number:read
+      - contact:user.dotted_line_leader_info.read
+      - contact:user.job_level:readonly
+      - contact:user.job_family:readonly
+      - contact:user.employee:readonly
+      - contact:contact:readonly
+      - contact:contact:readonly_as_app
+      - contact:user.employee_id:readonly
+      - contact:user.email:readonly
+      - directory:employee.base.email:read
+      - contact:user.base:readonly
+      - contact:user.gender:readonly
+      - contact:user.department:readonly
+      - contact:user.phone:readonly
       x-lark-error-mappings:
       - code: 41050
         httpCode: 400
@@ -10621,22 +10621,22 @@ paths:
       - contact:contact
       - contact:user.base
       x-lark-field-scopes:
-      - contact:user.employee_id:readonly
-      - directory:employee.base.email:read
-      - contact:user.employee:readonly
-      - contact:user.job_level:readonly
-      - contact:contact:readonly
+      - contact:user.union_id:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
-      - contact:user.department:readonly
-      - contact:user.job_family:readonly
-      - contact:user.phone:readonly
-      - contact:user.email:readonly
       - contact:user.gender:readonly
-      - contact:user.union_id:readonly
+      - contact:user.employee_id:readonly
+      - contact:user.department:readonly
+      - contact:contact:readonly
+      - contact:user.dotted_line_leader_info.read
+      - contact:user.email:readonly
+      - directory:employee.base.email:read
+      - contact:user.phone:readonly
+      - contact:user.employee:readonly
+      - contact:user.job_level:readonly
       - contact:user.base:readonly
       - contact:user.employee_number:read
-      - contact:user.dotted_line_leader_info.read
+      - contact:user.job_family:readonly
       x-lark-error-mappings:
       - code: 40001
         httpCode: 400
@@ -11425,19 +11425,19 @@ paths:
       x-lark-scopes:
       - contact:contact
       x-lark-field-scopes:
-      - directory:employee.base.email:read
-      - contact:contact:readonly
-      - contact:user.employee_number:read
-      - contact:user.email:readonly
       - contact:user.union_id:readonly
+      - contact:user.email:readonly
+      - contact:user.phone:readonly
+      - contact:user.department:readonly
+      - contact:user.gender:readonly
       - contact:user.employee:readonly
+      - contact:user.employee_number:read
+      - contact:user.employee_id:readonly
+      - contact:contact:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
       - contact:user.base:readonly
-      - contact:user.phone:readonly
-      - contact:user.gender:readonly
-      - contact:user.employee_id:readonly
-      - contact:user.department:readonly
+      - directory:employee.base.email:read
       x-lark-error-mappings:
       - code: 40001
         httpCode: 400
@@ -12158,23 +12158,23 @@ paths:
       - contact:contact:readonly
       - contact:contact:readonly_as_app
       x-lark-field-scopes:
-      - contact:user.employee_number:read
-      - contact:contact:readonly
-      - contact:contact:access_as_app
-      - contact:user.dotted_line_leader_info.read
-      - contact:user.job_family:readonly
+      - contact:user.department_path:readonly
       - contact:user.gender:readonly
-      - contact:user.email:readonly
+      - contact:contact:access_as_app
+      - contact:contact:readonly_as_app
       - contact:user.user_geo
+      - contact:user.job_family:readonly
       - contact:user.job_level:readonly
+      - contact:user.employee:readonly
+      - contact:user.phone:readonly
+      - contact:user.email:readonly
+      - directory:employee.base.email:read
+      - contact:user.dotted_line_leader_info.read
+      - contact:user.department:readonly
+      - contact:user.employee_number:read
       - contact:user.base:readonly
       - contact:user.union_id:readonly
-      - contact:user.phone:readonly
-      - contact:user.department:readonly
-      - contact:user.department_path:readonly
-      - directory:employee.base.email:read
-      - contact:contact:readonly_as_app
-      - contact:user.employee:readonly
+      - contact:contact:readonly
       - contact:user.employee_id:readonly
       x-lark-error-mappings:
       - code: 41050

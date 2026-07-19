@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:06:47Z'
+  version: '2026-07-19T03:22:04Z'
   x-lark-project: directory
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:06:47Z'
+  x-lark-generated-at: '2026-07-19T03:22:04Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -2102,18 +2102,18 @@ paths:
       - directory:department:list
       x-lark-field-scopes:
       - directory:department.order_weight:read
+      - directory:department.custom_field:read
+      - directory:department.status:read
+      - directory:department.has_child:read
       - directory:department.base:read
       - directory:department.data_source:read
       - directory:department.external_id:read
+      - directory:department.count:read
+      - directory:department.department_path:read
       - directory:department.organization:read
-      - directory:department.has_child:read
       - directory:department.leader:read
       - directory:department.parent_id:read
-      - directory:department.department_path:read
       - directory:department.name:read
-      - directory:department.custom_field:read
-      - directory:department.status:read
-      - directory:department.count:read
       x-lark-error-mappings:
       - code: 2221004
         httpCode: 400
@@ -2493,19 +2493,19 @@ paths:
       x-lark-scopes:
       - directory:department:read
       x-lark-field-scopes:
-      - directory:department.custom_field:read
-      - directory:department.organization:read
-      - directory:department.has_child:read
       - directory:department.parent_id:read
-      - directory:department.name:read
-      - directory:department.department_path:read
-      - directory:department.data_source:read
-      - directory:department.count:read
-      - directory:department.base:read
-      - directory:department.order_weight:read
       - directory:department.leader:read
       - directory:department.status:read
+      - directory:department.department_path:read
+      - directory:department.data_source:read
+      - directory:department.custom_field:read
       - directory:department.external_id:read
+      - directory:department.count:read
+      - directory:department.has_child:read
+      - directory:department.base:read
+      - directory:department.name:read
+      - directory:department.organization:read
+      - directory:department.order_weight:read
       x-lark-error-mappings:
       - code: 2220001
         httpCode: 400
@@ -2896,18 +2896,18 @@ paths:
       - directory:department:search
       x-lark-field-scopes:
       - directory:department.has_child:read
-      - directory:department.custom_field:read
       - directory:department.base:read
-      - directory:department.data_source:read
-      - directory:department.external_id:read
       - directory:department.order_weight:read
+      - directory:department.custom_field:read
+      - directory:department.external_id:read
       - directory:department.count:read
-      - directory:department.status:read
-      - directory:department.department_path:read
+      - directory:department.organization:read
       - directory:department.leader:read
       - directory:department.parent_id:read
       - directory:department.name:read
-      - directory:department.organization:read
+      - directory:department.status:read
+      - directory:department.data_source:read
+      - directory:department.department_path:read
       x-lark-error-mappings:
       - code: 2220001
         httpCode: 400
@@ -5439,74 +5439,74 @@ paths:
       x-lark-scopes:
       - directory:employee:list
       x-lark-field-scopes:
-      - directory:department.order_weight:read
-      - directory:department.name:read
-      - directory:employee.base.background_image:read
-      - directory:employee.base.is_admin:read
-      - directory:employee.base.leader_id:read
-      - directory:employee.work.join_date:read
-      - directory:employee.base.subscription_ids:read
-      - directory:employee.work.job_title:read
-      - directory:job_family.status:read
-      - directory:job_title.status:read
-      - directory:department.data_source:read
-      - directory:employee.base.resign_time:read
-      - directory:job_family.path:read
-      - directory:employee.work.resign_type:read
-      - directory:department.leader:read
-      - directory:employee.work.job_number:read
-      - directory:employee.base.email:read
-      - directory:employee.work.job_level:read
-      - directory:employee.work.work_station:read
-      - directory:employee.work.extension_number:read
-      - directory:job_title.base:read
-      - directory:employee.base.name.another_name:read
-      - directory:job_level.status:read
-      - directory:employee.base.department:read
-      - directory:employee.base.leader:read
-      - directory:employee.base.dotted_line_leaders:read
-      - directory:employee.base.mobile:read
-      - directory:department.custom_field:read
-      - directory:employee.work.resign_remark:read
-      - directory:employee.base.geo:read
-      - directory:employee.base.status:read
-      - directory:employee.base.enterprise_email:read
-      - directory:job_level.base:read
-      - directory:employee.base.role:read
-      - directory:employee.base.department_path:read
-      - directory:employee.work.staff_status:read
-      - directory:employee.base.avatar:read
-      - directory:department.base:read
-      - directory:employee.base.dept_order:read
-      - directory:department.department_path:read
-      - directory:job_level.order:read
-      - directory:job_family.base:read
-      - directory:department.organization:read
-      - directory:employee.base.name.name:read
-      - directory:employee.work.work_place:read
-      - directory:employee.work.employment:read
-      - directory:employee.base.data_source:read
-      - directory:employee.work.resign_date:read
-      - directory:department.external_id:read
-      - directory:department.status:read
-      - directory:employee.base.custom_field:read
-      - directory:department.has_child:read
-      - directory:place.status:read
-      - directory:employee.work.work_country_or_region:read
       - directory:employee.work.resign_reason:read
-      - directory:employee.base.is_primary_admin:read
-      - directory:employee.base.active_status:read
-      - directory:department.count:read
-      - directory:employee.base.enterprise_email_alias:read
+      - directory:employee.base.dotted_line_leaders:read
       - directory:employee.work.job_family:read
-      - directory:place.base:read
-      - directory:employee.work.employment_type:read
-      - directory:employee.base.gender:read
-      - directory:department.parent_id:read
+      - directory:employee.work.resign_type:read
+      - directory:employee.work.extension_number:read
       - directory:employee.work.base_work:read
+      - directory:department.data_source:read
+      - directory:employee.base.subscription_ids:read
+      - directory:employee.work.staff_status:read
+      - directory:employee.base.email:read
+      - directory:department.department_path:read
+      - directory:employee.base.leader:read
+      - directory:employee.work.job_number:read
+      - directory:job_level.base:read
+      - directory:employee.work.resign_date:read
+      - directory:employee.base.geo:read
+      - directory:department.parent_id:read
+      - directory:employee.base.dept_order:read
+      - directory:job_title.status:read
+      - directory:employee.base.role:read
+      - directory:employee.work.resign_remark:read
+      - directory:employee.work.work_station:read
+      - directory:employee.base.is_primary_admin:read
+      - directory:department.name:read
+      - directory:job_title.base:read
+      - directory:job_level.status:read
+      - directory:employee.base.department_path:read
+      - directory:employee.base.resign_time:read
+      - directory:employee.work.job_title:read
       - directory:employee.base.base:read
+      - directory:job_family.status:read
+      - directory:job_level.order:read
+      - directory:employee.work.work_place:read
+      - directory:job_family.path:read
+      - directory:department.leader:read
+      - directory:place.status:read
+      - directory:department.base:read
+      - directory:job_family.base:read
+      - directory:department.has_child:read
+      - directory:employee.base.department:read
+      - directory:place.base:read
+      - directory:department.count:read
       - directory:employee.base.is_resigned:read
+      - directory:employee.work.job_level:read
       - directory:employee.base.description:read
+      - directory:employee.base.leader_id:read
+      - directory:employee.work.employment_type:read
+      - directory:employee.base.custom_field:read
+      - directory:employee.base.enterprise_email:read
+      - directory:employee.base.mobile:read
+      - directory:employee.work.work_country_or_region:read
+      - directory:employee.base.is_admin:read
+      - directory:employee.work.join_date:read
+      - directory:employee.base.gender:read
+      - directory:employee.base.avatar:read
+      - directory:department.custom_field:read
+      - directory:employee.base.data_source:read
+      - directory:department.external_id:read
+      - directory:employee.base.active_status:read
+      - directory:employee.work.employment:read
+      - directory:employee.base.status:read
+      - directory:employee.base.enterprise_email_alias:read
+      - directory:department.organization:read
+      - directory:department.status:read
+      - directory:employee.base.name.another_name:read
+      - directory:employee.base.name.name:read
+      - directory:employee.base.background_image:read
+      - directory:department.order_weight:read
       x-lark-error-mappings:
       - code: 2220001
         httpCode: 400
@@ -6459,74 +6459,74 @@ paths:
       x-lark-scopes:
       - directory:employee:read
       x-lark-field-scopes:
-      - directory:department.status:read
-      - directory:employee.base.role:read
-      - directory:job_level.status:read
-      - directory:job_title.status:read
-      - directory:place.base:read
-      - directory:department.count:read
-      - directory:employee.work.job_number:read
-      - directory:employee.base.gender:read
-      - directory:job_title.base:read
-      - directory:employee.base.base:read
-      - directory:employee.work.join_date:read
-      - directory:job_level.order:read
-      - directory:employee.base.status:read
-      - directory:employee.base.department_path:read
-      - directory:employee.base.custom_field:read
-      - directory:department.custom_field:read
-      - directory:employee.base.enterprise_email_alias:read
-      - directory:place.status:read
-      - directory:employee.base.name.another_name:read
-      - directory:job_family.path:read
-      - directory:employee.base.data_source:read
-      - directory:employee.base.dotted_line_leaders:read
-      - directory:employee.base.subscription_ids:read
-      - directory:department.external_id:read
-      - directory:employee.work.work_place:read
-      - directory:employee.base.department:read
-      - directory:employee.base.is_admin:read
       - directory:employee.base.email:read
-      - directory:employee.work.employment:read
-      - directory:employee.base.dept_order:read
-      - directory:department.order_weight:read
-      - directory:employee.base.leader_id:read
-      - directory:employee.work.staff_status:read
-      - directory:department.base:read
-      - directory:employee.work.resign_remark:read
-      - directory:department.department_path:read
-      - directory:employee.base.leader:read
-      - directory:employee.base.name.name:read
+      - directory:employee.base.is_admin:read
       - directory:job_family.base:read
-      - directory:employee.work.resign_type:read
-      - directory:job_level.base:read
-      - directory:employee.base.resign_time:read
-      - directory:employee.base.active_status:read
-      - directory:job_family.status:read
-      - directory:department.data_source:read
-      - directory:employee.base.geo:read
-      - directory:employee.work.resign_date:read
-      - directory:employee.work.base_work:read
-      - directory:employee.base.is_resigned:read
-      - directory:employee.work.employment_type:read
-      - directory:employee.work.job_family:read
-      - directory:department.organization:read
-      - directory:employee.base.enterprise_email:read
-      - directory:employee.base.is_primary_admin:read
-      - directory:employee.base.description:read
       - directory:employee.work.extension_number:read
-      - directory:department.name:read
-      - directory:employee.work.work_country_or_region:read
-      - directory:employee.work.job_level:read
-      - directory:department.leader:read
-      - directory:department.has_child:read
-      - directory:department.parent_id:read
-      - directory:employee.base.avatar:read
-      - directory:employee.work.resign_reason:read
-      - directory:employee.work.job_title:read
+      - directory:job_title.status:read
+      - directory:employee.work.employment_type:read
+      - directory:employee.base.name.another_name:read
       - directory:employee.base.mobile:read
-      - directory:employee.work.work_station:read
+      - directory:employee.work.base_work:read
+      - directory:department.has_child:read
+      - directory:employee.work.job_title:read
+      - directory:employee.base.dotted_line_leaders:read
+      - directory:employee.base.department_path:read
+      - directory:department.order_weight:read
+      - directory:employee.base.data_source:read
       - directory:employee.base.background_image:read
+      - directory:employee.base.enterprise_email_alias:read
+      - directory:employee.base.leader_id:read
+      - directory:employee.work.employment:read
+      - directory:employee.work.work_country_or_region:read
+      - directory:job_title.base:read
+      - directory:department.parent_id:read
+      - directory:employee.base.base:read
+      - directory:job_level.base:read
+      - directory:employee.base.geo:read
+      - directory:place.base:read
+      - directory:employee.work.resign_type:read
+      - directory:department.base:read
+      - directory:department.count:read
+      - directory:place.status:read
+      - directory:department.external_id:read
+      - directory:department.department_path:read
+      - directory:employee.base.is_resigned:read
+      - directory:department.custom_field:read
+      - directory:department.name:read
+      - directory:employee.base.name.name:read
+      - directory:employee.base.leader:read
+      - directory:employee.work.resign_remark:read
+      - directory:employee.base.avatar:read
+      - directory:employee.work.job_level:read
+      - directory:employee.base.description:read
+      - directory:employee.base.dept_order:read
+      - directory:job_family.path:read
+      - directory:employee.work.join_date:read
+      - directory:employee.work.resign_reason:read
+      - directory:employee.work.job_number:read
+      - directory:employee.work.work_place:read
+      - directory:employee.base.is_primary_admin:read
+      - directory:employee.base.enterprise_email:read
+      - directory:employee.base.status:read
+      - directory:employee.base.active_status:read
+      - directory:job_level.order:read
+      - directory:department.organization:read
+      - directory:department.status:read
+      - directory:job_family.status:read
+      - directory:employee.work.resign_date:read
+      - directory:employee.base.role:read
+      - directory:employee.base.custom_field:read
+      - directory:department.data_source:read
+      - directory:employee.base.gender:read
+      - directory:job_level.status:read
+      - directory:employee.work.work_station:read
+      - directory:department.leader:read
+      - directory:employee.base.subscription_ids:read
+      - directory:employee.work.job_family:read
+      - directory:employee.base.resign_time:read
+      - directory:employee.base.department:read
+      - directory:employee.work.staff_status:read
       x-lark-error-mappings:
       - code: 2220001
         httpCode: 400
@@ -7761,74 +7761,74 @@ paths:
       x-lark-scopes:
       - directory:employee:search
       x-lark-field-scopes:
-      - directory:job_family.base:read
-      - directory:job_family.status:read
-      - directory:employee.base.name.another_name:read
-      - directory:department.order_weight:read
-      - directory:employee.work.job_number:read
-      - directory:employee.base.custom_field:read
-      - directory:employee.base.enterprise_email_alias:read
-      - directory:job_level.order:read
-      - directory:employee.base.gender:read
-      - directory:employee.base.base:read
-      - directory:department.base:read
-      - directory:employee.base.email:read
-      - directory:employee.base.dept_order:read
-      - directory:employee.work.resign_reason:read
-      - directory:employee.work.extension_number:read
-      - directory:job_title.status:read
-      - directory:employee.base.leader_id:read
-      - directory:job_level.status:read
       - directory:employee.work.base_work:read
-      - directory:department.external_id:read
+      - directory:employee.work.employment:read
+      - directory:employee.base.description:read
+      - directory:employee.base.role:read
+      - directory:employee.base.is_primary_admin:read
+      - directory:employee.work.job_number:read
+      - directory:place.status:read
       - directory:employee.base.status:read
-      - directory:employee.base.is_admin:read
-      - directory:employee.work.work_country_or_region:read
+      - directory:department.organization:read
+      - directory:employee.work.resign_type:read
+      - directory:employee.base.resign_time:read
       - directory:department.leader:read
-      - directory:department.status:read
-      - directory:employee.work.job_level:read
-      - directory:employee.base.mobile:read
-      - directory:department.has_child:read
+      - directory:department.order_weight:read
+      - directory:employee.base.leader:read
+      - directory:employee.work.work_country_or_region:read
       - directory:department.name:read
       - directory:employee.work.job_title:read
-      - directory:employee.base.active_status:read
-      - directory:job_level.base:read
-      - directory:employee.base.avatar:read
-      - directory:employee.base.geo:read
+      - directory:job_title.status:read
       - directory:job_title.base:read
-      - directory:employee.work.employment_type:read
-      - directory:employee.work.join_date:read
-      - directory:employee.base.leader:read
-      - directory:employee.work.staff_status:read
-      - directory:employee.base.data_source:read
-      - directory:employee.base.resign_time:read
-      - directory:employee.work.employment:read
-      - directory:employee.base.background_image:read
-      - directory:employee.work.resign_remark:read
-      - directory:employee.base.is_primary_admin:read
-      - directory:employee.base.name.name:read
-      - directory:place.status:read
-      - directory:employee.work.resign_date:read
+      - directory:employee.base.leader_id:read
+      - directory:department.base:read
+      - directory:employee.work.extension_number:read
       - directory:employee.base.is_resigned:read
-      - directory:employee.base.role:read
-      - directory:employee.work.job_family:read
-      - directory:employee.base.subscription_ids:read
-      - directory:department.organization:read
-      - directory:department.department_path:read
-      - directory:employee.base.dotted_line_leaders:read
-      - directory:department.custom_field:read
-      - directory:employee.base.description:read
-      - directory:employee.work.resign_type:read
-      - directory:department.data_source:read
-      - directory:employee.work.work_station:read
-      - directory:job_family.path:read
-      - directory:department.parent_id:read
-      - directory:employee.base.enterprise_email:read
-      - directory:employee.work.work_place:read
-      - directory:department.count:read
       - directory:employee.base.department:read
-      - directory:employee.base.department_path:read
+      - directory:employee.base.geo:read
+      - directory:employee.base.enterprise_email:read
+      - directory:employee.base.dept_order:read
+      - directory:employee.base.custom_field:read
+      - directory:employee.base.background_image:read
+      - directory:employee.base.is_admin:read
+      - directory:employee.base.dotted_line_leaders:read
+      - directory:employee.work.resign_date:read
+      - directory:employee.work.job_level:read
+      - directory:employee.work.work_station:read
+      - directory:department.data_source:read
+      - directory:employee.base.name.name:read
+      - directory:job_family.status:read
+      - directory:employee.base.enterprise_email_alias:read
+      - directory:department.has_child:read
+      - directory:employee.work.resign_reason:read
+      - directory:employee.work.job_family:read
+      - directory:job_family.base:read
+      - directory:employee.base.base:read
+      - directory:job_level.status:read
+      - directory:department.status:read
+      - directory:employee.base.data_source:read
+      - directory:department.department_path:read
+      - directory:employee.base.avatar:read
+      - directory:department.parent_id:read
+      - directory:department.external_id:read
+      - directory:employee.base.active_status:read
       - directory:place.base:read
+      - directory:employee.base.name.another_name:read
+      - directory:job_level.base:read
+      - directory:employee.base.email:read
+      - directory:employee.work.work_place:read
+      - directory:employee.work.resign_remark:read
+      - directory:department.count:read
+      - directory:job_level.order:read
+      - directory:department.custom_field:read
+      - directory:job_family.path:read
+      - directory:employee.base.mobile:read
+      - directory:employee.work.join_date:read
+      - directory:employee.base.subscription_ids:read
+      - directory:employee.base.gender:read
+      - directory:employee.work.employment_type:read
+      - directory:employee.work.staff_status:read
+      - directory:employee.base.department_path:read
       x-lark-error-mappings:
       - code: 2220001
         httpCode: 400
