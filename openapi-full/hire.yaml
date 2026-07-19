@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:40:11Z'
+  version: '2026-07-19T04:09:08Z'
   x-lark-project: hire
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:40:11Z'
+  x-lark-generated-at: '2026-07-19T04:09:08Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -441,8 +441,8 @@ paths:
       - hire:agency
       - hire:agency:readonly
       x-lark-field-scopes:
-      - hire:agency.email:readonly
       - contact:user.employee_id:readonly
+      - hire:agency.email:readonly
       x-lark-error-mappings:
       - code: 1002001
         httpCode: 500
@@ -730,8 +730,8 @@ paths:
       - hire:agency_account
       - hire:agency_account:readonly
       x-lark-field-scopes:
-      - hire:agency.email:readonly
       - hire:agency.mobile:readonly
+      - hire:agency.email:readonly
       x-lark-error-mappings:
       - code: 1002001
         httpCode: 500
@@ -1771,10 +1771,10 @@ paths:
       - hire:application
       - hire:people_cli
       x-lark-field-scopes:
-      - hire:job
-      - hire:people_cli
       - contact:user.employee_id:readonly
       - hire:job:readonly
+      - hire:job
+      - hire:people_cli
       x-lark-error-mappings:
       - code: 1002001
         httpCode: 500
@@ -3312,27 +3312,27 @@ paths:
       - hire:application
       - hire:people_cli
       x-lark-field-scopes:
-      - hire:job
-      - hire:employee:readonly
       - hire:agency_salary:readonly
-      - hire:talent
-      - hire:evaluation:readonly
+      - hire:referral
+      - hire:employee
       - hire:offer
-      - hire:offer:readonly
+      - hire:site
       - hire:job:readonly
+      - hire:evaluation:readonly
+      - hire:offer:readonly
+      - hire:talent:readonly
+      - hire:offer_salary:readonly
+      - hire:employee:readonly
+      - hire:site:readonly
+      - hire:job
+      - hire:agency:readonly
+      - hire:referral:readonly
+      - hire:talent
+      - hire:interview:readonly
+      - hire:agency
       - contact:user.employee_id:readonly
       - hire:people_cli
-      - hire:talent:readonly
-      - hire:referral:readonly
       - hire:interview
-      - hire:employee
-      - hire:agency
-      - hire:agency:readonly
-      - hire:site:readonly
-      - hire:site
-      - hire:referral
-      - hire:interview:readonly
-      - hire:offer_salary:readonly
       x-lark-error-mappings:
       - code: 1002001
         httpCode: 500
@@ -17266,9 +17266,9 @@ paths:
       - hire:offer:readonly
       - hire:offer:low_sensitive_info:readonly
       x-lark-field-scopes:
+      - contact:user.employee_id:readonly
       - hire:offer
       - hire:offer:readonly
-      - contact:user.employee_id:readonly
       x-lark-error-mappings:
       - code: 1002001
         httpCode: 500
@@ -20796,11 +20796,11 @@ paths:
                             example: 'true'
                           socail_permission_collection:
                             allOf:
-                            - $ref: '#/components/schemas/SocailPermissionCollection'
+                            - $ref: '#/components/schemas/CampusPermissionCollection'
                             description: 社招权限配置
                           campus_permission_collection:
                             allOf:
-                            - $ref: '#/components/schemas/SocailPermissionCollection'
+                            - $ref: '#/components/schemas/CampusPermissionCollection'
                             description: 校招权限配置
                         description: 角色详情
       x-lark-access-tokens:
@@ -28857,15 +28857,15 @@ paths:
       - hire:talent:readonly
       - hire:people_cli
       x-lark-field-scopes:
+      - hire:talent_blocklist
+      - hire:talent_folder
+      - hire:note:readonly
       - hire:note
-      - hire:talent_blocklist:readonly
-      - hire:talent_folder:readonly
+      - contact:user.employee_id:readonly
       - hire:talent_tag:readonly
       - hire:talent_tag
-      - hire:talent_blocklist
-      - hire:note:readonly
-      - contact:user.employee_id:readonly
-      - hire:talent_folder
+      - hire:talent_blocklist:readonly
+      - hire:talent_folder:readonly
       x-lark-error-mappings:
       - code: 1002001
         httpCode: 500
@@ -32934,7 +32934,7 @@ components:
           description: 取消面试通知
           example: '6960663240925956573'
       description: 配置详情
-    SocailPermissionCollection:
+    CampusPermissionCollection:
       type: object
       properties:
         feature_permissions:

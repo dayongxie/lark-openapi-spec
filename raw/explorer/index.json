@@ -1471,7 +1471,7 @@
   "httpMethod": "GET",
   "project": "application",
   "resource": "application.feedback",
-  "sha256": "73556612beed7e2c465acbedf473ea0c13c6421cb333ca6bd7f1ef3bea468297",
+  "sha256": "4c5a7b426a28e914d5fc5b51ebc16b58a8f2ab68d7392f0d201f27991332b969",
   "title": "获取应用反馈列表",
   "version": "v6"
  },
@@ -2803,7 +2803,7 @@
   "httpMethod": "POST",
   "project": "authen",
   "resource": "refresh_access_token",
-  "sha256": "60497c2de1cdb8c7fc70cc6de30d8174b811f05195a18a34fc4e42df9d9994e8",
+  "sha256": "1e1794c095fc103047cf4e780bb25a601a0cd2da31b150dfcca7fd9edba0b982",
   "title": "刷新 user_access_token（v1 版本）",
   "version": "v1"
  },
@@ -2815,7 +2815,7 @@
   "httpMethod": "GET",
   "project": "authen",
   "resource": "user_info",
-  "sha256": "ead5f8fd155d7747710a540aae1d8c2880d435c88f28d29e25bd22718e55db55",
+  "sha256": "5ea7150cc08ff5b8d5e250df2dbc0a41a230b3067cbcdd234c7e103294786ceb",
   "title": "获取用户信息",
   "version": "v1"
  },
@@ -3283,7 +3283,7 @@
   "httpMethod": "POST",
   "project": "bitable",
   "resource": "app.table.record",
-  "sha256": "7d5ab5c6c246fc2140d5a3bcde964d9533a8b8a942796afaa0acfb8aef114845",
+  "sha256": "604cc40d4a4e3b5918842d5bcfcc3fb0e211e5577827ed5e5c9bdf0bc5b506f9",
   "title": "新增多条记录",
   "version": "v1"
  },
@@ -3307,7 +3307,7 @@
   "httpMethod": "POST",
   "project": "bitable",
   "resource": "app.table.record",
-  "sha256": "9565a7fe98e7f12663361fc17872ffbb077448bab5ef0599612e04171a23c941",
+  "sha256": "dce2b46e7c4db1af9296576492e0d44ef39b7ba0392322a4258195c3e1821787",
   "title": "批量获取记录",
   "version": "v1"
  },
@@ -3355,7 +3355,7 @@
   "httpMethod": "GET",
   "project": "bitable",
   "resource": "app.table.record",
-  "sha256": "172a556b990716cf484e88c19d5a3169a06f2261a477513d48ae6b4a5ce781fd",
+  "sha256": "dc015aeb4c2570ece72094e55f0d0edafeca04cc42c70993f48f55750a0c959a",
   "title": "检索记录",
   "version": "v1"
  },
@@ -3367,7 +3367,7 @@
   "httpMethod": "GET",
   "project": "bitable",
   "resource": "app.table.record",
-  "sha256": "49a4468494f41533a8cac37138b976df1ffa1f1fcefe4f7775378924af583905",
+  "sha256": "8f7070fdccbd4b755119e0a6fa004ada1032e8928341028c13a8ca84138db45e",
   "title": "列出记录",
   "version": "v1"
  },
@@ -3379,7 +3379,7 @@
   "httpMethod": "POST",
   "project": "bitable",
   "resource": "app.table.record",
-  "sha256": "09527aa0267994c88b679050119587049d516a83de040d357d4f00bc97fc35f8",
+  "sha256": "23ce45008322d2576126c0ead0b31fa7a962801cf92e48bf3428b342b3596465",
   "title": "查询记录",
   "version": "v1"
  },
@@ -3391,7 +3391,7 @@
   "httpMethod": "PUT",
   "project": "bitable",
   "resource": "app.table.record",
-  "sha256": "73204f6efb7777467da738cfce4f07bd8debba361736ee4304c3aa5c4fa4e99b",
+  "sha256": "f15c1474538540a66a8ebf097d5a22da91ed667ae80d250bf151d5e7de526f7e",
   "title": "更新记录",
   "version": "v1"
  },
@@ -4159,7 +4159,7 @@
   "httpMethod": "GET",
   "project": "calendar",
   "resource": "exchange_binding",
-  "sha256": "d8d057951a2a05974b66262093e32c6816b353d87d299372a7c6f37bea6415d7",
+  "sha256": "57d592a76447b42a85afad9d50ad21013f2038a648251fedd44c267911981fca",
   "title": "查询 Exchange 账户的绑定状态",
   "version": "v4"
  },
@@ -4363,7 +4363,7 @@
   "httpMethod": "POST",
   "project": "compensation",
   "resource": "archive",
-  "sha256": "79c4cdd4057d6d49b1850e7068a78cbcba68d8c6af847acee8c6ce22d0eee659",
+  "sha256": "df012e1395daa2dc0ae514a7fb08a4841e1c9425712eb9f2298d6b47961fb892",
   "title": "批量查询员工薪资档案",
   "version": "v1"
  },
@@ -4459,7 +4459,7 @@
   "httpMethod": "POST",
   "project": "compensation",
   "resource": "lump_sum_payment",
-  "sha256": "550382e46330751fe65ca4634e22c94d67a9a63ae161f603e13b37b8d6a60198",
+  "sha256": "0495ac12eeb06a3093fb63cbc5fb2984cbf0ef1479e8e878657e7d7f19f0ef0d",
   "title": "查询一次性支付授予记录",
   "version": "v1"
  },
@@ -4471,7 +4471,7 @@
   "httpMethod": "POST",
   "project": "compensation",
   "resource": "lump_sum_payment",
-  "sha256": "8a647c703720c0767b97af9c902c3f1a911fb0330cd09ceaf52b6d99ba2351bd",
+  "sha256": "475a211cff29fc221132d4136f29c1d4ee81a2ac7bdefb0e66ad0e99a4bc70ae",
   "title": "查询一次性支付授予明细",
   "version": "v1"
  },
@@ -4615,7 +4615,7 @@
   "httpMethod": "GET",
   "project": "contact",
   "resource": "department",
-  "sha256": "882db3dda4c99d60e0530acd398f2c56f14523f3271dc37f750f5cb656fd73a3",
+  "sha256": "cab0f054db43912ba39da3f4576a11af688f41ebd1c70234021472eafbeb5fec",
   "title": "批量获取部门信息",
   "version": "v3"
  },
@@ -4627,7 +4627,7 @@
   "httpMethod": "GET",
   "project": "contact",
   "resource": "department",
-  "sha256": "350cb7c0cf6327b7b744383fb14caa0ada00c3fa356e6642996553e632bb6193",
+  "sha256": "7d91084125bb56e40a3564b905013aafa04467e4259a62e4e3929650d9364b02",
   "title": "获取子部门列表",
   "version": "v3"
  },
@@ -4639,7 +4639,7 @@
   "httpMethod": "POST",
   "project": "contact",
   "resource": "department",
-  "sha256": "2617af61629878fe8d89e09caf601e3a6a28f0570f0f498b897a1cd6dcc349c7",
+  "sha256": "3031101deea8ea1126f9199cfe8b6e23df0f20d225dbf32aa00aea5f02af0e0f",
   "title": "创建部门",
   "version": "v3"
  },
@@ -4663,7 +4663,7 @@
   "httpMethod": "GET",
   "project": "contact",
   "resource": "department",
-  "sha256": "9ec003b5daef7a0b26fa67df7a4f768fb2c1cd63a8ad4cd9ec4608e5ea53595b",
+  "sha256": "c443a2f139d412850a9cd75791d73094480dd2a24f7a9c0270205cda9744c1ea",
   "title": "获取单个部门信息",
   "version": "v3"
  },
@@ -4675,7 +4675,7 @@
   "httpMethod": "GET",
   "project": "contact",
   "resource": "department",
-  "sha256": "7d9d76db3dda0904ae674e7d43c87489d8408c17a3648edc198de9aecc918b99",
+  "sha256": "2f02704bead3fce9c934b748ac4c97e1597b92803e1f0e6bf4e231470179b6a4",
   "title": "获取部门信息列表",
   "version": "v3"
  },
@@ -4687,7 +4687,7 @@
   "httpMethod": "GET",
   "project": "contact",
   "resource": "department",
-  "sha256": "6246dfd20ce8fcac997493deddfdd1ec4cc8d456082c40607256243d6ffefa7f",
+  "sha256": "e495f37a18319a3fea8141160fb5378cbcd9a17020b1d53cd15a06eb72188a0d",
   "title": "获取父部门信息",
   "version": "v3"
  },
@@ -4711,7 +4711,7 @@
   "httpMethod": "POST",
   "project": "contact",
   "resource": "department",
-  "sha256": "f4723276a098a1bbdd8709ce64c7678b8bd89c8725ec6ea08a5c88fd5034f371",
+  "sha256": "814b6a33bbb9fc11d2d5799e443d21f6f5541e8148890fddc57deee1ce7b1ff6",
   "title": "搜索部门",
   "version": "v3"
  },
@@ -4735,7 +4735,7 @@
   "httpMethod": "PUT",
   "project": "contact",
   "resource": "department",
-  "sha256": "a2c740b3639b764059be414da9349745ab3226b9906569e31438d46350cc9ba5",
+  "sha256": "87ceefb7b8fdc05106bb9037b6913978c57e2d1573ad3e483885ccccf0197d2b",
   "title": "更新部门所有信息",
   "version": "v3"
  },
@@ -5299,7 +5299,7 @@
   "httpMethod": "GET",
   "project": "contact",
   "resource": "user",
-  "sha256": "bc0f303bafcd59d1d7c03027b75bbb41232011dfb95a9828f7df3bf3994b0f2d",
+  "sha256": "2302eace529bd78416a3802d884820c7a8fc407c3ca55cdcd655780170bf2242",
   "title": "批量获取用户信息",
   "version": "v3"
  },
@@ -5311,7 +5311,7 @@
   "httpMethod": "POST",
   "project": "contact",
   "resource": "user",
-  "sha256": "5d3f62ee5b8b79cab0c206ae5ed46d1686eeda9bb976307afefb28a7391f8dc8",
+  "sha256": "b086b6ddfc20006476796931e329f04b3fad80e39871accd33476e07438377ab",
   "title": "通过手机号或邮箱获取用户 ID",
   "version": "v3"
  },
@@ -5323,7 +5323,7 @@
   "httpMethod": "POST",
   "project": "contact",
   "resource": "user",
-  "sha256": "fdd135e991f395fd606fc0d1eef84d216162be51865346f0c1379a560a00eefa",
+  "sha256": "73022dfcfed57bb2b964b4dd81b7d326de3a2808b6ad3833b02eb708746468fb",
   "title": "创建用户",
   "version": "v3"
  },
@@ -5347,7 +5347,7 @@
   "httpMethod": "GET",
   "project": "contact",
   "resource": "user",
-  "sha256": "164ea73090fddd75d38857e1939cbc3750c446fee199a2b61f5a20aa8d4d6655",
+  "sha256": "c5918ec146d1686b07d3b28062852d11e3ed7eeadf165e2ff6ee10d216ad4c27",
   "title": "获取部门直属用户列表",
   "version": "v3"
  },
@@ -5359,7 +5359,7 @@
   "httpMethod": "GET",
   "project": "contact",
   "resource": "user",
-  "sha256": "fc1567e772479d9c43d966127c64adb0f66b18cfb22105863e984b43c0971ee2",
+  "sha256": "5626163464100ac063af4021971d3de3224c5627f974d6964f9144b738fb60b5",
   "title": "获取单个用户信息",
   "version": "v3"
  },
@@ -5371,7 +5371,7 @@
   "httpMethod": "GET",
   "project": "contact",
   "resource": "user",
-  "sha256": "1317a8ed94ebc1ba987e4fbb918cddd738c8c9061e481fb84a83186dda74e1a2",
+  "sha256": "984662799f0cc61202f1c64dd5842d373dff3fc4fa1a6f965f8dddc0b0ccb42a",
   "title": "获取用户列表",
   "version": "v3"
  },
@@ -5383,7 +5383,7 @@
   "httpMethod": "PATCH",
   "project": "contact",
   "resource": "user",
-  "sha256": "4525f7370aface729c4c56b3ce63567406f481ce667bacbbef6b14cb15f40dc4",
+  "sha256": "f43a9a9790117f65d49f42dcac2c7c7e19f8a1e8e515dcdad0d4e3bda52d2a72",
   "title": "修改用户部分信息",
   "version": "v3"
  },
@@ -5407,7 +5407,7 @@
   "httpMethod": "PUT",
   "project": "contact",
   "resource": "user",
-  "sha256": "91fbf3ce71edb4d7c994097cf694841692ae5b954215bb076d814ab75355bfa2",
+  "sha256": "ddbf01fc02843919a777f03e5fe20b7aefc3836725db4f0c8ce53dae500e99ae",
   "title": "更新用户所有信息",
   "version": "v3"
  },
@@ -5923,7 +5923,7 @@
   "httpMethod": "PATCH",
   "project": "corehr",
   "resource": "employment",
-  "sha256": "40fea92582c89775782e54026ddfc3e16ca30d67ddfcec19b44b86c6b57666e1",
+  "sha256": "37c7aebf4f101c58c6fb080f083f8f51a576994cd94588b5fe773e77ab8327f4",
   "title": "更新雇佣信息",
   "version": "v1"
  },
@@ -6007,7 +6007,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "job_change",
-  "sha256": "2bffcf88dccfca04b47cb7af42c149fc71fe7a33420e94f7d38ab9275c21fcd0",
+  "sha256": "0c5114292b2874d08ec51e01511f6b84e47bf1e98787bae00c8f13e560bc0d7f",
   "title": "发起员工异动(不推荐)",
   "version": "v1"
  },
@@ -6019,7 +6019,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "job_data",
-  "sha256": "bca7b04d3f2cb66315cea29ab4b1eb520fcdf0d47e1ce258f6c99c4569e8fbdb",
+  "sha256": "85cb3af81ab3a36921992bc8f08f7cdadda0382434a0fff85819b3e3c69ceb83",
   "title": "创建任职信息",
   "version": "v1"
  },
@@ -6043,7 +6043,7 @@
   "httpMethod": "GET",
   "project": "corehr",
   "resource": "job_data",
-  "sha256": "7073b3b5c433495f799dd5e28923c6ff6edb6d465e1813329dc1fb96cdd01907",
+  "sha256": "31ec6845437b41fc23c187134a6c5796bfb59a61ae243ab97d29ee4afa65da94",
   "title": "查询单个任职信息",
   "version": "v1"
  },
@@ -6055,7 +6055,7 @@
   "httpMethod": "GET",
   "project": "corehr",
   "resource": "job_data",
-  "sha256": "c977c01f8f4e07de0c0bc591c5dd229bc86b1382c9df7810650f282553f8576f",
+  "sha256": "1246c62ddcd3db5c50828743307e311b67725a3b1de7c1720831a43e793ff548",
   "title": "批量查询任职信息",
   "version": "v1"
  },
@@ -6067,7 +6067,7 @@
   "httpMethod": "PATCH",
   "project": "corehr",
   "resource": "job_data",
-  "sha256": "9867f413ae7d5e7ce1612bec1731ffaa9bb2eb07d7f13b5b235341f7beac7cd3",
+  "sha256": "d99903c714406d398a1a22ba3af626fd17e1e083f76a64cedc097f4af9ed3ebb",
   "title": "更新任职信息",
   "version": "v1"
  },
@@ -6415,7 +6415,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "offboarding",
-  "sha256": "ce67e01868cee930a9cdbdd2c4903322ed72e1c95cbfe7237d28783461ddca3d",
+  "sha256": "ca06fa6d07b51d72560da7d79b81fbc2db8605992f8bff166334e4389afce6f9",
   "title": "搜索离职信息",
   "version": "v1"
  },
@@ -6727,7 +6727,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "approval_groups",
-  "sha256": "fa29c296a855c1c707c32bd71ab1c2dc1f537a0a07ca195716338aa1744d2bce",
+  "sha256": "d219963e9708e873b5b55cd21bb24e99a55c143854d3b529ed30b066ec575e22",
   "title": "批量查询部门调整内容",
   "version": "v2"
  },
@@ -6739,7 +6739,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "approval_groups",
-  "sha256": "0edc9e2c3b2f4eeef92bb4daf38b34622bba1e07e61fd8d902dde847c4568b83",
+  "sha256": "9b37ca58c8e588b1a757bd89f7cd2e38fb86c7e99d30ec6cf68ce8b554a6569f",
   "title": "批量查询人员调整内容",
   "version": "v2"
  },
@@ -6967,7 +6967,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "contract",
-  "sha256": "e9f8713fc17e0d09167b963c512261c1e9d238c67b4d0455ee8059fb23700df6",
+  "sha256": "337a3eb3d0986a4c9c1aed9fed8212abdd4628dac1e5585cb7eca89fabc0e171",
   "title": "搜索合同",
   "version": "v2"
  },
@@ -7279,7 +7279,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "department",
-  "sha256": "0ad7b5441c75c372460a4455d2b33bb9999ad0ec0cab5faac07314f390471022",
+  "sha256": "66590515c39566b0a5fdaea6042e949b779b5103ad9d1852fb41e4359e2ee196",
   "title": "批量查询部门",
   "version": "v2"
  },
@@ -7327,7 +7327,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "department",
-  "sha256": "82dd822b948e1a7038f4e5a67011f6dcc330ca8cb6f7cefae7b2d86cddf590b6",
+  "sha256": "e3bcf0535467ec16960e24e6c74e86bbaab67a07f7d3030a3b5dcbb3789f6257",
   "title": "批量查询部门版本信息",
   "version": "v2"
  },
@@ -7363,7 +7363,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "department",
-  "sha256": "3490b4b2cf8c519f2a9fa92dbf593286dab49408795662169fc7436735584ddd",
+  "sha256": "41e74200d0decc808a084ce3c7e57ccec940ec0d78f5965086dacb90449ca78a",
   "title": "查询指定生效日期的部门基本信息",
   "version": "v2"
  },
@@ -7375,7 +7375,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "department",
-  "sha256": "ddfbbd04156a22587c7a02e81dc2565bd4f7021396f27755be7415565894f7fa",
+  "sha256": "90eb29ce9fdbe1cfbd8c7057bc0a1c24961231c53dc1df7309a5a52a717dbcd1",
   "title": "搜索部门信息",
   "version": "v2"
  },
@@ -7459,7 +7459,7 @@
   "httpMethod": "GET",
   "project": "corehr",
   "resource": "employee.custom_org",
-  "sha256": "f27e8494e7c3f9ee4c7596c6c9bab10df5f7c364781c92e38d63d62da55fb41a",
+  "sha256": "2ddd588c66fc4ce56c6868b15d6dd823689413534adc06764676c4ab6826881a",
   "title": "查询单个人员自定义组织变更记录",
   "version": "v2"
  },
@@ -7471,7 +7471,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "employee",
-  "sha256": "a7ac2793028a529280a85db1251595277559cc17a7e779d43e8eb7a18a6d319f",
+  "sha256": "aea100f344b5fb56a2141384713bd499b19ff6250b3bdece4b2dc84f4b902a9a",
   "title": "批量查询员工信息",
   "version": "v2"
  },
@@ -7495,7 +7495,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "employee",
-  "sha256": "996e0a6f9dd7a5121720d173c6cbe09126be9789f4dc6d11de93764061ed39aa",
+  "sha256": "19e16b559f02d9d2e88cf29a099e1ade1597b1bbaa0725db285f4e578a5abe43",
   "title": "搜索员工信息",
   "version": "v2"
  },
@@ -7507,7 +7507,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "employees.additional_job",
-  "sha256": "93ae70413efb6cb214c7568b71353e72d28dbd54351aa68be3c930533a6821b5",
+  "sha256": "a99364ab76fa22c8fefe2a1f2ad154636e6ecc9c5e553e5e46beb2abe028a4d6",
   "title": "批量查询兼职信息",
   "version": "v2"
  },
@@ -7519,7 +7519,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "employees.additional_job",
-  "sha256": "8c66295be06d6220598fa42f4d127b64ae4fb0cc13bcbe4428709edafe9d21a7",
+  "sha256": "7c697508988f15aafee6ea03d74c48b7e9872e5781733d6d777e336661505551",
   "title": "创建兼职",
   "version": "v2"
  },
@@ -7543,7 +7543,7 @@
   "httpMethod": "PATCH",
   "project": "corehr",
   "resource": "employees.additional_job",
-  "sha256": "23ceba119dd3cdbc92881c6e645ea53950d4d5bb5ed1ec5710cde3e08e8b8821",
+  "sha256": "fcbdf57e88e090d322abfd7e9ba70fd0df2d458fbee79667b7fa711771742aaf",
   "title": "更新兼职",
   "version": "v2"
  },
@@ -7567,7 +7567,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "employees.international_assignment",
-  "sha256": "9d3173113230410d340acede660b5e990369e69adb4bebabdbf2e0d5ce8f9f69",
+  "sha256": "81313ad16d3833e714ba7ed26be2a4589bd6ce65790580b6a719bf6e6b64eaae",
   "title": "创建外派信息",
   "version": "v2"
  },
@@ -7591,7 +7591,7 @@
   "httpMethod": "GET",
   "project": "corehr",
   "resource": "employees.international_assignment",
-  "sha256": "cda15e34d49f0911862bb24217565d96b1c2cc774cb5760c3e07b8807ce17414",
+  "sha256": "f1ddd0bd6e4b4a88fa5aca3a834be4cdb248f112fc4ec5d16fdb5c82e388208b",
   "title": "批量查询外派信息",
   "version": "v2"
  },
@@ -7603,7 +7603,7 @@
   "httpMethod": "PATCH",
   "project": "corehr",
   "resource": "employees.international_assignment",
-  "sha256": "5abf353783c4010f3fc0af9b561f1e48f3fdac24cf41b19e64c7480dff5e0578",
+  "sha256": "ffaf9e1e1d7a3572935b06104ec12f8b3664927ce972b5fc9780b594106637c7",
   "title": "更新外派信息",
   "version": "v2"
  },
@@ -7615,7 +7615,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "employees.job_data",
-  "sha256": "cf84e3176dc39123a27f1cd891123497bae0390de36a9d72a644daf6d77aff5b",
+  "sha256": "99f642b341efba6d34b4a847733bc4a0fc4dc91722e31ed9277324fefd7e01a0",
   "title": "批量查询员工任职信息",
   "version": "v2"
  },
@@ -7627,7 +7627,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "employees.job_data",
-  "sha256": "6d883b1508f95902842993a82b3162a363dffe7176b57223a23ffdab3f5274c1",
+  "sha256": "d903e53cf39a3ed31c8924d48cf32f554c7625357f45aaaee3a24af720d6ac2b",
   "title": "获取任职信息列表",
   "version": "v2"
  },
@@ -7711,7 +7711,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "job_change",
-  "sha256": "6cedc9995c3e93d3bee7e99338a10c921cf19e438bde4ef4746b951acba4ba58",
+  "sha256": "cffca60c30a58ef4b1c0eb83a4eb31732bcb1c78269ca465ccd12db647a4b3e2",
   "title": "发起员工异动",
   "version": "v2"
  },
@@ -7735,7 +7735,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "job_change",
-  "sha256": "f1496b9d594c1aa8c8bde7cca8f89795b479f7f6a8ec09c3901cde9aef058ce7",
+  "sha256": "57e0354107a52b87849011ad607c8fad2f700d4913a260cc30c27fd264c1f500",
   "title": "搜索员工异动信息",
   "version": "v2"
  },
@@ -8059,7 +8059,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "person",
-  "sha256": "28069507384181edd65e52ac816b0e1b3df7eecc34935967b935fbc24787c162",
+  "sha256": "76ee11356e74b32d894f11a6449ac6260885e0adebceaa208e86f661847dca93",
   "title": "创建个人信息",
   "version": "v2"
  },
@@ -8071,7 +8071,7 @@
   "httpMethod": "PATCH",
   "project": "corehr",
   "resource": "person",
-  "sha256": "f52292f73371e901ce5290e4043cb15f79c243c99e1f82a4ab72a2dd91434266",
+  "sha256": "248e15d6631cd0d353e019ab775a04ce85859d70b051f620f6c7a53d1f356442",
   "title": "更新个人信息",
   "version": "v2"
  },
@@ -8203,7 +8203,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "aefed35748242eddffd240b2b985ea607411b9b2b46328d19b99e71f5062ab50",
+  "sha256": "342f654fea7505237fe8588cacac804804b4128dde21840f462c6c8cb5fe6c29",
   "title": "查询待入职信息",
   "version": "v2"
  },
@@ -8227,7 +8227,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "ef0487463c4f5deb080ce0b695aa616a2e0b65c8faf9fc7bcc64c8054695020e",
+  "sha256": "2de468c81c93269c3414447684b0e881fb36fc23e41d634b1e3ad2391ce9526a",
   "title": "搜索待入职信息",
   "version": "v2"
  },
@@ -8335,7 +8335,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "probation",
-  "sha256": "f3f8be504cd405fe7f2a5ee59bc4c526f554ef908da04cc5767fca02028a75d8",
+  "sha256": "e809ca89e67a167c1117cccea7b0731fe3a83a24a6fd71ac32c5193d3ed67d84",
   "title": "搜索试用期信息",
   "version": "v2"
  },
@@ -8347,7 +8347,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "probation",
-  "sha256": "0a42336ec22ba6620fc831c1724b1545279114e5b8bf3c23cfaf3a9a609bc145",
+  "sha256": "a75cf7640a62410c428bfbd65446c1185d4b30642751405165ac01d77f708e7f",
   "title": "发起转正",
   "version": "v2"
  },
@@ -8779,7 +8779,7 @@
   "httpMethod": "POST",
   "project": "directory",
   "resource": "department",
-  "sha256": "7b501b41d5796bebc5833f39d09525e91f1276d5551c0b27d5466ec4f56a3c7e",
+  "sha256": "44e6c833bc0aab016def200a526ff92c4f239912a5d2bffe1185114d197098f1",
   "title": "获取部门列表",
   "version": "v1"
  },
@@ -8791,7 +8791,7 @@
   "httpMethod": "POST",
   "project": "directory",
   "resource": "department",
-  "sha256": "488c9031bba646dda0d3e5a736f14d5489ac9809956bbabc048993116d9770ec",
+  "sha256": "33edea001672adb84a5d0346bb9f0d888f5d5c8c42aed1afe47bcd5190ad4b9b",
   "title": "批量获取部门信息",
   "version": "v1"
  },
@@ -8815,7 +8815,7 @@
   "httpMethod": "POST",
   "project": "directory",
   "resource": "department",
-  "sha256": "d445e3ef3e033823823b91dc63846bcc101b8ea86bfe94382d3c67ec9174d2c4",
+  "sha256": "bf0c26681ea26fc3ef57084bbc6f21aedd4cb73c81903af5f2b645455406d0e6",
   "title": "搜索部门",
   "version": "v1"
  },
@@ -8851,7 +8851,7 @@
   "httpMethod": "POST",
   "project": "directory",
   "resource": "employee",
-  "sha256": "05ef177eacf3c0992dee3537086fd0b17d22f4ce157b6aa03ef1be546f4d5798",
+  "sha256": "8fe5cd91f9efa7f10de1feedae8c062e13419a677846e9b29d9a79df1007d5a0",
   "title": "批量获取员工列表",
   "version": "v1"
  },
@@ -8863,7 +8863,7 @@
   "httpMethod": "POST",
   "project": "directory",
   "resource": "employee",
-  "sha256": "58077db5a20423e5a22db2ff05137e15ca2c1d521d72b957a1bd6524f37b40c5",
+  "sha256": "330e013354392c02a8695ff969484339512b91c22fee9c4b1601da98cad08602",
   "title": "批量获取员工信息",
   "version": "v1"
  },
@@ -8911,7 +8911,7 @@
   "httpMethod": "POST",
   "project": "directory",
   "resource": "employee",
-  "sha256": "bfcbb65d153c2aa0f081be3b56e6f28177596f47073874330d9cce306f2c24de",
+  "sha256": "7ce58e6a8cd5943b31ced7e48fa079be18000bd9caa98d9ef558674d96097637",
   "title": "搜索员工信息",
   "version": "v1"
  },
@@ -9979,7 +9979,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "1910daa3f1ca835b10acc93e1c67ea3c2e5cf4bd74f288dd0932493b70b377ba",
+  "sha256": "608cb462b8265c70e190938766cbc486d3da79ace92bb194a5d136cc9d17ce27",
   "title": "获取云文档协作者",
   "version": "v1"
  },
@@ -10123,7 +10123,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "file.like",
-  "sha256": "a27c1879621d7a0bc743d775eeb33be09954bda48896a40c01ddcd1e5c66bee0",
+  "sha256": "7b51d4f7fbf2258b6aec604e8543dffe6806f6bda539188b6a18570be8b89f99",
   "title": "获取云文档的点赞者列表",
   "version": "v2"
  },
@@ -10843,7 +10843,7 @@
   "httpMethod": "POST",
   "project": "hire",
   "resource": "agency",
-  "sha256": "7f408eb2f8cf73a9823168a33305512b4f9bf5805c47dad9f84b6d1ff2093e7f",
+  "sha256": "54d98c7d1fc1c4fb004d7f98d687f971ac6c3bc0b579bc5de5217a52ff04c051",
   "title": "查询猎头供应商下猎头列表",
   "version": "v1"
  },
@@ -10951,7 +10951,7 @@
   "httpMethod": "GET",
   "project": "hire",
   "resource": "application",
-  "sha256": "7a03bacc0dc5bf49b9fc67080e42cbebb9396905b2978282f510572e53a80476",
+  "sha256": "ce68217c657a05f510edc78a92acbc0c8c62ad012831f10bd7271c0c60366388",
   "title": "获取投递详情",
   "version": "v1"
  },
@@ -11071,7 +11071,7 @@
   "httpMethod": "POST",
   "project": "hire",
   "resource": "background_check_order",
-  "sha256": "fedb0226eaca10c3ff37b0dc7c42ef4c868b94a49571a450c08de6b51faacfab",
+  "sha256": "e659019108c0a24edf206fb504ee93afe61d1ba2a26cd62fe7376f3a7d1de8ea",
   "title": "查询背调信息列表",
   "version": "v1"
  },
@@ -12367,7 +12367,7 @@
   "httpMethod": "GET",
   "project": "hire",
   "resource": "referral_account",
-  "sha256": "884607ebc976cba3099aa631afef2cd06f77e84b7d8fe8b2179e6ad441003c93",
+  "sha256": "aaaa752ede0be14360869401c50dad40b641096b5a59531830f0452b7aaf6e2c",
   "title": "查询内推账户",
   "version": "v1"
  },
@@ -12979,7 +12979,7 @@
   "httpMethod": "GET",
   "project": "hire",
   "resource": "talent",
-  "sha256": "f4aaad3cef03c7fba04d8cef1d04be4ea8af60d1d88e1aa2f9917fd189650f24",
+  "sha256": "52e1a0c44de896e582e4a227712fede493be5d53db8734e58fc74114d9481b5a",
   "title": "获取人才详情",
   "version": "v2"
  },
@@ -14875,7 +14875,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.mail_contact",
-  "sha256": "7a856affb92b460420a833c25ae4ce999df1e30d0c9d14c2e82b6a642e45b759",
+  "sha256": "16a6586a9abc185e05b6796de31302aa636518ac96be72dee84d080d23ae29f6",
   "title": "列出邮箱联系人",
   "version": "v1"
  },
@@ -14911,7 +14911,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.message",
-  "sha256": "b2e47ec62d90cbd99b310abbe4e66e66acf6c3b5db4e29def0eeed23274d2dcb",
+  "sha256": "c4a922e804ddd93f916101b483c0e96725faa63a18232be43f08f4ef838eea17",
   "title": "批量获取邮件详情",
   "version": "v1"
  },
@@ -14947,7 +14947,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.message",
-  "sha256": "28107221975f30cf4efad9b09468bfb2b4e08de14c8404c28ae5fb5b090263ab",
+  "sha256": "e6d2db45baaac0bf8f3d8a4a241d92b9613d9a3fc5e8d5ef992cb30b4631ba2a",
   "title": "获取邮件详情",
   "version": "v1"
  },
@@ -14983,7 +14983,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.message",
-  "sha256": "6172ba82fc0c4bc69a36f6dbee649ea8e48ad9f58b385e0390b2d4ac9174e2bb",
+  "sha256": "cb6e55c25692654e9d013e8c92537a7e92509cbb1f072576b24897bdeaafdcce",
   "title": "查询会话下邮件信息",
   "version": "v1"
  },
@@ -15247,7 +15247,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.thread",
-  "sha256": "1528c4c8d62c17f8bf4693f59f7dbdbf8954aa67b3b36d0ba3ba244ce2a79cf8",
+  "sha256": "3f679a362665c747c44ad255b9b00293850d90e7526a0361963ff4b301a52e3c",
   "title": "获取邮件会话详情",
   "version": "v1"
  },
@@ -16363,7 +16363,7 @@
   "httpMethod": "POST",
   "project": "performance",
   "resource": "user_info",
-  "sha256": "618a593d47f6115f71ad4481df91797fa5b6c9b093e395c2ce1301940bd984cb",
+  "sha256": "ea99d202ac68cb381eff9152791f86618cd1cd801721a9c83fccd604b8b344e7",
   "title": "获取绩效周期的人员信息",
   "version": "v2"
  },

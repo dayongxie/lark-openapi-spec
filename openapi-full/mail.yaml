@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:40:11Z'
+  version: '2026-07-19T04:09:08Z'
   x-lark-project: mail
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:40:11Z'
+  x-lark-generated-at: '2026-07-19T04:09:08Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -3106,8 +3106,8 @@ paths:
       - mail:public_mailbox
       - mail:public_mailbox:readonly
       x-lark-field-scopes:
-      - mail:public_mailbox.public_mailbox_geo
       - contact:user.employee_id:readonly
+      - mail:public_mailbox.public_mailbox_geo
       x-lark-error-mappings:
       - code: 1235003
         httpCode: 503
@@ -5351,8 +5351,8 @@ paths:
       - mail:user_mailbox.mail_contact:write
       - mail:user_mailbox.mail_contact:read
       x-lark-field-scopes:
-      - mail:user_mailbox.mail_contact.phone:read
       - mail:user_mailbox.mail_contact.mail_address:read
+      - mail:user_mailbox.mail_contact.phone:read
       x-lark-error-mappings:
       - code: 1230001
         httpCode: 400
@@ -5655,9 +5655,9 @@ paths:
       - mail:user_mailbox.message:readonly
       x-lark-field-scopes:
       - myai:myai
+      - mail:user_mailbox.message.body:read
       - mail:user_mailbox.message.subject:read
       - mail:user_mailbox.message.address:read
-      - mail:user_mailbox.message.body:read
       x-lark-error-mappings:
       - code: 1230008
         httpCode: 429
@@ -5891,9 +5891,9 @@ paths:
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       x-lark-field-scopes:
+      - myai:myai
       - mail:user_mailbox.message.address:read
       - mail:user_mailbox.message.body:read
-      - myai:myai
       - mail:user_mailbox.message.subject:read
       x-lark-error-mappings:
       - code: 1235013
@@ -6228,10 +6228,10 @@ paths:
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       x-lark-field-scopes:
-      - myai:myai
       - mail:user_mailbox.message.subject:read
       - mail:user_mailbox.message.address:read
       - mail:user_mailbox.message.body:read
+      - myai:myai
       x-lark-error-mappings:
       - code: 1234013
         httpCode: 404
@@ -8194,10 +8194,10 @@ paths:
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       x-lark-field-scopes:
-      - myai:myai
-      - mail:user_mailbox.message.address:read
       - mail:user_mailbox.message.body:read
+      - myai:myai
       - mail:user_mailbox.message.subject:read
+      - mail:user_mailbox.message.address:read
       x-lark-error-mappings:
       - code: 1234013
         httpCode: 404

@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:40:11Z'
+  version: '2026-07-19T04:09:08Z'
   x-lark-project: docx
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:40:11Z'
+  x-lark-generated-at: '2026-07-19T04:09:08Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -2725,67 +2725,67 @@ paths:
                         example: '1'
                       text:
                         allOf:
-                        - $ref: '#/components/schemas/Text'
+                        - $ref: '#/components/schemas/Todo'
                         description: 文本 Block
                       heading1:
                         allOf:
-                        - $ref: '#/components/schemas/Text'
+                        - $ref: '#/components/schemas/Todo'
                         description: 一级标题 Block
                       heading2:
                         allOf:
-                        - $ref: '#/components/schemas/Text'
+                        - $ref: '#/components/schemas/Todo'
                         description: 二级标题 Block
                       heading3:
                         allOf:
-                        - $ref: '#/components/schemas/Text'
+                        - $ref: '#/components/schemas/Todo'
                         description: 三级标题 Block
                       heading4:
                         allOf:
-                        - $ref: '#/components/schemas/Text'
+                        - $ref: '#/components/schemas/Todo'
                         description: 四级标题 Block
                       heading5:
                         allOf:
-                        - $ref: '#/components/schemas/Text'
+                        - $ref: '#/components/schemas/Todo'
                         description: 五级标题 Block
                       heading6:
                         allOf:
-                        - $ref: '#/components/schemas/Text'
+                        - $ref: '#/components/schemas/Todo'
                         description: 六级标题 Block
                       heading7:
                         allOf:
-                        - $ref: '#/components/schemas/Text'
+                        - $ref: '#/components/schemas/Todo'
                         description: 七级标题 Block
                       heading8:
                         allOf:
-                        - $ref: '#/components/schemas/Text'
+                        - $ref: '#/components/schemas/Todo'
                         description: 八级标题 Block
                       heading9:
                         allOf:
-                        - $ref: '#/components/schemas/Text'
+                        - $ref: '#/components/schemas/Todo'
                         description: 九级标题 Block
                       bullet:
                         allOf:
-                        - $ref: '#/components/schemas/Text'
+                        - $ref: '#/components/schemas/Todo'
                         description: 无序列表 Block
                       ordered:
                         allOf:
-                        - $ref: '#/components/schemas/Text'
+                        - $ref: '#/components/schemas/Todo'
                         description: 有序列表 Block
                       code:
                         allOf:
-                        - $ref: '#/components/schemas/Text'
+                        - $ref: '#/components/schemas/Todo'
                         description: 代码块 Block
                       quote:
                         allOf:
-                        - $ref: '#/components/schemas/Text'
+                        - $ref: '#/components/schemas/Todo'
                         description: 引用 Block
                       equation:
                         allOf:
-                        - $ref: '#/components/schemas/Text'
+                        - $ref: '#/components/schemas/Todo'
                         description: 公式 Block
                       todo:
                         allOf:
-                        - $ref: '#/components/schemas/Text'
+                        - $ref: '#/components/schemas/Todo'
                         description: 任务 Block
                       bitable:
                         type: object
@@ -6470,7 +6470,7 @@ components:
       properties:
         text_run:
           allOf:
-          - $ref: '#/components/schemas/TextRun'
+          - $ref: '#/components/schemas/Equation'
           description: 文字
         mention_user:
           allOf:
@@ -6497,7 +6497,7 @@ components:
           description: 内联 block
         equation:
           allOf:
-          - $ref: '#/components/schemas/TextRun'
+          - $ref: '#/components/schemas/Equation'
           description: 公式
         link_preview:
           allOf:
@@ -6523,7 +6523,7 @@ components:
       properties:
         text_run:
           allOf:
-          - $ref: '#/components/schemas/TextRun'
+          - $ref: '#/components/schemas/Equation'
           description: 文字
         mention_user:
           allOf:
@@ -6550,7 +6550,7 @@ components:
           description: 内联 block
         equation:
           allOf:
-          - $ref: '#/components/schemas/TextRun'
+          - $ref: '#/components/schemas/Equation'
           description: 公式
         link_preview:
           allOf:
@@ -6581,7 +6581,7 @@ components:
           type: boolean
           description: 是否还有下一个分页
           example: 'true'
-    TextRun:
+    Equation:
       type: object
       properties:
         content:
@@ -6833,7 +6833,7 @@ components:
           description: 用于确定有序列表项编号，为具体数值或'auto'
           example: '"auto"'
       description: 文本样式
-    Text:
+    Todo:
       type: object
       properties:
         style:
@@ -6869,7 +6869,7 @@ components:
       properties:
         text_run:
           allOf:
-          - $ref: '#/components/schemas/TextRun'
+          - $ref: '#/components/schemas/Equation'
           description: 文字
         mention_user:
           allOf:
@@ -6893,7 +6893,7 @@ components:
           description: 内联 block
         equation:
           allOf:
-          - $ref: '#/components/schemas/TextRun'
+          - $ref: '#/components/schemas/Equation'
           description: 公式
         link_preview:
           allOf:
@@ -7041,67 +7041,67 @@ components:
           example: '1'
         text:
           allOf:
-          - $ref: '#/components/schemas/Text'
+          - $ref: '#/components/schemas/Todo'
           description: 文本 Block
         heading1:
           allOf:
-          - $ref: '#/components/schemas/Text'
+          - $ref: '#/components/schemas/Todo'
           description: 一级标题 Block
         heading2:
           allOf:
-          - $ref: '#/components/schemas/Text'
+          - $ref: '#/components/schemas/Todo'
           description: 二级标题 Block
         heading3:
           allOf:
-          - $ref: '#/components/schemas/Text'
+          - $ref: '#/components/schemas/Todo'
           description: 三级标题 Block
         heading4:
           allOf:
-          - $ref: '#/components/schemas/Text'
+          - $ref: '#/components/schemas/Todo'
           description: 四级标题 Block
         heading5:
           allOf:
-          - $ref: '#/components/schemas/Text'
+          - $ref: '#/components/schemas/Todo'
           description: 五级标题 Block
         heading6:
           allOf:
-          - $ref: '#/components/schemas/Text'
+          - $ref: '#/components/schemas/Todo'
           description: 六级标题 Block
         heading7:
           allOf:
-          - $ref: '#/components/schemas/Text'
+          - $ref: '#/components/schemas/Todo'
           description: 七级标题 Block
         heading8:
           allOf:
-          - $ref: '#/components/schemas/Text'
+          - $ref: '#/components/schemas/Todo'
           description: 八级标题 Block
         heading9:
           allOf:
-          - $ref: '#/components/schemas/Text'
+          - $ref: '#/components/schemas/Todo'
           description: 九级标题 Block
         bullet:
           allOf:
-          - $ref: '#/components/schemas/Text'
+          - $ref: '#/components/schemas/Todo'
           description: 无序列表 Block
         ordered:
           allOf:
-          - $ref: '#/components/schemas/Text'
+          - $ref: '#/components/schemas/Todo'
           description: 有序列表 Block
         code:
           allOf:
-          - $ref: '#/components/schemas/Text'
+          - $ref: '#/components/schemas/Todo'
           description: 代码块 Block
         quote:
           allOf:
-          - $ref: '#/components/schemas/Text'
+          - $ref: '#/components/schemas/Todo'
           description: 引用 Block
         equation:
           allOf:
-          - $ref: '#/components/schemas/Text'
+          - $ref: '#/components/schemas/Todo'
           description: 公式 Block
         todo:
           allOf:
-          - $ref: '#/components/schemas/Text'
+          - $ref: '#/components/schemas/Todo'
           description: 任务 Block
         bitable:
           type: object
@@ -8045,7 +8045,7 @@ components:
       properties:
         text_run:
           allOf:
-          - $ref: '#/components/schemas/TextRun'
+          - $ref: '#/components/schemas/Equation'
           description: 文字
         mention_user:
           allOf:
@@ -8072,7 +8072,7 @@ components:
           description: 内联 block
         equation:
           allOf:
-          - $ref: '#/components/schemas/TextRun'
+          - $ref: '#/components/schemas/Equation'
           description: 公式
     SourceSynced2:
       type: object
@@ -8318,7 +8318,7 @@ components:
       properties:
         text_run:
           allOf:
-          - $ref: '#/components/schemas/TextRun'
+          - $ref: '#/components/schemas/Equation'
           description: 文字
         mention_user:
           allOf:
@@ -8345,7 +8345,7 @@ components:
           description: 内联 block
         equation:
           allOf:
-          - $ref: '#/components/schemas/TextRun'
+          - $ref: '#/components/schemas/Equation'
           description: 公式
     SourceSynced3:
       type: object

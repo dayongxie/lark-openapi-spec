@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:40:11Z'
+  version: '2026-07-19T04:09:08Z'
   x-lark-project: bitable
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:40:11Z'
+  x-lark-generated-at: '2026-07-19T04:09:08Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -699,7 +699,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Schema9'
+              $ref: '#/components/schemas/Schema10'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -803,7 +803,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Schema9'
+              $ref: '#/components/schemas/Schema10'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -3735,7 +3735,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Field2'
+              $ref: '#/components/schemas/Schema8'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -3753,7 +3753,7 @@ paths:
                     properties:
                       fields:
                         allOf:
-                        - $ref: '#/components/schemas/Field2'
+                        - $ref: '#/components/schemas/Schema8'
                         description: 更新后的field值
       x-lark-access-tokens:
       - tenant
@@ -3954,7 +3954,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Schema8'
+                $ref: '#/components/schemas/Schema9'
       x-lark-access-tokens:
       - tenant
       - user
@@ -4199,7 +4199,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Schema8'
+                $ref: '#/components/schemas/Schema9'
       x-lark-access-tokens:
       - tenant
       - user
@@ -5406,11 +5406,11 @@ paths:
       - bitable:app
       - base:record:update
       x-lark-field-scopes:
-      - contact:user.employee_id:readonly
       - contact:user.base:readonly
       - contact:contact:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
+      - contact:user.employee_id:readonly
       x-lark-error-mappings:
       - code: 1254000
         httpCode: 200
@@ -5664,11 +5664,11 @@ paths:
       - bitable:app
       - base:record:create
       x-lark-field-scopes:
-      - contact:user.employee_id:readonly
       - contact:user.base:readonly
       - contact:contact:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
+      - contact:user.employee_id:readonly
       x-lark-error-mappings:
       - code: 1254000
         httpCode: 200
@@ -6681,11 +6681,11 @@ paths:
       - bitable:app
       - base:record:update
       x-lark-field-scopes:
+      - contact:contact:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
       - contact:user.employee_id:readonly
       - contact:user.base:readonly
-      - contact:contact:readonly
       x-lark-error-mappings:
       - code: 1254000
         httpCode: 200
@@ -7027,11 +7027,11 @@ paths:
       - bitable:app:readonly
       - base:record:retrieve
       x-lark-field-scopes:
+      - contact:user.employee_id:readonly
       - contact:user.base:readonly
       - contact:contact:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
-      - contact:user.employee_id:readonly
       x-lark-error-mappings:
       - code: 1254000
         httpCode: 200
@@ -11829,7 +11829,7 @@ components:
       required:
       - field_id
       - operator
-    Field2:
+    Schema8:
       type: object
       properties:
         pre_field_id:
@@ -11874,7 +11874,7 @@ components:
             - segment_type
             - text
           description: 富文本描述
-    Schema8:
+    Schema9:
       type: object
       properties:
         code:
@@ -11926,7 +11926,7 @@ components:
           example: '["optbdVHf4q", "optrpd3eIJ"]'
       required:
       - field_name
-    Schema9:
+    Schema10:
       type: object
       properties:
         member_list:
