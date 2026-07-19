@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: authen
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -56,80 +56,15 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      access_token:
-                        type: string
-                        description: user_access_token，用于获取用户资源
-                      token_type:
-                        type: string
-                        description: token 类型
-                      expires_in:
-                        type: integer
-                        description: '`access_token`的有效期，单位: 秒'
-                      name:
-                        type: string
-                        description: 用户姓名
-                      en_name:
-                        type: string
-                        description: 用户英文名称
-                      avatar_url:
-                        type: string
-                        description: 用户头像
-                      avatar_thumb:
-                        type: string
-                        description: 用户头像 72x72
-                      avatar_middle:
-                        type: string
-                        description: 用户头像 240x240
-                      avatar_big:
-                        type: string
-                        description: 用户头像 640x640
-                      open_id:
-                        type: string
-                        description: 用户在应用内的唯一标识
-                      union_id:
-                        type: string
-                        description: 用户统一ID
-                      email:
-                        type: string
-                        description: 用户邮箱
-                      enterprise_email:
-                        type: string
-                        description: 企业邮箱，请先确保已在管理后台启用飞书邮箱服务
-                      user_id:
-                        type: string
-                        description: 用户 user_id
-                      mobile:
-                        type: string
-                        description: 用户手机号
-                      tenant_key:
-                        type: string
-                        description: 当前企业标识
-                      refresh_expires_in:
-                        type: integer
-                        description: '`refresh_token` 的有效期，单位: 秒'
-                      refresh_token:
-                        type: string
-                        description: 刷新用户 `access_token` 时使用的 token
-                      sid:
-                        type: string
-                        description: 用户当前登录态session的唯一标识，为空则不返回
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - app
       x-lark-field-scopes:
+      - contact:user.phone:readonly
       - contact:user.email:readonly
       - directory:employee.base.email:read
       - contact:user.employee:readonly
       - contact:user.employee_id:readonly
-      - contact:user.phone:readonly
       x-lark-error-mappings:
       - code: 20001
         httpCode: 200
@@ -197,42 +132,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      access_token:
-                        type: string
-                        description: user_access_token，用于获取用户资源和访问某些open api
-                        example: u-5Dak9ZAxJ9tFUn8MaTD_BFM51FNdg5xzO0y010000HWb
-                      refresh_token:
-                        type: string
-                        description: 刷新用户 `access_token` 时使用的 token
-                        example: ur-6EyFQZyplb9URrOx5NtT_HM53zrJg59HXwy040400G.e
-                      token_type:
-                        type: string
-                        description: token 类型，固定值
-                        example: Bearer
-                      expires_in:
-                        type: integer
-                        description: '`access_token`的有效期，单位: 秒，一般是两个小时左右，需要以返回结果为准'
-                        example: '7199'
-                      refresh_expires_in:
-                        type: integer
-                        description: '`refresh_token` 的有效期，单位: 秒，一般是30天左右，需要以返回结果为准'
-                        example: '2591999'
-                      scope:
-                        type: string
-                        description: 用户授予app的权限全集
-                        example: auth:user.id:read bitable:app
-                    required:
-                    - access_token
-                    - token_type
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - app
       x-lark-error-mappings:
@@ -329,42 +229,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      access_token:
-                        type: string
-                        description: user_access_token，用于获取用户资源和访问某些open api
-                        example: u-5Dak9ZAxJ9tFUn8MaTD_BFM51FNdg5xzO0y010000HWb
-                      refresh_token:
-                        type: string
-                        description: 刷新用户 `access_token` 时使用的 token
-                        example: ur-6EyFQZyplb9URrOx5NtT_HM53zrJg59HXwy040400G.e
-                      token_type:
-                        type: string
-                        description: token 类型，固定值
-                        example: Bearer
-                      expires_in:
-                        type: integer
-                        description: '`access_token`的有效期，单位: 秒，一般是两个小时左右，需要以返回结果为准'
-                        example: '7199'
-                      refresh_expires_in:
-                        type: integer
-                        description: '`refresh_token` 的有效期，单位: 秒，一般是30天左右，需要以返回结果为准'
-                        example: '2591999'
-                      scope:
-                        type: string
-                        description: 用户授予app的权限全集
-                        example: auth:user.id:read bitable:app
-                    required:
-                    - access_token
-                    - token_type
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - app
       x-lark-error-mappings:
@@ -455,72 +320,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      access_token:
-                        type: string
-                        description: user_access_token，用于获取用户资源
-                      token_type:
-                        type: string
-                        description: token 类型
-                      expires_in:
-                        type: integer
-                        description: '`access_token`的有效期，单位: 秒'
-                      name:
-                        type: string
-                        description: 用户姓名
-                      en_name:
-                        type: string
-                        description: 用户英文名称
-                      avatar_url:
-                        type: string
-                        description: 用户头像
-                      avatar_thumb:
-                        type: string
-                        description: 用户头像 72x72
-                      avatar_middle:
-                        type: string
-                        description: 用户头像 240x240
-                      avatar_big:
-                        type: string
-                        description: 用户头像 640x640
-                      open_id:
-                        type: string
-                        description: 用户在应用内的唯一标识
-                      union_id:
-                        type: string
-                        description: 用户统一ID
-                      email:
-                        type: string
-                        description: 用户邮箱
-                      enterprise_email:
-                        type: string
-                        description: 企业邮箱，请先确保已在管理后台启用飞书邮箱服务
-                      user_id:
-                        type: string
-                        description: 用户 user_id
-                      mobile:
-                        type: string
-                        description: 用户手机号
-                      tenant_key:
-                        type: string
-                        description: 当前企业标识
-                      refresh_expires_in:
-                        type: integer
-                        description: '`refresh_token` 的有效期，单位: 秒'
-                      refresh_token:
-                        type: string
-                        description: 刷新用户 `access_token` 时使用的 token
-                      sid:
-                        type: string
-                        description: 用户当前登录态session的唯一标识，为空则不返回
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - app
       x-lark-field-scopes:
@@ -649,14 +449,14 @@ paths:
       x-lark-access-tokens:
       - user
       x-lark-field-scopes:
-      - contact:user.email:readonly
-      - directory:employee.base.email:read
-      - contact:user.employee:readonly
-      - contact:user.employee_id:readonly
-      - contact:user.phone:readonly
-      - contact:contact:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
+      - contact:user.email:readonly
+      - directory:employee.base.email:read
+      - contact:user.employee_id:readonly
+      - contact:user.phone:readonly
+      - contact:user.employee:readonly
+      - contact:contact:readonly
       x-lark-error-mappings:
       - code: 20001
         httpCode: 200
@@ -681,3 +481,113 @@ paths:
         msg: System error
       x-lark-rate-limit:
         tier: 0
+components:
+  schemas:
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    Data:
+      type: object
+      properties:
+        access_token:
+          type: string
+          description: user_access_token，用于获取用户资源
+        token_type:
+          type: string
+          description: token 类型
+        expires_in:
+          type: integer
+          description: '`access_token`的有效期，单位: 秒'
+        name:
+          type: string
+          description: 用户姓名
+        en_name:
+          type: string
+          description: 用户英文名称
+        avatar_url:
+          type: string
+          description: 用户头像
+        avatar_thumb:
+          type: string
+          description: 用户头像 72x72
+        avatar_middle:
+          type: string
+          description: 用户头像 240x240
+        avatar_big:
+          type: string
+          description: 用户头像 640x640
+        open_id:
+          type: string
+          description: 用户在应用内的唯一标识
+        union_id:
+          type: string
+          description: 用户统一ID
+        email:
+          type: string
+          description: 用户邮箱
+        enterprise_email:
+          type: string
+          description: 企业邮箱，请先确保已在管理后台启用飞书邮箱服务
+        user_id:
+          type: string
+          description: 用户 user_id
+        mobile:
+          type: string
+          description: 用户手机号
+        tenant_key:
+          type: string
+          description: 当前企业标识
+        refresh_expires_in:
+          type: integer
+          description: '`refresh_token` 的有效期，单位: 秒'
+        refresh_token:
+          type: string
+          description: 刷新用户 `access_token` 时使用的 token
+        sid:
+          type: string
+          description: 用户当前登录态session的唯一标识，为空则不返回
+    Schema2:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data2'
+    Data2:
+      type: object
+      properties:
+        access_token:
+          type: string
+          description: user_access_token，用于获取用户资源和访问某些open api
+          example: u-5Dak9ZAxJ9tFUn8MaTD_BFM51FNdg5xzO0y010000HWb
+        refresh_token:
+          type: string
+          description: 刷新用户 `access_token` 时使用的 token
+          example: ur-6EyFQZyplb9URrOx5NtT_HM53zrJg59HXwy040400G.e
+        token_type:
+          type: string
+          description: token 类型，固定值
+          example: Bearer
+        expires_in:
+          type: integer
+          description: '`access_token`的有效期，单位: 秒，一般是两个小时左右，需要以返回结果为准'
+          example: '7199'
+        refresh_expires_in:
+          type: integer
+          description: '`refresh_token` 的有效期，单位: 秒，一般是30天左右，需要以返回结果为准'
+          example: '2591999'
+        scope:
+          type: string
+          description: 用户授予app的权限全集
+          example: auth:user.id:read bitable:app
+      required:
+      - access_token
+      - token_type

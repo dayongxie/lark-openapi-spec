@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: document_ai
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -1128,34 +1128,8 @@ paths:
                     type: object
                     properties:
                       hkm_mainland_travel_permit:
-                        type: object
-                        properties:
-                          entities:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                type:
-                                  type: string
-                                  description: 识别的字段种类
-                                  enum:
-                                  - full_name_cn
-                                  - full_name_en
-                                  - date_of_birth
-                                  - date_of_expiry
-                                  - card_number
-                                  x-enum-descriptions:
-                                    full_name_cn: 中文姓名
-                                    full_name_en: 英文格式姓名
-                                    date_of_birth: 出生日期
-                                    date_of_expiry: 有效期至
-                                    card_number: 证件号码
-                                  example: full_name_cn
-                                value:
-                                  type: string
-                                  description: 识别出字段的文本信息
-                                  example: 张三
-                            description: 识别出的实体类型
+                        allOf:
+                        - $ref: '#/components/schemas/TwMainlandTravelPermit'
                         description: 港澳居民来往内地通行证信息
       x-lark-access-tokens:
       - tenant
@@ -1883,34 +1857,8 @@ paths:
                     type: object
                     properties:
                       tw_mainland_travel_permit:
-                        type: object
-                        properties:
-                          entities:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                type:
-                                  type: string
-                                  description: 识别的字段种类
-                                  enum:
-                                  - full_name_cn
-                                  - full_name_en
-                                  - date_of_birth
-                                  - date_of_expiry
-                                  - card_number
-                                  x-enum-descriptions:
-                                    full_name_cn: 中文姓名
-                                    full_name_en: 英文格式姓名
-                                    date_of_birth: 出生日期
-                                    date_of_expiry: 有效期至
-                                    card_number: 证件号码
-                                  example: full_name_cn
-                                value:
-                                  type: string
-                                  description: 识别出字段的文本信息
-                                  example: 张三
-                            description: 识别出的实体类型
+                        allOf:
+                        - $ref: '#/components/schemas/TwMainlandTravelPermit'
                         description: 台湾居民来往大陆通行证信息
       x-lark-access-tokens:
       - tenant
@@ -2316,3 +2264,35 @@ paths:
       x-lark-rate-limit:
         tier: 7
       x-lark-file-upload: true
+components:
+  schemas:
+    TwMainlandTravelPermit:
+      type: object
+      properties:
+        entities:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                description: 识别的字段种类
+                enum:
+                - full_name_cn
+                - full_name_en
+                - date_of_birth
+                - date_of_expiry
+                - card_number
+                x-enum-descriptions:
+                  full_name_cn: 中文姓名
+                  full_name_en: 英文格式姓名
+                  date_of_birth: 出生日期
+                  date_of_expiry: 有效期至
+                  card_number: 证件号码
+                example: full_name_cn
+              value:
+                type: string
+                description: 识别出字段的文本信息
+                example: 张三
+          description: 识别出的实体类型
+      description: 港澳居民来往内地通行证信息

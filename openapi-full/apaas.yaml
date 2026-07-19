@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: apaas
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -394,190 +394,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      items:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            log_id:
-                              type: string
-                              description: 审计日志ID
-                              example: '7376574450886557740'
-                            op_time:
-                              type: string
-                              description: 操作时间
-                              example: '1723634726874'
-                            log_type:
-                              type: string
-                              description: 日志类型:10000-全部类型;10001-企业管理; 10002-登录日志;10003-应用管理
-                              example: '10000'
-                            operator:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: 用户ID
-                                  example: '1768491480010814'
-                                name:
-                                  type: string
-                                  description: 用户名称
-                                  example: 郭晋
-                                tenant_id:
-                                  type: string
-                                  description: 租户ID
-                                  example: '79844'
-                                email:
-                                  type: string
-                                  description: 用户邮箱
-                                  example: guojin.jim@bytedance.com
-                              description: 操作人
-                            outsider:
-                              type: boolean
-                              description: 是否为外部用户,true代表是外部用户
-                            login_type:
-                              type: string
-                              description: 登录类型:11001-飞书登录;11003-账号密码登录
-                              example: '11001'
-                            lark_tenant_id:
-                              type: string
-                              description: 飞书租户ID
-                              example: '123'
-                            apaas_tenant_id:
-                              type: string
-                              description: apaas租户ID
-                              example: '23333'
-                            user_geo:
-                              type: string
-                              description: 用户地理信息
-                              example: America/Chicago
-                            client_ip:
-                              type: string
-                              description: 客户端IP
-                              example: 192.168.1.1
-                            ip_loc:
-                              type: string
-                              description: IP位置
-                              example: 中国北京
-                            ip_provider:
-                              type: string
-                              description: IP提供商
-                              example: ISP_com
-                            referer:
-                              type: string
-                              description: 引用页面
-                              example: https://example.com/referer
-                            origin:
-                              type: string
-                              description: 源页面
-                              example: https://example.com/origin
-                            api_path:
-                              type: string
-                              description: 路由路径
-                              example: /api/xxx
-                            full_path:
-                              type: string
-                              description: 网关路径
-                              example: /api/xxx
-                            user_agent:
-                              type: string
-                              description: 用户代理
-                              example: Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML,
-                                like Gecko) Mobile/15E148
-                            device_id:
-                              type: string
-                              description: 设备ID
-                              example: device_1234
-                            web_device_id:
-                              type: string
-                              description: web端设备ID
-                              example: webDevice_1234
-                            terminal_type:
-                              type: string
-                              description: 终端类型:13002-PC类型;13003-Web类型
-                              example: '2'
-                            os_type:
-                              type: string
-                              description: 系统类型:14002-window;14001-未知
-                              example: '14002'
-                            os_version:
-                              type: string
-                              description: 系统版本
-                              example: '14.6'
-                            module:
-                              type: string
-                              description: 功能模块
-                              example: '17001'
-                            data_object:
-                              type: string
-                              description: 数据对象
-                              example: object_api_aaa
-                            audit_scope:
-                              type: string
-                              description: 审计域:15001-企业管理后台;15002-应用管理后 台;15003-应用开发平台
-                              example: '15001'
-                            tenant_id:
-                              type: string
-                              description: 租户ID
-                              example: '23335'
-                            namespace:
-                              type: string
-                              description: 应用唯一标识
-                              example: package_aacc
-                            env_type:
-                              type: string
-                              description: 环境类型:16001-沙箱环境;16003-线上环境
-                              example: '16003'
-                            op_type:
-                              type: string
-                              description: 事件类型
-                              example: '19001'
-                            op_detail:
-                              type: string
-                              x-lark-original-type: map
-                              description: 操作详情内容
-                            op_source:
-                              type: string
-                              description: 操作源:20001-前端;20004-openapi
-                              example: '20001'
-                            status:
-                              type: string
-                              description: 操作状态:18001-成功;18002-失败
-                              example: '18001'
-                            failed_reason_i18n:
-                              type: string
-                              x-lark-original-type: map
-                              description: 失败原因
-                            data_changes:
-                              type: array
-                              items:
-                                type: string
-                              description: 数据变化(旧值和新值)
-                            app_name:
-                              type: string
-                              x-lark-original-type: map
-                              description: 应用名称
-                            keyword_field_app_version:
-                              type: string
-                              description: 应用版本号
-                              example: v1.2.3
-                            keyword_field_functional_sub_module:
-                              type: string
-                              description: 审计日志事件子模块
-                              example: '223'
-                        description: 审计日志查询结果列表详情信息
-                      total:
-                        type: string
-                        description: 审计日志查询总条数
-                        example: '10'
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -619,177 +436,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      data:
-                        type: object
-                        properties:
-                          log_id:
-                            type: string
-                            description: 审计日志ID
-                            example: '7376574450886557740'
-                          basic_info:
-                            type: object
-                            properties:
-                              log_type:
-                                type: string
-                                description: 日志类型：10000-全部类型；10001-企业管理；10002-登录日志；10003-应用管理
-                                example: '10000'
-                              audit_scope:
-                                type: string
-                                description: 审计域：15001-企业管理后台；15002-应用管理后台；15003-应用开发平台
-                                example: '15001'
-                              env_type:
-                                type: string
-                                description: 环境类型：16001-沙箱环境；16003-线上环境
-                                example: '16003'
-                              app_id:
-                                type: string
-                                description: 应用id
-                                example: app123
-                              module:
-                                type: string
-                                description: 审计日志功能模块
-                                example: '17001'
-                              op_type:
-                                type: string
-                                description: 事件类型
-                                example: '19001'
-                              app_name:
-                                type: string
-                                x-lark-original-type: map
-                                description: 应用名称
-                            description: 日志基础信息
-                          op_info:
-                            type: object
-                            properties:
-                              operator:
-                                type: object
-                                properties:
-                                  id:
-                                    type: string
-                                    description: 用户ID
-                                    example: '1768491480010814'
-                                  name:
-                                    type: string
-                                    description: 用户名称
-                                    example: 郭晋
-                                  tenant_id:
-                                    type: string
-                                    description: 租户ID
-                                    example: '79844'
-                                  email:
-                                    type: string
-                                    description: 用户邮箱
-                                    example: guojin.jim@bytedance.com
-                                description: 操作人
-                              outsider:
-                                type: boolean
-                                description: 是否为外部用户，true代表是外部用户
-                                example: 'true'
-                              op_detail:
-                                type: string
-                                x-lark-original-type: map
-                                description: 操作详情内容
-                              status:
-                                type: string
-                                description: 操作状态：18001-成功；18002-失败
-                                example: '18001'
-                              failed_reason:
-                                type: string
-                                description: 失败原因
-                                example: 登录失败
-                              failed_reason_i18n:
-                                type: string
-                                x-lark-original-type: map
-                                description: 多语类型失败原因
-                              op_time:
-                                type: string
-                                description: 操作时间
-                                example: '1723634726874'
-                              data_object:
-                                type: string
-                                description: 数据对象
-                                example: object_api_aaa
-                              op_source:
-                                type: string
-                                description: 操作源：20001-前端；20004-openapi
-                                example: '20001'
-                              data_changes:
-                                type: array
-                                items:
-                                  type: string
-                                description: 数据变化(旧值和新值)
-                            description: 审计日志操作信息
-                          login_info:
-                            type: object
-                            properties:
-                              login_type:
-                                type: string
-                                description: 登录类型：11001-飞书登录；11003-账号密码登录
-                                example: '11001'
-                            description: 登录类型信息
-                          device_info:
-                            type: object
-                            properties:
-                              device_id:
-                                type: string
-                                description: 设备ID
-                                example: device_1234
-                              web_device_id:
-                                type: string
-                                description: web端设备ID
-                                example: webDevice_1234
-                              terminal_type:
-                                type: string
-                                description: 终端类型：13002-PC类型；13003-Web类型
-                                example: '2'
-                              os_type:
-                                type: string
-                                description: 系统类型：14002-window；14001-未知
-                                example: '14002'
-                              os_version:
-                                type: string
-                                description: 系统版本
-                                example: '14.6'
-                            description: 设备信息
-                          net_info:
-                            type: object
-                            properties:
-                              client_ip:
-                                type: string
-                                description: 客户端IP
-                                example: 192.168.1.1
-                              ip_loc:
-                                type: string
-                                description: IP位置
-                                example: 中国北京
-                              ip_provider:
-                                type: string
-                                description: IP提供商
-                                example: ISP_com
-                              referer:
-                                type: string
-                                description: 引用页面
-                                example: https://example.com/referer
-                              origin:
-                                type: string
-                                description: 源页面
-                                example: https://example.com/origin
-                              user_agent:
-                                type: string
-                                description: 用户代理
-                                example: Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML,
-                                  like Gecko) Mobile/15E148
-                            description: 网络信息
-                        description: 数据变更日志详情信息
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -902,190 +549,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      items:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            log_id:
-                              type: string
-                              description: 审计日志ID
-                              example: '7376574450886557740'
-                            op_time:
-                              type: string
-                              description: 操作时间
-                              example: '1723634726874'
-                            log_type:
-                              type: string
-                              description: 日志类型:10000-全部类型;10001-企业管理; 10002-登录日志;10003-应用管理
-                              example: '10000'
-                            operator:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: 用户ID
-                                  example: '1768491480010814'
-                                name:
-                                  type: string
-                                  description: 用户名称
-                                  example: 郭晋
-                                tenant_id:
-                                  type: string
-                                  description: 租户ID
-                                  example: '79844'
-                                email:
-                                  type: string
-                                  description: 用户邮箱
-                                  example: guojin.jim@bytedance.com
-                              description: 操作人
-                            outsider:
-                              type: boolean
-                              description: 是否为外部用户,true代表是外部用户
-                            login_type:
-                              type: string
-                              description: 登录类型:11001-飞书登录;11003-账号密码登录
-                              example: '11001'
-                            lark_tenant_id:
-                              type: string
-                              description: 飞书租户ID
-                              example: '123'
-                            apaas_tenant_id:
-                              type: string
-                              description: apaas租户ID
-                              example: '23333'
-                            user_geo:
-                              type: string
-                              description: 用户地理信息
-                              example: America/Chicago
-                            client_ip:
-                              type: string
-                              description: 客户端IP
-                              example: 192.168.1.1
-                            ip_loc:
-                              type: string
-                              description: IP位置
-                              example: 中国北京
-                            ip_provider:
-                              type: string
-                              description: IP提供商
-                              example: ISP_com
-                            referer:
-                              type: string
-                              description: 引用页面
-                              example: https://example.com/referer
-                            origin:
-                              type: string
-                              description: 源页面
-                              example: https://example.com/origin
-                            api_path:
-                              type: string
-                              description: 路由路径
-                              example: /api/xxx
-                            full_path:
-                              type: string
-                              description: 网关路径
-                              example: /api/xxx
-                            user_agent:
-                              type: string
-                              description: 用户代理
-                              example: Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML,
-                                like Gecko) Mobile/15E148
-                            device_id:
-                              type: string
-                              description: 设备ID
-                              example: device_1234
-                            web_device_id:
-                              type: string
-                              description: web端设备ID
-                              example: webDevice_1234
-                            terminal_type:
-                              type: string
-                              description: 终端类型:13002-PC类型;13003-Web类型
-                              example: '2'
-                            os_type:
-                              type: string
-                              description: 系统类型:14002-window;14001-未知
-                              example: '14002'
-                            os_version:
-                              type: string
-                              description: 系统版本
-                              example: '14.6'
-                            module:
-                              type: string
-                              description: 功能模块
-                              example: '17001'
-                            data_object:
-                              type: string
-                              description: 数据对象
-                              example: object_api_aaa
-                            audit_scope:
-                              type: string
-                              description: 审计域:15001-企业管理后台;15002-应用管理后 台;15003-应用开发平台
-                              example: '15001'
-                            tenant_id:
-                              type: string
-                              description: 租户ID
-                              example: '23335'
-                            namespace:
-                              type: string
-                              description: 应用唯一标识
-                              example: package_aacc
-                            env_type:
-                              type: string
-                              description: 环境类型:16001-沙箱环境;16003-线上环境
-                              example: '16003'
-                            op_type:
-                              type: string
-                              description: 事件类型
-                              example: '19001'
-                            op_detail:
-                              type: string
-                              x-lark-original-type: map
-                              description: 操作详情内容
-                            op_source:
-                              type: string
-                              description: 操作源:20001-前端;20004-openapi
-                              example: '20001'
-                            status:
-                              type: string
-                              description: 操作状态:18001-成功;18002-失败
-                              example: '18001'
-                            failed_reason_i18n:
-                              type: string
-                              x-lark-original-type: map
-                              description: 失败原因
-                            data_changes:
-                              type: array
-                              items:
-                                type: string
-                              description: 数据变化(旧值和新值)
-                            app_name:
-                              type: string
-                              x-lark-original-type: map
-                              description: 应用名称
-                            keyword_field_app_version:
-                              type: string
-                              description: 应用版本号
-                              example: v1.2.3
-                            keyword_field_functional_sub_module:
-                              type: string
-                              description: 审计日志事件子模块
-                              example: '223'
-                        description: 数据变更日志查询结果列表详情信息
-                      total:
-                        type: string
-                        description: 数据变更日志查询总条数
-                        example: '10'
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -1127,177 +591,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      data:
-                        type: object
-                        properties:
-                          log_id:
-                            type: string
-                            description: 审计日志ID
-                            example: '7376574450886557740'
-                          basic_info:
-                            type: object
-                            properties:
-                              log_type:
-                                type: string
-                                description: 日志类型：10000-全部类型；10001-企业管理；10002-登录日志；10003-应用管理
-                                example: '10000'
-                              audit_scope:
-                                type: string
-                                description: 审计域：15001-企业管理后台；15002-应用管理后台；15003-应用开发平台
-                                example: '15001'
-                              env_type:
-                                type: string
-                                description: 环境类型：16001-沙箱环境；16003-线上环境
-                                example: '16003'
-                              app_id:
-                                type: string
-                                description: 应用id
-                                example: app123
-                              module:
-                                type: string
-                                description: 审计日志功能模块
-                                example: '17001'
-                              op_type:
-                                type: string
-                                description: 事件类型
-                                example: '19001'
-                              app_name:
-                                type: string
-                                x-lark-original-type: map
-                                description: 应用名称
-                            description: 日志基础信息
-                          op_info:
-                            type: object
-                            properties:
-                              operator:
-                                type: object
-                                properties:
-                                  id:
-                                    type: string
-                                    description: 用户ID
-                                    example: '1768491480010814'
-                                  name:
-                                    type: string
-                                    description: 用户名称
-                                    example: 郭晋
-                                  tenant_id:
-                                    type: string
-                                    description: 租户ID
-                                    example: '79844'
-                                  email:
-                                    type: string
-                                    description: 用户邮箱
-                                    example: guojin.jim@bytedance.com
-                                description: 操作人
-                              outsider:
-                                type: boolean
-                                description: 是否为外部用户，true代表是外部用户
-                                example: 'true'
-                              op_detail:
-                                type: string
-                                x-lark-original-type: map
-                                description: 操作详情内容
-                              status:
-                                type: string
-                                description: 操作状态：18001-成功；18002-失败
-                                example: '18001'
-                              failed_reason:
-                                type: string
-                                description: 失败原因
-                                example: 登录失败
-                              failed_reason_i18n:
-                                type: string
-                                x-lark-original-type: map
-                                description: 多语类型失败原因
-                              op_time:
-                                type: string
-                                description: 操作时间
-                                example: '1723634726874'
-                              data_object:
-                                type: string
-                                description: 数据对象
-                                example: object_api_aaa
-                              op_source:
-                                type: string
-                                description: 操作源：20001-前端；20004-openapi
-                                example: '20001'
-                              data_changes:
-                                type: array
-                                items:
-                                  type: string
-                                description: 数据变化(旧值和新值)
-                            description: 审计日志操作信息
-                          login_info:
-                            type: object
-                            properties:
-                              login_type:
-                                type: string
-                                description: 登录类型：11001-飞书登录；11003-账号密码登录
-                                example: '11001'
-                            description: 登录类型信息
-                          device_info:
-                            type: object
-                            properties:
-                              device_id:
-                                type: string
-                                description: 设备ID
-                                example: device_1234
-                              web_device_id:
-                                type: string
-                                description: web端设备ID
-                                example: webDevice_1234
-                              terminal_type:
-                                type: string
-                                description: 终端类型：13002-PC类型；13003-Web类型
-                                example: '2'
-                              os_type:
-                                type: string
-                                description: 系统类型：14002-window；14001-未知
-                                example: '14002'
-                              os_version:
-                                type: string
-                                description: 系统版本
-                                example: '14.6'
-                            description: 设备信息
-                          net_info:
-                            type: object
-                            properties:
-                              client_ip:
-                                type: string
-                                description: 客户端IP
-                                example: 192.168.1.1
-                              ip_loc:
-                                type: string
-                                description: IP位置
-                                example: 中国北京
-                              ip_provider:
-                                type: string
-                                description: IP提供商
-                                example: ISP_com
-                              referer:
-                                type: string
-                                description: 引用页面
-                                example: https://example.com/referer
-                              origin:
-                                type: string
-                                description: 源页面
-                                example: https://example.com/origin
-                              user_agent:
-                                type: string
-                                description: 用户代理
-                                example: Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML,
-                                  like Gecko) Mobile/15E148
-                            description: 网络信息
-                        description: 审计日志详情信息
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -1348,76 +642,8 @@ paths:
                     type: object
                     properties:
                       item:
-                        type: object
-                        properties:
-                          api_name:
-                            type: string
-                            description: 环境变量 API 名称
-                            example: globalParam_0b410b17704
-                          label:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文内容
-                                example: 示例文本
-                              en_us:
-                                type: string
-                                description: 英文内容
-                                example: Text
-                            required:
-                            - zh_cn
-                            - en_us
-                            description: 环境变量的名称
-                          description:
-                            type: string
-                            description: 描述
-                            example: Sample text
-                          value:
-                            type: string
-                            description: 返回 json marshal 后的字符串。 isEncrypted 为 「true」时，依然可以获取返回值。
-                            example: '[1757083131077684,1757085362739239,1757083720703032]'
-                          is_encrypted:
-                            type: boolean
-                            description: 是否加密，「type 」取值为 text, float 时才有效
-                            example: 'false'
-                          object_api_name:
-                            type: string
-                            description: 对象的 API 名称，「type 」取值为 lookup, lookup_multi 时才有效
-                            example: _user
-                          object_label:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文内容
-                                example: 示例文本
-                              en_us:
-                                type: string
-                                description: 英文内容
-                                example: Text
-                            required:
-                            - zh_cn
-                            - en_us
-                            description: 对象的名称，「type 」取值为 lookup, lookup_multi 时才有效
-                          created_at:
-                            type: integer
-                            description: 「创建时间」，日期时间字段。 使用 Unix 时间戳
-                            example: '1718350902019'
-                          updated_at:
-                            type: integer
-                            description: 「更新时间」，日期时间字段。 使用 Unix 时间戳
-                            example: '1718350902019'
-                          type:
-                            type: string
-                            description: 环境变量的类型，可取值范围有：lookup, lookup_multi
-                            example: lookup
-                        required:
-                        - api_name
-                        - label
-                        - description
-                        - value
-                        - updated_at
+                        allOf:
+                        - $ref: '#/components/schemas/Item2'
                         description: 环境变量详情
       x-lark-access-tokens:
       - tenant
@@ -1487,76 +713,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            api_name:
-                              type: string
-                              description: 环境变量 API 名称
-                              example: globalParam_0b410b17704
-                            label:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 中文内容
-                                  example: 示例文本
-                                en_us:
-                                  type: string
-                                  description: 英文内容
-                                  example: Text
-                              required:
-                              - zh_cn
-                              - en_us
-                              description: 环境变量的名称
-                            description:
-                              type: string
-                              description: 描述
-                              example: Sample text
-                            value:
-                              type: string
-                              description: 返回 json marshal 后的字符串。 isEncrypted 为 「true」时，依然可以获取返回值。
-                              example: '[1757083131077684,1757085362739239,1757083720703032]'
-                            is_encrypted:
-                              type: boolean
-                              description: 是否加密，「type 」取值为 text, float 时才有效
-                              example: 'false'
-                            object_api_name:
-                              type: string
-                              description: 对象的 API 名称，「type 」取值为 lookup, lookup_multi 时才有效
-                              example: _user
-                            object_label:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 中文内容
-                                  example: 示例文本
-                                en_us:
-                                  type: string
-                                  description: 英文内容
-                                  example: Text
-                              required:
-                              - zh_cn
-                              - en_us
-                              description: 对象的名称，「type 」取值为 lookup, lookup_multi 时才有效
-                            created_at:
-                              type: integer
-                              description: 「创建时间」，日期时间字段。 使用 Unix 时间戳
-                              example: '1718350902019'
-                            updated_at:
-                              type: integer
-                              description: 「更新时间」，日期时间字段。 使用 Unix 时间戳
-                              example: '1718350902019'
-                            type:
-                              type: string
-                              description: 环境变量的类型，可取值范围有：lookup, lookup_multi
-                              example: lookup
-                          required:
-                          - api_name
-                          - label
-                          - description
-                          - value
-                          - updated_at
+                          $ref: '#/components/schemas/Item2'
                         description: 环境变量列表
                       total:
                         type: integer
@@ -1778,57 +935,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      items:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            success:
-                              type: boolean
-                              description: 是否成功
-                              example: 'true'
-                            id:
-                              type: string
-                              description: 记录 ID
-                              example: '1801464965461024'
-                            errors:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  code:
-                                    type: string
-                                    description: 错误码
-                                    example: '0'
-                                  message:
-                                    type: string
-                                    description: success
-                                    example: success
-                                  sub_code:
-                                    type: string
-                                    description: 权限错误时的细分 code
-                                    example: k_ec_00001
-                                  fields:
-                                    type: array
-                                    items:
-                                      type: string
-                                    description: 权限错误时的涉及的字段 APIID 集合
-                                required:
-                                - code
-                                - message
-                              description: 权限错误时的细分 code
-                          required:
-                          - success
-                        description: 处理结果
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -1882,57 +989,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      items:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            success:
-                              type: boolean
-                              description: 是否成功
-                              example: 'true'
-                            id:
-                              type: string
-                              description: 记录 ID
-                              example: '1801464965461024'
-                            errors:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  code:
-                                    type: string
-                                    description: 错误码
-                                    example: '0'
-                                  message:
-                                    type: string
-                                    description: success
-                                    example: success
-                                  sub_code:
-                                    type: string
-                                    description: 权限错误时的细分 code
-                                    example: k_ec_00001
-                                  fields:
-                                    type: array
-                                    items:
-                                      type: string
-                                    description: 权限错误时的涉及的字段 APIID 集合
-                                required:
-                                - code
-                                - message
-                              description: 权限错误时的细分 code
-                          required:
-                          - success
-                        description: 处理结果
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -1981,60 +1038,8 @@ paths:
                     type: string
                   description: 需要获取的字段，使用字段唯一标识符进行查询，关联字段可使用「.」进行下钻
                 filter:
-                  type: object
-                  properties:
-                    conditions:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          index:
-                            type: string
-                            description: 序号
-                            example: '1'
-                          left:
-                            type: object
-                            properties:
-                              type:
-                                type: string
-                                description: 类型
-                                example: metadataVariable
-                              settings:
-                                type: string
-                                description: 设置值
-                                example: '{\"fieldPath\":[{\"fieldApiName\": \"_id\",\"objectApiName\": \"_user\"}]}'
-                              display_names:
-                                type: array
-                                items:
-                                  type: string
-                                description: 左值/右值的展示名称
-                            description: 左值
-                          right:
-                            type: object
-                            properties:
-                              type:
-                                type: string
-                                description: 类型
-                                example: metadataVariable
-                              settings:
-                                type: string
-                                description: 设置值
-                                example: '{\"fieldPath\":[{\"fieldApiName\": \"_id\",\"objectApiName\": \"_user\"}]}'
-                              display_names:
-                                type: array
-                                items:
-                                  type: string
-                                description: 左值/右值的展示名称
-                            description: 右值
-                          operator:
-                            type: string
-                            description: 操作符
-                            example: equal
-                      description: 查询条件
-                    logic_expression:
-                      type: string
-                      description: 逻辑关系
-                      example: 1 and 2
+                  allOf:
+                  - $ref: '#/components/schemas/Filter'
                   description: 筛选条件，通过 JSON 格式指定条件
                 order_by:
                   type: array
@@ -2175,57 +1180,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      items:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            success:
-                              type: boolean
-                              description: 是否成功
-                              example: 'true'
-                            id:
-                              type: string
-                              description: 记录 ID
-                              example: '1801464965461024'
-                            errors:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  code:
-                                    type: string
-                                    description: 错误码
-                                    example: '0'
-                                  message:
-                                    type: string
-                                    description: success
-                                    example: success
-                                  sub_code:
-                                    type: string
-                                    description: 权限错误时的细分 code
-                                    example: k_ec_00001
-                                  fields:
-                                    type: array
-                                    items:
-                                      type: string
-                                    description: 权限错误时的涉及的字段 APIID 集合
-                                required:
-                                - code
-                                - message
-                              description: 权限错误时的细分 code
-                          required:
-                          - success
-                        description: 处理结果
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -2619,60 +1574,8 @@ paths:
                           type: string
                         description: 召回字段 APIID/APIName 列表
                       filter:
-                        type: object
-                        properties:
-                          conditions:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                index:
-                                  type: string
-                                  description: 序号
-                                  example: '1'
-                                left:
-                                  type: object
-                                  properties:
-                                    type:
-                                      type: string
-                                      description: 类型
-                                      example: metadataVariable
-                                    settings:
-                                      type: string
-                                      description: 设置值
-                                      example: '{\"fieldPath\":[{\"fieldApiName\": \"_id\",\"objectApiName\": \"_user\"}]}'
-                                    display_names:
-                                      type: array
-                                      items:
-                                        type: string
-                                      description: 左值/右值的展示名称
-                                  description: 左值
-                                right:
-                                  type: object
-                                  properties:
-                                    type:
-                                      type: string
-                                      description: 类型
-                                      example: metadataVariable
-                                    settings:
-                                      type: string
-                                      description: 设置值
-                                      example: '{\"fieldPath\":[{\"fieldApiName\": \"_id\",\"objectApiName\": \"_user\"}]}'
-                                    display_names:
-                                      type: array
-                                      items:
-                                        type: string
-                                      description: 左值/右值的展示名称
-                                  description: 右值
-                                operator:
-                                  type: string
-                                  description: 操作符
-                                  example: equal
-                            description: 查询条件
-                          logic_expression:
-                            type: string
-                            description: 逻辑关系
-                            example: 1 and 2
+                        allOf:
+                        - $ref: '#/components/schemas/Filter'
                         description: '过滤条件，序列化的结果{"filter": "「标准Criterion」"}'
                       order_by:
                         type: object
@@ -3140,60 +2043,8 @@ paths:
                               type: string
                             description: 授权部门 ID 列表
                           user_filter:
-                            type: object
-                            properties:
-                              conditions:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    index:
-                                      type: string
-                                      description: 序号
-                                      example: '1'
-                                    left:
-                                      type: object
-                                      properties:
-                                        type:
-                                          type: string
-                                          description: 类型
-                                          example: metadataVariable
-                                        settings:
-                                          type: string
-                                          description: 设置值
-                                          example: '{\"fieldPath\":[{\"fieldApiName\": \"_id\",\"objectApiName\": \"_user\"}]}'
-                                        display_names:
-                                          type: array
-                                          items:
-                                            type: string
-                                          description: 左值/右值的展示名称
-                                      description: 左值
-                                    right:
-                                      type: object
-                                      properties:
-                                        type:
-                                          type: string
-                                          description: 类型
-                                          example: metadataVariable
-                                        settings:
-                                          type: string
-                                          description: 设置值
-                                          example: '{\"fieldPath\":[{\"fieldApiName\": \"_id\",\"objectApiName\": \"_user\"}]}'
-                                        display_names:
-                                          type: array
-                                          items:
-                                            type: string
-                                          description: 左值/右值的展示名称
-                                      description: 右值
-                                    operator:
-                                      type: string
-                                      description: 操作符
-                                      example: equal
-                                description: 查询条件
-                              logic_expression:
-                                type: string
-                                description: 逻辑关系
-                                example: 1 and 2
+                            allOf:
+                            - $ref: '#/components/schemas/Filter'
                             description: 自定义授权用户规则
                           user_display_infos:
                             type: array
@@ -4601,72 +3452,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              description: 数据表名，如 student
-                              example: student
-                            description:
-                              type: string
-                              description: 数据表描述
-                              example: studect数据表
-                            columns:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  name:
-                                    type: string
-                                    description: 列名
-                                    example: column_name
-                                  description:
-                                    type: string
-                                    description: 列描述
-                                    example: column_name的描述
-                                  data_type:
-                                    type: string
-                                    description: 数据库数据类型
-                                    example: varchar
-                                  is_primary_key:
-                                    type: boolean
-                                    description: 是否是主键
-                                    example: 'false'
-                                  is_unique:
-                                    type: boolean
-                                    description: 是否唯一
-                                    example: 'false'
-                                  is_auto_increment:
-                                    type: boolean
-                                    description: 是否是自增
-                                    example: 'false'
-                                  is_array:
-                                    type: boolean
-                                    description: 是否是数组类型
-                                    example: 'false'
-                                  is_allow_null:
-                                    type: boolean
-                                    description: 是否允许为空
-                                    example: 'false'
-                                  default_value:
-                                    type: string
-                                    description: 默认值
-                                    example: ' '
-                                required:
-                                - name
-                                - description
-                                - data_type
-                                - is_primary_key
-                                - is_unique
-                                - is_auto_increment
-                                - is_array
-                                - is_allow_null
-                                - default_value
-                              description: 数据表列
-                          required:
-                          - name
-                          - description
-                          - columns
+                          $ref: '#/components/schemas/Data5'
                         description: 数据表列表
                     required:
                     - has_more
@@ -5107,72 +3893,7 @@ paths:
                   msg:
                     type: string
                   data:
-                    type: object
-                    properties:
-                      name:
-                        type: string
-                        description: 数据表名，如 student
-                        example: student
-                      description:
-                        type: string
-                        description: 数据表描述
-                        example: 这是student表的描述
-                      columns:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              description: 列名
-                              example: column_name
-                            description:
-                              type: string
-                              description: 列描述
-                              example: column_name的描述
-                            data_type:
-                              type: string
-                              description: 数据库数据类型
-                              example: varchar
-                            is_primary_key:
-                              type: boolean
-                              description: 是否是主键
-                              example: 'false'
-                            is_unique:
-                              type: boolean
-                              description: 是否唯一
-                              example: 'false'
-                            is_auto_increment:
-                              type: boolean
-                              description: 是否是自增
-                              example: 'false'
-                            is_array:
-                              type: boolean
-                              description: 是否是数组类型
-                              example: 'false'
-                            is_allow_null:
-                              type: boolean
-                              description: 是否允许为空
-                              example: 'false'
-                            default_value:
-                              type: string
-                              description: 默认值
-                              example: ' '
-                          required:
-                          - name
-                          - description
-                          - data_type
-                          - is_primary_key
-                          - is_unique
-                          - is_auto_increment
-                          - is_array
-                          - is_allow_null
-                          - default_value
-                        description: 数据表列
-                    required:
-                    - name
-                    - description
-                    - columns
+                    $ref: '#/components/schemas/Data5'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -5353,3 +4074,633 @@ paths:
         msg: param is invalid
       x-lark-rate-limit:
         tier: 7
+components:
+  schemas:
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    Data:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+          description: 审计日志查询结果列表详情信息
+        total:
+          type: string
+          description: 审计日志查询总条数
+          example: '10'
+    Schema2:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data2'
+    Item:
+      type: object
+      properties:
+        log_id:
+          type: string
+          description: 审计日志ID
+          example: '7376574450886557740'
+        op_time:
+          type: string
+          description: 操作时间
+          example: '1723634726874'
+        log_type:
+          type: string
+          description: 日志类型:10000-全部类型;10001-企业管理; 10002-登录日志;10003-应用管理
+          example: '10000'
+        operator:
+          type: object
+          properties:
+            id:
+              type: string
+              description: 用户ID
+              example: '1768491480010814'
+            name:
+              type: string
+              description: 用户名称
+              example: 郭晋
+            tenant_id:
+              type: string
+              description: 租户ID
+              example: '79844'
+            email:
+              type: string
+              description: 用户邮箱
+              example: guojin.jim@bytedance.com
+          description: 操作人
+        outsider:
+          type: boolean
+          description: 是否为外部用户,true代表是外部用户
+        login_type:
+          type: string
+          description: 登录类型:11001-飞书登录;11003-账号密码登录
+          example: '11001'
+        lark_tenant_id:
+          type: string
+          description: 飞书租户ID
+          example: '123'
+        apaas_tenant_id:
+          type: string
+          description: apaas租户ID
+          example: '23333'
+        user_geo:
+          type: string
+          description: 用户地理信息
+          example: America/Chicago
+        client_ip:
+          type: string
+          description: 客户端IP
+          example: 192.168.1.1
+        ip_loc:
+          type: string
+          description: IP位置
+          example: 中国北京
+        ip_provider:
+          type: string
+          description: IP提供商
+          example: ISP_com
+        referer:
+          type: string
+          description: 引用页面
+          example: https://example.com/referer
+        origin:
+          type: string
+          description: 源页面
+          example: https://example.com/origin
+        api_path:
+          type: string
+          description: 路由路径
+          example: /api/xxx
+        full_path:
+          type: string
+          description: 网关路径
+          example: /api/xxx
+        user_agent:
+          type: string
+          description: 用户代理
+          example: Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148
+        device_id:
+          type: string
+          description: 设备ID
+          example: device_1234
+        web_device_id:
+          type: string
+          description: web端设备ID
+          example: webDevice_1234
+        terminal_type:
+          type: string
+          description: 终端类型:13002-PC类型;13003-Web类型
+          example: '2'
+        os_type:
+          type: string
+          description: 系统类型:14002-window;14001-未知
+          example: '14002'
+        os_version:
+          type: string
+          description: 系统版本
+          example: '14.6'
+        module:
+          type: string
+          description: 功能模块
+          example: '17001'
+        data_object:
+          type: string
+          description: 数据对象
+          example: object_api_aaa
+        audit_scope:
+          type: string
+          description: 审计域:15001-企业管理后台;15002-应用管理后 台;15003-应用开发平台
+          example: '15001'
+        tenant_id:
+          type: string
+          description: 租户ID
+          example: '23335'
+        namespace:
+          type: string
+          description: 应用唯一标识
+          example: package_aacc
+        env_type:
+          type: string
+          description: 环境类型:16001-沙箱环境;16003-线上环境
+          example: '16003'
+        op_type:
+          type: string
+          description: 事件类型
+          example: '19001'
+        op_detail:
+          type: string
+          x-lark-original-type: map
+          description: 操作详情内容
+        op_source:
+          type: string
+          description: 操作源:20001-前端;20004-openapi
+          example: '20001'
+        status:
+          type: string
+          description: 操作状态:18001-成功;18002-失败
+          example: '18001'
+        failed_reason_i18n:
+          type: string
+          x-lark-original-type: map
+          description: 失败原因
+        data_changes:
+          type: array
+          items:
+            type: string
+          description: 数据变化(旧值和新值)
+        app_name:
+          type: string
+          x-lark-original-type: map
+          description: 应用名称
+        keyword_field_app_version:
+          type: string
+          description: 应用版本号
+          example: v1.2.3
+        keyword_field_functional_sub_module:
+          type: string
+          description: 审计日志事件子模块
+          example: '223'
+    Data2:
+      type: object
+      properties:
+        data:
+          allOf:
+          - $ref: '#/components/schemas/Data3'
+          description: 数据变更日志详情信息
+    Data3:
+      type: object
+      properties:
+        log_id:
+          type: string
+          description: 审计日志ID
+          example: '7376574450886557740'
+        basic_info:
+          allOf:
+          - $ref: '#/components/schemas/BasicInfo'
+          description: 日志基础信息
+        op_info:
+          allOf:
+          - $ref: '#/components/schemas/OpInfo'
+          description: 审计日志操作信息
+        login_info:
+          type: object
+          properties:
+            login_type:
+              type: string
+              description: 登录类型：11001-飞书登录；11003-账号密码登录
+              example: '11001'
+          description: 登录类型信息
+        device_info:
+          type: object
+          properties:
+            device_id:
+              type: string
+              description: 设备ID
+              example: device_1234
+            web_device_id:
+              type: string
+              description: web端设备ID
+              example: webDevice_1234
+            terminal_type:
+              type: string
+              description: 终端类型：13002-PC类型；13003-Web类型
+              example: '2'
+            os_type:
+              type: string
+              description: 系统类型：14002-window；14001-未知
+              example: '14002'
+            os_version:
+              type: string
+              description: 系统版本
+              example: '14.6'
+          description: 设备信息
+        net_info:
+          type: object
+          properties:
+            client_ip:
+              type: string
+              description: 客户端IP
+              example: 192.168.1.1
+            ip_loc:
+              type: string
+              description: IP位置
+              example: 中国北京
+            ip_provider:
+              type: string
+              description: IP提供商
+              example: ISP_com
+            referer:
+              type: string
+              description: 引用页面
+              example: https://example.com/referer
+            origin:
+              type: string
+              description: 源页面
+              example: https://example.com/origin
+            user_agent:
+              type: string
+              description: 用户代理
+              example: Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148
+          description: 网络信息
+      description: 数据变更日志详情信息
+    Filter:
+      type: object
+      properties:
+        conditions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item3'
+          description: 查询条件
+        logic_expression:
+          type: string
+          description: 逻辑关系
+          example: 1 and 2
+      description: 筛选条件，通过 JSON 格式指定条件
+    Schema3:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data4'
+    Item2:
+      type: object
+      properties:
+        api_name:
+          type: string
+          description: 环境变量 API 名称
+          example: globalParam_0b410b17704
+        label:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文内容
+              example: 示例文本
+            en_us:
+              type: string
+              description: 英文内容
+              example: Text
+          required:
+          - zh_cn
+          - en_us
+          description: 环境变量的名称
+        description:
+          type: string
+          description: 描述
+          example: Sample text
+        value:
+          type: string
+          description: 返回 json marshal 后的字符串。 isEncrypted 为 「true」时，依然可以获取返回值。
+          example: '[1757083131077684,1757085362739239,1757083720703032]'
+        is_encrypted:
+          type: boolean
+          description: 是否加密，「type 」取值为 text, float 时才有效
+          example: 'false'
+        object_api_name:
+          type: string
+          description: 对象的 API 名称，「type 」取值为 lookup, lookup_multi 时才有效
+          example: _user
+        object_label:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文内容
+              example: 示例文本
+            en_us:
+              type: string
+              description: 英文内容
+              example: Text
+          required:
+          - zh_cn
+          - en_us
+          description: 对象的名称，「type 」取值为 lookup, lookup_multi 时才有效
+        created_at:
+          type: integer
+          description: 「创建时间」，日期时间字段。 使用 Unix 时间戳
+          example: '1718350902019'
+        updated_at:
+          type: integer
+          description: 「更新时间」，日期时间字段。 使用 Unix 时间戳
+          example: '1718350902019'
+        type:
+          type: string
+          description: 环境变量的类型，可取值范围有：lookup, lookup_multi
+          example: lookup
+      required:
+      - api_name
+      - label
+      - description
+      - value
+      - updated_at
+      description: 环境变量详情
+    Data4:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item4'
+          description: 处理结果
+    Item3:
+      type: object
+      properties:
+        index:
+          type: string
+          description: 序号
+          example: '1'
+        left:
+          type: object
+          properties:
+            type:
+              type: string
+              description: 类型
+              example: metadataVariable
+            settings:
+              type: string
+              description: 设置值
+              example: '{\"fieldPath\":[{\"fieldApiName\": \"_id\",\"objectApiName\": \"_user\"}]}'
+            display_names:
+              type: array
+              items:
+                type: string
+              description: 左值/右值的展示名称
+          description: 左值
+        right:
+          type: object
+          properties:
+            type:
+              type: string
+              description: 类型
+              example: metadataVariable
+            settings:
+              type: string
+              description: 设置值
+              example: '{\"fieldPath\":[{\"fieldApiName\": \"_id\",\"objectApiName\": \"_user\"}]}'
+            display_names:
+              type: array
+              items:
+                type: string
+              description: 左值/右值的展示名称
+          description: 右值
+        operator:
+          type: string
+          description: 操作符
+          example: equal
+    Data5:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 数据表名，如 student
+          example: student
+        description:
+          type: string
+          description: 数据表描述
+          example: studect数据表
+        columns:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item5'
+          description: 数据表列
+      required:
+      - name
+      - description
+      - columns
+    OpInfo:
+      type: object
+      properties:
+        operator:
+          type: object
+          properties:
+            id:
+              type: string
+              description: 用户ID
+              example: '1768491480010814'
+            name:
+              type: string
+              description: 用户名称
+              example: 郭晋
+            tenant_id:
+              type: string
+              description: 租户ID
+              example: '79844'
+            email:
+              type: string
+              description: 用户邮箱
+              example: guojin.jim@bytedance.com
+          description: 操作人
+        outsider:
+          type: boolean
+          description: 是否为外部用户，true代表是外部用户
+          example: 'true'
+        op_detail:
+          type: string
+          x-lark-original-type: map
+          description: 操作详情内容
+        status:
+          type: string
+          description: 操作状态：18001-成功；18002-失败
+          example: '18001'
+        failed_reason:
+          type: string
+          description: 失败原因
+          example: 登录失败
+        failed_reason_i18n:
+          type: string
+          x-lark-original-type: map
+          description: 多语类型失败原因
+        op_time:
+          type: string
+          description: 操作时间
+          example: '1723634726874'
+        data_object:
+          type: string
+          description: 数据对象
+          example: object_api_aaa
+        op_source:
+          type: string
+          description: 操作源：20001-前端；20004-openapi
+          example: '20001'
+        data_changes:
+          type: array
+          items:
+            type: string
+          description: 数据变化(旧值和新值)
+      description: 审计日志操作信息
+    Item4:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: 是否成功
+          example: 'true'
+        id:
+          type: string
+          description: 记录 ID
+          example: '1801464965461024'
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              code:
+                type: string
+                description: 错误码
+                example: '0'
+              message:
+                type: string
+                description: success
+                example: success
+              sub_code:
+                type: string
+                description: 权限错误时的细分 code
+                example: k_ec_00001
+              fields:
+                type: array
+                items:
+                  type: string
+                description: 权限错误时的涉及的字段 APIID 集合
+            required:
+            - code
+            - message
+          description: 权限错误时的细分 code
+      required:
+      - success
+    Item5:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 列名
+          example: column_name
+        description:
+          type: string
+          description: 列描述
+          example: column_name的描述
+        data_type:
+          type: string
+          description: 数据库数据类型
+          example: varchar
+        is_primary_key:
+          type: boolean
+          description: 是否是主键
+          example: 'false'
+        is_unique:
+          type: boolean
+          description: 是否唯一
+          example: 'false'
+        is_auto_increment:
+          type: boolean
+          description: 是否是自增
+          example: 'false'
+        is_array:
+          type: boolean
+          description: 是否是数组类型
+          example: 'false'
+        is_allow_null:
+          type: boolean
+          description: 是否允许为空
+          example: 'false'
+        default_value:
+          type: string
+          description: 默认值
+          example: ' '
+      required:
+      - name
+      - description
+      - data_type
+      - is_primary_key
+      - is_unique
+      - is_auto_increment
+      - is_array
+      - is_allow_null
+      - default_value
+    BasicInfo:
+      type: object
+      properties:
+        log_type:
+          type: string
+          description: 日志类型：10000-全部类型；10001-企业管理；10002-登录日志；10003-应用管理
+          example: '10000'
+        audit_scope:
+          type: string
+          description: 审计域：15001-企业管理后台；15002-应用管理后台；15003-应用开发平台
+          example: '15001'
+        env_type:
+          type: string
+          description: 环境类型：16001-沙箱环境；16003-线上环境
+          example: '16003'
+        app_id:
+          type: string
+          description: 应用id
+          example: app123
+        module:
+          type: string
+          description: 审计日志功能模块
+          example: '17001'
+        op_type:
+          type: string
+          description: 事件类型
+          example: '19001'
+        app_name:
+          type: string
+          x-lark-original-type: map
+          description: 应用名称
+      description: 日志基础信息

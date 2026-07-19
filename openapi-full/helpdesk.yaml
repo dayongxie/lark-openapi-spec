@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: helpdesk
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -114,64 +114,8 @@ paths:
                     type: object
                     properties:
                       agent_schedule:
-                        type: object
-                        properties:
-                          status:
-                            type: integer
-                            description: status of agent
-                          agent:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: user id
-                              avatar_url:
-                                type: string
-                                description: user avartal url
-                              name:
-                                type: string
-                                description: user name
-                              email:
-                                type: string
-                                description: user email
-                              department:
-                                type: string
-                                description: user department
-                              company_name:
-                                type: string
-                                description: company
-                            description: agent info
-                          schedule:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                start_time:
-                                  type: string
-                                  description: 开始时间, format 00:00 - 23:59
-                                end_time:
-                                  type: string
-                                  description: 结束时间, format 00:00 - 23:59
-                                weekday:
-                                  type: integer
-                                  description: 星期几, 1 - Monday, 2 - Tuesday, 3 - Wednesday, 4 - Thursday, 5 - Friday, 6 -
-                                    Saturday, 7 - Sunday, 9 - Everday, 10 - Weekday, 11 - Weekend
-                            description: day schedule
-                          agent_skills:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: skill id
-                                name:
-                                  type: string
-                                  description: name of agent skill
-                                is_default:
-                                  type: boolean
-                                  description: is default group type
-                            description: agent skills
+                        allOf:
+                        - $ref: '#/components/schemas/AgentSchedule'
                         description: schedules of an agent
       x-lark-access-tokens:
       - tenant
@@ -475,64 +419,7 @@ paths:
                       agent_schedules:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            status:
-                              type: integer
-                              description: status of agent
-                            agent:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: user id
-                                avatar_url:
-                                  type: string
-                                  description: user avartal url
-                                name:
-                                  type: string
-                                  description: user name
-                                email:
-                                  type: string
-                                  description: user email
-                                department:
-                                  type: string
-                                  description: user department
-                                company_name:
-                                  type: string
-                                  description: company
-                              description: agent info
-                            schedule:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  start_time:
-                                    type: string
-                                    description: 开始时间, format 00:00 - 23:59
-                                  end_time:
-                                    type: string
-                                    description: 结束时间, format 00:00 - 23:59
-                                  weekday:
-                                    type: integer
-                                    description: 星期几, 1 - Monday, 2 - Tuesday, 3 - Wednesday, 4 - Thursday, 5 - Friday, 6
-                                      - Saturday, 7 - Sunday, 9 - Everday, 10 - Weekday, 11 - Weekend
-                              description: day schedule
-                            agent_skills:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: string
-                                    description: skill id
-                                  name:
-                                    type: string
-                                    description: name of agent skill
-                                  is_default:
-                                    type: boolean
-                                    description: is default group type
-                              description: agent skills
+                          $ref: '#/components/schemas/AgentSchedule'
                         description: schedule of all agent
       x-lark-access-tokens:
       - tenant
@@ -1658,134 +1545,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      faq:
-                        type: object
-                        properties:
-                          faq_id:
-                            type: string
-                            description: faq id
-                          id:
-                            type: string
-                            description: faq id, for backward compatibility
-                          helpdesk_id:
-                            type: string
-                            description: helpdesk id
-                          question:
-                            type: string
-                            description: faq question
-                          answer:
-                            type: string
-                            description: faq answer in plain text format
-                          answer_richtext:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                content:
-                                  type: string
-                                  description: 内容
-                                type:
-                                  type: string
-                                  description: 类型
-                            description: faq answer in richtext format, if any
-                          create_time:
-                            type: integer
-                            description: create time
-                          update_time:
-                            type: integer
-                            description: update time
-                          categories:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                category_id:
-                                  type: string
-                                  description: category id
-                                id:
-                                  type: string
-                                  description: category id, for backward compatibility
-                                name:
-                                  type: string
-                                  description: category name
-                                parent_id:
-                                  type: string
-                                  description: parent category id, if any
-                                helpdesk_id:
-                                  type: string
-                                  description: helpdesk id
-                                language:
-                                  type: string
-                                  description: category language
-                              required:
-                              - category_id
-                              - id
-                              - name
-                              - parent_id
-                              - helpdesk_id
-                            description: list of categories that faq belongs to
-                          tags:
-                            type: array
-                            items:
-                              type: string
-                            description: faq tags
-                          expire_time:
-                            type: integer
-                            description: expire time
-                          update_user:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: user id
-                              avatar_url:
-                                type: string
-                                description: user avartal url
-                              name:
-                                type: string
-                                description: user name
-                              department:
-                                type: string
-                                description: user department
-                              city:
-                                type: string
-                                description: 城市
-                              country:
-                                type: string
-                                description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                            description: update user
-                          create_user:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: user id
-                              avatar_url:
-                                type: string
-                                description: user avartal url
-                              name:
-                                type: string
-                                description: user name
-                              department:
-                                type: string
-                                description: user department
-                              city:
-                                type: string
-                                description: 城市
-                              country:
-                                type: string
-                                description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                            description: create user
-                        description: faq detail
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -1870,123 +1630,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            faq_id:
-                              type: string
-                              description: faq id
-                            id:
-                              type: string
-                              description: faq id, for backward compatibility
-                            helpdesk_id:
-                              type: string
-                              description: helpdesk id
-                            question:
-                              type: string
-                              description: faq question
-                            answer:
-                              type: string
-                              description: faq answer in plain text format
-                            answer_richtext:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  content:
-                                    type: string
-                                    description: 内容
-                                  type:
-                                    type: string
-                                    description: 类型
-                              description: faq answer in richtext format, if any
-                            create_time:
-                              type: integer
-                              description: create time
-                            update_time:
-                              type: integer
-                              description: update time
-                            categories:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  category_id:
-                                    type: string
-                                    description: category id
-                                  id:
-                                    type: string
-                                    description: category id, for backward compatibility
-                                  name:
-                                    type: string
-                                    description: category name
-                                  parent_id:
-                                    type: string
-                                    description: parent category id, if any
-                                  helpdesk_id:
-                                    type: string
-                                    description: helpdesk id
-                                  language:
-                                    type: string
-                                    description: category language
-                                required:
-                                - category_id
-                                - id
-                                - name
-                                - parent_id
-                                - helpdesk_id
-                              description: list of categories that faq belongs to
-                            tags:
-                              type: array
-                              items:
-                                type: string
-                              description: faq tags
-                            expire_time:
-                              type: integer
-                              description: expire time
-                            update_user:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: user id
-                                avatar_url:
-                                  type: string
-                                  description: user avartal url
-                                name:
-                                  type: string
-                                  description: user name
-                                department:
-                                  type: string
-                                  description: user department
-                                city:
-                                  type: string
-                                  description: 城市
-                                country:
-                                  type: string
-                                  description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                              description: update user
-                            create_user:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: user id
-                                avatar_url:
-                                  type: string
-                                  description: user avartal url
-                                name:
-                                  type: string
-                                  description: user name
-                                department:
-                                  type: string
-                                  description: user department
-                                city:
-                                  type: string
-                                  description: 城市
-                                country:
-                                  type: string
-                                  description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                              description: create user
+                          $ref: '#/components/schemas/Faq'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -2067,134 +1711,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      faq:
-                        type: object
-                        properties:
-                          faq_id:
-                            type: string
-                            description: faq id
-                          id:
-                            type: string
-                            description: faq id, for backward compatibility
-                          helpdesk_id:
-                            type: string
-                            description: helpdesk id
-                          question:
-                            type: string
-                            description: faq question
-                          answer:
-                            type: string
-                            description: faq answer in plain text format
-                          answer_richtext:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                content:
-                                  type: string
-                                  description: 内容
-                                type:
-                                  type: string
-                                  description: 类型
-                            description: faq answer in richtext format, if any
-                          create_time:
-                            type: integer
-                            description: create time
-                          update_time:
-                            type: integer
-                            description: update time
-                          categories:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                category_id:
-                                  type: string
-                                  description: category id
-                                id:
-                                  type: string
-                                  description: category id, for backward compatibility
-                                name:
-                                  type: string
-                                  description: category name
-                                parent_id:
-                                  type: string
-                                  description: parent category id, if any
-                                helpdesk_id:
-                                  type: string
-                                  description: helpdesk id
-                                language:
-                                  type: string
-                                  description: category language
-                              required:
-                              - category_id
-                              - id
-                              - name
-                              - parent_id
-                              - helpdesk_id
-                            description: list of categories that faq belongs to
-                          tags:
-                            type: array
-                            items:
-                              type: string
-                            description: faq tags
-                          expire_time:
-                            type: integer
-                            description: expire time
-                          update_user:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: user id
-                              avatar_url:
-                                type: string
-                                description: user avartal url
-                              name:
-                                type: string
-                                description: user name
-                              department:
-                                type: string
-                                description: user department
-                              city:
-                                type: string
-                                description: 城市
-                              country:
-                                type: string
-                                description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                            description: update user
-                          create_user:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: user id
-                              avatar_url:
-                                type: string
-                                description: user avartal url
-                              name:
-                                type: string
-                                description: user name
-                              department:
-                                type: string
-                                description: user department
-                              city:
-                                type: string
-                                description: 城市
-                              country:
-                                type: string
-                                description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                            description: create user
-                        description: faq detail
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -2413,123 +1930,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            faq_id:
-                              type: string
-                              description: faq id
-                            id:
-                              type: string
-                              description: faq id, for backward compatibility
-                            helpdesk_id:
-                              type: string
-                              description: helpdesk id
-                            question:
-                              type: string
-                              description: faq question
-                            answer:
-                              type: string
-                              description: faq answer in plain text format
-                            answer_richtext:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  content:
-                                    type: string
-                                    description: 内容
-                                  type:
-                                    type: string
-                                    description: 类型
-                              description: faq answer in richtext format, if any
-                            create_time:
-                              type: integer
-                              description: create time
-                            update_time:
-                              type: integer
-                              description: update time
-                            categories:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  category_id:
-                                    type: string
-                                    description: category id
-                                  id:
-                                    type: string
-                                    description: category id, for backward compatibility
-                                  name:
-                                    type: string
-                                    description: category name
-                                  parent_id:
-                                    type: string
-                                    description: parent category id, if any
-                                  helpdesk_id:
-                                    type: string
-                                    description: helpdesk id
-                                  language:
-                                    type: string
-                                    description: category language
-                                required:
-                                - category_id
-                                - id
-                                - name
-                                - parent_id
-                                - helpdesk_id
-                              description: list of categories that faq belongs to
-                            tags:
-                              type: array
-                              items:
-                                type: string
-                              description: faq tags
-                            expire_time:
-                              type: integer
-                              description: expire time
-                            update_user:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: user id
-                                avatar_url:
-                                  type: string
-                                  description: user avartal url
-                                name:
-                                  type: string
-                                  description: user name
-                                department:
-                                  type: string
-                                  description: user department
-                                city:
-                                  type: string
-                                  description: 城市
-                                country:
-                                  type: string
-                                  description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                              description: update user
-                            create_user:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: user id
-                                avatar_url:
-                                  type: string
-                                  description: user avartal url
-                                name:
-                                  type: string
-                                  description: user name
-                                department:
-                                  type: string
-                                  description: user department
-                                city:
-                                  type: string
-                                  description: 城市
-                                country:
-                                  type: string
-                                  description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                              description: create user
+                          $ref: '#/components/schemas/Faq'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -2703,167 +2104,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                id:
-                  type: string
-                  description: 唯一ID
-                  example: '6981801914270744596'
-                job_name:
-                  type: string
-                  description: 任务名称
-                  example: 测试推送任务
-                status:
-                  type: integer
-                  description: 0(草稿)、1(等待审批)、 2(审批未通过)、3(正在发送中)、4(发送完成)、5(等待设置发送时间)、6(取消发送)、7(新人入职执行发送)、8(等待倒计时发送)
-                  example: '0'
-                create_user:
-                  type: object
-                  properties:
-                    user_id:
-                      type: string
-                      description: 用户id
-                      example: ou_7277fd1262bfafc363d5b2a1f9c2ac90
-                    avatar_url:
-                      type: string
-                      description: 头像地址
-                      example: http://*.com/*.png
-                    name:
-                      type: string
-                      description: 用户名称
-                      example: test
-                  description: 创建人
-                  example: '{"avatar_url":"","name":"","user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"}'
-                created_at:
-                  type: string
-                  description: 创建时间（毫秒时间戳）
-                  example: '1626332244719'
-                update_user:
-                  type: object
-                  properties:
-                    user_id:
-                      type: string
-                      description: 用户id
-                      example: ou_7277fd1262bfafc363d5b2a1f9c2ac90
-                    avatar_url:
-                      type: string
-                      description: 头像地址
-                      example: http://*.com/*.png
-                    name:
-                      type: string
-                      description: 用户名称
-                      example: test
-                  description: 更新用户
-                  example: '{"avatar_url":"","name":"","user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"}'
-                updated_at:
-                  type: string
-                  description: 更新时间（毫秒时间戳）
-                  example: '1626332244719'
-                target_user_count:
-                  type: integer
-                  description: 目标推送用户
-                  example: '1'
-                sent_user_count:
-                  type: integer
-                  description: 已推送用户总数
-                  example: '1'
-                read_user_count:
-                  type: integer
-                  description: 已读用户总数
-                  example: '1'
-                send_at:
-                  type: string
-                  description: 推送任务触发时间（毫秒时间戳）
-                  example: '1626332244719'
-                push_content:
-                  type: string
-                  description: 推送内容，详见：https://open.feishu.cn/tool/cardbuilder?from=howtoguide
-                  example: '{   "config": {     "wide_screen_mode": true   },   "elements": [     {       "tag": "div",       "text":
-                    {         "tag": "lark_md",         "content": "[飞书](https://www.feishu.cn)整合即时沟通、日历、音视频会议、云文档、云盘、工作台等功能于一体，成就组织和个人，更高效、更愉悦。"       }     }   ]
-                    }'
-                push_type:
-                  type: integer
-                  description: 0（定时推送：push_scope不能等于3） 1（新人入职推送：push_scope必须等于1或者3；new_staff_scope_type不能为空）
-                  example: '0'
-                push_scope_type:
-                  type: integer
-                  description: 推送范围（服务台私信） 0：组织内全部成员（user_list和department_list必须为空） 1：不推送任何成员（user_list和department_list必须为空，chat_list不可为空）
-                    2：推送到部分成员（user_list或department_list不能为空） 3：入职新人 以上四种状态，chat_list都相对独立，只有在推送范围为1时，必须需要设置chat_list
-                  example: '0'
-                new_staff_scope_type:
-                  type: integer
-                  description: 新人入职范围类型（push_type为1时生效） 0：组织内所有新人 1：组织内特定的部门（new_staff_scope_department_list 字段不能为空）
-                  example: '0'
-                new_staff_scope_department_list:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      department_id:
-                        type: string
-                        description: 部门ID
-                        example: od_7277fd1262bfafc363d5b2a1f9c2ac90
-                      name:
-                        type: string
-                        description: 部门名称
-                        example: 测试部门
-                  description: 新人入职生效部门列表
-                  example: '[{"department_id":"od_7c1a2815c9846b5e518b950de0e62de8"}]'
-                user_list:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      user_id:
-                        type: string
-                        description: 用户id
-                        example: ou_7277fd1262bfafc363d5b2a1f9c2ac90
-                      avatar_url:
-                        type: string
-                        description: 头像地址
-                        example: http://*.com/*.png
-                      name:
-                        type: string
-                        description: 用户名称
-                        example: test
-                  description: push推送到成员列表
-                  example: '[{"user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"}]'
-                department_list:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      department_id:
-                        type: string
-                        description: 部门ID
-                        example: od_7277fd1262bfafc363d5b2a1f9c2ac90
-                      name:
-                        type: string
-                        description: 部门名称
-                        example: 测试部门
-                  description: push推送到的部门信息列表
-                  example: '[{"department_id":"od_7c1a2815c9846b5e518b950de0e62de8"}]'
-                chat_list:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      chat_id:
-                        type: string
-                        description: 会话ID
-                        example: oc_7277fd1262bfafc363d5b2a1f9c2ac90
-                        x-lark-id-types:
-                          chat_id: chat
-                      name:
-                        type: string
-                        description: 会话名称
-                        example: 测试群聊
-                  description: push推送到的会话列表(群)
-                  example: '[{"chat_id":"oc_7c1a2815c9846b5e518b950de0e62de8"}]'
-                ext:
-                  type: string
-                  description: 预留扩展字段
-                  example: '{}'
+              $ref: '#/components/schemas/Schema'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -3081,167 +2322,8 @@ paths:
                     type: object
                     properties:
                       notification:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 唯一ID
-                            example: '6981801914270744596'
-                          job_name:
-                            type: string
-                            description: 任务名称
-                            example: 测试推送任务
-                          status:
-                            type: integer
-                            description: 0(草稿)、1(等待审批)、 2(审批未通过)、3(正在发送中)、4(发送完成)、5(等待设置发送时间)、6(取消发送)、7(新人入职执行发送)、8(等待倒计时发送)
-                            example: '0'
-                          create_user:
-                            type: object
-                            properties:
-                              user_id:
-                                type: string
-                                description: 用户id
-                                example: ou_7277fd1262bfafc363d5b2a1f9c2ac90
-                              avatar_url:
-                                type: string
-                                description: 头像地址
-                                example: http://*.com/*.png
-                              name:
-                                type: string
-                                description: 用户名称
-                                example: test
-                            description: 创建人
-                            example: '{"avatar_url":"","name":"","user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"}'
-                          created_at:
-                            type: string
-                            description: 创建时间（毫秒时间戳）
-                            example: '1626332244719'
-                          update_user:
-                            type: object
-                            properties:
-                              user_id:
-                                type: string
-                                description: 用户id
-                                example: ou_7277fd1262bfafc363d5b2a1f9c2ac90
-                              avatar_url:
-                                type: string
-                                description: 头像地址
-                                example: http://*.com/*.png
-                              name:
-                                type: string
-                                description: 用户名称
-                                example: test
-                            description: 更新用户
-                            example: '{"avatar_url":"","name":"","user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"}'
-                          updated_at:
-                            type: string
-                            description: 更新时间（毫秒时间戳）
-                            example: '1626332244719'
-                          target_user_count:
-                            type: integer
-                            description: 目标推送用户
-                            example: '1'
-                          sent_user_count:
-                            type: integer
-                            description: 已推送用户总数
-                            example: '1'
-                          read_user_count:
-                            type: integer
-                            description: 已读用户总数
-                            example: '1'
-                          send_at:
-                            type: string
-                            description: 推送任务触发时间（毫秒时间戳）
-                            example: '1626332244719'
-                          push_content:
-                            type: string
-                            description: 推送内容，详见：https://open.feishu.cn/tool/cardbuilder?from=howtoguide
-                            example: '{   "config": {     "wide_screen_mode": true   },   "elements": [     {       "tag":
-                              "div",       "text": {         "tag": "lark_md",         "content": "[飞书](https://www.feishu.cn)整合即时沟通、日历、音视频会议、云文档、云盘、工作台等功能于一体，成就组织和个人，更高效、更愉悦。"       }     }   ]
-                              }'
-                          push_type:
-                            type: integer
-                            description: 0（定时推送：push_scope不能等于3） 1（新人入职推送：push_scope必须等于1或者3；new_staff_scope_type不能为空）
-                            example: '0'
-                          push_scope_type:
-                            type: integer
-                            description: 推送范围（服务台私信） 0：组织内全部成员（user_list和department_list必须为空） 1：不推送任何成员（user_list和department_list必须为空，chat_list不可为空）
-                              2：推送到部分成员（user_list或department_list不能为空） 3：入职新人 以上四种状态，chat_list都相对独立，只有在推送范围为1时，必须需要设置chat_list
-                            example: '0'
-                          new_staff_scope_type:
-                            type: integer
-                            description: 新人入职范围类型（push_type为1时生效） 0：组织内所有新人 1：组织内特定的部门（new_staff_scope_department_list 字段不能为空）
-                            example: '0'
-                          new_staff_scope_department_list:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                department_id:
-                                  type: string
-                                  description: 部门ID
-                                  example: od_7277fd1262bfafc363d5b2a1f9c2ac90
-                                name:
-                                  type: string
-                                  description: 部门名称
-                                  example: 测试部门
-                            description: 新人入职生效部门列表
-                            example: '[{"department_id":"od_7c1a2815c9846b5e518b950de0e62de8"}]'
-                          user_list:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                user_id:
-                                  type: string
-                                  description: 用户id
-                                  example: ou_7277fd1262bfafc363d5b2a1f9c2ac90
-                                avatar_url:
-                                  type: string
-                                  description: 头像地址
-                                  example: http://*.com/*.png
-                                name:
-                                  type: string
-                                  description: 用户名称
-                                  example: test
-                            description: push推送到成员列表
-                            example: '[{"user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"}]'
-                          department_list:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                department_id:
-                                  type: string
-                                  description: 部门ID
-                                  example: od_7277fd1262bfafc363d5b2a1f9c2ac90
-                                name:
-                                  type: string
-                                  description: 部门名称
-                                  example: 测试部门
-                            description: push推送到的部门信息列表
-                            example: '[{"department_id":"od_7c1a2815c9846b5e518b950de0e62de8"}]'
-                          chat_list:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                chat_id:
-                                  type: string
-                                  description: 会话ID
-                                  example: oc_7277fd1262bfafc363d5b2a1f9c2ac90
-                                  x-lark-id-types:
-                                    chat_id: chat
-                                name:
-                                  type: string
-                                  description: 会话名称
-                                  example: 测试群聊
-                            description: push推送到的会话列表(群)
-                            example: '[{"chat_id":"oc_7c1a2815c9846b5e518b950de0e62de8"}]'
-                          ext:
-                            type: string
-                            description: 预留扩展字段
-                            example: '{}'
+                        allOf:
+                        - $ref: '#/components/schemas/Schema'
                         description: push任务详情
                         example: '{"approval_app_link":"","notification":{"chat_list":null,"create_user":{"avatar_url":"","name":"","user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"},"created_at":"1626329642000","department_list":null,"ext":"","helpdesk_id":"6969495102523703316","id":"6985032626234982420","instance_code":"","job_name":"api
                           push create test","new_staff_scope_department_list":null,"new_staff_scope_type":null,"push_content":"{\n  \"config\":
@@ -3317,167 +2399,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                id:
-                  type: string
-                  description: 唯一ID
-                  example: '6981801914270744596'
-                job_name:
-                  type: string
-                  description: 任务名称
-                  example: 测试推送任务
-                status:
-                  type: integer
-                  description: 0(草稿)、1(等待审批)、 2(审批未通过)、3(正在发送中)、4(发送完成)、5(等待设置发送时间)、6(取消发送)、7(新人入职执行发送)、8(等待倒计时发送)
-                  example: '0'
-                create_user:
-                  type: object
-                  properties:
-                    user_id:
-                      type: string
-                      description: 用户id
-                      example: ou_7277fd1262bfafc363d5b2a1f9c2ac90
-                    avatar_url:
-                      type: string
-                      description: 头像地址
-                      example: http://*.com/*.png
-                    name:
-                      type: string
-                      description: 用户名称
-                      example: test
-                  description: 创建人
-                  example: '{"avatar_url":"","name":"","user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"}'
-                created_at:
-                  type: string
-                  description: 创建时间（毫秒时间戳）
-                  example: '1626332244719'
-                update_user:
-                  type: object
-                  properties:
-                    user_id:
-                      type: string
-                      description: 用户id
-                      example: ou_7277fd1262bfafc363d5b2a1f9c2ac90
-                    avatar_url:
-                      type: string
-                      description: 头像地址
-                      example: http://*.com/*.png
-                    name:
-                      type: string
-                      description: 用户名称
-                      example: test
-                  description: 更新用户
-                  example: '{"avatar_url":"","name":"","user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"}'
-                updated_at:
-                  type: string
-                  description: 更新时间（毫秒时间戳）
-                  example: '1626332244719'
-                target_user_count:
-                  type: integer
-                  description: 目标推送用户
-                  example: '1'
-                sent_user_count:
-                  type: integer
-                  description: 已推送用户总数
-                  example: '1'
-                read_user_count:
-                  type: integer
-                  description: 已读用户总数
-                  example: '1'
-                send_at:
-                  type: string
-                  description: 推送任务触发时间（毫秒时间戳）
-                  example: '1626332244719'
-                push_content:
-                  type: string
-                  description: 推送内容，详见：https://open.feishu.cn/tool/cardbuilder?from=howtoguide
-                  example: '{   "config": {     "wide_screen_mode": true   },   "elements": [     {       "tag": "div",       "text":
-                    {         "tag": "lark_md",         "content": "[飞书](https://www.feishu.cn)整合即时沟通、日历、音视频会议、云文档、云盘、工作台等功能于一体，成就组织和个人，更高效、更愉悦。"       }     }   ]
-                    }'
-                push_type:
-                  type: integer
-                  description: 0（定时推送：push_scope不能等于3） 1（新人入职推送：push_scope必须等于1或者3；new_staff_scope_type不能为空）
-                  example: '0'
-                push_scope_type:
-                  type: integer
-                  description: 推送范围（服务台私信） 0：组织内全部成员（user_list和department_list必须为空） 1：不推送任何成员（user_list和department_list必须为空，chat_list不可为空）
-                    2：推送到部分成员（user_list或department_list不能为空） 3：入职新人 以上四种状态，chat_list都相对独立，只有在推送范围为1时，必须需要设置chat_list
-                  example: '0'
-                new_staff_scope_type:
-                  type: integer
-                  description: 新人入职范围类型（push_type为1时生效） 0：组织内所有新人 1：组织内特定的部门（new_staff_scope_department_list 字段不能为空）
-                  example: '0'
-                new_staff_scope_department_list:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      department_id:
-                        type: string
-                        description: 部门ID
-                        example: od_7277fd1262bfafc363d5b2a1f9c2ac90
-                      name:
-                        type: string
-                        description: 部门名称
-                        example: 测试部门
-                  description: 新人入职生效部门列表
-                  example: '[{"department_id":"od_7c1a2815c9846b5e518b950de0e62de8"}]'
-                user_list:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      user_id:
-                        type: string
-                        description: 用户id
-                        example: ou_7277fd1262bfafc363d5b2a1f9c2ac90
-                      avatar_url:
-                        type: string
-                        description: 头像地址
-                        example: http://*.com/*.png
-                      name:
-                        type: string
-                        description: 用户名称
-                        example: test
-                  description: push推送到成员列表
-                  example: '[{"user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"}]'
-                department_list:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      department_id:
-                        type: string
-                        description: 部门ID
-                        example: od_7277fd1262bfafc363d5b2a1f9c2ac90
-                      name:
-                        type: string
-                        description: 部门名称
-                        example: 测试部门
-                  description: push推送到的部门信息列表
-                  example: '[{"department_id":"od_7c1a2815c9846b5e518b950de0e62de8"}]'
-                chat_list:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      chat_id:
-                        type: string
-                        description: 会话ID
-                        example: oc_7277fd1262bfafc363d5b2a1f9c2ac90
-                        x-lark-id-types:
-                          chat_id: chat
-                      name:
-                        type: string
-                        description: 会话名称
-                        example: 测试群聊
-                  description: push推送到的会话列表(群)
-                  example: '[{"chat_id":"oc_7c1a2815c9846b5e518b950de0e62de8"}]'
-                ext:
-                  type: string
-                  description: 预留扩展字段
-                  example: '{}'
+              $ref: '#/components/schemas/Schema'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -4003,127 +2925,7 @@ paths:
                       ticket_customized_fields:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            ticket_customized_field_id:
-                              type: string
-                              description: ticket customized field id
-                              example: '1542164574896126'
-                            helpdesk_id:
-                              type: string
-                              description: help desk id
-                              example: '7836004780707807251'
-                            key_name:
-                              type: string
-                              description: key name
-                              example: '"test dropdown"'
-                            display_name:
-                              type: string
-                              description: display name
-                              example: '"test dropdown"'
-                            position:
-                              type: string
-                              description: the position of ticket customized field in the page
-                              example: '"3"'
-                            field_type:
-                              type: string
-                              description: type of the field
-                              example: '"dropdown"'
-                            description:
-                              type: string
-                              description: description of the field
-                              example: '"下拉示例"'
-                            visible:
-                              type: boolean
-                              description: if the field is visible
-                              example: 'true'
-                            editable:
-                              type: boolean
-                              description: if the field is editable
-                              example: 'true'
-                            required:
-                              type: boolean
-                              description: if the field is required
-                              example: 'true'
-                            created_at:
-                              type: string
-                              description: the time when the field is created
-                              example: '1591239289000'
-                            updated_at:
-                              type: string
-                              description: the time when the field is updated
-                              example: '1591239289000'
-                            created_by:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: user id
-                                  example: '7836004780707807251'
-                                avatar_url:
-                                  type: string
-                                  description: user avartal url
-                                  example: https://xxxx
-                                name:
-                                  type: string
-                                  description: user name
-                                  example: '"abc"'
-                                email:
-                                  type: string
-                                  description: user email
-                                  example: '"xxxx@abc.com"'
-                                department:
-                                  type: string
-                                  description: user department
-                                city:
-                                  type: string
-                                  description: 城市
-                                country:
-                                  type: string
-                                  description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                              description: the user who created the ticket customized field
-                            updated_by:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: user id
-                                  example: '7836004780707807251'
-                                avatar_url:
-                                  type: string
-                                  description: user avartal url
-                                  example: '"https://xxxx"'
-                                name:
-                                  type: string
-                                  description: user name
-                                  example: '"abc"'
-                                email:
-                                  type: string
-                                  description: user email
-                                  example: '"xxxx@abc.com"'
-                                department:
-                                  type: string
-                                  description: user department
-                                city:
-                                  type: string
-                                  description: 城市
-                                country:
-                                  type: string
-                                  description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                              description: the user who recently updated the ticket customized field
-                            dropdown_allow_multiple:
-                              type: boolean
-                              description: if the dropdown field supports multi-select
-                              example: 'true'
-                          required:
-                          - ticket_customized_field_id
-                          - key_name
-                          - display_name
-                          - position
-                          - field_type
-                          - description
-                          - visible
-                          - required
+                          $ref: '#/components/schemas/Data'
                         description: ticket customized fields
       x-lark-access-tokens:
       - tenant
@@ -4175,298 +2977,8 @@ paths:
                     type: object
                     properties:
                       ticket:
-                        type: object
-                        properties:
-                          ticket_id:
-                            type: string
-                            description: ticket id
-                            example: '123456'
-                          helpdesk_id:
-                            type: string
-                            description: helpdesk id
-                            example: '123456'
-                          guest:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: user id
-                              avatar_url:
-                                type: string
-                                description: user avartal url
-                              name:
-                                type: string
-                                description: user name
-                              email:
-                                type: string
-                                description: user email
-                              department:
-                                type: string
-                                description: user department
-                              city:
-                                type: string
-                                description: 城市
-                              country:
-                                type: string
-                                description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                            description: guest of this ticket
-                          comments:
-                            type: object
-                            properties:
-                              content:
-                                type: string
-                                description: 备注
-                              created_at:
-                                type: integer
-                                description: 备注时间，单位毫秒
-                              id:
-                                type: integer
-                                description: 备注ID
-                              user_avatar_url:
-                                type: string
-                                description: 备注人头像
-                              user_name:
-                                type: string
-                                description: 备注人姓名
-                              user_id:
-                                type: integer
-                                description: 备注人ID
-                            description: 备注
-                          ticket_type:
-                            type: integer
-                            description: ticket type
-                            example: '1'
-                          status:
-                            type: integer
-                            description: ticket status
-                            example: '1'
-                          score:
-                            type: integer
-                            description: ticket score
-                            example: '1'
-                          created_at:
-                            type: integer
-                            description: the time when the ticket is created
-                            example: '1616920429000'
-                          updated_at:
-                            type: integer
-                            description: the time when the ticket is updated
-                            example: '1616920429000'
-                          closed_at:
-                            type: integer
-                            description: the time when the ticket is closed
-                            example: '1616920429000'
-                          dissatisfaction_reason:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文描述
-                                example: 答案看不懂
-                              en_us:
-                                type: string
-                                description: 英文描述
-                                example: I don't understand
-                              ja_jp:
-                                type: string
-                                description: 日文描述
-                                example: 回答が複雑すぎる
-                            description: 不满意原因
-                          agents:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: user id
-                                  example: '7474857595946745884'
-                                avatar_url:
-                                  type: string
-                                  description: user avartal url
-                                  example: https://xxx.com
-                                name:
-                                  type: string
-                                  description: user name
-                                  example: 张三
-                                email:
-                                  type: string
-                                  description: user email
-                                  example: test@test.com
-                                department:
-                                  type: string
-                                  description: user department
-                                city:
-                                  type: string
-                                  description: 城市
-                                country:
-                                  type: string
-                                  description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                            description: agents of this ticket
-                          channel:
-                            type: integer
-                            description: the ticket channel
-                            example: '1'
-                          solve:
-                            type: integer
-                            description: if ticket is solved
-                            example: '1'
-                          closed_by:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: user id
-                              avatar_url:
-                                type: string
-                                description: user avartal url
-                              name:
-                                type: string
-                                description: user name
-                              email:
-                                type: string
-                                description: user email
-                              department:
-                                type: string
-                                description: user department
-                              city:
-                                type: string
-                                description: 城市
-                              country:
-                                type: string
-                                description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                            description: closed user of this ticket
-                          collaborators:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: user id
-                                  example: '7474857595946745884'
-                                avatar_url:
-                                  type: string
-                                  description: user avartal url
-                                  example: https://xxx.com
-                                name:
-                                  type: string
-                                  description: user name
-                                  example: test
-                                email:
-                                  type: string
-                                  description: user email
-                                  example: test_email@test.com
-                                department:
-                                  type: string
-                                  description: user department
-                                city:
-                                  type: string
-                                  description: 城市
-                                country:
-                                  type: string
-                                  description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                            description: collaborators of this ticket
-                          customized_fields:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: id
-                                value:
-                                  type: string
-                                  description: value
-                                key_name:
-                                  type: string
-                                  description: key name
-                                display_name:
-                                  type: string
-                                  description: display name
-                                position:
-                                  type: integer
-                                  description: position
-                                required:
-                                  type: boolean
-                                  description: required
-                                editable:
-                                  type: boolean
-                                  description: editable
-                            description: ticket customized fields
-                          agent_service_duration:
-                            type: number
-                            description: 客服服务时长，客服最后一次回复时间距离客服进入时间间隔，单位秒
-                            example: '1.0'
-                          agent_first_response_duration:
-                            type: integer
-                            description: 客服首次回复时间距离客服进入时间的间隔，单位秒
-                            example: '1741145995'
-                          bot_service_duration:
-                            type: integer
-                            description: 机器人服务时间：客服进入时间距离工单创建时间的间隔，单位秒
-                            example: '1741145995'
-                          agent_resolution_time:
-                            type: integer
-                            description: 客服解决时长，关单时间距离客服进入时间的间隔，单位秒
-                            example: '1741145995'
-                          actual_processing_time:
-                            type: integer
-                            description: 工单实际处理时间：从客服进入到关单，单位秒
-                            example: '1741145995'
-                          agent_entry_time:
-                            type: integer
-                            description: 客服进入时间，单位毫秒
-                            example: '1616920429000'
-                          agent_first_response_time:
-                            type: integer
-                            description: 客服首次回复时间，单位毫秒
-                            example: '1616920429000'
-                          agent_last_response_time:
-                            type: integer
-                            description: 客服最后回复时间，单位毫秒
-                            example: '1616920429000'
-                          agent_owner:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: user id
-                              avatar_url:
-                                type: string
-                                description: user avartal url
-                              name:
-                                type: string
-                                description: user name
-                              email:
-                                type: string
-                                description: user email
-                              department:
-                                type: string
-                                description: user department
-                              city:
-                                type: string
-                                description: 城市
-                              country:
-                                type: string
-                                description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                            description: 主责客服
-                          tags:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: ticket tag
-                                  example: '"7474857595946745884"'
-                                name:
-                                  type: string
-                                  description: tag name
-                                  example: '"tag name"'
-                            description: 工单标签
-                        required:
-                        - ticket_id
+                        allOf:
+                        - $ref: '#/components/schemas/Ticket'
                         description: ticket detail
       x-lark-access-tokens:
       - tenant
@@ -4733,298 +3245,7 @@ paths:
                       tickets:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            ticket_id:
-                              type: string
-                              description: ticket id
-                              example: '123456'
-                            helpdesk_id:
-                              type: string
-                              description: helpdesk id
-                              example: '123456'
-                            guest:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: user id
-                                avatar_url:
-                                  type: string
-                                  description: user avartal url
-                                name:
-                                  type: string
-                                  description: user name
-                                email:
-                                  type: string
-                                  description: user email
-                                department:
-                                  type: string
-                                  description: user department
-                                city:
-                                  type: string
-                                  description: 城市
-                                country:
-                                  type: string
-                                  description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                              description: guest of this ticket
-                            comments:
-                              type: object
-                              properties:
-                                content:
-                                  type: string
-                                  description: 备注
-                                created_at:
-                                  type: integer
-                                  description: 备注时间，单位毫秒
-                                id:
-                                  type: integer
-                                  description: 备注ID
-                                user_avatar_url:
-                                  type: string
-                                  description: 备注人头像
-                                user_name:
-                                  type: string
-                                  description: 备注人姓名
-                                user_id:
-                                  type: integer
-                                  description: 备注人ID
-                              description: 备注
-                            ticket_type:
-                              type: integer
-                              description: ticket type
-                              example: '1'
-                            status:
-                              type: integer
-                              description: ticket status
-                              example: '1'
-                            score:
-                              type: integer
-                              description: ticket score
-                              example: '1'
-                            created_at:
-                              type: integer
-                              description: the time when the ticket is created
-                              example: '1616920429000'
-                            updated_at:
-                              type: integer
-                              description: the time when the ticket is updated
-                              example: '1616920429000'
-                            closed_at:
-                              type: integer
-                              description: the time when the ticket is closed
-                              example: '1616920429000'
-                            dissatisfaction_reason:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 中文描述
-                                  example: 答案看不懂
-                                en_us:
-                                  type: string
-                                  description: 英文描述
-                                  example: I don't understand
-                                ja_jp:
-                                  type: string
-                                  description: 日文描述
-                                  example: 回答が複雑すぎる
-                              description: 不满意原因
-                            agents:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: string
-                                    description: user id
-                                    example: '7474857595946745884'
-                                  avatar_url:
-                                    type: string
-                                    description: user avartal url
-                                    example: https://xxx.com
-                                  name:
-                                    type: string
-                                    description: user name
-                                    example: 张三
-                                  email:
-                                    type: string
-                                    description: user email
-                                    example: test@test.com
-                                  department:
-                                    type: string
-                                    description: user department
-                                  city:
-                                    type: string
-                                    description: 城市
-                                  country:
-                                    type: string
-                                    description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                              description: agents of this ticket
-                            channel:
-                              type: integer
-                              description: the ticket channel
-                              example: '1'
-                            solve:
-                              type: integer
-                              description: if ticket is solved
-                              example: '1'
-                            closed_by:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: user id
-                                avatar_url:
-                                  type: string
-                                  description: user avartal url
-                                name:
-                                  type: string
-                                  description: user name
-                                email:
-                                  type: string
-                                  description: user email
-                                department:
-                                  type: string
-                                  description: user department
-                                city:
-                                  type: string
-                                  description: 城市
-                                country:
-                                  type: string
-                                  description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                              description: closed user of this ticket
-                            collaborators:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: string
-                                    description: user id
-                                    example: '7474857595946745884'
-                                  avatar_url:
-                                    type: string
-                                    description: user avartal url
-                                    example: https://xxx.com
-                                  name:
-                                    type: string
-                                    description: user name
-                                    example: test
-                                  email:
-                                    type: string
-                                    description: user email
-                                    example: test_email@test.com
-                                  department:
-                                    type: string
-                                    description: user department
-                                  city:
-                                    type: string
-                                    description: 城市
-                                  country:
-                                    type: string
-                                    description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                              description: collaborators of this ticket
-                            customized_fields:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: string
-                                    description: id
-                                  value:
-                                    type: string
-                                    description: value
-                                  key_name:
-                                    type: string
-                                    description: key name
-                                  display_name:
-                                    type: string
-                                    description: display name
-                                  position:
-                                    type: integer
-                                    description: position
-                                  required:
-                                    type: boolean
-                                    description: required
-                                  editable:
-                                    type: boolean
-                                    description: editable
-                              description: ticket customized fields
-                            agent_service_duration:
-                              type: number
-                              description: 客服服务时长，客服最后一次回复时间距离客服进入时间间隔，单位秒
-                              example: '1.0'
-                            agent_first_response_duration:
-                              type: integer
-                              description: 客服首次回复时间距离客服进入时间的间隔，单位秒
-                              example: '1741145995'
-                            bot_service_duration:
-                              type: integer
-                              description: 机器人服务时间：客服进入时间距离工单创建时间的间隔，单位秒
-                              example: '1741145995'
-                            agent_resolution_time:
-                              type: integer
-                              description: 客服解决时长，关单时间距离客服进入时间的间隔，单位秒
-                              example: '1741145995'
-                            actual_processing_time:
-                              type: integer
-                              description: 工单实际处理时间：从客服进入到关单，单位秒
-                              example: '1741145995'
-                            agent_entry_time:
-                              type: integer
-                              description: 客服进入时间，单位毫秒
-                              example: '1616920429000'
-                            agent_first_response_time:
-                              type: integer
-                              description: 客服首次回复时间，单位毫秒
-                              example: '1616920429000'
-                            agent_last_response_time:
-                              type: integer
-                              description: 客服最后回复时间，单位毫秒
-                              example: '1616920429000'
-                            agent_owner:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: user id
-                                avatar_url:
-                                  type: string
-                                  description: user avartal url
-                                name:
-                                  type: string
-                                  description: user name
-                                email:
-                                  type: string
-                                  description: user email
-                                department:
-                                  type: string
-                                  description: user department
-                                city:
-                                  type: string
-                                  description: 城市
-                                country:
-                                  type: string
-                                  description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                              description: 主责客服
-                            tags:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: string
-                                    description: ticket tag
-                                    example: '"7474857595946745884"'
-                                  name:
-                                    type: string
-                                    description: tag name
-                                    example: '"tag name"'
-                              description: 工单标签
-                          required:
-                          - ticket_id
+                          $ref: '#/components/schemas/Ticket'
                         description: 工单列表
       x-lark-access-tokens:
       - tenant
@@ -5338,127 +3559,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            ticket_customized_field_id:
-                              type: string
-                              description: ticket customized field id
-                              example: '1542164574896126'
-                            helpdesk_id:
-                              type: string
-                              description: help desk id
-                              example: '7836004780707807251'
-                            key_name:
-                              type: string
-                              description: key name
-                              example: '"test dropdown"'
-                            display_name:
-                              type: string
-                              description: display name
-                              example: '"test dropdown"'
-                            position:
-                              type: string
-                              description: the position of ticket customized field in the page
-                              example: '"3"'
-                            field_type:
-                              type: string
-                              description: type of the field
-                              example: '"dropdown"'
-                            description:
-                              type: string
-                              description: description of the field
-                              example: '"下拉示例"'
-                            visible:
-                              type: boolean
-                              description: if the field is visible
-                              example: 'true'
-                            editable:
-                              type: boolean
-                              description: if the field is editable
-                              example: 'true'
-                            required:
-                              type: boolean
-                              description: if the field is required
-                              example: 'true'
-                            created_at:
-                              type: string
-                              description: the time when the field is created
-                              example: '1591239289000'
-                            updated_at:
-                              type: string
-                              description: the time when the field is updated
-                              example: '1591239289000'
-                            created_by:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: user id
-                                  example: '7836004780707807251'
-                                avatar_url:
-                                  type: string
-                                  description: user avartal url
-                                  example: https://xxxx
-                                name:
-                                  type: string
-                                  description: user name
-                                  example: '"abc"'
-                                email:
-                                  type: string
-                                  description: user email
-                                  example: '"xxxx@abc.com"'
-                                department:
-                                  type: string
-                                  description: user department
-                                city:
-                                  type: string
-                                  description: 城市
-                                country:
-                                  type: string
-                                  description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                              description: the user who created the ticket customized field
-                            updated_by:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: user id
-                                  example: '7836004780707807251'
-                                avatar_url:
-                                  type: string
-                                  description: user avartal url
-                                  example: '"https://xxxx"'
-                                name:
-                                  type: string
-                                  description: user name
-                                  example: '"abc"'
-                                email:
-                                  type: string
-                                  description: user email
-                                  example: '"xxxx@abc.com"'
-                                department:
-                                  type: string
-                                  description: user department
-                                city:
-                                  type: string
-                                  description: 城市
-                                country:
-                                  type: string
-                                  description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                              description: the user who recently updated the ticket customized field
-                            dropdown_allow_multiple:
-                              type: boolean
-                              description: if the dropdown field supports multi-select
-                              example: 'true'
-                          required:
-                          - ticket_customized_field_id
-                          - key_name
-                          - display_name
-                          - position
-                          - field_type
-                          - description
-                          - visible
-                          - required
+                          $ref: '#/components/schemas/Data'
                         description: all the ticket customized fields
       x-lark-access-tokens:
       - tenant
@@ -5561,127 +3662,7 @@ paths:
                   msg:
                     type: string
                   data:
-                    type: object
-                    properties:
-                      ticket_customized_field_id:
-                        type: string
-                        description: ticket customized field id
-                        example: '1542164574896126'
-                      helpdesk_id:
-                        type: string
-                        description: help desk id
-                        example: '7836004780707807251'
-                      key_name:
-                        type: string
-                        description: key name
-                        example: '"test dropdown"'
-                      display_name:
-                        type: string
-                        description: display name
-                        example: '"test dropdown"'
-                      position:
-                        type: string
-                        description: the position of ticket customized field in the page
-                        example: '"3"'
-                      field_type:
-                        type: string
-                        description: type of the field
-                        example: '"dropdown"'
-                      description:
-                        type: string
-                        description: description of the field
-                        example: '"下拉示例"'
-                      visible:
-                        type: boolean
-                        description: if the field is visible
-                        example: 'true'
-                      editable:
-                        type: boolean
-                        description: if the field is editable
-                        example: 'true'
-                      required:
-                        type: boolean
-                        description: if the field is required
-                        example: 'true'
-                      created_at:
-                        type: string
-                        description: the time when the field is created
-                        example: '1591239289000'
-                      updated_at:
-                        type: string
-                        description: the time when the field is updated
-                        example: '1591239289000'
-                      created_by:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: user id
-                            example: '7836004780707807251'
-                          avatar_url:
-                            type: string
-                            description: user avartal url
-                            example: https://xxxx
-                          name:
-                            type: string
-                            description: user name
-                            example: '"abc"'
-                          email:
-                            type: string
-                            description: user email
-                            example: '"xxxx@abc.com"'
-                          department:
-                            type: string
-                            description: user department
-                          city:
-                            type: string
-                            description: 城市
-                          country:
-                            type: string
-                            description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                        description: the user who created the ticket customized field
-                      updated_by:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: user id
-                            example: '7836004780707807251'
-                          avatar_url:
-                            type: string
-                            description: user avartal url
-                            example: '"https://xxxx"'
-                          name:
-                            type: string
-                            description: user name
-                            example: '"abc"'
-                          email:
-                            type: string
-                            description: user email
-                            example: '"xxxx@abc.com"'
-                          department:
-                            type: string
-                            description: user department
-                          city:
-                            type: string
-                            description: 城市
-                          country:
-                            type: string
-                            description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
-                        description: the user who recently updated the ticket customized field
-                      dropdown_allow_multiple:
-                        type: boolean
-                        description: if the dropdown field supports multi-select
-                        example: 'true'
-                    required:
-                    - ticket_customized_field_id
-                    - key_name
-                    - display_name
-                    - position
-                    - field_type
-                    - description
-                    - visible
-                    - required
+                    $ref: '#/components/schemas/Data'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -5778,3 +3759,778 @@ paths:
         msg: Internal error
       x-lark-rate-limit:
         tier: 0
+components:
+  schemas:
+    Ticket:
+      type: object
+      properties:
+        ticket_id:
+          type: string
+          description: ticket id
+          example: '123456'
+        helpdesk_id:
+          type: string
+          description: helpdesk id
+          example: '123456'
+        guest:
+          type: object
+          properties:
+            id:
+              type: string
+              description: user id
+            avatar_url:
+              type: string
+              description: user avartal url
+            name:
+              type: string
+              description: user name
+            email:
+              type: string
+              description: user email
+            department:
+              type: string
+              description: user department
+            city:
+              type: string
+              description: 城市
+            country:
+              type: string
+              description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
+          description: guest of this ticket
+        comments:
+          type: object
+          properties:
+            content:
+              type: string
+              description: 备注
+            created_at:
+              type: integer
+              description: 备注时间，单位毫秒
+            id:
+              type: integer
+              description: 备注ID
+            user_avatar_url:
+              type: string
+              description: 备注人头像
+            user_name:
+              type: string
+              description: 备注人姓名
+            user_id:
+              type: integer
+              description: 备注人ID
+          description: 备注
+        ticket_type:
+          type: integer
+          description: ticket type
+          example: '1'
+        status:
+          type: integer
+          description: ticket status
+          example: '1'
+        score:
+          type: integer
+          description: ticket score
+          example: '1'
+        created_at:
+          type: integer
+          description: the time when the ticket is created
+          example: '1616920429000'
+        updated_at:
+          type: integer
+          description: the time when the ticket is updated
+          example: '1616920429000'
+        closed_at:
+          type: integer
+          description: the time when the ticket is closed
+          example: '1616920429000'
+        dissatisfaction_reason:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文描述
+              example: 答案看不懂
+            en_us:
+              type: string
+              description: 英文描述
+              example: I don't understand
+            ja_jp:
+              type: string
+              description: 日文描述
+              example: 回答が複雑すぎる
+          description: 不满意原因
+        agents:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: user id
+                example: '7474857595946745884'
+              avatar_url:
+                type: string
+                description: user avartal url
+                example: https://xxx.com
+              name:
+                type: string
+                description: user name
+                example: 张三
+              email:
+                type: string
+                description: user email
+                example: test@test.com
+              department:
+                type: string
+                description: user department
+              city:
+                type: string
+                description: 城市
+              country:
+                type: string
+                description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
+          description: agents of this ticket
+        channel:
+          type: integer
+          description: the ticket channel
+          example: '1'
+        solve:
+          type: integer
+          description: if ticket is solved
+          example: '1'
+        closed_by:
+          type: object
+          properties:
+            id:
+              type: string
+              description: user id
+            avatar_url:
+              type: string
+              description: user avartal url
+            name:
+              type: string
+              description: user name
+            email:
+              type: string
+              description: user email
+            department:
+              type: string
+              description: user department
+            city:
+              type: string
+              description: 城市
+            country:
+              type: string
+              description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
+          description: closed user of this ticket
+        collaborators:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: user id
+                example: '7474857595946745884'
+              avatar_url:
+                type: string
+                description: user avartal url
+                example: https://xxx.com
+              name:
+                type: string
+                description: user name
+                example: test
+              email:
+                type: string
+                description: user email
+                example: test_email@test.com
+              department:
+                type: string
+                description: user department
+              city:
+                type: string
+                description: 城市
+              country:
+                type: string
+                description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
+          description: collaborators of this ticket
+        customized_fields:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: id
+              value:
+                type: string
+                description: value
+              key_name:
+                type: string
+                description: key name
+              display_name:
+                type: string
+                description: display name
+              position:
+                type: integer
+                description: position
+              required:
+                type: boolean
+                description: required
+              editable:
+                type: boolean
+                description: editable
+          description: ticket customized fields
+        agent_service_duration:
+          type: number
+          description: 客服服务时长，客服最后一次回复时间距离客服进入时间间隔，单位秒
+          example: '1.0'
+        agent_first_response_duration:
+          type: integer
+          description: 客服首次回复时间距离客服进入时间的间隔，单位秒
+          example: '1741145995'
+        bot_service_duration:
+          type: integer
+          description: 机器人服务时间：客服进入时间距离工单创建时间的间隔，单位秒
+          example: '1741145995'
+        agent_resolution_time:
+          type: integer
+          description: 客服解决时长，关单时间距离客服进入时间的间隔，单位秒
+          example: '1741145995'
+        actual_processing_time:
+          type: integer
+          description: 工单实际处理时间：从客服进入到关单，单位秒
+          example: '1741145995'
+        agent_entry_time:
+          type: integer
+          description: 客服进入时间，单位毫秒
+          example: '1616920429000'
+        agent_first_response_time:
+          type: integer
+          description: 客服首次回复时间，单位毫秒
+          example: '1616920429000'
+        agent_last_response_time:
+          type: integer
+          description: 客服最后回复时间，单位毫秒
+          example: '1616920429000'
+        agent_owner:
+          type: object
+          properties:
+            id:
+              type: string
+              description: user id
+            avatar_url:
+              type: string
+              description: user avartal url
+            name:
+              type: string
+              description: user name
+            email:
+              type: string
+              description: user email
+            department:
+              type: string
+              description: user department
+            city:
+              type: string
+              description: 城市
+            country:
+              type: string
+              description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
+          description: 主责客服
+        tags:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: ticket tag
+                example: '"7474857595946745884"'
+              name:
+                type: string
+                description: tag name
+                example: '"tag name"'
+          description: 工单标签
+      required:
+      - ticket_id
+      description: ticket detail
+    Schema:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 唯一ID
+          example: '6981801914270744596'
+        job_name:
+          type: string
+          description: 任务名称
+          example: 测试推送任务
+        status:
+          type: integer
+          description: 0(草稿)、1(等待审批)、 2(审批未通过)、3(正在发送中)、4(发送完成)、5(等待设置发送时间)、6(取消发送)、7(新人入职执行发送)、8(等待倒计时发送)
+          example: '0'
+        create_user:
+          type: object
+          properties:
+            user_id:
+              type: string
+              description: 用户id
+              example: ou_7277fd1262bfafc363d5b2a1f9c2ac90
+            avatar_url:
+              type: string
+              description: 头像地址
+              example: http://*.com/*.png
+            name:
+              type: string
+              description: 用户名称
+              example: test
+          description: 创建人
+          example: '{"avatar_url":"","name":"","user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"}'
+        created_at:
+          type: string
+          description: 创建时间（毫秒时间戳）
+          example: '1626332244719'
+        update_user:
+          type: object
+          properties:
+            user_id:
+              type: string
+              description: 用户id
+              example: ou_7277fd1262bfafc363d5b2a1f9c2ac90
+            avatar_url:
+              type: string
+              description: 头像地址
+              example: http://*.com/*.png
+            name:
+              type: string
+              description: 用户名称
+              example: test
+          description: 更新用户
+          example: '{"avatar_url":"","name":"","user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"}'
+        updated_at:
+          type: string
+          description: 更新时间（毫秒时间戳）
+          example: '1626332244719'
+        target_user_count:
+          type: integer
+          description: 目标推送用户
+          example: '1'
+        sent_user_count:
+          type: integer
+          description: 已推送用户总数
+          example: '1'
+        read_user_count:
+          type: integer
+          description: 已读用户总数
+          example: '1'
+        send_at:
+          type: string
+          description: 推送任务触发时间（毫秒时间戳）
+          example: '1626332244719'
+        push_content:
+          type: string
+          description: 推送内容，详见：https://open.feishu.cn/tool/cardbuilder?from=howtoguide
+          example: '{   "config": {     "wide_screen_mode": true   },   "elements": [     {       "tag": "div",       "text":
+            {         "tag": "lark_md",         "content": "[飞书](https://www.feishu.cn)整合即时沟通、日历、音视频会议、云文档、云盘、工作台等功能于一体，成就组织和个人，更高效、更愉悦。"       }     }   ]
+            }'
+        push_type:
+          type: integer
+          description: 0（定时推送：push_scope不能等于3） 1（新人入职推送：push_scope必须等于1或者3；new_staff_scope_type不能为空）
+          example: '0'
+        push_scope_type:
+          type: integer
+          description: 推送范围（服务台私信） 0：组织内全部成员（user_list和department_list必须为空） 1：不推送任何成员（user_list和department_list必须为空，chat_list不可为空）
+            2：推送到部分成员（user_list或department_list不能为空） 3：入职新人 以上四种状态，chat_list都相对独立，只有在推送范围为1时，必须需要设置chat_list
+          example: '0'
+        new_staff_scope_type:
+          type: integer
+          description: 新人入职范围类型（push_type为1时生效） 0：组织内所有新人 1：组织内特定的部门（new_staff_scope_department_list 字段不能为空）
+          example: '0'
+        new_staff_scope_department_list:
+          type: array
+          items:
+            type: object
+            properties:
+              department_id:
+                type: string
+                description: 部门ID
+                example: od_7277fd1262bfafc363d5b2a1f9c2ac90
+              name:
+                type: string
+                description: 部门名称
+                example: 测试部门
+          description: 新人入职生效部门列表
+          example: '[{"department_id":"od_7c1a2815c9846b5e518b950de0e62de8"}]'
+        user_list:
+          type: array
+          items:
+            type: object
+            properties:
+              user_id:
+                type: string
+                description: 用户id
+                example: ou_7277fd1262bfafc363d5b2a1f9c2ac90
+              avatar_url:
+                type: string
+                description: 头像地址
+                example: http://*.com/*.png
+              name:
+                type: string
+                description: 用户名称
+                example: test
+          description: push推送到成员列表
+          example: '[{"user_id":"ou_7277fd1262bfafc363d5b2a1f9c2ac90"}]'
+        department_list:
+          type: array
+          items:
+            type: object
+            properties:
+              department_id:
+                type: string
+                description: 部门ID
+                example: od_7277fd1262bfafc363d5b2a1f9c2ac90
+              name:
+                type: string
+                description: 部门名称
+                example: 测试部门
+          description: push推送到的部门信息列表
+          example: '[{"department_id":"od_7c1a2815c9846b5e518b950de0e62de8"}]'
+        chat_list:
+          type: array
+          items:
+            type: object
+            properties:
+              chat_id:
+                type: string
+                description: 会话ID
+                example: oc_7277fd1262bfafc363d5b2a1f9c2ac90
+                x-lark-id-types:
+                  chat_id: chat
+              name:
+                type: string
+                description: 会话名称
+                example: 测试群聊
+          description: push推送到的会话列表(群)
+          example: '[{"chat_id":"oc_7c1a2815c9846b5e518b950de0e62de8"}]'
+        ext:
+          type: string
+          description: 预留扩展字段
+          example: '{}'
+    Faq:
+      type: object
+      properties:
+        faq_id:
+          type: string
+          description: faq id
+        id:
+          type: string
+          description: faq id, for backward compatibility
+        helpdesk_id:
+          type: string
+          description: helpdesk id
+        question:
+          type: string
+          description: faq question
+        answer:
+          type: string
+          description: faq answer in plain text format
+        answer_richtext:
+          type: array
+          items:
+            type: object
+            properties:
+              content:
+                type: string
+                description: 内容
+              type:
+                type: string
+                description: 类型
+          description: faq answer in richtext format, if any
+        create_time:
+          type: integer
+          description: create time
+        update_time:
+          type: integer
+          description: update time
+        categories:
+          type: array
+          items:
+            type: object
+            properties:
+              category_id:
+                type: string
+                description: category id
+              id:
+                type: string
+                description: category id, for backward compatibility
+              name:
+                type: string
+                description: category name
+              parent_id:
+                type: string
+                description: parent category id, if any
+              helpdesk_id:
+                type: string
+                description: helpdesk id
+              language:
+                type: string
+                description: category language
+            required:
+            - category_id
+            - id
+            - name
+            - parent_id
+            - helpdesk_id
+          description: list of categories that faq belongs to
+        tags:
+          type: array
+          items:
+            type: string
+          description: faq tags
+        expire_time:
+          type: integer
+          description: expire time
+        update_user:
+          type: object
+          properties:
+            id:
+              type: string
+              description: user id
+            avatar_url:
+              type: string
+              description: user avartal url
+            name:
+              type: string
+              description: user name
+            department:
+              type: string
+              description: user department
+            city:
+              type: string
+              description: 城市
+            country:
+              type: string
+              description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
+          description: update user
+        create_user:
+          type: object
+          properties:
+            id:
+              type: string
+              description: user id
+            avatar_url:
+              type: string
+              description: user avartal url
+            name:
+              type: string
+              description: user name
+            department:
+              type: string
+              description: user department
+            city:
+              type: string
+              description: 城市
+            country:
+              type: string
+              description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
+          description: create user
+      description: faq detail
+    Data:
+      type: object
+      properties:
+        ticket_customized_field_id:
+          type: string
+          description: ticket customized field id
+          example: '1542164574896126'
+        helpdesk_id:
+          type: string
+          description: help desk id
+          example: '7836004780707807251'
+        key_name:
+          type: string
+          description: key name
+          example: '"test dropdown"'
+        display_name:
+          type: string
+          description: display name
+          example: '"test dropdown"'
+        position:
+          type: string
+          description: the position of ticket customized field in the page
+          example: '"3"'
+        field_type:
+          type: string
+          description: type of the field
+          example: '"dropdown"'
+        description:
+          type: string
+          description: description of the field
+          example: '"下拉示例"'
+        visible:
+          type: boolean
+          description: if the field is visible
+          example: 'true'
+        editable:
+          type: boolean
+          description: if the field is editable
+          example: 'true'
+        required:
+          type: boolean
+          description: if the field is required
+          example: 'true'
+        created_at:
+          type: string
+          description: the time when the field is created
+          example: '1591239289000'
+        updated_at:
+          type: string
+          description: the time when the field is updated
+          example: '1591239289000'
+        created_by:
+          type: object
+          properties:
+            id:
+              type: string
+              description: user id
+              example: '7836004780707807251'
+            avatar_url:
+              type: string
+              description: user avartal url
+              example: https://xxxx
+            name:
+              type: string
+              description: user name
+              example: '"abc"'
+            email:
+              type: string
+              description: user email
+              example: '"xxxx@abc.com"'
+            department:
+              type: string
+              description: user department
+            city:
+              type: string
+              description: 城市
+            country:
+              type: string
+              description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
+          description: the user who created the ticket customized field
+        updated_by:
+          type: object
+          properties:
+            id:
+              type: string
+              description: user id
+              example: '7836004780707807251'
+            avatar_url:
+              type: string
+              description: user avartal url
+              example: '"https://xxxx"'
+            name:
+              type: string
+              description: user name
+              example: '"abc"'
+            email:
+              type: string
+              description: user email
+              example: '"xxxx@abc.com"'
+            department:
+              type: string
+              description: user department
+            city:
+              type: string
+              description: 城市
+            country:
+              type: string
+              description: 国家代号(CountryCode)，参考：http://www.mamicode.com/info-detail-2186501.html
+          description: the user who recently updated the ticket customized field
+        dropdown_allow_multiple:
+          type: boolean
+          description: if the dropdown field supports multi-select
+          example: 'true'
+      required:
+      - ticket_customized_field_id
+      - key_name
+      - display_name
+      - position
+      - field_type
+      - description
+      - visible
+      - required
+    Schema2:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data2'
+    Data2:
+      type: object
+      properties:
+        faq:
+          allOf:
+          - $ref: '#/components/schemas/Faq'
+          description: faq detail
+    AgentSchedule:
+      type: object
+      properties:
+        status:
+          type: integer
+          description: status of agent
+        agent:
+          type: object
+          properties:
+            id:
+              type: string
+              description: user id
+            avatar_url:
+              type: string
+              description: user avartal url
+            name:
+              type: string
+              description: user name
+            email:
+              type: string
+              description: user email
+            department:
+              type: string
+              description: user department
+            company_name:
+              type: string
+              description: company
+          description: agent info
+        schedule:
+          type: array
+          items:
+            type: object
+            properties:
+              start_time:
+                type: string
+                description: 开始时间, format 00:00 - 23:59
+              end_time:
+                type: string
+                description: 结束时间, format 00:00 - 23:59
+              weekday:
+                type: integer
+                description: 星期几, 1 - Monday, 2 - Tuesday, 3 - Wednesday, 4 - Thursday, 5 - Friday, 6 - Saturday, 7 - Sunday,
+                  9 - Everday, 10 - Weekday, 11 - Weekend
+          description: day schedule
+        agent_skills:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: skill id
+              name:
+                type: string
+                description: name of agent skill
+              is_default:
+                type: boolean
+                description: is default group type
+          description: agent skills
+      description: schedules of an agent

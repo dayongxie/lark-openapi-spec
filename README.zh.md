@@ -30,6 +30,8 @@
 | `openapi/*.yaml` | lark-cli API 注册表（`/api/tools/open/api_definition`） | 精选 typed API（含风险分级、高危标记、操作提示） | 15 个服务、239 个接口 |
 | `shortcuts/*.yaml` | lark-cli `+` 快捷命令（从 CLI help 提取） | 命令行契约参考（非 HTTP 接口定义） | 18 个域、412 条命令 |
 
+重复出现的公共结构（如 docx 的 Block）已自动提取到各文件的 `components/schemas` 并以 `$ref` 引用，文档体积因此减少约 76%。
+
 两个轨道互为补充：全量轨道解决「有没有」，精选轨道的风险分级（read /
 write / high-risk-write）和操作提示是其独有信息。同一接口在两个轨道中的
 描述可能略有差异，以全量轨道（官方数据源）为准。
@@ -90,3 +92,22 @@ GitHub Actions 每日运行：
 
 推送 `tools/` 或 workflow 本身的改动也会触发重新生成。
 
+## 本地重新生成
+
+```bash
+pip install -r tools/requirements.txt
+make update                        # lark-cli 注册表轨道
+make explorer                      # 官方 Explorer 全量轨道（约 10 分钟）
+make shortcuts CLI=/path/to/lark-cli   # 快捷命令参考（需要 lark-cli 二进制）
+```
+
+## 免责声明
+
+本项目为社区维护的**非官方**项目。数据来源于 lark-cli 项目（MIT 协议）及飞书
+开放平台公开端点，权威文档以 [飞书开放平台](https://open.feishu.cn/document) /
+[Lark Open Platform](https://open.larksuite.com/document) 为准。「飞书」「Lark」
+商标归其各自所有者所有，本项目与其无任何隶属或背书关系。
+
+## License
+
+MIT（代码与生成的 YAML 文档同）。详见 [LICENSE](LICENSE)。

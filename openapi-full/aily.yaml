@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: aily
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -797,184 +797,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      message:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 消息 ID
-                            example: message_4df45f2xknvcc
-                          session_id:
-                            type: string
-                            description: 会话 ID
-                            example: session_4dfunz7sp1g8m
-                          run_id:
-                            type: string
-                            description: 运行 ID
-                            example: run_4dfrxvctjqzzj
-                          content_type:
-                            type: string
-                            description: 消息内容类型
-                            enum:
-                            - MDX
-                            - TEXT
-                            - CLIP
-                            - SmartCard
-                            - JSON
-                            x-enum-descriptions:
-                              MDX: MDX
-                              TEXT: TEXT
-                              CLIP: GUI 卡片
-                              SmartCard: SmartCard
-                              JSON: JSON
-                            example: MDX
-                          content:
-                            type: string
-                            description: 消息内容
-                            example: 你好
-                          files:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: 文件 ID
-                                  example: file_4d9nu1ev3a2rq
-                                mime_type:
-                                  type: string
-                                  description: 文件类型，参见 https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types
-                                  example: image/png
-                                file_name:
-                                  type: string
-                                  description: 文件名
-                                  example: 发票.png
-                                metadata:
-                                  type: string
-                                  description: 其他透传信息
-                                  example: '{}'
-                                created_at:
-                                  type: string
-                                  description: 文件的创建时间，毫秒时间戳
-                                  example: '1711975665710'
-                                  format: int64
-                                preview_url:
-                                  type: object
-                                  properties:
-                                    url:
-                                      type: string
-                                      description: 文件的 URL
-                                      example: http://path_to_file
-                                    expired_at:
-                                      type: string
-                                      description: url 过期时间，秒时间戳
-                                      example: '1719413169'
-                                      format: int64
-                                  required:
-                                  - url
-                                  description: 文件预览链接
-                            description: 消息中包含的文件
-                          quote_message_id:
-                            type: string
-                            description: 引用的消息 ID
-                            example: message_4de9bpg70qskh
-                          sender:
-                            type: object
-                            properties:
-                              entity_id:
-                                type: string
-                                description: 实体 ID
-                                example: ou_5ad573a6411d72b8305fda3a9c15c70e
-                              identity_provider:
-                                type: string
-                                description: 身份提供者
-                                enum:
-                                - AILY
-                                - FEISHU
-                                x-enum-descriptions:
-                                  AILY: Aily 账号体系
-                                  FEISHU: 飞书账号体系
-                                example: FEISHU
-                              sender_type:
-                                type: string
-                                description: 发送人类型
-                                enum:
-                                - USER
-                                - ASSISTANT
-                                x-enum-descriptions:
-                                  USER: 用户
-                                  ASSISTANT: 应用
-                                example: USER
-                              aily_id:
-                                type: string
-                                description: Aily 账号体系下的 ID
-                                example: '1794840334557292'
-                            description: 发送者
-                          mentions:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                entity_id:
-                                  type: string
-                                  description: 实体 ID
-                                  example: ou_5ad573a6411d72b8305fda3a9c15c70e
-                                identity_provider:
-                                  type: string
-                                  description: 身份提供者
-                                  enum:
-                                  - AILY
-                                  - FEISHU
-                                  x-enum-descriptions:
-                                    AILY: Aily 账号体系
-                                    FEISHU: 飞书账号体系
-                                  example: FEISHU
-                                key:
-                                  type: string
-                                  description: 被@实体在消息体中的占位符
-                                  example: '@_user_1'
-                                name:
-                                  type: string
-                                  description: 被@实体的名称
-                                  example: 张三
-                                aily_id:
-                                  type: string
-                                  description: Aily 账号体系下的 ID
-                                  example: '1794840334557292'
-                            description: 被@的实体
-                          plain_text:
-                            type: string
-                            description: 消息体的纯文本表达
-                            example: 你好
-                          created_at:
-                            type: string
-                            description: 消息的创建时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          status:
-                            type: string
-                            description: 状态
-                            enum:
-                            - IN_PROGRESS
-                            - COMPLETED
-                            x-enum-descriptions:
-                              IN_PROGRESS: 生成中
-                              COMPLETED: 已完成
-                            example: IN_PROGRESS
-                          reasoning_content:
-                            type: string
-                            description: 推理内容
-                            example: 推理内容
-                        description: 消息信息
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - user
       - tenant
@@ -1047,173 +870,7 @@ paths:
                       messages:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 消息 ID
-                              example: message_4df45f2xknvcc
-                            session_id:
-                              type: string
-                              description: 会话 ID
-                              example: session_4dfunz7sp1g8m
-                            run_id:
-                              type: string
-                              description: 运行 ID
-                              example: run_4dfrxvctjqzzj
-                            content_type:
-                              type: string
-                              description: 消息内容类型
-                              enum:
-                              - MDX
-                              - TEXT
-                              - CLIP
-                              - SmartCard
-                              - JSON
-                              x-enum-descriptions:
-                                MDX: MDX
-                                TEXT: TEXT
-                                CLIP: GUI 卡片
-                                SmartCard: SmartCard
-                                JSON: JSON
-                              example: MDX
-                            content:
-                              type: string
-                              description: 消息内容
-                              example: 你好
-                            files:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: string
-                                    description: 文件 ID
-                                    example: file_4d9nu1ev3a2rq
-                                  mime_type:
-                                    type: string
-                                    description: 文件类型，参见 https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types
-                                    example: image/png
-                                  file_name:
-                                    type: string
-                                    description: 文件名
-                                    example: 发票.png
-                                  metadata:
-                                    type: string
-                                    description: 其他透传信息
-                                    example: '{}'
-                                  created_at:
-                                    type: string
-                                    description: 文件的创建时间，毫秒时间戳
-                                    example: '1711975665710'
-                                    format: int64
-                                  preview_url:
-                                    type: object
-                                    properties:
-                                      url:
-                                        type: string
-                                        description: 文件的 URL
-                                        example: http://path_to_file
-                                      expired_at:
-                                        type: string
-                                        description: url 过期时间，秒时间戳
-                                        example: '1719413169'
-                                        format: int64
-                                    required:
-                                    - url
-                                    description: 文件预览链接
-                              description: 消息中包含的文件
-                            quote_message_id:
-                              type: string
-                              description: 引用的消息 ID
-                              example: message_4de9bpg70qskh
-                            sender:
-                              type: object
-                              properties:
-                                entity_id:
-                                  type: string
-                                  description: 实体 ID
-                                  example: ou_5ad573a6411d72b8305fda3a9c15c70e
-                                identity_provider:
-                                  type: string
-                                  description: 身份提供者
-                                  enum:
-                                  - AILY
-                                  - FEISHU
-                                  x-enum-descriptions:
-                                    AILY: Aily 账号体系
-                                    FEISHU: 飞书账号体系
-                                  example: FEISHU
-                                sender_type:
-                                  type: string
-                                  description: 发送人类型
-                                  enum:
-                                  - USER
-                                  - ASSISTANT
-                                  x-enum-descriptions:
-                                    USER: 用户
-                                    ASSISTANT: 应用
-                                  example: USER
-                                aily_id:
-                                  type: string
-                                  description: Aily 账号体系下的 ID
-                                  example: '1794840334557292'
-                              description: 发送者
-                            mentions:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  entity_id:
-                                    type: string
-                                    description: 实体 ID
-                                    example: ou_5ad573a6411d72b8305fda3a9c15c70e
-                                  identity_provider:
-                                    type: string
-                                    description: 身份提供者
-                                    enum:
-                                    - AILY
-                                    - FEISHU
-                                    x-enum-descriptions:
-                                      AILY: Aily 账号体系
-                                      FEISHU: 飞书账号体系
-                                    example: FEISHU
-                                  key:
-                                    type: string
-                                    description: 被@实体在消息体中的占位符
-                                    example: '@_user_1'
-                                  name:
-                                    type: string
-                                    description: 被@实体的名称
-                                    example: 张三
-                                  aily_id:
-                                    type: string
-                                    description: Aily 账号体系下的 ID
-                                    example: '1794840334557292'
-                              description: 被@的实体
-                            plain_text:
-                              type: string
-                              description: 消息体的纯文本表达
-                              example: 你好
-                            created_at:
-                              type: string
-                              description: 消息的创建时间，毫秒时间戳
-                              example: '1711975665710'
-                              format: int64
-                            status:
-                              type: string
-                              description: 状态
-                              enum:
-                              - IN_PROGRESS
-                              - COMPLETED
-                              x-enum-descriptions:
-                                IN_PROGRESS: 生成中
-                                COMPLETED: 已完成
-                              example: IN_PROGRESS
-                            reasoning_content:
-                              type: string
-                              description: 推理内容
-                              example: 推理内容
+                          $ref: '#/components/schemas/Message'
                         description: 消息列表
                       page_token:
                         type: string
@@ -1264,184 +921,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      message:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 消息 ID
-                            example: message_4df45f2xknvcc
-                          session_id:
-                            type: string
-                            description: 会话 ID
-                            example: session_4dfunz7sp1g8m
-                          run_id:
-                            type: string
-                            description: 运行 ID
-                            example: run_4dfrxvctjqzzj
-                          content_type:
-                            type: string
-                            description: 消息内容类型
-                            enum:
-                            - MDX
-                            - TEXT
-                            - CLIP
-                            - SmartCard
-                            - JSON
-                            x-enum-descriptions:
-                              MDX: MDX
-                              TEXT: TEXT
-                              CLIP: GUI 卡片
-                              SmartCard: SmartCard
-                              JSON: JSON
-                            example: MDX
-                          content:
-                            type: string
-                            description: 消息内容
-                            example: 你好
-                          files:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: 文件 ID
-                                  example: file_4d9nu1ev3a2rq
-                                mime_type:
-                                  type: string
-                                  description: 文件类型，参见 https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types
-                                  example: image/png
-                                file_name:
-                                  type: string
-                                  description: 文件名
-                                  example: 发票.png
-                                metadata:
-                                  type: string
-                                  description: 其他透传信息
-                                  example: '{}'
-                                created_at:
-                                  type: string
-                                  description: 文件的创建时间，毫秒时间戳
-                                  example: '1711975665710'
-                                  format: int64
-                                preview_url:
-                                  type: object
-                                  properties:
-                                    url:
-                                      type: string
-                                      description: 文件的 URL
-                                      example: http://path_to_file
-                                    expired_at:
-                                      type: string
-                                      description: url 过期时间，秒时间戳
-                                      example: '1719413169'
-                                      format: int64
-                                  required:
-                                  - url
-                                  description: 文件预览链接
-                            description: 消息中包含的文件
-                          quote_message_id:
-                            type: string
-                            description: 引用的消息 ID
-                            example: message_4de9bpg70qskh
-                          sender:
-                            type: object
-                            properties:
-                              entity_id:
-                                type: string
-                                description: 实体 ID
-                                example: ou_5ad573a6411d72b8305fda3a9c15c70e
-                              identity_provider:
-                                type: string
-                                description: 身份提供者
-                                enum:
-                                - AILY
-                                - FEISHU
-                                x-enum-descriptions:
-                                  AILY: Aily 账号体系
-                                  FEISHU: 飞书账号体系
-                                example: FEISHU
-                              sender_type:
-                                type: string
-                                description: 发送人类型
-                                enum:
-                                - USER
-                                - ASSISTANT
-                                x-enum-descriptions:
-                                  USER: 用户
-                                  ASSISTANT: 应用
-                                example: USER
-                              aily_id:
-                                type: string
-                                description: Aily 账号体系下的 ID
-                                example: '1794840334557292'
-                            description: 发送者
-                          mentions:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                entity_id:
-                                  type: string
-                                  description: 实体 ID
-                                  example: ou_5ad573a6411d72b8305fda3a9c15c70e
-                                identity_provider:
-                                  type: string
-                                  description: 身份提供者
-                                  enum:
-                                  - AILY
-                                  - FEISHU
-                                  x-enum-descriptions:
-                                    AILY: Aily 账号体系
-                                    FEISHU: 飞书账号体系
-                                  example: FEISHU
-                                key:
-                                  type: string
-                                  description: 被@实体在消息体中的占位符
-                                  example: '@_user_1'
-                                name:
-                                  type: string
-                                  description: 被@实体的名称
-                                  example: 张三
-                                aily_id:
-                                  type: string
-                                  description: Aily 账号体系下的 ID
-                                  example: '1794840334557292'
-                            description: 被@的实体
-                          plain_text:
-                            type: string
-                            description: 消息体的纯文本表达
-                            example: 你好
-                          created_at:
-                            type: string
-                            description: 消息的创建时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          status:
-                            type: string
-                            description: 状态
-                            enum:
-                            - IN_PROGRESS
-                            - COMPLETED
-                            x-enum-descriptions:
-                              IN_PROGRESS: 生成中
-                              COMPLETED: 已完成
-                            example: IN_PROGRESS
-                          reasoning_content:
-                            type: string
-                            description: 推理内容
-                            example: 推理内容
-                        description: 消息信息
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - user
       - tenant
@@ -1484,91 +964,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      run:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 运行 ID
-                            example: run_4dfrxvctjqzzj
-                          created_at:
-                            type: string
-                            description: 运行的创建时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          app_id:
-                            type: string
-                            description: 应用 ID
-                            example: spring_xxx__c
-                          session_id:
-                            type: string
-                            description: 会话 ID
-                            example: session_4dfunz7sp1g8m
-                          status:
-                            type: string
-                            description: 状态
-                            enum:
-                            - QUEUED
-                            - IN_PROGRESS
-                            - REQUIRES_MESSAGE
-                            - CANCELLED
-                            - COMPLETED
-                            - FAILED
-                            - EXPIRED
-                            x-enum-descriptions:
-                              QUEUED: 排队中
-                              IN_PROGRESS: 执行中
-                              REQUIRES_MESSAGE: 等待补充消息输入
-                              CANCELLED: 已取消
-                              COMPLETED: 已完成
-                              FAILED: 已失败
-                              EXPIRED: 已过期
-                            example: IN_PROGRESS
-                          started_at:
-                            type: string
-                            description: 开始时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          ended_at:
-                            type: string
-                            description: 结束时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          error:
-                            type: object
-                            properties:
-                              code:
-                                type: string
-                                description: 错误码
-                                example: sp_ec_sm_900101
-                              message:
-                                type: string
-                                description: 错误信息
-                                example: 技能不存在或已删除
-                            required:
-                            - code
-                            - message
-                            description: 失败时的错误信息
-                          metadata:
-                            type: string
-                            description: 其他透传信息
-                            example: '{}'
-                        required:
-                        - id
-                        - created_at
-                        - app_id
-                        - session_id
-                        - status
-                        description: 运行信息
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - user
       - tenant
@@ -1627,91 +1023,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      run:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 运行 ID
-                            example: run_4dfrxvctjqzzj
-                          created_at:
-                            type: string
-                            description: 运行的创建时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          app_id:
-                            type: string
-                            description: 应用 ID
-                            example: spring_xxx__c
-                          session_id:
-                            type: string
-                            description: 会话 ID
-                            example: session_4dfunz7sp1g8m
-                          status:
-                            type: string
-                            description: 状态
-                            enum:
-                            - QUEUED
-                            - IN_PROGRESS
-                            - REQUIRES_MESSAGE
-                            - CANCELLED
-                            - COMPLETED
-                            - FAILED
-                            - EXPIRED
-                            x-enum-descriptions:
-                              QUEUED: 排队中
-                              IN_PROGRESS: 执行中
-                              REQUIRES_MESSAGE: 等待补充消息输入
-                              CANCELLED: 已取消
-                              COMPLETED: 已完成
-                              FAILED: 已失败
-                              EXPIRED: 已过期
-                            example: IN_PROGRESS
-                          started_at:
-                            type: string
-                            description: 开始时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          ended_at:
-                            type: string
-                            description: 结束时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          error:
-                            type: object
-                            properties:
-                              code:
-                                type: string
-                                description: 错误码
-                                example: sp_ec_sm_900101
-                              message:
-                                type: string
-                                description: 错误信息
-                                example: 技能不存在或已删除
-                            required:
-                            - code
-                            - message
-                            description: 失败时的错误信息
-                          metadata:
-                            type: string
-                            description: 其他透传信息
-                            example: '{}'
-                        required:
-                        - id
-                        - created_at
-                        - app_id
-                        - session_id
-                        - status
-                        description: 运行信息
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - user
       - tenant
@@ -1770,80 +1082,7 @@ paths:
                       runs:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 运行 ID
-                              example: run_4dfrxvctjqzzj
-                            created_at:
-                              type: string
-                              description: 运行的创建时间，毫秒时间戳
-                              example: '1711975665710'
-                              format: int64
-                            app_id:
-                              type: string
-                              description: 应用 ID
-                              example: spring_xxx__c
-                            session_id:
-                              type: string
-                              description: 会话 ID
-                              example: session_4dfunz7sp1g8m
-                            status:
-                              type: string
-                              description: 状态
-                              enum:
-                              - QUEUED
-                              - IN_PROGRESS
-                              - REQUIRES_MESSAGE
-                              - CANCELLED
-                              - COMPLETED
-                              - FAILED
-                              - EXPIRED
-                              x-enum-descriptions:
-                                QUEUED: 排队中
-                                IN_PROGRESS: 执行中
-                                REQUIRES_MESSAGE: 等待补充消息输入
-                                CANCELLED: 已取消
-                                COMPLETED: 已完成
-                                FAILED: 已失败
-                                EXPIRED: 已过期
-                              example: IN_PROGRESS
-                            started_at:
-                              type: string
-                              description: 开始时间，毫秒时间戳
-                              example: '1711975665710'
-                              format: int64
-                            ended_at:
-                              type: string
-                              description: 结束时间，毫秒时间戳
-                              example: '1711975665710'
-                              format: int64
-                            error:
-                              type: object
-                              properties:
-                                code:
-                                  type: string
-                                  description: 错误码
-                                  example: sp_ec_sm_900101
-                                message:
-                                  type: string
-                                  description: 错误信息
-                                  example: 技能不存在或已删除
-                              required:
-                              - code
-                              - message
-                              description: 失败时的错误信息
-                            metadata:
-                              type: string
-                              description: 其他透传信息
-                              example: '{}'
-                          required:
-                          - id
-                          - created_at
-                          - app_id
-                          - session_id
-                          - status
+                          $ref: '#/components/schemas/Run'
                         description: 运行列表
                       page_token:
                         type: string
@@ -1894,91 +1133,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      run:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 运行 ID
-                            example: run_4dfrxvctjqzzj
-                          created_at:
-                            type: string
-                            description: 运行的创建时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          app_id:
-                            type: string
-                            description: 应用 ID
-                            example: spring_xxx__c
-                          session_id:
-                            type: string
-                            description: 会话 ID
-                            example: session_4dfunz7sp1g8m
-                          status:
-                            type: string
-                            description: 状态
-                            enum:
-                            - QUEUED
-                            - IN_PROGRESS
-                            - REQUIRES_MESSAGE
-                            - CANCELLED
-                            - COMPLETED
-                            - FAILED
-                            - EXPIRED
-                            x-enum-descriptions:
-                              QUEUED: 排队中
-                              IN_PROGRESS: 执行中
-                              REQUIRES_MESSAGE: 等待补充消息输入
-                              CANCELLED: 已取消
-                              COMPLETED: 已完成
-                              FAILED: 已失败
-                              EXPIRED: 已过期
-                            example: IN_PROGRESS
-                          started_at:
-                            type: string
-                            description: 开始时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          ended_at:
-                            type: string
-                            description: 结束时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          error:
-                            type: object
-                            properties:
-                              code:
-                                type: string
-                                description: 错误码
-                                example: sp_ec_sm_900101
-                              message:
-                                type: string
-                                description: 错误信息
-                                example: 技能不存在或已删除
-                            required:
-                            - code
-                            - message
-                            description: 失败时的错误信息
-                          metadata:
-                            type: string
-                            description: 其他透传信息
-                            example: '{}'
-                        required:
-                        - id
-                        - created_at
-                        - app_id
-                        - session_id
-                        - status
-                        description: 运行信息
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - user
       - tenant
@@ -2021,50 +1176,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      session:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 会话 ID
-                            example: session_4dfunz7sp1g8m
-                          created_at:
-                            type: string
-                            description: 会话的创建时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          modified_at:
-                            type: string
-                            description: 会话的上次更新时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          created_by:
-                            type: string
-                            description: 会话的创建人
-                            example: '1794840334557292'
-                          channel_context:
-                            type: string
-                            description: 渠道上下文
-                            example: '{}'
-                          metadata:
-                            type: string
-                            description: 其他透传信息
-                            example: '{}'
-                        required:
-                        - id
-                        - created_at
-                        - modified_at
-                        - created_by
-                        description: 创建的会话信息
+                $ref: '#/components/schemas/Schema4'
       x-lark-access-tokens:
       - user
       - tenant
@@ -2142,50 +1254,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      session:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 会话 ID
-                            example: session_4dfunz7sp1g8m
-                          created_at:
-                            type: string
-                            description: 会话的创建时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          modified_at:
-                            type: string
-                            description: 会话的上次更新时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          created_by:
-                            type: string
-                            description: 会话的创建人
-                            example: '1794840334557292'
-                          channel_context:
-                            type: string
-                            description: 渠道上下文
-                            example: '{}'
-                          metadata:
-                            type: string
-                            description: 其他透传信息
-                            example: '{}'
-                        required:
-                        - id
-                        - created_at
-                        - modified_at
-                        - created_by
-                        description: 会话信息
+                $ref: '#/components/schemas/Schema4'
       x-lark-access-tokens:
       - user
       - tenant
@@ -2235,50 +1304,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      session:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 会话 ID
-                            example: session_4dfunz7sp1g8m
-                          created_at:
-                            type: string
-                            description: 会话的创建时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          modified_at:
-                            type: string
-                            description: 会话的上次更新时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          created_by:
-                            type: string
-                            description: 会话的创建人
-                            example: '1794840334557292'
-                          channel_context:
-                            type: string
-                            description: 渠道上下文
-                            example: '{}'
-                          metadata:
-                            type: string
-                            description: 其他透传信息
-                            example: '{}'
-                        required:
-                        - id
-                        - created_at
-                        - modified_at
-                        - created_by
-                        description: 会话信息
+                $ref: '#/components/schemas/Schema4'
       x-lark-access-tokens:
       - user
       - tenant
@@ -2495,187 +1521,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      data_asset:
-                        type: object
-                        properties:
-                          data_asset_id:
-                            type: string
-                            description: 数据知识ID
-                            example: asset_aadg3mcgvpybu
-                          label:
-                            type: string
-                            x-lark-original-type: map
-                            description: 数据知识标题
-                          description:
-                            type: string
-                            x-lark-original-type: map
-                            description: 数据知识描述
-                          data_source_type:
-                            type: string
-                            description: 数据资源类型
-                            enum:
-                            - excel
-                            - pdf
-                            - pptx
-                            - txt
-                            - docx
-                            - mysql
-                            - postgresql
-                            - larkbase
-                            - salesforce
-                            - fenxiangxiaoke
-                            - qianchuan
-                            - clickhouse
-                            - databricks
-                            - servicedesk
-                            - larkbiz_wiki
-                            - larkbiz_doc
-                            - larkbiz_docs
-                            - larkbiz_docx
-                            - larkbiz_pdf
-                            - larkbiz_word
-                            - larkbiz_pptx
-                            - larkbiz_sheets
-                            - larkbiz_base
-                            - larkbiz_personalfolder
-                            - larkbiz_sharedfolder
-                            - object
-                            x-enum-descriptions:
-                              excel: excel
-                              pdf: pdf
-                              pptx: pptx
-                              txt: txt
-                              docx: docx
-                              mysql: mysql
-                              postgresql: postgresql
-                              larkbase: 飞书多维表格
-                              salesforce: salesforce
-                              fenxiangxiaoke: 分享逍客
-                              qianchuan: 巨量千川
-                              clickhouse: clickhouse
-                              databricks: databricks
-                              servicedesk: 飞书服务台
-                              larkbiz_wiki: 飞书Wiki
-                              larkbiz_doc: 飞书doc
-                              larkbiz_docs: 飞书docs
-                              larkbiz_docx: 飞书docx
-                              larkbiz_pdf: 飞书pdf
-                              larkbiz_word: 飞书word
-                              larkbiz_pptx: 飞书pptx
-                              larkbiz_sheets: 飞书文档
-                              larkbiz_base: 飞书多维表格
-                              larkbiz_personalfolder: 飞书个人文件夹
-                              larkbiz_sharedfolder: 飞书共享文件夹
-                              object: 数据表
-                            example: excel
-                          connect_status:
-                            type: string
-                            description: 数据连接状态
-                            enum:
-                            - awaiting
-                            - syncing
-                            - successful
-                            - continuously_syncing
-                            - partially_successful
-                            - failed
-                            x-enum-descriptions:
-                              awaiting: 等待连接
-                              syncing: 连接中
-                              successful: 连接成功
-                              continuously_syncing: 增量同步中
-                              partially_successful: 部分成功
-                              failed: 连接失败
-                            example: successful
-                          tags:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                data_asset_tag_id:
-                                  type: string
-                                  description: 数据知识分类名称
-                                  example: spring_5862e4fea8__c__asset_tag_aadg2b5ql4gbs
-                                name:
-                                  type: string
-                                  description: 数据知识分类ID
-                                  example: 电影
-                            description: 数据知识分类列表
-                          items:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                data_asset_item_id:
-                                  type: string
-                                  description: 数据知识项ID
-                                  example: asset_item_aadg3mcgvpydu
-                                api_name:
-                                  type: string
-                                  description: 数据知识项标识
-                                  example: movie
-                                label:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: 数据知识项标题
-                                description:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: 数据知识项描述
-                                resources:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      resource_id:
-                                        type: string
-                                        description: 数据知识资源ID
-                                        example: spring_5862e4fea8__c__dataset_aadg3lxm4j6mg
-                                      resource_type:
-                                        type: string
-                                        description: 数据知识资源类型
-                                        enum:
-                                        - dataset
-                                        - vector
-                                        x-enum-descriptions:
-                                          dataset: 数据视图
-                                          vector: 知识视图
-                                        example: dataset
-                                  description: 数据知识资源
-                            description: 数据知识项列表
-                          connect_failed_reason:
-                            type: string
-                            description: 连接状态失败信息
-                            example: 连接超时
-                          connect_type:
-                            type: string
-                            description: 数据连接类型
-                            enum:
-                            - import
-                            - direct
-                            x-enum-descriptions:
-                              import: 导入
-                              direct: 直连
-                            example: direct
-                          created_time:
-                            type: string
-                            description: 创建时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          updated_time:
-                            type: string
-                            description: 更新时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                        description: 数据知识
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       - tenant
@@ -2808,176 +1654,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            data_asset_id:
-                              type: string
-                              description: 数据知识ID
-                              example: asset_aadg3mcgvpybu
-                            label:
-                              type: string
-                              x-lark-original-type: map
-                              description: 数据知识标题
-                            description:
-                              type: string
-                              x-lark-original-type: map
-                              description: 数据知识描述
-                            data_source_type:
-                              type: string
-                              description: 数据资源类型
-                              enum:
-                              - excel
-                              - pdf
-                              - pptx
-                              - txt
-                              - docx
-                              - mysql
-                              - postgresql
-                              - larkbase
-                              - salesforce
-                              - fenxiangxiaoke
-                              - qianchuan
-                              - clickhouse
-                              - databricks
-                              - servicedesk
-                              - larkbiz_wiki
-                              - larkbiz_doc
-                              - larkbiz_docs
-                              - larkbiz_docx
-                              - larkbiz_pdf
-                              - larkbiz_word
-                              - larkbiz_pptx
-                              - larkbiz_sheets
-                              - larkbiz_base
-                              - larkbiz_personalfolder
-                              - larkbiz_sharedfolder
-                              - object
-                              x-enum-descriptions:
-                                excel: excel
-                                pdf: pdf
-                                pptx: pptx
-                                txt: txt
-                                docx: docx
-                                mysql: mysql
-                                postgresql: postgresql
-                                larkbase: 飞书多维表格
-                                salesforce: salesforce
-                                fenxiangxiaoke: 分享逍客
-                                qianchuan: 巨量千川
-                                clickhouse: clickhouse
-                                databricks: databricks
-                                servicedesk: 飞书服务台
-                                larkbiz_wiki: 飞书Wiki
-                                larkbiz_doc: 飞书doc
-                                larkbiz_docs: 飞书docs
-                                larkbiz_docx: 飞书docx
-                                larkbiz_pdf: 飞书pdf
-                                larkbiz_word: 飞书word
-                                larkbiz_pptx: 飞书pptx
-                                larkbiz_sheets: 飞书文档
-                                larkbiz_base: 飞书多维表格
-                                larkbiz_personalfolder: 飞书个人文件夹
-                                larkbiz_sharedfolder: 飞书共享文件夹
-                                object: 数据表
-                              example: excel
-                            connect_status:
-                              type: string
-                              description: 数据连接状态
-                              enum:
-                              - awaiting
-                              - syncing
-                              - successful
-                              - continuously_syncing
-                              - partially_successful
-                              - failed
-                              x-enum-descriptions:
-                                awaiting: 等待连接
-                                syncing: 连接中
-                                successful: 连接成功
-                                continuously_syncing: 增量同步中
-                                partially_successful: 部分成功
-                                failed: 连接失败
-                              example: successful
-                            tags:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  data_asset_tag_id:
-                                    type: string
-                                    description: 数据知识分类名称
-                                    example: spring_5862e4fea8__c__asset_tag_aadg2b5ql4gbs
-                                  name:
-                                    type: string
-                                    description: 数据知识分类ID
-                                    example: 电影
-                              description: 数据知识分类列表
-                            items:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  data_asset_item_id:
-                                    type: string
-                                    description: 数据知识项ID
-                                    example: asset_item_aadg3mcgvpydu
-                                  api_name:
-                                    type: string
-                                    description: 数据知识项标识
-                                    example: movie
-                                  label:
-                                    type: string
-                                    x-lark-original-type: map
-                                    description: 数据知识项标题
-                                  description:
-                                    type: string
-                                    x-lark-original-type: map
-                                    description: 数据知识项描述
-                                  resources:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        resource_id:
-                                          type: string
-                                          description: 数据知识资源ID
-                                          example: spring_5862e4fea8__c__dataset_aadg3lxm4j6mg
-                                        resource_type:
-                                          type: string
-                                          description: 数据知识资源类型
-                                          enum:
-                                          - dataset
-                                          - vector
-                                          x-enum-descriptions:
-                                            dataset: 数据视图
-                                            vector: 知识视图
-                                          example: dataset
-                                    description: 数据知识资源
-                              description: 数据知识项列表
-                            connect_failed_reason:
-                              type: string
-                              description: 连接状态失败信息
-                              example: 连接超时
-                            connect_type:
-                              type: string
-                              description: 数据连接类型
-                              enum:
-                              - import
-                              - direct
-                              x-enum-descriptions:
-                                import: 导入
-                                direct: 直连
-                              example: direct
-                            created_time:
-                              type: string
-                              description: 创建时间，毫秒时间戳
-                              example: '1711975665710'
-                              format: int64
-                            updated_time:
-                              type: string
-                              description: 更新时间，毫秒时间戳
-                              example: '1711975665710'
-                              format: int64
+                          $ref: '#/components/schemas/DataAsset'
                         description: 数据知识列表
                       page_token:
                         type: string
@@ -3037,187 +1714,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      data_asset:
-                        type: object
-                        properties:
-                          data_asset_id:
-                            type: string
-                            description: 数据知识ID
-                            example: asset_aadg3mcgvpybu
-                          label:
-                            type: string
-                            x-lark-original-type: map
-                            description: 数据知识标题
-                          description:
-                            type: string
-                            x-lark-original-type: map
-                            description: 数据知识描述
-                          data_source_type:
-                            type: string
-                            description: 数据资源类型
-                            enum:
-                            - excel
-                            - pdf
-                            - pptx
-                            - txt
-                            - docx
-                            - mysql
-                            - postgresql
-                            - larkbase
-                            - salesforce
-                            - fenxiangxiaoke
-                            - qianchuan
-                            - clickhouse
-                            - databricks
-                            - servicedesk
-                            - larkbiz_wiki
-                            - larkbiz_doc
-                            - larkbiz_docs
-                            - larkbiz_docx
-                            - larkbiz_pdf
-                            - larkbiz_word
-                            - larkbiz_pptx
-                            - larkbiz_sheets
-                            - larkbiz_base
-                            - larkbiz_personalfolder
-                            - larkbiz_sharedfolder
-                            - object
-                            x-enum-descriptions:
-                              excel: excel
-                              pdf: pdf
-                              pptx: pptx
-                              txt: txt
-                              docx: docx
-                              mysql: mysql
-                              postgresql: postgresql
-                              larkbase: 飞书多维表格
-                              salesforce: salesforce
-                              fenxiangxiaoke: 分享逍客
-                              qianchuan: 巨量千川
-                              clickhouse: clickhouse
-                              databricks: databricks
-                              servicedesk: 飞书服务台
-                              larkbiz_wiki: 飞书Wiki
-                              larkbiz_doc: 飞书doc
-                              larkbiz_docs: 飞书docs
-                              larkbiz_docx: 飞书docx
-                              larkbiz_pdf: 飞书pdf
-                              larkbiz_word: 飞书word
-                              larkbiz_pptx: 飞书pptx
-                              larkbiz_sheets: 飞书文档
-                              larkbiz_base: 飞书多维表格
-                              larkbiz_personalfolder: 飞书个人文件夹
-                              larkbiz_sharedfolder: 飞书共享文件夹
-                              object: 数据表
-                            example: excel
-                          connect_status:
-                            type: string
-                            description: 数据连接状态
-                            enum:
-                            - awaiting
-                            - syncing
-                            - successful
-                            - continuously_syncing
-                            - partially_successful
-                            - failed
-                            x-enum-descriptions:
-                              awaiting: 等待连接
-                              syncing: 连接中
-                              successful: 连接成功
-                              continuously_syncing: 增量同步中
-                              partially_successful: 部分成功
-                              failed: 连接失败
-                            example: successful
-                          tags:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                data_asset_tag_id:
-                                  type: string
-                                  description: 数据知识分类名称
-                                  example: spring_5862e4fea8__c__asset_tag_aadg2b5ql4gbs
-                                name:
-                                  type: string
-                                  description: 数据知识分类ID
-                                  example: 电影
-                            description: 数据知识分类列表
-                          items:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                data_asset_item_id:
-                                  type: string
-                                  description: 数据知识项ID
-                                  example: asset_item_aadg3mcgvpydu
-                                api_name:
-                                  type: string
-                                  description: 数据知识项标识
-                                  example: movie
-                                label:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: 数据知识项标题
-                                description:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: 数据知识项描述
-                                resources:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      resource_id:
-                                        type: string
-                                        description: 数据知识资源ID
-                                        example: spring_5862e4fea8__c__dataset_aadg3lxm4j6mg
-                                      resource_type:
-                                        type: string
-                                        description: 数据知识资源类型
-                                        enum:
-                                        - dataset
-                                        - vector
-                                        x-enum-descriptions:
-                                          dataset: 数据视图
-                                          vector: 知识视图
-                                        example: dataset
-                                  description: 数据知识资源
-                            description: 数据知识项列表
-                          connect_failed_reason:
-                            type: string
-                            description: 连接状态失败信息
-                            example: 连接超时
-                          connect_type:
-                            type: string
-                            description: 数据连接类型
-                            enum:
-                            - import
-                            - direct
-                            x-enum-descriptions:
-                              import: 导入
-                              direct: 直连
-                            example: direct
-                          created_time:
-                            type: string
-                            description: 创建时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          updated_time:
-                            type: string
-                            description: 更新时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                        description: 数据知识
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       - tenant
@@ -3288,187 +1785,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      data_asset:
-                        type: object
-                        properties:
-                          data_asset_id:
-                            type: string
-                            description: 数据知识ID
-                            example: asset_aadg3mcgvpybu
-                          label:
-                            type: string
-                            x-lark-original-type: map
-                            description: 数据知识标题
-                          description:
-                            type: string
-                            x-lark-original-type: map
-                            description: 数据知识描述
-                          data_source_type:
-                            type: string
-                            description: 数据资源类型
-                            enum:
-                            - excel
-                            - pdf
-                            - pptx
-                            - txt
-                            - docx
-                            - mysql
-                            - postgresql
-                            - larkbase
-                            - salesforce
-                            - fenxiangxiaoke
-                            - qianchuan
-                            - clickhouse
-                            - databricks
-                            - servicedesk
-                            - larkbiz_wiki
-                            - larkbiz_doc
-                            - larkbiz_docs
-                            - larkbiz_docx
-                            - larkbiz_pdf
-                            - larkbiz_word
-                            - larkbiz_pptx
-                            - larkbiz_sheets
-                            - larkbiz_base
-                            - larkbiz_personalfolder
-                            - larkbiz_sharedfolder
-                            - object
-                            x-enum-descriptions:
-                              excel: excel
-                              pdf: pdf
-                              pptx: pptx
-                              txt: txt
-                              docx: docx
-                              mysql: mysql
-                              postgresql: postgresql
-                              larkbase: 飞书多维表格
-                              salesforce: salesforce
-                              fenxiangxiaoke: 分享逍客
-                              qianchuan: 巨量千川
-                              clickhouse: clickhouse
-                              databricks: databricks
-                              servicedesk: 飞书服务台
-                              larkbiz_wiki: 飞书Wiki
-                              larkbiz_doc: 飞书doc
-                              larkbiz_docs: 飞书docs
-                              larkbiz_docx: 飞书docx
-                              larkbiz_pdf: 飞书pdf
-                              larkbiz_word: 飞书word
-                              larkbiz_pptx: 飞书pptx
-                              larkbiz_sheets: 飞书文档
-                              larkbiz_base: 飞书多维表格
-                              larkbiz_personalfolder: 飞书个人文件夹
-                              larkbiz_sharedfolder: 飞书共享文件夹
-                              object: 数据表
-                            example: excel
-                          connect_status:
-                            type: string
-                            description: 数据连接状态
-                            enum:
-                            - awaiting
-                            - syncing
-                            - successful
-                            - continuously_syncing
-                            - partially_successful
-                            - failed
-                            x-enum-descriptions:
-                              awaiting: 等待连接
-                              syncing: 连接中
-                              successful: 连接成功
-                              continuously_syncing: 增量同步中
-                              partially_successful: 部分成功
-                              failed: 连接失败
-                            example: successful
-                          tags:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                data_asset_tag_id:
-                                  type: string
-                                  description: 数据知识分类名称
-                                  example: spring_5862e4fea8__c__asset_tag_aadg2b5ql4gbs
-                                name:
-                                  type: string
-                                  description: 数据知识分类ID
-                                  example: 电影
-                            description: 数据知识分类列表
-                          items:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                data_asset_item_id:
-                                  type: string
-                                  description: 数据知识项ID
-                                  example: asset_item_aadg3mcgvpydu
-                                api_name:
-                                  type: string
-                                  description: 数据知识项标识
-                                  example: movie
-                                label:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: 数据知识项标题
-                                description:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: 数据知识项描述
-                                resources:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      resource_id:
-                                        type: string
-                                        description: 数据知识资源ID
-                                        example: spring_5862e4fea8__c__dataset_aadg3lxm4j6mg
-                                      resource_type:
-                                        type: string
-                                        description: 数据知识资源类型
-                                        enum:
-                                        - dataset
-                                        - vector
-                                        x-enum-descriptions:
-                                          dataset: 数据视图
-                                          vector: 知识视图
-                                        example: dataset
-                                  description: 数据知识资源
-                            description: 数据知识项列表
-                          connect_failed_reason:
-                            type: string
-                            description: 连接状态失败信息
-                            example: 连接超时
-                          connect_type:
-                            type: string
-                            description: 数据连接类型
-                            enum:
-                            - import
-                            - direct
-                            x-enum-descriptions:
-                              import: 导入
-                              direct: 直连
-                            example: direct
-                          created_time:
-                            type: string
-                            description: 创建时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                          updated_time:
-                            type: string
-                            description: 更新时间，毫秒时间戳
-                            example: '1711975665710'
-                            format: int64
-                        description: 数据知识
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       - tenant
@@ -4228,3 +2545,529 @@ paths:
       x-lark-rate-limit:
         tier: 5
       x-lark-pagination: true
+components:
+  schemas:
+    DataAsset:
+      type: object
+      properties:
+        data_asset_id:
+          type: string
+          description: 数据知识ID
+          example: asset_aadg3mcgvpybu
+        label:
+          type: string
+          x-lark-original-type: map
+          description: 数据知识标题
+        description:
+          type: string
+          x-lark-original-type: map
+          description: 数据知识描述
+        data_source_type:
+          type: string
+          description: 数据资源类型
+          enum:
+          - excel
+          - pdf
+          - pptx
+          - txt
+          - docx
+          - mysql
+          - postgresql
+          - larkbase
+          - salesforce
+          - fenxiangxiaoke
+          - qianchuan
+          - clickhouse
+          - databricks
+          - servicedesk
+          - larkbiz_wiki
+          - larkbiz_doc
+          - larkbiz_docs
+          - larkbiz_docx
+          - larkbiz_pdf
+          - larkbiz_word
+          - larkbiz_pptx
+          - larkbiz_sheets
+          - larkbiz_base
+          - larkbiz_personalfolder
+          - larkbiz_sharedfolder
+          - object
+          x-enum-descriptions:
+            excel: excel
+            pdf: pdf
+            pptx: pptx
+            txt: txt
+            docx: docx
+            mysql: mysql
+            postgresql: postgresql
+            larkbase: 飞书多维表格
+            salesforce: salesforce
+            fenxiangxiaoke: 分享逍客
+            qianchuan: 巨量千川
+            clickhouse: clickhouse
+            databricks: databricks
+            servicedesk: 飞书服务台
+            larkbiz_wiki: 飞书Wiki
+            larkbiz_doc: 飞书doc
+            larkbiz_docs: 飞书docs
+            larkbiz_docx: 飞书docx
+            larkbiz_pdf: 飞书pdf
+            larkbiz_word: 飞书word
+            larkbiz_pptx: 飞书pptx
+            larkbiz_sheets: 飞书文档
+            larkbiz_base: 飞书多维表格
+            larkbiz_personalfolder: 飞书个人文件夹
+            larkbiz_sharedfolder: 飞书共享文件夹
+            object: 数据表
+          example: excel
+        connect_status:
+          type: string
+          description: 数据连接状态
+          enum:
+          - awaiting
+          - syncing
+          - successful
+          - continuously_syncing
+          - partially_successful
+          - failed
+          x-enum-descriptions:
+            awaiting: 等待连接
+            syncing: 连接中
+            successful: 连接成功
+            continuously_syncing: 增量同步中
+            partially_successful: 部分成功
+            failed: 连接失败
+          example: successful
+        tags:
+          type: array
+          items:
+            type: object
+            properties:
+              data_asset_tag_id:
+                type: string
+                description: 数据知识分类名称
+                example: spring_5862e4fea8__c__asset_tag_aadg2b5ql4gbs
+              name:
+                type: string
+                description: 数据知识分类ID
+                example: 电影
+          description: 数据知识分类列表
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+          description: 数据知识项列表
+        connect_failed_reason:
+          type: string
+          description: 连接状态失败信息
+          example: 连接超时
+        connect_type:
+          type: string
+          description: 数据连接类型
+          enum:
+          - import
+          - direct
+          x-enum-descriptions:
+            import: 导入
+            direct: 直连
+          example: direct
+        created_time:
+          type: string
+          description: 创建时间，毫秒时间戳
+          example: '1711975665710'
+          format: int64
+        updated_time:
+          type: string
+          description: 更新时间，毫秒时间戳
+          example: '1711975665710'
+          format: int64
+      description: 数据知识
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    Data:
+      type: object
+      properties:
+        data_asset:
+          allOf:
+          - $ref: '#/components/schemas/DataAsset'
+          description: 数据知识
+    Message:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 消息 ID
+          example: message_4df45f2xknvcc
+        session_id:
+          type: string
+          description: 会话 ID
+          example: session_4dfunz7sp1g8m
+        run_id:
+          type: string
+          description: 运行 ID
+          example: run_4dfrxvctjqzzj
+        content_type:
+          type: string
+          description: 消息内容类型
+          enum:
+          - MDX
+          - TEXT
+          - CLIP
+          - SmartCard
+          - JSON
+          x-enum-descriptions:
+            MDX: MDX
+            TEXT: TEXT
+            CLIP: GUI 卡片
+            SmartCard: SmartCard
+            JSON: JSON
+          example: MDX
+        content:
+          type: string
+          description: 消息内容
+          example: 你好
+        files:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item2'
+          description: 消息中包含的文件
+        quote_message_id:
+          type: string
+          description: 引用的消息 ID
+          example: message_4de9bpg70qskh
+        sender:
+          allOf:
+          - $ref: '#/components/schemas/Sender'
+          description: 发送者
+        mentions:
+          type: array
+          items:
+            type: object
+            properties:
+              entity_id:
+                type: string
+                description: 实体 ID
+                example: ou_5ad573a6411d72b8305fda3a9c15c70e
+              identity_provider:
+                type: string
+                description: 身份提供者
+                enum:
+                - AILY
+                - FEISHU
+                x-enum-descriptions:
+                  AILY: Aily 账号体系
+                  FEISHU: 飞书账号体系
+                example: FEISHU
+              key:
+                type: string
+                description: 被@实体在消息体中的占位符
+                example: '@_user_1'
+              name:
+                type: string
+                description: 被@实体的名称
+                example: 张三
+              aily_id:
+                type: string
+                description: Aily 账号体系下的 ID
+                example: '1794840334557292'
+          description: 被@的实体
+        plain_text:
+          type: string
+          description: 消息体的纯文本表达
+          example: 你好
+        created_at:
+          type: string
+          description: 消息的创建时间，毫秒时间戳
+          example: '1711975665710'
+          format: int64
+        status:
+          type: string
+          description: 状态
+          enum:
+          - IN_PROGRESS
+          - COMPLETED
+          x-enum-descriptions:
+            IN_PROGRESS: 生成中
+            COMPLETED: 已完成
+          example: IN_PROGRESS
+        reasoning_content:
+          type: string
+          description: 推理内容
+          example: 推理内容
+      description: 消息信息
+    Schema2:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data2'
+    Data2:
+      type: object
+      properties:
+        message:
+          allOf:
+          - $ref: '#/components/schemas/Message'
+          description: 消息信息
+    Run:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 运行 ID
+          example: run_4dfrxvctjqzzj
+        created_at:
+          type: string
+          description: 运行的创建时间，毫秒时间戳
+          example: '1711975665710'
+          format: int64
+        app_id:
+          type: string
+          description: 应用 ID
+          example: spring_xxx__c
+        session_id:
+          type: string
+          description: 会话 ID
+          example: session_4dfunz7sp1g8m
+        status:
+          type: string
+          description: 状态
+          enum:
+          - QUEUED
+          - IN_PROGRESS
+          - REQUIRES_MESSAGE
+          - CANCELLED
+          - COMPLETED
+          - FAILED
+          - EXPIRED
+          x-enum-descriptions:
+            QUEUED: 排队中
+            IN_PROGRESS: 执行中
+            REQUIRES_MESSAGE: 等待补充消息输入
+            CANCELLED: 已取消
+            COMPLETED: 已完成
+            FAILED: 已失败
+            EXPIRED: 已过期
+          example: IN_PROGRESS
+        started_at:
+          type: string
+          description: 开始时间，毫秒时间戳
+          example: '1711975665710'
+          format: int64
+        ended_at:
+          type: string
+          description: 结束时间，毫秒时间戳
+          example: '1711975665710'
+          format: int64
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: 错误码
+              example: sp_ec_sm_900101
+            message:
+              type: string
+              description: 错误信息
+              example: 技能不存在或已删除
+          required:
+          - code
+          - message
+          description: 失败时的错误信息
+        metadata:
+          type: string
+          description: 其他透传信息
+          example: '{}'
+      required:
+      - id
+      - created_at
+      - app_id
+      - session_id
+      - status
+      description: 运行信息
+    Schema3:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data3'
+    Data3:
+      type: object
+      properties:
+        run:
+          allOf:
+          - $ref: '#/components/schemas/Run'
+          description: 运行信息
+    Item:
+      type: object
+      properties:
+        data_asset_item_id:
+          type: string
+          description: 数据知识项ID
+          example: asset_item_aadg3mcgvpydu
+        api_name:
+          type: string
+          description: 数据知识项标识
+          example: movie
+        label:
+          type: string
+          x-lark-original-type: map
+          description: 数据知识项标题
+        description:
+          type: string
+          x-lark-original-type: map
+          description: 数据知识项描述
+        resources:
+          type: array
+          items:
+            type: object
+            properties:
+              resource_id:
+                type: string
+                description: 数据知识资源ID
+                example: spring_5862e4fea8__c__dataset_aadg3lxm4j6mg
+              resource_type:
+                type: string
+                description: 数据知识资源类型
+                enum:
+                - dataset
+                - vector
+                x-enum-descriptions:
+                  dataset: 数据视图
+                  vector: 知识视图
+                example: dataset
+          description: 数据知识资源
+    Schema4:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data4'
+    Item2:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 文件 ID
+          example: file_4d9nu1ev3a2rq
+        mime_type:
+          type: string
+          description: 文件类型，参见 https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types
+          example: image/png
+        file_name:
+          type: string
+          description: 文件名
+          example: 发票.png
+        metadata:
+          type: string
+          description: 其他透传信息
+          example: '{}'
+        created_at:
+          type: string
+          description: 文件的创建时间，毫秒时间戳
+          example: '1711975665710'
+          format: int64
+        preview_url:
+          type: object
+          properties:
+            url:
+              type: string
+              description: 文件的 URL
+              example: http://path_to_file
+            expired_at:
+              type: string
+              description: url 过期时间，秒时间戳
+              example: '1719413169'
+              format: int64
+          required:
+          - url
+          description: 文件预览链接
+    Data4:
+      type: object
+      properties:
+        session:
+          allOf:
+          - $ref: '#/components/schemas/Session'
+          description: 创建的会话信息
+    Session:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 会话 ID
+          example: session_4dfunz7sp1g8m
+        created_at:
+          type: string
+          description: 会话的创建时间，毫秒时间戳
+          example: '1711975665710'
+          format: int64
+        modified_at:
+          type: string
+          description: 会话的上次更新时间，毫秒时间戳
+          example: '1711975665710'
+          format: int64
+        created_by:
+          type: string
+          description: 会话的创建人
+          example: '1794840334557292'
+        channel_context:
+          type: string
+          description: 渠道上下文
+          example: '{}'
+        metadata:
+          type: string
+          description: 其他透传信息
+          example: '{}'
+      required:
+      - id
+      - created_at
+      - modified_at
+      - created_by
+      description: 创建的会话信息
+    Sender:
+      type: object
+      properties:
+        entity_id:
+          type: string
+          description: 实体 ID
+          example: ou_5ad573a6411d72b8305fda3a9c15c70e
+        identity_provider:
+          type: string
+          description: 身份提供者
+          enum:
+          - AILY
+          - FEISHU
+          x-enum-descriptions:
+            AILY: Aily 账号体系
+            FEISHU: 飞书账号体系
+          example: FEISHU
+        sender_type:
+          type: string
+          description: 发送人类型
+          enum:
+          - USER
+          - ASSISTANT
+          x-enum-descriptions:
+            USER: 用户
+            ASSISTANT: 应用
+          example: USER
+        aily_id:
+          type: string
+          description: Aily 账号体系下的 ID
+          example: '1794840334557292'
+      description: 发送者

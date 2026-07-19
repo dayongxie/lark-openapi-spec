@@ -32,6 +32,8 @@ structured API metadata into standard OpenAPI 3.0 documents so you can:
 | `openapi/*.yaml` | lark-cli API registry (`/api/tools/open/api_definition`) | Curated typed APIs with risk levels, danger flags, usage tips | 15 services, 239 operations |
 | `shortcuts/*.yaml` | lark-cli `+` shortcut commands (from CLI help) | CLI contract reference (not HTTP interfaces) | 18 domains, 412 commands |
 
+Repeated shared structures (e.g. docx Blocks) are automatically extracted into each file's `components/schemas` and referenced via `$ref`, shrinking the documents by ~76%.
+
 The tracks complement each other: the full track answers "does it exist", while
 the curated track's risk levels (`read` / `write` / `high-risk-write`) and tips
 are unique to it. Where they disagree, prefer the full track (official source).
@@ -97,4 +99,21 @@ Pushing changes to `tools/` or the workflow itself also triggers a rebuild.
 ## Regenerate locally
 
 ```bash
-pip install -r tools/
+pip install -r tools/requirements.txt
+make update                        # lark-cli registry track
+make explorer                      # official Explorer full track (~10 min)
+make shortcuts CLI=/path/to/lark-cli     # shortcut reference (needs lark-cli)
+```
+
+## Disclaimer
+
+Unofficial, community-maintained project. Data originates from the lark-cli
+project (MIT License) and public Feishu/Lark Open Platform endpoints. The
+authoritative documentation is at [open.feishu.cn](https://open.feishu.cn/document)
+and [open.larksuite.com](https://open.larksuite.com/document). "Feishu" and
+"Lark" are trademarks of their respective owners; this project is not
+affiliated with or endorsed by them.
+
+## License
+
+MIT (code and generated YAML alike). See [LICENSE](LICENSE).

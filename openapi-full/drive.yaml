@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: drive
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -415,58 +415,8 @@ paths:
               type: object
               properties:
                 content:
-                  type: object
-                  properties:
-                    elements:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          type:
-                            type: string
-                            description: 回复内容的元素类型
-                            enum:
-                            - text_run
-                            - docs_link
-                            - person
-                            x-enum-descriptions:
-                              text_run: 普通文本
-                              docs_link: at 云文档链接
-                              person: at 联系人
-                            example: docs_link
-                          text_run:
-                            type: object
-                            properties:
-                              text:
-                                type: string
-                                description: 回复 普通文本
-                            required:
-                            - text
-                            description: 文本内容
-                          docs_link:
-                            type: object
-                            properties:
-                              url:
-                                type: string
-                                description: 回复 at 云文档
-                            required:
-                            - url
-                            description: 云文档链接
-                          person:
-                            type: object
-                            properties:
-                              user_id:
-                                type: string
-                                description: 回复 at 联系人
-                                example: ou_cc19b2bfb93f8a44db4b4d6eababcef
-                            required:
-                            - user_id
-                            description: 联系人
-                        required:
-                        - type
-                      description: 回复内容的元素列表
-                  required:
-                  - elements
+                  allOf:
+                  - $ref: '#/components/schemas/Content'
                   description: 回复内容
                 extra:
                   type: string
@@ -487,58 +437,7 @@ paths:
                     type: object
                     properties:
                       content:
-                        type: object
-                        properties:
-                          elements:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                type:
-                                  type: string
-                                  description: 回复内容的元素类型
-                                  enum:
-                                  - text_run
-                                  - docs_link
-                                  - person
-                                  x-enum-descriptions:
-                                    text_run: 普通文本
-                                    docs_link: at 云文档链接
-                                    person: at 联系人
-                                  example: docs_link
-                                text_run:
-                                  type: object
-                                  properties:
-                                    text:
-                                      type: string
-                                      description: 回复 普通文本
-                                  required:
-                                  - text
-                                  description: 文本内容
-                                docs_link:
-                                  type: object
-                                  properties:
-                                    url:
-                                      type: string
-                                      description: 回复 at 云文档
-                                  required:
-                                  - url
-                                  description: 云文档链接
-                                person:
-                                  type: object
-                                  properties:
-                                    user_id:
-                                      type: string
-                                      description: 回复 at 联系人
-                                      example: ou_cc19b2bfb93f8a44db4b4d6eababcef
-                                  required:
-                                  - user_id
-                                  description: 联系人
-                              required:
-                              - type
-                            description: 回复内容的元素列表
-                        required:
-                        - elements
+                        $ref: '#/components/schemas/Content'
                       reply_id:
                         type: string
                         description: 回复 ID
@@ -753,110 +652,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            content:
-                              type: object
-                              properties:
-                                elements:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      type:
-                                        type: string
-                                        description: 回复内容的元素类型
-                                        enum:
-                                        - text_run
-                                        - docs_link
-                                        - person
-                                        x-enum-descriptions:
-                                          text_run: 普通文本
-                                          docs_link: at 云文档链接
-                                          person: at 联系人
-                                        example: docs_link
-                                      text_run:
-                                        type: object
-                                        properties:
-                                          text:
-                                            type: string
-                                            description: 回复 普通文本
-                                        required:
-                                        - text
-                                        description: 文本内容
-                                      docs_link:
-                                        type: object
-                                        properties:
-                                          url:
-                                            type: string
-                                            description: 回复 at 云文档
-                                        required:
-                                        - url
-                                        description: 云文档链接
-                                      person:
-                                        type: object
-                                        properties:
-                                          user_id:
-                                            type: string
-                                            description: 回复 at 联系人
-                                            example: ou_cc19b2bfb93f8a44db4b4d6eababcef
-                                        required:
-                                        - user_id
-                                        description: 联系人
-                                    required:
-                                    - type
-                                  description: 回复内容的元素列表
-                              required:
-                              - elements
-                              description: 回复内容
-                            reply_id:
-                              type: string
-                              description: 回复 ID
-                              example: 6916106xxxxx4512356
-                            user_id:
-                              type: string
-                              description: 用户 ID
-                              example: ou_cc19b2bfb93f8a44db4b4d6eab2abcef
-                            create_time:
-                              type: integer
-                              description: 创建时间
-                              example: '1610281603'
-                            update_time:
-                              type: integer
-                              description: 更新时间
-                              example: '1610281603'
-                            extra:
-                              type: object
-                              properties:
-                                image_list:
-                                  type: array
-                                  items:
-                                    type: string
-                              description: 回复的其他内容，图片 Token 等
-                            reactions:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  reaction_key:
-                                    type: string
-                                    description: 表情回复的唯一标识，用于区分不同类型的评论表情（如点赞、鼓掌等）。
-                                    example: like
-                                  count:
-                                    type: integer
-                                    description: 该表情回复的累计使用次数，统计范围为当前评论下所有用户的有效回复记录。
-                                    example: '10'
-                                  ahead_users:
-                                    type: array
-                                    items:
-                                      type: string
-                                    description: 用于在界面优先展示核心互动用户。用户ID可通过用户信息查询接口获取。
-                                required:
-                                - reaction_key
-                                - count
-                              description: 评论回复卡片上对应的表情回复信息
-                          required:
-                          - content
+                          $ref: '#/components/schemas/Item'
                       page_token:
                         type: string
                       has_more:
@@ -1106,58 +902,8 @@ paths:
               type: object
               properties:
                 content:
-                  type: object
-                  properties:
-                    elements:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          type:
-                            type: string
-                            description: 回复内容的元素类型
-                            enum:
-                            - text_run
-                            - docs_link
-                            - person
-                            x-enum-descriptions:
-                              text_run: 普通文本
-                              docs_link: at 云文档链接
-                              person: at 联系人
-                            example: docs_link
-                          text_run:
-                            type: object
-                            properties:
-                              text:
-                                type: string
-                                description: 回复 普通文本
-                            required:
-                            - text
-                            description: 文本内容
-                          docs_link:
-                            type: object
-                            properties:
-                              url:
-                                type: string
-                                description: 回复 at 云文档
-                            required:
-                            - url
-                            description: 云文档链接
-                          person:
-                            type: object
-                            properties:
-                              user_id:
-                                type: string
-                                description: 回复 at 联系人
-                                example: ou_cc19b2bfb93f8a44db4b4d6eababcef
-                            required:
-                            - user_id
-                            description: 联系人
-                        required:
-                        - type
-                      description: 回复内容的元素列表
-                  required:
-                  - elements
+                  allOf:
+                  - $ref: '#/components/schemas/Content'
                   description: 回复内容
       responses:
         '200':
@@ -1327,161 +1073,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            comment_id:
-                              type: string
-                              description: 评论 ID
-                              example: 69161068xxxxx512356
-                            user_id:
-                              type: string
-                              description: 用户 ID
-                            create_time:
-                              type: integer
-                              description: 创建时间
-                              example: '1610281603'
-                            update_time:
-                              type: integer
-                              description: 更新时间
-                              example: '1610281603'
-                            is_solved:
-                              type: boolean
-                              description: 是否已解决
-                            solved_time:
-                              type: integer
-                              description: 解决评论时间
-                              example: '1610281603'
-                            solver_user_id:
-                              type: string
-                              description: 解决评论者的用户 ID
-                            has_more:
-                              type: boolean
-                              description: 是否有更多回复
-                            page_token:
-                              type: string
-                              description: 回复分页标记
-                              example: '6916106822734512356'
-                            is_whole:
-                              type: boolean
-                              description: 是否是全文评论
-                            quote:
-                              type: string
-                              description: 局部评论的引用字段
-                              example: hello
-                            reply_list:
-                              type: object
-                              properties:
-                                replies:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      content:
-                                        type: object
-                                        properties:
-                                          elements:
-                                            type: array
-                                            items:
-                                              type: object
-                                              properties:
-                                                type:
-                                                  type: string
-                                                  description: 回复内容的元素类型
-                                                  enum:
-                                                  - text_run
-                                                  - docs_link
-                                                  - person
-                                                  x-enum-descriptions:
-                                                    text_run: 普通文本
-                                                    docs_link: at 云文档链接
-                                                    person: at 联系人
-                                                  example: docs_link
-                                                text_run:
-                                                  type: object
-                                                  properties:
-                                                    text:
-                                                      type: string
-                                                      description: 回复 普通文本
-                                                  required:
-                                                  - text
-                                                  description: 文本内容
-                                                docs_link:
-                                                  type: object
-                                                  properties:
-                                                    url:
-                                                      type: string
-                                                      description: 回复 at 云文档
-                                                  required:
-                                                  - url
-                                                  description: 云文档链接
-                                                person:
-                                                  type: object
-                                                  properties:
-                                                    user_id:
-                                                      type: string
-                                                      description: 回复 at 联系人
-                                                      example: ou_cc19b2bfb93f8a44db4b4d6eababcef
-                                                  required:
-                                                  - user_id
-                                                  description: 联系人
-                                              required:
-                                              - type
-                                            description: 回复内容的元素列表
-                                        required:
-                                        - elements
-                                        description: 回复内容
-                                      reply_id:
-                                        type: string
-                                        description: 回复 ID
-                                        example: 6916106xxxxx4512356
-                                      user_id:
-                                        type: string
-                                        description: 用户 ID
-                                        example: ou_cc19b2bfb93f8a44db4b4d6eab2abcef
-                                      create_time:
-                                        type: integer
-                                        description: 创建时间
-                                        example: '1610281603'
-                                      update_time:
-                                        type: integer
-                                        description: 更新时间
-                                        example: '1610281603'
-                                      extra:
-                                        type: object
-                                        properties:
-                                          image_list:
-                                            type: array
-                                            items:
-                                              type: string
-                                        description: 回复的其他内容，图片 Token 等
-                                      reactions:
-                                        type: array
-                                        items:
-                                          type: object
-                                          properties:
-                                            reaction_key:
-                                              type: string
-                                              description: 表情回复的唯一标识，用于区分不同类型的评论表情（如点赞、鼓掌等）。
-                                              example: like
-                                            count:
-                                              type: integer
-                                              description: 该表情回复的累计使用次数，统计范围为当前评论下所有用户的有效回复记录。
-                                              example: '10'
-                                            ahead_users:
-                                              type: array
-                                              items:
-                                                type: string
-                                              description: 用于在界面优先展示核心互动用户。用户ID可通过用户信息查询接口获取。
-                                          required:
-                                          - reaction_key
-                                          - count
-                                        description: 评论回复卡片上对应的表情回复信息
-                                    required:
-                                    - content
-                                  description: 回复列表
-                              required:
-                              - replies
-                              description: 评论里的回复列表
+                          $ref: '#/components/schemas/Data'
                         description: 评论的相关信息、回复的信息、回复分页的信息
       x-lark-access-tokens:
       - tenant
@@ -1590,58 +1182,8 @@ paths:
                         type: object
                         properties:
                           content:
-                            type: object
-                            properties:
-                              elements:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    type:
-                                      type: string
-                                      description: 回复内容的元素类型
-                                      enum:
-                                      - text_run
-                                      - docs_link
-                                      - person
-                                      x-enum-descriptions:
-                                        text_run: 普通文本
-                                        docs_link: at 云文档链接
-                                        person: at 联系人
-                                      example: docs_link
-                                    text_run:
-                                      type: object
-                                      properties:
-                                        text:
-                                          type: string
-                                          description: 回复 普通文本
-                                      required:
-                                      - text
-                                      description: 文本内容
-                                    docs_link:
-                                      type: object
-                                      properties:
-                                        url:
-                                          type: string
-                                          description: 回复 at 云文档
-                                      required:
-                                      - url
-                                      description: 云文档链接
-                                    person:
-                                      type: object
-                                      properties:
-                                        user_id:
-                                          type: string
-                                          description: 回复 at 联系人
-                                          example: ou_cc19b2bfb93f8a44db4b4d6eababcef
-                                      required:
-                                      - user_id
-                                      description: 联系人
-                                  required:
-                                  - type
-                                description: 回复内容的元素列表
-                            required:
-                            - elements
+                            allOf:
+                            - $ref: '#/components/schemas/Content'
                             description: 回复内容
                           reactions:
                             type: array
@@ -1677,168 +1219,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      comment_id:
-                        type: string
-                        description: 评论 ID
-                        example: 69161068xxxxx512356
-                      user_id:
-                        type: string
-                        description: 用户 ID
-                      create_time:
-                        type: integer
-                        description: 创建时间
-                        example: '1610281603'
-                      update_time:
-                        type: integer
-                        description: 更新时间
-                        example: '1610281603'
-                      is_solved:
-                        type: boolean
-                        description: 是否已解决
-                      solved_time:
-                        type: integer
-                        description: 解决评论时间
-                        example: '1610281603'
-                      solver_user_id:
-                        type: string
-                        description: 解决评论者的用户 ID
-                      has_more:
-                        type: boolean
-                        description: 是否有更多回复
-                      page_token:
-                        type: string
-                        description: 回复分页标记
-                        example: '6916106822734512356'
-                      is_whole:
-                        type: boolean
-                        description: 是否是全文评论
-                      quote:
-                        type: string
-                        description: 局部评论的引用字段
-                        example: hello
-                      reply_list:
-                        type: object
-                        properties:
-                          replies:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                content:
-                                  type: object
-                                  properties:
-                                    elements:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          type:
-                                            type: string
-                                            description: 回复内容的元素类型
-                                            enum:
-                                            - text_run
-                                            - docs_link
-                                            - person
-                                            x-enum-descriptions:
-                                              text_run: 普通文本
-                                              docs_link: at 云文档链接
-                                              person: at 联系人
-                                            example: docs_link
-                                          text_run:
-                                            type: object
-                                            properties:
-                                              text:
-                                                type: string
-                                                description: 回复 普通文本
-                                            required:
-                                            - text
-                                            description: 文本内容
-                                          docs_link:
-                                            type: object
-                                            properties:
-                                              url:
-                                                type: string
-                                                description: 回复 at 云文档
-                                            required:
-                                            - url
-                                            description: 云文档链接
-                                          person:
-                                            type: object
-                                            properties:
-                                              user_id:
-                                                type: string
-                                                description: 回复 at 联系人
-                                                example: ou_cc19b2bfb93f8a44db4b4d6eababcef
-                                            required:
-                                            - user_id
-                                            description: 联系人
-                                        required:
-                                        - type
-                                      description: 回复内容的元素列表
-                                  required:
-                                  - elements
-                                  description: 回复内容
-                                reply_id:
-                                  type: string
-                                  description: 回复 ID
-                                  example: 6916106xxxxx4512356
-                                user_id:
-                                  type: string
-                                  description: 用户 ID
-                                  example: ou_cc19b2bfb93f8a44db4b4d6eab2abcef
-                                create_time:
-                                  type: integer
-                                  description: 创建时间
-                                  example: '1610281603'
-                                update_time:
-                                  type: integer
-                                  description: 更新时间
-                                  example: '1610281603'
-                                extra:
-                                  type: object
-                                  properties:
-                                    image_list:
-                                      type: array
-                                      items:
-                                        type: string
-                                  description: 回复的其他内容，图片 Token 等
-                                reactions:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      reaction_key:
-                                        type: string
-                                        description: 表情回复的唯一标识，用于区分不同类型的评论表情（如点赞、鼓掌等）。
-                                        example: like
-                                      count:
-                                        type: integer
-                                        description: 该表情回复的累计使用次数，统计范围为当前评论下所有用户的有效回复记录。
-                                        example: '10'
-                                      ahead_users:
-                                        type: array
-                                        items:
-                                          type: string
-                                        description: 用于在界面优先展示核心互动用户。用户ID可通过用户信息查询接口获取。
-                                    required:
-                                    - reaction_key
-                                    - count
-                                  description: 评论回复卡片上对应的表情回复信息
-                              required:
-                              - content
-                            description: 回复列表
-                        required:
-                        - replies
-                        description: 评论里的回复列表
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       - tenant
@@ -2017,161 +1398,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            comment_id:
-                              type: string
-                              description: 评论 ID
-                              example: 69161068xxxxx512356
-                            user_id:
-                              type: string
-                              description: 用户 ID
-                            create_time:
-                              type: integer
-                              description: 创建时间
-                              example: '1610281603'
-                            update_time:
-                              type: integer
-                              description: 更新时间
-                              example: '1610281603'
-                            is_solved:
-                              type: boolean
-                              description: 是否已解决
-                            solved_time:
-                              type: integer
-                              description: 解决评论时间
-                              example: '1610281603'
-                            solver_user_id:
-                              type: string
-                              description: 解决评论者的用户 ID
-                            has_more:
-                              type: boolean
-                              description: 是否有更多回复
-                            page_token:
-                              type: string
-                              description: 回复分页标记
-                              example: '6916106822734512356'
-                            is_whole:
-                              type: boolean
-                              description: 是否是全文评论
-                            quote:
-                              type: string
-                              description: 局部评论的引用字段
-                              example: hello
-                            reply_list:
-                              type: object
-                              properties:
-                                replies:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      content:
-                                        type: object
-                                        properties:
-                                          elements:
-                                            type: array
-                                            items:
-                                              type: object
-                                              properties:
-                                                type:
-                                                  type: string
-                                                  description: 回复内容的元素类型
-                                                  enum:
-                                                  - text_run
-                                                  - docs_link
-                                                  - person
-                                                  x-enum-descriptions:
-                                                    text_run: 普通文本
-                                                    docs_link: at 云文档链接
-                                                    person: at 联系人
-                                                  example: docs_link
-                                                text_run:
-                                                  type: object
-                                                  properties:
-                                                    text:
-                                                      type: string
-                                                      description: 回复 普通文本
-                                                  required:
-                                                  - text
-                                                  description: 文本内容
-                                                docs_link:
-                                                  type: object
-                                                  properties:
-                                                    url:
-                                                      type: string
-                                                      description: 回复 at 云文档
-                                                  required:
-                                                  - url
-                                                  description: 云文档链接
-                                                person:
-                                                  type: object
-                                                  properties:
-                                                    user_id:
-                                                      type: string
-                                                      description: 回复 at 联系人
-                                                      example: ou_cc19b2bfb93f8a44db4b4d6eababcef
-                                                  required:
-                                                  - user_id
-                                                  description: 联系人
-                                              required:
-                                              - type
-                                            description: 回复内容的元素列表
-                                        required:
-                                        - elements
-                                        description: 回复内容
-                                      reply_id:
-                                        type: string
-                                        description: 回复 ID
-                                        example: 6916106xxxxx4512356
-                                      user_id:
-                                        type: string
-                                        description: 用户 ID
-                                        example: ou_cc19b2bfb93f8a44db4b4d6eab2abcef
-                                      create_time:
-                                        type: integer
-                                        description: 创建时间
-                                        example: '1610281603'
-                                      update_time:
-                                        type: integer
-                                        description: 更新时间
-                                        example: '1610281603'
-                                      extra:
-                                        type: object
-                                        properties:
-                                          image_list:
-                                            type: array
-                                            items:
-                                              type: string
-                                        description: 回复的其他内容，图片 Token 等
-                                      reactions:
-                                        type: array
-                                        items:
-                                          type: object
-                                          properties:
-                                            reaction_key:
-                                              type: string
-                                              description: 表情回复的唯一标识，用于区分不同类型的评论表情（如点赞、鼓掌等）。
-                                              example: like
-                                            count:
-                                              type: integer
-                                              description: 该表情回复的累计使用次数，统计范围为当前评论下所有用户的有效回复记录。
-                                              example: '10'
-                                            ahead_users:
-                                              type: array
-                                              items:
-                                                type: string
-                                              description: 用于在界面优先展示核心互动用户。用户ID可通过用户信息查询接口获取。
-                                          required:
-                                          - reaction_key
-                                          - count
-                                        description: 评论回复卡片上对应的表情回复信息
-                                    required:
-                                    - content
-                                  description: 回复列表
-                              required:
-                              - replies
-                              description: 评论里的回复列表
+                          $ref: '#/components/schemas/Data'
                         description: 数据
       x-lark-access-tokens:
       - user
@@ -2289,168 +1516,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      comment_id:
-                        type: string
-                        description: 评论 ID
-                        example: 69161068xxxxx512356
-                      user_id:
-                        type: string
-                        description: 用户 ID
-                      create_time:
-                        type: integer
-                        description: 创建时间
-                        example: '1610281603'
-                      update_time:
-                        type: integer
-                        description: 更新时间
-                        example: '1610281603'
-                      is_solved:
-                        type: boolean
-                        description: 是否已解决
-                      solved_time:
-                        type: integer
-                        description: 解决评论时间
-                        example: '1610281603'
-                      solver_user_id:
-                        type: string
-                        description: 解决评论者的用户 ID
-                      has_more:
-                        type: boolean
-                        description: 是否有更多回复
-                      page_token:
-                        type: string
-                        description: 回复分页标记
-                        example: '6916106822734512356'
-                      is_whole:
-                        type: boolean
-                        description: 是否是全文评论
-                      quote:
-                        type: string
-                        description: 局部评论的引用字段
-                        example: hello
-                      reply_list:
-                        type: object
-                        properties:
-                          replies:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                content:
-                                  type: object
-                                  properties:
-                                    elements:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          type:
-                                            type: string
-                                            description: 回复内容的元素类型
-                                            enum:
-                                            - text_run
-                                            - docs_link
-                                            - person
-                                            x-enum-descriptions:
-                                              text_run: 普通文本
-                                              docs_link: at 云文档链接
-                                              person: at 联系人
-                                            example: docs_link
-                                          text_run:
-                                            type: object
-                                            properties:
-                                              text:
-                                                type: string
-                                                description: 回复 普通文本
-                                            required:
-                                            - text
-                                            description: 文本内容
-                                          docs_link:
-                                            type: object
-                                            properties:
-                                              url:
-                                                type: string
-                                                description: 回复 at 云文档
-                                            required:
-                                            - url
-                                            description: 云文档链接
-                                          person:
-                                            type: object
-                                            properties:
-                                              user_id:
-                                                type: string
-                                                description: 回复 at 联系人
-                                                example: ou_cc19b2bfb93f8a44db4b4d6eababcef
-                                            required:
-                                            - user_id
-                                            description: 联系人
-                                        required:
-                                        - type
-                                      description: 回复内容的元素列表
-                                  required:
-                                  - elements
-                                  description: 回复内容
-                                reply_id:
-                                  type: string
-                                  description: 回复 ID
-                                  example: 6916106xxxxx4512356
-                                user_id:
-                                  type: string
-                                  description: 用户 ID
-                                  example: ou_cc19b2bfb93f8a44db4b4d6eab2abcef
-                                create_time:
-                                  type: integer
-                                  description: 创建时间
-                                  example: '1610281603'
-                                update_time:
-                                  type: integer
-                                  description: 更新时间
-                                  example: '1610281603'
-                                extra:
-                                  type: object
-                                  properties:
-                                    image_list:
-                                      type: array
-                                      items:
-                                        type: string
-                                  description: 回复的其他内容，图片 Token 等
-                                reactions:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      reaction_key:
-                                        type: string
-                                        description: 表情回复的唯一标识，用于区分不同类型的评论表情（如点赞、鼓掌等）。
-                                        example: like
-                                      count:
-                                        type: integer
-                                        description: 该表情回复的累计使用次数，统计范围为当前评论下所有用户的有效回复记录。
-                                        example: '10'
-                                      ahead_users:
-                                        type: array
-                                        items:
-                                          type: string
-                                        description: 用于在界面优先展示核心互动用户。用户ID可通过用户信息查询接口获取。
-                                    required:
-                                    - reaction_key
-                                    - count
-                                  description: 评论回复卡片上对应的表情回复信息
-                              required:
-                              - content
-                            description: 回复列表
-                        required:
-                        - replies
-                        description: 评论里的回复列表
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       - tenant
@@ -2790,43 +1856,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      subscription_id:
-                        type: string
-                        description: 订阅关系ID
-                        example: '1234567890987654321'
-                      subscription_type:
-                        type: string
-                        description: 订阅类型
-                        enum:
-                        - comment_update
-                        x-enum-descriptions:
-                          comment_update: 评论更新
-                        example: comment_update
-                      is_subcribe:
-                        type: boolean
-                        description: 是否订阅
-                        example: 'true'
-                      file_type:
-                        type: string
-                        description: 文档类型
-                        enum:
-                        - doc
-                        - docx
-                        - wiki
-                        x-enum-descriptions:
-                          doc: 旧版文档
-                          docx: 新版文档
-                          wiki: 知识库
-                        example: docx
+                $ref: '#/components/schemas/Schema6'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -3013,43 +2043,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      subscription_id:
-                        type: string
-                        description: 订阅关系ID
-                        example: '1234567890987654321'
-                      subscription_type:
-                        type: string
-                        description: 订阅类型
-                        enum:
-                        - comment_update
-                        x-enum-descriptions:
-                          comment_update: 评论更新
-                        example: comment_update
-                      is_subcribe:
-                        type: boolean
-                        description: 是否订阅
-                        example: 'true'
-                      file_type:
-                        type: string
-                        description: 文档类型
-                        enum:
-                        - doc
-                        - docx
-                        - wiki
-                        x-enum-descriptions:
-                          doc: 旧版文档
-                          docx: 新版文档
-                          wiki: 知识库
-                        example: docx
+                $ref: '#/components/schemas/Schema6'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -3183,78 +2177,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      name:
-                        type: string
-                        description: 版本文档标题，最大长度 1024 个Unicode 码点。通常情况下，一个英文或中文字符对应一个码点，但是某些特殊符号可能会对应多个码点。例如，家庭组合「👨‍👩‍👧」这个表情符号对应5个码点。
-                        example: 文档标题
-                      version:
-                        type: string
-                        description: 版本文档版本号
-                        example: version1
-                      parent_token:
-                        type: string
-                        description: 源文档token
-                        example: doxcnMycg4ryxQofSeoKkJuXYOb
-                      owner_id:
-                        type: string
-                        description: 版本文档所有者id
-                        example: '694699009591869450'
-                      creator_id:
-                        type: string
-                        description: 版本文档创建者id
-                        example: '694699009591869451'
-                      create_time:
-                        type: string
-                        description: 版本文档创建时间
-                        example: '1660708537'
-                        format: int64
-                      update_time:
-                        type: string
-                        description: 版本文档更新时间
-                        example: '1660708537'
-                        format: int64
-                      status:
-                        type: string
-                        description: 版本文档状态
-                        enum:
-                        - '0'
-                        - '1'
-                        - '2'
-                        x-enum-descriptions:
-                          '0': 正常状态
-                          '1': 删除状态
-                          '2': 回收站状态
-                        example: 0，1，2
-                        format: int64
-                      obj_type:
-                        type: string
-                        description: 版本文档类型
-                        enum:
-                        - docx
-                        - sheet
-                        x-enum-descriptions:
-                          docx: 新版文档
-                          sheet: 电子表格
-                        example: docx
-                      parent_type:
-                        type: string
-                        description: 源文档类型
-                        enum:
-                        - docx
-                        - sheet
-                        x-enum-descriptions:
-                          docx: 新版文档
-                          sheet: 电子表格
-                        example: docx
+                $ref: '#/components/schemas/Schema5'
       x-lark-access-tokens:
       - tenant
       - user
@@ -3365,71 +2288,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              description: 版本文档标题，最大长度 1024 个Unicode 码点。通常情况下，一个英文或中文字符对应一个码点，但是某些特殊符号可能会对应多个码点。例如，家庭组合「👨‍👩‍👧」这个表情符号对应5个码点。
-                              example: 文档标题
-                            version:
-                              type: string
-                              description: 版本文档版本号
-                              example: version1
-                            parent_token:
-                              type: string
-                              description: 源文档token
-                              example: doxcnMycg4ryxQofSeoKkJuXYOb
-                            owner_id:
-                              type: string
-                              description: 版本文档所有者id
-                              example: '694699009591869450'
-                            creator_id:
-                              type: string
-                              description: 版本文档创建者id
-                              example: '694699009591869451'
-                            create_time:
-                              type: string
-                              description: 版本文档创建时间
-                              example: '1660708537'
-                              format: int64
-                            update_time:
-                              type: string
-                              description: 版本文档更新时间
-                              example: '1660708537'
-                              format: int64
-                            status:
-                              type: string
-                              description: 版本文档状态
-                              enum:
-                              - '0'
-                              - '1'
-                              - '2'
-                              x-enum-descriptions:
-                                '0': 正常状态
-                                '1': 删除状态
-                                '2': 回收站状态
-                              example: 0，1，2
-                              format: int64
-                            obj_type:
-                              type: string
-                              description: 版本文档类型
-                              enum:
-                              - docx
-                              - sheet
-                              x-enum-descriptions:
-                                docx: 新版文档
-                                sheet: 电子表格
-                              example: docx
-                            parent_type:
-                              type: string
-                              description: 源文档类型
-                              enum:
-                              - docx
-                              - sheet
-                              x-enum-descriptions:
-                                docx: 新版文档
-                                sheet: 电子表格
-                              example: docx
+                          $ref: '#/components/schemas/Data2'
                         description: 版本文档列表
                       page_token:
                         type: string
@@ -3646,78 +2505,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      name:
-                        type: string
-                        description: 版本文档标题，最大长度 1024 个Unicode 码点。通常情况下，一个英文或中文字符对应一个码点，但是某些特殊符号可能会对应多个码点。例如，家庭组合「👨‍👩‍👧」这个表情符号对应5个码点。
-                        example: 文档标题
-                      version:
-                        type: string
-                        description: 版本文档版本号
-                        example: version1
-                      parent_token:
-                        type: string
-                        description: 源文档token
-                        example: doxcnMycg4ryxQofSeoKkJuXYOb
-                      owner_id:
-                        type: string
-                        description: 版本文档所有者id
-                        example: '694699009591869450'
-                      creator_id:
-                        type: string
-                        description: 版本文档创建者id
-                        example: '694699009591869451'
-                      create_time:
-                        type: string
-                        description: 版本文档创建时间
-                        example: '1660708537'
-                        format: int64
-                      update_time:
-                        type: string
-                        description: 版本文档更新时间
-                        example: '1660708537'
-                        format: int64
-                      status:
-                        type: string
-                        description: 版本文档状态
-                        enum:
-                        - '0'
-                        - '1'
-                        - '2'
-                        x-enum-descriptions:
-                          '0': 正常状态
-                          '1': 删除状态
-                          '2': 回收站状态
-                        example: 0，1，2
-                        format: int64
-                      obj_type:
-                        type: string
-                        description: 版本文档类型
-                        enum:
-                        - docx
-                        - sheet
-                        x-enum-descriptions:
-                          docx: 新版文档
-                          sheet: 电子表格
-                        example: docx
-                      parent_type:
-                        type: string
-                        description: 源文档类型
-                        enum:
-                        - docx
-                        - sheet
-                        x-enum-descriptions:
-                          docx: 新版文档
-                          sheet: 电子表格
-                        example: docx
+                $ref: '#/components/schemas/Schema5'
       x-lark-access-tokens:
       - tenant
       - user
@@ -3994,61 +2782,8 @@ paths:
                     type: object
                     properties:
                       file:
-                        type: object
-                        properties:
-                          token:
-                            type: string
-                            description: 文件标识符
-                            example: fldcnP8B5Fpr3UwVi24JykpuOic
-                          name:
-                            type: string
-                            description: 文件名
-                            example: 测试
-                          type:
-                            type: string
-                            description: 文件类型
-                            example: doc
-                          parent_token:
-                            type: string
-                            description: 父文件夹标识
-                            example: fldcnP8B5Fpr3UwVi24JykpuOic
-                          url:
-                            type: string
-                            description: 在浏览器中查看的链接
-                            example: https://bytedance.feishu.cn/drive/folder/fldcnP8B5Fpr3UwVi24JykpuOic
-                          shortcut_info:
-                            type: object
-                            properties:
-                              target_type:
-                                type: string
-                                description: 快捷方式指向的源文件类型
-                                example: doc
-                              target_token:
-                                type: string
-                                description: 快捷方式指向的源文件token
-                                example: doccn4dTWHr5K1Ibg2wKCh3arMg
-                            required:
-                            - target_type
-                            - target_token
-                            description: 快捷方式文件信息
-                          created_time:
-                            type: string
-                            description: 文件创建时间
-                            example: '1686125119'
-                            format: int64
-                          modified_time:
-                            type: string
-                            description: 文件最近修改时间
-                            example: '1686125119'
-                            format: int64
-                          owner_id:
-                            type: string
-                            description: 文件所有者
-                            example: ou_b13d41c02edc52ce66aaae67bf1abcef
-                        required:
-                        - token
-                        - name
-                        - type
+                        allOf:
+                        - $ref: '#/components/schemas/File'
                         description: 复制后的文件资源
       x-lark-access-tokens:
       - tenant
@@ -4356,61 +3091,8 @@ paths:
                     type: object
                     properties:
                       succ_shortcut_node:
-                        type: object
-                        properties:
-                          token:
-                            type: string
-                            description: 文件标识符
-                            example: fldcnP8B5Fpr3UwVi24JykpuOic
-                          name:
-                            type: string
-                            description: 文件名
-                            example: 测试
-                          type:
-                            type: string
-                            description: 文件类型
-                            example: doc
-                          parent_token:
-                            type: string
-                            description: 父文件夹标识
-                            example: fldcnP8B5Fpr3UwVi24JykpuOic
-                          url:
-                            type: string
-                            description: 在浏览器中查看的链接
-                            example: https://bytedance.feishu.cn/drive/folder/fldcnP8B5Fpr3UwVi24JykpuOic
-                          shortcut_info:
-                            type: object
-                            properties:
-                              target_type:
-                                type: string
-                                description: 快捷方式指向的源文件类型
-                                example: doc
-                              target_token:
-                                type: string
-                                description: 快捷方式指向的源文件token
-                                example: doccn4dTWHr5K1Ibg2wKCh3arMg
-                            required:
-                            - target_type
-                            - target_token
-                            description: 快捷方式文件信息
-                          created_time:
-                            type: string
-                            description: 文件创建时间
-                            example: '1686125119'
-                            format: int64
-                          modified_time:
-                            type: string
-                            description: 文件最近修改时间
-                            example: '1686125119'
-                            format: int64
-                          owner_id:
-                            type: string
-                            description: 文件所有者
-                            example: ou_b13d41c02edc52ce66aaae67bf1abcef
-                        required:
-                        - token
-                        - name
-                        - type
+                        allOf:
+                        - $ref: '#/components/schemas/File'
                         description: 返回创建成功的shortcut节点
       x-lark-access-tokens:
       - user
@@ -4993,61 +3675,7 @@ paths:
                       files:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            token:
-                              type: string
-                              description: 文件标识符
-                              example: fldcnP8B5Fpr3UwVi24JykpuOic
-                            name:
-                              type: string
-                              description: 文件名
-                              example: 测试
-                            type:
-                              type: string
-                              description: 文件类型
-                              example: doc
-                            parent_token:
-                              type: string
-                              description: 父文件夹标识
-                              example: fldcnP8B5Fpr3UwVi24JykpuOic
-                            url:
-                              type: string
-                              description: 在浏览器中查看的链接
-                              example: https://bytedance.feishu.cn/drive/folder/fldcnP8B5Fpr3UwVi24JykpuOic
-                            shortcut_info:
-                              type: object
-                              properties:
-                                target_type:
-                                  type: string
-                                  description: 快捷方式指向的源文件类型
-                                  example: doc
-                                target_token:
-                                  type: string
-                                  description: 快捷方式指向的源文件token
-                                  example: doccn4dTWHr5K1Ibg2wKCh3arMg
-                              required:
-                              - target_type
-                              - target_token
-                              description: 快捷方式文件信息
-                            created_time:
-                              type: string
-                              description: 文件创建时间
-                              example: '1686125119'
-                              format: int64
-                            modified_time:
-                              type: string
-                              description: 文件最近修改时间
-                              example: '1686125119'
-                              format: int64
-                            owner_id:
-                              type: string
-                              description: 文件所有者
-                              example: ou_b13d41c02edc52ce66aaae67bf1abcef
-                          required:
-                          - token
-                          - name
-                          - type
+                          $ref: '#/components/schemas/File'
                         description: 文档详细信息
                       next_page_token:
                         type: string
@@ -7221,41 +5849,7 @@ paths:
                 request_docs:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      doc_token:
-                        type: string
-                        description: 文件的 token，获取方式见[概述](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/files/guide/introduction)
-                        example: TLLKdcpDro9ijQxA33ycNMabcef
-                      doc_type:
-                        type: string
-                        description: 文件类型
-                        enum:
-                        - doc
-                        - sheet
-                        - bitable
-                        - mindnote
-                        - file
-                        - wiki
-                        - docx
-                        - folder
-                        - synced_block
-                        - slides
-                        x-enum-descriptions:
-                          doc: 飞书文档
-                          sheet: 飞书电子表格
-                          bitable: 飞书多维表格
-                          mindnote: 飞书思维笔记
-                          file: 飞书文件
-                          wiki: 飞书wiki
-                          docx: 飞书新版文档
-                          folder: 飞书文件夹
-                          synced_block: 文档同步块
-                          slides: 文档幻灯片
-                        example: docx
-                    required:
-                    - doc_token
-                    - doc_type
+                    $ref: '#/components/schemas/RequestDocInfo'
                   description: 请求文档,  一次不超过200个
                 with_url:
                   type: boolean
@@ -7319,41 +5913,8 @@ paths:
                               description: 文档密级标签名称
                               example: L2-内部
                             request_doc_info:
-                              type: object
-                              properties:
-                                doc_token:
-                                  type: string
-                                  description: 文件的 token，获取方式见[概述](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/files/guide/introduction)
-                                  example: TLLKdcpDro9ijQxA33ycNMabcef
-                                doc_type:
-                                  type: string
-                                  description: 文件类型
-                                  enum:
-                                  - doc
-                                  - sheet
-                                  - bitable
-                                  - mindnote
-                                  - file
-                                  - wiki
-                                  - docx
-                                  - folder
-                                  - synced_block
-                                  - slides
-                                  x-enum-descriptions:
-                                    doc: 飞书文档
-                                    sheet: 飞书电子表格
-                                    bitable: 飞书多维表格
-                                    mindnote: 飞书思维笔记
-                                    file: 飞书文件
-                                    wiki: 飞书wiki
-                                    docx: 飞书新版文档
-                                    folder: 飞书文件夹
-                                    synced_block: 文档同步块
-                                    slides: 文档幻灯片
-                                  example: docx
-                              required:
-                              - doc_token
-                              - doc_type
+                              allOf:
+                              - $ref: '#/components/schemas/RequestDocInfo'
                               description: 请求的request_doc
                           required:
                           - doc_token
@@ -7587,101 +6148,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                members:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      member_type:
-                        type: string
-                        description: 协作者ID类型
-                        enum:
-                        - email
-                        - openid
-                        - unionid
-                        - openchat
-                        - opendepartmentid
-                        - userid
-                        - groupid
-                        - wikispaceid
-                        - appid
-                        x-enum-descriptions:
-                          email: 飞书邮箱
-                          openid: 开放平台OpenID
-                          unionid: 开放平台UnionID
-                          openchat: 开放平台群组ID
-                          opendepartmentid: 开放平台部门ID
-                          userid: 用户自定义ID
-                          groupid: 自定义用户组ID
-                          wikispaceid: 知识空间的唯一标识
-                          appid: 应用 ID
-                        example: openid
-                      member_id:
-                        type: string
-                        description: 协作者ID，与协作者ID类型需要对应
-                        example: string
-                      perm:
-                        type: string
-                        description: 协作者的权限角色
-                        enum:
-                        - view
-                        - edit
-                        - full_access
-                        x-enum-descriptions:
-                          view: 可阅读角色
-                          edit: 可编辑角色
-                          full_access: 可管理角色
-                        example: view
-                      perm_type:
-                        type: string
-                        description: 协作者的权限角色类型
-                        enum:
-                        - container
-                        - single_page
-                        x-enum-descriptions:
-                          container: 当前页面及子页面
-                          single_page: 仅当前页面，当且仅当在知识库文档中该参数有效
-                        default: container
-                        example: container
-                      type:
-                        type: string
-                        description: 协作者的类型
-                        enum:
-                        - user
-                        - chat
-                        - department
-                        - group
-                        - wiki_space_member
-                        - wiki_space_viewer
-                        - wiki_space_editor
-                        x-enum-descriptions:
-                          user: 用户
-                          chat: 群组
-                          department: 组织架构
-                          group: 用户组
-                          wiki_space_member: 知识库成员
-                          wiki_space_viewer: 知识库可阅读成员
-                          wiki_space_editor: 知识库可编辑成员
-                        example: user
-                      name:
-                        type: string
-                        description: 协作者的名字
-                        example: zhangsan
-                      avatar:
-                        type: string
-                        description: 协作者的头像
-                        example: https://foo.icon.com/xxxx
-                      external_label:
-                        type: boolean
-                        description: 协作者的外部标签
-                        example: 'true'
-                    required:
-                    - member_type
-                    - member_id
-                    - perm
-                  description: 协作者列表
+              $ref: '#/components/schemas/Data4'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -7695,101 +6162,7 @@ paths:
                   msg:
                     type: string
                   data:
-                    type: object
-                    properties:
-                      members:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            member_type:
-                              type: string
-                              description: 协作者ID类型
-                              enum:
-                              - email
-                              - openid
-                              - unionid
-                              - openchat
-                              - opendepartmentid
-                              - userid
-                              - groupid
-                              - wikispaceid
-                              - appid
-                              x-enum-descriptions:
-                                email: 飞书邮箱
-                                openid: 开放平台OpenID
-                                unionid: 开放平台UnionID
-                                openchat: 开放平台群组ID
-                                opendepartmentid: 开放平台部门ID
-                                userid: 用户自定义ID
-                                groupid: 自定义用户组ID
-                                wikispaceid: 知识空间的唯一标识
-                                appid: 应用 ID
-                              example: openid
-                            member_id:
-                              type: string
-                              description: 协作者ID，与协作者ID类型需要对应
-                              example: string
-                            perm:
-                              type: string
-                              description: 协作者的权限角色
-                              enum:
-                              - view
-                              - edit
-                              - full_access
-                              x-enum-descriptions:
-                                view: 可阅读角色
-                                edit: 可编辑角色
-                                full_access: 可管理角色
-                              example: view
-                            perm_type:
-                              type: string
-                              description: 协作者的权限角色类型
-                              enum:
-                              - container
-                              - single_page
-                              x-enum-descriptions:
-                                container: 当前页面及子页面
-                                single_page: 仅当前页面，当且仅当在知识库文档中该参数有效
-                              default: container
-                              example: container
-                            type:
-                              type: string
-                              description: 协作者的类型
-                              enum:
-                              - user
-                              - chat
-                              - department
-                              - group
-                              - wiki_space_member
-                              - wiki_space_viewer
-                              - wiki_space_editor
-                              x-enum-descriptions:
-                                user: 用户
-                                chat: 群组
-                                department: 组织架构
-                                group: 用户组
-                                wiki_space_member: 知识库成员
-                                wiki_space_viewer: 知识库可阅读成员
-                                wiki_space_editor: 知识库可编辑成员
-                              example: user
-                            name:
-                              type: string
-                              description: 协作者的名字
-                              example: zhangsan
-                            avatar:
-                              type: string
-                              description: 协作者的头像
-                              example: https://foo.icon.com/xxxx
-                            external_label:
-                              type: boolean
-                              description: 协作者的外部标签
-                              example: 'true'
-                          required:
-                          - member_type
-                          - member_id
-                          - perm
-                        description: 协作者列表
+                    $ref: '#/components/schemas/Data4'
       x-lark-access-tokens:
       - tenant
       - user
@@ -7952,94 +6325,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      member:
-                        type: object
-                        properties:
-                          member_type:
-                            type: string
-                            description: 协作者ID类型
-                            enum:
-                            - email
-                            - openid
-                            - unionid
-                            - openchat
-                            - opendepartmentid
-                            - userid
-                            - groupid
-                            - wikispaceid
-                            - appid
-                            x-enum-descriptions:
-                              email: 飞书邮箱
-                              openid: 开放平台OpenID
-                              unionid: 开放平台UnionID
-                              openchat: 开放平台群组ID
-                              opendepartmentid: 开放平台部门ID
-                              userid: 用户自定义ID
-                              groupid: 自定义用户组ID
-                              wikispaceid: 知识空间的唯一标识
-                              appid: 应用 ID
-                            example: openid
-                          member_id:
-                            type: string
-                            description: 协作者ID，与协作者ID类型需要对应
-                            example: string
-                          perm:
-                            type: string
-                            description: 协作者的权限角色
-                            enum:
-                            - view
-                            - edit
-                            - full_access
-                            x-enum-descriptions:
-                              view: 可阅读角色
-                              edit: 可编辑角色
-                              full_access: 可管理角色
-                            example: view
-                          perm_type:
-                            type: string
-                            description: 协作者的权限角色类型
-                            enum:
-                            - container
-                            - single_page
-                            x-enum-descriptions:
-                              container: 当前页面及子页面
-                              single_page: 仅当前页面，当且仅当在知识库文档中该参数有效
-                            default: container
-                            example: container
-                          type:
-                            type: string
-                            description: 协作者类型
-                            enum:
-                            - user
-                            - chat
-                            - department
-                            - group
-                            - wiki_space_member
-                            - wiki_space_viewer
-                            - wiki_space_editor
-                            x-enum-descriptions:
-                              user: 用户
-                              chat: 群组
-                              department: 组织架构
-                              group: 用户组
-                              wiki_space_member: 知识库成员
-                              wiki_space_viewer: 知识库可阅读成员
-                              wiki_space_editor: 知识库可编辑成员
-                            example: user
-                        required:
-                        - member_type
-                        - member_id
-                        - perm
-                        description: 本次添加权限的用户信息
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       - user
@@ -8160,95 +6446,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            member_type:
-                              type: string
-                              description: 协作者ID类型
-                              enum:
-                              - email
-                              - openid
-                              - unionid
-                              - openchat
-                              - opendepartmentid
-                              - userid
-                              - groupid
-                              - wikispaceid
-                              - appid
-                              x-enum-descriptions:
-                                email: 飞书邮箱
-                                openid: 开放平台OpenID
-                                unionid: 开放平台UnionID
-                                openchat: 开放平台群组ID
-                                opendepartmentid: 开放平台部门ID
-                                userid: 用户自定义ID
-                                groupid: 自定义用户组ID
-                                wikispaceid: 知识空间的唯一标识
-                                appid: 应用 ID
-                              example: openid
-                            member_id:
-                              type: string
-                              description: 协作者ID，与协作者ID类型需要对应
-                              example: string
-                            perm:
-                              type: string
-                              description: 协作者的权限角色
-                              enum:
-                              - view
-                              - edit
-                              - full_access
-                              x-enum-descriptions:
-                                view: 可阅读角色
-                                edit: 可编辑角色
-                                full_access: 可管理角色
-                              example: view
-                            perm_type:
-                              type: string
-                              description: 协作者的权限角色类型
-                              enum:
-                              - container
-                              - single_page
-                              x-enum-descriptions:
-                                container: 当前页面及子页面
-                                single_page: 仅当前页面，当且仅当在知识库文档中该参数有效
-                              default: container
-                              example: container
-                            type:
-                              type: string
-                              description: 协作者的类型
-                              enum:
-                              - user
-                              - chat
-                              - department
-                              - group
-                              - wiki_space_member
-                              - wiki_space_viewer
-                              - wiki_space_editor
-                              x-enum-descriptions:
-                                user: 用户
-                                chat: 群组
-                                department: 组织架构
-                                group: 用户组
-                                wiki_space_member: 知识库成员
-                                wiki_space_viewer: 知识库可阅读成员
-                                wiki_space_editor: 知识库可编辑成员
-                              example: user
-                            name:
-                              type: string
-                              description: 协作者的名字
-                              example: zhangsan
-                            avatar:
-                              type: string
-                              description: 协作者的头像
-                              example: https://foo.icon.com/xxxx
-                            external_label:
-                              type: boolean
-                              description: 协作者的外部标签
-                              example: 'true'
-                          required:
-                          - member_type
-                          - member_id
-                          - perm
+                          $ref: '#/components/schemas/Item3'
                         description: 返回的列表数据
       x-lark-access-tokens:
       - tenant
@@ -8262,10 +6460,10 @@ paths:
       - bitable:app
       - docs:permission.member:retrieve
       x-lark-field-scopes:
-      - contact:contact:access_as_app
-      - contact:contact:readonly_as_app
       - contact:user.base:readonly
       - contact:contact:readonly
+      - contact:contact:access_as_app
+      - contact:contact:readonly_as_app
       x-lark-error-mappings:
       - code: 1063001
         httpCode: 400
@@ -8604,94 +6802,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      member:
-                        type: object
-                        properties:
-                          member_type:
-                            type: string
-                            description: 协作者ID类型
-                            enum:
-                            - email
-                            - openid
-                            - unionid
-                            - openchat
-                            - opendepartmentid
-                            - userid
-                            - groupid
-                            - wikispaceid
-                            - appid
-                            x-enum-descriptions:
-                              email: 飞书邮箱
-                              openid: 开放平台OpenID
-                              unionid: 开放平台UnionID
-                              openchat: 开放平台群组ID
-                              opendepartmentid: 开放平台部门ID
-                              userid: 用户自定义ID
-                              groupid: 自定义用户组ID
-                              wikispaceid: 知识空间的唯一标识
-                              appid: 应用 ID
-                            example: openid
-                          member_id:
-                            type: string
-                            description: 协作者ID，与协作者ID类型需要对应
-                            example: string
-                          perm:
-                            type: string
-                            description: 协作者的权限角色
-                            enum:
-                            - view
-                            - edit
-                            - full_access
-                            x-enum-descriptions:
-                              view: 可阅读角色
-                              edit: 可编辑角色
-                              full_access: 可管理角色
-                            example: view
-                          perm_type:
-                            type: string
-                            description: 协作者的权限角色类型
-                            enum:
-                            - container
-                            - single_page
-                            x-enum-descriptions:
-                              container: 当前页面及子页面
-                              single_page: 仅当前页面，当且仅当在知识库文档中该参数有效
-                            default: container
-                            example: container
-                          type:
-                            type: string
-                            description: 协作者类型
-                            enum:
-                            - user
-                            - chat
-                            - department
-                            - group
-                            - wiki_space_member
-                            - wiki_space_viewer
-                            - wiki_space_editor
-                            x-enum-descriptions:
-                              user: 用户
-                              chat: 群组
-                              department: 组织架构
-                              group: 用户组
-                              wiki_space_member: 知识库成员
-                              wiki_space_viewer: 知识库可阅读成员
-                              wiki_space_editor: 知识库可编辑成员
-                            example: user
-                        required:
-                        - member_type
-                        - member_id
-                        - perm
-                        description: 本次更新权限的用户信息
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       - user
@@ -9199,80 +7310,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      permission_public:
-                        type: object
-                        properties:
-                          external_access:
-                            type: boolean
-                            description: 允许内容被分享到组织外
-                            example: 'true'
-                          security_entity:
-                            type: string
-                            description: 谁可以复制内容、创建副本、打印、下载
-                            enum:
-                            - anyone_can_view
-                            - anyone_can_edit
-                            - only_full_access
-                            x-enum-descriptions:
-                              anyone_can_view: 拥有可阅读权限的用户
-                              anyone_can_edit: 拥有可编辑权限的用户
-                              only_full_access: 拥有可管理权限（包括我）的用户
-                            example: anyone_can_view
-                          comment_entity:
-                            type: string
-                            description: 谁可以评论
-                            enum:
-                            - anyone_can_view
-                            - anyone_can_edit
-                            x-enum-descriptions:
-                              anyone_can_view: 拥有可阅读权限的用户
-                              anyone_can_edit: 拥有可编辑权限的用户
-                            example: anyone_can_view
-                          share_entity:
-                            type: string
-                            description: 谁可以添加和管理协作者
-                            enum:
-                            - anyone
-                            - same_tenant
-                            - only_full_access
-                            x-enum-descriptions:
-                              anyone: 所有可阅读或编辑此文档的用户
-                              same_tenant: 组织内所有可阅读或编辑此文档的用户
-                              only_full_access: 拥有可管理权限（包括我）的用户
-                            example: anyone
-                          link_share_entity:
-                            type: string
-                            description: 链接分享设置
-                            enum:
-                            - tenant_readable
-                            - tenant_editable
-                            - anyone_readable
-                            - anyone_editable
-                            - closed
-                            x-enum-descriptions:
-                              tenant_readable: 组织内获得链接的人可阅读
-                              tenant_editable: 组织内获得链接的人可编辑
-                              anyone_readable: 互联网上获得链接的任何人可阅读（仅external_access=“true”时有效）
-                              anyone_editable: 互联网上获得链接的任何人可编辑（仅external_access=“true”时有效）
-                              closed: 关闭链接分享
-                            example: tenant_readable
-                          invite_external:
-                            type: boolean
-                            description: 允许非「可管理权限」的人分享到组织外（仅share_entity=“same_tenant”时有效）
-                            example: 'true'
-                          lock_switch:
-                            type: boolean
-                            description: 节点是否已加锁
-                        description: 返回的文档公共设置
+                $ref: '#/components/schemas/Schema4'
       x-lark-access-tokens:
       - tenant
       - user
@@ -9420,80 +7458,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      permission_public:
-                        type: object
-                        properties:
-                          external_access:
-                            type: boolean
-                            description: 允许内容被分享到组织外
-                            example: 'true'
-                          security_entity:
-                            type: string
-                            description: 谁可以复制内容、创建副本、打印、下载
-                            enum:
-                            - anyone_can_view
-                            - anyone_can_edit
-                            - only_full_access
-                            x-enum-descriptions:
-                              anyone_can_view: 拥有可阅读权限的用户
-                              anyone_can_edit: 拥有可编辑权限的用户
-                              only_full_access: 拥有可管理权限（包括我）的用户
-                            example: anyone_can_view
-                          comment_entity:
-                            type: string
-                            description: 谁可以评论
-                            enum:
-                            - anyone_can_view
-                            - anyone_can_edit
-                            x-enum-descriptions:
-                              anyone_can_view: 拥有可阅读权限的用户
-                              anyone_can_edit: 拥有可编辑权限的用户
-                            example: anyone_can_view
-                          share_entity:
-                            type: string
-                            description: 谁可以添加和管理协作者
-                            enum:
-                            - anyone
-                            - same_tenant
-                            - only_full_access
-                            x-enum-descriptions:
-                              anyone: 所有可阅读或编辑此文档的用户
-                              same_tenant: 组织内所有可阅读或编辑此文档的用户
-                              only_full_access: 拥有可管理权限（包括我）的用户
-                            example: anyone
-                          link_share_entity:
-                            type: string
-                            description: 链接分享设置
-                            enum:
-                            - tenant_readable
-                            - tenant_editable
-                            - anyone_readable
-                            - anyone_editable
-                            - closed
-                            x-enum-descriptions:
-                              tenant_readable: 组织内获得链接的人可阅读
-                              tenant_editable: 组织内获得链接的人可编辑
-                              anyone_readable: 互联网上获得链接的任何人可阅读（仅external_access=“true”时有效）
-                              anyone_editable: 互联网上获得链接的任何人可编辑（仅external_access=“true”时有效）
-                              closed: 关闭链接分享
-                            example: tenant_readable
-                          invite_external:
-                            type: boolean
-                            description: 允许非「可管理权限」的人分享到组织外（仅share_entity=“same_tenant”时有效）
-                            example: 'true'
-                          lock_switch:
-                            type: boolean
-                            description: 节点是否已加锁
-                        description: 本次更新后的文档公共设置
+                $ref: '#/components/schemas/Schema4'
       x-lark-access-tokens:
       - tenant
       - user
@@ -9914,11 +7879,11 @@ paths:
       x-lark-scopes:
       - drive:file.like:readonly
       x-lark-field-scopes:
-      - contact:contact:readonly_as_app
       - contact:user.employee_id:readonly
       - contact:user.base:readonly
       - contact:contact:readonly
       - contact:contact:access_as_app
+      - contact:contact:readonly_as_app
       x-lark-error-mappings:
       - code: 1061001
         httpCode: 500
@@ -9988,111 +7953,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      permission_public:
-                        type: object
-                        properties:
-                          external_access_entity:
-                            type: string
-                            description: 允许内容被分享到组织外
-                            enum:
-                            - open
-                            - closed
-                            - allow_share_partner_tenant
-                            x-enum-descriptions:
-                              open: 打开
-                              closed: 关闭
-                              allow_share_partner_tenant: 允许分享给关联组织
-                            example: open
-                          security_entity:
-                            type: string
-                            description: 谁可以创建副本、打印、下载
-                            enum:
-                            - anyone_can_view
-                            - anyone_can_edit
-                            - only_full_access
-                            x-enum-descriptions:
-                              anyone_can_view: 拥有可阅读权限的用户
-                              anyone_can_edit: 拥有可编辑权限的用户
-                              only_full_access: 拥有可管理权限（包括我）的用户
-                            example: anyone_can_view
-                          comment_entity:
-                            type: string
-                            description: 谁可以评论
-                            enum:
-                            - anyone_can_view
-                            - anyone_can_edit
-                            x-enum-descriptions:
-                              anyone_can_view: 拥有可阅读权限的用户
-                              anyone_can_edit: 拥有可编辑权限的用户
-                            example: anyone_can_view
-                          share_entity:
-                            type: string
-                            description: 谁可以添加和管理协作者-组织维度
-                            enum:
-                            - anyone
-                            - same_tenant
-                            x-enum-descriptions:
-                              anyone: 所有可阅读或编辑此文档的用户
-                              same_tenant: 组织内所有可阅读或编辑此文档的用户
-                            example: anyone
-                          manage_collaborator_entity:
-                            type: string
-                            description: 谁可以添加和管理协作者-协作者维度
-                            enum:
-                            - collaborator_can_view
-                            - collaborator_can_edit
-                            - collaborator_full_access
-                            x-enum-descriptions:
-                              collaborator_can_view: 拥有可阅读权限的协作者
-                              collaborator_can_edit: 拥有可编辑权限的协作者
-                              collaborator_full_access: 拥有可管理权限（包括我）的协作者
-                            example: collaborator_can_view
-                          link_share_entity:
-                            type: string
-                            description: 链接分享设置
-                            enum:
-                            - tenant_readable
-                            - tenant_editable
-                            - partner_tenant_readable
-                            - partner_tenant_editable
-                            - anyone_readable
-                            - anyone_editable
-                            - closed
-                            x-enum-descriptions:
-                              tenant_readable: 组织内获得链接的人可阅读
-                              tenant_editable: 组织内获得链接的人可编辑
-                              partner_tenant_readable: 关联组织的人可阅读
-                              partner_tenant_editable: 关联组织的人可编辑
-                              anyone_readable: 互联网上获得链接的任何人可阅读（仅external_access=“true”时有效）
-                              anyone_editable: 互联网上获得链接的任何人可编辑（仅external_access=“true”时有效）
-                              closed: 关闭链接分享
-                            example: tenant_readable
-                          copy_entity:
-                            type: string
-                            description: 谁可以复制内容
-                            enum:
-                            - anyone_can_view
-                            - anyone_can_edit
-                            - only_full_access
-                            x-enum-descriptions:
-                              anyone_can_view: 拥有可阅读权限的用户
-                              anyone_can_edit: 拥有可编辑权限的用户
-                              only_full_access: 拥有可管理权限（包括我）的协作者
-                            example: anyone_can_view
-                          lock_switch:
-                            type: boolean
-                            description: 节点是否已加锁，加锁之后不再继承父级页面的权限
-                            example: 'false'
-                        description: 返回的文档公共设置
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       - user
@@ -10271,111 +8132,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      permission_public:
-                        type: object
-                        properties:
-                          external_access_entity:
-                            type: string
-                            description: 允许内容被分享到组织外
-                            enum:
-                            - open
-                            - closed
-                            - allow_share_partner_tenant
-                            x-enum-descriptions:
-                              open: 打开
-                              closed: 关闭
-                              allow_share_partner_tenant: 允许分享给关联组织
-                            example: open
-                          security_entity:
-                            type: string
-                            description: 谁可以创建副本、打印、下载
-                            enum:
-                            - anyone_can_view
-                            - anyone_can_edit
-                            - only_full_access
-                            x-enum-descriptions:
-                              anyone_can_view: 拥有可阅读权限的用户
-                              anyone_can_edit: 拥有可编辑权限的用户
-                              only_full_access: 拥有可管理权限（包括我）的用户
-                            example: anyone_can_view
-                          comment_entity:
-                            type: string
-                            description: 谁可以评论
-                            enum:
-                            - anyone_can_view
-                            - anyone_can_edit
-                            x-enum-descriptions:
-                              anyone_can_view: 拥有可阅读权限的用户
-                              anyone_can_edit: 拥有可编辑权限的用户
-                            example: anyone_can_view
-                          share_entity:
-                            type: string
-                            description: 谁可以添加和管理协作者-组织维度
-                            enum:
-                            - anyone
-                            - same_tenant
-                            x-enum-descriptions:
-                              anyone: 所有可阅读或编辑此文档的用户
-                              same_tenant: 组织内所有可阅读或编辑此文档的用户
-                            example: anyone
-                          manage_collaborator_entity:
-                            type: string
-                            description: 谁可以添加和管理协作者-协作者维度
-                            enum:
-                            - collaborator_can_view
-                            - collaborator_can_edit
-                            - collaborator_full_access
-                            x-enum-descriptions:
-                              collaborator_can_view: 拥有可阅读权限的协作者
-                              collaborator_can_edit: 拥有可编辑权限的协作者
-                              collaborator_full_access: 拥有可管理权限（包括我）的协作者
-                            example: collaborator_can_view
-                          link_share_entity:
-                            type: string
-                            description: 链接分享设置
-                            enum:
-                            - tenant_readable
-                            - tenant_editable
-                            - partner_tenant_readable
-                            - partner_tenant_editable
-                            - anyone_readable
-                            - anyone_editable
-                            - closed
-                            x-enum-descriptions:
-                              tenant_readable: 组织内获得链接的人可阅读
-                              tenant_editable: 组织内获得链接的人可编辑
-                              partner_tenant_readable: 关联组织的人可阅读
-                              partner_tenant_editable: 关联组织的人可编辑
-                              anyone_readable: 互联网上获得链接的任何人可阅读（仅external_access=“true”时有效）
-                              anyone_editable: 互联网上获得链接的任何人可编辑（仅external_access=“true”时有效）
-                              closed: 关闭链接分享
-                            example: tenant_readable
-                          copy_entity:
-                            type: string
-                            description: 谁可以复制内容
-                            enum:
-                            - anyone_can_view
-                            - anyone_can_edit
-                            - only_full_access
-                            x-enum-descriptions:
-                              anyone_can_view: 拥有可阅读权限的用户
-                              anyone_can_edit: 拥有可编辑权限的用户
-                              only_full_access: 拥有可管理权限（包括我）的协作者
-                            example: anyone_can_view
-                          lock_switch:
-                            type: boolean
-                            description: 节点是否已加锁，加锁之后不再继承父级页面的权限
-                            example: 'false'
-                        description: 本次更新后文档公共设置
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       - user
@@ -10412,3 +8169,776 @@ paths:
         msg: Concurrency error, please retry
       x-lark-rate-limit:
         tier: 3
+components:
+  schemas:
+    Data:
+      type: object
+      properties:
+        comment_id:
+          type: string
+          description: 评论 ID
+          example: 69161068xxxxx512356
+        user_id:
+          type: string
+          description: 用户 ID
+        create_time:
+          type: integer
+          description: 创建时间
+          example: '1610281603'
+        update_time:
+          type: integer
+          description: 更新时间
+          example: '1610281603'
+        is_solved:
+          type: boolean
+          description: 是否已解决
+        solved_time:
+          type: integer
+          description: 解决评论时间
+          example: '1610281603'
+        solver_user_id:
+          type: string
+          description: 解决评论者的用户 ID
+        has_more:
+          type: boolean
+          description: 是否有更多回复
+        page_token:
+          type: string
+          description: 回复分页标记
+          example: '6916106822734512356'
+        is_whole:
+          type: boolean
+          description: 是否是全文评论
+        quote:
+          type: string
+          description: 局部评论的引用字段
+          example: hello
+        reply_list:
+          allOf:
+          - $ref: '#/components/schemas/ReplyList'
+          description: 评论里的回复列表
+    Item:
+      type: object
+      properties:
+        content:
+          allOf:
+          - $ref: '#/components/schemas/Content'
+          description: 回复内容
+        reply_id:
+          type: string
+          description: 回复 ID
+          example: 6916106xxxxx4512356
+        user_id:
+          type: string
+          description: 用户 ID
+          example: ou_cc19b2bfb93f8a44db4b4d6eab2abcef
+        create_time:
+          type: integer
+          description: 创建时间
+          example: '1610281603'
+        update_time:
+          type: integer
+          description: 更新时间
+          example: '1610281603'
+        extra:
+          type: object
+          properties:
+            image_list:
+              type: array
+              items:
+                type: string
+          description: 回复的其他内容，图片 Token 等
+        reactions:
+          type: array
+          items:
+            type: object
+            properties:
+              reaction_key:
+                type: string
+                description: 表情回复的唯一标识，用于区分不同类型的评论表情（如点赞、鼓掌等）。
+                example: like
+              count:
+                type: integer
+                description: 该表情回复的累计使用次数，统计范围为当前评论下所有用户的有效回复记录。
+                example: '10'
+              ahead_users:
+                type: array
+                items:
+                  type: string
+                description: 用于在界面优先展示核心互动用户。用户ID可通过用户信息查询接口获取。
+            required:
+            - reaction_key
+            - count
+          description: 评论回复卡片上对应的表情回复信息
+      required:
+      - content
+    Content:
+      type: object
+      properties:
+        elements:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item2'
+          description: 回复内容的元素列表
+      required:
+      - elements
+      description: 回复内容
+    ReplyList:
+      type: object
+      properties:
+        replies:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+          description: 回复列表
+      required:
+      - replies
+      description: 评论里的回复列表
+    Item2:
+      type: object
+      properties:
+        type:
+          type: string
+          description: 回复内容的元素类型
+          enum:
+          - text_run
+          - docs_link
+          - person
+          x-enum-descriptions:
+            text_run: 普通文本
+            docs_link: at 云文档链接
+            person: at 联系人
+          example: docs_link
+        text_run:
+          type: object
+          properties:
+            text:
+              type: string
+              description: 回复 普通文本
+          required:
+          - text
+          description: 文本内容
+        docs_link:
+          type: object
+          properties:
+            url:
+              type: string
+              description: 回复 at 云文档
+          required:
+          - url
+          description: 云文档链接
+        person:
+          type: object
+          properties:
+            user_id:
+              type: string
+              description: 回复 at 联系人
+              example: ou_cc19b2bfb93f8a44db4b4d6eababcef
+          required:
+          - user_id
+          description: 联系人
+      required:
+      - type
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    Item3:
+      type: object
+      properties:
+        member_type:
+          type: string
+          description: 协作者ID类型
+          enum:
+          - email
+          - openid
+          - unionid
+          - openchat
+          - opendepartmentid
+          - userid
+          - groupid
+          - wikispaceid
+          - appid
+          x-enum-descriptions:
+            email: 飞书邮箱
+            openid: 开放平台OpenID
+            unionid: 开放平台UnionID
+            openchat: 开放平台群组ID
+            opendepartmentid: 开放平台部门ID
+            userid: 用户自定义ID
+            groupid: 自定义用户组ID
+            wikispaceid: 知识空间的唯一标识
+            appid: 应用 ID
+          example: openid
+        member_id:
+          type: string
+          description: 协作者ID，与协作者ID类型需要对应
+          example: string
+        perm:
+          type: string
+          description: 协作者的权限角色
+          enum:
+          - view
+          - edit
+          - full_access
+          x-enum-descriptions:
+            view: 可阅读角色
+            edit: 可编辑角色
+            full_access: 可管理角色
+          example: view
+        perm_type:
+          type: string
+          description: 协作者的权限角色类型
+          enum:
+          - container
+          - single_page
+          x-enum-descriptions:
+            container: 当前页面及子页面
+            single_page: 仅当前页面，当且仅当在知识库文档中该参数有效
+          default: container
+          example: container
+        type:
+          type: string
+          description: 协作者的类型
+          enum:
+          - user
+          - chat
+          - department
+          - group
+          - wiki_space_member
+          - wiki_space_viewer
+          - wiki_space_editor
+          x-enum-descriptions:
+            user: 用户
+            chat: 群组
+            department: 组织架构
+            group: 用户组
+            wiki_space_member: 知识库成员
+            wiki_space_viewer: 知识库可阅读成员
+            wiki_space_editor: 知识库可编辑成员
+          example: user
+        name:
+          type: string
+          description: 协作者的名字
+          example: zhangsan
+        avatar:
+          type: string
+          description: 协作者的头像
+          example: https://foo.icon.com/xxxx
+        external_label:
+          type: boolean
+          description: 协作者的外部标签
+          example: 'true'
+      required:
+      - member_type
+      - member_id
+      - perm
+    Schema2:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data3'
+    Data2:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 版本文档标题，最大长度 1024 个Unicode 码点。通常情况下，一个英文或中文字符对应一个码点，但是某些特殊符号可能会对应多个码点。例如，家庭组合「👨‍👩‍👧」这个表情符号对应5个码点。
+          example: 文档标题
+        version:
+          type: string
+          description: 版本文档版本号
+          example: version1
+        parent_token:
+          type: string
+          description: 源文档token
+          example: doxcnMycg4ryxQofSeoKkJuXYOb
+        owner_id:
+          type: string
+          description: 版本文档所有者id
+          example: '694699009591869450'
+        creator_id:
+          type: string
+          description: 版本文档创建者id
+          example: '694699009591869451'
+        create_time:
+          type: string
+          description: 版本文档创建时间
+          example: '1660708537'
+          format: int64
+        update_time:
+          type: string
+          description: 版本文档更新时间
+          example: '1660708537'
+          format: int64
+        status:
+          type: string
+          description: 版本文档状态
+          enum:
+          - '0'
+          - '1'
+          - '2'
+          x-enum-descriptions:
+            '0': 正常状态
+            '1': 删除状态
+            '2': 回收站状态
+          example: 0，1，2
+          format: int64
+        obj_type:
+          type: string
+          description: 版本文档类型
+          enum:
+          - docx
+          - sheet
+          x-enum-descriptions:
+            docx: 新版文档
+            sheet: 电子表格
+          example: docx
+        parent_type:
+          type: string
+          description: 源文档类型
+          enum:
+          - docx
+          - sheet
+          x-enum-descriptions:
+            docx: 新版文档
+            sheet: 电子表格
+          example: docx
+    Data3:
+      type: object
+      properties:
+        permission_public:
+          allOf:
+          - $ref: '#/components/schemas/PermissionPublic'
+          description: 返回的文档公共设置
+    Data4:
+      type: object
+      properties:
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item3'
+          description: 协作者列表
+    PermissionPublic:
+      type: object
+      properties:
+        external_access_entity:
+          type: string
+          description: 允许内容被分享到组织外
+          enum:
+          - open
+          - closed
+          - allow_share_partner_tenant
+          x-enum-descriptions:
+            open: 打开
+            closed: 关闭
+            allow_share_partner_tenant: 允许分享给关联组织
+          example: open
+        security_entity:
+          type: string
+          description: 谁可以创建副本、打印、下载
+          enum:
+          - anyone_can_view
+          - anyone_can_edit
+          - only_full_access
+          x-enum-descriptions:
+            anyone_can_view: 拥有可阅读权限的用户
+            anyone_can_edit: 拥有可编辑权限的用户
+            only_full_access: 拥有可管理权限（包括我）的用户
+          example: anyone_can_view
+        comment_entity:
+          type: string
+          description: 谁可以评论
+          enum:
+          - anyone_can_view
+          - anyone_can_edit
+          x-enum-descriptions:
+            anyone_can_view: 拥有可阅读权限的用户
+            anyone_can_edit: 拥有可编辑权限的用户
+          example: anyone_can_view
+        share_entity:
+          type: string
+          description: 谁可以添加和管理协作者-组织维度
+          enum:
+          - anyone
+          - same_tenant
+          x-enum-descriptions:
+            anyone: 所有可阅读或编辑此文档的用户
+            same_tenant: 组织内所有可阅读或编辑此文档的用户
+          example: anyone
+        manage_collaborator_entity:
+          type: string
+          description: 谁可以添加和管理协作者-协作者维度
+          enum:
+          - collaborator_can_view
+          - collaborator_can_edit
+          - collaborator_full_access
+          x-enum-descriptions:
+            collaborator_can_view: 拥有可阅读权限的协作者
+            collaborator_can_edit: 拥有可编辑权限的协作者
+            collaborator_full_access: 拥有可管理权限（包括我）的协作者
+          example: collaborator_can_view
+        link_share_entity:
+          type: string
+          description: 链接分享设置
+          enum:
+          - tenant_readable
+          - tenant_editable
+          - partner_tenant_readable
+          - partner_tenant_editable
+          - anyone_readable
+          - anyone_editable
+          - closed
+          x-enum-descriptions:
+            tenant_readable: 组织内获得链接的人可阅读
+            tenant_editable: 组织内获得链接的人可编辑
+            partner_tenant_readable: 关联组织的人可阅读
+            partner_tenant_editable: 关联组织的人可编辑
+            anyone_readable: 互联网上获得链接的任何人可阅读（仅external_access=“true”时有效）
+            anyone_editable: 互联网上获得链接的任何人可编辑（仅external_access=“true”时有效）
+            closed: 关闭链接分享
+          example: tenant_readable
+        copy_entity:
+          type: string
+          description: 谁可以复制内容
+          enum:
+          - anyone_can_view
+          - anyone_can_edit
+          - only_full_access
+          x-enum-descriptions:
+            anyone_can_view: 拥有可阅读权限的用户
+            anyone_can_edit: 拥有可编辑权限的用户
+            only_full_access: 拥有可管理权限（包括我）的协作者
+          example: anyone_can_view
+        lock_switch:
+          type: boolean
+          description: 节点是否已加锁，加锁之后不再继承父级页面的权限
+          example: 'false'
+      description: 返回的文档公共设置
+    Schema3:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data5'
+    File:
+      type: object
+      properties:
+        token:
+          type: string
+          description: 文件标识符
+          example: fldcnP8B5Fpr3UwVi24JykpuOic
+        name:
+          type: string
+          description: 文件名
+          example: 测试
+        type:
+          type: string
+          description: 文件类型
+          example: doc
+        parent_token:
+          type: string
+          description: 父文件夹标识
+          example: fldcnP8B5Fpr3UwVi24JykpuOic
+        url:
+          type: string
+          description: 在浏览器中查看的链接
+          example: https://bytedance.feishu.cn/drive/folder/fldcnP8B5Fpr3UwVi24JykpuOic
+        shortcut_info:
+          type: object
+          properties:
+            target_type:
+              type: string
+              description: 快捷方式指向的源文件类型
+              example: doc
+            target_token:
+              type: string
+              description: 快捷方式指向的源文件token
+              example: doccn4dTWHr5K1Ibg2wKCh3arMg
+          required:
+          - target_type
+          - target_token
+          description: 快捷方式文件信息
+        created_time:
+          type: string
+          description: 文件创建时间
+          example: '1686125119'
+          format: int64
+        modified_time:
+          type: string
+          description: 文件最近修改时间
+          example: '1686125119'
+          format: int64
+        owner_id:
+          type: string
+          description: 文件所有者
+          example: ou_b13d41c02edc52ce66aaae67bf1abcef
+      required:
+      - token
+      - name
+      - type
+      description: 复制后的文件资源
+    Data5:
+      type: object
+      properties:
+        member:
+          allOf:
+          - $ref: '#/components/schemas/Member'
+          description: 本次添加权限的用户信息
+    Member:
+      type: object
+      properties:
+        member_type:
+          type: string
+          description: 协作者ID类型
+          enum:
+          - email
+          - openid
+          - unionid
+          - openchat
+          - opendepartmentid
+          - userid
+          - groupid
+          - wikispaceid
+          - appid
+          x-enum-descriptions:
+            email: 飞书邮箱
+            openid: 开放平台OpenID
+            unionid: 开放平台UnionID
+            openchat: 开放平台群组ID
+            opendepartmentid: 开放平台部门ID
+            userid: 用户自定义ID
+            groupid: 自定义用户组ID
+            wikispaceid: 知识空间的唯一标识
+            appid: 应用 ID
+          example: openid
+        member_id:
+          type: string
+          description: 协作者ID，与协作者ID类型需要对应
+          example: string
+        perm:
+          type: string
+          description: 协作者的权限角色
+          enum:
+          - view
+          - edit
+          - full_access
+          x-enum-descriptions:
+            view: 可阅读角色
+            edit: 可编辑角色
+            full_access: 可管理角色
+          example: view
+        perm_type:
+          type: string
+          description: 协作者的权限角色类型
+          enum:
+          - container
+          - single_page
+          x-enum-descriptions:
+            container: 当前页面及子页面
+            single_page: 仅当前页面，当且仅当在知识库文档中该参数有效
+          default: container
+          example: container
+        type:
+          type: string
+          description: 协作者类型
+          enum:
+          - user
+          - chat
+          - department
+          - group
+          - wiki_space_member
+          - wiki_space_viewer
+          - wiki_space_editor
+          x-enum-descriptions:
+            user: 用户
+            chat: 群组
+            department: 组织架构
+            group: 用户组
+            wiki_space_member: 知识库成员
+            wiki_space_viewer: 知识库可阅读成员
+            wiki_space_editor: 知识库可编辑成员
+          example: user
+      required:
+      - member_type
+      - member_id
+      - perm
+      description: 本次添加权限的用户信息
+    Schema4:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data6'
+    Schema5:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data2'
+    Data6:
+      type: object
+      properties:
+        permission_public:
+          allOf:
+          - $ref: '#/components/schemas/PermissionPublic2'
+          description: 返回的文档公共设置
+    PermissionPublic2:
+      type: object
+      properties:
+        external_access:
+          type: boolean
+          description: 允许内容被分享到组织外
+          example: 'true'
+        security_entity:
+          type: string
+          description: 谁可以复制内容、创建副本、打印、下载
+          enum:
+          - anyone_can_view
+          - anyone_can_edit
+          - only_full_access
+          x-enum-descriptions:
+            anyone_can_view: 拥有可阅读权限的用户
+            anyone_can_edit: 拥有可编辑权限的用户
+            only_full_access: 拥有可管理权限（包括我）的用户
+          example: anyone_can_view
+        comment_entity:
+          type: string
+          description: 谁可以评论
+          enum:
+          - anyone_can_view
+          - anyone_can_edit
+          x-enum-descriptions:
+            anyone_can_view: 拥有可阅读权限的用户
+            anyone_can_edit: 拥有可编辑权限的用户
+          example: anyone_can_view
+        share_entity:
+          type: string
+          description: 谁可以添加和管理协作者
+          enum:
+          - anyone
+          - same_tenant
+          - only_full_access
+          x-enum-descriptions:
+            anyone: 所有可阅读或编辑此文档的用户
+            same_tenant: 组织内所有可阅读或编辑此文档的用户
+            only_full_access: 拥有可管理权限（包括我）的用户
+          example: anyone
+        link_share_entity:
+          type: string
+          description: 链接分享设置
+          enum:
+          - tenant_readable
+          - tenant_editable
+          - anyone_readable
+          - anyone_editable
+          - closed
+          x-enum-descriptions:
+            tenant_readable: 组织内获得链接的人可阅读
+            tenant_editable: 组织内获得链接的人可编辑
+            anyone_readable: 互联网上获得链接的任何人可阅读（仅external_access=“true”时有效）
+            anyone_editable: 互联网上获得链接的任何人可编辑（仅external_access=“true”时有效）
+            closed: 关闭链接分享
+          example: tenant_readable
+        invite_external:
+          type: boolean
+          description: 允许非「可管理权限」的人分享到组织外（仅share_entity=“same_tenant”时有效）
+          example: 'true'
+        lock_switch:
+          type: boolean
+          description: 节点是否已加锁
+      description: 返回的文档公共设置
+    Schema6:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data7'
+    RequestDocInfo:
+      type: object
+      properties:
+        doc_token:
+          type: string
+          description: 文件的 token，获取方式见[概述](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/files/guide/introduction)
+          example: TLLKdcpDro9ijQxA33ycNMabcef
+        doc_type:
+          type: string
+          description: 文件类型
+          enum:
+          - doc
+          - sheet
+          - bitable
+          - mindnote
+          - file
+          - wiki
+          - docx
+          - folder
+          - synced_block
+          - slides
+          x-enum-descriptions:
+            doc: 飞书文档
+            sheet: 飞书电子表格
+            bitable: 飞书多维表格
+            mindnote: 飞书思维笔记
+            file: 飞书文件
+            wiki: 飞书wiki
+            docx: 飞书新版文档
+            folder: 飞书文件夹
+            synced_block: 文档同步块
+            slides: 文档幻灯片
+          example: docx
+      required:
+      - doc_token
+      - doc_type
+    Data7:
+      type: object
+      properties:
+        subscription_id:
+          type: string
+          description: 订阅关系ID
+          example: '1234567890987654321'
+        subscription_type:
+          type: string
+          description: 订阅类型
+          enum:
+          - comment_update
+          x-enum-descriptions:
+            comment_update: 评论更新
+          example: comment_update
+        is_subcribe:
+          type: boolean
+          description: 是否订阅
+          example: 'true'
+        file_type:
+          type: string
+          description: 文档类型
+          enum:
+          - doc
+          - docx
+          - wiki
+          x-enum-descriptions:
+            doc: 旧版文档
+            docx: 新版文档
+            wiki: 知识库
+          example: docx

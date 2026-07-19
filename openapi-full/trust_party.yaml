@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: trust_party
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -490,96 +490,8 @@ paths:
                     type: object
                     properties:
                       target_tenant:
-                        type: object
-                        properties:
-                          tenant_key:
-                            type: string
-                            description: 关联租户ID
-                            example: abcd
-                          tenant_name:
-                            type: string
-                            description: 目标租户的租户名称
-                            example: name
-                          i18n_tenant_name:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文名
-                                example: zh_cn_name
-                              ja_jp:
-                                type: string
-                                description: 日文名
-                                example: ja_jp_name
-                              en_us:
-                                type: string
-                                description: 英文名
-                                example: en_name
-                            description: 目标租户的租户i18n名称
-                          tenant_short_name:
-                            type: string
-                            description: 目标租户的租户简称
-                            example: tenant_short_name
-                          i18n_tenant_short_name:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文名
-                                example: zh_cn_name
-                              ja_jp:
-                                type: string
-                                description: 日文名
-                                example: ja_jp_name
-                              en_us:
-                                type: string
-                                description: 英文名
-                                example: en_name
-                            description: 目标租户的租户i18n简称
-                          connect_time:
-                            type: integer
-                            description: 关联时间
-                            example: '1671107493'
-                          tenant_tag:
-                            type: string
-                            description: 标签
-                            example: 协作
-                          i18n_tenant_tag:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文名
-                                example: zh_cn_name
-                              ja_jp:
-                                type: string
-                                description: 日文名
-                                example: ja_jp_name
-                              en_us:
-                                type: string
-                                description: 英文名
-                                example: en_name
-                            description: i18n标签
-                          avatar:
-                            type: object
-                            properties:
-                              avatar_72:
-                                type: string
-                                description: 72*72像素头像链接
-                              avatar_240:
-                                type: string
-                                description: 240*240像素头像链接
-                              avatar_640:
-                                type: string
-                                description: 640*640像素头像链接
-                              avatar_origin:
-                                type: string
-                                description: 原始头像链接
-                            description: 租户icon信息
-                          brand:
-                            type: string
-                            description: 租户品牌
-                            example: feishu
+                        allOf:
+                        - $ref: '#/components/schemas/TargetTenant'
                         description: 对方关联组织详情
       x-lark-access-tokens:
       - tenant
@@ -646,96 +558,7 @@ paths:
                       target_tenant_list:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            tenant_key:
-                              type: string
-                              description: 关联租户ID
-                              example: abcd
-                            tenant_name:
-                              type: string
-                              description: 目标租户的租户名称
-                              example: name
-                            i18n_tenant_name:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 中文名
-                                  example: zh_cn_name
-                                ja_jp:
-                                  type: string
-                                  description: 日文名
-                                  example: ja_jp_name
-                                en_us:
-                                  type: string
-                                  description: 英文名
-                                  example: en_name
-                              description: 目标租户的租户i18n名称
-                            tenant_short_name:
-                              type: string
-                              description: 目标租户的租户简称
-                              example: tenant_short_name
-                            i18n_tenant_short_name:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 中文名
-                                  example: zh_cn_name
-                                ja_jp:
-                                  type: string
-                                  description: 日文名
-                                  example: ja_jp_name
-                                en_us:
-                                  type: string
-                                  description: 英文名
-                                  example: en_name
-                              description: 目标租户的租户i18n简称
-                            connect_time:
-                              type: integer
-                              description: 关联时间
-                              example: '1671107493'
-                            tenant_tag:
-                              type: string
-                              description: 标签
-                              example: 协作
-                            i18n_tenant_tag:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 中文名
-                                  example: zh_cn_name
-                                ja_jp:
-                                  type: string
-                                  description: 日文名
-                                  example: ja_jp_name
-                                en_us:
-                                  type: string
-                                  description: 英文名
-                                  example: en_name
-                              description: i18n标签
-                            avatar:
-                              type: object
-                              properties:
-                                avatar_72:
-                                  type: string
-                                  description: 72*72像素头像链接
-                                avatar_240:
-                                  type: string
-                                  description: 240*240像素头像链接
-                                avatar_640:
-                                  type: string
-                                  description: 640*640像素头像链接
-                                avatar_origin:
-                                  type: string
-                                  description: 原始头像链接
-                              description: 租户icon信息
-                            brand:
-                              type: string
-                              description: 租户品牌
-                              example: feishu
+                          $ref: '#/components/schemas/TargetTenant'
                         description: 关联组织列表
                       has_more:
                         type: boolean
@@ -1016,3 +839,97 @@ paths:
           to: tenant_id
         key: target_tenant_key
         section: 3
+components:
+  schemas:
+    TargetTenant:
+      type: object
+      properties:
+        tenant_key:
+          type: string
+          description: 关联租户ID
+          example: abcd
+        tenant_name:
+          type: string
+          description: 目标租户的租户名称
+          example: name
+        i18n_tenant_name:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文名
+              example: zh_cn_name
+            ja_jp:
+              type: string
+              description: 日文名
+              example: ja_jp_name
+            en_us:
+              type: string
+              description: 英文名
+              example: en_name
+          description: 目标租户的租户i18n名称
+        tenant_short_name:
+          type: string
+          description: 目标租户的租户简称
+          example: tenant_short_name
+        i18n_tenant_short_name:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文名
+              example: zh_cn_name
+            ja_jp:
+              type: string
+              description: 日文名
+              example: ja_jp_name
+            en_us:
+              type: string
+              description: 英文名
+              example: en_name
+          description: 目标租户的租户i18n简称
+        connect_time:
+          type: integer
+          description: 关联时间
+          example: '1671107493'
+        tenant_tag:
+          type: string
+          description: 标签
+          example: 协作
+        i18n_tenant_tag:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文名
+              example: zh_cn_name
+            ja_jp:
+              type: string
+              description: 日文名
+              example: ja_jp_name
+            en_us:
+              type: string
+              description: 英文名
+              example: en_name
+          description: i18n标签
+        avatar:
+          type: object
+          properties:
+            avatar_72:
+              type: string
+              description: 72*72像素头像链接
+            avatar_240:
+              type: string
+              description: 240*240像素头像链接
+            avatar_640:
+              type: string
+              description: 640*640像素头像链接
+            avatar_origin:
+              type: string
+              description: 原始头像链接
+          description: 租户icon信息
+        brand:
+          type: string
+          description: 租户品牌
+          example: feishu
+      description: 对方关联组织详情

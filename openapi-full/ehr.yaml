@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: ehr
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -768,102 +768,13 @@ paths:
                                         example: (+86) 13812345678
                                   description: 紧急联系人
                                 highest_level_of_edu:
-                                  type: object
-                                  properties:
-                                    level:
-                                      type: integer
-                                      enum:
-                                      - 1
-                                      - 2
-                                      - 3
-                                      - 4
-                                      - 5
-                                      - 6
-                                      - 7
-                                      - 8
-                                      - 9
-                                      x-enum-descriptions:
-                                        '1': 小学
-                                        '2': 初中
-                                        '3': 高中
-                                        '4': 职业高级中学
-                                        '5': 中等专业学校
-                                        '6': 大专
-                                        '7': 本科
-                                        '8': 硕士
-                                        '9': 博士
-                                    school:
-                                      type: string
-                                      example: XXXX大学
-                                    major:
-                                      type: string
-                                      example: XXX专业
-                                    degree:
-                                      type: integer
-                                      enum:
-                                      - 1
-                                      - 2
-                                      - 3
-                                      x-enum-descriptions:
-                                        '1': 学士
-                                        '2': 硕士
-                                        '3': 博士
-                                    start:
-                                      type: string
-                                      example: '2020-01-01'
-                                    end:
-                                      type: string
-                                      example: '2020-01-01'
+                                  allOf:
+                                  - $ref: '#/components/schemas/HighestLevelOfEdu'
                                   description: 最高学历
                                 education:
                                   type: array
                                   items:
-                                    type: object
-                                    properties:
-                                      level:
-                                        type: integer
-                                        enum:
-                                        - 1
-                                        - 2
-                                        - 3
-                                        - 4
-                                        - 5
-                                        - 6
-                                        - 7
-                                        - 8
-                                        - 9
-                                        x-enum-descriptions:
-                                          '1': 小学
-                                          '2': 初中
-                                          '3': 高中
-                                          '4': 职业高级中学
-                                          '5': 中等专业学校
-                                          '6': 大专
-                                          '7': 本科
-                                          '8': 硕士
-                                          '9': 博士
-                                      school:
-                                        type: string
-                                        example: XXXX大学
-                                      major:
-                                        type: string
-                                        example: XXX专业
-                                      degree:
-                                        type: integer
-                                        enum:
-                                        - 1
-                                        - 2
-                                        - 3
-                                        x-enum-descriptions:
-                                          '1': 学士
-                                          '2': 硕士
-                                          '3': 博士
-                                      start:
-                                        type: string
-                                        example: '2020-01-01'
-                                      end:
-                                        type: string
-                                        example: '2020-01-01'
+                                    $ref: '#/components/schemas/HighestLevelOfEdu'
                                   description: 教育经历
                                 former_work_exp:
                                   type: object
@@ -1137,3 +1048,53 @@ paths:
           to: lark_id
         key: user_ids
         section: 2
+components:
+  schemas:
+    HighestLevelOfEdu:
+      type: object
+      properties:
+        level:
+          type: integer
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+          x-enum-descriptions:
+            '1': 小学
+            '2': 初中
+            '3': 高中
+            '4': 职业高级中学
+            '5': 中等专业学校
+            '6': 大专
+            '7': 本科
+            '8': 硕士
+            '9': 博士
+        school:
+          type: string
+          example: XXXX大学
+        major:
+          type: string
+          example: XXX专业
+        degree:
+          type: integer
+          enum:
+          - 1
+          - 2
+          - 3
+          x-enum-descriptions:
+            '1': 学士
+            '2': 硕士
+            '3': 博士
+        start:
+          type: string
+          example: '2020-01-01'
+        end:
+          type: string
+          example: '2020-01-01'
+      description: 最高学历

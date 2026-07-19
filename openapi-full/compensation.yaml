@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: compensation
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -525,12 +525,12 @@ paths:
       x-lark-scopes:
       - corehr:compensation_archive_detail:read
       x-lark-field-scopes:
-      - corehr:compensation_archive_detail.items:read
-      - corehr:compensation_archive_detail.indicators:read
       - contact:user.employee_id:readonly
       - corehr:compensation_archive_detail.plan:read
       - corehr:compensation_archive_detail.change_description:read
       - corehr:compensation_archive_detail.salary_level:read
+      - corehr:compensation_archive_detail.items:read
+      - corehr:compensation_archive_detail.indicators:read
       x-lark-error-mappings:
       - code: 2290001
         httpCode: 500
@@ -1287,108 +1287,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      operate_results:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 操作的记录的 id
-                              example: '7390583861280556588'
-                            unique_id:
-                              type: string
-                              description: 操作的记录的 unique_id
-                              example: '7390583861280556588'
-                            code:
-                              type: integer
-                              description: 操作结果状态码
-                              enum:
-                              - 0
-                              - 21270201
-                              - 21270202
-                              - 21270203
-                              - 21270205
-                              - 21270206
-                              - 21270207
-                              - 21270208
-                              - 21270209
-                              - 21270210
-                              - 21270211
-                              - 21270213
-                              - 21270214
-                              - 21270215
-                              - 21270217
-                              - 21270218
-                              - 21270219
-                              - 21270220
-                              - 21270221
-                              - 21270222
-                              - 21270223
-                              - 21270224
-                              - 21270225
-                              - 21270226
-                              - 21270227
-                              - 21270228
-                              - 21270229
-                              - 21270230
-                              - 21270070
-                              - 21270239
-                              - 21270240
-                              - 21270241
-                              x-enum-descriptions:
-                                '0': '"success"       操作成功'
-                                '21270201': '"The bonus to be changed does not exist"       要更改的奖金不存在'
-                                '21270202': '"Idempotent ID conflict"       幂等id冲突'
-                                '21270203': '"The total amount format is incorrect"       总金额格式不正确'
-                                '21270205': '"The bonus item does not support decimal places for the amount"       奖金项不支持金额小数位数'
-                                '21270206': '"The sum of the bonus details does not equal the total amount"       奖金明细金额之和不等于总金额'
-                                '21270207': '"issuance frequency not equal to size of details"       奖金明细总数不等于发放次数'
-                                '21270208': '"The number of issuances is less than or equal to 0"       发放次数小于等于0'
-                                '21270209': '"The currency is empty or does not exist"       币种为空或不存在'
-                                '21270210': '"Notes are too long"       备注超长'
-                                '21270211': '"The bonus details amount format is incorrect"       奖金明细金额格式不正确'
-                                '21270213': '"The bonus details payment time format is incorrect"       奖金明细的发放时间格式不正确'
-                                '21270214': '"The bonus details are issued in an illegal manner"       奖金明细的发放方式不合法'
-                                '21270215': '"The bonus details are not in a valid payment status"       奖金明细的发放状态不合法'
-                                '21270217': '"Employees are not covered by the bonus rules"       员工不在奖金项规则适用范围之内'
-                                '21270218': '"The method of awarding bonus details is not covered by the bonus item rules"       奖金明细的发放方式不在奖金项规则适用范围之内'
-                                '21270219': '"Bonus item rules do not support configuration of binding period"       奖金项规则不支持配置绑定期'
-                                '21270220': '"The bonus details payment status is "paid", and cannot be modified"       奖金明细发放状态为「已发放」，不支持修改'
-                                '21270221': '"The bonus item rules already include the currency, and other currencies cannot
-                                  be specified"       奖金项规则已包含币种，不支持指定其他币种'
-                                '21270222': '"The salary item does not exist"       薪酬项不存在'
-                                '21270223': '"Employee does not exist"       员工不存在'
-                                '21270224': '"The bonus details payment status is "paid", and deletion is not supported"       奖金明细发放状态为「已发放」，不支持删除'
-                                '21270225': '"Bonus rules do not allow multiple awards"       奖金项规则不允许多次发放'
-                                '21270226': '"No data permission"       无数据权限'
-                                '21270227': '"Only positive integers are allowed for the binding period"       绑定期只允许正整数'
-                                '21270228': '"This bonus does not currently support custom binding periods. Please configure
-                                  and write according to the rules for the binding period of the salary item"       该奖金暂不支持自定义绑定期，请按照薪酬项绑定期规则配置写入'
-                                '21270229': '"The application issuance date must not be later than the issuance date"       申请发放日期不得晚于发放日期'
-                                '21270230': '"The application payment date format of the bonus details is incorrect"       奖金明细的申请发放日期格式不正确'
-                                '21270070': '"The binding period and the ownership period start and end dates do not match"       绑定期和所属期开始结束日期不匹配'
-                                '21270239': '"One time payment detail reference period start date and One time payment detail
-                                  reference period end date shall be filled in or left blank at the same time. Please confirm"       「一次性支付明细所属期开始日期」、「一次性支付明细所属期结束日期」需同时填写或同时为空，请确认'
-                                '21270240': '"One time payment detail reference period start date must be earlier than or
-                                  equal to One time payment detail reference period end date. Please confirm"       「一次性支付明细所属期开始日期」需早于等于「一次性支付明细结束日期」，请确认'
-                                '21270241': '"One time payment detail reference period must fall within the scope of One time
-                                  payment record reference period. Please adjust"       「一次性支付明细所属期」需包含在「一次性支付记录所属期」范围内，请调整'
-                              example: '21270202'
-                            message:
-                              type: string
-                              description: 操作结果描述
-                              example: uqniue id conflict
-                        description: 每条记录的操作结果。对于创建成功的记录，会返回创建后的一次性支付记录id
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -1444,108 +1343,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      operate_results:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 操作的记录的 id
-                              example: '7390583861280556588'
-                            unique_id:
-                              type: string
-                              description: 操作的记录的 unique_id
-                              example: '7390583861280556588'
-                            code:
-                              type: integer
-                              description: 操作结果状态码
-                              enum:
-                              - 0
-                              - 21270201
-                              - 21270202
-                              - 21270203
-                              - 21270205
-                              - 21270206
-                              - 21270207
-                              - 21270208
-                              - 21270209
-                              - 21270210
-                              - 21270211
-                              - 21270213
-                              - 21270214
-                              - 21270215
-                              - 21270217
-                              - 21270218
-                              - 21270219
-                              - 21270220
-                              - 21270221
-                              - 21270222
-                              - 21270223
-                              - 21270224
-                              - 21270225
-                              - 21270226
-                              - 21270227
-                              - 21270228
-                              - 21270229
-                              - 21270230
-                              - 21270070
-                              - 21270239
-                              - 21270240
-                              - 21270241
-                              x-enum-descriptions:
-                                '0': '"success"       操作成功'
-                                '21270201': '"The bonus to be changed does not exist"       要更改的奖金不存在'
-                                '21270202': '"Idempotent ID conflict"       幂等id冲突'
-                                '21270203': '"The total amount format is incorrect"       总金额格式不正确'
-                                '21270205': '"The bonus item does not support decimal places for the amount"       奖金项不支持金额小数位数'
-                                '21270206': '"The sum of the bonus details does not equal the total amount"       奖金明细金额之和不等于总金额'
-                                '21270207': '"issuance frequency not equal to size of details"       奖金明细总数不等于发放次数'
-                                '21270208': '"The number of issuances is less than or equal to 0"       发放次数小于等于0'
-                                '21270209': '"The currency is empty or does not exist"       币种为空或不存在'
-                                '21270210': '"Notes are too long"       备注超长'
-                                '21270211': '"The bonus details amount format is incorrect"       奖金明细金额格式不正确'
-                                '21270213': '"The bonus details payment time format is incorrect"       奖金明细的发放时间格式不正确'
-                                '21270214': '"The bonus details are issued in an illegal manner"       奖金明细的发放方式不合法'
-                                '21270215': '"The bonus details are not in a valid payment status"       奖金明细的发放状态不合法'
-                                '21270217': '"Employees are not covered by the bonus rules"       员工不在奖金项规则适用范围之内'
-                                '21270218': '"The method of awarding bonus details is not covered by the bonus item rules"       奖金明细的发放方式不在奖金项规则适用范围之内'
-                                '21270219': '"Bonus item rules do not support configuration of binding period"       奖金项规则不支持配置绑定期'
-                                '21270220': '"The bonus details payment status is "paid", and cannot be modified"       奖金明细发放状态为「已发放」，不支持修改'
-                                '21270221': '"The bonus item rules already include the currency, and other currencies cannot
-                                  be specified"       奖金项规则已包含币种，不支持指定其他币种'
-                                '21270222': '"The salary item does not exist"       薪酬项不存在'
-                                '21270223': '"Employee does not exist"       员工不存在'
-                                '21270224': '"The bonus details payment status is "paid", and deletion is not supported"       奖金明细发放状态为「已发放」，不支持删除'
-                                '21270225': '"Bonus rules do not allow multiple awards"       奖金项规则不允许多次发放'
-                                '21270226': '"No data permission"       无数据权限'
-                                '21270227': '"Only positive integers are allowed for the binding period"       绑定期只允许正整数'
-                                '21270228': '"This bonus does not currently support custom binding periods. Please configure
-                                  and write according to the rules for the binding period of the salary item"       该奖金暂不支持自定义绑定期，请按照薪酬项绑定期规则配置写入'
-                                '21270229': '"The application issuance date must not be later than the issuance date"       申请发放日期不得晚于发放日期'
-                                '21270230': '"The application payment date format of the bonus details is incorrect"       奖金明细的申请发放日期格式不正确'
-                                '21270070': '"The binding period and the ownership period start and end dates do not match"       绑定期和所属期开始结束日期不匹配'
-                                '21270239': '"One time payment detail reference period start date and One time payment detail
-                                  reference period end date shall be filled in or left blank at the same time. Please confirm"       「一次性支付明细所属期开始日期」、「一次性支付明细所属期结束日期」需同时填写或同时为空，请确认'
-                                '21270240': '"One time payment detail reference period start date must be earlier than or
-                                  equal to One time payment detail reference period end date. Please confirm"       「一次性支付明细所属期开始日期」需早于等于「一次性支付明细结束日期」，请确认'
-                                '21270241': '"One time payment detail reference period must fall within the scope of One time
-                                  payment record reference period. Please adjust"       「一次性支付明细所属期」需包含在「一次性支付记录所属期」范围内，请调整'
-                              example: '21270202'
-                            message:
-                              type: string
-                              description: 操作结果描述
-                              example: uqniue id conflict
-                        description: 每条记录的操作结果
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -1697,108 +1495,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      operate_results:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 操作的记录的 id
-                              example: '7390583861280556588'
-                            unique_id:
-                              type: string
-                              description: 操作的记录的 unique_id
-                              example: '7390583861280556588'
-                            code:
-                              type: integer
-                              description: 操作结果状态码
-                              enum:
-                              - 0
-                              - 21270201
-                              - 21270202
-                              - 21270203
-                              - 21270205
-                              - 21270206
-                              - 21270207
-                              - 21270208
-                              - 21270209
-                              - 21270210
-                              - 21270211
-                              - 21270213
-                              - 21270214
-                              - 21270215
-                              - 21270217
-                              - 21270218
-                              - 21270219
-                              - 21270220
-                              - 21270221
-                              - 21270222
-                              - 21270223
-                              - 21270224
-                              - 21270225
-                              - 21270226
-                              - 21270227
-                              - 21270228
-                              - 21270229
-                              - 21270230
-                              - 21270070
-                              - 21270239
-                              - 21270240
-                              - 21270241
-                              x-enum-descriptions:
-                                '0': '"success"       操作成功'
-                                '21270201': '"The bonus to be changed does not exist"       要更改的奖金不存在'
-                                '21270202': '"Idempotent ID conflict"       幂等id冲突'
-                                '21270203': '"The total amount format is incorrect"       总金额格式不正确'
-                                '21270205': '"The bonus item does not support decimal places for the amount"       奖金项不支持金额小数位数'
-                                '21270206': '"The sum of the bonus details does not equal the total amount"       奖金明细金额之和不等于总金额'
-                                '21270207': '"issuance frequency not equal to size of details"       奖金明细总数不等于发放次数'
-                                '21270208': '"The number of issuances is less than or equal to 0"       发放次数小于等于0'
-                                '21270209': '"The currency is empty or does not exist"       币种为空或不存在'
-                                '21270210': '"Notes are too long"       备注超长'
-                                '21270211': '"The bonus details amount format is incorrect"       奖金明细金额格式不正确'
-                                '21270213': '"The bonus details payment time format is incorrect"       奖金明细的发放时间格式不正确'
-                                '21270214': '"The bonus details are issued in an illegal manner"       奖金明细的发放方式不合法'
-                                '21270215': '"The bonus details are not in a valid payment status"       奖金明细的发放状态不合法'
-                                '21270217': '"Employees are not covered by the bonus rules"       员工不在奖金项规则适用范围之内'
-                                '21270218': '"The method of awarding bonus details is not covered by the bonus item rules"       奖金明细的发放方式不在奖金项规则适用范围之内'
-                                '21270219': '"Bonus item rules do not support configuration of binding period"       奖金项规则不支持配置绑定期'
-                                '21270220': '"The bonus details payment status is "paid", and cannot be modified"       奖金明细发放状态为「已发放」，不支持修改'
-                                '21270221': '"The bonus item rules already include the currency, and other currencies cannot
-                                  be specified"       奖金项规则已包含币种，不支持指定其他币种'
-                                '21270222': '"The salary item does not exist"       薪酬项不存在'
-                                '21270223': '"Employee does not exist"       员工不存在'
-                                '21270224': '"The bonus details payment status is "paid", and deletion is not supported"       奖金明细发放状态为「已发放」，不支持删除'
-                                '21270225': '"Bonus rules do not allow multiple awards"       奖金项规则不允许多次发放'
-                                '21270226': '"No data permission"       无数据权限'
-                                '21270227': '"Only positive integers are allowed for the binding period"       绑定期只允许正整数'
-                                '21270228': '"This bonus does not currently support custom binding periods. Please configure
-                                  and write according to the rules for the binding period of the salary item"       该奖金暂不支持自定义绑定期，请按照薪酬项绑定期规则配置写入'
-                                '21270229': '"The application issuance date must not be later than the issuance date"       申请发放日期不得晚于发放日期'
-                                '21270230': '"The application payment date format of the bonus details is incorrect"       奖金明细的申请发放日期格式不正确'
-                                '21270070': '"The binding period and the ownership period start and end dates do not match"       绑定期和所属期开始结束日期不匹配'
-                                '21270239': '"One time payment detail reference period start date and One time payment detail
-                                  reference period end date shall be filled in or left blank at the same time. Please confirm"       「一次性支付明细所属期开始日期」、「一次性支付明细所属期结束日期」需同时填写或同时为空，请确认'
-                                '21270240': '"One time payment detail reference period start date must be earlier than or
-                                  equal to One time payment detail reference period end date. Please confirm"       「一次性支付明细所属期开始日期」需早于等于「一次性支付明细结束日期」，请确认'
-                                '21270241': '"One time payment detail reference period must fall within the scope of One time
-                                  payment record reference period. Please adjust"       「一次性支付明细所属期」需包含在「一次性支付记录所属期」范围内，请调整'
-                              example: '21270202'
-                            message:
-                              type: string
-                              description: 操作结果描述
-                              example: uqniue id conflict
-                        description: 每条记录的操作结果
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -2086,87 +1783,7 @@ paths:
                             details:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: string
-                                    description: 一次性支付记录明细id
-                                    example: '7395133551102200876'
-                                  record_id:
-                                    type: string
-                                    description: 一次性支付记录id
-                                    example: '7395133551102168108'
-                                  user_id:
-                                    type: string
-                                    description: 员工id，具体类型由入参中的 user_id_type 指定
-                                    example: '7337149697626801708'
-                                  issuance_amount:
-                                    type: string
-                                    description: 一次性支付明细发放金额，可转数字的字符串
-                                    example: '2000.00'
-                                  issuance_status:
-                                    type: string
-                                    description: 发放状态
-                                    enum:
-                                    - to_be_issued
-                                    - not_issued
-                                    x-enum-descriptions:
-                                      to_be_issued: 应发放
-                                      not_issued: 不发放
-                                    example: to_be_issued
-                                  issuance_way:
-                                    type: string
-                                    description: 发放方式
-                                    enum:
-                                    - with_salary
-                                    - with_cash
-                                    - with_year_end_bonus
-                                    x-enum-descriptions:
-                                      with_salary: 随工资发放
-                                      with_cash: 现金发放
-                                      with_year_end_bonus: 随年终奖发放
-                                    example: with_salary
-                                  issuance_time:
-                                    type: string
-                                    description: 发放日期
-                                    example: '2024-08-01'
-                                  currency_id:
-                                    type: string
-                                    description: 币种id
-                                    example: '6863329932261459464'
-                                  belong_time:
-                                    type: string
-                                    description: 申请发放日期
-                                    example: '2025-01-20'
-                                  create_time:
-                                    type: string
-                                    description: 创建时间
-                                    example: '2024-08-01 12:34:56'
-                                  modify_time:
-                                    type: string
-                                    description: 更新时间
-                                    example: '2024-08-01 12:34:56'
-                                  issuance_country_region_id:
-                                    type: string
-                                    description: 发放国家ID（可通过 https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-country_region/search进行查询）
-                                    example: '6862995757234914824'
-                                  issuance_pay_group_id:
-                                    type: string
-                                    description: 发放薪资组ID（可通过 https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/paygroup/list进行查询）
-                                    example: '6862995757234914824'
-                                  detail_reference_period_start_date:
-                                    type: string
-                                    description: 一次性支付明细所属期开始日期
-                                    example: '2024-08-01'
-                                  detail_reference_period_end_date:
-                                    type: string
-                                    description: 一次性支付明细所属期结束日期
-                                    example: '2024-08-01'
-                                  is_not_issued_due_to_offboardings:
-                                    type: integer
-                                    description: 是否因离职不发放 0, // 空，未填写或不适用     Yes   = 1, // 是，因离职停发     No    = 2, // 否，非离职停发
-                                    default: 0
-                                    example: '0'
+                                $ref: '#/components/schemas/Item7'
                               description: 发放明细列表
                             binding_period_decimal:
                               type: string
@@ -2178,11 +1795,11 @@ paths:
       x-lark-scopes:
       - corehr:compensation.lump_sum_payment:read
       x-lark-field-scopes:
-      - corehr:compensation_lump_sum_payment_detail.belong_time:read
       - contact:user.employee_id:readonly
       - corehr:compensation_lump_sum_payment.return_amount_before_tax:read
       - corehr:compensation_lump_sum_payment.return_amount_after_tax:read
       - corehr:compensation_lump_sum_payment.binding_period_offboarding_type:read
+      - corehr:compensation_lump_sum_payment_detail.belong_time:read
       x-lark-error-mappings:
       - code: 2290001
         httpCode: 400
@@ -2407,87 +2024,7 @@ paths:
                       records:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 一次性支付记录明细id
-                              example: '7395133551102200876'
-                            record_id:
-                              type: string
-                              description: 一次性支付记录id
-                              example: '7395133551102168108'
-                            user_id:
-                              type: string
-                              description: 员工id，具体类型由入参中的 user_id_type 指定
-                              example: '7337149697626801708'
-                            issuance_amount:
-                              type: string
-                              description: 一次性支付明细发放金额，可转数字的字符串
-                              example: '2000.00'
-                            issuance_status:
-                              type: string
-                              description: 发放状态
-                              enum:
-                              - to_be_issued
-                              - not_issued
-                              x-enum-descriptions:
-                                to_be_issued: 应发放
-                                not_issued: 不发放
-                              example: to_be_issued
-                            issuance_way:
-                              type: string
-                              description: 发放方式
-                              enum:
-                              - with_salary
-                              - with_cash
-                              - with_year_end_bonus
-                              x-enum-descriptions:
-                                with_salary: 随工资发放
-                                with_cash: 现金发放
-                                with_year_end_bonus: 随年终奖发放
-                              example: with_salary
-                            issuance_time:
-                              type: string
-                              description: 发放日期
-                              example: '2024-08-01'
-                            currency_id:
-                              type: string
-                              description: 币种id
-                              example: '6863329932261459464'
-                            belong_time:
-                              type: string
-                              description: 申请发放日期
-                              example: '2025-01-20'
-                            create_time:
-                              type: string
-                              description: 创建时间
-                              example: '2024-08-01 12:34:56'
-                            modify_time:
-                              type: string
-                              description: 更新时间
-                              example: '2024-08-01 12:34:56'
-                            issuance_country_region_id:
-                              type: string
-                              description: 发放国家ID（可通过 https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-country_region/search进行查询）
-                              example: '6862995757234914824'
-                            issuance_pay_group_id:
-                              type: string
-                              description: 发放薪资组ID（可通过 https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/paygroup/list进行查询）
-                              example: '6862995757234914824'
-                            detail_reference_period_start_date:
-                              type: string
-                              description: 一次性支付明细所属期开始日期
-                              example: '2024-08-01'
-                            detail_reference_period_end_date:
-                              type: string
-                              description: 一次性支付明细所属期结束日期
-                              example: '2024-08-01'
-                            is_not_issued_due_to_offboardings:
-                              type: integer
-                              description: 是否因离职不发放 0, // 空，未填写或不适用     Yes   = 1, // 是，因离职停发     No    = 2, // 否，非离职停发
-                              default: 0
-                              example: '0'
+                          $ref: '#/components/schemas/Item7'
                         description: 一次性支付授予明细列表
       x-lark-access-tokens:
       - tenant
@@ -2674,40 +2211,8 @@ paths:
                                     description: 薪酬项ID，详细信息可以通过[批量查询薪资项](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/compensation-v1/item/list)接口查询获得
                                     example: '21341234'
                                   plan_item_logic:
-                                    type: object
-                                    properties:
-                                      fixed:
-                                        type: string
-                                        description: 固定值
-                                        example: '60'
-                                      formula:
-                                        type: object
-                                        properties:
-                                          expr:
-                                            type: string
-                                            description: 公式表达式
-                                            example: ${0} +${1}
-                                          formula_params:
-                                            type: array
-                                            items:
-                                              type: object
-                                              properties:
-                                                ref_type:
-                                                  type: integer
-                                                  description: 引用类型
-                                                  enum:
-                                                  - 1
-                                                  - 2
-                                                  x-enum-descriptions:
-                                                    '1': 引用薪资项
-                                                    '2': 引用薪资指标
-                                                  example: '1'
-                                                id:
-                                                  type: string
-                                                  description: 引用类型ID
-                                                  example: '23143242'
-                                            description: 公式参数列表
-                                        description: 公式配置
+                                    allOf:
+                                    - $ref: '#/components/schemas/PlanItemLogic'
                                     description: 方案关联薪资项逻辑配置
                                   probation_discount_type:
                                     type: string
@@ -2742,40 +2247,8 @@ paths:
                                     description: 薪资统计指标ID，详细信息可以通过[批量查询薪资统计指标](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/compensation-v1/indicator/list)接口查询获得
                                     example: '13243432'
                                   plan_indicator_logic:
-                                    type: object
-                                    properties:
-                                      fixed:
-                                        type: string
-                                        description: 固定值
-                                        example: '60'
-                                      formula:
-                                        type: object
-                                        properties:
-                                          expr:
-                                            type: string
-                                            description: 公式表达式
-                                            example: ${0} +${1}
-                                          formula_params:
-                                            type: array
-                                            items:
-                                              type: object
-                                              properties:
-                                                ref_type:
-                                                  type: integer
-                                                  description: 引用类型
-                                                  enum:
-                                                  - 1
-                                                  - 2
-                                                  x-enum-descriptions:
-                                                    '1': 引用薪资项
-                                                    '2': 引用薪资指标
-                                                  example: '1'
-                                                id:
-                                                  type: string
-                                                  description: 引用类型ID
-                                                  example: '23143242'
-                                            description: 公式参数列表
-                                        description: 公式配置
+                                    allOf:
+                                    - $ref: '#/components/schemas/PlanItemLogic'
                                     description: 方案关联薪资统计指标逻辑配置
                                 required:
                                 - indicator_id
@@ -2986,77 +2459,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      operate_results:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 操作记录的id
-                              example: '7390583861280556588'
-                            unique_id:
-                              type: string
-                              description: 操作的记录的 unique_id
-                              example: '7390583861280556588'
-                            code:
-                              type: integer
-                              description: 操作结果状态码
-                              enum:
-                              - 0
-                              - 21280001
-                              - 21280002
-                              - 21280003
-                              - 21270304
-                              - 21270305
-                              - 21270306
-                              - 21270307
-                              - 21270308
-                              - 21270309
-                              - 21270310
-                              - 21270311
-                              - 21270312
-                              - 21270313
-                              - 21270314
-                              - 21270315
-                              - 21270316
-                              - 21270317
-                              - 21270318
-                              x-enum-descriptions:
-                                '0': 操作成功
-                                '21280001': 每次发放金额格式不正确
-                                '21280002': 发放开始时间格式不正确
-                                '21280003': 发放结束时间格式不正确
-                                '21270304': 没有该经常性支付记录权限
-                                '21270305': 经常性支付类型薪酬项不存在
-                                '21270306': 币种不存在
-                                '21270307': 发放方式不存在
-                                '21270308': 发放开始时间大于发放结束时间
-                                '21270309': 员工不在薪酬项规则适用范围之内
-                                '21270310': 发放方式不匹配薪酬项规则
-                                '21270311': 币种不匹配薪酬项规则
-                                '21270312': 发放开始日期早于当前日期不可删除
-                                '21270313': 该经常性支付记录不存在
-                                '21270314': 发放频率不匹配薪酬项
-                                '21270315': 发放开始日期和结束日期有重叠
-                                '21270316': 发放国家为空
-                                '21270317': 发放国家不存在
-                                '21270318': 单次发放金额不允许为0
-                              example: '21270202'
-                            message:
-                              type: string
-                              description: 操作结果描述
-                              example: uqniue id conflict
-                        description: 每条记录的操作结果。对于创建成功的记录，会返回创建后的经常性支付记录id
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -3113,77 +2516,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      operate_results:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 操作记录的id
-                              example: '7390583861280556588'
-                            unique_id:
-                              type: string
-                              description: 操作的记录的 unique_id
-                              example: '7390583861280556588'
-                            code:
-                              type: integer
-                              description: 操作结果状态码
-                              enum:
-                              - 0
-                              - 21280001
-                              - 21280002
-                              - 21280003
-                              - 21270304
-                              - 21270305
-                              - 21270306
-                              - 21270307
-                              - 21270308
-                              - 21270309
-                              - 21270310
-                              - 21270311
-                              - 21270312
-                              - 21270313
-                              - 21270314
-                              - 21270315
-                              - 21270316
-                              - 21270317
-                              - 21270318
-                              x-enum-descriptions:
-                                '0': 操作成功
-                                '21280001': 每次发放金额格式不正确
-                                '21280002': 发放开始时间格式不正确
-                                '21280003': 发放结束时间格式不正确
-                                '21270304': 没有该经常性支付记录权限
-                                '21270305': 经常性支付类型薪酬项不存在
-                                '21270306': 币种不存在
-                                '21270307': 发放方式不存在
-                                '21270308': 发放开始时间大于发放结束时间
-                                '21270309': 员工不在薪酬项规则适用范围之内
-                                '21270310': 发放方式不匹配薪酬项规则
-                                '21270311': 币种不匹配薪酬项规则
-                                '21270312': 发放开始日期早于当前日期不可删除
-                                '21270313': 该经常性支付记录不存在
-                                '21270314': 发放频率不匹配薪酬项
-                                '21270315': 发放开始日期和结束日期有重叠
-                                '21270316': 发放国家为空
-                                '21270317': 发放国家不存在
-                                '21270318': 单次发放金额不允许为0
-                              example: '21270202'
-                            message:
-                              type: string
-                              description: 操作结果描述
-                              example: uqniue id conflict
-                        description: 每条记录的操作结果
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -3296,77 +2629,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      operate_results:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 操作记录的id
-                              example: '7390583861280556588'
-                            unique_id:
-                              type: string
-                              description: 操作的记录的 unique_id
-                              example: '7390583861280556588'
-                            code:
-                              type: integer
-                              description: 操作结果状态码
-                              enum:
-                              - 0
-                              - 21280001
-                              - 21280002
-                              - 21280003
-                              - 21270304
-                              - 21270305
-                              - 21270306
-                              - 21270307
-                              - 21270308
-                              - 21270309
-                              - 21270310
-                              - 21270311
-                              - 21270312
-                              - 21270313
-                              - 21270314
-                              - 21270315
-                              - 21270316
-                              - 21270317
-                              - 21270318
-                              x-enum-descriptions:
-                                '0': 操作成功
-                                '21280001': 每次发放金额格式不正确
-                                '21280002': 发放开始时间格式不正确
-                                '21280003': 发放结束时间格式不正确
-                                '21270304': 没有该经常性支付记录权限
-                                '21270305': 经常性支付类型薪酬项不存在
-                                '21270306': 币种不存在
-                                '21270307': 发放方式不存在
-                                '21270308': 发放开始时间大于发放结束时间
-                                '21270309': 员工不在薪酬项规则适用范围之内
-                                '21270310': 发放方式不匹配薪酬项规则
-                                '21270311': 币种不匹配薪酬项规则
-                                '21270312': 发放开始日期早于当前日期不可删除
-                                '21270313': 该经常性支付记录不存在
-                                '21270314': 发放频率不匹配薪酬项
-                                '21270315': 发放开始日期和结束日期有重叠
-                                '21270316': 发放国家为空
-                                '21270317': 发放国家不存在
-                                '21270318': 单次发放金额不允许为0
-                              example: '21270202'
-                            message:
-                              type: string
-                              description: 操作结果描述
-                              example: uqniue id conflict
-                        description: 每条记录的操作结果
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -3744,220 +3007,7 @@ paths:
                             details:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  description:
-                                    type: object
-                                    properties:
-                                      zh_cn:
-                                        type: string
-                                        description: 中文名称
-                                        example: 中文名称
-                                      en_us:
-                                        type: string
-                                        description: 英文名称
-                                        example: english_name
-                                    description: 调整说明
-                                  insurance_type:
-                                    type: string
-                                    description: '类型。social_insurance: 社保; provident_fund: 公积金'
-                                    enum:
-                                    - social_insurance
-                                    - provident_fund
-                                    x-enum-descriptions:
-                                      social_insurance: 社保
-                                      provident_fund: 公积金
-                                  insurance_status:
-                                    type: string
-                                    description: 参保状态，非「参保」状态下，基数、险种数据等为空
-                                    enum:
-                                    - contribution
-                                    - not_contribution
-                                    - stopped_contribution
-                                    x-enum-descriptions:
-                                      contribution: 参保
-                                      not_contribution: 不参保
-                                      stopped_contribution: 停保
-                                    example: contribution
-                                  id:
-                                    type: string
-                                    description: 档案时间轴对象ID，仅参保档案对象会包含
-                                    example: '123456'
-                                  tid:
-                                    type: string
-                                    description: 档案时间轴对象版本ID，仅参保档案对象会包含
-                                    example: '123456'
-                                  plan_id:
-                                    type: string
-                                    description: 参保方案ID，详细信息可通过「查询参保方案」接口获取
-                                    example: '123456'
-                                  plan_tid:
-                                    type: string
-                                    description: 参保方案版本ID
-                                    example: '123456'
-                                  location_id:
-                                    type: string
-                                    description: 参保城市ID，可通过获取地点信息接口查询详细信息
-                                    example: '123456'
-                                  company_id:
-                                    type: string
-                                    description: 社保缴纳主体ID，可通过获取公司主体接口查询详细信息
-                                    example: '223456'
-                                  account_type:
-                                    type: string
-                                    description: 社保账户类型
-                                    enum:
-                                    - associated_company
-                                    - supplier
-                                    x-enum-descriptions:
-                                      associated_company: 单立户
-                                      supplier: 大库
-                                    example: supplier
-                                  insurance_account:
-                                    type: string
-                                    description: 社保账号
-                                    example: ac123456
-                                  base_salary:
-                                    type: string
-                                    description: 申报缴纳基数
-                                    example: '1000.10'
-                                  insurance_details:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        insurance_id:
-                                          type: string
-                                          description: 险种ID，详细信息可通过社保险种接口查询
-                                          example: '111223'
-                                        company_deduction:
-                                          type: string
-                                          description: 企业缴纳金额
-                                          example: '2000.20'
-                                        company_setting:
-                                          type: object
-                                          properties:
-                                            lower_limit:
-                                              type: string
-                                              description: 基数下限，浮点数，保留二位小数
-                                              example: '1000.00'
-                                            upper_limit:
-                                              type: string
-                                              description: 基数上限，浮点数，保留二位小数
-                                              example: '2000.00'
-                                            payment_ratio:
-                                              type: string
-                                              description: 缴纳比例，浮点数，默认填充到二位小数，支持输入到四位，单位为 %
-                                              example: '8.00'
-                                            payment_rounding_rule:
-                                              type: string
-                                              description: '缴纳金舍入规则。rounding: 四舍五入; round_up: 向上舍入; round_down: 向下舍入'
-                                              enum:
-                                              - rounding
-                                              - round_up
-                                              - round_down
-                                              x-enum-descriptions:
-                                                rounding: 四舍五入
-                                                round_up: 向上舍入
-                                                round_down: 向下舍入
-                                              example: '8.00'
-                                            payment_decimals:
-                                              type: integer
-                                              description: 缴纳金小数位数，0-6之间选择
-                                              example: '2'
-                                            fixed_payment:
-                                              type: string
-                                              description: 附加固定金额，浮点数，保留二位小数
-                                              example: '200.00'
-                                          required:
-                                          - lower_limit
-                                          - upper_limit
-                                          - payment_ratio
-                                          - payment_rounding_rule
-                                          - payment_decimals
-                                          - fixed_payment
-                                          description: 险种缴纳配置
-                                        personal_deduction:
-                                          type: string
-                                          description: 企业缴纳金额
-                                          example: '1000.20'
-                                        personal_setting:
-                                          type: object
-                                          properties:
-                                            lower_limit:
-                                              type: string
-                                              description: 基数下限，浮点数，保留二位小数
-                                              example: '1000.00'
-                                            upper_limit:
-                                              type: string
-                                              description: 基数上限，浮点数，保留二位小数
-                                              example: '2000.00'
-                                            payment_ratio:
-                                              type: string
-                                              description: 缴纳比例，浮点数，默认填充到二位小数，支持输入到四位，单位为 %
-                                              example: '8.00'
-                                            payment_rounding_rule:
-                                              type: string
-                                              description: '缴纳金舍入规则。rounding: 四舍五入; round_up: 向上舍入; round_down: 向下舍入'
-                                              enum:
-                                              - rounding
-                                              - round_up
-                                              - round_down
-                                              x-enum-descriptions:
-                                                rounding: 四舍五入
-                                                round_up: 向上舍入
-                                                round_down: 向下舍入
-                                              example: '8.00'
-                                            payment_decimals:
-                                              type: integer
-                                              description: 缴纳金小数位数，0-6之间选择
-                                              example: '2'
-                                            fixed_payment:
-                                              type: string
-                                              description: 附加固定金额，浮点数，保留二位小数
-                                              example: '200.00'
-                                          required:
-                                          - lower_limit
-                                          - upper_limit
-                                          - payment_ratio
-                                          - payment_rounding_rule
-                                          - payment_decimals
-                                          - fixed_payment
-                                          description: 险种缴纳配置
-                                        payment_frequency:
-                                          type: string
-                                          description: 缴纳频率
-                                          enum:
-                                          - annually
-                                          - monthly
-                                          - quarterly
-                                          x-enum-descriptions:
-                                            annually: 每年
-                                            monthly: 每月
-                                            quarterly: 每季度
-                                          example: '8.00'
-                                        payment_months:
-                                          type: array
-                                          items:
-                                            type: integer
-                                          description: 缴纳月份
-                                      required:
-                                      - insurance_id
-                                      - company_deduction
-                                      - company_setting
-                                      - personal_deduction
-                                      - personal_setting
-                                      - payment_frequency
-                                      - payment_months
-                                    description: 险种数据详情
-                                  effective_date:
-                                    type: string
-                                    description: 档案生效时间，HHHH-MM-DD
-                                    example: '2024-01-01'
-                                required:
-                                - description
-                                - insurance_type
-                                - insurance_status
+                                $ref: '#/components/schemas/Item2'
                               description: 员工参保档案，包含社保、公积金档案
                           required:
                           - user_id
@@ -4082,220 +3132,7 @@ paths:
                             details:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  description:
-                                    type: object
-                                    properties:
-                                      zh_cn:
-                                        type: string
-                                        description: 中文名称
-                                        example: 中文名称
-                                      en_us:
-                                        type: string
-                                        description: 英文名称
-                                        example: english_name
-                                    description: 调整说明
-                                  insurance_type:
-                                    type: string
-                                    description: '类型。social_insurance: 社保; provident_fund: 公积金'
-                                    enum:
-                                    - social_insurance
-                                    - provident_fund
-                                    x-enum-descriptions:
-                                      social_insurance: 社保
-                                      provident_fund: 公积金
-                                  insurance_status:
-                                    type: string
-                                    description: 参保状态，非「参保」状态下，基数、险种数据等为空
-                                    enum:
-                                    - contribution
-                                    - not_contribution
-                                    - stopped_contribution
-                                    x-enum-descriptions:
-                                      contribution: 参保
-                                      not_contribution: 不参保
-                                      stopped_contribution: 停保
-                                    example: contribution
-                                  id:
-                                    type: string
-                                    description: 档案时间轴对象ID，仅参保档案对象会包含
-                                    example: '123456'
-                                  tid:
-                                    type: string
-                                    description: 档案时间轴对象版本ID，仅参保档案对象会包含
-                                    example: '123456'
-                                  plan_id:
-                                    type: string
-                                    description: 参保方案ID，详细信息可通过「查询参保方案」接口获取
-                                    example: '123456'
-                                  plan_tid:
-                                    type: string
-                                    description: 参保方案版本ID
-                                    example: '123456'
-                                  location_id:
-                                    type: string
-                                    description: 参保城市ID，可通过获取地点信息接口查询详细信息
-                                    example: '123456'
-                                  company_id:
-                                    type: string
-                                    description: 社保缴纳主体ID，可通过获取公司主体接口查询详细信息
-                                    example: '223456'
-                                  account_type:
-                                    type: string
-                                    description: 社保账户类型
-                                    enum:
-                                    - associated_company
-                                    - supplier
-                                    x-enum-descriptions:
-                                      associated_company: 单立户
-                                      supplier: 大库
-                                    example: supplier
-                                  insurance_account:
-                                    type: string
-                                    description: 社保账号
-                                    example: ac123456
-                                  base_salary:
-                                    type: string
-                                    description: 申报缴纳基数
-                                    example: '1000.10'
-                                  insurance_details:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        insurance_id:
-                                          type: string
-                                          description: 险种ID，详细信息可通过社保险种接口查询
-                                          example: '111223'
-                                        company_deduction:
-                                          type: string
-                                          description: 企业缴纳金额
-                                          example: '2000.20'
-                                        company_setting:
-                                          type: object
-                                          properties:
-                                            lower_limit:
-                                              type: string
-                                              description: 基数下限，浮点数，保留二位小数
-                                              example: '1000.00'
-                                            upper_limit:
-                                              type: string
-                                              description: 基数上限，浮点数，保留二位小数
-                                              example: '2000.00'
-                                            payment_ratio:
-                                              type: string
-                                              description: 缴纳比例，浮点数，默认填充到二位小数，支持输入到四位，单位为 %
-                                              example: '8.00'
-                                            payment_rounding_rule:
-                                              type: string
-                                              description: '缴纳金舍入规则。rounding: 四舍五入; round_up: 向上舍入; round_down: 向下舍入'
-                                              enum:
-                                              - rounding
-                                              - round_up
-                                              - round_down
-                                              x-enum-descriptions:
-                                                rounding: 四舍五入
-                                                round_up: 向上舍入
-                                                round_down: 向下舍入
-                                              example: '8.00'
-                                            payment_decimals:
-                                              type: integer
-                                              description: 缴纳金小数位数，0-6之间选择
-                                              example: '2'
-                                            fixed_payment:
-                                              type: string
-                                              description: 附加固定金额，浮点数，保留二位小数
-                                              example: '200.00'
-                                          required:
-                                          - lower_limit
-                                          - upper_limit
-                                          - payment_ratio
-                                          - payment_rounding_rule
-                                          - payment_decimals
-                                          - fixed_payment
-                                          description: 险种缴纳配置
-                                        personal_deduction:
-                                          type: string
-                                          description: 企业缴纳金额
-                                          example: '1000.20'
-                                        personal_setting:
-                                          type: object
-                                          properties:
-                                            lower_limit:
-                                              type: string
-                                              description: 基数下限，浮点数，保留二位小数
-                                              example: '1000.00'
-                                            upper_limit:
-                                              type: string
-                                              description: 基数上限，浮点数，保留二位小数
-                                              example: '2000.00'
-                                            payment_ratio:
-                                              type: string
-                                              description: 缴纳比例，浮点数，默认填充到二位小数，支持输入到四位，单位为 %
-                                              example: '8.00'
-                                            payment_rounding_rule:
-                                              type: string
-                                              description: '缴纳金舍入规则。rounding: 四舍五入; round_up: 向上舍入; round_down: 向下舍入'
-                                              enum:
-                                              - rounding
-                                              - round_up
-                                              - round_down
-                                              x-enum-descriptions:
-                                                rounding: 四舍五入
-                                                round_up: 向上舍入
-                                                round_down: 向下舍入
-                                              example: '8.00'
-                                            payment_decimals:
-                                              type: integer
-                                              description: 缴纳金小数位数，0-6之间选择
-                                              example: '2'
-                                            fixed_payment:
-                                              type: string
-                                              description: 附加固定金额，浮点数，保留二位小数
-                                              example: '200.00'
-                                          required:
-                                          - lower_limit
-                                          - upper_limit
-                                          - payment_ratio
-                                          - payment_rounding_rule
-                                          - payment_decimals
-                                          - fixed_payment
-                                          description: 险种缴纳配置
-                                        payment_frequency:
-                                          type: string
-                                          description: 缴纳频率
-                                          enum:
-                                          - annually
-                                          - monthly
-                                          - quarterly
-                                          x-enum-descriptions:
-                                            annually: 每年
-                                            monthly: 每月
-                                            quarterly: 每季度
-                                          example: '8.00'
-                                        payment_months:
-                                          type: array
-                                          items:
-                                            type: integer
-                                          description: 缴纳月份
-                                      required:
-                                      - insurance_id
-                                      - company_deduction
-                                      - company_setting
-                                      - personal_deduction
-                                      - personal_setting
-                                      - payment_frequency
-                                      - payment_months
-                                    description: 险种数据详情
-                                  effective_date:
-                                    type: string
-                                    description: 档案生效时间，HHHH-MM-DD
-                                    example: '2024-01-01'
-                                required:
-                                - description
-                                - insurance_type
-                                - insurance_status
+                                $ref: '#/components/schemas/Item2'
                               description: 员工增减员记录，包括社保、公积金记录
                             record_id:
                               type: string
@@ -4470,240 +3307,7 @@ paths:
                       plans:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            plan_id:
-                              type: string
-                              description: 参保方案ID
-                              example: '11111'
-                            plan_tid:
-                              type: string
-                              description: 参保方案版本ID
-                              example: '22222'
-                            name:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 中文名称
-                                  example: 中文名称
-                                en_us:
-                                  type: string
-                                  description: 英文名称
-                                  example: english_name
-                              description: 参保方案名称
-                            effective_date:
-                              type: string
-                              description: 生效时间，HHHH-MM-DD
-                              example: '2024-01-01'
-                            active:
-                              type: boolean
-                              description: 是否启用
-                            insurance_type:
-                              type: string
-                              description: '险种类型. social_insurance: 社保; provident_fund: 公积金'
-                              enum:
-                              - social_insurance
-                              - provident_fund
-                              x-enum-descriptions:
-                                social_insurance: 社保
-                                provident_fund: 公积金
-                            scope:
-                              type: object
-                              properties:
-                                is_all:
-                                  type: boolean
-                                  description: 是否适用于全部
-                                  example: 'true'
-                                rules:
-                                  type: array
-                                  items:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        left_type:
-                                          type: integer
-                                          description: 适用范围左值
-                                          enum:
-                                          - 1
-                                          - 2
-                                          x-enum-descriptions:
-                                            '1': 参保城市
-                                            '2': 缴纳主体
-                                          example: '1'
-                                        operator:
-                                          type: integer
-                                          description: 适用范围操作
-                                          enum:
-                                          - 1
-                                          - 2
-                                          x-enum-descriptions:
-                                            '1': 包含
-                                            '2': 不包含
-                                          example: '1'
-                                        right_values:
-                                          type: array
-                                          items:
-                                            type: string
-                                          description: 适用范围右值
-                                  description: 适用范围，二维。外层or连接，内层and连接
-                              required:
-                              - is_all
-                              description: 参保方案适用范围
-                            item_detail:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  item_id:
-                                    type: string
-                                    description: 险种ID，详细信息可通过社保险种接口查询
-                                    example: '123456'
-                                  item_name:
-                                    type: object
-                                    properties:
-                                      zh_cn:
-                                        type: string
-                                        description: 中文名称
-                                        example: 中文名称
-                                      en_us:
-                                        type: string
-                                        description: 英文名称
-                                        example: english_name
-                                    description: 险种名
-                                  item_setting_of_person:
-                                    type: object
-                                    properties:
-                                      lower_limit:
-                                        type: string
-                                        description: 基数下限，浮点数，保留二位小数
-                                        example: '1000.00'
-                                      upper_limit:
-                                        type: string
-                                        description: 基数上限，浮点数，保留二位小数
-                                        example: '2000.00'
-                                      payment_ratio:
-                                        type: string
-                                        description: 缴纳比例，浮点数，默认填充到二位小数，支持输入到四位，单位为 %
-                                        example: '8.00'
-                                      payment_rounding_rule:
-                                        type: string
-                                        description: '缴纳金舍入规则。rounding: 四舍五入; round_up: 向上舍入; round_down: 向下舍入'
-                                        enum:
-                                        - rounding
-                                        - round_up
-                                        - round_down
-                                        x-enum-descriptions:
-                                          rounding: 四舍五入
-                                          round_up: 向上舍入
-                                          round_down: 向下舍入
-                                        example: '8.00'
-                                      payment_decimals:
-                                        type: integer
-                                        description: 缴纳金小数位数，0-6之间选择
-                                        example: '2'
-                                      fixed_payment:
-                                        type: string
-                                        description: 附加固定金额，浮点数，保留二位小数
-                                        example: '200.00'
-                                    required:
-                                    - lower_limit
-                                    - upper_limit
-                                    - payment_ratio
-                                    - payment_rounding_rule
-                                    - payment_decimals
-                                    - fixed_payment
-                                    description: 险种缴纳配置
-                                  item_setting_of_company:
-                                    type: object
-                                    properties:
-                                      lower_limit:
-                                        type: string
-                                        description: 基数下限，浮点数，保留二位小数
-                                        example: '1000.00'
-                                      upper_limit:
-                                        type: string
-                                        description: 基数上限，浮点数，保留二位小数
-                                        example: '2000.00'
-                                      payment_ratio:
-                                        type: string
-                                        description: 缴纳比例，浮点数，默认填充到二位小数，支持输入到四位，单位为 %
-                                        example: '8.00'
-                                      payment_rounding_rule:
-                                        type: string
-                                        description: '缴纳金舍入规则。rounding: 四舍五入; round_up: 向上舍入; round_down: 向下舍入'
-                                        enum:
-                                        - rounding
-                                        - round_up
-                                        - round_down
-                                        x-enum-descriptions:
-                                          rounding: 四舍五入
-                                          round_up: 向上舍入
-                                          round_down: 向下舍入
-                                        example: '8.00'
-                                      payment_decimals:
-                                        type: integer
-                                        description: 缴纳金小数位数，0-6之间选择
-                                        example: '2'
-                                      fixed_payment:
-                                        type: string
-                                        description: 附加固定金额，浮点数，保留二位小数
-                                        example: '200.00'
-                                    required:
-                                    - lower_limit
-                                    - upper_limit
-                                    - payment_ratio
-                                    - payment_rounding_rule
-                                    - payment_decimals
-                                    - fixed_payment
-                                    description: 险种缴纳配置
-                                  payment_frequency:
-                                    type: string
-                                    description: 缴纳频率
-                                    enum:
-                                    - annually
-                                    - monthly
-                                    - quarterly
-                                    x-enum-descriptions:
-                                      annually: 每年
-                                      monthly: 每月
-                                      quarterly: 每季度
-                                    example: '8.00'
-                                  payment_months:
-                                    type: array
-                                    items:
-                                      type: integer
-                                    description: 缴纳月份
-                                required:
-                                - item_id
-                                - item_name
-                                - item_setting_of_person
-                                - item_setting_of_company
-                                - payment_frequency
-                                - payment_months
-                              description: 参保信息
-                            remark:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 中文名称
-                                  example: 中文名称
-                                en_us:
-                                  type: string
-                                  description: 英文名称
-                                  example: english_name
-                              description: 备注
-                          required:
-                          - plan_id
-                          - plan_tid
-                          - name
-                          - effective_date
-                          - active
-                          - insurance_type
-                          - item_detail
-                          - remark
+                          $ref: '#/components/schemas/Item'
                         description: 方案列表
                       has_more:
                         type: boolean
@@ -4769,240 +3373,7 @@ paths:
                       plans:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            plan_id:
-                              type: string
-                              description: 参保方案ID
-                              example: '11111'
-                            plan_tid:
-                              type: string
-                              description: 参保方案版本ID
-                              example: '22222'
-                            name:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 中文名称
-                                  example: 中文名称
-                                en_us:
-                                  type: string
-                                  description: 英文名称
-                                  example: english_name
-                              description: 参保方案名称
-                            effective_date:
-                              type: string
-                              description: 生效时间，HHHH-MM-DD
-                              example: '2024-01-01'
-                            active:
-                              type: boolean
-                              description: 是否启用
-                            insurance_type:
-                              type: string
-                              description: '险种类型. social_insurance: 社保; provident_fund: 公积金'
-                              enum:
-                              - social_insurance
-                              - provident_fund
-                              x-enum-descriptions:
-                                social_insurance: 社保
-                                provident_fund: 公积金
-                            scope:
-                              type: object
-                              properties:
-                                is_all:
-                                  type: boolean
-                                  description: 是否适用于全部
-                                  example: 'true'
-                                rules:
-                                  type: array
-                                  items:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        left_type:
-                                          type: integer
-                                          description: 适用范围左值
-                                          enum:
-                                          - 1
-                                          - 2
-                                          x-enum-descriptions:
-                                            '1': 参保城市
-                                            '2': 缴纳主体
-                                          example: '1'
-                                        operator:
-                                          type: integer
-                                          description: 适用范围操作
-                                          enum:
-                                          - 1
-                                          - 2
-                                          x-enum-descriptions:
-                                            '1': 包含
-                                            '2': 不包含
-                                          example: '1'
-                                        right_values:
-                                          type: array
-                                          items:
-                                            type: string
-                                          description: 适用范围右值
-                                  description: 适用范围，二维。外层or连接，内层and连接
-                              required:
-                              - is_all
-                              description: 参保方案适用范围
-                            item_detail:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  item_id:
-                                    type: string
-                                    description: 险种ID，详细信息可通过社保险种接口查询
-                                    example: '123456'
-                                  item_name:
-                                    type: object
-                                    properties:
-                                      zh_cn:
-                                        type: string
-                                        description: 中文名称
-                                        example: 中文名称
-                                      en_us:
-                                        type: string
-                                        description: 英文名称
-                                        example: english_name
-                                    description: 险种名
-                                  item_setting_of_person:
-                                    type: object
-                                    properties:
-                                      lower_limit:
-                                        type: string
-                                        description: 基数下限，浮点数，保留二位小数
-                                        example: '1000.00'
-                                      upper_limit:
-                                        type: string
-                                        description: 基数上限，浮点数，保留二位小数
-                                        example: '2000.00'
-                                      payment_ratio:
-                                        type: string
-                                        description: 缴纳比例，浮点数，默认填充到二位小数，支持输入到四位，单位为 %
-                                        example: '8.00'
-                                      payment_rounding_rule:
-                                        type: string
-                                        description: '缴纳金舍入规则。rounding: 四舍五入; round_up: 向上舍入; round_down: 向下舍入'
-                                        enum:
-                                        - rounding
-                                        - round_up
-                                        - round_down
-                                        x-enum-descriptions:
-                                          rounding: 四舍五入
-                                          round_up: 向上舍入
-                                          round_down: 向下舍入
-                                        example: '8.00'
-                                      payment_decimals:
-                                        type: integer
-                                        description: 缴纳金小数位数，0-6之间选择
-                                        example: '2'
-                                      fixed_payment:
-                                        type: string
-                                        description: 附加固定金额，浮点数，保留二位小数
-                                        example: '200.00'
-                                    required:
-                                    - lower_limit
-                                    - upper_limit
-                                    - payment_ratio
-                                    - payment_rounding_rule
-                                    - payment_decimals
-                                    - fixed_payment
-                                    description: 险种缴纳配置
-                                  item_setting_of_company:
-                                    type: object
-                                    properties:
-                                      lower_limit:
-                                        type: string
-                                        description: 基数下限，浮点数，保留二位小数
-                                        example: '1000.00'
-                                      upper_limit:
-                                        type: string
-                                        description: 基数上限，浮点数，保留二位小数
-                                        example: '2000.00'
-                                      payment_ratio:
-                                        type: string
-                                        description: 缴纳比例，浮点数，默认填充到二位小数，支持输入到四位，单位为 %
-                                        example: '8.00'
-                                      payment_rounding_rule:
-                                        type: string
-                                        description: '缴纳金舍入规则。rounding: 四舍五入; round_up: 向上舍入; round_down: 向下舍入'
-                                        enum:
-                                        - rounding
-                                        - round_up
-                                        - round_down
-                                        x-enum-descriptions:
-                                          rounding: 四舍五入
-                                          round_up: 向上舍入
-                                          round_down: 向下舍入
-                                        example: '8.00'
-                                      payment_decimals:
-                                        type: integer
-                                        description: 缴纳金小数位数，0-6之间选择
-                                        example: '2'
-                                      fixed_payment:
-                                        type: string
-                                        description: 附加固定金额，浮点数，保留二位小数
-                                        example: '200.00'
-                                    required:
-                                    - lower_limit
-                                    - upper_limit
-                                    - payment_ratio
-                                    - payment_rounding_rule
-                                    - payment_decimals
-                                    - fixed_payment
-                                    description: 险种缴纳配置
-                                  payment_frequency:
-                                    type: string
-                                    description: 缴纳频率
-                                    enum:
-                                    - annually
-                                    - monthly
-                                    - quarterly
-                                    x-enum-descriptions:
-                                      annually: 每年
-                                      monthly: 每月
-                                      quarterly: 每季度
-                                    example: '8.00'
-                                  payment_months:
-                                    type: array
-                                    items:
-                                      type: integer
-                                    description: 缴纳月份
-                                required:
-                                - item_id
-                                - item_name
-                                - item_setting_of_person
-                                - item_setting_of_company
-                                - payment_frequency
-                                - payment_months
-                              description: 参保信息
-                            remark:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 中文名称
-                                  example: 中文名称
-                                en_us:
-                                  type: string
-                                  description: 英文名称
-                                  example: english_name
-                              description: 备注
-                          required:
-                          - plan_id
-                          - plan_tid
-                          - name
-                          - effective_date
-                          - active
-                          - insurance_type
-                          - item_detail
-                          - remark
+                          $ref: '#/components/schemas/Item'
                         description: 方案列表
       x-lark-access-tokens:
       - tenant
@@ -5017,3 +3388,650 @@ paths:
         msg: param is invalid
       x-lark-rate-limit:
         tier: 7
+components:
+  schemas:
+    Item:
+      type: object
+      properties:
+        plan_id:
+          type: string
+          description: 参保方案ID
+          example: '11111'
+        plan_tid:
+          type: string
+          description: 参保方案版本ID
+          example: '22222'
+        name:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文名称
+              example: 中文名称
+            en_us:
+              type: string
+              description: 英文名称
+              example: english_name
+          description: 参保方案名称
+        effective_date:
+          type: string
+          description: 生效时间，HHHH-MM-DD
+          example: '2024-01-01'
+        active:
+          type: boolean
+          description: 是否启用
+        insurance_type:
+          type: string
+          description: '险种类型. social_insurance: 社保; provident_fund: 公积金'
+          enum:
+          - social_insurance
+          - provident_fund
+          x-enum-descriptions:
+            social_insurance: 社保
+            provident_fund: 公积金
+        scope:
+          allOf:
+          - $ref: '#/components/schemas/Scope'
+          description: 参保方案适用范围
+        item_detail:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item3'
+          description: 参保信息
+        remark:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文名称
+              example: 中文名称
+            en_us:
+              type: string
+              description: 英文名称
+              example: english_name
+          description: 备注
+      required:
+      - plan_id
+      - plan_tid
+      - name
+      - effective_date
+      - active
+      - insurance_type
+      - item_detail
+      - remark
+    Item2:
+      type: object
+      properties:
+        description:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文名称
+              example: 中文名称
+            en_us:
+              type: string
+              description: 英文名称
+              example: english_name
+          description: 调整说明
+        insurance_type:
+          type: string
+          description: '类型。social_insurance: 社保; provident_fund: 公积金'
+          enum:
+          - social_insurance
+          - provident_fund
+          x-enum-descriptions:
+            social_insurance: 社保
+            provident_fund: 公积金
+        insurance_status:
+          type: string
+          description: 参保状态，非「参保」状态下，基数、险种数据等为空
+          enum:
+          - contribution
+          - not_contribution
+          - stopped_contribution
+          x-enum-descriptions:
+            contribution: 参保
+            not_contribution: 不参保
+            stopped_contribution: 停保
+          example: contribution
+        id:
+          type: string
+          description: 档案时间轴对象ID，仅参保档案对象会包含
+          example: '123456'
+        tid:
+          type: string
+          description: 档案时间轴对象版本ID，仅参保档案对象会包含
+          example: '123456'
+        plan_id:
+          type: string
+          description: 参保方案ID，详细信息可通过「查询参保方案」接口获取
+          example: '123456'
+        plan_tid:
+          type: string
+          description: 参保方案版本ID
+          example: '123456'
+        location_id:
+          type: string
+          description: 参保城市ID，可通过获取地点信息接口查询详细信息
+          example: '123456'
+        company_id:
+          type: string
+          description: 社保缴纳主体ID，可通过获取公司主体接口查询详细信息
+          example: '223456'
+        account_type:
+          type: string
+          description: 社保账户类型
+          enum:
+          - associated_company
+          - supplier
+          x-enum-descriptions:
+            associated_company: 单立户
+            supplier: 大库
+          example: supplier
+        insurance_account:
+          type: string
+          description: 社保账号
+          example: ac123456
+        base_salary:
+          type: string
+          description: 申报缴纳基数
+          example: '1000.10'
+        insurance_details:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item5'
+          description: 险种数据详情
+        effective_date:
+          type: string
+          description: 档案生效时间，HHHH-MM-DD
+          example: '2024-01-01'
+      required:
+      - description
+      - insurance_type
+      - insurance_status
+    CompanySetting:
+      type: object
+      properties:
+        lower_limit:
+          type: string
+          description: 基数下限，浮点数，保留二位小数
+          example: '1000.00'
+        upper_limit:
+          type: string
+          description: 基数上限，浮点数，保留二位小数
+          example: '2000.00'
+        payment_ratio:
+          type: string
+          description: 缴纳比例，浮点数，默认填充到二位小数，支持输入到四位，单位为 %
+          example: '8.00'
+        payment_rounding_rule:
+          type: string
+          description: '缴纳金舍入规则。rounding: 四舍五入; round_up: 向上舍入; round_down: 向下舍入'
+          enum:
+          - rounding
+          - round_up
+          - round_down
+          x-enum-descriptions:
+            rounding: 四舍五入
+            round_up: 向上舍入
+            round_down: 向下舍入
+          example: '8.00'
+        payment_decimals:
+          type: integer
+          description: 缴纳金小数位数，0-6之间选择
+          example: '2'
+        fixed_payment:
+          type: string
+          description: 附加固定金额，浮点数，保留二位小数
+          example: '200.00'
+      required:
+      - lower_limit
+      - upper_limit
+      - payment_ratio
+      - payment_rounding_rule
+      - payment_decimals
+      - fixed_payment
+      description: 险种缴纳配置
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    Data:
+      type: object
+      properties:
+        operate_results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item4'
+          description: 每条记录的操作结果。对于创建成功的记录，会返回创建后的一次性支付记录id
+    Item3:
+      type: object
+      properties:
+        item_id:
+          type: string
+          description: 险种ID，详细信息可通过社保险种接口查询
+          example: '123456'
+        item_name:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文名称
+              example: 中文名称
+            en_us:
+              type: string
+              description: 英文名称
+              example: english_name
+          description: 险种名
+        item_setting_of_person:
+          allOf:
+          - $ref: '#/components/schemas/CompanySetting'
+          description: 险种缴纳配置
+        item_setting_of_company:
+          allOf:
+          - $ref: '#/components/schemas/CompanySetting'
+          description: 险种缴纳配置
+        payment_frequency:
+          type: string
+          description: 缴纳频率
+          enum:
+          - annually
+          - monthly
+          - quarterly
+          x-enum-descriptions:
+            annually: 每年
+            monthly: 每月
+            quarterly: 每季度
+          example: '8.00'
+        payment_months:
+          type: array
+          items:
+            type: integer
+          description: 缴纳月份
+      required:
+      - item_id
+      - item_name
+      - item_setting_of_person
+      - item_setting_of_company
+      - payment_frequency
+      - payment_months
+    Item4:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 操作的记录的 id
+          example: '7390583861280556588'
+        unique_id:
+          type: string
+          description: 操作的记录的 unique_id
+          example: '7390583861280556588'
+        code:
+          type: integer
+          description: 操作结果状态码
+          enum:
+          - 0
+          - 21270201
+          - 21270202
+          - 21270203
+          - 21270205
+          - 21270206
+          - 21270207
+          - 21270208
+          - 21270209
+          - 21270210
+          - 21270211
+          - 21270213
+          - 21270214
+          - 21270215
+          - 21270217
+          - 21270218
+          - 21270219
+          - 21270220
+          - 21270221
+          - 21270222
+          - 21270223
+          - 21270224
+          - 21270225
+          - 21270226
+          - 21270227
+          - 21270228
+          - 21270229
+          - 21270230
+          - 21270070
+          - 21270239
+          - 21270240
+          - 21270241
+          x-enum-descriptions:
+            '0': '"success"       操作成功'
+            '21270201': '"The bonus to be changed does not exist"       要更改的奖金不存在'
+            '21270202': '"Idempotent ID conflict"       幂等id冲突'
+            '21270203': '"The total amount format is incorrect"       总金额格式不正确'
+            '21270205': '"The bonus item does not support decimal places for the amount"       奖金项不支持金额小数位数'
+            '21270206': '"The sum of the bonus details does not equal the total amount"       奖金明细金额之和不等于总金额'
+            '21270207': '"issuance frequency not equal to size of details"       奖金明细总数不等于发放次数'
+            '21270208': '"The number of issuances is less than or equal to 0"       发放次数小于等于0'
+            '21270209': '"The currency is empty or does not exist"       币种为空或不存在'
+            '21270210': '"Notes are too long"       备注超长'
+            '21270211': '"The bonus details amount format is incorrect"       奖金明细金额格式不正确'
+            '21270213': '"The bonus details payment time format is incorrect"       奖金明细的发放时间格式不正确'
+            '21270214': '"The bonus details are issued in an illegal manner"       奖金明细的发放方式不合法'
+            '21270215': '"The bonus details are not in a valid payment status"       奖金明细的发放状态不合法'
+            '21270217': '"Employees are not covered by the bonus rules"       员工不在奖金项规则适用范围之内'
+            '21270218': '"The method of awarding bonus details is not covered by the bonus item rules"       奖金明细的发放方式不在奖金项规则适用范围之内'
+            '21270219': '"Bonus item rules do not support configuration of binding period"       奖金项规则不支持配置绑定期'
+            '21270220': '"The bonus details payment status is "paid", and cannot be modified"       奖金明细发放状态为「已发放」，不支持修改'
+            '21270221': '"The bonus item rules already include the currency, and other currencies cannot be specified"       奖金项规则已包含币种，不支持指定其他币种'
+            '21270222': '"The salary item does not exist"       薪酬项不存在'
+            '21270223': '"Employee does not exist"       员工不存在'
+            '21270224': '"The bonus details payment status is "paid", and deletion is not supported"       奖金明细发放状态为「已发放」，不支持删除'
+            '21270225': '"Bonus rules do not allow multiple awards"       奖金项规则不允许多次发放'
+            '21270226': '"No data permission"       无数据权限'
+            '21270227': '"Only positive integers are allowed for the binding period"       绑定期只允许正整数'
+            '21270228': '"This bonus does not currently support custom binding periods. Please configure and write according
+              to the rules for the binding period of the salary item"       该奖金暂不支持自定义绑定期，请按照薪酬项绑定期规则配置写入'
+            '21270229': '"The application issuance date must not be later than the issuance date"       申请发放日期不得晚于发放日期'
+            '21270230': '"The application payment date format of the bonus details is incorrect"       奖金明细的申请发放日期格式不正确'
+            '21270070': '"The binding period and the ownership period start and end dates do not match"       绑定期和所属期开始结束日期不匹配'
+            '21270239': '"One time payment detail reference period start date and One time payment detail reference period
+              end date shall be filled in or left blank at the same time. Please confirm"       「一次性支付明细所属期开始日期」、「一次性支付明细所属期结束日期」需同时填写或同时为空，请确认'
+            '21270240': '"One time payment detail reference period start date must be earlier than or equal to One time payment
+              detail reference period end date. Please confirm"       「一次性支付明细所属期开始日期」需早于等于「一次性支付明细结束日期」，请确认'
+            '21270241': '"One time payment detail reference period must fall within the scope of One time payment record reference
+              period. Please adjust"       「一次性支付明细所属期」需包含在「一次性支付记录所属期」范围内，请调整'
+          example: '21270202'
+        message:
+          type: string
+          description: 操作结果描述
+          example: uqniue id conflict
+    Item5:
+      type: object
+      properties:
+        insurance_id:
+          type: string
+          description: 险种ID，详细信息可通过社保险种接口查询
+          example: '111223'
+        company_deduction:
+          type: string
+          description: 企业缴纳金额
+          example: '2000.20'
+        company_setting:
+          allOf:
+          - $ref: '#/components/schemas/CompanySetting'
+          description: 险种缴纳配置
+        personal_deduction:
+          type: string
+          description: 企业缴纳金额
+          example: '1000.20'
+        personal_setting:
+          allOf:
+          - $ref: '#/components/schemas/CompanySetting'
+          description: 险种缴纳配置
+        payment_frequency:
+          type: string
+          description: 缴纳频率
+          enum:
+          - annually
+          - monthly
+          - quarterly
+          x-enum-descriptions:
+            annually: 每年
+            monthly: 每月
+            quarterly: 每季度
+          example: '8.00'
+        payment_months:
+          type: array
+          items:
+            type: integer
+          description: 缴纳月份
+      required:
+      - insurance_id
+      - company_deduction
+      - company_setting
+      - personal_deduction
+      - personal_setting
+      - payment_frequency
+      - payment_months
+    Schema2:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data2'
+    Data2:
+      type: object
+      properties:
+        operate_results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item6'
+          description: 每条记录的操作结果。对于创建成功的记录，会返回创建后的经常性支付记录id
+    Item6:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 操作记录的id
+          example: '7390583861280556588'
+        unique_id:
+          type: string
+          description: 操作的记录的 unique_id
+          example: '7390583861280556588'
+        code:
+          type: integer
+          description: 操作结果状态码
+          enum:
+          - 0
+          - 21280001
+          - 21280002
+          - 21280003
+          - 21270304
+          - 21270305
+          - 21270306
+          - 21270307
+          - 21270308
+          - 21270309
+          - 21270310
+          - 21270311
+          - 21270312
+          - 21270313
+          - 21270314
+          - 21270315
+          - 21270316
+          - 21270317
+          - 21270318
+          x-enum-descriptions:
+            '0': 操作成功
+            '21280001': 每次发放金额格式不正确
+            '21280002': 发放开始时间格式不正确
+            '21280003': 发放结束时间格式不正确
+            '21270304': 没有该经常性支付记录权限
+            '21270305': 经常性支付类型薪酬项不存在
+            '21270306': 币种不存在
+            '21270307': 发放方式不存在
+            '21270308': 发放开始时间大于发放结束时间
+            '21270309': 员工不在薪酬项规则适用范围之内
+            '21270310': 发放方式不匹配薪酬项规则
+            '21270311': 币种不匹配薪酬项规则
+            '21270312': 发放开始日期早于当前日期不可删除
+            '21270313': 该经常性支付记录不存在
+            '21270314': 发放频率不匹配薪酬项
+            '21270315': 发放开始日期和结束日期有重叠
+            '21270316': 发放国家为空
+            '21270317': 发放国家不存在
+            '21270318': 单次发放金额不允许为0
+          example: '21270202'
+        message:
+          type: string
+          description: 操作结果描述
+          example: uqniue id conflict
+    Item7:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 一次性支付记录明细id
+          example: '7395133551102200876'
+        record_id:
+          type: string
+          description: 一次性支付记录id
+          example: '7395133551102168108'
+        user_id:
+          type: string
+          description: 员工id，具体类型由入参中的 user_id_type 指定
+          example: '7337149697626801708'
+        issuance_amount:
+          type: string
+          description: 一次性支付明细发放金额，可转数字的字符串
+          example: '2000.00'
+        issuance_status:
+          type: string
+          description: 发放状态
+          enum:
+          - to_be_issued
+          - not_issued
+          x-enum-descriptions:
+            to_be_issued: 应发放
+            not_issued: 不发放
+          example: to_be_issued
+        issuance_way:
+          type: string
+          description: 发放方式
+          enum:
+          - with_salary
+          - with_cash
+          - with_year_end_bonus
+          x-enum-descriptions:
+            with_salary: 随工资发放
+            with_cash: 现金发放
+            with_year_end_bonus: 随年终奖发放
+          example: with_salary
+        issuance_time:
+          type: string
+          description: 发放日期
+          example: '2024-08-01'
+        currency_id:
+          type: string
+          description: 币种id
+          example: '6863329932261459464'
+        belong_time:
+          type: string
+          description: 申请发放日期
+          example: '2025-01-20'
+        create_time:
+          type: string
+          description: 创建时间
+          example: '2024-08-01 12:34:56'
+        modify_time:
+          type: string
+          description: 更新时间
+          example: '2024-08-01 12:34:56'
+        issuance_country_region_id:
+          type: string
+          description: 发放国家ID（可通过 https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-country_region/search进行查询）
+          example: '6862995757234914824'
+        issuance_pay_group_id:
+          type: string
+          description: 发放薪资组ID（可通过 https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/paygroup/list进行查询）
+          example: '6862995757234914824'
+        detail_reference_period_start_date:
+          type: string
+          description: 一次性支付明细所属期开始日期
+          example: '2024-08-01'
+        detail_reference_period_end_date:
+          type: string
+          description: 一次性支付明细所属期结束日期
+          example: '2024-08-01'
+        is_not_issued_due_to_offboardings:
+          type: integer
+          description: 是否因离职不发放 0, // 空，未填写或不适用     Yes   = 1, // 是，因离职停发     No    = 2, // 否，非离职停发
+          default: 0
+          example: '0'
+    Scope:
+      type: object
+      properties:
+        is_all:
+          type: boolean
+          description: 是否适用于全部
+          example: 'true'
+        rules:
+          type: array
+          items:
+            type: array
+            items:
+              type: object
+              properties:
+                left_type:
+                  type: integer
+                  description: 适用范围左值
+                  enum:
+                  - 1
+                  - 2
+                  x-enum-descriptions:
+                    '1': 参保城市
+                    '2': 缴纳主体
+                  example: '1'
+                operator:
+                  type: integer
+                  description: 适用范围操作
+                  enum:
+                  - 1
+                  - 2
+                  x-enum-descriptions:
+                    '1': 包含
+                    '2': 不包含
+                  example: '1'
+                right_values:
+                  type: array
+                  items:
+                    type: string
+                  description: 适用范围右值
+          description: 适用范围，二维。外层or连接，内层and连接
+      required:
+      - is_all
+      description: 参保方案适用范围
+    PlanItemLogic:
+      type: object
+      properties:
+        fixed:
+          type: string
+          description: 固定值
+          example: '60'
+        formula:
+          type: object
+          properties:
+            expr:
+              type: string
+              description: 公式表达式
+              example: ${0} +${1}
+            formula_params:
+              type: array
+              items:
+                type: object
+                properties:
+                  ref_type:
+                    type: integer
+                    description: 引用类型
+                    enum:
+                    - 1
+                    - 2
+                    x-enum-descriptions:
+                      '1': 引用薪资项
+                      '2': 引用薪资指标
+                    example: '1'
+                  id:
+                    type: string
+                    description: 引用类型ID
+                    example: '23143242'
+              description: 公式参数列表
+          description: 公式配置
+      description: 方案关联薪资项逻辑配置

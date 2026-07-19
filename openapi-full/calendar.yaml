@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: calendar
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -118,47 +118,7 @@ paths:
                   msg:
                     type: string
                   data:
-                    type: object
-                    properties:
-                      acl_id:
-                        type: string
-                        description: acl资源ID
-                        example: user_6843287928157667331
-                      role:
-                        type: string
-                        description: 对日历的访问权限
-                        enum:
-                        - unknown
-                        - free_busy_reader
-                        - reader
-                        - writer
-                        - owner
-                        x-enum-descriptions:
-                          unknown: 未知权限
-                          free_busy_reader: 游客，只能看到忙碌/空闲信息
-                          reader: 订阅者，查看所有日程详情
-                          writer: 编辑者，创建及修改日程
-                          owner: 管理员，管理日历及共享设置
-                      scope:
-                        type: object
-                        properties:
-                          type:
-                            type: string
-                            description: 权限类型，当type为User时，值为open_id/user_id/union_id
-                            enum:
-                            - user
-                            x-enum-descriptions:
-                              user: 用户
-                          user_id:
-                            type: string
-                            description: 用户ID
-                        required:
-                        - type
-                        description: 权限范围
-                    required:
-                    - acl_id
-                    - role
-                    - scope
+                    $ref: '#/components/schemas/Data4'
       x-lark-access-tokens:
       - tenant
       - user
@@ -289,47 +249,7 @@ paths:
                       acls:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            acl_id:
-                              type: string
-                              description: acl资源ID
-                              example: user_6843287928157667331
-                            role:
-                              type: string
-                              description: 对日历的访问权限
-                              enum:
-                              - unknown
-                              - free_busy_reader
-                              - reader
-                              - writer
-                              - owner
-                              x-enum-descriptions:
-                                unknown: 未知权限
-                                free_busy_reader: 游客，只能看到忙碌/空闲信息
-                                reader: 订阅者，查看所有日程详情
-                                writer: 编辑者，创建及修改日程
-                                owner: 管理员，管理日历及共享设置
-                            scope:
-                              type: object
-                              properties:
-                                type:
-                                  type: string
-                                  description: 权限类型，当type为User时，值为open_id/user_id/union_id
-                                  enum:
-                                  - user
-                                  x-enum-descriptions:
-                                    user: 用户
-                                user_id:
-                                  type: string
-                                  description: 用户ID
-                              required:
-                              - type
-                              description: 权限范围
-                          required:
-                          - acl_id
-                          - role
-                          - scope
+                          $ref: '#/components/schemas/Data4'
                         description: 入参日历对应的acl列表
                       has_more:
                         type: boolean
@@ -1287,156 +1207,7 @@ paths:
                       attendees:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            type:
-                              type: string
-                              description: |-
-                                参与人类型，仅当新建参与人时可设置类型<br>
-                                type为User时，值为open_id/user_id/union_id<br>
-                                type为Chat时，值为open_chat_id<br>
-                                type为Resource时，值为open_room_id<br>
-                                type为ThirdParty时，值为third_party_email；不支持通过API新建该类型参与人
-                              enum:
-                              - user
-                              - chat
-                              - resource
-                              - third_party
-                              x-enum-descriptions:
-                                user: 用户
-                                chat: 群组
-                                resource: 会议室
-                                third_party: 邮箱
-                            attendee_id:
-                              type: string
-                              description: 参与人ID
-                              example: user_xxxxxx
-                            rsvp_status:
-                              type: string
-                              description: 参与人RSVP状态
-                              enum:
-                              - needs_action
-                              - accept
-                              - tentative
-                              - decline
-                              - removed
-                              x-enum-descriptions:
-                                needs_action: 参与人尚未回复状态，或表示会议室预约中
-                                accept: 参与人回复接受，或表示会议室预约成功
-                                tentative: 参与人回复待定
-                                decline: 参与人回复拒绝，或表示会议室预约失败
-                                removed: 参与人或会议室已经从日程中被移除
-                            is_optional:
-                              type: boolean
-                              description: 参与人是否为「可选参加」，无法编辑群参与人的此字段
-                              default: false
-                              example: 'false'
-                            is_organizer:
-                              type: boolean
-                              description: 参与人是否为日程组织者
-                              example: 'true'
-                            is_external:
-                              type: boolean
-                              description: 参与人是否为外部参与人；外部参与人不支持编辑
-                              example: 'false'
-                            display_name:
-                              type: string
-                              description: 参与人名称
-                              example: 张三
-                            chat_members:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  rsvp_status:
-                                    type: string
-                                    description: 参与人RSVP状态
-                                    enum:
-                                    - needs_action
-                                    - accept
-                                    - tentative
-                                    - decline
-                                    - removed
-                                    x-enum-descriptions:
-                                      needs_action: 参与人尚未回复状态，或表示会议室预约中
-                                      accept: 参与人回复接受，或表示会议室预约成功
-                                      tentative: 参与人回复待定
-                                      decline: 参与人回复拒绝，或表示会议室预约失败
-                                      removed: 参与人或会议室已经从日程中被移除
-                                  is_optional:
-                                    type: boolean
-                                    description: 参与人是否为「可选参加」
-                                    default: false
-                                    example: 'false'
-                                  display_name:
-                                    type: string
-                                    description: 参与人名称
-                                    example: lijian
-                                  is_organizer:
-                                    type: boolean
-                                    description: 参与人是否为日程组织者
-                                    example: 'false'
-                                  is_external:
-                                    type: boolean
-                                    description: 参与人是否为外部参与人
-                                    example: 'false'
-                              description: 群中的群成员，当type为Chat时有效；群成员不支持编辑
-                            user_id:
-                              type: string
-                              description: 参与人的用户id，依赖于user_id_type返回对应的取值，当is_external为true时，此字段只会返回open_id或者union_id
-                            chat_id:
-                              type: string
-                              description: chat类型参与人的群组chat_id
-                              example: oc_a0553eda9014c201e6969b478895c230
-                              x-lark-id-types:
-                                chat_id: chat
-                            room_id:
-                              type: string
-                              description: resource类型参与人的会议室room_id
-                              example: omm_83d09ad4f6896e02029a6a075f71c9d1
-                            third_party_email:
-                              type: string
-                              description: third_party类型参与人的邮箱
-                              example: test@example.com
-                            operate_id:
-                              type: string
-                              description: bot身份操作时，为预定的会议室指定实际预定人
-                              example: 4d7a3c6g
-                            resource_customization:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  index_key:
-                                    type: string
-                                    description: the unique key of customization option
-                                    example: '16281481596100'
-                                  input_content:
-                                    type: string
-                                    description: should be filled when the type of customization is input
-                                    example: xxx
-                                  options:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        option_key:
-                                          type: string
-                                          description: the option unique key
-                                          example: '16281481596185'
-                                        others_content:
-                                          type: string
-                                          description: should be filled if the option is others option
-                                          example: xxx
-                                    description: 选项
-                                    example: 无
-                                required:
-                                - index_key
-                              description: 会议室的个性化配置
-                            approval_reason:
-                              type: string
-                              description: 会议室审批原因
-                              example: 申请审批原因
+                          $ref: '#/components/schemas/Item'
                         description: 被添加的参与人列表
       x-lark-access-tokens:
       - tenant
@@ -1698,40 +1469,7 @@ paths:
                             chat_members:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  rsvp_status:
-                                    type: string
-                                    description: 参与人RSVP状态
-                                    enum:
-                                    - needs_action
-                                    - accept
-                                    - tentative
-                                    - decline
-                                    - removed
-                                    x-enum-descriptions:
-                                      needs_action: 参与人尚未回复状态，或表示会议室预约中
-                                      accept: 参与人回复接受，或表示会议室预约成功
-                                      tentative: 参与人回复待定
-                                      decline: 参与人回复拒绝，或表示会议室预约失败
-                                      removed: 参与人或会议室已经从日程中被移除
-                                  is_optional:
-                                    type: boolean
-                                    description: 参与人是否为「可选参加」
-                                    default: false
-                                    example: 'false'
-                                  display_name:
-                                    type: string
-                                    description: 参与人名称
-                                    example: lijian
-                                  is_organizer:
-                                    type: boolean
-                                    description: 参与人是否为日程组织者
-                                    example: 'false'
-                                  is_external:
-                                    type: boolean
-                                    description: 参与人是否为外部参与人
-                                    example: 'false'
+                                $ref: '#/components/schemas/Item3'
                               description: 群中的群成员，当type为Chat时有效；群成员不支持编辑
                             user_id:
                               type: string
@@ -2345,115 +2083,8 @@ paths:
                       example: Asia/Shanghai
                   description: 日程结束时间
                 vchat:
-                  type: object
-                  properties:
-                    vc_type:
-                      type: string
-                      description: 视频会议类型
-                      enum:
-                      - vc
-                      - third_party
-                      - no_meeting
-                      - lark_live
-                      - unknown
-                      - third_party_meeting
-                      x-enum-descriptions:
-                        vc: 飞书视频会议
-                        third_party: 第三方链接视频会议
-                        no_meeting: 无视频会议
-                        lark_live: Lark直播
-                        unknown: 未知类型
-                        third_party_meeting: 三方会议类型
-                    icon_type:
-                      type: string
-                      description: 第三方视频会议icon类型
-                      enum:
-                      - vc
-                      - live
-                      - default
-                      x-enum-descriptions:
-                        vc: 飞书视频会议icon
-                        live: 直播视频会议icon
-                        default: 默认icon
-                    description:
-                      type: string
-                      description: 第三方视频会议文案，可以为空，为空展示默认文案
-                      example: 发起视频会议
-                    meeting_url:
-                      type: string
-                      description: 视频会议URL
-                      example: vc.feishu.cn/j/152568231
-                    meeting_settings:
-                      type: object
-                      properties:
-                        owner_id:
-                          type: string
-                          description: 设置会议 owner
-                          example: ou_7d8a6e6df7621556ce0d21922b676706ccs
-                          format: int64
-                        join_meeting_permission:
-                          type: string
-                          description: 设置入会范围
-                          enum:
-                          - anyone_can_join
-                          - only_organization_employees
-                          - only_event_attendees
-                          x-enum-descriptions:
-                            anyone_can_join: 所有人可以加入会议
-                            only_organization_employees: 仅企业内用户可以加入会议
-                            only_event_attendees: 仅日程参与者可以加入会议
-                        assign_hosts:
-                          type: array
-                          items:
-                            type: string
-                          description: 指定主持人
-                        auto_record:
-                          type: boolean
-                          description: 设置自动录制
-                          example: 'false'
-                        open_lobby:
-                          type: boolean
-                          description: 开启等候室
-                          example: 'true'
-                        allow_attendees_start:
-                          type: boolean
-                          description: 允许日程参与者发起会议
-                          example: 'true'
-                      description: VC视频会议的会前设置
-                    third_party_meeting_settings:
-                      type: object
-                      properties:
-                        meeting_type:
-                          type: string
-                          description: 三方会议类型
-                          example: julinker
-                        meeting_id:
-                          type: string
-                          description: 会议ID
-                          example: '123'
-                        meeting_no:
-                          type: string
-                          description: 会议号
-                          example: '123'
-                        password:
-                          type: string
-                          description: 密码
-                          example: '123'
-                        meeting_descriptions:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              lang:
-                                type: string
-                                description: 语言
-                                example: zh-cn
-                              description:
-                                type: string
-                                description: 会议描述
-                                example: www.example.com
-                          description: 多语言会议描述
-                      description: 三方会议设置
+                  allOf:
+                  - $ref: '#/components/schemas/Vchat2'
                   description: 视频会议信息，仅当日程至少有一位attendee时生效
                 visibility:
                   type: string
@@ -2568,61 +2199,8 @@ paths:
                           file_token: ccm_file
                   description: 日程附件
                 event_check_in:
-                  type: object
-                  properties:
-                    enable_check_in:
-                      type: boolean
-                      description: 是否启用日程签到
-                    check_in_start_time:
-                      type: object
-                      properties:
-                        time_type:
-                          type: string
-                          description: (分钟)偏移量相对于的日程时间节点类型
-                          enum:
-                          - before_event_start
-                          - after_event_start
-                          - after_event_end
-                          x-enum-descriptions:
-                            before_event_start: 日程开始前
-                            after_event_start: 日程开始后
-                            after_event_end: 日程结束后
-                        duration:
-                          type: integer
-                          description: 相对于日程开始或者结束的偏移量(分钟)
-                          example: '15'
-                      required:
-                      - time_type
-                      - duration
-                      description: 日程签到开始时间
-                    check_in_end_time:
-                      type: object
-                      properties:
-                        time_type:
-                          type: string
-                          description: (分钟)偏移量相对于的日程时间节点类型
-                          enum:
-                          - before_event_start
-                          - after_event_start
-                          - after_event_end
-                          x-enum-descriptions:
-                            before_event_start: 日程开始前
-                            after_event_start: 日程开始后
-                            after_event_end: 日程结束后
-                        duration:
-                          type: integer
-                          description: 相对于日程开始或者结束的偏移量(分钟)
-                          example: '15'
-                      required:
-                      - time_type
-                      - duration
-                      description: 日程签到结束时间
-                    need_notify_attendees:
-                      type: boolean
-                      description: 签到开始时是否自动发送签到通知给参与者
-                      default: false
-                  required:
-                  - enable_check_in
+                  allOf:
+                  - $ref: '#/components/schemas/EventCheckIn'
                   description: 日程签到设置，为空则不进行日程签到设置
       responses:
         '200':
@@ -2630,421 +2208,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      event:
-                        type: object
-                        properties:
-                          event_id:
-                            type: string
-                            description: 日程ID
-                            example: 75d28f9b-e35c-4230-8a83-4a661497db54_0
-                          organizer_calendar_id:
-                            type: string
-                            description: 日程组织者日历ID
-                            example: feishu.cn_HF9U2MbibE8PPpjro6xjqa@group.calendar.feishu.cn
-                          summary:
-                            type: string
-                            description: 日程标题
-                            example: 日程标题
-                          description:
-                            type: string
-                            description: 日程描述
-                            example: 日程描述
-                          start_time:
-                            type: object
-                            properties:
-                              date:
-                                type: string
-                                description: 仅全天日程使用该字段，如2018-09-01。需满足 RFC3339 格式。不能与 time_stamp 同时指定
-                                example: '2018-09-01'
-                              timestamp:
-                                type: string
-                                description: 秒级时间戳，如1602504000(表示2020/10/12 20:0:00 +8时区)
-                                example: '1602504000'
-                              timezone:
-                                type: string
-                                description: 时区名称，使用IANA Time Zone Database标准，如Asia/Shanghai；全天日程时区固定为UTC，非全天日程时区默认为Asia/Shanghai
-                                example: Asia/Shanghai
-                            description: 日程开始时间
-                          end_time:
-                            type: object
-                            properties:
-                              date:
-                                type: string
-                                description: 仅全天日程使用该字段，如2018-09-01。需满足 RFC3339 格式。不能与 time_stamp 同时指定
-                                example: '2018-09-01'
-                              timestamp:
-                                type: string
-                                description: 秒级时间戳，如1602504000(表示2020/10/12 20:0:00 +8时区)
-                                example: '1602504000'
-                              timezone:
-                                type: string
-                                description: 时区名称，使用IANA Time Zone Database标准，如Asia/Shanghai；全天日程时区固定为UTC，非全天日程时区默认为Asia/Shanghai
-                                example: Asia/Shanghai
-                            description: 日程结束时间
-                          vchat:
-                            type: object
-                            properties:
-                              vc_type:
-                                type: string
-                                description: 视频会议类型
-                                enum:
-                                - vc
-                                - third_party
-                                - no_meeting
-                                - lark_live
-                                - unknown
-                                - third_party_meeting
-                                x-enum-descriptions:
-                                  vc: 飞书视频会议
-                                  third_party: 第三方链接视频会议
-                                  no_meeting: 无视频会议
-                                  lark_live: Lark直播
-                                  unknown: 未知类型
-                                  third_party_meeting: 三方会议类型
-                              icon_type:
-                                type: string
-                                description: 第三方视频会议icon类型
-                                enum:
-                                - vc
-                                - live
-                                - default
-                                x-enum-descriptions:
-                                  vc: 飞书视频会议icon
-                                  live: 直播视频会议icon
-                                  default: 默认icon
-                              description:
-                                type: string
-                                description: 第三方视频会议文案，可以为空，为空展示默认文案
-                                example: 发起视频会议
-                              meeting_url:
-                                type: string
-                                description: 视频会议URL
-                                example: vc.feishu.cn/j/152568231
-                              meeting_settings:
-                                type: object
-                                properties:
-                                  owner_id:
-                                    type: string
-                                    description: 设置会议 owner
-                                    example: ou_7d8a6e6df7621556ce0d21922b676706ccs
-                                    format: int64
-                                  join_meeting_permission:
-                                    type: string
-                                    description: 设置入会范围
-                                    enum:
-                                    - anyone_can_join
-                                    - only_organization_employees
-                                    - only_event_attendees
-                                    x-enum-descriptions:
-                                      anyone_can_join: 所有人可以加入会议
-                                      only_organization_employees: 仅企业内用户可以加入会议
-                                      only_event_attendees: 仅日程参与者可以加入会议
-                                  password:
-                                    type: string
-                                    description: 设置会议密码，仅支持 4-9 位数字
-                                    example: '971024'
-                                  assign_hosts:
-                                    type: array
-                                    items:
-                                      type: string
-                                    description: 指定主持人
-                                  auto_record:
-                                    type: boolean
-                                    description: 设置自动录制
-                                    example: 'false'
-                                  open_lobby:
-                                    type: boolean
-                                    description: 开启等候室
-                                    example: 'true'
-                                  allow_attendees_start:
-                                    type: boolean
-                                    description: 允许日程参与者发起会议
-                                    example: 'true'
-                                description: VC视频会议的会前设置
-                              third_party_meeting_settings:
-                                type: object
-                                properties:
-                                  meeting_type:
-                                    type: string
-                                    description: 三方会议类型
-                                    example: julinker
-                                  meeting_id:
-                                    type: string
-                                    description: 会议ID
-                                    example: '123'
-                                  meeting_no:
-                                    type: string
-                                    description: 会议号
-                                    example: '123'
-                                  password:
-                                    type: string
-                                    description: 密码
-                                    example: '123'
-                                  meeting_descriptions:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        lang:
-                                          type: string
-                                          description: 语言
-                                          example: zh-cn
-                                        description:
-                                          type: string
-                                          description: 会议描述
-                                          example: www.example.com
-                                    description: 多语言会议描述
-                                description: 三方会议设置
-                            description: 视频会议信息，仅当日程至少有一位attendee时生效
-                          visibility:
-                            type: string
-                            description: 日程公开范围，新建日程默认为Default；仅新建日程时对所有参与人生效，之后修改该属性仅对当前身份生效
-                            enum:
-                            - default
-                            - public
-                            - private
-                            x-enum-descriptions:
-                              default: 默认权限，仅向他人显示是否“忙碌”
-                              public: 公开，显示日程详情
-                              private: 私密，仅自己可见
-                          attendee_ability:
-                            type: string
-                            description: 参与人权限
-                            enum:
-                            - none
-                            - can_see_others
-                            - can_invite_others
-                            - can_modify_event
-                            x-enum-descriptions:
-                              none: 无法编辑日程、无法邀请其它参与人、无法查看参与人列表
-                              can_see_others: 无法编辑日程、无法邀请其它参与人、可以查看参与人列表
-                              can_invite_others: 无法编辑日程、可以邀请其它参与人、可以查看参与人列表
-                              can_modify_event: 可以编辑日程、可以邀请其它参与人、可以查看参与人列表
-                          free_busy_status:
-                            type: string
-                            description: 日程占用的忙闲状态，新建日程默认为Busy；仅新建日程时对所有参与人生效，之后修改该属性仅对当前身份生效
-                            enum:
-                            - busy
-                            - free
-                            x-enum-descriptions:
-                              busy: 忙碌
-                              free: 空闲
-                          location:
-                            type: object
-                            properties:
-                              name:
-                                type: string
-                                description: 地点名称
-                                example: 东方明珠
-                              address:
-                                type: string
-                                description: 地点地址
-                                example: 普通市和平区世纪大道1号
-                              latitude:
-                                type: number
-                                description: 地点坐标纬度信息，对于国内的地点，采用GCJ-02标准，海外地点采用WGS84标准
-                                example: '31.239702224731445'
-                              longitude:
-                                type: number
-                                description: 地点坐标经度信息，对于国内的地点，采用GCJ-02标准，海外地点采用WGS84标准
-                                example: '121.49971771240234'
-                            description: 日程地点
-                          color:
-                            type: integer
-                            description: 日程颜色，颜色RGB值的int32表示。仅对当前身份生效；客户端展示时会映射到色板上最接近的一种颜色；值为0或-1时默认跟随日历颜色。
-                            example: '0'
-                          reminders:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                minutes:
-                                  type: integer
-                                  description: |-
-                                    日程提醒时间的偏移量，正数时表示在日程开始前X分钟提醒，负数时表示在日程开始后X分钟提醒
-                                    新建或更新日程时传入该字段，仅对当前身份生效
-                                  example: '5'
-                            description: 日程提醒列表
-                          recurrence:
-                            type: string
-                            description: 重复日程的重复性规则
-                            example: FREQ=DAILY;INTERVAL=1
-                          status:
-                            type: string
-                            description: 日程状态
-                            enum:
-                            - tentative
-                            - confirmed
-                            - cancelled
-                            x-enum-descriptions:
-                              tentative: 未回应
-                              confirmed: 已确认
-                              cancelled: 日程已取消
-                          is_exception:
-                            type: boolean
-                            description: 日程是否是一个重复日程的例外日程
-                            example: 'false'
-                          recurring_event_id:
-                            type: string
-                            description: 例外日程的原重复日程的event_id
-                            example: 75d28f9b-e35c-4230-8a83-4a661497db54_0
-                          create_time:
-                            type: string
-                            description: 日程的创建时间戳
-                            example: '1675612800'
-                          schemas:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                ui_name:
-                                  type: string
-                                  description: UI项名称 TODO文档
-                                  example: xxx
-                                ui_status:
-                                  type: string
-                                  description: UI项自定义状态
-                                  enum:
-                                  - hide
-                                  - readonly
-                                  - editable
-                                  - unknown
-                                  x-enum-descriptions:
-                                    hide: 隐藏显示
-                                    readonly: 只读
-                                    editable: 可编辑
-                                    unknown: 未知UI项自定义状态，仅用于读取时兼容
-                                app_link:
-                                  type: string
-                                  description: 按钮点击后跳转的链接
-                                  example: xxxx
-                            description: 日程自定义信息
-                          event_organizer:
-                            type: object
-                            properties:
-                              user_id:
-                                type: string
-                                description: 日程组织者user ID
-                                example: ou_xxxxxx
-                              display_name:
-                                type: string
-                                description: 日程组织者姓名
-                                example: 孙二二
-                            description: 日程组织者信息
-                          app_link:
-                            type: string
-                            description: 日程的app_link,跳转到具体的某个日程
-                            example: https://applink.larkoffice.com/client/calendar/event/detail?calendarId=7039673579105026066&key=aeac9c56-aeb1-4179-a21b-02f278f59048&originalTime=0&startTime=1700496000
-                          attachments:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                file_token:
-                                  type: string
-                                  description: 附件token
-                                  example: xAAAAA
-                                  x-lark-id-types:
-                                    file_token: ccm_file
-                                file_size:
-                                  type: string
-                                  description: 附件大小
-                                  example: '2345'
-                                is_deleted:
-                                  type: boolean
-                                  description: 是否删除附件
-                                  example: 'true'
-                                name:
-                                  type: string
-                                  description: 附件名称
-                                  example: 附件.jpeg
-                            description: 日程附件
-                          event_check_in:
-                            type: object
-                            properties:
-                              enable_check_in:
-                                type: boolean
-                                description: 是否启用日程签到
-                              check_in_start_time:
-                                type: object
-                                properties:
-                                  time_type:
-                                    type: string
-                                    description: (分钟)偏移量相对于的日程时间节点类型
-                                    enum:
-                                    - before_event_start
-                                    - after_event_start
-                                    - after_event_end
-                                    x-enum-descriptions:
-                                      before_event_start: 日程开始前
-                                      after_event_start: 日程开始后
-                                      after_event_end: 日程结束后
-                                  duration:
-                                    type: integer
-                                    description: 相对于日程开始或者结束的偏移量(分钟)
-                                    example: '15'
-                                required:
-                                - time_type
-                                - duration
-                                description: 日程签到开始时间
-                              check_in_end_time:
-                                type: object
-                                properties:
-                                  time_type:
-                                    type: string
-                                    description: (分钟)偏移量相对于的日程时间节点类型
-                                    enum:
-                                    - before_event_start
-                                    - after_event_start
-                                    - after_event_end
-                                    x-enum-descriptions:
-                                      before_event_start: 日程开始前
-                                      after_event_start: 日程开始后
-                                      after_event_end: 日程结束后
-                                  duration:
-                                    type: integer
-                                    description: 相对于日程开始或者结束的偏移量(分钟)
-                                    example: '15'
-                                required:
-                                - time_type
-                                - duration
-                                description: 日程签到结束时间
-                              need_notify_attendees:
-                                type: boolean
-                                description: 签到开始时是否自动发送签到通知给参与者
-                                default: false
-                            required:
-                            - enable_check_in
-                            description: 日程签到设置，为空则不进行日程签到设置
-                          self_rsvp_status:
-                            type: string
-                            description: 当前日历的RSVP状态
-                            enum:
-                            - needs_action
-                            - accept
-                            - tentative
-                            - decline
-                            - removed
-                            x-enum-descriptions:
-                              needs_action: 参与人尚未回复状态，或表示会议室预约中
-                              accept: 参与人回复接受，或表示会议室预约成功
-                              tentative: 参与人回复待定
-                              decline: 参与人回复拒绝，或表示会议室预约失败
-                              removed: 参与人或会议室已经从日程中被移除
-                        required:
-                        - event_id
-                        - start_time
-                        - end_time
-                        description: 日程信息
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       - user
@@ -3311,44 +2475,8 @@ paths:
                                   example: Asia/Shanghai
                               description: 日程结束时间
                             vchat:
-                              type: object
-                              properties:
-                                vc_type:
-                                  type: string
-                                  description: 视频会议类型
-                                  enum:
-                                  - vc
-                                  - third_party
-                                  - no_meeting
-                                  - lark_live
-                                  - unknown
-                                  - third_party_meeting
-                                  x-enum-descriptions:
-                                    vc: 飞书视频会议
-                                    third_party: 第三方链接视频会议
-                                    no_meeting: 无视频会议
-                                    lark_live: Lark直播
-                                    unknown: 未知类型
-                                    third_party_meeting: 三方会议类型
-                                icon_type:
-                                  type: string
-                                  description: 第三方视频会议icon类型
-                                  enum:
-                                  - vc
-                                  - live
-                                  - default
-                                  x-enum-descriptions:
-                                    vc: 飞书视频会议icon
-                                    live: 直播视频会议icon
-                                    default: 默认icon
-                                description:
-                                  type: string
-                                  description: 第三方视频会议文案，可以为空，为空展示默认文案
-                                  example: 发起视频会议
-                                meeting_url:
-                                  type: string
-                                  description: 视频会议URL
-                                  example: vc.feishu.cn/j/152568231
+                              allOf:
+                              - $ref: '#/components/schemas/Vchat3'
                               description: 视频会议信息，仅当日程至少有一位attendee时生效
                             visibility:
                               type: string
@@ -3854,119 +2982,8 @@ paths:
                                 example: Asia/Shanghai
                             description: 日程结束时间
                           vchat:
-                            type: object
-                            properties:
-                              vc_type:
-                                type: string
-                                description: 视频会议类型
-                                enum:
-                                - vc
-                                - third_party
-                                - no_meeting
-                                - lark_live
-                                - unknown
-                                - third_party_meeting
-                                x-enum-descriptions:
-                                  vc: 飞书视频会议
-                                  third_party: 第三方链接视频会议
-                                  no_meeting: 无视频会议
-                                  lark_live: Lark直播
-                                  unknown: 未知类型
-                                  third_party_meeting: 三方会议类型
-                              icon_type:
-                                type: string
-                                description: 第三方视频会议icon类型
-                                enum:
-                                - vc
-                                - live
-                                - default
-                                x-enum-descriptions:
-                                  vc: 飞书视频会议icon
-                                  live: 直播视频会议icon
-                                  default: 默认icon
-                              description:
-                                type: string
-                                description: 第三方视频会议文案，可以为空，为空展示默认文案
-                                example: 发起视频会议
-                              meeting_url:
-                                type: string
-                                description: 视频会议URL
-                                example: vc.feishu.cn/j/152568231
-                              meeting_settings:
-                                type: object
-                                properties:
-                                  owner_id:
-                                    type: string
-                                    description: 设置会议 owner
-                                    example: ou_7d8a6e6df7621556ce0d21922b676706ccs
-                                    format: int64
-                                  join_meeting_permission:
-                                    type: string
-                                    description: 设置入会范围
-                                    enum:
-                                    - anyone_can_join
-                                    - only_organization_employees
-                                    - only_event_attendees
-                                    x-enum-descriptions:
-                                      anyone_can_join: 所有人可以加入会议
-                                      only_organization_employees: 仅企业内用户可以加入会议
-                                      only_event_attendees: 仅日程参与者可以加入会议
-                                  password:
-                                    type: string
-                                    description: 设置会议密码，仅支持 4-9 位数字
-                                    example: '971024'
-                                  assign_hosts:
-                                    type: array
-                                    items:
-                                      type: string
-                                    description: 指定主持人
-                                  auto_record:
-                                    type: boolean
-                                    description: 设置自动录制
-                                    example: 'false'
-                                  open_lobby:
-                                    type: boolean
-                                    description: 开启等候室
-                                    example: 'true'
-                                  allow_attendees_start:
-                                    type: boolean
-                                    description: 允许日程参与者发起会议
-                                    example: 'true'
-                                description: VC视频会议的会前设置
-                              third_party_meeting_settings:
-                                type: object
-                                properties:
-                                  meeting_type:
-                                    type: string
-                                    description: 三方会议类型
-                                    example: julinker
-                                  meeting_id:
-                                    type: string
-                                    description: 会议ID
-                                    example: '123'
-                                  meeting_no:
-                                    type: string
-                                    description: 会议号
-                                    example: '123'
-                                  password:
-                                    type: string
-                                    description: 密码
-                                    example: '123'
-                                  meeting_descriptions:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        lang:
-                                          type: string
-                                          description: 语言
-                                          example: zh-cn
-                                        description:
-                                          type: string
-                                          description: 会议描述
-                                          example: www.example.com
-                                    description: 多语言会议描述
-                                description: 三方会议设置
+                            allOf:
+                            - $ref: '#/components/schemas/Vchat'
                             description: 视频会议信息，仅当日程至少有一位attendee时生效
                           visibility:
                             type: string
@@ -4169,40 +3186,7 @@ paths:
                                 chat_members:
                                   type: array
                                   items:
-                                    type: object
-                                    properties:
-                                      rsvp_status:
-                                        type: string
-                                        description: 参与人RSVP状态
-                                        enum:
-                                        - needs_action
-                                        - accept
-                                        - tentative
-                                        - decline
-                                        - removed
-                                        x-enum-descriptions:
-                                          needs_action: 参与人尚未回复状态，或表示会议室预约中
-                                          accept: 参与人回复接受，或表示会议室预约成功
-                                          tentative: 参与人回复待定
-                                          decline: 参与人回复拒绝，或表示会议室预约失败
-                                          removed: 参与人或会议室已经从日程中被移除
-                                      is_optional:
-                                        type: boolean
-                                        description: 参与人是否为「可选参加」
-                                        default: false
-                                        example: 'false'
-                                      display_name:
-                                        type: string
-                                        description: 参与人名称
-                                        example: lijian
-                                      is_organizer:
-                                        type: boolean
-                                        description: 参与人是否为日程组织者
-                                        example: 'false'
-                                      is_external:
-                                        type: boolean
-                                        description: 参与人是否为外部参与人
-                                        example: 'false'
+                                    $ref: '#/components/schemas/Item3'
                                   description: 群中的群成员，当type为Chat时有效；群成员不支持编辑
                                 user_id:
                                   type: string
@@ -4250,61 +3234,8 @@ paths:
                                   example: 附件.jpeg
                             description: 日程附件
                           event_check_in:
-                            type: object
-                            properties:
-                              enable_check_in:
-                                type: boolean
-                                description: 是否启用日程签到
-                              check_in_start_time:
-                                type: object
-                                properties:
-                                  time_type:
-                                    type: string
-                                    description: (分钟)偏移量相对于的日程时间节点类型
-                                    enum:
-                                    - before_event_start
-                                    - after_event_start
-                                    - after_event_end
-                                    x-enum-descriptions:
-                                      before_event_start: 日程开始前
-                                      after_event_start: 日程开始后
-                                      after_event_end: 日程结束后
-                                  duration:
-                                    type: integer
-                                    description: 相对于日程开始或者结束的偏移量(分钟)
-                                    example: '15'
-                                required:
-                                - time_type
-                                - duration
-                                description: 日程签到开始时间
-                              check_in_end_time:
-                                type: object
-                                properties:
-                                  time_type:
-                                    type: string
-                                    description: (分钟)偏移量相对于的日程时间节点类型
-                                    enum:
-                                    - before_event_start
-                                    - after_event_start
-                                    - after_event_end
-                                    x-enum-descriptions:
-                                      before_event_start: 日程开始前
-                                      after_event_start: 日程开始后
-                                      after_event_end: 日程结束后
-                                  duration:
-                                    type: integer
-                                    description: 相对于日程开始或者结束的偏移量(分钟)
-                                    example: '15'
-                                required:
-                                - time_type
-                                - duration
-                                description: 日程签到结束时间
-                              need_notify_attendees:
-                                type: boolean
-                                description: 签到开始时是否自动发送签到通知给参与者
-                                default: false
-                            required:
-                            - enable_check_in
+                            allOf:
+                            - $ref: '#/components/schemas/EventCheckIn'
                             description: 日程签到设置，为空则不进行日程签到设置
                           self_rsvp_status:
                             type: string
@@ -4503,115 +3434,8 @@ paths:
                       example: Asia/Shanghai
                   description: 日程结束时间
                 vchat:
-                  type: object
-                  properties:
-                    vc_type:
-                      type: string
-                      description: 视频会议类型
-                      enum:
-                      - vc
-                      - third_party
-                      - no_meeting
-                      - lark_live
-                      - unknown
-                      - third_party_meeting
-                      x-enum-descriptions:
-                        vc: 飞书视频会议
-                        third_party: 第三方链接视频会议
-                        no_meeting: 无视频会议
-                        lark_live: Lark直播
-                        unknown: 未知类型
-                        third_party_meeting: 三方会议类型
-                    icon_type:
-                      type: string
-                      description: 第三方视频会议icon类型
-                      enum:
-                      - vc
-                      - live
-                      - default
-                      x-enum-descriptions:
-                        vc: 飞书视频会议icon
-                        live: 直播视频会议icon
-                        default: 默认icon
-                    description:
-                      type: string
-                      description: 第三方视频会议文案，可以为空，为空展示默认文案
-                      example: 发起视频会议
-                    meeting_url:
-                      type: string
-                      description: 视频会议URL
-                      example: vc.feishu.cn/j/152568231
-                    meeting_settings:
-                      type: object
-                      properties:
-                        owner_id:
-                          type: string
-                          description: 设置会议 owner
-                          example: ou_7d8a6e6df7621556ce0d21922b676706ccs
-                          format: int64
-                        join_meeting_permission:
-                          type: string
-                          description: 设置入会范围
-                          enum:
-                          - anyone_can_join
-                          - only_organization_employees
-                          - only_event_attendees
-                          x-enum-descriptions:
-                            anyone_can_join: 所有人可以加入会议
-                            only_organization_employees: 仅企业内用户可以加入会议
-                            only_event_attendees: 仅日程参与者可以加入会议
-                        assign_hosts:
-                          type: array
-                          items:
-                            type: string
-                          description: 指定主持人
-                        auto_record:
-                          type: boolean
-                          description: 设置自动录制
-                          example: 'false'
-                        open_lobby:
-                          type: boolean
-                          description: 开启等候室
-                          example: 'true'
-                        allow_attendees_start:
-                          type: boolean
-                          description: 允许日程参与者发起会议
-                          example: 'true'
-                      description: VC视频会议的会前设置
-                    third_party_meeting_settings:
-                      type: object
-                      properties:
-                        meeting_type:
-                          type: string
-                          description: 三方会议类型
-                          example: julinker
-                        meeting_id:
-                          type: string
-                          description: 会议ID
-                          example: '123'
-                        meeting_no:
-                          type: string
-                          description: 会议号
-                          example: '123'
-                        password:
-                          type: string
-                          description: 密码
-                          example: '123'
-                        meeting_descriptions:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              lang:
-                                type: string
-                                description: 语言
-                                example: zh-cn
-                              description:
-                                type: string
-                                description: 会议描述
-                                example: www.example.com
-                          description: 多语言会议描述
-                      description: 三方会议设置
+                  allOf:
+                  - $ref: '#/components/schemas/Vchat2'
                   description: 视频会议信息，仅当日程至少有一位attendee时生效
                 visibility:
                   type: string
@@ -4730,61 +3554,8 @@ paths:
                         example: 'true'
                   description: 日程附件
                 event_check_in:
-                  type: object
-                  properties:
-                    enable_check_in:
-                      type: boolean
-                      description: 是否启用日程签到
-                    check_in_start_time:
-                      type: object
-                      properties:
-                        time_type:
-                          type: string
-                          description: (分钟)偏移量相对于的日程时间节点类型
-                          enum:
-                          - before_event_start
-                          - after_event_start
-                          - after_event_end
-                          x-enum-descriptions:
-                            before_event_start: 日程开始前
-                            after_event_start: 日程开始后
-                            after_event_end: 日程结束后
-                        duration:
-                          type: integer
-                          description: 相对于日程开始或者结束的偏移量(分钟)
-                          example: '15'
-                      required:
-                      - time_type
-                      - duration
-                      description: 日程签到开始时间
-                    check_in_end_time:
-                      type: object
-                      properties:
-                        time_type:
-                          type: string
-                          description: (分钟)偏移量相对于的日程时间节点类型
-                          enum:
-                          - before_event_start
-                          - after_event_start
-                          - after_event_end
-                          x-enum-descriptions:
-                            before_event_start: 日程开始前
-                            after_event_start: 日程开始后
-                            after_event_end: 日程结束后
-                        duration:
-                          type: integer
-                          description: 相对于日程开始或者结束的偏移量(分钟)
-                          example: '15'
-                      required:
-                      - time_type
-                      - duration
-                      description: 日程签到结束时间
-                    need_notify_attendees:
-                      type: boolean
-                      description: 签到开始时是否自动发送签到通知给参与者
-                      default: false
-                  required:
-                  - enable_check_in
+                  allOf:
+                  - $ref: '#/components/schemas/EventCheckIn'
                   description: 日程签到设置，为空则不进行日程签到设置
       responses:
         '200':
@@ -4792,421 +3563,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      event:
-                        type: object
-                        properties:
-                          event_id:
-                            type: string
-                            description: 日程ID
-                            example: 75d28f9b-e35c-4230-8a83-4a661497db54_0
-                          organizer_calendar_id:
-                            type: string
-                            description: 日程组织者日历ID
-                            example: feishu.cn_HF9U2MbibE8PPpjro6xjqa@group.calendar.feishu.cn
-                          summary:
-                            type: string
-                            description: 日程标题
-                            example: 日程标题
-                          description:
-                            type: string
-                            description: 日程描述
-                            example: 日程描述
-                          start_time:
-                            type: object
-                            properties:
-                              date:
-                                type: string
-                                description: 仅全天日程使用该字段，如2018-09-01。需满足 RFC3339 格式。不能与 time_stamp 同时指定
-                                example: '2018-09-01'
-                              timestamp:
-                                type: string
-                                description: 秒级时间戳，如1602504000(表示2020/10/12 20:0:00 +8时区)
-                                example: '1602504000'
-                              timezone:
-                                type: string
-                                description: 时区名称，使用IANA Time Zone Database标准，如Asia/Shanghai；全天日程时区固定为UTC，非全天日程时区默认为Asia/Shanghai
-                                example: Asia/Shanghai
-                            description: 日程开始时间
-                          end_time:
-                            type: object
-                            properties:
-                              date:
-                                type: string
-                                description: 仅全天日程使用该字段，如2018-09-01。需满足 RFC3339 格式。不能与 time_stamp 同时指定
-                                example: '2018-09-01'
-                              timestamp:
-                                type: string
-                                description: 秒级时间戳，如1602504000(表示2020/10/12 20:0:00 +8时区)
-                                example: '1602504000'
-                              timezone:
-                                type: string
-                                description: 时区名称，使用IANA Time Zone Database标准，如Asia/Shanghai；全天日程时区固定为UTC，非全天日程时区默认为Asia/Shanghai
-                                example: Asia/Shanghai
-                            description: 日程结束时间
-                          vchat:
-                            type: object
-                            properties:
-                              vc_type:
-                                type: string
-                                description: 视频会议类型
-                                enum:
-                                - vc
-                                - third_party
-                                - no_meeting
-                                - lark_live
-                                - unknown
-                                - third_party_meeting
-                                x-enum-descriptions:
-                                  vc: 飞书视频会议
-                                  third_party: 第三方链接视频会议
-                                  no_meeting: 无视频会议
-                                  lark_live: Lark直播
-                                  unknown: 未知类型
-                                  third_party_meeting: 三方会议类型
-                              icon_type:
-                                type: string
-                                description: 第三方视频会议icon类型
-                                enum:
-                                - vc
-                                - live
-                                - default
-                                x-enum-descriptions:
-                                  vc: 飞书视频会议icon
-                                  live: 直播视频会议icon
-                                  default: 默认icon
-                              description:
-                                type: string
-                                description: 第三方视频会议文案，可以为空，为空展示默认文案
-                                example: 发起视频会议
-                              meeting_url:
-                                type: string
-                                description: 视频会议URL
-                                example: vc.feishu.cn/j/152568231
-                              meeting_settings:
-                                type: object
-                                properties:
-                                  owner_id:
-                                    type: string
-                                    description: 设置会议 owner
-                                    example: ou_7d8a6e6df7621556ce0d21922b676706ccs
-                                    format: int64
-                                  join_meeting_permission:
-                                    type: string
-                                    description: 设置入会范围
-                                    enum:
-                                    - anyone_can_join
-                                    - only_organization_employees
-                                    - only_event_attendees
-                                    x-enum-descriptions:
-                                      anyone_can_join: 所有人可以加入会议
-                                      only_organization_employees: 仅企业内用户可以加入会议
-                                      only_event_attendees: 仅日程参与者可以加入会议
-                                  password:
-                                    type: string
-                                    description: 设置会议密码，仅支持 4-9 位数字
-                                    example: '971024'
-                                  assign_hosts:
-                                    type: array
-                                    items:
-                                      type: string
-                                    description: 指定主持人
-                                  auto_record:
-                                    type: boolean
-                                    description: 设置自动录制
-                                    example: 'false'
-                                  open_lobby:
-                                    type: boolean
-                                    description: 开启等候室
-                                    example: 'true'
-                                  allow_attendees_start:
-                                    type: boolean
-                                    description: 允许日程参与者发起会议
-                                    example: 'true'
-                                description: VC视频会议的会前设置
-                              third_party_meeting_settings:
-                                type: object
-                                properties:
-                                  meeting_type:
-                                    type: string
-                                    description: 三方会议类型
-                                    example: julinker
-                                  meeting_id:
-                                    type: string
-                                    description: 会议ID
-                                    example: '123'
-                                  meeting_no:
-                                    type: string
-                                    description: 会议号
-                                    example: '123'
-                                  password:
-                                    type: string
-                                    description: 密码
-                                    example: '123'
-                                  meeting_descriptions:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        lang:
-                                          type: string
-                                          description: 语言
-                                          example: zh-cn
-                                        description:
-                                          type: string
-                                          description: 会议描述
-                                          example: www.example.com
-                                    description: 多语言会议描述
-                                description: 三方会议设置
-                            description: 视频会议信息，仅当日程至少有一位attendee时生效
-                          visibility:
-                            type: string
-                            description: 日程公开范围，新建日程默认为Default；仅新建日程时对所有参与人生效，之后修改该属性仅对当前身份生效
-                            enum:
-                            - default
-                            - public
-                            - private
-                            x-enum-descriptions:
-                              default: 默认权限，仅向他人显示是否“忙碌”
-                              public: 公开，显示日程详情
-                              private: 私密，仅自己可见
-                          attendee_ability:
-                            type: string
-                            description: 参与人权限
-                            enum:
-                            - none
-                            - can_see_others
-                            - can_invite_others
-                            - can_modify_event
-                            x-enum-descriptions:
-                              none: 无法编辑日程、无法邀请其它参与人、无法查看参与人列表
-                              can_see_others: 无法编辑日程、无法邀请其它参与人、可以查看参与人列表
-                              can_invite_others: 无法编辑日程、可以邀请其它参与人、可以查看参与人列表
-                              can_modify_event: 可以编辑日程、可以邀请其它参与人、可以查看参与人列表
-                          free_busy_status:
-                            type: string
-                            description: 日程占用的忙闲状态，新建日程默认为Busy；仅新建日程时对所有参与人生效，之后修改该属性仅对当前身份生效
-                            enum:
-                            - busy
-                            - free
-                            x-enum-descriptions:
-                              busy: 忙碌
-                              free: 空闲
-                          location:
-                            type: object
-                            properties:
-                              name:
-                                type: string
-                                description: 地点名称
-                                example: 东方明珠
-                              address:
-                                type: string
-                                description: 地点地址
-                                example: 普通市和平区世纪大道1号
-                              latitude:
-                                type: number
-                                description: 地点坐标纬度信息，对于国内的地点，采用GCJ-02标准，海外地点采用WGS84标准
-                                example: '31.239702224731445'
-                              longitude:
-                                type: number
-                                description: 地点坐标经度信息，对于国内的地点，采用GCJ-02标准，海外地点采用WGS84标准
-                                example: '121.49971771240234'
-                            description: 日程地点
-                          color:
-                            type: integer
-                            description: 日程颜色，颜色RGB值的int32表示。仅对当前身份生效；客户端展示时会映射到色板上最接近的一种颜色；值为0或-1时默认跟随日历颜色。
-                            example: '0'
-                          reminders:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                minutes:
-                                  type: integer
-                                  description: |-
-                                    日程提醒时间的偏移量，正数时表示在日程开始前X分钟提醒，负数时表示在日程开始后X分钟提醒
-                                    新建或更新日程时传入该字段，仅对当前身份生效
-                                  example: '5'
-                            description: 日程提醒列表
-                          recurrence:
-                            type: string
-                            description: 重复日程的重复性规则
-                            example: FREQ=DAILY;INTERVAL=1
-                          status:
-                            type: string
-                            description: 日程状态
-                            enum:
-                            - tentative
-                            - confirmed
-                            - cancelled
-                            x-enum-descriptions:
-                              tentative: 未回应
-                              confirmed: 已确认
-                              cancelled: 日程已取消
-                          is_exception:
-                            type: boolean
-                            description: 日程是否是一个重复日程的例外日程
-                            example: 'false'
-                          recurring_event_id:
-                            type: string
-                            description: 例外日程的原重复日程的event_id
-                            example: 75d28f9b-e35c-4230-8a83-4a661497db54_0
-                          create_time:
-                            type: string
-                            description: 日程的创建时间戳
-                            example: '1675612800'
-                          schemas:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                ui_name:
-                                  type: string
-                                  description: UI项名称 TODO文档
-                                  example: xxx
-                                ui_status:
-                                  type: string
-                                  description: UI项自定义状态
-                                  enum:
-                                  - hide
-                                  - readonly
-                                  - editable
-                                  - unknown
-                                  x-enum-descriptions:
-                                    hide: 隐藏显示
-                                    readonly: 只读
-                                    editable: 可编辑
-                                    unknown: 未知UI项自定义状态，仅用于读取时兼容
-                                app_link:
-                                  type: string
-                                  description: 按钮点击后跳转的链接
-                                  example: xxxx
-                            description: 日程自定义信息
-                          event_organizer:
-                            type: object
-                            properties:
-                              user_id:
-                                type: string
-                                description: 日程组织者user ID
-                                example: ou_xxxxxx
-                              display_name:
-                                type: string
-                                description: 日程组织者姓名
-                                example: 孙二二
-                            description: 日程组织者信息
-                          app_link:
-                            type: string
-                            description: 日程的app_link,跳转到具体的某个日程
-                            example: https://applink.larkoffice.com/client/calendar/event/detail?calendarId=7039673579105026066&key=aeac9c56-aeb1-4179-a21b-02f278f59048&originalTime=0&startTime=1700496000
-                          attachments:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                file_token:
-                                  type: string
-                                  description: 附件token
-                                  example: xAAAAA
-                                  x-lark-id-types:
-                                    file_token: ccm_file
-                                file_size:
-                                  type: string
-                                  description: 附件大小
-                                  example: '2345'
-                                is_deleted:
-                                  type: boolean
-                                  description: 是否删除附件
-                                  example: 'true'
-                                name:
-                                  type: string
-                                  description: 附件名称
-                                  example: 附件.jpeg
-                            description: 日程附件
-                          event_check_in:
-                            type: object
-                            properties:
-                              enable_check_in:
-                                type: boolean
-                                description: 是否启用日程签到
-                              check_in_start_time:
-                                type: object
-                                properties:
-                                  time_type:
-                                    type: string
-                                    description: (分钟)偏移量相对于的日程时间节点类型
-                                    enum:
-                                    - before_event_start
-                                    - after_event_start
-                                    - after_event_end
-                                    x-enum-descriptions:
-                                      before_event_start: 日程开始前
-                                      after_event_start: 日程开始后
-                                      after_event_end: 日程结束后
-                                  duration:
-                                    type: integer
-                                    description: 相对于日程开始或者结束的偏移量(分钟)
-                                    example: '15'
-                                required:
-                                - time_type
-                                - duration
-                                description: 日程签到开始时间
-                              check_in_end_time:
-                                type: object
-                                properties:
-                                  time_type:
-                                    type: string
-                                    description: (分钟)偏移量相对于的日程时间节点类型
-                                    enum:
-                                    - before_event_start
-                                    - after_event_start
-                                    - after_event_end
-                                    x-enum-descriptions:
-                                      before_event_start: 日程开始前
-                                      after_event_start: 日程开始后
-                                      after_event_end: 日程结束后
-                                  duration:
-                                    type: integer
-                                    description: 相对于日程开始或者结束的偏移量(分钟)
-                                    example: '15'
-                                required:
-                                - time_type
-                                - duration
-                                description: 日程签到结束时间
-                              need_notify_attendees:
-                                type: boolean
-                                description: 签到开始时是否自动发送签到通知给参与者
-                                default: false
-                            required:
-                            - enable_check_in
-                            description: 日程签到设置，为空则不进行日程签到设置
-                          self_rsvp_status:
-                            type: string
-                            description: 当前日历的RSVP状态
-                            enum:
-                            - needs_action
-                            - accept
-                            - tentative
-                            - decline
-                            - removed
-                            x-enum-descriptions:
-                              needs_action: 参与人尚未回复状态，或表示会议室预约中
-                              accept: 参与人回复接受，或表示会议室预约成功
-                              tentative: 参与人回复待定
-                              decline: 参与人回复拒绝，或表示会议室预约失败
-                              removed: 参与人或会议室已经从日程中被移除
-                        required:
-                        - event_id
-                        - start_time
-                        - end_time
-                        description: 日程信息
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       - user
@@ -5457,44 +3814,8 @@ paths:
                               description: 日程组织者日历ID
                               example: feishu.cn_HF9U2MbibE8PPpjro6xjqa@group.calendar.feishu.cn
                             vchat:
-                              type: object
-                              properties:
-                                vc_type:
-                                  type: string
-                                  description: 视频会议类型
-                                  enum:
-                                  - vc
-                                  - third_party
-                                  - no_meeting
-                                  - lark_live
-                                  - unknown
-                                  - third_party_meeting
-                                  x-enum-descriptions:
-                                    vc: 飞书视频会议
-                                    third_party: 第三方链接视频会议
-                                    no_meeting: 无视频会议
-                                    lark_live: Lark直播
-                                    unknown: 未知类型
-                                    third_party_meeting: 三方会议类型
-                                icon_type:
-                                  type: string
-                                  description: 第三方视频会议icon类型
-                                  enum:
-                                  - vc
-                                  - live
-                                  - default
-                                  x-enum-descriptions:
-                                    vc: 飞书视频会议icon
-                                    live: 直播视频会议icon
-                                    default: 默认icon
-                                description:
-                                  type: string
-                                  description: 第三方视频会议文案，可以为空，为空展示默认文案
-                                  example: 发起视频会议
-                                meeting_url:
-                                  type: string
-                                  description: 视频会议URL
-                                  example: vc.feishu.cn/j/152568231
+                              allOf:
+                              - $ref: '#/components/schemas/Vchat3'
                               description: 视频会议信息，仅当日程至少有一位attendee时生效
                             visibility:
                               type: string
@@ -5572,156 +3893,7 @@ paths:
                             attendees:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  type:
-                                    type: string
-                                    description: |-
-                                      参与人类型，仅当新建参与人时可设置类型<br>
-                                      type为User时，值为open_id/user_id/union_id<br>
-                                      type为Chat时，值为open_chat_id<br>
-                                      type为Resource时，值为open_room_id<br>
-                                      type为ThirdParty时，值为third_party_email；不支持通过API新建该类型参与人
-                                    enum:
-                                    - user
-                                    - chat
-                                    - resource
-                                    - third_party
-                                    x-enum-descriptions:
-                                      user: 用户
-                                      chat: 群组
-                                      resource: 会议室
-                                      third_party: 邮箱
-                                  attendee_id:
-                                    type: string
-                                    description: 参与人ID
-                                    example: user_xxxxxx
-                                  rsvp_status:
-                                    type: string
-                                    description: 参与人RSVP状态
-                                    enum:
-                                    - needs_action
-                                    - accept
-                                    - tentative
-                                    - decline
-                                    - removed
-                                    x-enum-descriptions:
-                                      needs_action: 参与人尚未回复状态，或表示会议室预约中
-                                      accept: 参与人回复接受，或表示会议室预约成功
-                                      tentative: 参与人回复待定
-                                      decline: 参与人回复拒绝，或表示会议室预约失败
-                                      removed: 参与人或会议室已经从日程中被移除
-                                  is_optional:
-                                    type: boolean
-                                    description: 参与人是否为「可选参加」，无法编辑群参与人的此字段
-                                    default: false
-                                    example: 'false'
-                                  is_organizer:
-                                    type: boolean
-                                    description: 参与人是否为日程组织者
-                                    example: 'true'
-                                  is_external:
-                                    type: boolean
-                                    description: 参与人是否为外部参与人；外部参与人不支持编辑
-                                    example: 'false'
-                                  display_name:
-                                    type: string
-                                    description: 参与人名称
-                                    example: 张三
-                                  chat_members:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        rsvp_status:
-                                          type: string
-                                          description: 参与人RSVP状态
-                                          enum:
-                                          - needs_action
-                                          - accept
-                                          - tentative
-                                          - decline
-                                          - removed
-                                          x-enum-descriptions:
-                                            needs_action: 参与人尚未回复状态，或表示会议室预约中
-                                            accept: 参与人回复接受，或表示会议室预约成功
-                                            tentative: 参与人回复待定
-                                            decline: 参与人回复拒绝，或表示会议室预约失败
-                                            removed: 参与人或会议室已经从日程中被移除
-                                        is_optional:
-                                          type: boolean
-                                          description: 参与人是否为「可选参加」
-                                          default: false
-                                          example: 'false'
-                                        display_name:
-                                          type: string
-                                          description: 参与人名称
-                                          example: lijian
-                                        is_organizer:
-                                          type: boolean
-                                          description: 参与人是否为日程组织者
-                                          example: 'false'
-                                        is_external:
-                                          type: boolean
-                                          description: 参与人是否为外部参与人
-                                          example: 'false'
-                                    description: 群中的群成员，当type为Chat时有效；群成员不支持编辑
-                                  user_id:
-                                    type: string
-                                    description: 参与人的用户id，依赖于user_id_type返回对应的取值，当is_external为true时，此字段只会返回open_id或者union_id
-                                  chat_id:
-                                    type: string
-                                    description: chat类型参与人的群组chat_id
-                                    example: oc_a0553eda9014c201e6969b478895c230
-                                    x-lark-id-types:
-                                      chat_id: chat
-                                  room_id:
-                                    type: string
-                                    description: resource类型参与人的会议室room_id
-                                    example: omm_83d09ad4f6896e02029a6a075f71c9d1
-                                  third_party_email:
-                                    type: string
-                                    description: third_party类型参与人的邮箱
-                                    example: test@example.com
-                                  operate_id:
-                                    type: string
-                                    description: bot身份操作时，为预定的会议室指定实际预定人
-                                    example: 4d7a3c6g
-                                  resource_customization:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        index_key:
-                                          type: string
-                                          description: the unique key of customization option
-                                          example: '16281481596100'
-                                        input_content:
-                                          type: string
-                                          description: should be filled when the type of customization is input
-                                          example: xxx
-                                        options:
-                                          type: array
-                                          items:
-                                            type: object
-                                            properties:
-                                              option_key:
-                                                type: string
-                                                description: the option unique key
-                                                example: '16281481596185'
-                                              others_content:
-                                                type: string
-                                                description: should be filled if the option is others option
-                                                example: xxx
-                                          description: 选项
-                                          example: 无
-                                      required:
-                                      - index_key
-                                    description: 会议室的个性化配置
-                                  approval_reason:
-                                    type: string
-                                    description: 会议室审批原因
-                                    example: 申请审批原因
+                                $ref: '#/components/schemas/Item'
                               description: 日程参与人信息
                             self_rsvp_status:
                               type: string
@@ -6845,128 +5017,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                summary:
-                  type: string
-                  description: 日历标题
-                  example: summary
-                description:
-                  type: string
-                  description: 日历描述
-                  example: description
-                permissions:
-                  type: string
-                  description: 权限
-                  enum:
-                  - private
-                  - show_only_free_busy
-                  - public
-                  x-enum-descriptions:
-                    private: 私密
-                    show_only_free_busy: 仅展示忙闲信息
-                    public: 他人可查看日程详情
-                color:
-                  type: integer
-                  description: 日历颜色，颜色RGB值的int32表示。客户端展示时会映射到色板上最接近的一种颜色。仅对当前身份生效
-                  example: '11034625'
-                summary_alias:
-                  type: string
-                  description: 日历备注名，修改或添加后仅对当前身份生效
-                  example: xxx
+              $ref: '#/components/schemas/Schema4'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      calendar:
-                        type: object
-                        properties:
-                          calendar_id:
-                            type: string
-                            description: 日历OpenId
-                            example: feishu.cn_xxxxxxxxxx@group.calendar.feishu.cn
-                          summary:
-                            type: string
-                            description: 日历标题
-                            example: summary
-                          description:
-                            type: string
-                            description: 日历描述
-                            example: description
-                          permissions:
-                            type: string
-                            description: 权限
-                            enum:
-                            - private
-                            - show_only_free_busy
-                            - public
-                            x-enum-descriptions:
-                              private: 私密
-                              show_only_free_busy: 仅展示忙闲信息
-                              public: 他人可查看日程详情
-                          color:
-                            type: integer
-                            description: 日历颜色，颜色RGB值的int32表示。客户端展示时会映射到色板上最接近的一种颜色。仅对当前身份生效
-                            example: '11034625'
-                          type:
-                            type: string
-                            description: 日历类型
-                            enum:
-                            - unknown
-                            - primary
-                            - shared
-                            - google
-                            - resource
-                            - exchange
-                            x-enum-descriptions:
-                              unknown: 未知类型
-                              primary: 用户或应用的主日历
-                              shared: 由用户或应用创建的共享日历
-                              google: 用户绑定的谷歌日历
-                              resource: 会议室日历
-                              exchange: 用户绑定的Exchange日历
-                          summary_alias:
-                            type: string
-                            description: 日历备注名，修改或添加后仅对当前身份生效
-                            example: xxx
-                          is_deleted:
-                            type: boolean
-                            description: 对于当前身份，日历是否已经被标记为删除
-                            default: false
-                            example: 'false'
-                          is_third_party:
-                            type: boolean
-                            description: 当前日历是否是第三方数据；三方日历及日程只支持读，不支持写入
-                            default: false
-                          role:
-                            type: string
-                            description: 当前身份对于该日历的访问权限
-                            enum:
-                            - unknown
-                            - free_busy_reader
-                            - reader
-                            - writer
-                            - owner
-                            x-enum-descriptions:
-                              unknown: 未知权限
-                              free_busy_reader: 游客，只能看到忙碌/空闲信息
-                              reader: 订阅者，查看所有日程详情
-                              writer: 编辑者，创建及修改日程
-                              owner: 管理员，管理日历及共享设置
-                        required:
-                        - calendar_id
-                        description: 日历信息
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       - user
@@ -7060,82 +5118,7 @@ paths:
                       calendar_list:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            calendar_id:
-                              type: string
-                              description: 日历OpenId
-                              example: feishu.cn_xxxxxxxxxx@group.calendar.feishu.cn
-                            summary:
-                              type: string
-                              description: 日历标题
-                              example: summary
-                            description:
-                              type: string
-                              description: 日历描述
-                              example: description
-                            permissions:
-                              type: string
-                              description: 权限
-                              enum:
-                              - private
-                              - show_only_free_busy
-                              - public
-                              x-enum-descriptions:
-                                private: 私密
-                                show_only_free_busy: 仅展示忙闲信息
-                                public: 他人可查看日程详情
-                            color:
-                              type: integer
-                              description: 日历颜色，颜色RGB值的int32表示。客户端展示时会映射到色板上最接近的一种颜色。仅对当前身份生效
-                              example: '11034625'
-                            type:
-                              type: string
-                              description: 日历类型
-                              enum:
-                              - unknown
-                              - primary
-                              - shared
-                              - google
-                              - resource
-                              - exchange
-                              x-enum-descriptions:
-                                unknown: 未知类型
-                                primary: 用户或应用的主日历
-                                shared: 由用户或应用创建的共享日历
-                                google: 用户绑定的谷歌日历
-                                resource: 会议室日历
-                                exchange: 用户绑定的Exchange日历
-                            summary_alias:
-                              type: string
-                              description: 日历备注名，修改或添加后仅对当前身份生效
-                              example: xxx
-                            is_deleted:
-                              type: boolean
-                              description: 对于当前身份，日历是否已经被标记为删除
-                              default: false
-                              example: 'false'
-                            is_third_party:
-                              type: boolean
-                              description: 当前日历是否是第三方数据；三方日历及日程只支持读，不支持写入
-                              default: false
-                            role:
-                              type: string
-                              description: 当前身份对于该日历的访问权限
-                              enum:
-                              - unknown
-                              - free_busy_reader
-                              - reader
-                              - writer
-                              - owner
-                              x-enum-descriptions:
-                                unknown: 未知权限
-                                free_busy_reader: 游客，只能看到忙碌/空闲信息
-                                reader: 订阅者，查看所有日程详情
-                                writer: 编辑者，创建及修改日程
-                                owner: 管理员，管理日历及共享设置
-                          required:
-                          - calendar_id
+                          $ref: '#/components/schemas/Calendar'
                         description: 分页加载的日历数据列表
       x-lark-access-tokens:
       - tenant
@@ -7307,82 +5290,7 @@ paths:
                   msg:
                     type: string
                   data:
-                    type: object
-                    properties:
-                      calendar_id:
-                        type: string
-                        description: 日历OpenId
-                        example: feishu.cn_xxxxxxxxxx@group.calendar.feishu.cn
-                      summary:
-                        type: string
-                        description: 日历标题
-                        example: summary
-                      description:
-                        type: string
-                        description: 日历描述
-                        example: description
-                      permissions:
-                        type: string
-                        description: 权限
-                        enum:
-                        - private
-                        - show_only_free_busy
-                        - public
-                        x-enum-descriptions:
-                          private: 私密
-                          show_only_free_busy: 仅展示忙闲信息
-                          public: 他人可查看日程详情
-                      color:
-                        type: integer
-                        description: 日历颜色，颜色RGB值的int32表示。客户端展示时会映射到色板上最接近的一种颜色。仅对当前身份生效
-                        example: '11034625'
-                      type:
-                        type: string
-                        description: 日历类型
-                        enum:
-                        - unknown
-                        - primary
-                        - shared
-                        - google
-                        - resource
-                        - exchange
-                        x-enum-descriptions:
-                          unknown: 未知类型
-                          primary: 用户或应用的主日历
-                          shared: 由用户或应用创建的共享日历
-                          google: 用户绑定的谷歌日历
-                          resource: 会议室日历
-                          exchange: 用户绑定的Exchange日历
-                      summary_alias:
-                        type: string
-                        description: 日历备注名，修改或添加后仅对当前身份生效
-                        example: xxx
-                      is_deleted:
-                        type: boolean
-                        description: 对于当前身份，日历是否已经被标记为删除
-                        default: false
-                        example: 'false'
-                      is_third_party:
-                        type: boolean
-                        description: 当前日历是否是第三方数据；三方日历及日程只支持读，不支持写入
-                        default: false
-                      role:
-                        type: string
-                        description: 当前身份对于该日历的访问权限
-                        enum:
-                        - unknown
-                        - free_busy_reader
-                        - reader
-                        - writer
-                        - owner
-                        x-enum-descriptions:
-                          unknown: 未知权限
-                          free_busy_reader: 游客，只能看到忙碌/空闲信息
-                          reader: 订阅者，查看所有日程详情
-                          writer: 编辑者，创建及修改日程
-                          owner: 管理员，管理日历及共享设置
-                    required:
-                    - calendar_id
+                    $ref: '#/components/schemas/Calendar'
       x-lark-access-tokens:
       - tenant
       - user
@@ -7457,128 +5365,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                summary:
-                  type: string
-                  description: 标题
-                  example: summary
-                description:
-                  type: string
-                  description: 日历描述
-                  example: description
-                permissions:
-                  type: string
-                  description: 权限
-                  enum:
-                  - private
-                  - show_only_free_busy
-                  - public
-                  x-enum-descriptions:
-                    private: 私密
-                    show_only_free_busy: 仅展示忙闲信息
-                    public: 他人可查看日程详情
-                color:
-                  type: integer
-                  description: 日历颜色，颜色RGB值的int32表示。客户端展示时会映射到色板上最接近的一种颜色。仅对当前身份生效
-                  example: '11034625'
-                summary_alias:
-                  type: string
-                  description: 日历备注名，修改或添加后仅对当前身份生效
-                  example: xxx
+              $ref: '#/components/schemas/Schema4'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      calendar:
-                        type: object
-                        properties:
-                          calendar_id:
-                            type: string
-                            description: 日历OpenId
-                            example: feishu.cn_xxxxxxxxxx@group.calendar.feishu.cn
-                          summary:
-                            type: string
-                            description: 日历标题
-                            example: summary
-                          description:
-                            type: string
-                            description: 日历描述
-                            example: description
-                          permissions:
-                            type: string
-                            description: 权限
-                            enum:
-                            - private
-                            - show_only_free_busy
-                            - public
-                            x-enum-descriptions:
-                              private: 私密
-                              show_only_free_busy: 仅展示忙闲信息
-                              public: 他人可查看日程详情
-                          color:
-                            type: integer
-                            description: 日历颜色，颜色RGB值的int32表示。客户端展示时会映射到色板上最接近的一种颜色。仅对当前身份生效
-                            example: '11034625'
-                          type:
-                            type: string
-                            description: 日历类型
-                            enum:
-                            - unknown
-                            - primary
-                            - shared
-                            - google
-                            - resource
-                            - exchange
-                            x-enum-descriptions:
-                              unknown: 未知类型
-                              primary: 用户或应用的主日历
-                              shared: 由用户或应用创建的共享日历
-                              google: 用户绑定的谷歌日历
-                              resource: 会议室日历
-                              exchange: 用户绑定的Exchange日历
-                          summary_alias:
-                            type: string
-                            description: 日历备注名，修改或添加后仅对当前身份生效
-                            example: xxx
-                          is_deleted:
-                            type: boolean
-                            description: 对于当前身份，日历是否已经被标记为删除
-                            default: false
-                            example: 'false'
-                          is_third_party:
-                            type: boolean
-                            description: 当前日历是否是第三方数据；三方日历及日程只支持读，不支持写入
-                            default: false
-                          role:
-                            type: string
-                            description: 当前身份对于该日历的访问权限
-                            enum:
-                            - unknown
-                            - free_busy_reader
-                            - reader
-                            - writer
-                            - owner
-                            x-enum-descriptions:
-                              unknown: 未知权限
-                              free_busy_reader: 游客，只能看到忙碌/空闲信息
-                              reader: 订阅者，查看所有日程详情
-                              writer: 编辑者，创建及修改日程
-                              owner: 管理员，管理日历及共享设置
-                        required:
-                        - calendar_id
-                        description: 日历信息
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       - user
@@ -7672,82 +5466,7 @@ paths:
                       calendars:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            calendar_id:
-                              type: string
-                              description: 日历OpenId
-                              example: feishu.cn_xxxxxxxxxx@group.calendar.feishu.cn
-                            summary:
-                              type: string
-                              description: 日历标题
-                              example: summary
-                            description:
-                              type: string
-                              description: 日历描述
-                              example: description
-                            permissions:
-                              type: string
-                              description: 权限
-                              enum:
-                              - private
-                              - show_only_free_busy
-                              - public
-                              x-enum-descriptions:
-                                private: 私密
-                                show_only_free_busy: 仅展示忙闲信息
-                                public: 他人可查看日程详情
-                            color:
-                              type: integer
-                              description: 日历颜色，颜色RGB值的int32表示。客户端展示时会映射到色板上最接近的一种颜色。仅对当前身份生效
-                              example: '11034625'
-                            type:
-                              type: string
-                              description: 日历类型
-                              enum:
-                              - unknown
-                              - primary
-                              - shared
-                              - google
-                              - resource
-                              - exchange
-                              x-enum-descriptions:
-                                unknown: 未知类型
-                                primary: 用户或应用的主日历
-                                shared: 由用户或应用创建的共享日历
-                                google: 用户绑定的谷歌日历
-                                resource: 会议室日历
-                                exchange: 用户绑定的Exchange日历
-                            summary_alias:
-                              type: string
-                              description: 日历备注名，修改或添加后仅对当前身份生效
-                              example: xxx
-                            is_deleted:
-                              type: boolean
-                              description: 对于当前身份，日历是否已经被标记为删除
-                              default: false
-                              example: 'false'
-                            is_third_party:
-                              type: boolean
-                              description: 当前日历是否是第三方数据；三方日历及日程只支持读，不支持写入
-                              default: false
-                            role:
-                              type: string
-                              description: 当前身份对于该日历的访问权限
-                              enum:
-                              - unknown
-                              - free_busy_reader
-                              - reader
-                              - writer
-                              - owner
-                              x-enum-descriptions:
-                                unknown: 未知权限
-                                free_busy_reader: 游客，只能看到忙碌/空闲信息
-                                reader: 订阅者，查看所有日程详情
-                                writer: 编辑者，创建及修改日程
-                                owner: 管理员，管理日历及共享设置
-                          required:
-                          - calendar_id
+                          $ref: '#/components/schemas/Calendar'
                         description: 日历列表
       x-lark-access-tokens:
       - tenant
@@ -7840,102 +5559,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      calendars:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            calendar:
-                              type: object
-                              properties:
-                                calendar_id:
-                                  type: string
-                                  description: 日历OpenId
-                                  example: feishu.cn_xxxxxxxxxx@group.calendar.feishu.cn
-                                summary:
-                                  type: string
-                                  description: 日历标题
-                                  example: summary
-                                description:
-                                  type: string
-                                  description: 日历描述
-                                  example: description
-                                permissions:
-                                  type: string
-                                  description: 权限
-                                  enum:
-                                  - private
-                                  - show_only_free_busy
-                                  - public
-                                  x-enum-descriptions:
-                                    private: 私密
-                                    show_only_free_busy: 仅展示忙闲信息
-                                    public: 他人可查看日程详情
-                                color:
-                                  type: integer
-                                  description: 日历颜色，颜色RGB值的int32表示。客户端展示时会映射到色板上最接近的一种颜色。仅对当前身份生效
-                                  example: '11034625'
-                                type:
-                                  type: string
-                                  description: 日历类型
-                                  enum:
-                                  - unknown
-                                  - primary
-                                  - shared
-                                  - google
-                                  - resource
-                                  - exchange
-                                  x-enum-descriptions:
-                                    unknown: 未知类型
-                                    primary: 用户或应用的主日历
-                                    shared: 由用户或应用创建的共享日历
-                                    google: 用户绑定的谷歌日历
-                                    resource: 会议室日历
-                                    exchange: 用户绑定的Exchange日历
-                                summary_alias:
-                                  type: string
-                                  description: 日历备注名，修改或添加后仅对当前身份生效
-                                  example: xxx
-                                is_deleted:
-                                  type: boolean
-                                  description: 对于当前身份，日历是否已经被标记为删除
-                                  default: false
-                                  example: 'false'
-                                is_third_party:
-                                  type: boolean
-                                  description: 当前日历是否是第三方数据；三方日历及日程只支持读，不支持写入
-                                  default: false
-                                role:
-                                  type: string
-                                  description: 当前身份对于该日历的访问权限
-                                  enum:
-                                  - unknown
-                                  - free_busy_reader
-                                  - reader
-                                  - writer
-                                  - owner
-                                  x-enum-descriptions:
-                                    unknown: 未知权限
-                                    free_busy_reader: 游客，只能看到忙碌/空闲信息
-                                    reader: 订阅者，查看所有日程详情
-                                    writer: 编辑者，创建及修改日程
-                                    owner: 管理员，管理日历及共享设置
-                              required:
-                              - calendar_id
-                              description: 日历实体信息
-                            user_id:
-                              type: string
-                              description: 日历的创建者user ID
-                        description: 主日历列表
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       - user
@@ -8045,102 +5669,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      calendars:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            calendar:
-                              type: object
-                              properties:
-                                calendar_id:
-                                  type: string
-                                  description: 日历OpenId
-                                  example: feishu.cn_xxxxxxxxxx@group.calendar.feishu.cn
-                                summary:
-                                  type: string
-                                  description: 日历标题
-                                  example: summary
-                                description:
-                                  type: string
-                                  description: 日历描述
-                                  example: description
-                                permissions:
-                                  type: string
-                                  description: 权限
-                                  enum:
-                                  - private
-                                  - show_only_free_busy
-                                  - public
-                                  x-enum-descriptions:
-                                    private: 私密
-                                    show_only_free_busy: 仅展示忙闲信息
-                                    public: 他人可查看日程详情
-                                color:
-                                  type: integer
-                                  description: 日历颜色，颜色RGB值的int32表示。客户端展示时会映射到色板上最接近的一种颜色。仅对当前身份生效
-                                  example: '11034625'
-                                type:
-                                  type: string
-                                  description: 日历类型
-                                  enum:
-                                  - unknown
-                                  - primary
-                                  - shared
-                                  - google
-                                  - resource
-                                  - exchange
-                                  x-enum-descriptions:
-                                    unknown: 未知类型
-                                    primary: 用户或应用的主日历
-                                    shared: 由用户或应用创建的共享日历
-                                    google: 用户绑定的谷歌日历
-                                    resource: 会议室日历
-                                    exchange: 用户绑定的Exchange日历
-                                summary_alias:
-                                  type: string
-                                  description: 日历备注名，修改或添加后仅对当前身份生效
-                                  example: xxx
-                                is_deleted:
-                                  type: boolean
-                                  description: 对于当前身份，日历是否已经被标记为删除
-                                  default: false
-                                  example: 'false'
-                                is_third_party:
-                                  type: boolean
-                                  description: 当前日历是否是第三方数据；三方日历及日程只支持读，不支持写入
-                                  default: false
-                                role:
-                                  type: string
-                                  description: 当前身份对于该日历的访问权限
-                                  enum:
-                                  - unknown
-                                  - free_busy_reader
-                                  - reader
-                                  - writer
-                                  - owner
-                                  x-enum-descriptions:
-                                    unknown: 未知权限
-                                    free_busy_reader: 游客，只能看到忙碌/空闲信息
-                                    reader: 订阅者，查看所有日程详情
-                                    writer: 编辑者，创建及修改日程
-                                    owner: 管理员，管理日历及共享设置
-                              required:
-                              - calendar_id
-                              description: 日历实体信息
-                            user_id:
-                              type: string
-                              description: 日历的创建者user ID
-                        description: 主日历列表
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       - user
@@ -8259,82 +5788,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            calendar_id:
-                              type: string
-                              description: 日历OpenId
-                              example: feishu.cn_xxxxxxxxxx@group.calendar.feishu.cn
-                            summary:
-                              type: string
-                              description: 日历标题
-                              example: summary
-                            description:
-                              type: string
-                              description: 日历描述
-                              example: description
-                            permissions:
-                              type: string
-                              description: 权限
-                              enum:
-                              - private
-                              - show_only_free_busy
-                              - public
-                              x-enum-descriptions:
-                                private: 私密
-                                show_only_free_busy: 仅展示忙闲信息
-                                public: 他人可查看日程详情
-                            color:
-                              type: integer
-                              description: 日历颜色，颜色RGB值的int32表示。客户端展示时会映射到色板上最接近的一种颜色。仅对当前身份生效
-                              example: '11034625'
-                            type:
-                              type: string
-                              description: 日历类型
-                              enum:
-                              - unknown
-                              - primary
-                              - shared
-                              - google
-                              - resource
-                              - exchange
-                              x-enum-descriptions:
-                                unknown: 未知类型
-                                primary: 用户或应用的主日历
-                                shared: 由用户或应用创建的共享日历
-                                google: 用户绑定的谷歌日历
-                                resource: 会议室日历
-                                exchange: 用户绑定的Exchange日历
-                            summary_alias:
-                              type: string
-                              description: 日历备注名，修改或添加后仅对当前身份生效
-                              example: xxx
-                            is_deleted:
-                              type: boolean
-                              description: 对于当前身份，日历是否已经被标记为删除
-                              default: false
-                              example: 'false'
-                            is_third_party:
-                              type: boolean
-                              description: 当前日历是否是第三方数据；三方日历及日程只支持读，不支持写入
-                              default: false
-                            role:
-                              type: string
-                              description: 当前身份对于该日历的访问权限
-                              enum:
-                              - unknown
-                              - free_busy_reader
-                              - reader
-                              - writer
-                              - owner
-                              x-enum-descriptions:
-                                unknown: 未知权限
-                                free_busy_reader: 游客，只能看到忙碌/空闲信息
-                                reader: 订阅者，查看所有日程详情
-                                writer: 编辑者，创建及修改日程
-                                owner: 管理员，管理日历及共享设置
-                          required:
-                          - calendar_id
+                          $ref: '#/components/schemas/Calendar'
                         description: 搜索命中的日历列表
                       page_token:
                         type: string
@@ -8418,93 +5872,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      calendar:
-                        type: object
-                        properties:
-                          calendar_id:
-                            type: string
-                            description: 日历OpenId
-                            example: feishu.cn_xxxxxxxxxx@group.calendar.feishu.cn
-                          summary:
-                            type: string
-                            description: 日历标题
-                            example: summary
-                          description:
-                            type: string
-                            description: 日历描述
-                            example: description
-                          permissions:
-                            type: string
-                            description: 权限
-                            enum:
-                            - private
-                            - show_only_free_busy
-                            - public
-                            x-enum-descriptions:
-                              private: 私密
-                              show_only_free_busy: 仅展示忙闲信息
-                              public: 他人可查看日程详情
-                          color:
-                            type: integer
-                            description: 日历颜色，颜色RGB值的int32表示。客户端展示时会映射到色板上最接近的一种颜色。仅对当前身份生效
-                            example: '11034625'
-                          type:
-                            type: string
-                            description: 日历类型
-                            enum:
-                            - unknown
-                            - primary
-                            - shared
-                            - google
-                            - resource
-                            - exchange
-                            x-enum-descriptions:
-                              unknown: 未知类型
-                              primary: 用户或应用的主日历
-                              shared: 由用户或应用创建的共享日历
-                              google: 用户绑定的谷歌日历
-                              resource: 会议室日历
-                              exchange: 用户绑定的Exchange日历
-                          summary_alias:
-                            type: string
-                            description: 日历备注名，修改或添加后仅对当前身份生效
-                            example: xxx
-                          is_deleted:
-                            type: boolean
-                            description: 对于当前身份，日历是否已经被标记为删除
-                            default: false
-                            example: 'false'
-                          is_third_party:
-                            type: boolean
-                            description: 当前日历是否是第三方数据；三方日历及日程只支持读，不支持写入
-                            default: false
-                          role:
-                            type: string
-                            description: 当前身份对于该日历的访问权限
-                            enum:
-                            - unknown
-                            - free_busy_reader
-                            - reader
-                            - writer
-                            - owner
-                            x-enum-descriptions:
-                              unknown: 未知权限
-                              free_busy_reader: 游客，只能看到忙碌/空闲信息
-                              reader: 订阅者，查看所有日程详情
-                              writer: 编辑者，创建及修改日程
-                              owner: 管理员，管理日历及共享设置
-                        required:
-                        - calendar_id
-                        description: 日历信息
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - user
       - tenant
@@ -9094,9 +6462,9 @@ paths:
       - calendar:calendar:readonly
       - calendar:exchange.bindings:read
       x-lark-field-scopes:
+      - contact:user.email:readonly
       - directory:employee.base.email:read
       - contact:user.employee_id:readonly
-      - contact:user.email:readonly
       x-lark-error-mappings:
       - code: 190002
         httpCode: 400
@@ -9809,3 +7177,914 @@ paths:
         msg: user is dismiss or not exist in the tenant
       x-lark-rate-limit:
         tier: 4
+components:
+  schemas:
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    Data:
+      type: object
+      properties:
+        event:
+          allOf:
+          - $ref: '#/components/schemas/Event'
+          description: 日程信息
+    Event:
+      type: object
+      properties:
+        event_id:
+          type: string
+          description: 日程ID
+          example: 75d28f9b-e35c-4230-8a83-4a661497db54_0
+        organizer_calendar_id:
+          type: string
+          description: 日程组织者日历ID
+          example: feishu.cn_HF9U2MbibE8PPpjro6xjqa@group.calendar.feishu.cn
+        summary:
+          type: string
+          description: 日程标题
+          example: 日程标题
+        description:
+          type: string
+          description: 日程描述
+          example: 日程描述
+        start_time:
+          type: object
+          properties:
+            date:
+              type: string
+              description: 仅全天日程使用该字段，如2018-09-01。需满足 RFC3339 格式。不能与 time_stamp 同时指定
+              example: '2018-09-01'
+            timestamp:
+              type: string
+              description: 秒级时间戳，如1602504000(表示2020/10/12 20:0:00 +8时区)
+              example: '1602504000'
+            timezone:
+              type: string
+              description: 时区名称，使用IANA Time Zone Database标准，如Asia/Shanghai；全天日程时区固定为UTC，非全天日程时区默认为Asia/Shanghai
+              example: Asia/Shanghai
+          description: 日程开始时间
+        end_time:
+          type: object
+          properties:
+            date:
+              type: string
+              description: 仅全天日程使用该字段，如2018-09-01。需满足 RFC3339 格式。不能与 time_stamp 同时指定
+              example: '2018-09-01'
+            timestamp:
+              type: string
+              description: 秒级时间戳，如1602504000(表示2020/10/12 20:0:00 +8时区)
+              example: '1602504000'
+            timezone:
+              type: string
+              description: 时区名称，使用IANA Time Zone Database标准，如Asia/Shanghai；全天日程时区固定为UTC，非全天日程时区默认为Asia/Shanghai
+              example: Asia/Shanghai
+          description: 日程结束时间
+        vchat:
+          allOf:
+          - $ref: '#/components/schemas/Vchat'
+          description: 视频会议信息，仅当日程至少有一位attendee时生效
+        visibility:
+          type: string
+          description: 日程公开范围，新建日程默认为Default；仅新建日程时对所有参与人生效，之后修改该属性仅对当前身份生效
+          enum:
+          - default
+          - public
+          - private
+          x-enum-descriptions:
+            default: 默认权限，仅向他人显示是否“忙碌”
+            public: 公开，显示日程详情
+            private: 私密，仅自己可见
+        attendee_ability:
+          type: string
+          description: 参与人权限
+          enum:
+          - none
+          - can_see_others
+          - can_invite_others
+          - can_modify_event
+          x-enum-descriptions:
+            none: 无法编辑日程、无法邀请其它参与人、无法查看参与人列表
+            can_see_others: 无法编辑日程、无法邀请其它参与人、可以查看参与人列表
+            can_invite_others: 无法编辑日程、可以邀请其它参与人、可以查看参与人列表
+            can_modify_event: 可以编辑日程、可以邀请其它参与人、可以查看参与人列表
+        free_busy_status:
+          type: string
+          description: 日程占用的忙闲状态，新建日程默认为Busy；仅新建日程时对所有参与人生效，之后修改该属性仅对当前身份生效
+          enum:
+          - busy
+          - free
+          x-enum-descriptions:
+            busy: 忙碌
+            free: 空闲
+        location:
+          type: object
+          properties:
+            name:
+              type: string
+              description: 地点名称
+              example: 东方明珠
+            address:
+              type: string
+              description: 地点地址
+              example: 普通市和平区世纪大道1号
+            latitude:
+              type: number
+              description: 地点坐标纬度信息，对于国内的地点，采用GCJ-02标准，海外地点采用WGS84标准
+              example: '31.239702224731445'
+            longitude:
+              type: number
+              description: 地点坐标经度信息，对于国内的地点，采用GCJ-02标准，海外地点采用WGS84标准
+              example: '121.49971771240234'
+          description: 日程地点
+        color:
+          type: integer
+          description: 日程颜色，颜色RGB值的int32表示。仅对当前身份生效；客户端展示时会映射到色板上最接近的一种颜色；值为0或-1时默认跟随日历颜色。
+          example: '0'
+        reminders:
+          type: array
+          items:
+            type: object
+            properties:
+              minutes:
+                type: integer
+                description: |-
+                  日程提醒时间的偏移量，正数时表示在日程开始前X分钟提醒，负数时表示在日程开始后X分钟提醒
+                  新建或更新日程时传入该字段，仅对当前身份生效
+                example: '5'
+          description: 日程提醒列表
+        recurrence:
+          type: string
+          description: 重复日程的重复性规则
+          example: FREQ=DAILY;INTERVAL=1
+        status:
+          type: string
+          description: 日程状态
+          enum:
+          - tentative
+          - confirmed
+          - cancelled
+          x-enum-descriptions:
+            tentative: 未回应
+            confirmed: 已确认
+            cancelled: 日程已取消
+        is_exception:
+          type: boolean
+          description: 日程是否是一个重复日程的例外日程
+          example: 'false'
+        recurring_event_id:
+          type: string
+          description: 例外日程的原重复日程的event_id
+          example: 75d28f9b-e35c-4230-8a83-4a661497db54_0
+        create_time:
+          type: string
+          description: 日程的创建时间戳
+          example: '1675612800'
+        schemas:
+          type: array
+          items:
+            type: object
+            properties:
+              ui_name:
+                type: string
+                description: UI项名称 TODO文档
+                example: xxx
+              ui_status:
+                type: string
+                description: UI项自定义状态
+                enum:
+                - hide
+                - readonly
+                - editable
+                - unknown
+                x-enum-descriptions:
+                  hide: 隐藏显示
+                  readonly: 只读
+                  editable: 可编辑
+                  unknown: 未知UI项自定义状态，仅用于读取时兼容
+              app_link:
+                type: string
+                description: 按钮点击后跳转的链接
+                example: xxxx
+          description: 日程自定义信息
+        event_organizer:
+          type: object
+          properties:
+            user_id:
+              type: string
+              description: 日程组织者user ID
+              example: ou_xxxxxx
+            display_name:
+              type: string
+              description: 日程组织者姓名
+              example: 孙二二
+          description: 日程组织者信息
+        app_link:
+          type: string
+          description: 日程的app_link,跳转到具体的某个日程
+          example: https://applink.larkoffice.com/client/calendar/event/detail?calendarId=7039673579105026066&key=aeac9c56-aeb1-4179-a21b-02f278f59048&originalTime=0&startTime=1700496000
+        attachments:
+          type: array
+          items:
+            type: object
+            properties:
+              file_token:
+                type: string
+                description: 附件token
+                example: xAAAAA
+                x-lark-id-types:
+                  file_token: ccm_file
+              file_size:
+                type: string
+                description: 附件大小
+                example: '2345'
+              is_deleted:
+                type: boolean
+                description: 是否删除附件
+                example: 'true'
+              name:
+                type: string
+                description: 附件名称
+                example: 附件.jpeg
+          description: 日程附件
+        event_check_in:
+          allOf:
+          - $ref: '#/components/schemas/EventCheckIn'
+          description: 日程签到设置，为空则不进行日程签到设置
+        self_rsvp_status:
+          type: string
+          description: 当前日历的RSVP状态
+          enum:
+          - needs_action
+          - accept
+          - tentative
+          - decline
+          - removed
+          x-enum-descriptions:
+            needs_action: 参与人尚未回复状态，或表示会议室预约中
+            accept: 参与人回复接受，或表示会议室预约成功
+            tentative: 参与人回复待定
+            decline: 参与人回复拒绝，或表示会议室预约失败
+            removed: 参与人或会议室已经从日程中被移除
+      required:
+      - event_id
+      - start_time
+      - end_time
+      description: 日程信息
+    Calendar:
+      type: object
+      properties:
+        calendar_id:
+          type: string
+          description: 日历OpenId
+          example: feishu.cn_xxxxxxxxxx@group.calendar.feishu.cn
+        summary:
+          type: string
+          description: 日历标题
+          example: summary
+        description:
+          type: string
+          description: 日历描述
+          example: description
+        permissions:
+          type: string
+          description: 权限
+          enum:
+          - private
+          - show_only_free_busy
+          - public
+          x-enum-descriptions:
+            private: 私密
+            show_only_free_busy: 仅展示忙闲信息
+            public: 他人可查看日程详情
+        color:
+          type: integer
+          description: 日历颜色，颜色RGB值的int32表示。客户端展示时会映射到色板上最接近的一种颜色。仅对当前身份生效
+          example: '11034625'
+        type:
+          type: string
+          description: 日历类型
+          enum:
+          - unknown
+          - primary
+          - shared
+          - google
+          - resource
+          - exchange
+          x-enum-descriptions:
+            unknown: 未知类型
+            primary: 用户或应用的主日历
+            shared: 由用户或应用创建的共享日历
+            google: 用户绑定的谷歌日历
+            resource: 会议室日历
+            exchange: 用户绑定的Exchange日历
+        summary_alias:
+          type: string
+          description: 日历备注名，修改或添加后仅对当前身份生效
+          example: xxx
+        is_deleted:
+          type: boolean
+          description: 对于当前身份，日历是否已经被标记为删除
+          default: false
+          example: 'false'
+        is_third_party:
+          type: boolean
+          description: 当前日历是否是第三方数据；三方日历及日程只支持读，不支持写入
+          default: false
+        role:
+          type: string
+          description: 当前身份对于该日历的访问权限
+          enum:
+          - unknown
+          - free_busy_reader
+          - reader
+          - writer
+          - owner
+          x-enum-descriptions:
+            unknown: 未知权限
+            free_busy_reader: 游客，只能看到忙碌/空闲信息
+            reader: 订阅者，查看所有日程详情
+            writer: 编辑者，创建及修改日程
+            owner: 管理员，管理日历及共享设置
+      required:
+      - calendar_id
+      description: 日历信息
+    Vchat:
+      type: object
+      properties:
+        vc_type:
+          type: string
+          description: 视频会议类型
+          enum:
+          - vc
+          - third_party
+          - no_meeting
+          - lark_live
+          - unknown
+          - third_party_meeting
+          x-enum-descriptions:
+            vc: 飞书视频会议
+            third_party: 第三方链接视频会议
+            no_meeting: 无视频会议
+            lark_live: Lark直播
+            unknown: 未知类型
+            third_party_meeting: 三方会议类型
+        icon_type:
+          type: string
+          description: 第三方视频会议icon类型
+          enum:
+          - vc
+          - live
+          - default
+          x-enum-descriptions:
+            vc: 飞书视频会议icon
+            live: 直播视频会议icon
+            default: 默认icon
+        description:
+          type: string
+          description: 第三方视频会议文案，可以为空，为空展示默认文案
+          example: 发起视频会议
+        meeting_url:
+          type: string
+          description: 视频会议URL
+          example: vc.feishu.cn/j/152568231
+        meeting_settings:
+          allOf:
+          - $ref: '#/components/schemas/MeetingSetting'
+          description: VC视频会议的会前设置
+        third_party_meeting_settings:
+          allOf:
+          - $ref: '#/components/schemas/ThirdPartyMeetingSetting'
+          description: 三方会议设置
+      description: 视频会议信息，仅当日程至少有一位attendee时生效
+    Item:
+      type: object
+      properties:
+        type:
+          type: string
+          description: |-
+            参与人类型，仅当新建参与人时可设置类型<br>
+            type为User时，值为open_id/user_id/union_id<br>
+            type为Chat时，值为open_chat_id<br>
+            type为Resource时，值为open_room_id<br>
+            type为ThirdParty时，值为third_party_email；不支持通过API新建该类型参与人
+          enum:
+          - user
+          - chat
+          - resource
+          - third_party
+          x-enum-descriptions:
+            user: 用户
+            chat: 群组
+            resource: 会议室
+            third_party: 邮箱
+        attendee_id:
+          type: string
+          description: 参与人ID
+          example: user_xxxxxx
+        rsvp_status:
+          type: string
+          description: 参与人RSVP状态
+          enum:
+          - needs_action
+          - accept
+          - tentative
+          - decline
+          - removed
+          x-enum-descriptions:
+            needs_action: 参与人尚未回复状态，或表示会议室预约中
+            accept: 参与人回复接受，或表示会议室预约成功
+            tentative: 参与人回复待定
+            decline: 参与人回复拒绝，或表示会议室预约失败
+            removed: 参与人或会议室已经从日程中被移除
+        is_optional:
+          type: boolean
+          description: 参与人是否为「可选参加」，无法编辑群参与人的此字段
+          default: false
+          example: 'false'
+        is_organizer:
+          type: boolean
+          description: 参与人是否为日程组织者
+          example: 'true'
+        is_external:
+          type: boolean
+          description: 参与人是否为外部参与人；外部参与人不支持编辑
+          example: 'false'
+        display_name:
+          type: string
+          description: 参与人名称
+          example: 张三
+        chat_members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item3'
+          description: 群中的群成员，当type为Chat时有效；群成员不支持编辑
+        user_id:
+          type: string
+          description: 参与人的用户id，依赖于user_id_type返回对应的取值，当is_external为true时，此字段只会返回open_id或者union_id
+        chat_id:
+          type: string
+          description: chat类型参与人的群组chat_id
+          example: oc_a0553eda9014c201e6969b478895c230
+          x-lark-id-types:
+            chat_id: chat
+        room_id:
+          type: string
+          description: resource类型参与人的会议室room_id
+          example: omm_83d09ad4f6896e02029a6a075f71c9d1
+        third_party_email:
+          type: string
+          description: third_party类型参与人的邮箱
+          example: test@example.com
+        operate_id:
+          type: string
+          description: bot身份操作时，为预定的会议室指定实际预定人
+          example: 4d7a3c6g
+        resource_customization:
+          type: array
+          items:
+            type: object
+            properties:
+              index_key:
+                type: string
+                description: the unique key of customization option
+                example: '16281481596100'
+              input_content:
+                type: string
+                description: should be filled when the type of customization is input
+                example: xxx
+              options:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    option_key:
+                      type: string
+                      description: the option unique key
+                      example: '16281481596185'
+                    others_content:
+                      type: string
+                      description: should be filled if the option is others option
+                      example: xxx
+                description: 选项
+                example: 无
+            required:
+            - index_key
+          description: 会议室的个性化配置
+        approval_reason:
+          type: string
+          description: 会议室审批原因
+          example: 申请审批原因
+    EventCheckIn:
+      type: object
+      properties:
+        enable_check_in:
+          type: boolean
+          description: 是否启用日程签到
+        check_in_start_time:
+          type: object
+          properties:
+            time_type:
+              type: string
+              description: (分钟)偏移量相对于的日程时间节点类型
+              enum:
+              - before_event_start
+              - after_event_start
+              - after_event_end
+              x-enum-descriptions:
+                before_event_start: 日程开始前
+                after_event_start: 日程开始后
+                after_event_end: 日程结束后
+            duration:
+              type: integer
+              description: 相对于日程开始或者结束的偏移量(分钟)
+              example: '15'
+          required:
+          - time_type
+          - duration
+          description: 日程签到开始时间
+        check_in_end_time:
+          type: object
+          properties:
+            time_type:
+              type: string
+              description: (分钟)偏移量相对于的日程时间节点类型
+              enum:
+              - before_event_start
+              - after_event_start
+              - after_event_end
+              x-enum-descriptions:
+                before_event_start: 日程开始前
+                after_event_start: 日程开始后
+                after_event_end: 日程结束后
+            duration:
+              type: integer
+              description: 相对于日程开始或者结束的偏移量(分钟)
+              example: '15'
+          required:
+          - time_type
+          - duration
+          description: 日程签到结束时间
+        need_notify_attendees:
+          type: boolean
+          description: 签到开始时是否自动发送签到通知给参与者
+          default: false
+      required:
+      - enable_check_in
+      description: 日程签到设置，为空则不进行日程签到设置
+    Schema2:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data2'
+    Data2:
+      type: object
+      properties:
+        calendar:
+          allOf:
+          - $ref: '#/components/schemas/Calendar'
+          description: 日历信息
+    Vchat2:
+      type: object
+      properties:
+        vc_type:
+          type: string
+          description: 视频会议类型
+          enum:
+          - vc
+          - third_party
+          - no_meeting
+          - lark_live
+          - unknown
+          - third_party_meeting
+          x-enum-descriptions:
+            vc: 飞书视频会议
+            third_party: 第三方链接视频会议
+            no_meeting: 无视频会议
+            lark_live: Lark直播
+            unknown: 未知类型
+            third_party_meeting: 三方会议类型
+        icon_type:
+          type: string
+          description: 第三方视频会议icon类型
+          enum:
+          - vc
+          - live
+          - default
+          x-enum-descriptions:
+            vc: 飞书视频会议icon
+            live: 直播视频会议icon
+            default: 默认icon
+        description:
+          type: string
+          description: 第三方视频会议文案，可以为空，为空展示默认文案
+          example: 发起视频会议
+        meeting_url:
+          type: string
+          description: 视频会议URL
+          example: vc.feishu.cn/j/152568231
+        meeting_settings:
+          allOf:
+          - $ref: '#/components/schemas/MeetingSetting2'
+          description: VC视频会议的会前设置
+        third_party_meeting_settings:
+          allOf:
+          - $ref: '#/components/schemas/ThirdPartyMeetingSetting'
+          description: 三方会议设置
+      description: 视频会议信息，仅当日程至少有一位attendee时生效
+    Schema3:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data3'
+    Data3:
+      type: object
+      properties:
+        calendars:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item2'
+          description: 主日历列表
+    ThirdPartyMeetingSetting:
+      type: object
+      properties:
+        meeting_type:
+          type: string
+          description: 三方会议类型
+          example: julinker
+        meeting_id:
+          type: string
+          description: 会议ID
+          example: '123'
+        meeting_no:
+          type: string
+          description: 会议号
+          example: '123'
+        password:
+          type: string
+          description: 密码
+          example: '123'
+        meeting_descriptions:
+          type: array
+          items:
+            type: object
+            properties:
+              lang:
+                type: string
+                description: 语言
+                example: zh-cn
+              description:
+                type: string
+                description: 会议描述
+                example: www.example.com
+          description: 多语言会议描述
+      description: 三方会议设置
+    Item2:
+      type: object
+      properties:
+        calendar:
+          allOf:
+          - $ref: '#/components/schemas/Calendar'
+          description: 日历实体信息
+        user_id:
+          type: string
+          description: 日历的创建者user ID
+    Item3:
+      type: object
+      properties:
+        rsvp_status:
+          type: string
+          description: 参与人RSVP状态
+          enum:
+          - needs_action
+          - accept
+          - tentative
+          - decline
+          - removed
+          x-enum-descriptions:
+            needs_action: 参与人尚未回复状态，或表示会议室预约中
+            accept: 参与人回复接受，或表示会议室预约成功
+            tentative: 参与人回复待定
+            decline: 参与人回复拒绝，或表示会议室预约失败
+            removed: 参与人或会议室已经从日程中被移除
+        is_optional:
+          type: boolean
+          description: 参与人是否为「可选参加」
+          default: false
+          example: 'false'
+        display_name:
+          type: string
+          description: 参与人名称
+          example: lijian
+        is_organizer:
+          type: boolean
+          description: 参与人是否为日程组织者
+          example: 'false'
+        is_external:
+          type: boolean
+          description: 参与人是否为外部参与人
+          example: 'false'
+    MeetingSetting:
+      type: object
+      properties:
+        owner_id:
+          type: string
+          description: 设置会议 owner
+          example: ou_7d8a6e6df7621556ce0d21922b676706ccs
+          format: int64
+        join_meeting_permission:
+          type: string
+          description: 设置入会范围
+          enum:
+          - anyone_can_join
+          - only_organization_employees
+          - only_event_attendees
+          x-enum-descriptions:
+            anyone_can_join: 所有人可以加入会议
+            only_organization_employees: 仅企业内用户可以加入会议
+            only_event_attendees: 仅日程参与者可以加入会议
+        password:
+          type: string
+          description: 设置会议密码，仅支持 4-9 位数字
+          example: '971024'
+        assign_hosts:
+          type: array
+          items:
+            type: string
+          description: 指定主持人
+        auto_record:
+          type: boolean
+          description: 设置自动录制
+          example: 'false'
+        open_lobby:
+          type: boolean
+          description: 开启等候室
+          example: 'true'
+        allow_attendees_start:
+          type: boolean
+          description: 允许日程参与者发起会议
+          example: 'true'
+      description: VC视频会议的会前设置
+    Data4:
+      type: object
+      properties:
+        acl_id:
+          type: string
+          description: acl资源ID
+          example: user_6843287928157667331
+        role:
+          type: string
+          description: 对日历的访问权限
+          enum:
+          - unknown
+          - free_busy_reader
+          - reader
+          - writer
+          - owner
+          x-enum-descriptions:
+            unknown: 未知权限
+            free_busy_reader: 游客，只能看到忙碌/空闲信息
+            reader: 订阅者，查看所有日程详情
+            writer: 编辑者，创建及修改日程
+            owner: 管理员，管理日历及共享设置
+        scope:
+          type: object
+          properties:
+            type:
+              type: string
+              description: 权限类型，当type为User时，值为open_id/user_id/union_id
+              enum:
+              - user
+              x-enum-descriptions:
+                user: 用户
+            user_id:
+              type: string
+              description: 用户ID
+          required:
+          - type
+          description: 权限范围
+      required:
+      - acl_id
+      - role
+      - scope
+    Vchat3:
+      type: object
+      properties:
+        vc_type:
+          type: string
+          description: 视频会议类型
+          enum:
+          - vc
+          - third_party
+          - no_meeting
+          - lark_live
+          - unknown
+          - third_party_meeting
+          x-enum-descriptions:
+            vc: 飞书视频会议
+            third_party: 第三方链接视频会议
+            no_meeting: 无视频会议
+            lark_live: Lark直播
+            unknown: 未知类型
+            third_party_meeting: 三方会议类型
+        icon_type:
+          type: string
+          description: 第三方视频会议icon类型
+          enum:
+          - vc
+          - live
+          - default
+          x-enum-descriptions:
+            vc: 飞书视频会议icon
+            live: 直播视频会议icon
+            default: 默认icon
+        description:
+          type: string
+          description: 第三方视频会议文案，可以为空，为空展示默认文案
+          example: 发起视频会议
+        meeting_url:
+          type: string
+          description: 视频会议URL
+          example: vc.feishu.cn/j/152568231
+      description: 视频会议信息，仅当日程至少有一位attendee时生效
+    MeetingSetting2:
+      type: object
+      properties:
+        owner_id:
+          type: string
+          description: 设置会议 owner
+          example: ou_7d8a6e6df7621556ce0d21922b676706ccs
+          format: int64
+        join_meeting_permission:
+          type: string
+          description: 设置入会范围
+          enum:
+          - anyone_can_join
+          - only_organization_employees
+          - only_event_attendees
+          x-enum-descriptions:
+            anyone_can_join: 所有人可以加入会议
+            only_organization_employees: 仅企业内用户可以加入会议
+            only_event_attendees: 仅日程参与者可以加入会议
+        assign_hosts:
+          type: array
+          items:
+            type: string
+          description: 指定主持人
+        auto_record:
+          type: boolean
+          description: 设置自动录制
+          example: 'false'
+        open_lobby:
+          type: boolean
+          description: 开启等候室
+          example: 'true'
+        allow_attendees_start:
+          type: boolean
+          description: 允许日程参与者发起会议
+          example: 'true'
+      description: VC视频会议的会前设置
+    Schema4:
+      type: object
+      properties:
+        summary:
+          type: string
+          description: 日历标题
+          example: summary
+        description:
+          type: string
+          description: 日历描述
+          example: description
+        permissions:
+          type: string
+          description: 权限
+          enum:
+          - private
+          - show_only_free_busy
+          - public
+          x-enum-descriptions:
+            private: 私密
+            show_only_free_busy: 仅展示忙闲信息
+            public: 他人可查看日程详情
+        color:
+          type: integer
+          description: 日历颜色，颜色RGB值的int32表示。客户端展示时会映射到色板上最接近的一种颜色。仅对当前身份生效
+          example: '11034625'
+        summary_alias:
+          type: string
+          description: 日历备注名，修改或添加后仅对当前身份生效
+          example: xxx

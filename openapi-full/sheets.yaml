@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: sheets
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -1797,40 +1797,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      float_image:
-                        type: object
-                        properties:
-                          float_image_id:
-                            type: string
-                            description: 浮动图片 id
-                          float_image_token:
-                            type: string
-                            description: 浮动图片 token，需要先上传图片到表格获得此 token 之后再进行浮动图片的操作
-                          range:
-                            type: string
-                            description: 浮动图片的左上角单元格定位，只支持一个单元格
-                          width:
-                            type: number
-                            description: 浮动图片的宽度，大于等于 20px
-                          height:
-                            type: number
-                            description: 浮动图片的高度，大于等于 20px
-                          offset_x:
-                            type: number
-                            description: 浮动图片左上角所在位置相对于所在单元格左上角的横向偏移，大于等于0且小于所在单元格的宽度
-                          offset_y:
-                            type: number
-                            description: 浮动图片左上角所在位置相对于所在单元格左上角的纵向偏移，大于等于0且小于所在单元格的高度
-                        description: 浮动图片
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       - user
@@ -2022,40 +1989,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      float_image:
-                        type: object
-                        properties:
-                          float_image_id:
-                            type: string
-                            description: 浮动图片 id
-                          float_image_token:
-                            type: string
-                            description: 浮动图片 token，需要先上传图片到表格获得此 token 之后再进行浮动图片的操作
-                          range:
-                            type: string
-                            description: 浮动图片的左上角单元格定位，只支持一个单元格
-                          width:
-                            type: number
-                            description: 浮动图片的宽度，大于等于 20px
-                          height:
-                            type: number
-                            description: 浮动图片的高度，大于等于 20px
-                          offset_x:
-                            type: number
-                            description: 浮动图片左上角所在位置相对于所在单元格左上角的横向偏移，大于等于0且小于所在单元格的宽度
-                          offset_y:
-                            type: number
-                            description: 浮动图片左上角所在位置相对于所在单元格左上角的纵向偏移，大于等于0且小于所在单元格的高度
-                        description: 浮动图片
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       - user
@@ -2168,40 +2102,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      float_image:
-                        type: object
-                        properties:
-                          float_image_id:
-                            type: string
-                            description: 浮动图片 id
-                          float_image_token:
-                            type: string
-                            description: 浮动图片 token，需要先上传图片到表格获得此 token 之后再进行浮动图片的操作
-                          range:
-                            type: string
-                            description: 浮动图片的左上角单元格定位，只支持一个单元格
-                          width:
-                            type: number
-                            description: 浮动图片的宽度，大于等于 20px
-                          height:
-                            type: number
-                            description: 浮动图片的高度，大于等于 20px
-                          offset_x:
-                            type: number
-                            description: 浮动图片左上角所在位置相对于所在单元格左上角的横向偏移，大于等于0且小于所在单元格的宽度
-                          offset_y:
-                            type: number
-                            description: 浮动图片左上角所在位置相对于所在单元格左上角的纵向偏移，大于等于0且小于所在单元格的高度
-                        description: 浮动图片
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       - user
@@ -2558,68 +2459,8 @@ paths:
                     type: object
                     properties:
                       sheet:
-                        type: object
-                        properties:
-                          sheet_id:
-                            type: string
-                            description: 工作表id
-                            example: sxj5ws
-                          title:
-                            type: string
-                            description: 工作表标题
-                            example: title
-                          index:
-                            type: integer
-                            description: 工作表索引位置
-                            example: '0'
-                          hidden:
-                            type: boolean
-                            description: 工作表是否被隐藏
-                            example: 'false'
-                          grid_properties:
-                            type: object
-                            properties:
-                              frozen_row_count:
-                                type: integer
-                                description: 冻结的行数量
-                                example: '0'
-                              frozen_column_count:
-                                type: integer
-                                description: 冻结的列数量
-                                example: '0'
-                              row_count:
-                                type: integer
-                                description: 工作表的行数
-                                example: '200'
-                              column_count:
-                                type: integer
-                                description: 工作表的列数量
-                                example: '20'
-                            description: 单元格属性
-                          resource_type:
-                            type: string
-                            description: 工作表类型
-                            example: sheet
-                          merges:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                start_row_index:
-                                  type: integer
-                                  description: 起始行
-                                  example: '0'
-                                end_row_index:
-                                  type: integer
-                                  description: 结束行
-                                start_column_index:
-                                  type: integer
-                                  description: 起始列
-                                  example: '0'
-                                end_column_index:
-                                  type: integer
-                                  description: 结束列
-                                  example: '0'
+                        allOf:
+                        - $ref: '#/components/schemas/Sheet'
                         description: 工作表
       x-lark-access-tokens:
       - tenant
@@ -2814,68 +2655,7 @@ paths:
                       sheets:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            sheet_id:
-                              type: string
-                              description: 工作表id
-                              example: sxj5ws
-                            title:
-                              type: string
-                              description: 工作表标题
-                              example: title
-                            index:
-                              type: integer
-                              description: 工作表索引位置
-                              example: '0'
-                            hidden:
-                              type: boolean
-                              description: 工作表是否被隐藏
-                              example: 'false'
-                            grid_properties:
-                              type: object
-                              properties:
-                                frozen_row_count:
-                                  type: integer
-                                  description: 冻结的行数量
-                                  example: '0'
-                                frozen_column_count:
-                                  type: integer
-                                  description: 冻结的列数量
-                                  example: '0'
-                                row_count:
-                                  type: integer
-                                  description: 工作表的行数
-                                  example: '200'
-                                column_count:
-                                  type: integer
-                                  description: 工作表的列数量
-                                  example: '20'
-                              description: 单元格属性
-                            resource_type:
-                              type: string
-                              description: 工作表类型
-                              example: sheet
-                            merges:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  start_row_index:
-                                    type: integer
-                                    description: 起始行
-                                    example: '0'
-                                  end_row_index:
-                                    type: integer
-                                    description: 结束行
-                                  start_column_index:
-                                    type: integer
-                                    description: 起始列
-                                    example: '0'
-                                  end_column_index:
-                                    type: integer
-                                    description: 结束列
-                                    example: '0'
+                          $ref: '#/components/schemas/Sheet'
                         description: 工作表信息
       x-lark-access-tokens:
       - tenant
@@ -3328,3 +3108,104 @@ paths:
         msg: Server Error
       x-lark-rate-limit:
         tier: 2
+components:
+  schemas:
+    Sheet:
+      type: object
+      properties:
+        sheet_id:
+          type: string
+          description: 工作表id
+          example: sxj5ws
+        title:
+          type: string
+          description: 工作表标题
+          example: title
+        index:
+          type: integer
+          description: 工作表索引位置
+          example: '0'
+        hidden:
+          type: boolean
+          description: 工作表是否被隐藏
+          example: 'false'
+        grid_properties:
+          type: object
+          properties:
+            frozen_row_count:
+              type: integer
+              description: 冻结的行数量
+              example: '0'
+            frozen_column_count:
+              type: integer
+              description: 冻结的列数量
+              example: '0'
+            row_count:
+              type: integer
+              description: 工作表的行数
+              example: '200'
+            column_count:
+              type: integer
+              description: 工作表的列数量
+              example: '20'
+          description: 单元格属性
+        resource_type:
+          type: string
+          description: 工作表类型
+          example: sheet
+        merges:
+          type: array
+          items:
+            type: object
+            properties:
+              start_row_index:
+                type: integer
+                description: 起始行
+                example: '0'
+              end_row_index:
+                type: integer
+                description: 结束行
+              start_column_index:
+                type: integer
+                description: 起始列
+                example: '0'
+              end_column_index:
+                type: integer
+                description: 结束列
+                example: '0'
+      description: 工作表
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            float_image:
+              type: object
+              properties:
+                float_image_id:
+                  type: string
+                  description: 浮动图片 id
+                float_image_token:
+                  type: string
+                  description: 浮动图片 token，需要先上传图片到表格获得此 token 之后再进行浮动图片的操作
+                range:
+                  type: string
+                  description: 浮动图片的左上角单元格定位，只支持一个单元格
+                width:
+                  type: number
+                  description: 浮动图片的宽度，大于等于 20px
+                height:
+                  type: number
+                  description: 浮动图片的高度，大于等于 20px
+                offset_x:
+                  type: number
+                  description: 浮动图片左上角所在位置相对于所在单元格左上角的横向偏移，大于等于0且小于所在单元格的宽度
+                offset_y:
+                  type: number
+                  description: 浮动图片左上角所在位置相对于所在单元格左上角的纵向偏移，大于等于0且小于所在单元格的高度
+              description: 浮动图片

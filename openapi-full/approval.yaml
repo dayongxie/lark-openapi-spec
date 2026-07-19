@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: approval
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -163,76 +163,12 @@ paths:
                       approver:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            type:
-                              type: string
-                              description: 审批节点上的审批人，1.当 type 为 Supervisor、SupervisorTopDown、DepartmentManager 、DepartmentManagerTopDown
-                                这 4 种时，需要在 level 中填写对应的级数，例如：由下往上三级主管审批，level = 3；2.当 type 为 Personal 时，需要根据x_user_id填写user_id，用于指定用户；3.当
-                                approver 为 Free 发起人自选时，不需要指定 user_id ；ccer不支持 Free 发起人自选
-                              enum:
-                              - Supervisor
-                              - SupervisorTopDown
-                              - DepartmentManager
-                              - DepartmentManagerTopDown
-                              - Personal
-                              - Free
-                              x-enum-descriptions:
-                                Supervisor: 主管审批（由下往上）
-                                SupervisorTopDown: 主管审批（从上往下）
-                                DepartmentManager: 部门负责人审批（由下往上）
-                                DepartmentManagerTopDown: 部门负责人审批（从上往下）
-                                Personal: 指定成员
-                                Free: 发起人自选
-                              example: Supervisor
-                            user_id:
-                              type: string
-                              description: 用户id，根据user_id_type填写
-                              example: f7cb567e
-                            level:
-                              type: string
-                              description: 审批级数，当 type 为 Supervisor、SupervisorTopDown、DepartmentManager 、DepartmentManagerTopDown
-                                这 4 种时，需要在 level 中填写对应的级数，例如：由下往上三级主管审批，level = 3
-                              example: '3'
-                          required:
-                          - type
+                          $ref: '#/components/schemas/Item5'
                         description: 审批人列表
                       ccer:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            type:
-                              type: string
-                              description: 审批节点上的审批人，1.当 type 为 Supervisor、SupervisorTopDown、DepartmentManager 、DepartmentManagerTopDown
-                                这 4 种时，需要在 level 中填写对应的级数，例如：由下往上三级主管审批，level = 3；2.当 type 为 Personal 时，需要根据x_user_id填写user_id，用于指定用户；3.当
-                                approver 为 Free 发起人自选时，不需要指定 user_id ；ccer不支持 Free 发起人自选
-                              enum:
-                              - Supervisor
-                              - SupervisorTopDown
-                              - DepartmentManager
-                              - DepartmentManagerTopDown
-                              - Personal
-                              - Free
-                              x-enum-descriptions:
-                                Supervisor: 主管审批（由下往上）
-                                SupervisorTopDown: 主管审批（从上往下）
-                                DepartmentManager: 部门负责人审批（由下往上）
-                                DepartmentManagerTopDown: 部门负责人审批（从上往下）
-                                Personal: 指定成员
-                                Free: 发起人自选
-                              example: Supervisor
-                            user_id:
-                              type: string
-                              description: 用户id，根据user_id_type填写
-                              example: f7cb567e
-                            level:
-                              type: string
-                              description: 审批级数，当 type 为 Supervisor、SupervisorTopDown、DepartmentManager 、DepartmentManagerTopDown
-                                这 4 种时，需要在 level 中填写对应的级数，例如：由下往上三级主管审批，level = 3
-                              example: '3'
-                          required:
-                          - type
+                          $ref: '#/components/schemas/Item5'
                         description: 抄送人列表
                       privilege_field:
                         type: object
@@ -388,68 +324,7 @@ paths:
                 i18n_resources:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      locale:
-                        type: string
-                        description: 语种
-                        enum:
-                        - zh-CN
-                        - en-US
-                        - ja-JP
-                        - zh-HK
-                        - zh-TW
-                        - de-DE
-                        - es-ES
-                        - fr-FR
-                        - id-ID
-                        - it-IT
-                        - ko-KR
-                        - pt-BR
-                        - th-TH
-                        - vi-VN
-                        - ms-MY
-                        - ru-RU
-                        x-enum-descriptions:
-                          zh-CN: 中文
-                          en-US: 英文
-                          ja-JP: 日文
-                          zh-HK: 繁体中文（中国香港）
-                          zh-TW: 繁体中文（中国台湾）
-                          de-DE: 德语
-                          es-ES: 西班牙语
-                          fr-FR: 法语
-                          id-ID: 印度尼西亚语
-                          it-IT: 意大利语
-                          ko-KR: 韩语
-                          pt-BR: 葡萄牙语
-                          th-TH: 泰语
-                          vi-VN: 越南语
-                          ms-MY: 马来语
-                          ru-RU: 俄语
-                        example: zh-CN
-                      texts:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            key:
-                              type: string
-                            value:
-                              type: string
-                          required:
-                          - key
-                          - value
-                        description: 文案 key, value, i18n key 以 @i18n@ 开头； 该字段主要用于做国际化，语序用户同时传多个语言的文案，审批中心会根据用户当前的语音环境使用对应的文案，如果没有传用户当前的语音环境文案，则会使用默认的语言文案。
-                        example: '{ "@i18n@1": "权限申请", "@i18n@2": "OA审批", "@i18n@3": "Permission" }'
-                      is_default:
-                        type: boolean
-                        description: 是否默认语言，默认语言需要包含所有key，非默认语言如果key不存在会使用默认语言代替
-                        example: 'true'
-                    required:
-                    - locale
-                    - texts
-                    - is_default
+                    $ref: '#/components/schemas/Item'
                   description: 国际化文案
                 process_manager_ids:
                   type: array
@@ -1039,42 +914,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 区域的唯一标识
-                              example: '2038349'
-                            name:
-                              type: string
-                              description: 名称
-                              example: Beijing
-                            level:
-                              type: string
-                              description: 层级
-                              example: Province
-                            has_sub_district:
-                              type: boolean
-                              description: 是否有子区域
-                              example: 'false'
-                            parent_districts:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: string
-                                    description: 区域的唯一标识
-                                    example: '1814991'
-                                  name:
-                                    type: string
-                                    description: 名称
-                                    example: China
-                                  level:
-                                    type: string
-                                    description: 层级
-                                    example: Country
-                              description: 父区域列表，顺序由叶子节点到根节点，不包含叶子节点本身，仅遍历方式为leaf_level时返回
+                          $ref: '#/components/schemas/Item4'
                         description: 区域列表
       x-lark-access-tokens:
       - user
@@ -1152,42 +992,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 区域的唯一标识
-                              example: '2038349'
-                            name:
-                              type: string
-                              description: 名称
-                              example: Beijing
-                            level:
-                              type: string
-                              description: 层级
-                              example: Province
-                            has_sub_district:
-                              type: boolean
-                              description: 是否有子区域
-                              example: 'false'
-                            parent_districts:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: string
-                                    description: 区域的唯一标识
-                                    example: '1814991'
-                                  name:
-                                    type: string
-                                    description: 名称
-                                    example: China
-                                  level:
-                                    type: string
-                                    description: 层级
-                                    example: Country
-                              description: 父区域列表，顺序由叶子节点到根节点，不包含叶子节点本身，仅遍历方式为leaf_level时返回
+                          $ref: '#/components/schemas/Item4'
                         description: 区域列表
       x-lark-access-tokens:
       - user
@@ -1279,64 +1084,8 @@ paths:
                   description: 审批定义的说明，值的格式是 i18n key，文案放在 i18n_resource； 审批发起页 审批定义的说明内容来自该字段
                   example: '@i18n@2'
                 external:
-                  type: object
-                  properties:
-                    biz_name:
-                      type: string
-                      description: 列表中用于提示审批来自哪里，i18n key， 注意不需要“来自”前缀，审批中心会拼上前缀
-                      example: '@i18n@3'
-                    biz_type:
-                      type: string
-                      description: 审批定义业务类别
-                      example: permission
-                    create_link_mobile:
-                      type: string
-                      description: 移动端发起链接，如果设置了该链接，则会在移动端审批发起页展示该审批，用户点击后会跳转到该链接进行发起； 如果不填，则在mobile端不显示该审批
-                      example: https://applink.feishu.cn/client/mini_program/open?appId=cli_9c90fc38e07a9101&path=pages/approval-form/index?id=9999
-                    create_link_pc:
-                      type: string
-                      description: PC端发起链接，如果设置了该链接，则会在PC端审批发起页展示该审批，用户点击后会跳转到该链接进行发起； 如果不填，则在PC端不显示该审批；
-                      example: https://applink.feishu.cn/client/mini_program/open?mode=appCenter&appId=cli_9c90fc38e07a9101&path=pc/pages/create-form/index?id=9999
-                    support_pc:
-                      type: boolean
-                      description: 审批实例、审批任务、审批抄送是否要在PC端展示，如果为 true，则PC端列表会展示该定义下的实例信息，否则，不展示
-                      example: 'true'
-                    support_mobile:
-                      type: boolean
-                      description: 审批实例、审批任务、审批抄送是否要在移动端展示，如果为 true，则移动端列表会展示该定义下的实例信息，否则，不展示； support_pc和support_mobile不可都为false，否则不展示
-                      example: 'true'
-                    support_batch_read:
-                      type: boolean
-                      description: 是否支持批量已读
-                      example: 'true'
-                    enable_mark_readed:
-                      type: boolean
-                      description: 是否支持标注可读
-                      example: 'true'
-                    enable_quick_operate:
-                      type: boolean
-                      description: 是否支持快速操作
-                      example: 'true'
-                    action_callback_url:
-                      type: string
-                      description: 三方系统的操作回调 url，【待审批】列表的任务审批人点同意或拒绝操作后，审批中心调用该地址通知三方系统，回调地址相关信息可参见：https://open.feishu.cn/document/ukTMukTMukTM/ukjNyYjL5YjM24SO2IjN/quick-approval-callback
-                      example: http://www.feishu.cn/approval/openapi/instanceOperate
-                    action_callback_token:
-                      type: string
-                      description: 回调时带的 token， 用于业务系统验证请求来自审批,具体参考 https://open.feishu.cn/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM
-                      example: sdjkljkx9lsadf110
-                    action_callback_key:
-                      type: string
-                      description: 请求参数加密密钥，如果配置了该参数，则会对请求参数进行加密，业务需要对请求进行解密，加解密算法参考 https://open.feishu.cn/document/ukTMukTMukTM/uADM4QjLwADO04CMwgDN
-                      example: gfdqedvsadfgfsd
-                    allow_batch_operate:
-                      type: boolean
-                      description: 是否支持批量审批
-                      example: 'true'
-                    exclude_efficiency_statistics:
-                      type: boolean
-                      description: 审批流程数据是否不纳入效率统计
-                      example: 'true'
+                  allOf:
+                  - $ref: '#/components/schemas/External'
                   description: 三方审批相关
                 viewers:
                   type: array
@@ -1369,68 +1118,7 @@ paths:
                 i18n_resources:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      locale:
-                        type: string
-                        description: 语种
-                        enum:
-                        - zh-CN
-                        - en-US
-                        - ja-JP
-                        - zh-HK
-                        - zh-TW
-                        - de-DE
-                        - es-ES
-                        - fr-FR
-                        - id-ID
-                        - it-IT
-                        - ko-KR
-                        - pt-BR
-                        - th-TH
-                        - vi-VN
-                        - ms-MY
-                        - ru-RU
-                        x-enum-descriptions:
-                          zh-CN: 中文
-                          en-US: 英文
-                          ja-JP: 日文
-                          zh-HK: 繁体中文（中国香港）
-                          zh-TW: 繁体中文（中国台湾）
-                          de-DE: 德语
-                          es-ES: 西班牙语
-                          fr-FR: 法语
-                          id-ID: 印度尼西亚语
-                          it-IT: 意大利语
-                          ko-KR: 韩语
-                          pt-BR: 葡萄牙语
-                          th-TH: 泰语
-                          vi-VN: 越南语
-                          ms-MY: 马来语
-                          ru-RU: 俄语
-                        example: zh-CN
-                      texts:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            key:
-                              type: string
-                            value:
-                              type: string
-                          required:
-                          - key
-                          - value
-                        description: 文案 key, value, i18n key 以 @i18n@ 开头； 该字段主要用于做国际化，语序用户同时传多个语言的文案，审批中心会根据用户当前的语音环境使用对应的文案，如果没有传用户当前的语音环境文案，则会使用默认的语言文案。
-                        example: '{ "@i18n@1": "权限申请", "@i18n@2": "OA审批", "@i18n@3": "Permission" }'
-                      is_default:
-                        type: boolean
-                        description: 是否默认语言，默认语言需要包含所有key，非默认语言如果key不存在会使用默认语言代替
-                        example: 'true'
-                    required:
-                    - locale
-                    - texts
-                    - is_default
+                    $ref: '#/components/schemas/Item'
                   description: 国际化文案
                 managers:
                   type: array
@@ -1571,64 +1259,8 @@ paths:
                         description: 审批定义的说明
                         example: '@i18n@2'
                       external:
-                        type: object
-                        properties:
-                          biz_name:
-                            type: string
-                            description: 列表中用于提示审批来自哪里，i18n key， 注意不需要“来自”前缀，审批中心会拼上前缀
-                            example: '@i18n@3'
-                          biz_type:
-                            type: string
-                            description: 审批定义业务类别
-                            example: permission
-                          create_link_mobile:
-                            type: string
-                            description: 移动端发起链接，如果设置了该链接，则会在移动端审批发起页展示该审批，用户点击后会跳转到该链接进行发起； 如果不填，则在mobile端不显示该审批
-                            example: https://applink.feishu.cn/client/mini_program/open?appId=cli_9c90fc38e07a9101&path=pages/approval-form/index?id=9999
-                          create_link_pc:
-                            type: string
-                            description: PC端发起链接，如果设置了该链接，则会在PC端审批发起页展示该审批，用户点击后会跳转到该链接进行发起； 如果不填，则在PC端不显示该审批；
-                            example: https://applink.feishu.cn/client/mini_program/open?mode=appCenter&appId=cli_9c90fc38e07a9101&path=pc/pages/create-form/index?id=9999
-                          support_pc:
-                            type: boolean
-                            description: 审批实例、审批任务、审批抄送是否要在PC端展示，如果为 true，则PC端列表会展示该定义下的实例信息，否则，不展示
-                            example: 'true'
-                          support_mobile:
-                            type: boolean
-                            description: 审批实例、审批任务、审批抄送是否要在移动端展示，如果为 true，则移动端列表会展示该定义下的实例信息，否则，不展示； support_pc和support_mobile不可都为false，否则不展示
-                            example: 'true'
-                          support_batch_read:
-                            type: boolean
-                            description: 是否支持批量已读
-                            example: 'true'
-                          enable_mark_readed:
-                            type: boolean
-                            description: 是否支持标注可读
-                            example: 'true'
-                          enable_quick_operate:
-                            type: boolean
-                            description: 是否支持快速操作
-                            example: 'true'
-                          action_callback_url:
-                            type: string
-                            description: 三方系统的操作回调 url，【待审批】列表的任务审批人点同意或拒绝操作后，审批中心调用该地址通知三方系统，回调地址相关信息可参见：https://open.feishu.cn/document/ukTMukTMukTM/ukjNyYjL5YjM24SO2IjN/quick-approval-callback
-                            example: http://www.feishu.cn/approval/openapi/instanceOperate
-                          action_callback_token:
-                            type: string
-                            description: 回调时带的 token， 用于业务系统验证请求来自审批,具体参考 https://open.feishu.cn/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM
-                            example: sdjkljkx9lsadf110
-                          action_callback_key:
-                            type: string
-                            description: 请求参数加密密钥，如果配置了该参数，则会对请求参数进行加密，业务需要对请求进行解密，加解密算法参考 https://open.feishu.cn/document/ukTMukTMukTM/uADM4QjLwADO04CMwgDN
-                            example: gfdqedvsadfgfsd
-                          allow_batch_operate:
-                            type: boolean
-                            description: 是否支持批量审批
-                            example: 'true'
-                          exclude_efficiency_statistics:
-                            type: boolean
-                            description: 审批流程数据是否不纳入效率统计
-                            example: 'true'
+                        allOf:
+                        - $ref: '#/components/schemas/External'
                         description: 三方审批定义相关
                       viewers:
                         type: array
@@ -1661,68 +1293,7 @@ paths:
                       i18n_resources:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            locale:
-                              type: string
-                              description: 语种
-                              enum:
-                              - zh-CN
-                              - en-US
-                              - ja-JP
-                              - zh-HK
-                              - zh-TW
-                              - de-DE
-                              - es-ES
-                              - fr-FR
-                              - id-ID
-                              - it-IT
-                              - ko-KR
-                              - pt-BR
-                              - th-TH
-                              - vi-VN
-                              - ms-MY
-                              - ru-RU
-                              x-enum-descriptions:
-                                zh-CN: 中文
-                                en-US: 英文
-                                ja-JP: 日文
-                                zh-HK: 繁体中文（中国香港）
-                                zh-TW: 繁体中文（中国台湾）
-                                de-DE: 德语
-                                es-ES: 西班牙语
-                                fr-FR: 法语
-                                id-ID: 印度尼西亚语
-                                it-IT: 意大利语
-                                ko-KR: 韩语
-                                pt-BR: 葡萄牙语
-                                th-TH: 泰语
-                                vi-VN: 越南语
-                                ms-MY: 马来语
-                                ru-RU: 俄语
-                              example: zh-CN
-                            texts:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  key:
-                                    type: string
-                                  value:
-                                    type: string
-                                required:
-                                - key
-                                - value
-                              description: 文案 key, value, i18n key 以 @i18n@ 开头； 该字段主要用于做国际化，语序用户同时传多个语言的文案，审批中心会根据用户当前的语音环境使用对应的文案，如果没有传用户当前的语音环境文案，则会使用默认的语言文案。
-                              example: '{ "@i18n@1": "权限申请", "@i18n@2": "OA审批", "@i18n@3": "Permission" }'
-                            is_default:
-                              type: boolean
-                              description: 是否默认语言，默认语言需要包含所有key，非默认语言如果key不存在会使用默认语言代替
-                              example: 'true'
-                          required:
-                          - locale
-                          - texts
-                          - is_default
+                          $ref: '#/components/schemas/Item'
                         description: 国际化文案
                       managers:
                         type: array
@@ -2014,295 +1585,17 @@ paths:
                 task_list:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      task_id:
-                        type: string
-                        description: 审批实例内的唯一标识，用于更新审批任务时定位数据
-                        example: '112534'
-                      user_id:
-                        type: string
-                        description: 审批人 user_id，该任务会出现在审批人的【待审批】或【已审批】列表中
-                        example: a987sf9s
-                      open_id:
-                        type: string
-                        description: 审批人 open id，和 user id 二选一
-                        example: ou_be73cbc0ee35eb6ca54e9e7cc14998c1
-                      title:
-                        type: string
-                        description: 审批任务名称
-                        example: i18n1
-                      links:
-                        type: object
-                        properties:
-                          pc_link:
-                            type: string
-                            description: pc 端的跳转链接，当用户使用飞书 pc 端时，使用该字段进行跳转
-                            example: https://applink.feishu.cn/client/mini_program/open?mode=appCenter&appId=cli_9c90fc38e07a9101&path=pc/pages/detail?id=1234
-                          mobile_link:
-                            type: string
-                            description: 移动端 跳转链接，当用户使用飞书 移动端时，使用该字段进行跳转
-                            example: https://applink.feishu.cn/client/mini_program/open?appId=cli_9c90fc38e07a9101&path=pages/detail?id=1234
-                        required:
-                        - pc_link
-                        description: 【待审批】或【已审批】中使用的跳转链接，用于跳转回三方系统pc_link 和 mobile_link 必须填一个，填写的是哪一端的链接，即会跳转到该链接，不受平台影响
-                      status:
-                        type: string
-                        description: 任务状态
-                        enum:
-                        - PENDING
-                        - APPROVED
-                        - REJECTED
-                        - TRANSFERRED
-                        - DONE
-                        x-enum-descriptions:
-                          PENDING: 待审批
-                          APPROVED: 任务同意
-                          REJECTED: 任务拒绝
-                          TRANSFERRED: 任务转交
-                          DONE: 任务通过但审批人未操作；审批人看不到这个任务, 若想要看到, 可以通过抄送该人.
-                        example: PENDING
-                      extra:
-                        type: string
-                        description: 扩展 json
-                        example: '{"xxx":"xxx"}'
-                      create_time:
-                        type: string
-                        description: 任务创建时间，Unix 毫秒时间戳
-                        example: '1556468012678'
-                        format: int64
-                      end_time:
-                        type: string
-                        description: 任务完成时间：未结束的审批为 0，Unix 毫秒时间戳
-                        example: '1556468012678'
-                        format: int64
-                      update_time:
-                        type: string
-                        description: task最近更新时间，用于推送数据版本控制； 更新策略同 instance 中的 update_time
-                        example: '1556468012678'
-                        format: int64
-                      action_context:
-                        type: string
-                        description: 操作上下文，当用户操作时，回调请求中带上该参数，用于传递该任务的上下文数据
-                        example: '123456'
-                      action_configs:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            action_type:
-                              type: string
-                              description: 操作类型，每个任务都可以配置2个操作，会展示审批列表中，当用户操作时，回调请求会带上该字段，表示用户进行了同意操作还是拒绝操作。APPROVE - 同意 REJECT
-                                - 拒绝 {KEY} - 任意字符串，如果使用任意字符串，则需要提供 action_name
-                              example: APPROVE
-                            action_name:
-                              type: string
-                              description: 操作名称，i18n key 用于前台展示，如果 action_type 不是 APPROVAL和REJECT，则必须提供该字段，用于展示特定的操作名称
-                              example: '@i18n@5'
-                            is_need_reason:
-                              type: boolean
-                              description: 是否需要意见, 如果为true,则用户操作时，会跳转到 意见填写页面
-                              example: 'false'
-                            is_reason_required:
-                              type: boolean
-                              description: 审批意见是否必填
-                              example: 'false'
-                            is_need_attachment:
-                              type: boolean
-                              description: 意见是否支持上传附件
-                              example: 'false'
-                          required:
-                          - action_type
-                        description: 任务级别操作配置,快捷审批目前支持移动端操作
-                      display_method:
-                        type: string
-                        description: 列表页打开审批任务的方式
-                        enum:
-                        - BROWSER
-                        - SIDEBAR
-                        - NORMAL
-                        - TRUSTEESHIP
-                        x-enum-descriptions:
-                          BROWSER: 跳转系统默认浏览器打开
-                          SIDEBAR: 飞书中侧边抽屉打开
-                          NORMAL: 飞书内嵌页面打开
-                          TRUSTEESHIP: 以托管模式打开
-                        example: BROWSER
-                      exclude_statistics:
-                        type: boolean
-                        description: 三方任务支持不纳入效率统计
-                        default: false
-                        example: 'true'
-                      node_id:
-                        type: string
-                        description: 节点id
-                        example: node
-                      node_name:
-                        type: string
-                        description: 节点名称，示例：i18n@name。需要在i18n_resources中传该名称对应的国际化文案
-                        example: i18n@name
-                      generate_type:
-                        type: string
-                        description: 任务生成类型
-                        enum:
-                        - EXTERNAL_CONSIGN
-                        - DEFAULT
-                        x-enum-descriptions:
-                          EXTERNAL_CONSIGN: 给代理人生成的任务
-                          DEFAULT: 默认情况，可不填， 但是不要填空字符串
-                        example: EXTERNAL_CONSIGN
-                    required:
-                    - task_id
-                    - links
-                    - status
-                    - create_time
-                    - end_time
+                    $ref: '#/components/schemas/Item2'
                   description: 任务列表
                 cc_list:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      cc_id:
-                        type: string
-                        description: 审批实例内唯一标识
-                        example: '123456'
-                      user_id:
-                        type: string
-                        description: 抄送人 employee id
-                        example: '12345'
-                      open_id:
-                        type: string
-                        description: 抄送人 open id，和user id 二选一
-                        example: ou_be73cbc0ee35eb6ca54e9e7cc14998c1
-                      links:
-                        type: object
-                        properties:
-                          pc_link:
-                            type: string
-                            description: pc 端的跳转链接，当用户使用飞书 pc 端时，使用该字段进行跳转
-                            example: https://applink.feishu.cn/client/mini_program/open?mode=appCenter&appId=cli_9c90fc38e07a9101&path=pc/pages/detail?id=1234
-                          mobile_link:
-                            type: string
-                            description: 移动端 跳转链接，当用户使用飞书 移动端时，使用该字段进行跳转
-                            example: https://applink.feishu.cn/client/mini_program/open?appId=cli_9c90fc38e07a9101&path=pages/detail?id=1234
-                        required:
-                        - pc_link
-                        description: 跳转链接，用于【抄送我的】列表中的跳转pc_link 和 mobile_link 必须填一个，填写的是哪一端的链接，即会跳转到该链接，不受平台影响
-                      read_status:
-                        type: string
-                        description: 阅读状态，空值表示不支持已读未读：
-                        enum:
-                        - READ
-                        - UNREAD
-                        x-enum-descriptions:
-                          READ: 已读
-                          UNREAD: 未读
-                        example: READ
-                      extra:
-                        type: string
-                        description: 扩展 json
-                        example: '{ "xxx":"xxx" }'
-                      title:
-                        type: string
-                        description: 抄送任务名称
-                        example: xxx
-                      create_time:
-                        type: string
-                        description: 抄送发起时间，Unix 毫秒时间戳
-                        example: '1556468012678'
-                        format: int64
-                      update_time:
-                        type: string
-                        description: 抄送最近更新时间，用于推送数据版本控制更新策略同 instance 的update_time
-                        example: '1556468012678'
-                        format: int64
-                      display_method:
-                        type: string
-                        description: 列表页打开审批任务的方式
-                        enum:
-                        - BROWSER
-                        - SIDEBAR
-                        - NORMAL
-                        - TRUSTEESHIP
-                        x-enum-descriptions:
-                          BROWSER: 跳转系统默认浏览器打开
-                          SIDEBAR: 飞书中侧边抽屉打开
-                          NORMAL: 飞书内嵌页面打开
-                          TRUSTEESHIP: 以托管模式打开
-                        example: BROWSER
-                    required:
-                    - cc_id
-                    - links
-                    - read_status
-                    - create_time
-                    - update_time
+                    $ref: '#/components/schemas/Item3'
                   description: 抄送列表
                 i18n_resources:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      locale:
-                        type: string
-                        description: 语种
-                        enum:
-                        - zh-CN
-                        - en-US
-                        - ja-JP
-                        - zh-HK
-                        - zh-TW
-                        - de-DE
-                        - es-ES
-                        - fr-FR
-                        - id-ID
-                        - it-IT
-                        - ko-KR
-                        - pt-BR
-                        - th-TH
-                        - vi-VN
-                        - ms-MY
-                        - ru-RU
-                        x-enum-descriptions:
-                          zh-CN: 中文
-                          en-US: 英文
-                          ja-JP: 日文
-                          zh-HK: 繁体中文（中国香港）
-                          zh-TW: 繁体中文（中国台湾）
-                          de-DE: 德语
-                          es-ES: 西班牙语
-                          fr-FR: 法语
-                          id-ID: 印度尼西亚语
-                          it-IT: 意大利语
-                          ko-KR: 韩语
-                          pt-BR: 葡萄牙语
-                          th-TH: 泰语
-                          vi-VN: 越南语
-                          ms-MY: 马来语
-                          ru-RU: 俄语
-                        example: zh-CN
-                      texts:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            key:
-                              type: string
-                            value:
-                              type: string
-                          required:
-                          - key
-                          - value
-                        description: 文案 key, value, i18n key 以 @i18n@ 开头； 该字段主要用于做国际化，语序用户同时传多个语言的文案，审批中心会根据用户当前的语音环境使用对应的文案，如果没有传用户当前的语音环境文案，则会使用默认的语言文案。
-                        example: '{ "@i18n@1": "权限申请", "@i18n@2": "OA审批", "@i18n@3": "Permission" }'
-                      is_default:
-                        type: boolean
-                        description: 是否默认语言，默认语言需要包含所有key，非默认语言如果key不存在会使用默认语言代替
-                        example: 'true'
-                    required:
-                    - locale
-                    - texts
-                    - is_default
+                    $ref: '#/components/schemas/Item'
                   description: 国际化文案
                 trusteeship_url_token:
                   type: string
@@ -2513,295 +1806,17 @@ paths:
                           task_list:
                             type: array
                             items:
-                              type: object
-                              properties:
-                                task_id:
-                                  type: string
-                                  description: 审批实例内的唯一标识，用于更新审批任务时定位数据
-                                  example: '112534'
-                                user_id:
-                                  type: string
-                                  description: 审批人 user_id，该任务会出现在审批人的【待审批】或【已审批】列表中
-                                  example: a987sf9s
-                                open_id:
-                                  type: string
-                                  description: 审批人 open id，和 user id 二选一
-                                  example: ou_be73cbc0ee35eb6ca54e9e7cc14998c1
-                                title:
-                                  type: string
-                                  description: 审批任务名称
-                                  example: i18n1
-                                links:
-                                  type: object
-                                  properties:
-                                    pc_link:
-                                      type: string
-                                      description: pc 端的跳转链接，当用户使用飞书 pc 端时，使用该字段进行跳转
-                                      example: https://applink.feishu.cn/client/mini_program/open?mode=appCenter&appId=cli_9c90fc38e07a9101&path=pc/pages/detail?id=1234
-                                    mobile_link:
-                                      type: string
-                                      description: 移动端 跳转链接，当用户使用飞书 移动端时，使用该字段进行跳转
-                                      example: https://applink.feishu.cn/client/mini_program/open?appId=cli_9c90fc38e07a9101&path=pages/detail?id=1234
-                                  required:
-                                  - pc_link
-                                  description: 【待审批】或【已审批】中使用的跳转链接，用于跳转回三方系统pc_link 和 mobile_link 必须填一个，填写的是哪一端的链接，即会跳转到该链接，不受平台影响
-                                status:
-                                  type: string
-                                  description: 任务状态
-                                  enum:
-                                  - PENDING
-                                  - APPROVED
-                                  - REJECTED
-                                  - TRANSFERRED
-                                  - DONE
-                                  x-enum-descriptions:
-                                    PENDING: 待审批
-                                    APPROVED: 任务同意
-                                    REJECTED: 任务拒绝
-                                    TRANSFERRED: 任务转交
-                                    DONE: 任务通过但审批人未操作；审批人看不到这个任务, 若想要看到, 可以通过抄送该人.
-                                  example: PENDING
-                                extra:
-                                  type: string
-                                  description: 扩展 json
-                                  example: '{"xxx":"xxx"}'
-                                create_time:
-                                  type: string
-                                  description: 任务创建时间，Unix 毫秒时间戳
-                                  example: '1556468012678'
-                                  format: int64
-                                end_time:
-                                  type: string
-                                  description: 任务完成时间：未结束的审批为 0，Unix 毫秒时间戳
-                                  example: '1556468012678'
-                                  format: int64
-                                update_time:
-                                  type: string
-                                  description: task最近更新时间，用于推送数据版本控制； 更新策略同 instance 中的 update_time
-                                  example: '1556468012678'
-                                  format: int64
-                                action_context:
-                                  type: string
-                                  description: 操作上下文，当用户操作时，回调请求中带上该参数，用于传递该任务的上下文数据
-                                  example: '123456'
-                                action_configs:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      action_type:
-                                        type: string
-                                        description: 操作类型，每个任务都可以配置2个操作，会展示审批列表中，当用户操作时，回调请求会带上该字段，表示用户进行了同意操作还是拒绝操作。APPROVE
-                                          - 同意 REJECT - 拒绝 {KEY} - 任意字符串，如果使用任意字符串，则需要提供 action_name
-                                        example: APPROVE
-                                      action_name:
-                                        type: string
-                                        description: 操作名称，i18n key 用于前台展示，如果 action_type 不是 APPROVAL和REJECT，则必须提供该字段，用于展示特定的操作名称
-                                        example: '@i18n@5'
-                                      is_need_reason:
-                                        type: boolean
-                                        description: 是否需要意见, 如果为true,则用户操作时，会跳转到 意见填写页面
-                                        example: 'false'
-                                      is_reason_required:
-                                        type: boolean
-                                        description: 审批意见是否必填
-                                        example: 'false'
-                                      is_need_attachment:
-                                        type: boolean
-                                        description: 意见是否支持上传附件
-                                        example: 'false'
-                                    required:
-                                    - action_type
-                                  description: 任务级别操作配置,快捷审批目前支持移动端操作
-                                display_method:
-                                  type: string
-                                  description: 列表页打开审批任务的方式
-                                  enum:
-                                  - BROWSER
-                                  - SIDEBAR
-                                  - NORMAL
-                                  - TRUSTEESHIP
-                                  x-enum-descriptions:
-                                    BROWSER: 跳转系统默认浏览器打开
-                                    SIDEBAR: 飞书中侧边抽屉打开
-                                    NORMAL: 飞书内嵌页面打开
-                                    TRUSTEESHIP: 以托管模式打开
-                                  example: BROWSER
-                                exclude_statistics:
-                                  type: boolean
-                                  description: 三方任务支持不纳入效率统计
-                                  default: false
-                                  example: 'true'
-                                node_id:
-                                  type: string
-                                  description: 节点id
-                                  example: node
-                                node_name:
-                                  type: string
-                                  description: 节点名称，示例：i18n@name。需要在i18n_resources中传该名称对应的国际化文案
-                                  example: i18n@name
-                                generate_type:
-                                  type: string
-                                  description: 任务生成类型
-                                  enum:
-                                  - EXTERNAL_CONSIGN
-                                  - DEFAULT
-                                  x-enum-descriptions:
-                                    EXTERNAL_CONSIGN: 给代理人生成的任务
-                                    DEFAULT: 默认情况，可不填， 但是不要填空字符串
-                                  example: EXTERNAL_CONSIGN
-                              required:
-                              - task_id
-                              - links
-                              - status
-                              - create_time
-                              - end_time
+                              $ref: '#/components/schemas/Item2'
                             description: 任务列表
                           cc_list:
                             type: array
                             items:
-                              type: object
-                              properties:
-                                cc_id:
-                                  type: string
-                                  description: 审批实例内唯一标识
-                                  example: '123456'
-                                user_id:
-                                  type: string
-                                  description: 抄送人 employee id
-                                  example: '12345'
-                                open_id:
-                                  type: string
-                                  description: 抄送人 open id，和user id 二选一
-                                  example: ou_be73cbc0ee35eb6ca54e9e7cc14998c1
-                                links:
-                                  type: object
-                                  properties:
-                                    pc_link:
-                                      type: string
-                                      description: pc 端的跳转链接，当用户使用飞书 pc 端时，使用该字段进行跳转
-                                      example: https://applink.feishu.cn/client/mini_program/open?mode=appCenter&appId=cli_9c90fc38e07a9101&path=pc/pages/detail?id=1234
-                                    mobile_link:
-                                      type: string
-                                      description: 移动端 跳转链接，当用户使用飞书 移动端时，使用该字段进行跳转
-                                      example: https://applink.feishu.cn/client/mini_program/open?appId=cli_9c90fc38e07a9101&path=pages/detail?id=1234
-                                  required:
-                                  - pc_link
-                                  description: 跳转链接，用于【抄送我的】列表中的跳转pc_link 和 mobile_link 必须填一个，填写的是哪一端的链接，即会跳转到该链接，不受平台影响
-                                read_status:
-                                  type: string
-                                  description: 阅读状态，空值表示不支持已读未读：
-                                  enum:
-                                  - READ
-                                  - UNREAD
-                                  x-enum-descriptions:
-                                    READ: 已读
-                                    UNREAD: 未读
-                                  example: READ
-                                extra:
-                                  type: string
-                                  description: 扩展 json
-                                  example: '{ "xxx":"xxx" }'
-                                title:
-                                  type: string
-                                  description: 抄送任务名称
-                                  example: xxx
-                                create_time:
-                                  type: string
-                                  description: 抄送发起时间，Unix 毫秒时间戳
-                                  example: '1556468012678'
-                                  format: int64
-                                update_time:
-                                  type: string
-                                  description: 抄送最近更新时间，用于推送数据版本控制更新策略同 instance 的update_time
-                                  example: '1556468012678'
-                                  format: int64
-                                display_method:
-                                  type: string
-                                  description: 列表页打开审批任务的方式
-                                  enum:
-                                  - BROWSER
-                                  - SIDEBAR
-                                  - NORMAL
-                                  - TRUSTEESHIP
-                                  x-enum-descriptions:
-                                    BROWSER: 跳转系统默认浏览器打开
-                                    SIDEBAR: 飞书中侧边抽屉打开
-                                    NORMAL: 飞书内嵌页面打开
-                                    TRUSTEESHIP: 以托管模式打开
-                                  example: BROWSER
-                              required:
-                              - cc_id
-                              - links
-                              - read_status
-                              - create_time
-                              - update_time
+                              $ref: '#/components/schemas/Item3'
                             description: 抄送列表
                           i18n_resources:
                             type: array
                             items:
-                              type: object
-                              properties:
-                                locale:
-                                  type: string
-                                  description: 语种
-                                  enum:
-                                  - zh-CN
-                                  - en-US
-                                  - ja-JP
-                                  - zh-HK
-                                  - zh-TW
-                                  - de-DE
-                                  - es-ES
-                                  - fr-FR
-                                  - id-ID
-                                  - it-IT
-                                  - ko-KR
-                                  - pt-BR
-                                  - th-TH
-                                  - vi-VN
-                                  - ms-MY
-                                  - ru-RU
-                                  x-enum-descriptions:
-                                    zh-CN: 中文
-                                    en-US: 英文
-                                    ja-JP: 日文
-                                    zh-HK: 繁体中文（中国香港）
-                                    zh-TW: 繁体中文（中国台湾）
-                                    de-DE: 德语
-                                    es-ES: 西班牙语
-                                    fr-FR: 法语
-                                    id-ID: 印度尼西亚语
-                                    it-IT: 意大利语
-                                    ko-KR: 韩语
-                                    pt-BR: 葡萄牙语
-                                    th-TH: 泰语
-                                    vi-VN: 越南语
-                                    ms-MY: 马来语
-                                    ru-RU: 俄语
-                                  example: zh-CN
-                                texts:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      key:
-                                        type: string
-                                      value:
-                                        type: string
-                                    required:
-                                    - key
-                                    - value
-                                  description: 文案 key, value, i18n key 以 @i18n@ 开头； 该字段主要用于做国际化，语序用户同时传多个语言的文案，审批中心会根据用户当前的语音环境使用对应的文案，如果没有传用户当前的语音环境文案，则会使用默认的语言文案。
-                                  example: '{ "@i18n@1": "权限申请", "@i18n@2": "OA审批", "@i18n@3": "Permission" }'
-                                is_default:
-                                  type: boolean
-                                  description: 是否默认语言，默认语言需要包含所有key，非默认语言如果key不存在会使用默认语言代替
-                                  example: 'true'
-                              required:
-                              - locale
-                              - texts
-                              - is_default
+                              $ref: '#/components/schemas/Item'
                             description: 国际化文案
                           trusteeship_url_token:
                             type: string
@@ -4220,68 +3235,7 @@ paths:
                 i18n_resources:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      locale:
-                        type: string
-                        description: 语种
-                        enum:
-                        - zh-CN
-                        - en-US
-                        - ja-JP
-                        - zh-HK
-                        - zh-TW
-                        - de-DE
-                        - es-ES
-                        - fr-FR
-                        - id-ID
-                        - it-IT
-                        - ko-KR
-                        - pt-BR
-                        - th-TH
-                        - vi-VN
-                        - ms-MY
-                        - ru-RU
-                        x-enum-descriptions:
-                          zh-CN: 中文
-                          en-US: 英文
-                          ja-JP: 日文
-                          zh-HK: 繁体中文（中国香港）
-                          zh-TW: 繁体中文（中国台湾）
-                          de-DE: 德语
-                          es-ES: 西班牙语
-                          fr-FR: 法语
-                          id-ID: 印度尼西亚语
-                          it-IT: 意大利语
-                          ko-KR: 韩语
-                          pt-BR: 葡萄牙语
-                          th-TH: 泰语
-                          vi-VN: 越南语
-                          ms-MY: 马来语
-                          ru-RU: 俄语
-                        example: zh-CN
-                      texts:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            key:
-                              type: string
-                            value:
-                              type: string
-                          required:
-                          - key
-                          - value
-                        description: 文案 key, value, i18n key 以 @i18n@ 开头； 该字段主要用于做国际化，语序用户同时传多个语言的文案，审批中心会根据用户当前的语音环境使用对应的文案，如果没有传用户当前的语音环境文案，则会使用默认的语言文案。
-                        example: '{ "@i18n@1": "权限申请", "@i18n@2": "OA审批", "@i18n@3": "Permission" }'
-                      is_default:
-                        type: boolean
-                        description: 是否默认语言，默认语言需要包含所有key，非默认语言如果key不存在会使用默认语言代替
-                        example: 'true'
-                    required:
-                    - locale
-                    - texts
-                    - is_default
+                    $ref: '#/components/schemas/Item'
                   description: 国际化文案
                 title:
                   type: string
@@ -5935,37 +4889,8 @@ paths:
                           type: object
                           properties:
                             approval:
-                              type: object
-                              properties:
-                                code:
-                                  type: string
-                                  description: 审批定义 code
-                                  example: EB828003-9FFE-4B3F-AA50-2E199E2ED943
-                                name:
-                                  type: string
-                                  description: 审批定义名称
-                                  example: approval
-                                is_external:
-                                  type: boolean
-                                  description: 是否为第三方审批
-                                  example: 'true'
-                                external:
-                                  type: object
-                                  properties:
-                                    batch_cc_read:
-                                      type: boolean
-                                      description: 是否支持批量读
-                                      example: 'false'
-                                  description: 第三方审批信息
-                                approval_id:
-                                  type: string
-                                  description: 审批定义Id
-                                  example: '7090754740375519252'
-                                  format: int64
-                                icon:
-                                  type: string
-                                  description: 审批定义图标信息
-                                  example: https://lf3-ea.bytetos.com/obj/goofy/ee/approval/approval-admin/image/iconLib/v3/person.png
+                              allOf:
+                              - $ref: '#/components/schemas/Approval'
                               description: 审批定义
                             group:
                               type: object
@@ -5980,70 +4905,8 @@ paths:
                                   example: groupA
                               description: 审批定义分组
                             instance:
-                              type: object
-                              properties:
-                                code:
-                                  type: string
-                                  description: 审批实例 code
-                                  example: EB828003-9FFE-4B3F-AA50-2E199E2ED943
-                                external_id:
-                                  type: string
-                                  description: 审批实例外部 id
-                                  example: 0004_3ED52DC1-AA6C
-                                user_id:
-                                  type: string
-                                  description: 审批实例发起人 id
-                                  example: lwiu098wj
-                                start_time:
-                                  type: string
-                                  description: 审批实例开始时间
-                                  example: '1547654251506'
-                                  format: int64
-                                end_time:
-                                  type: string
-                                  description: 审批实例结束时间
-                                  example: '1547654251506'
-                                  format: int64
-                                status:
-                                  type: string
-                                  description: 审批实例状态
-                                  enum:
-                                  - rejected
-                                  - pending
-                                  - canceled
-                                  - deleted
-                                  - approved
-                                  x-enum-descriptions:
-                                    rejected: 拒绝
-                                    pending: 审批中
-                                    canceled: 撤回
-                                    deleted: 已删除
-                                    approved: 通过
-                                  example: pending
-                                title:
-                                  type: string
-                                  description: 审批实例名称（只有第三方审批有）
-                                  example: test
-                                extra:
-                                  type: string
-                                  description: 审批实例扩展字段，string型json
-                                  example: '{}'
-                                serial_id:
-                                  type: string
-                                  description: 审批流水号
-                                  example: '201902020001'
-                                link:
-                                  type: object
-                                  properties:
-                                    pc_link:
-                                      type: string
-                                      description: 审批实例 pc 端链接
-                                      example: https://www.baidu.com/
-                                    mobile_link:
-                                      type: string
-                                      description: 审批实例移动端链接
-                                      example: https://www.baidu.com/
-                                  description: 审批实例链接（只有第三方审批有）
+                              allOf:
+                              - $ref: '#/components/schemas/Instance'
                               description: 审批实例信息
                         description: 审批实例列表
                       page_token:
@@ -6366,37 +5229,8 @@ paths:
                           type: object
                           properties:
                             approval:
-                              type: object
-                              properties:
-                                code:
-                                  type: string
-                                  description: 审批定义 code
-                                  example: EB828003-9FFE-4B3F-AA50-2E199E2ED943
-                                name:
-                                  type: string
-                                  description: 审批定义名称
-                                  example: approval
-                                is_external:
-                                  type: boolean
-                                  description: 是否为第三方审批
-                                  example: 'true'
-                                external:
-                                  type: object
-                                  properties:
-                                    batch_cc_read:
-                                      type: boolean
-                                      description: 是否支持批量读
-                                      example: 'false'
-                                  description: 第三方审批信息
-                                approval_id:
-                                  type: string
-                                  description: 审批定义Id
-                                  example: '7090754740375519252'
-                                  format: int64
-                                icon:
-                                  type: string
-                                  description: 审批定义图标信息
-                                  example: https://lf3-ea.bytetos.com/obj/goofy/ee/approval/approval-admin/image/iconLib/v3/person.png
+                              allOf:
+                              - $ref: '#/components/schemas/Approval'
                               description: 审批定义
                             group:
                               type: object
@@ -6411,70 +5245,8 @@ paths:
                                   example: groupA
                               description: 审批定义分组
                             instance:
-                              type: object
-                              properties:
-                                code:
-                                  type: string
-                                  description: 审批实例 code
-                                  example: EB828003-9FFE-4B3F-AA50-2E199E2ED943
-                                external_id:
-                                  type: string
-                                  description: 审批实例外部 id
-                                  example: 0004_3ED52DC1-AA6C
-                                user_id:
-                                  type: string
-                                  description: 审批实例发起人 id
-                                  example: lwiu098wj
-                                start_time:
-                                  type: string
-                                  description: 审批实例开始时间
-                                  example: '1547654251506'
-                                  format: int64
-                                end_time:
-                                  type: string
-                                  description: 审批实例结束时间
-                                  example: '1547654251506'
-                                  format: int64
-                                status:
-                                  type: string
-                                  description: 审批实例状态
-                                  enum:
-                                  - rejected
-                                  - pending
-                                  - canceled
-                                  - deleted
-                                  - approved
-                                  x-enum-descriptions:
-                                    rejected: 拒绝
-                                    pending: 审批中
-                                    canceled: 撤回
-                                    deleted: 已删除
-                                    approved: 通过
-                                  example: pending
-                                title:
-                                  type: string
-                                  description: 审批实例名称（只有第三方审批有）
-                                  example: test
-                                extra:
-                                  type: string
-                                  description: 审批实例扩展字段，string型json
-                                  example: '{}'
-                                serial_id:
-                                  type: string
-                                  description: 审批流水号
-                                  example: '201902020001'
-                                link:
-                                  type: object
-                                  properties:
-                                    pc_link:
-                                      type: string
-                                      description: 审批实例 pc 端链接
-                                      example: https://www.baidu.com/
-                                    mobile_link:
-                                      type: string
-                                      description: 审批实例移动端链接
-                                      example: https://www.baidu.com/
-                                  description: 审批实例链接（只有第三方审批有）
+                              allOf:
+                              - $ref: '#/components/schemas/Instance'
                               description: 审批实例信息
                             cc:
                               type: object
@@ -8273,37 +7045,8 @@ paths:
                           type: object
                           properties:
                             approval:
-                              type: object
-                              properties:
-                                code:
-                                  type: string
-                                  description: 审批定义 code
-                                  example: EB828003-9FFE-4B3F-AA50-2E199E2ED943
-                                name:
-                                  type: string
-                                  description: 审批定义名称
-                                  example: approval
-                                is_external:
-                                  type: boolean
-                                  description: 是否为第三方审批
-                                  example: 'true'
-                                external:
-                                  type: object
-                                  properties:
-                                    batch_cc_read:
-                                      type: boolean
-                                      description: 是否支持批量读
-                                      example: 'false'
-                                  description: 第三方审批信息
-                                approval_id:
-                                  type: string
-                                  description: 审批定义Id
-                                  example: '7090754740375519252'
-                                  format: int64
-                                icon:
-                                  type: string
-                                  description: 审批定义图标信息
-                                  example: https://lf3-ea.bytetos.com/obj/goofy/ee/approval/approval-admin/image/iconLib/v3/person.png
+                              allOf:
+                              - $ref: '#/components/schemas/Approval'
                               description: 审批定义
                             group:
                               type: object
@@ -8318,70 +7061,8 @@ paths:
                                   example: groupA
                               description: 审批定义分组
                             instance:
-                              type: object
-                              properties:
-                                code:
-                                  type: string
-                                  description: 审批实例 code
-                                  example: EB828003-9FFE-4B3F-AA50-2E199E2ED943
-                                external_id:
-                                  type: string
-                                  description: 审批实例外部 id
-                                  example: 0004_3ED52DC1-AA6C
-                                user_id:
-                                  type: string
-                                  description: 审批实例发起人 id
-                                  example: lwiu098wj
-                                start_time:
-                                  type: string
-                                  description: 审批实例开始时间
-                                  example: '1547654251506'
-                                  format: int64
-                                end_time:
-                                  type: string
-                                  description: 审批实例结束时间
-                                  example: '1547654251506'
-                                  format: int64
-                                status:
-                                  type: string
-                                  description: 审批实例状态
-                                  enum:
-                                  - rejected
-                                  - pending
-                                  - canceled
-                                  - deleted
-                                  - approved
-                                  x-enum-descriptions:
-                                    rejected: 拒绝
-                                    pending: 审批中
-                                    canceled: 撤回
-                                    deleted: 已删除
-                                    approved: 通过
-                                  example: pending
-                                title:
-                                  type: string
-                                  description: 审批实例名称（只有第三方审批有）
-                                  example: test
-                                extra:
-                                  type: string
-                                  description: 审批实例扩展字段，string型json
-                                  example: '{}'
-                                serial_id:
-                                  type: string
-                                  description: 审批流水号
-                                  example: '201902020001'
-                                link:
-                                  type: object
-                                  properties:
-                                    pc_link:
-                                      type: string
-                                      description: 审批实例 pc 端链接
-                                      example: https://www.baidu.com/
-                                    mobile_link:
-                                      type: string
-                                      description: 审批实例移动端链接
-                                      example: https://www.baidu.com/
-                                  description: 审批实例链接（只有第三方审批有）
+                              allOf:
+                              - $ref: '#/components/schemas/Instance'
                               description: 审批实例信息
                             task:
                               type: object
@@ -8727,3 +7408,519 @@ paths:
           to: lark_id
         key: $.transfer_user_id
         section: 0
+components:
+  schemas:
+    Item:
+      type: object
+      properties:
+        locale:
+          type: string
+          description: 语种
+          enum:
+          - zh-CN
+          - en-US
+          - ja-JP
+          - zh-HK
+          - zh-TW
+          - de-DE
+          - es-ES
+          - fr-FR
+          - id-ID
+          - it-IT
+          - ko-KR
+          - pt-BR
+          - th-TH
+          - vi-VN
+          - ms-MY
+          - ru-RU
+          x-enum-descriptions:
+            zh-CN: 中文
+            en-US: 英文
+            ja-JP: 日文
+            zh-HK: 繁体中文（中国香港）
+            zh-TW: 繁体中文（中国台湾）
+            de-DE: 德语
+            es-ES: 西班牙语
+            fr-FR: 法语
+            id-ID: 印度尼西亚语
+            it-IT: 意大利语
+            ko-KR: 韩语
+            pt-BR: 葡萄牙语
+            th-TH: 泰语
+            vi-VN: 越南语
+            ms-MY: 马来语
+            ru-RU: 俄语
+          example: zh-CN
+        texts:
+          type: array
+          items:
+            type: object
+            properties:
+              key:
+                type: string
+              value:
+                type: string
+            required:
+            - key
+            - value
+          description: 文案 key, value, i18n key 以 @i18n@ 开头； 该字段主要用于做国际化，语序用户同时传多个语言的文案，审批中心会根据用户当前的语音环境使用对应的文案，如果没有传用户当前的语音环境文案，则会使用默认的语言文案。
+          example: '{ "@i18n@1": "权限申请", "@i18n@2": "OA审批", "@i18n@3": "Permission" }'
+        is_default:
+          type: boolean
+          description: 是否默认语言，默认语言需要包含所有key，非默认语言如果key不存在会使用默认语言代替
+          example: 'true'
+      required:
+      - locale
+      - texts
+      - is_default
+    Item2:
+      type: object
+      properties:
+        task_id:
+          type: string
+          description: 审批实例内的唯一标识，用于更新审批任务时定位数据
+          example: '112534'
+        user_id:
+          type: string
+          description: 审批人 user_id，该任务会出现在审批人的【待审批】或【已审批】列表中
+          example: a987sf9s
+        open_id:
+          type: string
+          description: 审批人 open id，和 user id 二选一
+          example: ou_be73cbc0ee35eb6ca54e9e7cc14998c1
+        title:
+          type: string
+          description: 审批任务名称
+          example: i18n1
+        links:
+          type: object
+          properties:
+            pc_link:
+              type: string
+              description: pc 端的跳转链接，当用户使用飞书 pc 端时，使用该字段进行跳转
+              example: https://applink.feishu.cn/client/mini_program/open?mode=appCenter&appId=cli_9c90fc38e07a9101&path=pc/pages/detail?id=1234
+            mobile_link:
+              type: string
+              description: 移动端 跳转链接，当用户使用飞书 移动端时，使用该字段进行跳转
+              example: https://applink.feishu.cn/client/mini_program/open?appId=cli_9c90fc38e07a9101&path=pages/detail?id=1234
+          required:
+          - pc_link
+          description: 【待审批】或【已审批】中使用的跳转链接，用于跳转回三方系统pc_link 和 mobile_link 必须填一个，填写的是哪一端的链接，即会跳转到该链接，不受平台影响
+        status:
+          type: string
+          description: 任务状态
+          enum:
+          - PENDING
+          - APPROVED
+          - REJECTED
+          - TRANSFERRED
+          - DONE
+          x-enum-descriptions:
+            PENDING: 待审批
+            APPROVED: 任务同意
+            REJECTED: 任务拒绝
+            TRANSFERRED: 任务转交
+            DONE: 任务通过但审批人未操作；审批人看不到这个任务, 若想要看到, 可以通过抄送该人.
+          example: PENDING
+        extra:
+          type: string
+          description: 扩展 json
+          example: '{"xxx":"xxx"}'
+        create_time:
+          type: string
+          description: 任务创建时间，Unix 毫秒时间戳
+          example: '1556468012678'
+          format: int64
+        end_time:
+          type: string
+          description: 任务完成时间：未结束的审批为 0，Unix 毫秒时间戳
+          example: '1556468012678'
+          format: int64
+        update_time:
+          type: string
+          description: task最近更新时间，用于推送数据版本控制； 更新策略同 instance 中的 update_time
+          example: '1556468012678'
+          format: int64
+        action_context:
+          type: string
+          description: 操作上下文，当用户操作时，回调请求中带上该参数，用于传递该任务的上下文数据
+          example: '123456'
+        action_configs:
+          type: array
+          items:
+            type: object
+            properties:
+              action_type:
+                type: string
+                description: 操作类型，每个任务都可以配置2个操作，会展示审批列表中，当用户操作时，回调请求会带上该字段，表示用户进行了同意操作还是拒绝操作。APPROVE - 同意 REJECT - 拒绝 {KEY}
+                  - 任意字符串，如果使用任意字符串，则需要提供 action_name
+                example: APPROVE
+              action_name:
+                type: string
+                description: 操作名称，i18n key 用于前台展示，如果 action_type 不是 APPROVAL和REJECT，则必须提供该字段，用于展示特定的操作名称
+                example: '@i18n@5'
+              is_need_reason:
+                type: boolean
+                description: 是否需要意见, 如果为true,则用户操作时，会跳转到 意见填写页面
+                example: 'false'
+              is_reason_required:
+                type: boolean
+                description: 审批意见是否必填
+                example: 'false'
+              is_need_attachment:
+                type: boolean
+                description: 意见是否支持上传附件
+                example: 'false'
+            required:
+            - action_type
+          description: 任务级别操作配置,快捷审批目前支持移动端操作
+        display_method:
+          type: string
+          description: 列表页打开审批任务的方式
+          enum:
+          - BROWSER
+          - SIDEBAR
+          - NORMAL
+          - TRUSTEESHIP
+          x-enum-descriptions:
+            BROWSER: 跳转系统默认浏览器打开
+            SIDEBAR: 飞书中侧边抽屉打开
+            NORMAL: 飞书内嵌页面打开
+            TRUSTEESHIP: 以托管模式打开
+          example: BROWSER
+        exclude_statistics:
+          type: boolean
+          description: 三方任务支持不纳入效率统计
+          default: false
+          example: 'true'
+        node_id:
+          type: string
+          description: 节点id
+          example: node
+        node_name:
+          type: string
+          description: 节点名称，示例：i18n@name。需要在i18n_resources中传该名称对应的国际化文案
+          example: i18n@name
+        generate_type:
+          type: string
+          description: 任务生成类型
+          enum:
+          - EXTERNAL_CONSIGN
+          - DEFAULT
+          x-enum-descriptions:
+            EXTERNAL_CONSIGN: 给代理人生成的任务
+            DEFAULT: 默认情况，可不填， 但是不要填空字符串
+          example: EXTERNAL_CONSIGN
+      required:
+      - task_id
+      - links
+      - status
+      - create_time
+      - end_time
+    Instance:
+      type: object
+      properties:
+        code:
+          type: string
+          description: 审批实例 code
+          example: EB828003-9FFE-4B3F-AA50-2E199E2ED943
+        external_id:
+          type: string
+          description: 审批实例外部 id
+          example: 0004_3ED52DC1-AA6C
+        user_id:
+          type: string
+          description: 审批实例发起人 id
+          example: lwiu098wj
+        start_time:
+          type: string
+          description: 审批实例开始时间
+          example: '1547654251506'
+          format: int64
+        end_time:
+          type: string
+          description: 审批实例结束时间
+          example: '1547654251506'
+          format: int64
+        status:
+          type: string
+          description: 审批实例状态
+          enum:
+          - rejected
+          - pending
+          - canceled
+          - deleted
+          - approved
+          x-enum-descriptions:
+            rejected: 拒绝
+            pending: 审批中
+            canceled: 撤回
+            deleted: 已删除
+            approved: 通过
+          example: pending
+        title:
+          type: string
+          description: 审批实例名称（只有第三方审批有）
+          example: test
+        extra:
+          type: string
+          description: 审批实例扩展字段，string型json
+          example: '{}'
+        serial_id:
+          type: string
+          description: 审批流水号
+          example: '201902020001'
+        link:
+          type: object
+          properties:
+            pc_link:
+              type: string
+              description: 审批实例 pc 端链接
+              example: https://www.baidu.com/
+            mobile_link:
+              type: string
+              description: 审批实例移动端链接
+              example: https://www.baidu.com/
+          description: 审批实例链接（只有第三方审批有）
+      description: 审批实例信息
+    Item3:
+      type: object
+      properties:
+        cc_id:
+          type: string
+          description: 审批实例内唯一标识
+          example: '123456'
+        user_id:
+          type: string
+          description: 抄送人 employee id
+          example: '12345'
+        open_id:
+          type: string
+          description: 抄送人 open id，和user id 二选一
+          example: ou_be73cbc0ee35eb6ca54e9e7cc14998c1
+        links:
+          type: object
+          properties:
+            pc_link:
+              type: string
+              description: pc 端的跳转链接，当用户使用飞书 pc 端时，使用该字段进行跳转
+              example: https://applink.feishu.cn/client/mini_program/open?mode=appCenter&appId=cli_9c90fc38e07a9101&path=pc/pages/detail?id=1234
+            mobile_link:
+              type: string
+              description: 移动端 跳转链接，当用户使用飞书 移动端时，使用该字段进行跳转
+              example: https://applink.feishu.cn/client/mini_program/open?appId=cli_9c90fc38e07a9101&path=pages/detail?id=1234
+          required:
+          - pc_link
+          description: 跳转链接，用于【抄送我的】列表中的跳转pc_link 和 mobile_link 必须填一个，填写的是哪一端的链接，即会跳转到该链接，不受平台影响
+        read_status:
+          type: string
+          description: 阅读状态，空值表示不支持已读未读：
+          enum:
+          - READ
+          - UNREAD
+          x-enum-descriptions:
+            READ: 已读
+            UNREAD: 未读
+          example: READ
+        extra:
+          type: string
+          description: 扩展 json
+          example: '{ "xxx":"xxx" }'
+        title:
+          type: string
+          description: 抄送任务名称
+          example: xxx
+        create_time:
+          type: string
+          description: 抄送发起时间，Unix 毫秒时间戳
+          example: '1556468012678'
+          format: int64
+        update_time:
+          type: string
+          description: 抄送最近更新时间，用于推送数据版本控制更新策略同 instance 的update_time
+          example: '1556468012678'
+          format: int64
+        display_method:
+          type: string
+          description: 列表页打开审批任务的方式
+          enum:
+          - BROWSER
+          - SIDEBAR
+          - NORMAL
+          - TRUSTEESHIP
+          x-enum-descriptions:
+            BROWSER: 跳转系统默认浏览器打开
+            SIDEBAR: 飞书中侧边抽屉打开
+            NORMAL: 飞书内嵌页面打开
+            TRUSTEESHIP: 以托管模式打开
+          example: BROWSER
+      required:
+      - cc_id
+      - links
+      - read_status
+      - create_time
+      - update_time
+    External:
+      type: object
+      properties:
+        biz_name:
+          type: string
+          description: 列表中用于提示审批来自哪里，i18n key， 注意不需要“来自”前缀，审批中心会拼上前缀
+          example: '@i18n@3'
+        biz_type:
+          type: string
+          description: 审批定义业务类别
+          example: permission
+        create_link_mobile:
+          type: string
+          description: 移动端发起链接，如果设置了该链接，则会在移动端审批发起页展示该审批，用户点击后会跳转到该链接进行发起； 如果不填，则在mobile端不显示该审批
+          example: https://applink.feishu.cn/client/mini_program/open?appId=cli_9c90fc38e07a9101&path=pages/approval-form/index?id=9999
+        create_link_pc:
+          type: string
+          description: PC端发起链接，如果设置了该链接，则会在PC端审批发起页展示该审批，用户点击后会跳转到该链接进行发起； 如果不填，则在PC端不显示该审批；
+          example: https://applink.feishu.cn/client/mini_program/open?mode=appCenter&appId=cli_9c90fc38e07a9101&path=pc/pages/create-form/index?id=9999
+        support_pc:
+          type: boolean
+          description: 审批实例、审批任务、审批抄送是否要在PC端展示，如果为 true，则PC端列表会展示该定义下的实例信息，否则，不展示
+          example: 'true'
+        support_mobile:
+          type: boolean
+          description: 审批实例、审批任务、审批抄送是否要在移动端展示，如果为 true，则移动端列表会展示该定义下的实例信息，否则，不展示； support_pc和support_mobile不可都为false，否则不展示
+          example: 'true'
+        support_batch_read:
+          type: boolean
+          description: 是否支持批量已读
+          example: 'true'
+        enable_mark_readed:
+          type: boolean
+          description: 是否支持标注可读
+          example: 'true'
+        enable_quick_operate:
+          type: boolean
+          description: 是否支持快速操作
+          example: 'true'
+        action_callback_url:
+          type: string
+          description: 三方系统的操作回调 url，【待审批】列表的任务审批人点同意或拒绝操作后，审批中心调用该地址通知三方系统，回调地址相关信息可参见：https://open.feishu.cn/document/ukTMukTMukTM/ukjNyYjL5YjM24SO2IjN/quick-approval-callback
+          example: http://www.feishu.cn/approval/openapi/instanceOperate
+        action_callback_token:
+          type: string
+          description: 回调时带的 token， 用于业务系统验证请求来自审批,具体参考 https://open.feishu.cn/document/ukTMukTMukTM/uUTNz4SN1MjL1UzM
+          example: sdjkljkx9lsadf110
+        action_callback_key:
+          type: string
+          description: 请求参数加密密钥，如果配置了该参数，则会对请求参数进行加密，业务需要对请求进行解密，加解密算法参考 https://open.feishu.cn/document/ukTMukTMukTM/uADM4QjLwADO04CMwgDN
+          example: gfdqedvsadfgfsd
+        allow_batch_operate:
+          type: boolean
+          description: 是否支持批量审批
+          example: 'true'
+        exclude_efficiency_statistics:
+          type: boolean
+          description: 审批流程数据是否不纳入效率统计
+          example: 'true'
+      description: 三方审批相关
+    Approval:
+      type: object
+      properties:
+        code:
+          type: string
+          description: 审批定义 code
+          example: EB828003-9FFE-4B3F-AA50-2E199E2ED943
+        name:
+          type: string
+          description: 审批定义名称
+          example: approval
+        is_external:
+          type: boolean
+          description: 是否为第三方审批
+          example: 'true'
+        external:
+          type: object
+          properties:
+            batch_cc_read:
+              type: boolean
+              description: 是否支持批量读
+              example: 'false'
+          description: 第三方审批信息
+        approval_id:
+          type: string
+          description: 审批定义Id
+          example: '7090754740375519252'
+          format: int64
+        icon:
+          type: string
+          description: 审批定义图标信息
+          example: https://lf3-ea.bytetos.com/obj/goofy/ee/approval/approval-admin/image/iconLib/v3/person.png
+      description: 审批定义
+    Item4:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 区域的唯一标识
+          example: '2038349'
+        name:
+          type: string
+          description: 名称
+          example: Beijing
+        level:
+          type: string
+          description: 层级
+          example: Province
+        has_sub_district:
+          type: boolean
+          description: 是否有子区域
+          example: 'false'
+        parent_districts:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 区域的唯一标识
+                example: '1814991'
+              name:
+                type: string
+                description: 名称
+                example: China
+              level:
+                type: string
+                description: 层级
+                example: Country
+          description: 父区域列表，顺序由叶子节点到根节点，不包含叶子节点本身，仅遍历方式为leaf_level时返回
+    Item5:
+      type: object
+      properties:
+        type:
+          type: string
+          description: 审批节点上的审批人，1.当 type 为 Supervisor、SupervisorTopDown、DepartmentManager 、DepartmentManagerTopDown 这 4 种时，需要在
+            level 中填写对应的级数，例如：由下往上三级主管审批，level = 3；2.当 type 为 Personal 时，需要根据x_user_id填写user_id，用于指定用户；3.当 approver 为 Free
+            发起人自选时，不需要指定 user_id ；ccer不支持 Free 发起人自选
+          enum:
+          - Supervisor
+          - SupervisorTopDown
+          - DepartmentManager
+          - DepartmentManagerTopDown
+          - Personal
+          - Free
+          x-enum-descriptions:
+            Supervisor: 主管审批（由下往上）
+            SupervisorTopDown: 主管审批（从上往下）
+            DepartmentManager: 部门负责人审批（由下往上）
+            DepartmentManagerTopDown: 部门负责人审批（从上往下）
+            Personal: 指定成员
+            Free: 发起人自选
+          example: Supervisor
+        user_id:
+          type: string
+          description: 用户id，根据user_id_type填写
+          example: f7cb567e
+        level:
+          type: string
+          description: 审批级数，当 type 为 Supervisor、SupervisorTopDown、DepartmentManager 、DepartmentManagerTopDown 这 4 种时，需要在 level
+            中填写对应的级数，例如：由下往上三级主管审批，level = 3
+          example: '3'
+      required:
+      - type

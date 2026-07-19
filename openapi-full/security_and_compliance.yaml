@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: security_and_compliance
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -1182,199 +1182,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            device_record_id:
-                              type: string
-                              description: 设备认证编码
-                              example: '7089353870308032531'
-                              format: int64
-                            version:
-                              type: string
-                              description: 版本号
-                              example: '0'
-                              format: int64
-                            current_user_id:
-                              type: string
-                              description: 当前登录用户ID
-                              example: ou_b25e90585ef8c1adac4b379c2e257906
-                            device_name:
-                              type: string
-                              description: 设备名称
-                              example: Q9C6RYMFDK
-                            model:
-                              type: string
-                              description: 设备型号
-                              example: iPhone13,2
-                            device_system:
-                              type: integer
-                              description: 操作系统
-                              enum:
-                              - 1
-                              - 2
-                              - 3
-                              - 4
-                              - 5
-                              - 6
-                              x-enum-descriptions:
-                                '1': Windows
-                                '2': macOS
-                                '3': Linux
-                                '4': Android
-                                '5': iOS
-                                '6': OpenHarmony
-                              example: '0'
-                            serial_number:
-                              type: string
-                              description: 生产序列号
-                              example: C02DTHRMML7H
-                            disk_serial_number:
-                              type: string
-                              description: 硬盘序列号
-                              example: CC344362-5990-5A68-8DDD-64A23C99FA0C
-                            uuid:
-                              type: string
-                              description: 主板UUID
-                              example: 621CDFF0-13D0-5AB1-9ADC-5F560095F6ED
-                            mac_address:
-                              type: string
-                              description: MAC地址
-                              example: ac:de:48:00:11:21
-                            android_id:
-                              type: string
-                              description: Android标识符
-                              example: 02a11ac4a83b918e
-                            idfv:
-                              type: string
-                              description: iOS供应商标识符
-                              example: 968F0E5C-C297-4122-ACB6-102494DEFD9A
-                            aaid:
-                              type: string
-                              description: Harmony供应商标识符
-                              example: ff3c2237-cd76-4331-9d72-0a4470854567
-                            device_ownership:
-                              type: integer
-                              description: 设备归属
-                              enum:
-                              - 0
-                              - 1
-                              - 2
-                              x-enum-descriptions:
-                                '0': 未知设备
-                                '1': 个人设备
-                                '2': 企业设备
-                              example: '0'
-                            device_status:
-                              type: integer
-                              description: 可信状态
-                              enum:
-                              - 0
-                              - 1
-                              - 2
-                              x-enum-descriptions:
-                                '0': 未知状态
-                                '1': 信任设备
-                                '2': 非信任设备
-                              example: '0'
-                            certification_level:
-                              type: integer
-                              description: 认证方式
-                              enum:
-                              - 0
-                              - 1
-                              - 2
-                              x-enum-descriptions:
-                                '0': 未知
-                                '1': 飞书认证
-                                '2': 终端管理认证
-                              example: '0'
-                            device_terminal_type:
-                              type: integer
-                              description: 设备类型
-                              enum:
-                              - 0
-                              - 1
-                              - 2
-                              x-enum-descriptions:
-                                '0': 未知
-                                '1': 移动端
-                                '2': 桌面端
-                              example: '0'
-                            latest_user_id:
-                              type: string
-                              description: 最近登录用户ID
-                              example: ou_b25e90585ef8c1adac4b379c2e257906
-                            dids:
-                              type: array
-                              items:
-                                type: string
-                              description: 设备指纹列表
-                            is_managed:
-                              type: boolean
-                              description: 是否为受管控设备
-                            mdm_device_id:
-                              type: string
-                              description: MDM设备ID
-                              example: 123abc
-                            mdm_provider_name:
-                              type: string
-                              description: MDM厂商名称
-                              example: Workspace_ONE
-                            lsa_info:
-                              type: string
-                              description: 终端管控客户端（包含 lsaclientid、在线状态、绑定时间、最近在线时间、版本号）
-                              example: 7522053803906960914,离线,2025/07/09 13:42:42 UTC,2025/07/18 05:09:21 UTC,v1.2.1
-                            device_env_info:
-                              type: string
-                              description: 设备环境检测（状态，应用名称、应用状态、上报时间）
-                              example: 安全;飞连,已安装,正在运行,2025/12/11 12:00:00;lsa,已安装,未运行,2025/12/11 12:00:00
-                            created_at:
-                              type: integer
-                              description: 注册时间
-                              example: '1767172154'
-                            updated_at:
-                              type: integer
-                              description: 更新时间
-                              example: '1767172154'
-                            is_public:
-                              type: boolean
-                              description: 是否为公共设备
-                              default: false
-                              example: 'false'
-                            source:
-                              type: integer
-                              description: 注册方式
-                              enum:
-                              - 0
-                              - 1
-                              - 2
-                              x-enum-descriptions:
-                                '0': 未知
-                                '1': 预注册
-                                '2': 系统注册
-                              default: 0
-                              example: '0'
-                            cert_verified_at_unix:
-                              type: string
-                              description: 证书认证时间
-                              example: '1772344920000'
-                              format: int64
-                            cert_serial_number:
-                              type: string
-                              description: 证书序列号
-                              example: '140112030923876027756448774661898183576236633676'
-                            cert_issuer:
-                              type: string
-                              description: 证书颁发者
-                              example: Root-CA
-                          required:
-                          - device_record_id
-                          - version
-                          - device_system
-                          - device_ownership
-                          - device_status
-                          - certification_level
-                          - device_terminal_type
+                          $ref: '#/components/schemas/DeviceRecord'
                         description: 设备列表
                       page_token:
                         type: string
@@ -1525,199 +1333,8 @@ paths:
                     type: object
                     properties:
                       device_record:
-                        type: object
-                        properties:
-                          device_record_id:
-                            type: string
-                            description: 设备认证编码
-                            example: '7089353870308032531'
-                            format: int64
-                          version:
-                            type: string
-                            description: 版本号
-                            example: '0'
-                            format: int64
-                          current_user_id:
-                            type: string
-                            description: 当前登录用户ID
-                            example: ou_b25e90585ef8c1adac4b379c2e257906
-                          device_name:
-                            type: string
-                            description: 设备名称
-                            example: Q9C6RYMFDK
-                          model:
-                            type: string
-                            description: 设备型号
-                            example: iPhone13,2
-                          device_system:
-                            type: integer
-                            description: 操作系统
-                            enum:
-                            - 1
-                            - 2
-                            - 3
-                            - 4
-                            - 5
-                            - 6
-                            x-enum-descriptions:
-                              '1': Windows
-                              '2': macOS
-                              '3': Linux
-                              '4': Android
-                              '5': iOS
-                              '6': OpenHarmony
-                            example: '0'
-                          serial_number:
-                            type: string
-                            description: 生产序列号
-                            example: C02DTHRMML7H
-                          disk_serial_number:
-                            type: string
-                            description: 硬盘序列号
-                            example: CC344362-5990-5A68-8DDD-64A23C99FA0C
-                          uuid:
-                            type: string
-                            description: 主板UUID
-                            example: 621CDFF0-13D0-5AB1-9ADC-5F560095F6ED
-                          mac_address:
-                            type: string
-                            description: MAC地址
-                            example: ac:de:48:00:11:21
-                          android_id:
-                            type: string
-                            description: Android标识符
-                            example: 02a11ac4a83b918e
-                          idfv:
-                            type: string
-                            description: iOS供应商标识符
-                            example: 968F0E5C-C297-4122-ACB6-102494DEFD9A
-                          aaid:
-                            type: string
-                            description: Harmony供应商标识符
-                            example: ff3c2237-cd76-4331-9d72-0a4470854567
-                          device_ownership:
-                            type: integer
-                            description: 设备归属
-                            enum:
-                            - 0
-                            - 1
-                            - 2
-                            x-enum-descriptions:
-                              '0': 未知设备
-                              '1': 个人设备
-                              '2': 企业设备
-                            example: '0'
-                          device_status:
-                            type: integer
-                            description: 可信状态
-                            enum:
-                            - 0
-                            - 1
-                            - 2
-                            x-enum-descriptions:
-                              '0': 未知状态
-                              '1': 信任设备
-                              '2': 非信任设备
-                            example: '0'
-                          certification_level:
-                            type: integer
-                            description: 认证方式
-                            enum:
-                            - 0
-                            - 1
-                            - 2
-                            x-enum-descriptions:
-                              '0': 未知
-                              '1': 飞书认证
-                              '2': 终端管理认证
-                            example: '0'
-                          device_terminal_type:
-                            type: integer
-                            description: 设备类型
-                            enum:
-                            - 0
-                            - 1
-                            - 2
-                            x-enum-descriptions:
-                              '0': 未知
-                              '1': 移动端
-                              '2': 桌面端
-                            example: '0'
-                          latest_user_id:
-                            type: string
-                            description: 最近登录用户ID
-                            example: ou_b25e90585ef8c1adac4b379c2e257906
-                          dids:
-                            type: array
-                            items:
-                              type: string
-                            description: 设备指纹列表
-                          is_managed:
-                            type: boolean
-                            description: 是否为受管控设备
-                          mdm_device_id:
-                            type: string
-                            description: MDM设备ID
-                            example: 123abc
-                          mdm_provider_name:
-                            type: string
-                            description: MDM厂商名称
-                            example: Workspace_ONE
-                          lsa_info:
-                            type: string
-                            description: 终端管控客户端（包含 lsaclientid、在线状态、绑定时间、最近在线时间、版本号）
-                            example: 7522053803906960914,离线,2025/07/09 13:42:42 UTC,2025/07/18 05:09:21 UTC,v1.2.1
-                          device_env_info:
-                            type: string
-                            description: 设备环境检测（状态，应用名称、应用状态、上报时间）
-                            example: 安全;飞连,已安装,正在运行,2025/12/11 12:00:00;lsa,已安装,未运行,2025/12/11 12:00:00
-                          created_at:
-                            type: integer
-                            description: 注册时间
-                            example: '1767172154'
-                          updated_at:
-                            type: integer
-                            description: 更新时间
-                            example: '1767172154'
-                          is_public:
-                            type: boolean
-                            description: 是否为公共设备
-                            default: false
-                            example: 'false'
-                          source:
-                            type: integer
-                            description: 注册方式
-                            enum:
-                            - 0
-                            - 1
-                            - 2
-                            x-enum-descriptions:
-                              '0': 未知
-                              '1': 预注册
-                              '2': 系统注册
-                            default: 0
-                            example: '0'
-                          cert_verified_at_unix:
-                            type: string
-                            description: 证书认证时间
-                            example: '1772344920000'
-                            format: int64
-                          cert_serial_number:
-                            type: string
-                            description: 证书序列号
-                            example: '140112030923876027756448774661898183576236633676'
-                          cert_issuer:
-                            type: string
-                            description: 证书颁发者
-                            example: Root-CA
-                        required:
-                        - device_record_id
-                        - version
-                        - device_system
-                        - device_ownership
-                        - device_status
-                        - certification_level
-                        - device_terminal_type
+                        allOf:
+                        - $ref: '#/components/schemas/DeviceRecord'
                         description: 设备记录
       x-lark-access-tokens:
       - tenant
@@ -1907,3 +1524,199 @@ paths:
         msg: The third-party device integration is not enabled.
       x-lark-rate-limit:
         tier: 9
+components:
+  schemas:
+    DeviceRecord:
+      type: object
+      properties:
+        device_record_id:
+          type: string
+          description: 设备认证编码
+          example: '7089353870308032531'
+          format: int64
+        version:
+          type: string
+          description: 版本号
+          example: '0'
+          format: int64
+        current_user_id:
+          type: string
+          description: 当前登录用户ID
+          example: ou_b25e90585ef8c1adac4b379c2e257906
+        device_name:
+          type: string
+          description: 设备名称
+          example: Q9C6RYMFDK
+        model:
+          type: string
+          description: 设备型号
+          example: iPhone13,2
+        device_system:
+          type: integer
+          description: 操作系统
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          x-enum-descriptions:
+            '1': Windows
+            '2': macOS
+            '3': Linux
+            '4': Android
+            '5': iOS
+            '6': OpenHarmony
+          example: '0'
+        serial_number:
+          type: string
+          description: 生产序列号
+          example: C02DTHRMML7H
+        disk_serial_number:
+          type: string
+          description: 硬盘序列号
+          example: CC344362-5990-5A68-8DDD-64A23C99FA0C
+        uuid:
+          type: string
+          description: 主板UUID
+          example: 621CDFF0-13D0-5AB1-9ADC-5F560095F6ED
+        mac_address:
+          type: string
+          description: MAC地址
+          example: ac:de:48:00:11:21
+        android_id:
+          type: string
+          description: Android标识符
+          example: 02a11ac4a83b918e
+        idfv:
+          type: string
+          description: iOS供应商标识符
+          example: 968F0E5C-C297-4122-ACB6-102494DEFD9A
+        aaid:
+          type: string
+          description: Harmony供应商标识符
+          example: ff3c2237-cd76-4331-9d72-0a4470854567
+        device_ownership:
+          type: integer
+          description: 设备归属
+          enum:
+          - 0
+          - 1
+          - 2
+          x-enum-descriptions:
+            '0': 未知设备
+            '1': 个人设备
+            '2': 企业设备
+          example: '0'
+        device_status:
+          type: integer
+          description: 可信状态
+          enum:
+          - 0
+          - 1
+          - 2
+          x-enum-descriptions:
+            '0': 未知状态
+            '1': 信任设备
+            '2': 非信任设备
+          example: '0'
+        certification_level:
+          type: integer
+          description: 认证方式
+          enum:
+          - 0
+          - 1
+          - 2
+          x-enum-descriptions:
+            '0': 未知
+            '1': 飞书认证
+            '2': 终端管理认证
+          example: '0'
+        device_terminal_type:
+          type: integer
+          description: 设备类型
+          enum:
+          - 0
+          - 1
+          - 2
+          x-enum-descriptions:
+            '0': 未知
+            '1': 移动端
+            '2': 桌面端
+          example: '0'
+        latest_user_id:
+          type: string
+          description: 最近登录用户ID
+          example: ou_b25e90585ef8c1adac4b379c2e257906
+        dids:
+          type: array
+          items:
+            type: string
+          description: 设备指纹列表
+        is_managed:
+          type: boolean
+          description: 是否为受管控设备
+        mdm_device_id:
+          type: string
+          description: MDM设备ID
+          example: 123abc
+        mdm_provider_name:
+          type: string
+          description: MDM厂商名称
+          example: Workspace_ONE
+        lsa_info:
+          type: string
+          description: 终端管控客户端（包含 lsaclientid、在线状态、绑定时间、最近在线时间、版本号）
+          example: 7522053803906960914,离线,2025/07/09 13:42:42 UTC,2025/07/18 05:09:21 UTC,v1.2.1
+        device_env_info:
+          type: string
+          description: 设备环境检测（状态，应用名称、应用状态、上报时间）
+          example: 安全;飞连,已安装,正在运行,2025/12/11 12:00:00;lsa,已安装,未运行,2025/12/11 12:00:00
+        created_at:
+          type: integer
+          description: 注册时间
+          example: '1767172154'
+        updated_at:
+          type: integer
+          description: 更新时间
+          example: '1767172154'
+        is_public:
+          type: boolean
+          description: 是否为公共设备
+          default: false
+          example: 'false'
+        source:
+          type: integer
+          description: 注册方式
+          enum:
+          - 0
+          - 1
+          - 2
+          x-enum-descriptions:
+            '0': 未知
+            '1': 预注册
+            '2': 系统注册
+          default: 0
+          example: '0'
+        cert_verified_at_unix:
+          type: string
+          description: 证书认证时间
+          example: '1772344920000'
+          format: int64
+        cert_serial_number:
+          type: string
+          description: 证书序列号
+          example: '140112030923876027756448774661898183576236633676'
+        cert_issuer:
+          type: string
+          description: 证书颁发者
+          example: Root-CA
+      required:
+      - device_record_id
+      - version
+      - device_system
+      - device_ownership
+      - device_status
+      - certification_level
+      - device_terminal_type

@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: search
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -153,46 +153,7 @@ paths:
                 acl:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      access:
-                        type: string
-                        description: 权限类型，优先级：Deny > Allow
-                        enum:
-                        - allow
-                        - deny
-                        x-enum-descriptions:
-                          allow: 允许访问
-                          deny: 禁止访问
-                        example: deny
-                      value:
-                        type: string
-                        description: 设置的权限值，依赖 type 描述
-                        example: u273y71
-                      type:
-                        type: string
-                        description: 权限值类型
-                        enum:
-                        - user_id
-                        - open_id
-                        - union_id
-                        - department_id
-                        - open_department_id
-                        - group_id
-                        - app_group_id
-                        - user
-                        - group
-                        x-enum-descriptions:
-                          user_id: 用户在租户内的身份ID，详细说明请参考：https://open.feishu.cn/document/home/user-identity-introduction/introduction
-                          open_id: 用户在应用内的身份ID，详细说明请参考：https://open.feishu.cn/document/home/user-identity-introduction/introduction
-                          union_id: 用户在同一应用开发商提供的多个应用间的统一身份ID，详细说明请参考：https://open.feishu.cn/document/home/user-identity-introduction/introduction
-                          department_id: 部门在租户内的唯一ID，详细说明请参考：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/field-overview#23857fe0
-                          open_department_id: 部门在应用内的唯一ID，详细说明请参考：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/field-overview#23857fe0
-                          group_id: GroupID（灰度中，对部分租户开放）
-                          app_group_id: AppGroupID（灰度中，对部分租户开放）
-                          user: 同 UserID
-                          group: 同 GroupID
-                        example: user_id
+                    $ref: '#/components/schemas/Item3'
                   description: item 的访问权限控制
                 metadata:
                   type: object
@@ -388,46 +349,7 @@ paths:
                           acl:
                             type: array
                             items:
-                              type: object
-                              properties:
-                                access:
-                                  type: string
-                                  description: 权限类型，优先级：Deny > Allow
-                                  enum:
-                                  - allow
-                                  - deny
-                                  x-enum-descriptions:
-                                    allow: 允许访问
-                                    deny: 禁止访问
-                                  example: deny
-                                value:
-                                  type: string
-                                  description: 设置的权限值，依赖 type 描述
-                                  example: u273y71
-                                type:
-                                  type: string
-                                  description: 权限值类型
-                                  enum:
-                                  - user_id
-                                  - open_id
-                                  - union_id
-                                  - department_id
-                                  - open_department_id
-                                  - group_id
-                                  - app_group_id
-                                  - user
-                                  - group
-                                  x-enum-descriptions:
-                                    user_id: 用户在租户内的身份ID，详细说明请参考：https://open.feishu.cn/document/home/user-identity-introduction/introduction
-                                    open_id: 用户在应用内的身份ID，详细说明请参考：https://open.feishu.cn/document/home/user-identity-introduction/introduction
-                                    union_id: 用户在同一应用开发商提供的多个应用间的统一身份ID，详细说明请参考：https://open.feishu.cn/document/home/user-identity-introduction/introduction
-                                    department_id: 部门在租户内的唯一ID，详细说明请参考：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/field-overview#23857fe0
-                                    open_department_id: 部门在应用内的唯一ID，详细说明请参考：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/field-overview#23857fe0
-                                    group_id: GroupID（灰度中，对部分租户开放）
-                                    app_group_id: AppGroupID（灰度中，对部分租户开放）
-                                    user: 同 UserID
-                                    group: 同 GroupID
-                                  example: user_id
+                              $ref: '#/components/schemas/Item3'
                             description: item 的访问权限控制
                           metadata:
                             type: object
@@ -629,142 +551,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      data_source:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 数据源的唯一标识
-                            example: '5577006791947779410'
-                            format: int64
-                          name:
-                            type: string
-                            description: data_source的展示名称
-                            example: 客服工单
-                          state:
-                            type: integer
-                            description: 数据源状态，0-已上线，1-未上线
-                            enum:
-                            - 0
-                            - 1
-                            x-enum-descriptions:
-                              '0': 已上线
-                              '1': 未上线
-                            example: '0'
-                          description:
-                            type: string
-                            description: 对于数据源的描述
-                            example: 搜索客服工单
-                          create_time:
-                            type: string
-                            description: 创建时间，采用 Unix 时间戳
-                            example: '1674309260'
-                          update_time:
-                            type: string
-                            description: 更新时间，采用 Unix 时间戳
-                            example: '1674309260'
-                          is_exceed_quota:
-                            type: boolean
-                            description: 是否超限
-                            example: 'false'
-                          icon_url:
-                            type: string
-                            description: 数据源在 search tab 上的展示图标路径
-                            example: https://s3-imfile.feishucdn.com/static-resource/v1/585fd740-f52e-4098-b864-57a32082ba1g
-                          template:
-                            type: string
-                            description: 数据源采用的展示模版名称
-                            default: search_common_card
-                            example: search_common_card
-                          searchable_fields:
-                            type: array
-                            items:
-                              type: string
-                            description: 描述哪些字段可以被搜索
-                            example: '["field1", "field2"]'
-                          i18n_name:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 国际化字段：中文
-                              en_us:
-                                type: string
-                                description: 国际化字段：英文
-                              ja_jp:
-                                type: string
-                                description: 国际化字段：日文
-                            description: 数据源的国际化展示名称
-                          i18n_description:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 国际化字段：中文
-                              en_us:
-                                type: string
-                                description: 国际化字段：英文
-                              ja_jp:
-                                type: string
-                                description: 国际化字段：日文
-                            description: 数据源的国际化描述
-                          schema_id:
-                            type: string
-                            description: 数据源关联的 schema 标识
-                            example: '7159054681489010384'
-                          app_id:
-                            type: string
-                            description: datasource对应的开放平台应用id
-                            example: cli_a1306bed4738d01b
-                          connect_type:
-                            type: integer
-                            description: 搜索请求的接入方式
-                            enum:
-                            - 0
-                            - 1
-                            x-enum-descriptions:
-                              '0': 调用搜索请求时，使用的是飞书搜索接口
-                              '1': 调用搜索请求时，使用的是自定义回调函数的Uri
-                            default: 0
-                            example: '1'
-                          connector_param:
-                            type: object
-                            properties:
-                              callback_user_id_type:
-                                type: integer
-                                description: 回调时Request里面的id类型
-                                enum:
-                                - 0
-                                - 1
-                                - 2
-                                - 3
-                                x-enum-descriptions:
-                                  '0': 不合法
-                                  '1': 用户在租户内的身份
-                                  '2': 用户在应用内的身份
-                                  '3': 用户在同一应用服务商所开发的多个应用下的统一身份
-                                example: '1'
-                              callback_endpoint:
-                                type: string
-                                description: 回调时的地址，必须为POST地址
-                                example: https://open.approval.cn/api/search
-                            description: 根据连接器类型不同所需要提供的相关参数
-                          enable_answer:
-                            type: boolean
-                            description: 是否使用问答服务
-                            example: 'false'
-                        required:
-                        - name
-                        description: 数据源实例
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -856,131 +643,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 数据源的唯一标识
-                              example: '5577006791947779410'
-                              format: int64
-                            name:
-                              type: string
-                              description: data_source的展示名称
-                              example: 客服工单
-                            state:
-                              type: integer
-                              description: 数据源状态，0-已上线，1-未上线
-                              enum:
-                              - 0
-                              - 1
-                              x-enum-descriptions:
-                                '0': 已上线
-                                '1': 未上线
-                              example: '0'
-                            description:
-                              type: string
-                              description: 对于数据源的描述
-                              example: 搜索客服工单
-                            create_time:
-                              type: string
-                              description: 创建时间，采用 Unix 时间戳
-                              example: '1674309260'
-                            update_time:
-                              type: string
-                              description: 更新时间，采用 Unix 时间戳
-                              example: '1674309260'
-                            is_exceed_quota:
-                              type: boolean
-                              description: 是否超限
-                              example: 'false'
-                            icon_url:
-                              type: string
-                              description: 数据源在 search tab 上的展示图标路径
-                              example: https://s3-imfile.feishucdn.com/static-resource/v1/585fd740-f52e-4098-b864-57a32082ba1g
-                            template:
-                              type: string
-                              description: 数据源采用的展示模版名称
-                              default: search_common_card
-                              example: search_common_card
-                            searchable_fields:
-                              type: array
-                              items:
-                                type: string
-                              description: 描述哪些字段可以被搜索
-                              example: '["field1", "field2"]'
-                            i18n_name:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 国际化字段：中文
-                                en_us:
-                                  type: string
-                                  description: 国际化字段：英文
-                                ja_jp:
-                                  type: string
-                                  description: 国际化字段：日文
-                              description: 数据源的国际化展示名称
-                            i18n_description:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 国际化字段：中文
-                                en_us:
-                                  type: string
-                                  description: 国际化字段：英文
-                                ja_jp:
-                                  type: string
-                                  description: 国际化字段：日文
-                              description: 数据源的国际化描述
-                            schema_id:
-                              type: string
-                              description: 数据源关联的 schema 标识
-                              example: '7159054681489010384'
-                            app_id:
-                              type: string
-                              description: datasource对应的开放平台应用id
-                              example: cli_a1306bed4738d01b
-                            connect_type:
-                              type: integer
-                              description: 搜索请求的接入方式
-                              enum:
-                              - 0
-                              - 1
-                              x-enum-descriptions:
-                                '0': 调用搜索请求时，使用的是飞书搜索接口
-                                '1': 调用搜索请求时，使用的是自定义回调函数的Uri
-                              default: 0
-                              example: '1'
-                            connector_param:
-                              type: object
-                              properties:
-                                callback_user_id_type:
-                                  type: integer
-                                  description: 回调时Request里面的id类型
-                                  enum:
-                                  - 0
-                                  - 1
-                                  - 2
-                                  - 3
-                                  x-enum-descriptions:
-                                    '0': 不合法
-                                    '1': 用户在租户内的身份
-                                    '2': 用户在应用内的身份
-                                    '3': 用户在同一应用服务商所开发的多个应用下的统一身份
-                                  example: '1'
-                                callback_endpoint:
-                                  type: string
-                                  description: 回调时的地址，必须为POST地址
-                                  example: https://open.approval.cn/api/search
-                              description: 根据连接器类型不同所需要提供的相关参数
-                            enable_answer:
-                              type: boolean
-                              description: 是否使用问答服务
-                              example: 'false'
-                          required:
-                          - name
+                          $ref: '#/components/schemas/DataSource'
                         description: 返回的数据
       x-lark-access-tokens:
       - tenant
@@ -1088,142 +751,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      data_source:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 数据源的唯一标识
-                            example: '5577006791947779410'
-                            format: int64
-                          name:
-                            type: string
-                            description: data_source的展示名称
-                            example: 客服工单
-                          state:
-                            type: integer
-                            description: 数据源状态，0-已上线，1-未上线
-                            enum:
-                            - 0
-                            - 1
-                            x-enum-descriptions:
-                              '0': 已上线
-                              '1': 未上线
-                            example: '0'
-                          description:
-                            type: string
-                            description: 对于数据源的描述
-                            example: 搜索客服工单
-                          create_time:
-                            type: string
-                            description: 创建时间，采用 Unix 时间戳
-                            example: '1674309260'
-                          update_time:
-                            type: string
-                            description: 更新时间，采用 Unix 时间戳
-                            example: '1674309260'
-                          is_exceed_quota:
-                            type: boolean
-                            description: 是否超限
-                            example: 'false'
-                          icon_url:
-                            type: string
-                            description: 数据源在 search tab 上的展示图标路径
-                            example: https://s3-imfile.feishucdn.com/static-resource/v1/585fd740-f52e-4098-b864-57a32082ba1g
-                          template:
-                            type: string
-                            description: 数据源采用的展示模版名称
-                            default: search_common_card
-                            example: search_common_card
-                          searchable_fields:
-                            type: array
-                            items:
-                              type: string
-                            description: 描述哪些字段可以被搜索
-                            example: '["field1", "field2"]'
-                          i18n_name:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 国际化字段：中文
-                              en_us:
-                                type: string
-                                description: 国际化字段：英文
-                              ja_jp:
-                                type: string
-                                description: 国际化字段：日文
-                            description: 数据源的国际化展示名称
-                          i18n_description:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 国际化字段：中文
-                              en_us:
-                                type: string
-                                description: 国际化字段：英文
-                              ja_jp:
-                                type: string
-                                description: 国际化字段：日文
-                            description: 数据源的国际化描述
-                          schema_id:
-                            type: string
-                            description: 数据源关联的 schema 标识
-                            example: '7159054681489010384'
-                          app_id:
-                            type: string
-                            description: datasource对应的开放平台应用id
-                            example: cli_a1306bed4738d01b
-                          connect_type:
-                            type: integer
-                            description: 搜索请求的接入方式
-                            enum:
-                            - 0
-                            - 1
-                            x-enum-descriptions:
-                              '0': 调用搜索请求时，使用的是飞书搜索接口
-                              '1': 调用搜索请求时，使用的是自定义回调函数的Uri
-                            default: 0
-                            example: '1'
-                          connector_param:
-                            type: object
-                            properties:
-                              callback_user_id_type:
-                                type: integer
-                                description: 回调时Request里面的id类型
-                                enum:
-                                - 0
-                                - 1
-                                - 2
-                                - 3
-                                x-enum-descriptions:
-                                  '0': 不合法
-                                  '1': 用户在租户内的身份
-                                  '2': 用户在应用内的身份
-                                  '3': 用户在同一应用服务商所开发的多个应用下的统一身份
-                                example: '1'
-                              callback_endpoint:
-                                type: string
-                                description: 回调时的地址，必须为POST地址
-                                example: https://open.approval.cn/api/search
-                            description: 根据连接器类型不同所需要提供的相关参数
-                          enable_answer:
-                            type: boolean
-                            description: 是否使用问答服务
-                            example: 'false'
-                        required:
-                        - name
-                        description: 数据源实例
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -1354,142 +882,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      data_source:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 数据源的唯一标识
-                            example: '5577006791947779410'
-                            format: int64
-                          name:
-                            type: string
-                            description: data_source的展示名称
-                            example: 客服工单
-                          state:
-                            type: integer
-                            description: 数据源状态，0-已上线，1-未上线
-                            enum:
-                            - 0
-                            - 1
-                            x-enum-descriptions:
-                              '0': 已上线
-                              '1': 未上线
-                            example: '0'
-                          description:
-                            type: string
-                            description: 对于数据源的描述
-                            example: 搜索客服工单
-                          create_time:
-                            type: string
-                            description: 创建时间，采用 Unix 时间戳
-                            example: '1674309260'
-                          update_time:
-                            type: string
-                            description: 更新时间，采用 Unix 时间戳
-                            example: '1674309260'
-                          is_exceed_quota:
-                            type: boolean
-                            description: 是否超限
-                            example: 'false'
-                          icon_url:
-                            type: string
-                            description: 数据源在 search tab 上的展示图标路径
-                            example: https://s3-imfile.feishucdn.com/static-resource/v1/585fd740-f52e-4098-b864-57a32082ba1g
-                          template:
-                            type: string
-                            description: 数据源采用的展示模版名称
-                            default: search_common_card
-                            example: search_common_card
-                          searchable_fields:
-                            type: array
-                            items:
-                              type: string
-                            description: 描述哪些字段可以被搜索
-                            example: '["field1", "field2"]'
-                          i18n_name:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 国际化字段：中文
-                              en_us:
-                                type: string
-                                description: 国际化字段：英文
-                              ja_jp:
-                                type: string
-                                description: 国际化字段：日文
-                            description: 数据源的国际化展示名称
-                          i18n_description:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 国际化字段：中文
-                              en_us:
-                                type: string
-                                description: 国际化字段：英文
-                              ja_jp:
-                                type: string
-                                description: 国际化字段：日文
-                            description: 数据源的国际化描述
-                          schema_id:
-                            type: string
-                            description: 数据源关联的 schema 标识
-                            example: '7159054681489010384'
-                          app_id:
-                            type: string
-                            description: datasource对应的开放平台应用id
-                            example: cli_a1306bed4738d01b
-                          connect_type:
-                            type: integer
-                            description: 搜索请求的接入方式
-                            enum:
-                            - 0
-                            - 1
-                            x-enum-descriptions:
-                              '0': 调用搜索请求时，使用的是飞书搜索接口
-                              '1': 调用搜索请求时，使用的是自定义回调函数的Uri
-                            default: 0
-                            example: '1'
-                          connector_param:
-                            type: object
-                            properties:
-                              callback_user_id_type:
-                                type: integer
-                                description: 回调时Request里面的id类型
-                                enum:
-                                - 0
-                                - 1
-                                - 2
-                                - 3
-                                x-enum-descriptions:
-                                  '0': 不合法
-                                  '1': 用户在租户内的身份
-                                  '2': 用户在应用内的身份
-                                  '3': 用户在同一应用服务商所开发的多个应用下的统一身份
-                                example: '1'
-                              callback_endpoint:
-                                type: string
-                                description: 回调时的地址，必须为POST地址
-                                example: https://open.approval.cn/api/search
-                            description: 根据连接器类型不同所需要提供的相关参数
-                          enable_answer:
-                            type: boolean
-                            description: 是否使用问答服务
-                            example: 'false'
-                        required:
-                        - name
-                        description: 数据源
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -2262,294 +1655,11 @@ paths:
                 properties:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      name:
-                        type: string
-                        description: 属性名
-                        example: title
-                      type:
-                        type: string
-                        description: 属性类型
-                        enum:
-                        - text
-                        - int
-                        - tag
-                        - timestamp
-                        - double
-                        - tinytext
-                        - user_ids
-                        x-enum-descriptions:
-                          text: 长文本类型
-                          int: 64位整数类型
-                          tag: 标签类型
-                          timestamp: Unix 时间戳类型（单位为秒）
-                          double: 浮点数类型（小数）
-                          tinytext: 短文本类型，（utf8 编码）长度小于 140 的文本
-                          user_ids: 用户ID类型（数组类型）
-                        example: text
-                      is_searchable:
-                        type: boolean
-                        description: 该属性是否可用作搜索，默认为 false
-                        example: 'true'
-                      is_sortable:
-                        type: boolean
-                        description: 该属性是否可用作搜索结果排序，默认为 false。如果为 true，需要再配置 sortOptions
-                        example: 'false'
-                      is_returnable:
-                        type: boolean
-                        description: 该属性是否可用作返回字段，为 false 时，该字段不会被召回和展示。默认为 false
-                        example: 'true'
-                      sort_options:
-                        type: object
-                        properties:
-                          priority:
-                            type: integer
-                            description: 排序的优先级，可选范围为 0~4，0为最高优先级。如果优先级相同，则随机进行排序。默认为0
-                            enum:
-                            - 0
-                            - 1
-                            - 2
-                            - 3
-                            - 4
-                            x-enum-descriptions:
-                              '0': 最高优先级
-                              '1': 次高优先级
-                              '2': 次次高优先级
-                              '3': 次低优先级
-                              '4': 最低优先级
-                            default: 0
-                            example: '0'
-                          order:
-                            type: string
-                            description: 排序的顺序。默认为 desc
-                            enum:
-                            - asc
-                            - desc
-                            x-enum-descriptions:
-                              asc: 升序
-                              desc: 降序
-                            default: desc
-                            example: asc
-                        description: 属性排序的可选配置，当 is_sortable 为 true 时，该字段为必填字段
-                      type_definitions:
-                        type: object
-                        properties:
-                          tag:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                name:
-                                  type: string
-                                  description: tag 对应的枚举值名称
-                                  example: status
-                                color:
-                                  type: string
-                                  description: 标签对应的颜色
-                                  enum:
-                                  - red
-                                  - green
-                                  - blue
-                                  - grey
-                                  - yellow
-                                  x-enum-descriptions:
-                                    red: 含警示性、敏感性的提示信息
-                                    green: 表示成功、完成、完毕的提示信息
-                                    blue: 组件架构、职能等中性信息
-                                    grey: 中立系统提示信息（慎重使用）
-                                    yellow: 焦点信息、推广性信息
-                                  example: blue
-                                text:
-                                  type: string
-                                  description: 标签中展示的文本
-                                  example: PASS
-                              required:
-                              - name
-                              - color
-                              - text
-                            description: 标签类型的定义
-                          user_ids:
-                            type: object
-                            properties:
-                              id_type:
-                                type: string
-                                description: 用户身份类型
-                                enum:
-                                - open_id
-                                - union_id
-                                - user_id
-                                x-enum-descriptions:
-                                  open_id: 用户在应用内的身份
-                                  union_id: 用户在同一应用服务商所开发的多个应用下的统一身份
-                                  user_id: 用户在租户内的身份
-                                example: user_id
-                            required:
-                            - id_type
-                            description: 用户身份标识
-                        description: 相关类型数据的定义和约束
-                      search_options:
-                        type: object
-                        properties:
-                          enable_semantic_match:
-                            type: boolean
-                            description: 是否支持语义切词召回。默认不支持（推荐使用在长文本的场景）
-                            example: 'true'
-                          enable_exact_match:
-                            type: boolean
-                            description: 是否支持精确匹配。默认不支持（推荐使用在短文本、需要精确查找的场景）
-                            example: 'false'
-                          enable_prefix_match:
-                            type: boolean
-                            description: 是否支持前缀匹配（短文本的默认的分词/召回策略。前缀长度为 1-12）
-                            example: 'false'
-                          enable_number_suffix_match:
-                            type: boolean
-                            description: 是否支持数据后缀匹配。默认不支持（推荐使用在短文本、有数字后缀查找的场景。后缀长度为3-12）
-                            example: 'false'
-                          enable_camel_match:
-                            type: boolean
-                            description: 是否支持驼峰英文匹配。默认不支持（推荐使用在短文本，且包含驼峰形式英文的查找场景）
-                            example: 'false'
-                        description: 属性搜索的可选配置，当 is_searchable 为 true 时，该字段为必填参数
-                      is_filterable:
-                        type: boolean
-                        description: 该属性是否可用作返回字段，为 false 时，该字段不会被筛选。默认为 false
-                        example: 'false'
-                      filter_options:
-                        type: object
-                        properties:
-                          display_name:
-                            type: string
-                            description: 筛选器展示名称
-                            example: 创建人
-                          i18n_display_name:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 国际化字段：中文
-                              en_us:
-                                type: string
-                                description: 国际化字段：英文
-                              ja_jp:
-                                type: string
-                                description: 国际化字段：日文
-                            description: 筛选器展示名称国际化字段
-                          option_mode:
-                            type: string
-                            description: 指明该筛选器支持单选或多选，默认单选
-                            enum:
-                            - single
-                            - multiple
-                            x-enum-descriptions:
-                              single: 该筛选器支持单选
-                              multiple: 该筛选器支持多选
-                            default: single
-                            example: single
-                          associated_smart_filter:
-                            type: string
-                            description: 关联的综合筛选器。只有 filter_type 为"user"和"time"时可以关联。"user" -> "from"；"time" -> "date"。
-                            enum:
-                            - from
-                            - date
-                            x-enum-descriptions:
-                              from: 映射到综合“来自用户”筛选器
-                              date: 映射到综合“时间”筛选器
-                            example: From
-                          filter_type:
-                            type: string
-                            description: 筛选器类型
-                            enum:
-                            - user
-                            - time
-                            - searchable
-                            - predefine_enum
-                            x-enum-descriptions:
-                              user: 用户筛选器
-                              time: 时间筛选器
-                              searchable: 可搜筛选器
-                              predefine_enum: 预定义枚举筛选器
-                            example: user
-                          predefine_enum_values:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                name:
-                                  type: string
-                                  description: 枚举值的标识。在多枚举值定义中保持唯一
-                                  example: p0
-                                text:
-                                  type: string
-                                  description: 枚举值展示文案
-                                  example: 最高优先级
-                              required:
-                              - name
-                              - text
-                            description: 预定义的展示枚举值。在 filter_type 为 "predefine_enum" 时必须填写
-                          enable_client_filter:
-                            type: boolean
-                            description: 是否开启客户端筛选器
-                            default: true
-                            example: 'true'
-                          reference_datasource_id:
-                            type: string
-                            description: 可搜筛选器关联的数据源标识
-                            example: '7264565154409461234'
-                        required:
-                        - display_name
-                        description: 属性筛选的可选配置，当 is_searchable 为 true 时，该字段为必填参数
-                      answer_option:
-                        type: object
-                        properties:
-                          is_searchable:
-                            type: boolean
-                            description: 是否用于搜索
-                            example: 'false'
-                          is_returnable:
-                            type: boolean
-                            description: 是否用于返回
-                            example: 'false'
-                        description: 问答产品设置，仅在datasource中enable_answer为true时生效
-                      desc:
-                        type: string
-                        description: 字段描述
-                        example: desc
-                    required:
-                    - name
-                    - type
+                    $ref: '#/components/schemas/Item'
                   description: 数据范式的属性定义
                 display:
-                  type: object
-                  properties:
-                    card_key:
-                      type: string
-                      description: 搜索数据的展示卡片
-                      enum:
-                      - search_common_card
-                      x-enum-descriptions:
-                        search_common_card: 普通 common 卡片
-                      example: search_common_card
-                    fields_mapping:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          display_field:
-                            type: string
-                            description: 展示字段名称，与 card_key 有关，每个模版能展示的字段不同。该字段不能重复
-                            example: summary
-                          data_field:
-                            type: string
-                            description: 数据字段的名称。需要确保该字段对应在 schema 属性定义中的 is_returnable 为 true，否则无法展示。需要使用 ${xxx} 的规则来描述
-                            example: ${description}
-                        required:
-                        - display_field
-                        - data_field
-                      description: 数据字段名称和展示字段名称的映射关系。如果没有设置，则只会展示 与展示字段名称同名的 数据字段
-                  required:
-                  - card_key
+                  allOf:
+                  - $ref: '#/components/schemas/Display'
                   description: 数据展示相关配置
                 schema_id:
                   type: string
@@ -2561,321 +1671,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      schema:
-                        type: object
-                        properties:
-                          properties:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                name:
-                                  type: string
-                                  description: 属性名
-                                  example: title
-                                type:
-                                  type: string
-                                  description: 属性类型
-                                  enum:
-                                  - text
-                                  - int
-                                  - tag
-                                  - timestamp
-                                  - double
-                                  - tinytext
-                                  - user_ids
-                                  x-enum-descriptions:
-                                    text: 长文本类型
-                                    int: 64位整数类型
-                                    tag: 标签类型
-                                    timestamp: Unix 时间戳类型（单位为秒）
-                                    double: 浮点数类型（小数）
-                                    tinytext: 短文本类型，（utf8 编码）长度小于 140 的文本
-                                    user_ids: 用户ID类型（数组类型）
-                                  example: text
-                                is_searchable:
-                                  type: boolean
-                                  description: 该属性是否可用作搜索，默认为 false
-                                  example: 'true'
-                                is_sortable:
-                                  type: boolean
-                                  description: 该属性是否可用作搜索结果排序，默认为 false。如果为 true，需要再配置 sortOptions
-                                  example: 'false'
-                                is_returnable:
-                                  type: boolean
-                                  description: 该属性是否可用作返回字段，为 false 时，该字段不会被召回和展示。默认为 false
-                                  example: 'true'
-                                sort_options:
-                                  type: object
-                                  properties:
-                                    priority:
-                                      type: integer
-                                      description: 排序的优先级，可选范围为 0~4，0为最高优先级。如果优先级相同，则随机进行排序。默认为0
-                                      enum:
-                                      - 0
-                                      - 1
-                                      - 2
-                                      - 3
-                                      - 4
-                                      x-enum-descriptions:
-                                        '0': 最高优先级
-                                        '1': 次高优先级
-                                        '2': 次次高优先级
-                                        '3': 次低优先级
-                                        '4': 最低优先级
-                                      default: 0
-                                      example: '0'
-                                    order:
-                                      type: string
-                                      description: 排序的顺序。默认为 desc
-                                      enum:
-                                      - asc
-                                      - desc
-                                      x-enum-descriptions:
-                                        asc: 升序
-                                        desc: 降序
-                                      default: desc
-                                      example: asc
-                                  description: 属性排序的可选配置，当 is_sortable 为 true 时，该字段为必填字段
-                                type_definitions:
-                                  type: object
-                                  properties:
-                                    tag:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          name:
-                                            type: string
-                                            description: tag 对应的枚举值名称
-                                            example: status
-                                          color:
-                                            type: string
-                                            description: 标签对应的颜色
-                                            enum:
-                                            - red
-                                            - green
-                                            - blue
-                                            - grey
-                                            - yellow
-                                            x-enum-descriptions:
-                                              red: 含警示性、敏感性的提示信息
-                                              green: 表示成功、完成、完毕的提示信息
-                                              blue: 组件架构、职能等中性信息
-                                              grey: 中立系统提示信息（慎重使用）
-                                              yellow: 焦点信息、推广性信息
-                                            example: blue
-                                          text:
-                                            type: string
-                                            description: 标签中展示的文本
-                                            example: PASS
-                                        required:
-                                        - name
-                                        - color
-                                        - text
-                                      description: 标签类型的定义
-                                    user_ids:
-                                      type: object
-                                      properties:
-                                        id_type:
-                                          type: string
-                                          description: 用户身份类型
-                                          enum:
-                                          - open_id
-                                          - union_id
-                                          - user_id
-                                          x-enum-descriptions:
-                                            open_id: 用户在应用内的身份
-                                            union_id: 用户在同一应用服务商所开发的多个应用下的统一身份
-                                            user_id: 用户在租户内的身份
-                                          example: user_id
-                                      required:
-                                      - id_type
-                                      description: 用户身份标识
-                                  description: 相关类型数据的定义和约束
-                                search_options:
-                                  type: object
-                                  properties:
-                                    enable_semantic_match:
-                                      type: boolean
-                                      description: 是否支持语义切词召回。默认不支持（推荐使用在长文本的场景）
-                                      example: 'true'
-                                    enable_exact_match:
-                                      type: boolean
-                                      description: 是否支持精确匹配。默认不支持（推荐使用在短文本、需要精确查找的场景）
-                                      example: 'false'
-                                    enable_prefix_match:
-                                      type: boolean
-                                      description: 是否支持前缀匹配（短文本的默认的分词/召回策略。前缀长度为 1-12）
-                                      example: 'false'
-                                    enable_number_suffix_match:
-                                      type: boolean
-                                      description: 是否支持数据后缀匹配。默认不支持（推荐使用在短文本、有数字后缀查找的场景。后缀长度为3-12）
-                                      example: 'false'
-                                    enable_camel_match:
-                                      type: boolean
-                                      description: 是否支持驼峰英文匹配。默认不支持（推荐使用在短文本，且包含驼峰形式英文的查找场景）
-                                      example: 'false'
-                                  description: 属性搜索的可选配置，当 is_searchable 为 true 时，该字段为必填参数
-                                is_filterable:
-                                  type: boolean
-                                  description: 该属性是否可用作返回字段，为 false 时，该字段不会被筛选。默认为 false
-                                  example: 'false'
-                                filter_options:
-                                  type: object
-                                  properties:
-                                    display_name:
-                                      type: string
-                                      description: 筛选器展示名称
-                                      example: 创建人
-                                    i18n_display_name:
-                                      type: object
-                                      properties:
-                                        zh_cn:
-                                          type: string
-                                          description: 国际化字段：中文
-                                        en_us:
-                                          type: string
-                                          description: 国际化字段：英文
-                                        ja_jp:
-                                          type: string
-                                          description: 国际化字段：日文
-                                      description: 筛选器展示名称国际化字段
-                                    option_mode:
-                                      type: string
-                                      description: 指明该筛选器支持单选或多选，默认单选
-                                      enum:
-                                      - single
-                                      - multiple
-                                      x-enum-descriptions:
-                                        single: 该筛选器支持单选
-                                        multiple: 该筛选器支持多选
-                                      default: single
-                                      example: single
-                                    associated_smart_filter:
-                                      type: string
-                                      description: 关联的综合筛选器。只有 filter_type 为"user"和"time"时可以关联。"user" -> "from"；"time" ->
-                                        "date"。
-                                      enum:
-                                      - from
-                                      - date
-                                      x-enum-descriptions:
-                                        from: 映射到综合“来自用户”筛选器
-                                        date: 映射到综合“时间”筛选器
-                                      example: From
-                                    filter_type:
-                                      type: string
-                                      description: 筛选器类型
-                                      enum:
-                                      - user
-                                      - time
-                                      - searchable
-                                      - predefine_enum
-                                      x-enum-descriptions:
-                                        user: 用户筛选器
-                                        time: 时间筛选器
-                                        searchable: 可搜筛选器
-                                        predefine_enum: 预定义枚举筛选器
-                                      example: user
-                                    predefine_enum_values:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          name:
-                                            type: string
-                                            description: 枚举值的标识。在多枚举值定义中保持唯一
-                                            example: p0
-                                          text:
-                                            type: string
-                                            description: 枚举值展示文案
-                                            example: 最高优先级
-                                        required:
-                                        - name
-                                        - text
-                                      description: 预定义的展示枚举值。在 filter_type 为 "predefine_enum" 时必须填写
-                                    enable_client_filter:
-                                      type: boolean
-                                      description: 是否开启客户端筛选器
-                                      default: true
-                                      example: 'true'
-                                    reference_datasource_id:
-                                      type: string
-                                      description: 可搜筛选器关联的数据源标识
-                                      example: '7264565154409461234'
-                                  required:
-                                  - display_name
-                                  description: 属性筛选的可选配置，当 is_searchable 为 true 时，该字段为必填参数
-                                answer_option:
-                                  type: object
-                                  properties:
-                                    is_searchable:
-                                      type: boolean
-                                      description: 是否用于搜索
-                                      example: 'false'
-                                    is_returnable:
-                                      type: boolean
-                                      description: 是否用于返回
-                                      example: 'false'
-                                  description: 问答产品设置，仅在datasource中enable_answer为true时生效
-                                desc:
-                                  type: string
-                                  description: 字段描述
-                                  example: desc
-                              required:
-                              - name
-                              - type
-                            description: 数据范式的属性定义
-                          display:
-                            type: object
-                            properties:
-                              card_key:
-                                type: string
-                                description: 搜索数据的展示卡片
-                                enum:
-                                - search_common_card
-                                x-enum-descriptions:
-                                  search_common_card: 普通 common 卡片
-                                example: search_common_card
-                              fields_mapping:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    display_field:
-                                      type: string
-                                      description: 展示字段名称，与 card_key 有关，每个模版能展示的字段不同。该字段不能重复
-                                      example: summary
-                                    data_field:
-                                      type: string
-                                      description: 数据字段的名称。需要确保该字段对应在 schema 属性定义中的 is_returnable 为 true，否则无法展示。需要使用 ${xxx}
-                                        的规则来描述
-                                      example: ${description}
-                                  required:
-                                  - display_field
-                                  - data_field
-                                description: 数据字段名称和展示字段名称的映射关系。如果没有设置，则只会展示 与展示字段名称同名的 数据字段
-                            required:
-                            - card_key
-                            description: 数据展示相关配置
-                          schema_id:
-                            type: string
-                            description: 用户自定义数据范式的唯一标识
-                            example: jira_schema
-                        required:
-                        - properties
-                        - display
-                        - schema_id
-                        description: 数据范式实例
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -3004,321 +1800,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      schema:
-                        type: object
-                        properties:
-                          properties:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                name:
-                                  type: string
-                                  description: 属性名
-                                  example: title
-                                type:
-                                  type: string
-                                  description: 属性类型
-                                  enum:
-                                  - text
-                                  - int
-                                  - tag
-                                  - timestamp
-                                  - double
-                                  - tinytext
-                                  - user_ids
-                                  x-enum-descriptions:
-                                    text: 长文本类型
-                                    int: 64位整数类型
-                                    tag: 标签类型
-                                    timestamp: Unix 时间戳类型（单位为秒）
-                                    double: 浮点数类型（小数）
-                                    tinytext: 短文本类型，（utf8 编码）长度小于 140 的文本
-                                    user_ids: 用户ID类型（数组类型）
-                                  example: text
-                                is_searchable:
-                                  type: boolean
-                                  description: 该属性是否可用作搜索，默认为 false
-                                  example: 'true'
-                                is_sortable:
-                                  type: boolean
-                                  description: 该属性是否可用作搜索结果排序，默认为 false。如果为 true，需要再配置 sortOptions
-                                  example: 'false'
-                                is_returnable:
-                                  type: boolean
-                                  description: 该属性是否可用作返回字段，为 false 时，该字段不会被召回和展示。默认为 false
-                                  example: 'true'
-                                sort_options:
-                                  type: object
-                                  properties:
-                                    priority:
-                                      type: integer
-                                      description: 排序的优先级，可选范围为 0~4，0为最高优先级。如果优先级相同，则随机进行排序。默认为0
-                                      enum:
-                                      - 0
-                                      - 1
-                                      - 2
-                                      - 3
-                                      - 4
-                                      x-enum-descriptions:
-                                        '0': 最高优先级
-                                        '1': 次高优先级
-                                        '2': 次次高优先级
-                                        '3': 次低优先级
-                                        '4': 最低优先级
-                                      default: 0
-                                      example: '0'
-                                    order:
-                                      type: string
-                                      description: 排序的顺序。默认为 desc
-                                      enum:
-                                      - asc
-                                      - desc
-                                      x-enum-descriptions:
-                                        asc: 升序
-                                        desc: 降序
-                                      default: desc
-                                      example: asc
-                                  description: 属性排序的可选配置，当 is_sortable 为 true 时，该字段为必填字段
-                                type_definitions:
-                                  type: object
-                                  properties:
-                                    tag:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          name:
-                                            type: string
-                                            description: tag 对应的枚举值名称
-                                            example: status
-                                          color:
-                                            type: string
-                                            description: 标签对应的颜色
-                                            enum:
-                                            - red
-                                            - green
-                                            - blue
-                                            - grey
-                                            - yellow
-                                            x-enum-descriptions:
-                                              red: 含警示性、敏感性的提示信息
-                                              green: 表示成功、完成、完毕的提示信息
-                                              blue: 组件架构、职能等中性信息
-                                              grey: 中立系统提示信息（慎重使用）
-                                              yellow: 焦点信息、推广性信息
-                                            example: blue
-                                          text:
-                                            type: string
-                                            description: 标签中展示的文本
-                                            example: PASS
-                                        required:
-                                        - name
-                                        - color
-                                        - text
-                                      description: 标签类型的定义
-                                    user_ids:
-                                      type: object
-                                      properties:
-                                        id_type:
-                                          type: string
-                                          description: 用户身份类型
-                                          enum:
-                                          - open_id
-                                          - union_id
-                                          - user_id
-                                          x-enum-descriptions:
-                                            open_id: 用户在应用内的身份
-                                            union_id: 用户在同一应用服务商所开发的多个应用下的统一身份
-                                            user_id: 用户在租户内的身份
-                                          example: user_id
-                                      required:
-                                      - id_type
-                                      description: 用户身份标识
-                                  description: 相关类型数据的定义和约束
-                                search_options:
-                                  type: object
-                                  properties:
-                                    enable_semantic_match:
-                                      type: boolean
-                                      description: 是否支持语义切词召回。默认不支持（推荐使用在长文本的场景）
-                                      example: 'true'
-                                    enable_exact_match:
-                                      type: boolean
-                                      description: 是否支持精确匹配。默认不支持（推荐使用在短文本、需要精确查找的场景）
-                                      example: 'false'
-                                    enable_prefix_match:
-                                      type: boolean
-                                      description: 是否支持前缀匹配（短文本的默认的分词/召回策略。前缀长度为 1-12）
-                                      example: 'false'
-                                    enable_number_suffix_match:
-                                      type: boolean
-                                      description: 是否支持数据后缀匹配。默认不支持（推荐使用在短文本、有数字后缀查找的场景。后缀长度为3-12）
-                                      example: 'false'
-                                    enable_camel_match:
-                                      type: boolean
-                                      description: 是否支持驼峰英文匹配。默认不支持（推荐使用在短文本，且包含驼峰形式英文的查找场景）
-                                      example: 'false'
-                                  description: 属性搜索的可选配置，当 is_searchable 为 true 时，该字段为必填参数
-                                is_filterable:
-                                  type: boolean
-                                  description: 该属性是否可用作返回字段，为 false 时，该字段不会被筛选。默认为 false
-                                  example: 'false'
-                                filter_options:
-                                  type: object
-                                  properties:
-                                    display_name:
-                                      type: string
-                                      description: 筛选器展示名称
-                                      example: 创建人
-                                    i18n_display_name:
-                                      type: object
-                                      properties:
-                                        zh_cn:
-                                          type: string
-                                          description: 国际化字段：中文
-                                        en_us:
-                                          type: string
-                                          description: 国际化字段：英文
-                                        ja_jp:
-                                          type: string
-                                          description: 国际化字段：日文
-                                      description: 筛选器展示名称国际化字段
-                                    option_mode:
-                                      type: string
-                                      description: 指明该筛选器支持单选或多选，默认单选
-                                      enum:
-                                      - single
-                                      - multiple
-                                      x-enum-descriptions:
-                                        single: 该筛选器支持单选
-                                        multiple: 该筛选器支持多选
-                                      default: single
-                                      example: single
-                                    associated_smart_filter:
-                                      type: string
-                                      description: 关联的综合筛选器。只有 filter_type 为"user"和"time"时可以关联。"user" -> "from"；"time" ->
-                                        "date"。
-                                      enum:
-                                      - from
-                                      - date
-                                      x-enum-descriptions:
-                                        from: 映射到综合“来自用户”筛选器
-                                        date: 映射到综合“时间”筛选器
-                                      example: From
-                                    filter_type:
-                                      type: string
-                                      description: 筛选器类型
-                                      enum:
-                                      - user
-                                      - time
-                                      - searchable
-                                      - predefine_enum
-                                      x-enum-descriptions:
-                                        user: 用户筛选器
-                                        time: 时间筛选器
-                                        searchable: 可搜筛选器
-                                        predefine_enum: 预定义枚举筛选器
-                                      example: user
-                                    predefine_enum_values:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          name:
-                                            type: string
-                                            description: 枚举值的标识。在多枚举值定义中保持唯一
-                                            example: p0
-                                          text:
-                                            type: string
-                                            description: 枚举值展示文案
-                                            example: 最高优先级
-                                        required:
-                                        - name
-                                        - text
-                                      description: 预定义的展示枚举值。在 filter_type 为 "predefine_enum" 时必须填写
-                                    enable_client_filter:
-                                      type: boolean
-                                      description: 是否开启客户端筛选器
-                                      default: true
-                                      example: 'true'
-                                    reference_datasource_id:
-                                      type: string
-                                      description: 可搜筛选器关联的数据源标识
-                                      example: '7264565154409461234'
-                                  required:
-                                  - display_name
-                                  description: 属性筛选的可选配置，当 is_searchable 为 true 时，该字段为必填参数
-                                answer_option:
-                                  type: object
-                                  properties:
-                                    is_searchable:
-                                      type: boolean
-                                      description: 是否用于搜索
-                                      example: 'false'
-                                    is_returnable:
-                                      type: boolean
-                                      description: 是否用于返回
-                                      example: 'false'
-                                  description: 问答产品设置，仅在datasource中enable_answer为true时生效
-                                desc:
-                                  type: string
-                                  description: 字段描述
-                                  example: desc
-                              required:
-                              - name
-                              - type
-                            description: 数据范式的属性定义
-                          display:
-                            type: object
-                            properties:
-                              card_key:
-                                type: string
-                                description: 搜索数据的展示卡片
-                                enum:
-                                - search_common_card
-                                x-enum-descriptions:
-                                  search_common_card: 普通 common 卡片
-                                example: search_common_card
-                              fields_mapping:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    display_field:
-                                      type: string
-                                      description: 展示字段名称，与 card_key 有关，每个模版能展示的字段不同。该字段不能重复
-                                      example: summary
-                                    data_field:
-                                      type: string
-                                      description: 数据字段的名称。需要确保该字段对应在 schema 属性定义中的 is_returnable 为 true，否则无法展示。需要使用 ${xxx}
-                                        的规则来描述
-                                      example: ${description}
-                                  required:
-                                  - display_field
-                                  - data_field
-                                description: 数据字段名称和展示字段名称的映射关系。如果没有设置，则只会展示 与展示字段名称同名的 数据字段
-                            required:
-                            - card_key
-                            description: 数据展示相关配置
-                          schema_id:
-                            type: string
-                            description: 用户自定义数据范式的唯一标识
-                            example: jira_schema
-                        required:
-                        - properties
-                        - display
-                        - schema_id
-                        description: 数据范式
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -3367,35 +1849,8 @@ paths:
               type: object
               properties:
                 display:
-                  type: object
-                  properties:
-                    card_key:
-                      type: string
-                      description: 搜索数据的展示卡片
-                      enum:
-                      - search_common_card
-                      x-enum-descriptions:
-                        search_common_card: 普通 common 卡片
-                      example: search_common_card
-                    fields_mapping:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          display_field:
-                            type: string
-                            description: 展示字段名称，与 card_key 有关，每个模版能展示的字段不同。该字段不能重复
-                            example: summary
-                          data_field:
-                            type: string
-                            description: 数据字段的名称。需要确保该字段对应在 schema 属性定义中的 is_returnable 为 true，否则无法展示。需要使用 ${xxx} 的规则来描述
-                            example: ${description}
-                        required:
-                        - display_field
-                        - data_field
-                      description: 数据字段名称和展示字段名称的映射关系。如果没有设置，则只会展示 与展示字段名称同名的 数据字段
-                  required:
-                  - card_key
+                  allOf:
+                  - $ref: '#/components/schemas/Display'
                   description: 数据展示相关配置
                 properties:
                   type: array
@@ -3431,321 +1886,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      schema:
-                        type: object
-                        properties:
-                          properties:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                name:
-                                  type: string
-                                  description: 属性名
-                                  example: title
-                                type:
-                                  type: string
-                                  description: 属性类型
-                                  enum:
-                                  - text
-                                  - int
-                                  - tag
-                                  - timestamp
-                                  - double
-                                  - tinytext
-                                  - user_ids
-                                  x-enum-descriptions:
-                                    text: 长文本类型
-                                    int: 64位整数类型
-                                    tag: 标签类型
-                                    timestamp: Unix 时间戳类型（单位为秒）
-                                    double: 浮点数类型（小数）
-                                    tinytext: 短文本类型，（utf8 编码）长度小于 140 的文本
-                                    user_ids: 用户ID类型（数组类型）
-                                  example: text
-                                is_searchable:
-                                  type: boolean
-                                  description: 该属性是否可用作搜索，默认为 false
-                                  example: 'true'
-                                is_sortable:
-                                  type: boolean
-                                  description: 该属性是否可用作搜索结果排序，默认为 false。如果为 true，需要再配置 sortOptions
-                                  example: 'false'
-                                is_returnable:
-                                  type: boolean
-                                  description: 该属性是否可用作返回字段，为 false 时，该字段不会被召回和展示。默认为 false
-                                  example: 'true'
-                                sort_options:
-                                  type: object
-                                  properties:
-                                    priority:
-                                      type: integer
-                                      description: 排序的优先级，可选范围为 0~4，0为最高优先级。如果优先级相同，则随机进行排序。默认为0
-                                      enum:
-                                      - 0
-                                      - 1
-                                      - 2
-                                      - 3
-                                      - 4
-                                      x-enum-descriptions:
-                                        '0': 最高优先级
-                                        '1': 次高优先级
-                                        '2': 次次高优先级
-                                        '3': 次低优先级
-                                        '4': 最低优先级
-                                      default: 0
-                                      example: '0'
-                                    order:
-                                      type: string
-                                      description: 排序的顺序。默认为 desc
-                                      enum:
-                                      - asc
-                                      - desc
-                                      x-enum-descriptions:
-                                        asc: 升序
-                                        desc: 降序
-                                      default: desc
-                                      example: asc
-                                  description: 属性排序的可选配置，当 is_sortable 为 true 时，该字段为必填字段
-                                type_definitions:
-                                  type: object
-                                  properties:
-                                    tag:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          name:
-                                            type: string
-                                            description: tag 对应的枚举值名称
-                                            example: status
-                                          color:
-                                            type: string
-                                            description: 标签对应的颜色
-                                            enum:
-                                            - red
-                                            - green
-                                            - blue
-                                            - grey
-                                            - yellow
-                                            x-enum-descriptions:
-                                              red: 含警示性、敏感性的提示信息
-                                              green: 表示成功、完成、完毕的提示信息
-                                              blue: 组件架构、职能等中性信息
-                                              grey: 中立系统提示信息（慎重使用）
-                                              yellow: 焦点信息、推广性信息
-                                            example: blue
-                                          text:
-                                            type: string
-                                            description: 标签中展示的文本
-                                            example: PASS
-                                        required:
-                                        - name
-                                        - color
-                                        - text
-                                      description: 标签类型的定义
-                                    user_ids:
-                                      type: object
-                                      properties:
-                                        id_type:
-                                          type: string
-                                          description: 用户身份类型
-                                          enum:
-                                          - open_id
-                                          - union_id
-                                          - user_id
-                                          x-enum-descriptions:
-                                            open_id: 用户在应用内的身份
-                                            union_id: 用户在同一应用服务商所开发的多个应用下的统一身份
-                                            user_id: 用户在租户内的身份
-                                          example: user_id
-                                      required:
-                                      - id_type
-                                      description: 用户身份标识
-                                  description: 相关类型数据的定义和约束
-                                search_options:
-                                  type: object
-                                  properties:
-                                    enable_semantic_match:
-                                      type: boolean
-                                      description: 是否支持语义切词召回。默认不支持（推荐使用在长文本的场景）
-                                      example: 'true'
-                                    enable_exact_match:
-                                      type: boolean
-                                      description: 是否支持精确匹配。默认不支持（推荐使用在短文本、需要精确查找的场景）
-                                      example: 'false'
-                                    enable_prefix_match:
-                                      type: boolean
-                                      description: 是否支持前缀匹配（短文本的默认的分词/召回策略。前缀长度为 1-12）
-                                      example: 'false'
-                                    enable_number_suffix_match:
-                                      type: boolean
-                                      description: 是否支持数据后缀匹配。默认不支持（推荐使用在短文本、有数字后缀查找的场景。后缀长度为3-12）
-                                      example: 'false'
-                                    enable_camel_match:
-                                      type: boolean
-                                      description: 是否支持驼峰英文匹配。默认不支持（推荐使用在短文本，且包含驼峰形式英文的查找场景）
-                                      example: 'false'
-                                  description: 属性搜索的可选配置，当 is_searchable 为 true 时，该字段为必填参数
-                                is_filterable:
-                                  type: boolean
-                                  description: 该属性是否可用作返回字段，为 false 时，该字段不会被筛选。默认为 false
-                                  example: 'false'
-                                filter_options:
-                                  type: object
-                                  properties:
-                                    display_name:
-                                      type: string
-                                      description: 筛选器展示名称
-                                      example: 创建人
-                                    i18n_display_name:
-                                      type: object
-                                      properties:
-                                        zh_cn:
-                                          type: string
-                                          description: 国际化字段：中文
-                                        en_us:
-                                          type: string
-                                          description: 国际化字段：英文
-                                        ja_jp:
-                                          type: string
-                                          description: 国际化字段：日文
-                                      description: 筛选器展示名称国际化字段
-                                    option_mode:
-                                      type: string
-                                      description: 指明该筛选器支持单选或多选，默认单选
-                                      enum:
-                                      - single
-                                      - multiple
-                                      x-enum-descriptions:
-                                        single: 该筛选器支持单选
-                                        multiple: 该筛选器支持多选
-                                      default: single
-                                      example: single
-                                    associated_smart_filter:
-                                      type: string
-                                      description: 关联的综合筛选器。只有 filter_type 为"user"和"time"时可以关联。"user" -> "from"；"time" ->
-                                        "date"。
-                                      enum:
-                                      - from
-                                      - date
-                                      x-enum-descriptions:
-                                        from: 映射到综合“来自用户”筛选器
-                                        date: 映射到综合“时间”筛选器
-                                      example: From
-                                    filter_type:
-                                      type: string
-                                      description: 筛选器类型
-                                      enum:
-                                      - user
-                                      - time
-                                      - searchable
-                                      - predefine_enum
-                                      x-enum-descriptions:
-                                        user: 用户筛选器
-                                        time: 时间筛选器
-                                        searchable: 可搜筛选器
-                                        predefine_enum: 预定义枚举筛选器
-                                      example: user
-                                    predefine_enum_values:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          name:
-                                            type: string
-                                            description: 枚举值的标识。在多枚举值定义中保持唯一
-                                            example: p0
-                                          text:
-                                            type: string
-                                            description: 枚举值展示文案
-                                            example: 最高优先级
-                                        required:
-                                        - name
-                                        - text
-                                      description: 预定义的展示枚举值。在 filter_type 为 "predefine_enum" 时必须填写
-                                    enable_client_filter:
-                                      type: boolean
-                                      description: 是否开启客户端筛选器
-                                      default: true
-                                      example: 'true'
-                                    reference_datasource_id:
-                                      type: string
-                                      description: 可搜筛选器关联的数据源标识
-                                      example: '7264565154409461234'
-                                  required:
-                                  - display_name
-                                  description: 属性筛选的可选配置，当 is_searchable 为 true 时，该字段为必填参数
-                                answer_option:
-                                  type: object
-                                  properties:
-                                    is_searchable:
-                                      type: boolean
-                                      description: 是否用于搜索
-                                      example: 'false'
-                                    is_returnable:
-                                      type: boolean
-                                      description: 是否用于返回
-                                      example: 'false'
-                                  description: 问答产品设置，仅在datasource中enable_answer为true时生效
-                                desc:
-                                  type: string
-                                  description: 字段描述
-                                  example: desc
-                              required:
-                              - name
-                              - type
-                            description: 数据范式的属性定义
-                          display:
-                            type: object
-                            properties:
-                              card_key:
-                                type: string
-                                description: 搜索数据的展示卡片
-                                enum:
-                                - search_common_card
-                                x-enum-descriptions:
-                                  search_common_card: 普通 common 卡片
-                                example: search_common_card
-                              fields_mapping:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    display_field:
-                                      type: string
-                                      description: 展示字段名称，与 card_key 有关，每个模版能展示的字段不同。该字段不能重复
-                                      example: summary
-                                    data_field:
-                                      type: string
-                                      description: 数据字段的名称。需要确保该字段对应在 schema 属性定义中的 is_returnable 为 true，否则无法展示。需要使用 ${xxx}
-                                        的规则来描述
-                                      example: ${description}
-                                  required:
-                                  - display_field
-                                  - data_field
-                                description: 数据字段名称和展示字段名称的映射关系。如果没有设置，则只会展示 与展示字段名称同名的 数据字段
-                            required:
-                            - card_key
-                            description: 数据展示相关配置
-                          schema_id:
-                            type: string
-                            description: 用户自定义数据范式的唯一标识
-                            example: jira_schema
-                        required:
-                        - properties
-                        - display
-                        - schema_id
-                        description: 数据范式实例
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -3779,3 +1920,529 @@ paths:
         msg: ''
       x-lark-rate-limit:
         tier: 2
+components:
+  schemas:
+    Item:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 属性名
+          example: title
+        type:
+          type: string
+          description: 属性类型
+          enum:
+          - text
+          - int
+          - tag
+          - timestamp
+          - double
+          - tinytext
+          - user_ids
+          x-enum-descriptions:
+            text: 长文本类型
+            int: 64位整数类型
+            tag: 标签类型
+            timestamp: Unix 时间戳类型（单位为秒）
+            double: 浮点数类型（小数）
+            tinytext: 短文本类型，（utf8 编码）长度小于 140 的文本
+            user_ids: 用户ID类型（数组类型）
+          example: text
+        is_searchable:
+          type: boolean
+          description: 该属性是否可用作搜索，默认为 false
+          example: 'true'
+        is_sortable:
+          type: boolean
+          description: 该属性是否可用作搜索结果排序，默认为 false。如果为 true，需要再配置 sortOptions
+          example: 'false'
+        is_returnable:
+          type: boolean
+          description: 该属性是否可用作返回字段，为 false 时，该字段不会被召回和展示。默认为 false
+          example: 'true'
+        sort_options:
+          allOf:
+          - $ref: '#/components/schemas/SortOption'
+          description: 属性排序的可选配置，当 is_sortable 为 true 时，该字段为必填字段
+        type_definitions:
+          allOf:
+          - $ref: '#/components/schemas/TypeDefinition'
+          description: 相关类型数据的定义和约束
+        search_options:
+          type: object
+          properties:
+            enable_semantic_match:
+              type: boolean
+              description: 是否支持语义切词召回。默认不支持（推荐使用在长文本的场景）
+              example: 'true'
+            enable_exact_match:
+              type: boolean
+              description: 是否支持精确匹配。默认不支持（推荐使用在短文本、需要精确查找的场景）
+              example: 'false'
+            enable_prefix_match:
+              type: boolean
+              description: 是否支持前缀匹配（短文本的默认的分词/召回策略。前缀长度为 1-12）
+              example: 'false'
+            enable_number_suffix_match:
+              type: boolean
+              description: 是否支持数据后缀匹配。默认不支持（推荐使用在短文本、有数字后缀查找的场景。后缀长度为3-12）
+              example: 'false'
+            enable_camel_match:
+              type: boolean
+              description: 是否支持驼峰英文匹配。默认不支持（推荐使用在短文本，且包含驼峰形式英文的查找场景）
+              example: 'false'
+          description: 属性搜索的可选配置，当 is_searchable 为 true 时，该字段为必填参数
+        is_filterable:
+          type: boolean
+          description: 该属性是否可用作返回字段，为 false 时，该字段不会被筛选。默认为 false
+          example: 'false'
+        filter_options:
+          allOf:
+          - $ref: '#/components/schemas/FilterOption'
+          description: 属性筛选的可选配置，当 is_searchable 为 true 时，该字段为必填参数
+        answer_option:
+          type: object
+          properties:
+            is_searchable:
+              type: boolean
+              description: 是否用于搜索
+              example: 'false'
+            is_returnable:
+              type: boolean
+              description: 是否用于返回
+              example: 'false'
+          description: 问答产品设置，仅在datasource中enable_answer为true时生效
+        desc:
+          type: string
+          description: 字段描述
+          example: desc
+      required:
+      - name
+      - type
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    Data:
+      type: object
+      properties:
+        schema:
+          allOf:
+          - $ref: '#/components/schemas/Schema2'
+          description: 数据范式实例
+    Schema2:
+      type: object
+      properties:
+        properties:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+          description: 数据范式的属性定义
+        display:
+          allOf:
+          - $ref: '#/components/schemas/Display'
+          description: 数据展示相关配置
+        schema_id:
+          type: string
+          description: 用户自定义数据范式的唯一标识
+          example: jira_schema
+      required:
+      - properties
+      - display
+      - schema_id
+      description: 数据范式实例
+    DataSource:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 数据源的唯一标识
+          example: '5577006791947779410'
+          format: int64
+        name:
+          type: string
+          description: data_source的展示名称
+          example: 客服工单
+        state:
+          type: integer
+          description: 数据源状态，0-已上线，1-未上线
+          enum:
+          - 0
+          - 1
+          x-enum-descriptions:
+            '0': 已上线
+            '1': 未上线
+          example: '0'
+        description:
+          type: string
+          description: 对于数据源的描述
+          example: 搜索客服工单
+        create_time:
+          type: string
+          description: 创建时间，采用 Unix 时间戳
+          example: '1674309260'
+        update_time:
+          type: string
+          description: 更新时间，采用 Unix 时间戳
+          example: '1674309260'
+        is_exceed_quota:
+          type: boolean
+          description: 是否超限
+          example: 'false'
+        icon_url:
+          type: string
+          description: 数据源在 search tab 上的展示图标路径
+          example: https://s3-imfile.feishucdn.com/static-resource/v1/585fd740-f52e-4098-b864-57a32082ba1g
+        template:
+          type: string
+          description: 数据源采用的展示模版名称
+          default: search_common_card
+          example: search_common_card
+        searchable_fields:
+          type: array
+          items:
+            type: string
+          description: 描述哪些字段可以被搜索
+          example: '["field1", "field2"]'
+        i18n_name:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 国际化字段：中文
+            en_us:
+              type: string
+              description: 国际化字段：英文
+            ja_jp:
+              type: string
+              description: 国际化字段：日文
+          description: 数据源的国际化展示名称
+        i18n_description:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 国际化字段：中文
+            en_us:
+              type: string
+              description: 国际化字段：英文
+            ja_jp:
+              type: string
+              description: 国际化字段：日文
+          description: 数据源的国际化描述
+        schema_id:
+          type: string
+          description: 数据源关联的 schema 标识
+          example: '7159054681489010384'
+        app_id:
+          type: string
+          description: datasource对应的开放平台应用id
+          example: cli_a1306bed4738d01b
+        connect_type:
+          type: integer
+          description: 搜索请求的接入方式
+          enum:
+          - 0
+          - 1
+          x-enum-descriptions:
+            '0': 调用搜索请求时，使用的是飞书搜索接口
+            '1': 调用搜索请求时，使用的是自定义回调函数的Uri
+          default: 0
+          example: '1'
+        connector_param:
+          type: object
+          properties:
+            callback_user_id_type:
+              type: integer
+              description: 回调时Request里面的id类型
+              enum:
+              - 0
+              - 1
+              - 2
+              - 3
+              x-enum-descriptions:
+                '0': 不合法
+                '1': 用户在租户内的身份
+                '2': 用户在应用内的身份
+                '3': 用户在同一应用服务商所开发的多个应用下的统一身份
+              example: '1'
+            callback_endpoint:
+              type: string
+              description: 回调时的地址，必须为POST地址
+              example: https://open.approval.cn/api/search
+          description: 根据连接器类型不同所需要提供的相关参数
+        enable_answer:
+          type: boolean
+          description: 是否使用问答服务
+          example: 'false'
+      required:
+      - name
+      description: 数据源实例
+    Schema3:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data2'
+    Data2:
+      type: object
+      properties:
+        data_source:
+          allOf:
+          - $ref: '#/components/schemas/DataSource'
+          description: 数据源实例
+    FilterOption:
+      type: object
+      properties:
+        display_name:
+          type: string
+          description: 筛选器展示名称
+          example: 创建人
+        i18n_display_name:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 国际化字段：中文
+            en_us:
+              type: string
+              description: 国际化字段：英文
+            ja_jp:
+              type: string
+              description: 国际化字段：日文
+          description: 筛选器展示名称国际化字段
+        option_mode:
+          type: string
+          description: 指明该筛选器支持单选或多选，默认单选
+          enum:
+          - single
+          - multiple
+          x-enum-descriptions:
+            single: 该筛选器支持单选
+            multiple: 该筛选器支持多选
+          default: single
+          example: single
+        associated_smart_filter:
+          type: string
+          description: 关联的综合筛选器。只有 filter_type 为"user"和"time"时可以关联。"user" -> "from"；"time" -> "date"。
+          enum:
+          - from
+          - date
+          x-enum-descriptions:
+            from: 映射到综合“来自用户”筛选器
+            date: 映射到综合“时间”筛选器
+          example: From
+        filter_type:
+          type: string
+          description: 筛选器类型
+          enum:
+          - user
+          - time
+          - searchable
+          - predefine_enum
+          x-enum-descriptions:
+            user: 用户筛选器
+            time: 时间筛选器
+            searchable: 可搜筛选器
+            predefine_enum: 预定义枚举筛选器
+          example: user
+        predefine_enum_values:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: 枚举值的标识。在多枚举值定义中保持唯一
+                example: p0
+              text:
+                type: string
+                description: 枚举值展示文案
+                example: 最高优先级
+            required:
+            - name
+            - text
+          description: 预定义的展示枚举值。在 filter_type 为 "predefine_enum" 时必须填写
+        enable_client_filter:
+          type: boolean
+          description: 是否开启客户端筛选器
+          default: true
+          example: 'true'
+        reference_datasource_id:
+          type: string
+          description: 可搜筛选器关联的数据源标识
+          example: '7264565154409461234'
+      required:
+      - display_name
+      description: 属性筛选的可选配置，当 is_searchable 为 true 时，该字段为必填参数
+    TypeDefinition:
+      type: object
+      properties:
+        tag:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item2'
+          description: 标签类型的定义
+        user_ids:
+          type: object
+          properties:
+            id_type:
+              type: string
+              description: 用户身份类型
+              enum:
+              - open_id
+              - union_id
+              - user_id
+              x-enum-descriptions:
+                open_id: 用户在应用内的身份
+                union_id: 用户在同一应用服务商所开发的多个应用下的统一身份
+                user_id: 用户在租户内的身份
+              example: user_id
+          required:
+          - id_type
+          description: 用户身份标识
+      description: 相关类型数据的定义和约束
+    Display:
+      type: object
+      properties:
+        card_key:
+          type: string
+          description: 搜索数据的展示卡片
+          enum:
+          - search_common_card
+          x-enum-descriptions:
+            search_common_card: 普通 common 卡片
+          example: search_common_card
+        fields_mapping:
+          type: array
+          items:
+            type: object
+            properties:
+              display_field:
+                type: string
+                description: 展示字段名称，与 card_key 有关，每个模版能展示的字段不同。该字段不能重复
+                example: summary
+              data_field:
+                type: string
+                description: 数据字段的名称。需要确保该字段对应在 schema 属性定义中的 is_returnable 为 true，否则无法展示。需要使用 ${xxx} 的规则来描述
+                example: ${description}
+            required:
+            - display_field
+            - data_field
+          description: 数据字段名称和展示字段名称的映射关系。如果没有设置，则只会展示 与展示字段名称同名的 数据字段
+      required:
+      - card_key
+      description: 数据展示相关配置
+    SortOption:
+      type: object
+      properties:
+        priority:
+          type: integer
+          description: 排序的优先级，可选范围为 0~4，0为最高优先级。如果优先级相同，则随机进行排序。默认为0
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          x-enum-descriptions:
+            '0': 最高优先级
+            '1': 次高优先级
+            '2': 次次高优先级
+            '3': 次低优先级
+            '4': 最低优先级
+          default: 0
+          example: '0'
+        order:
+          type: string
+          description: 排序的顺序。默认为 desc
+          enum:
+          - asc
+          - desc
+          x-enum-descriptions:
+            asc: 升序
+            desc: 降序
+          default: desc
+          example: asc
+      description: 属性排序的可选配置，当 is_sortable 为 true 时，该字段为必填字段
+    Item2:
+      type: object
+      properties:
+        name:
+          type: string
+          description: tag 对应的枚举值名称
+          example: status
+        color:
+          type: string
+          description: 标签对应的颜色
+          enum:
+          - red
+          - green
+          - blue
+          - grey
+          - yellow
+          x-enum-descriptions:
+            red: 含警示性、敏感性的提示信息
+            green: 表示成功、完成、完毕的提示信息
+            blue: 组件架构、职能等中性信息
+            grey: 中立系统提示信息（慎重使用）
+            yellow: 焦点信息、推广性信息
+          example: blue
+        text:
+          type: string
+          description: 标签中展示的文本
+          example: PASS
+      required:
+      - name
+      - color
+      - text
+    Item3:
+      type: object
+      properties:
+        access:
+          type: string
+          description: 权限类型，优先级：Deny > Allow
+          enum:
+          - allow
+          - deny
+          x-enum-descriptions:
+            allow: 允许访问
+            deny: 禁止访问
+          example: deny
+        value:
+          type: string
+          description: 设置的权限值，依赖 type 描述
+          example: u273y71
+        type:
+          type: string
+          description: 权限值类型
+          enum:
+          - user_id
+          - open_id
+          - union_id
+          - department_id
+          - open_department_id
+          - group_id
+          - app_group_id
+          - user
+          - group
+          x-enum-descriptions:
+            user_id: 用户在租户内的身份ID，详细说明请参考：https://open.feishu.cn/document/home/user-identity-introduction/introduction
+            open_id: 用户在应用内的身份ID，详细说明请参考：https://open.feishu.cn/document/home/user-identity-introduction/introduction
+            union_id: 用户在同一应用开发商提供的多个应用间的统一身份ID，详细说明请参考：https://open.feishu.cn/document/home/user-identity-introduction/introduction
+            department_id: 部门在租户内的唯一ID，详细说明请参考：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/field-overview#23857fe0
+            open_department_id: 部门在应用内的唯一ID，详细说明请参考：https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department/field-overview#23857fe0
+            group_id: GroupID（灰度中，对部分租户开放）
+            app_group_id: AppGroupID（灰度中，对部分租户开放）
+            user: 同 UserID
+            group: 同 GroupID
+          example: user_id

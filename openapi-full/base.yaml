@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: base
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -44,650 +44,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                role_name:
-                  type: string
-                  description: 自定义权限的名字
-                  example: 自定义权限1
-                table_roles:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      table_perm:
-                        type: integer
-                        description: 数据表权限
-                        enum:
-                        - 0
-                        - 1
-                        - 2
-                        - 4
-                        x-enum-descriptions:
-                          '0': 无权限
-                          '1': 可阅读
-                          '2': 可编辑记录
-                          '4': 可编辑字段和记录
-                        example: '0'
-                      table_name:
-                        type: string
-                        description: 数据表名
-                        example: 数据表1
-                      table_id:
-                        type: string
-                        description: 数据表ID
-                        example: tblKz5D60T4JlfcT
-                      rec_rule:
-                        type: object
-                        properties:
-                          conditions:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                field_name:
-                                  type: string
-                                  description: 字段名
-                                  example: 单选
-                                operator:
-                                  type: string
-                                  description: 运算符
-                                  enum:
-                                  - is
-                                  - isNot
-                                  - contains
-                                  - doesNotContain
-                                  - isEmpty
-                                  - isNotEmpty
-                                  x-enum-descriptions:
-                                    is: 等于
-                                    isNot: 不等于
-                                    contains: 包含
-                                    doesNotContain: 不包含
-                                    isEmpty: 为空
-                                    isNotEmpty: 不为空
-                                  default: is
-                                  example: is
-                                value:
-                                  type: array
-                                  items:
-                                    type: string
-                                  description: 单选或多选字段的选项id
-                                  example: '["optbdVHf4q", "optrpd3eIJ"]'
-                              required:
-                              - field_name
-                            description: 记录筛选条件
-                          conjunction:
-                            type: string
-                            description: 多个筛选条件的关系
-                            enum:
-                            - and
-                            - or
-                            x-enum-descriptions:
-                              and: 与
-                              or: 或
-                            default: and
-                            example: and
-                          other_perm:
-                            type: integer
-                            description: 其他记录权限，仅在table_perm为2时有效
-                            enum:
-                            - 0
-                            - 1
-                            x-enum-descriptions:
-                              '0': 禁止查看
-                              '1': 仅可阅读
-                            default: 0
-                            example: '1'
-                          condition_groups:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                condition_type:
-                                  type: integer
-                                  description: 条件组类型
-                                  enum:
-                                  - 1
-                                  - 2
-                                  x-enum-descriptions:
-                                    '1': 单个条件
-                                    '2': 条件组
-                                  example: and
-                                conditions:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      field_name:
-                                        type: string
-                                        description: 字段名
-                                        example: 单选
-                                      operator:
-                                        type: string
-                                        description: 运算符
-                                        enum:
-                                        - is
-                                        - isNot
-                                        - contains
-                                        - doesNotContain
-                                        - isEmpty
-                                        - isNotEmpty
-                                        x-enum-descriptions:
-                                          is: 等于
-                                          isNot: 不等于
-                                          contains: 包含
-                                          doesNotContain: 不包含
-                                          isEmpty: 为空
-                                          isNotEmpty: 不为空
-                                        default: is
-                                        example: is
-                                      value:
-                                        type: array
-                                        items:
-                                          type: string
-                                        description: 单选或多选字段的选项id
-                                        example: '["optbdVHf4q", "optrpd3eIJ"]'
-                                    required:
-                                    - field_name
-                                  description: 条件列表
-                                conjunction:
-                                  type: string
-                                  description: 条件符
-                                  enum:
-                                  - and
-                                  - or
-                                  x-enum-descriptions:
-                                    and: 满足所有条件
-                                    or: 满足任一条件
-                                  example: or
-                            description: 条件组
-                          display_rec_rule_version:
-                            type: integer
-                            description: 条件版本
-                            enum:
-                            - 0
-                            - 1
-                            x-enum-descriptions:
-                              '0': 仅支持条件
-                              '1': 支持条件组
-                            default: 0
-                            example: '1'
-                        description: 记录筛选条件，在table_perm为1或2时有意义，用于指定可编辑或可阅读某些记录
-                      other_rec_rule:
-                        type: object
-                        properties:
-                          conditions:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                field_name:
-                                  type: string
-                                  description: 字段名
-                                  example: 单选
-                                operator:
-                                  type: string
-                                  description: 运算符
-                                  enum:
-                                  - is
-                                  - isNot
-                                  - contains
-                                  - doesNotContain
-                                  - isEmpty
-                                  - isNotEmpty
-                                  x-enum-descriptions:
-                                    is: 等于
-                                    isNot: 不等于
-                                    contains: 包含
-                                    doesNotContain: 不包含
-                                    isEmpty: 为空
-                                    isNotEmpty: 不为空
-                                  default: is
-                                  example: is
-                                value:
-                                  type: array
-                                  items:
-                                    type: string
-                                  description: 单选或多选字段的选项id
-                                  example: '["optbdVHf4q", "optrpd3eIJ"]'
-                              required:
-                              - field_name
-                            description: 记录筛选条件
-                          conjunction:
-                            type: string
-                            description: 多个筛选条件的关系
-                            enum:
-                            - and
-                            - or
-                            x-enum-descriptions:
-                              and: 与
-                              or: 或
-                            default: and
-                            example: and
-                        description: 记录筛选条件，在rec_rule.Perm为2时有意义，用于指定剩余可阅读的记录
-                      field_perm:
-                        type: string
-                        x-lark-original-type: map
-                        description: 字段权限，仅在table_perm为2时有意义，设置字段可编辑或可阅读
-                        example: '{"姓名": 1, "年龄": 2}'
-                      allow_add_record:
-                        type: boolean
-                        description: 新增记录权限，仅在table_perm为2时有意义，用于设置记录是否可以新增
-                        default: true
-                        example: 'true'
-                      allow_delete_record:
-                        type: boolean
-                        description: 删除记录权限，仅在table_perm为2时有意义，用于设置记录是否可以删除
-                        default: true
-                        example: 'true'
-                      view_perm:
-                        type: integer
-                        description: 视图权限
-                        enum:
-                        - 1
-                        - 2
-                        x-enum-descriptions:
-                          '1': 可阅读
-                          '2': 可编辑
-                        default: 2
-                        example: '2'
-                      view_rules:
-                        type: string
-                        x-lark-original-type: map
-                        description: 可读的视图集合，仅在view_perm为1时有意义，未设置表示所有视图可读
-                        example: '{"vewEYknYcC": 0}'
-                      field_action_rules:
-                        type: string
-                        x-lark-original-type: map
-                        description: 可读的视图集合，仅在view_perm为1时有意义，未设置表示所有视图可读
-                        example: '{"select_option_edit": {"字段1"：0}}'
-                    required:
-                    - table_perm
-                  description: 数据表权限
-                block_roles:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      block_id:
-                        type: string
-                        description: Block ID
-                        example: blknkqrP3RqUkcAW
-                      block_perm:
-                        type: integer
-                        description: Block权限
-                        enum:
-                        - 0
-                        - 1
-                        x-enum-descriptions:
-                          '0': 无权限
-                          '1': 可阅读
-                        example: '0'
-                    required:
-                    - block_id
-                    - block_perm
-                  description: block权限
-                base_rule:
-                  type: string
-                  x-lark-original-type: map
-                  description: base权限
-                  example: '{"duplicate": 1, "copy": 2}'
+              $ref: '#/components/schemas/Schema2'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      role:
-                        type: object
-                        properties:
-                          role_name:
-                            type: string
-                            description: 自定义权限的名字
-                            example: 自定义权限1
-                          table_roles:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                table_perm:
-                                  type: integer
-                                  description: 数据表权限
-                                  enum:
-                                  - 0
-                                  - 1
-                                  - 2
-                                  - 4
-                                  x-enum-descriptions:
-                                    '0': 无权限
-                                    '1': 可阅读
-                                    '2': 可编辑记录
-                                    '4': 可编辑字段和记录
-                                  example: '0'
-                                table_name:
-                                  type: string
-                                  description: 数据表名
-                                  example: 数据表1
-                                table_id:
-                                  type: string
-                                  description: 数据表ID
-                                  example: tblKz5D60T4JlfcT
-                                rec_rule:
-                                  type: object
-                                  properties:
-                                    conditions:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          field_name:
-                                            type: string
-                                            description: 字段名
-                                            example: 单选
-                                          operator:
-                                            type: string
-                                            description: 运算符
-                                            enum:
-                                            - is
-                                            - isNot
-                                            - contains
-                                            - doesNotContain
-                                            - isEmpty
-                                            - isNotEmpty
-                                            x-enum-descriptions:
-                                              is: 等于
-                                              isNot: 不等于
-                                              contains: 包含
-                                              doesNotContain: 不包含
-                                              isEmpty: 为空
-                                              isNotEmpty: 不为空
-                                            default: is
-                                            example: is
-                                          value:
-                                            type: array
-                                            items:
-                                              type: string
-                                            description: 单选或多选字段的选项id
-                                            example: '["optbdVHf4q", "optrpd3eIJ"]'
-                                          field_type:
-                                            type: integer
-                                            description: 字段类型
-                                            example: '3'
-                                        required:
-                                        - field_name
-                                      description: 记录筛选条件
-                                    conjunction:
-                                      type: string
-                                      description: 多个筛选条件的关系
-                                      enum:
-                                      - and
-                                      - or
-                                      x-enum-descriptions:
-                                        and: 与
-                                        or: 或
-                                      default: and
-                                      example: and
-                                    perm:
-                                      type: integer
-                                      description: 规则筛选记录对应的权限
-                                      enum:
-                                      - 1
-                                      - 2
-                                      x-enum-descriptions:
-                                        '1': 仅可阅读
-                                        '2': 可编辑
-                                      default: 1
-                                      example: '1'
-                                    other_perm:
-                                      type: integer
-                                      description: 其他记录权限，仅在table_perm为2时有效
-                                      enum:
-                                      - 0
-                                      - 1
-                                      x-enum-descriptions:
-                                        '0': 禁止查看
-                                        '1': 仅可阅读
-                                      default: 0
-                                      example: '1'
-                                    condition_groups:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          condition_type:
-                                            type: integer
-                                            description: 条件组类型
-                                            enum:
-                                            - 1
-                                            - 2
-                                            x-enum-descriptions:
-                                              '1': 单个条件
-                                              '2': 条件组
-                                            example: and
-                                          conditions:
-                                            type: array
-                                            items:
-                                              type: object
-                                              properties:
-                                                field_name:
-                                                  type: string
-                                                  description: 字段名
-                                                  example: 单选
-                                                operator:
-                                                  type: string
-                                                  description: 运算符
-                                                  enum:
-                                                  - is
-                                                  - isNot
-                                                  - contains
-                                                  - doesNotContain
-                                                  - isEmpty
-                                                  - isNotEmpty
-                                                  x-enum-descriptions:
-                                                    is: 等于
-                                                    isNot: 不等于
-                                                    contains: 包含
-                                                    doesNotContain: 不包含
-                                                    isEmpty: 为空
-                                                    isNotEmpty: 不为空
-                                                  default: is
-                                                  example: is
-                                                value:
-                                                  type: array
-                                                  items:
-                                                    type: string
-                                                  description: 单选或多选字段的选项id
-                                                  example: '["optbdVHf4q", "optrpd3eIJ"]'
-                                                field_type:
-                                                  type: integer
-                                                  description: 字段类型
-                                                  example: '3'
-                                              required:
-                                              - field_name
-                                            description: 条件列表
-                                          conjunction:
-                                            type: string
-                                            description: 条件符
-                                            enum:
-                                            - and
-                                            - or
-                                            x-enum-descriptions:
-                                              and: 满足所有条件
-                                              or: 满足任一条件
-                                            example: or
-                                      description: 条件组
-                                    display_rec_rule_version:
-                                      type: integer
-                                      description: 条件版本
-                                      enum:
-                                      - 0
-                                      - 1
-                                      x-enum-descriptions:
-                                        '0': 仅支持条件
-                                        '1': 支持条件组
-                                      default: 0
-                                      example: '1'
-                                  description: 记录筛选条件，在table_perm为1或2时有意义，用于指定可编辑或可阅读某些记录
-                                other_rec_rule:
-                                  type: object
-                                  properties:
-                                    conditions:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          field_name:
-                                            type: string
-                                            description: 字段名
-                                            example: 单选
-                                          operator:
-                                            type: string
-                                            description: 运算符
-                                            enum:
-                                            - is
-                                            - isNot
-                                            - contains
-                                            - doesNotContain
-                                            - isEmpty
-                                            - isNotEmpty
-                                            x-enum-descriptions:
-                                              is: 等于
-                                              isNot: 不等于
-                                              contains: 包含
-                                              doesNotContain: 不包含
-                                              isEmpty: 为空
-                                              isNotEmpty: 不为空
-                                            default: is
-                                            example: is
-                                          value:
-                                            type: array
-                                            items:
-                                              type: string
-                                            description: 单选或多选字段的选项id
-                                            example: '["optbdVHf4q", "optrpd3eIJ"]'
-                                          field_type:
-                                            type: integer
-                                            description: 字段类型
-                                            example: '3'
-                                        required:
-                                        - field_name
-                                      description: 记录筛选条件
-                                    conjunction:
-                                      type: string
-                                      description: 多个筛选条件的关系
-                                      enum:
-                                      - and
-                                      - or
-                                      x-enum-descriptions:
-                                        and: 与
-                                        or: 或
-                                      default: and
-                                      example: and
-                                    perm:
-                                      type: integer
-                                      description: 规则筛选记录对应的权限
-                                      enum:
-                                      - 1
-                                      - 2
-                                      x-enum-descriptions:
-                                        '1': 仅可阅读
-                                        '2': 可编辑
-                                      default: 1
-                                      example: '1'
-                                  description: 记录筛选条件，在rec_rule.Perm为2时有意义，用于指定剩余可阅读的记录
-                                field_perm:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: 字段权限，仅在table_perm为2时有意义，设置字段可编辑或可阅读
-                                  example: '{"姓名": 1, "年龄": 2}'
-                                allow_add_record:
-                                  type: boolean
-                                  description: 新增记录权限，仅在table_perm为2时有意义，用于设置记录是否可以新增
-                                  default: true
-                                  example: 'true'
-                                allow_delete_record:
-                                  type: boolean
-                                  description: 删除记录权限，仅在table_perm为2时有意义，用于设置记录是否可以删除
-                                  default: true
-                                  example: 'true'
-                                view_perm:
-                                  type: integer
-                                  description: 视图权限
-                                  enum:
-                                  - 1
-                                  - 2
-                                  x-enum-descriptions:
-                                    '1': 可阅读
-                                    '2': 可编辑
-                                  default: 2
-                                  example: '2'
-                                view_rules:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: 可读的视图集合，仅在view_perm为1时有意义，未设置表示所有视图可读
-                                  example: '{"vewEYknYcC": 0}'
-                                field_action_rules:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: 可读的视图集合，仅在view_perm为1时有意义，未设置表示所有视图可读
-                                  example: '{"select_option_edit": {"字段1"：0}}'
-                              required:
-                              - table_perm
-                            description: 数据表权限
-                          role_id:
-                            type: string
-                            description: 自定义权限的id
-                            example: roljRpwIUt
-                          block_roles:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                block_id:
-                                  type: string
-                                  description: Block ID
-                                  example: blknkqrP3RqUkcAW
-                                block_perm:
-                                  type: integer
-                                  description: Block权限
-                                  enum:
-                                  - 0
-                                  - 1
-                                  x-enum-descriptions:
-                                    '0': 无权限
-                                    '1': 可阅读
-                                  example: '0'
-                                block_type:
-                                  type: string
-                                  description: Block类型
-                                  enum:
-                                  - dashboard
-                                  x-enum-descriptions:
-                                    dashboard: 仪表盘
-                                  example: dashboard
-                              required:
-                              - block_id
-                              - block_perm
-                            description: block权限
-                          base_rule:
-                            type: string
-                            x-lark-original-type: map
-                            description: base权限
-                            example: '{"duplicate": 1, "copy": 2}'
-                        required:
-                        - role_name
-                        - table_roles
-                        description: 自定义权限
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       - tenant
@@ -797,344 +161,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            role_name:
-                              type: string
-                              description: 自定义权限的名字
-                              example: 自定义权限1
-                            table_roles:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  table_perm:
-                                    type: integer
-                                    description: 数据表权限
-                                    enum:
-                                    - 0
-                                    - 1
-                                    - 2
-                                    - 4
-                                    x-enum-descriptions:
-                                      '0': 无权限
-                                      '1': 可阅读
-                                      '2': 可编辑记录
-                                      '4': 可编辑字段和记录
-                                    example: '0'
-                                  table_name:
-                                    type: string
-                                    description: 数据表名
-                                    example: 数据表1
-                                  table_id:
-                                    type: string
-                                    description: 数据表ID
-                                    example: tblKz5D60T4JlfcT
-                                  rec_rule:
-                                    type: object
-                                    properties:
-                                      conditions:
-                                        type: array
-                                        items:
-                                          type: object
-                                          properties:
-                                            field_name:
-                                              type: string
-                                              description: 字段名
-                                              example: 单选
-                                            operator:
-                                              type: string
-                                              description: 运算符
-                                              enum:
-                                              - is
-                                              - isNot
-                                              - contains
-                                              - doesNotContain
-                                              - isEmpty
-                                              - isNotEmpty
-                                              x-enum-descriptions:
-                                                is: 等于
-                                                isNot: 不等于
-                                                contains: 包含
-                                                doesNotContain: 不包含
-                                                isEmpty: 为空
-                                                isNotEmpty: 不为空
-                                              default: is
-                                              example: is
-                                            value:
-                                              type: array
-                                              items:
-                                                type: string
-                                              description: 单选或多选字段的选项id
-                                              example: '["optbdVHf4q", "optrpd3eIJ"]'
-                                            field_type:
-                                              type: integer
-                                              description: 字段类型
-                                              example: '3'
-                                          required:
-                                          - field_name
-                                        description: 记录筛选条件
-                                      conjunction:
-                                        type: string
-                                        description: 多个筛选条件的关系
-                                        enum:
-                                        - and
-                                        - or
-                                        x-enum-descriptions:
-                                          and: 与
-                                          or: 或
-                                        default: and
-                                        example: and
-                                      perm:
-                                        type: integer
-                                        description: 规则筛选记录对应的权限
-                                        enum:
-                                        - 1
-                                        - 2
-                                        x-enum-descriptions:
-                                          '1': 仅可阅读
-                                          '2': 可编辑
-                                        default: 1
-                                        example: '1'
-                                      other_perm:
-                                        type: integer
-                                        description: 其他记录权限，仅在table_perm为2时有效
-                                        enum:
-                                        - 0
-                                        - 1
-                                        x-enum-descriptions:
-                                          '0': 禁止查看
-                                          '1': 仅可阅读
-                                        default: 0
-                                        example: '1'
-                                      condition_groups:
-                                        type: array
-                                        items:
-                                          type: object
-                                          properties:
-                                            condition_type:
-                                              type: integer
-                                              description: 条件组类型
-                                              enum:
-                                              - 1
-                                              - 2
-                                              x-enum-descriptions:
-                                                '1': 单个条件
-                                                '2': 条件组
-                                              example: and
-                                            conditions:
-                                              type: array
-                                              items:
-                                                type: object
-                                                properties:
-                                                  field_name:
-                                                    type: string
-                                                    description: 字段名
-                                                    example: 单选
-                                                  operator:
-                                                    type: string
-                                                    description: 运算符
-                                                    enum:
-                                                    - is
-                                                    - isNot
-                                                    - contains
-                                                    - doesNotContain
-                                                    - isEmpty
-                                                    - isNotEmpty
-                                                    x-enum-descriptions:
-                                                      is: 等于
-                                                      isNot: 不等于
-                                                      contains: 包含
-                                                      doesNotContain: 不包含
-                                                      isEmpty: 为空
-                                                      isNotEmpty: 不为空
-                                                    default: is
-                                                    example: is
-                                                  value:
-                                                    type: array
-                                                    items:
-                                                      type: string
-                                                    description: 单选或多选字段的选项id
-                                                    example: '["optbdVHf4q", "optrpd3eIJ"]'
-                                                  field_type:
-                                                    type: integer
-                                                    description: 字段类型
-                                                    example: '3'
-                                                required:
-                                                - field_name
-                                              description: 条件列表
-                                            conjunction:
-                                              type: string
-                                              description: 条件符
-                                              enum:
-                                              - and
-                                              - or
-                                              x-enum-descriptions:
-                                                and: 满足所有条件
-                                                or: 满足任一条件
-                                              example: or
-                                        description: 条件组
-                                      display_rec_rule_version:
-                                        type: integer
-                                        description: 条件版本
-                                        enum:
-                                        - 0
-                                        - 1
-                                        x-enum-descriptions:
-                                          '0': 仅支持条件
-                                          '1': 支持条件组
-                                        default: 0
-                                        example: '1'
-                                    description: 记录筛选条件，在table_perm为1或2时有意义，用于指定可编辑或可阅读某些记录
-                                  other_rec_rule:
-                                    type: object
-                                    properties:
-                                      conditions:
-                                        type: array
-                                        items:
-                                          type: object
-                                          properties:
-                                            field_name:
-                                              type: string
-                                              description: 字段名
-                                              example: 单选
-                                            operator:
-                                              type: string
-                                              description: 运算符
-                                              enum:
-                                              - is
-                                              - isNot
-                                              - contains
-                                              - doesNotContain
-                                              - isEmpty
-                                              - isNotEmpty
-                                              x-enum-descriptions:
-                                                is: 等于
-                                                isNot: 不等于
-                                                contains: 包含
-                                                doesNotContain: 不包含
-                                                isEmpty: 为空
-                                                isNotEmpty: 不为空
-                                              default: is
-                                              example: is
-                                            value:
-                                              type: array
-                                              items:
-                                                type: string
-                                              description: 单选或多选字段的选项id
-                                              example: '["optbdVHf4q", "optrpd3eIJ"]'
-                                            field_type:
-                                              type: integer
-                                              description: 字段类型
-                                              example: '3'
-                                          required:
-                                          - field_name
-                                        description: 记录筛选条件
-                                      conjunction:
-                                        type: string
-                                        description: 多个筛选条件的关系
-                                        enum:
-                                        - and
-                                        - or
-                                        x-enum-descriptions:
-                                          and: 与
-                                          or: 或
-                                        default: and
-                                        example: and
-                                      perm:
-                                        type: integer
-                                        description: 规则筛选记录对应的权限
-                                        enum:
-                                        - 1
-                                        - 2
-                                        x-enum-descriptions:
-                                          '1': 仅可阅读
-                                          '2': 可编辑
-                                        default: 1
-                                        example: '1'
-                                    description: 记录筛选条件，在rec_rule.Perm为2时有意义，用于指定剩余可阅读的记录
-                                  field_perm:
-                                    type: string
-                                    x-lark-original-type: map
-                                    description: 字段权限，仅在table_perm为2时有意义，设置字段可编辑或可阅读
-                                    example: '{"姓名": 1, "年龄": 2}'
-                                  allow_add_record:
-                                    type: boolean
-                                    description: 新增记录权限，仅在table_perm为2时有意义，用于设置记录是否可以新增
-                                    default: true
-                                    example: 'true'
-                                  allow_delete_record:
-                                    type: boolean
-                                    description: 删除记录权限，仅在table_perm为2时有意义，用于设置记录是否可以删除
-                                    default: true
-                                    example: 'true'
-                                  view_perm:
-                                    type: integer
-                                    description: 视图权限
-                                    enum:
-                                    - 1
-                                    - 2
-                                    x-enum-descriptions:
-                                      '1': 可阅读
-                                      '2': 可编辑
-                                    default: 2
-                                    example: '2'
-                                  view_rules:
-                                    type: string
-                                    x-lark-original-type: map
-                                    description: 可读的视图集合，仅在view_perm为1时有意义，未设置表示所有视图可读
-                                    example: '{"vewEYknYcC": 0}'
-                                  field_action_rules:
-                                    type: string
-                                    x-lark-original-type: map
-                                    description: 可读的视图集合，仅在view_perm为1时有意义，未设置表示所有视图可读
-                                    example: '{"select_option_edit": {"字段1"：0}}'
-                                required:
-                                - table_perm
-                              description: 数据表权限
-                            role_id:
-                              type: string
-                              description: 自定义权限的id
-                              example: roljRpwIUt
-                            block_roles:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  block_id:
-                                    type: string
-                                    description: Block ID
-                                    example: blknkqrP3RqUkcAW
-                                  block_perm:
-                                    type: integer
-                                    description: Block权限
-                                    enum:
-                                    - 0
-                                    - 1
-                                    x-enum-descriptions:
-                                      '0': 无权限
-                                      '1': 可阅读
-                                    example: '0'
-                                  block_type:
-                                    type: string
-                                    description: Block类型
-                                    enum:
-                                    - dashboard
-                                    x-enum-descriptions:
-                                      dashboard: 仪表盘
-                                    example: dashboard
-                                required:
-                                - block_id
-                                - block_perm
-                              description: block权限
-                            base_rule:
-                              type: string
-                              x-lark-original-type: map
-                              description: base权限
-                              example: '{"duplicate": 1, "copy": 2}'
-                          required:
-                          - role_name
-                          - table_roles
+                          $ref: '#/components/schemas/Role'
                         description: 自定义角色列表
                       page_token:
                         type: string
@@ -1238,650 +265,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                role_name:
-                  type: string
-                  description: 自定义权限的名字
-                  example: 自定义权限1
-                table_roles:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      table_perm:
-                        type: integer
-                        description: 数据表权限
-                        enum:
-                        - 0
-                        - 1
-                        - 2
-                        - 4
-                        x-enum-descriptions:
-                          '0': 无权限
-                          '1': 可阅读
-                          '2': 可编辑记录
-                          '4': 可编辑字段和记录
-                        example: '0'
-                      table_name:
-                        type: string
-                        description: 数据表名
-                        example: 数据表1
-                      table_id:
-                        type: string
-                        description: 数据表ID
-                        example: tblKz5D60T4JlfcT
-                      rec_rule:
-                        type: object
-                        properties:
-                          conditions:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                field_name:
-                                  type: string
-                                  description: 字段名
-                                  example: 单选
-                                operator:
-                                  type: string
-                                  description: 运算符
-                                  enum:
-                                  - is
-                                  - isNot
-                                  - contains
-                                  - doesNotContain
-                                  - isEmpty
-                                  - isNotEmpty
-                                  x-enum-descriptions:
-                                    is: 等于
-                                    isNot: 不等于
-                                    contains: 包含
-                                    doesNotContain: 不包含
-                                    isEmpty: 为空
-                                    isNotEmpty: 不为空
-                                  default: is
-                                  example: is
-                                value:
-                                  type: array
-                                  items:
-                                    type: string
-                                  description: 单选或多选字段的选项id
-                                  example: '["optbdVHf4q", "optrpd3eIJ"]'
-                              required:
-                              - field_name
-                            description: 记录筛选条件
-                          conjunction:
-                            type: string
-                            description: 多个筛选条件的关系
-                            enum:
-                            - and
-                            - or
-                            x-enum-descriptions:
-                              and: 与
-                              or: 或
-                            default: and
-                            example: and
-                          other_perm:
-                            type: integer
-                            description: 其他记录权限，仅在table_perm为2时有效
-                            enum:
-                            - 0
-                            - 1
-                            x-enum-descriptions:
-                              '0': 禁止查看
-                              '1': 仅可阅读
-                            default: 0
-                            example: '1'
-                          condition_groups:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                condition_type:
-                                  type: integer
-                                  description: 条件组类型
-                                  enum:
-                                  - 1
-                                  - 2
-                                  x-enum-descriptions:
-                                    '1': 单个条件
-                                    '2': 条件组
-                                  example: and
-                                conditions:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      field_name:
-                                        type: string
-                                        description: 字段名
-                                        example: 单选
-                                      operator:
-                                        type: string
-                                        description: 运算符
-                                        enum:
-                                        - is
-                                        - isNot
-                                        - contains
-                                        - doesNotContain
-                                        - isEmpty
-                                        - isNotEmpty
-                                        x-enum-descriptions:
-                                          is: 等于
-                                          isNot: 不等于
-                                          contains: 包含
-                                          doesNotContain: 不包含
-                                          isEmpty: 为空
-                                          isNotEmpty: 不为空
-                                        default: is
-                                        example: is
-                                      value:
-                                        type: array
-                                        items:
-                                          type: string
-                                        description: 单选或多选字段的选项id
-                                        example: '["optbdVHf4q", "optrpd3eIJ"]'
-                                    required:
-                                    - field_name
-                                  description: 条件列表
-                                conjunction:
-                                  type: string
-                                  description: 条件符
-                                  enum:
-                                  - and
-                                  - or
-                                  x-enum-descriptions:
-                                    and: 满足所有条件
-                                    or: 满足任一条件
-                                  example: or
-                            description: 条件组
-                          display_rec_rule_version:
-                            type: integer
-                            description: 条件版本
-                            enum:
-                            - 0
-                            - 1
-                            x-enum-descriptions:
-                              '0': 仅支持条件
-                              '1': 支持条件组
-                            default: 0
-                            example: '1'
-                        description: 记录筛选条件，在table_perm为1或2时有意义，用于指定可编辑或可阅读某些记录
-                      other_rec_rule:
-                        type: object
-                        properties:
-                          conditions:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                field_name:
-                                  type: string
-                                  description: 字段名
-                                  example: 单选
-                                operator:
-                                  type: string
-                                  description: 运算符
-                                  enum:
-                                  - is
-                                  - isNot
-                                  - contains
-                                  - doesNotContain
-                                  - isEmpty
-                                  - isNotEmpty
-                                  x-enum-descriptions:
-                                    is: 等于
-                                    isNot: 不等于
-                                    contains: 包含
-                                    doesNotContain: 不包含
-                                    isEmpty: 为空
-                                    isNotEmpty: 不为空
-                                  default: is
-                                  example: is
-                                value:
-                                  type: array
-                                  items:
-                                    type: string
-                                  description: 单选或多选字段的选项id
-                                  example: '["optbdVHf4q", "optrpd3eIJ"]'
-                              required:
-                              - field_name
-                            description: 记录筛选条件
-                          conjunction:
-                            type: string
-                            description: 多个筛选条件的关系
-                            enum:
-                            - and
-                            - or
-                            x-enum-descriptions:
-                              and: 与
-                              or: 或
-                            default: and
-                            example: and
-                        description: 记录筛选条件，在rec_rule.Perm为2时有意义，用于指定剩余可阅读的记录
-                      field_perm:
-                        type: string
-                        x-lark-original-type: map
-                        description: 字段权限，仅在table_perm为2时有意义，设置字段可编辑或可阅读
-                        example: '{"姓名": 1, "年龄": 2}'
-                      allow_add_record:
-                        type: boolean
-                        description: 新增记录权限，仅在table_perm为2时有意义，用于设置记录是否可以新增
-                        default: true
-                        example: 'true'
-                      allow_delete_record:
-                        type: boolean
-                        description: 删除记录权限，仅在table_perm为2时有意义，用于设置记录是否可以删除
-                        default: true
-                        example: 'true'
-                      view_perm:
-                        type: integer
-                        description: 视图权限
-                        enum:
-                        - 1
-                        - 2
-                        x-enum-descriptions:
-                          '1': 可阅读
-                          '2': 可编辑
-                        default: 2
-                        example: '2'
-                      view_rules:
-                        type: string
-                        x-lark-original-type: map
-                        description: 可读的视图集合，仅在view_perm为1时有意义，未设置表示所有视图可读
-                        example: '{"vewEYknYcC": 0}'
-                      field_action_rules:
-                        type: string
-                        x-lark-original-type: map
-                        description: 可读的视图集合，仅在view_perm为1时有意义，未设置表示所有视图可读
-                        example: '{"select_option_edit": {"字段1"：0}}'
-                    required:
-                    - table_perm
-                  description: 数据表权限
-                block_roles:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      block_id:
-                        type: string
-                        description: Block ID
-                        example: blknkqrP3RqUkcAW
-                      block_perm:
-                        type: integer
-                        description: Block权限
-                        enum:
-                        - 0
-                        - 1
-                        x-enum-descriptions:
-                          '0': 无权限
-                          '1': 可阅读
-                        example: '0'
-                    required:
-                    - block_id
-                    - block_perm
-                  description: block权限
-                base_rule:
-                  type: string
-                  x-lark-original-type: map
-                  description: base权限
-                  example: '{"duplicate": 1, "copy": 2}'
+              $ref: '#/components/schemas/Schema2'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      role:
-                        type: object
-                        properties:
-                          role_name:
-                            type: string
-                            description: 自定义权限的名字
-                            example: 自定义权限1
-                          table_roles:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                table_perm:
-                                  type: integer
-                                  description: 数据表权限
-                                  enum:
-                                  - 0
-                                  - 1
-                                  - 2
-                                  - 4
-                                  x-enum-descriptions:
-                                    '0': 无权限
-                                    '1': 可阅读
-                                    '2': 可编辑记录
-                                    '4': 可编辑字段和记录
-                                  example: '0'
-                                table_name:
-                                  type: string
-                                  description: 数据表名
-                                  example: 数据表1
-                                table_id:
-                                  type: string
-                                  description: 数据表ID
-                                  example: tblKz5D60T4JlfcT
-                                rec_rule:
-                                  type: object
-                                  properties:
-                                    conditions:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          field_name:
-                                            type: string
-                                            description: 字段名
-                                            example: 单选
-                                          operator:
-                                            type: string
-                                            description: 运算符
-                                            enum:
-                                            - is
-                                            - isNot
-                                            - contains
-                                            - doesNotContain
-                                            - isEmpty
-                                            - isNotEmpty
-                                            x-enum-descriptions:
-                                              is: 等于
-                                              isNot: 不等于
-                                              contains: 包含
-                                              doesNotContain: 不包含
-                                              isEmpty: 为空
-                                              isNotEmpty: 不为空
-                                            default: is
-                                            example: is
-                                          value:
-                                            type: array
-                                            items:
-                                              type: string
-                                            description: 单选或多选字段的选项id
-                                            example: '["optbdVHf4q", "optrpd3eIJ"]'
-                                          field_type:
-                                            type: integer
-                                            description: 字段类型
-                                            example: '3'
-                                        required:
-                                        - field_name
-                                      description: 记录筛选条件
-                                    conjunction:
-                                      type: string
-                                      description: 多个筛选条件的关系
-                                      enum:
-                                      - and
-                                      - or
-                                      x-enum-descriptions:
-                                        and: 与
-                                        or: 或
-                                      default: and
-                                      example: and
-                                    perm:
-                                      type: integer
-                                      description: 规则筛选记录对应的权限
-                                      enum:
-                                      - 1
-                                      - 2
-                                      x-enum-descriptions:
-                                        '1': 仅可阅读
-                                        '2': 可编辑
-                                      default: 1
-                                      example: '1'
-                                    other_perm:
-                                      type: integer
-                                      description: 其他记录权限，仅在table_perm为2时有效
-                                      enum:
-                                      - 0
-                                      - 1
-                                      x-enum-descriptions:
-                                        '0': 禁止查看
-                                        '1': 仅可阅读
-                                      default: 0
-                                      example: '1'
-                                    condition_groups:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          condition_type:
-                                            type: integer
-                                            description: 条件组类型
-                                            enum:
-                                            - 1
-                                            - 2
-                                            x-enum-descriptions:
-                                              '1': 单个条件
-                                              '2': 条件组
-                                            example: and
-                                          conditions:
-                                            type: array
-                                            items:
-                                              type: object
-                                              properties:
-                                                field_name:
-                                                  type: string
-                                                  description: 字段名
-                                                  example: 单选
-                                                operator:
-                                                  type: string
-                                                  description: 运算符
-                                                  enum:
-                                                  - is
-                                                  - isNot
-                                                  - contains
-                                                  - doesNotContain
-                                                  - isEmpty
-                                                  - isNotEmpty
-                                                  x-enum-descriptions:
-                                                    is: 等于
-                                                    isNot: 不等于
-                                                    contains: 包含
-                                                    doesNotContain: 不包含
-                                                    isEmpty: 为空
-                                                    isNotEmpty: 不为空
-                                                  default: is
-                                                  example: is
-                                                value:
-                                                  type: array
-                                                  items:
-                                                    type: string
-                                                  description: 单选或多选字段的选项id
-                                                  example: '["optbdVHf4q", "optrpd3eIJ"]'
-                                                field_type:
-                                                  type: integer
-                                                  description: 字段类型
-                                                  example: '3'
-                                              required:
-                                              - field_name
-                                            description: 条件列表
-                                          conjunction:
-                                            type: string
-                                            description: 条件符
-                                            enum:
-                                            - and
-                                            - or
-                                            x-enum-descriptions:
-                                              and: 满足所有条件
-                                              or: 满足任一条件
-                                            example: or
-                                      description: 条件组
-                                    display_rec_rule_version:
-                                      type: integer
-                                      description: 条件版本
-                                      enum:
-                                      - 0
-                                      - 1
-                                      x-enum-descriptions:
-                                        '0': 仅支持条件
-                                        '1': 支持条件组
-                                      default: 0
-                                      example: '1'
-                                  description: 记录筛选条件，在table_perm为1或2时有意义，用于指定可编辑或可阅读某些记录
-                                other_rec_rule:
-                                  type: object
-                                  properties:
-                                    conditions:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          field_name:
-                                            type: string
-                                            description: 字段名
-                                            example: 单选
-                                          operator:
-                                            type: string
-                                            description: 运算符
-                                            enum:
-                                            - is
-                                            - isNot
-                                            - contains
-                                            - doesNotContain
-                                            - isEmpty
-                                            - isNotEmpty
-                                            x-enum-descriptions:
-                                              is: 等于
-                                              isNot: 不等于
-                                              contains: 包含
-                                              doesNotContain: 不包含
-                                              isEmpty: 为空
-                                              isNotEmpty: 不为空
-                                            default: is
-                                            example: is
-                                          value:
-                                            type: array
-                                            items:
-                                              type: string
-                                            description: 单选或多选字段的选项id
-                                            example: '["optbdVHf4q", "optrpd3eIJ"]'
-                                          field_type:
-                                            type: integer
-                                            description: 字段类型
-                                            example: '3'
-                                        required:
-                                        - field_name
-                                      description: 记录筛选条件
-                                    conjunction:
-                                      type: string
-                                      description: 多个筛选条件的关系
-                                      enum:
-                                      - and
-                                      - or
-                                      x-enum-descriptions:
-                                        and: 与
-                                        or: 或
-                                      default: and
-                                      example: and
-                                    perm:
-                                      type: integer
-                                      description: 规则筛选记录对应的权限
-                                      enum:
-                                      - 1
-                                      - 2
-                                      x-enum-descriptions:
-                                        '1': 仅可阅读
-                                        '2': 可编辑
-                                      default: 1
-                                      example: '1'
-                                  description: 记录筛选条件，在rec_rule.Perm为2时有意义，用于指定剩余可阅读的记录
-                                field_perm:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: 字段权限，仅在table_perm为2时有意义，设置字段可编辑或可阅读
-                                  example: '{"姓名": 1, "年龄": 2}'
-                                allow_add_record:
-                                  type: boolean
-                                  description: 新增记录权限，仅在table_perm为2时有意义，用于设置记录是否可以新增
-                                  default: true
-                                  example: 'true'
-                                allow_delete_record:
-                                  type: boolean
-                                  description: 删除记录权限，仅在table_perm为2时有意义，用于设置记录是否可以删除
-                                  default: true
-                                  example: 'true'
-                                view_perm:
-                                  type: integer
-                                  description: 视图权限
-                                  enum:
-                                  - 1
-                                  - 2
-                                  x-enum-descriptions:
-                                    '1': 可阅读
-                                    '2': 可编辑
-                                  default: 2
-                                  example: '2'
-                                view_rules:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: 可读的视图集合，仅在view_perm为1时有意义，未设置表示所有视图可读
-                                  example: '{"vewEYknYcC": 0}'
-                                field_action_rules:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: 可读的视图集合，仅在view_perm为1时有意义，未设置表示所有视图可读
-                                  example: '{"select_option_edit": {"字段1"：0}}'
-                              required:
-                              - table_perm
-                            description: 数据表权限
-                          role_id:
-                            type: string
-                            description: 自定义权限的id
-                            example: roljRpwIUt
-                          block_roles:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                block_id:
-                                  type: string
-                                  description: Block ID
-                                  example: blknkqrP3RqUkcAW
-                                block_perm:
-                                  type: integer
-                                  description: Block权限
-                                  enum:
-                                  - 0
-                                  - 1
-                                  x-enum-descriptions:
-                                    '0': 无权限
-                                    '1': 可阅读
-                                  example: '0'
-                                block_type:
-                                  type: string
-                                  description: Block类型
-                                  enum:
-                                  - dashboard
-                                  x-enum-descriptions:
-                                    dashboard: 仪表盘
-                                  example: dashboard
-                              required:
-                              - block_id
-                              - block_perm
-                            description: block权限
-                          base_rule:
-                            type: string
-                            x-lark-original-type: map
-                            description: base权限
-                            example: '{"duplicate": 1, "copy": 2}'
-                        required:
-                        - role_name
-                        - table_roles
-                        description: 自定义角色
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       - tenant
@@ -1947,3 +338,543 @@ paths:
         msg: Request timed out, please try again later
       x-lark-rate-limit:
         tier: 7
+components:
+  schemas:
+    Role:
+      type: object
+      properties:
+        role_name:
+          type: string
+          description: 自定义权限的名字
+          example: 自定义权限1
+        table_roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+          description: 数据表权限
+        role_id:
+          type: string
+          description: 自定义权限的id
+          example: roljRpwIUt
+        block_roles:
+          type: array
+          items:
+            type: object
+            properties:
+              block_id:
+                type: string
+                description: Block ID
+                example: blknkqrP3RqUkcAW
+              block_perm:
+                type: integer
+                description: Block权限
+                enum:
+                - 0
+                - 1
+                x-enum-descriptions:
+                  '0': 无权限
+                  '1': 可阅读
+                example: '0'
+              block_type:
+                type: string
+                description: Block类型
+                enum:
+                - dashboard
+                x-enum-descriptions:
+                  dashboard: 仪表盘
+                example: dashboard
+            required:
+            - block_id
+            - block_perm
+          description: block权限
+        base_rule:
+          type: string
+          x-lark-original-type: map
+          description: base权限
+          example: '{"duplicate": 1, "copy": 2}'
+      required:
+      - role_name
+      - table_roles
+      description: 自定义权限
+    Item:
+      type: object
+      properties:
+        table_perm:
+          type: integer
+          description: 数据表权限
+          enum:
+          - 0
+          - 1
+          - 2
+          - 4
+          x-enum-descriptions:
+            '0': 无权限
+            '1': 可阅读
+            '2': 可编辑记录
+            '4': 可编辑字段和记录
+          example: '0'
+        table_name:
+          type: string
+          description: 数据表名
+          example: 数据表1
+        table_id:
+          type: string
+          description: 数据表ID
+          example: tblKz5D60T4JlfcT
+        rec_rule:
+          allOf:
+          - $ref: '#/components/schemas/RecRule'
+          description: 记录筛选条件，在table_perm为1或2时有意义，用于指定可编辑或可阅读某些记录
+        other_rec_rule:
+          allOf:
+          - $ref: '#/components/schemas/OtherRecRule'
+          description: 记录筛选条件，在rec_rule.Perm为2时有意义，用于指定剩余可阅读的记录
+        field_perm:
+          type: string
+          x-lark-original-type: map
+          description: 字段权限，仅在table_perm为2时有意义，设置字段可编辑或可阅读
+          example: '{"姓名": 1, "年龄": 2}'
+        allow_add_record:
+          type: boolean
+          description: 新增记录权限，仅在table_perm为2时有意义，用于设置记录是否可以新增
+          default: true
+          example: 'true'
+        allow_delete_record:
+          type: boolean
+          description: 删除记录权限，仅在table_perm为2时有意义，用于设置记录是否可以删除
+          default: true
+          example: 'true'
+        view_perm:
+          type: integer
+          description: 视图权限
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 可阅读
+            '2': 可编辑
+          default: 2
+          example: '2'
+        view_rules:
+          type: string
+          x-lark-original-type: map
+          description: 可读的视图集合，仅在view_perm为1时有意义，未设置表示所有视图可读
+          example: '{"vewEYknYcC": 0}'
+        field_action_rules:
+          type: string
+          x-lark-original-type: map
+          description: 可读的视图集合，仅在view_perm为1时有意义，未设置表示所有视图可读
+          example: '{"select_option_edit": {"字段1"：0}}'
+      required:
+      - table_perm
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    Data:
+      type: object
+      properties:
+        role:
+          allOf:
+          - $ref: '#/components/schemas/Role'
+          description: 自定义权限
+    Schema2:
+      type: object
+      properties:
+        role_name:
+          type: string
+          description: 自定义权限的名字
+          example: 自定义权限1
+        table_roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item2'
+          description: 数据表权限
+        block_roles:
+          type: array
+          items:
+            type: object
+            properties:
+              block_id:
+                type: string
+                description: Block ID
+                example: blknkqrP3RqUkcAW
+              block_perm:
+                type: integer
+                description: Block权限
+                enum:
+                - 0
+                - 1
+                x-enum-descriptions:
+                  '0': 无权限
+                  '1': 可阅读
+                example: '0'
+            required:
+            - block_id
+            - block_perm
+          description: block权限
+        base_rule:
+          type: string
+          x-lark-original-type: map
+          description: base权限
+          example: '{"duplicate": 1, "copy": 2}'
+    Item2:
+      type: object
+      properties:
+        table_perm:
+          type: integer
+          description: 数据表权限
+          enum:
+          - 0
+          - 1
+          - 2
+          - 4
+          x-enum-descriptions:
+            '0': 无权限
+            '1': 可阅读
+            '2': 可编辑记录
+            '4': 可编辑字段和记录
+          example: '0'
+        table_name:
+          type: string
+          description: 数据表名
+          example: 数据表1
+        table_id:
+          type: string
+          description: 数据表ID
+          example: tblKz5D60T4JlfcT
+        rec_rule:
+          allOf:
+          - $ref: '#/components/schemas/RecRule2'
+          description: 记录筛选条件，在table_perm为1或2时有意义，用于指定可编辑或可阅读某些记录
+        other_rec_rule:
+          allOf:
+          - $ref: '#/components/schemas/OtherRecRule2'
+          description: 记录筛选条件，在rec_rule.Perm为2时有意义，用于指定剩余可阅读的记录
+        field_perm:
+          type: string
+          x-lark-original-type: map
+          description: 字段权限，仅在table_perm为2时有意义，设置字段可编辑或可阅读
+          example: '{"姓名": 1, "年龄": 2}'
+        allow_add_record:
+          type: boolean
+          description: 新增记录权限，仅在table_perm为2时有意义，用于设置记录是否可以新增
+          default: true
+          example: 'true'
+        allow_delete_record:
+          type: boolean
+          description: 删除记录权限，仅在table_perm为2时有意义，用于设置记录是否可以删除
+          default: true
+          example: 'true'
+        view_perm:
+          type: integer
+          description: 视图权限
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 可阅读
+            '2': 可编辑
+          default: 2
+          example: '2'
+        view_rules:
+          type: string
+          x-lark-original-type: map
+          description: 可读的视图集合，仅在view_perm为1时有意义，未设置表示所有视图可读
+          example: '{"vewEYknYcC": 0}'
+        field_action_rules:
+          type: string
+          x-lark-original-type: map
+          description: 可读的视图集合，仅在view_perm为1时有意义，未设置表示所有视图可读
+          example: '{"select_option_edit": {"字段1"：0}}'
+      required:
+      - table_perm
+    RecRule:
+      type: object
+      properties:
+        conditions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item3'
+          description: 记录筛选条件
+        conjunction:
+          type: string
+          description: 多个筛选条件的关系
+          enum:
+          - and
+          - or
+          x-enum-descriptions:
+            and: 与
+            or: 或
+          default: and
+          example: and
+        perm:
+          type: integer
+          description: 规则筛选记录对应的权限
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 仅可阅读
+            '2': 可编辑
+          default: 1
+          example: '1'
+        other_perm:
+          type: integer
+          description: 其他记录权限，仅在table_perm为2时有效
+          enum:
+          - 0
+          - 1
+          x-enum-descriptions:
+            '0': 禁止查看
+            '1': 仅可阅读
+          default: 0
+          example: '1'
+        condition_groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item5'
+          description: 条件组
+        display_rec_rule_version:
+          type: integer
+          description: 条件版本
+          enum:
+          - 0
+          - 1
+          x-enum-descriptions:
+            '0': 仅支持条件
+            '1': 支持条件组
+          default: 0
+          example: '1'
+      description: 记录筛选条件，在table_perm为1或2时有意义，用于指定可编辑或可阅读某些记录
+    Item3:
+      type: object
+      properties:
+        field_name:
+          type: string
+          description: 字段名
+          example: 单选
+        operator:
+          type: string
+          description: 运算符
+          enum:
+          - is
+          - isNot
+          - contains
+          - doesNotContain
+          - isEmpty
+          - isNotEmpty
+          x-enum-descriptions:
+            is: 等于
+            isNot: 不等于
+            contains: 包含
+            doesNotContain: 不包含
+            isEmpty: 为空
+            isNotEmpty: 不为空
+          default: is
+          example: is
+        value:
+          type: array
+          items:
+            type: string
+          description: 单选或多选字段的选项id
+          example: '["optbdVHf4q", "optrpd3eIJ"]'
+        field_type:
+          type: integer
+          description: 字段类型
+          example: '3'
+      required:
+      - field_name
+    RecRule2:
+      type: object
+      properties:
+        conditions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item4'
+          description: 记录筛选条件
+        conjunction:
+          type: string
+          description: 多个筛选条件的关系
+          enum:
+          - and
+          - or
+          x-enum-descriptions:
+            and: 与
+            or: 或
+          default: and
+          example: and
+        other_perm:
+          type: integer
+          description: 其他记录权限，仅在table_perm为2时有效
+          enum:
+          - 0
+          - 1
+          x-enum-descriptions:
+            '0': 禁止查看
+            '1': 仅可阅读
+          default: 0
+          example: '1'
+        condition_groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item6'
+          description: 条件组
+        display_rec_rule_version:
+          type: integer
+          description: 条件版本
+          enum:
+          - 0
+          - 1
+          x-enum-descriptions:
+            '0': 仅支持条件
+            '1': 支持条件组
+          default: 0
+          example: '1'
+      description: 记录筛选条件，在table_perm为1或2时有意义，用于指定可编辑或可阅读某些记录
+    Item4:
+      type: object
+      properties:
+        field_name:
+          type: string
+          description: 字段名
+          example: 单选
+        operator:
+          type: string
+          description: 运算符
+          enum:
+          - is
+          - isNot
+          - contains
+          - doesNotContain
+          - isEmpty
+          - isNotEmpty
+          x-enum-descriptions:
+            is: 等于
+            isNot: 不等于
+            contains: 包含
+            doesNotContain: 不包含
+            isEmpty: 为空
+            isNotEmpty: 不为空
+          default: is
+          example: is
+        value:
+          type: array
+          items:
+            type: string
+          description: 单选或多选字段的选项id
+          example: '["optbdVHf4q", "optrpd3eIJ"]'
+      required:
+      - field_name
+    OtherRecRule:
+      type: object
+      properties:
+        conditions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item3'
+          description: 记录筛选条件
+        conjunction:
+          type: string
+          description: 多个筛选条件的关系
+          enum:
+          - and
+          - or
+          x-enum-descriptions:
+            and: 与
+            or: 或
+          default: and
+          example: and
+        perm:
+          type: integer
+          description: 规则筛选记录对应的权限
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 仅可阅读
+            '2': 可编辑
+          default: 1
+          example: '1'
+      description: 记录筛选条件，在rec_rule.Perm为2时有意义，用于指定剩余可阅读的记录
+    Item5:
+      type: object
+      properties:
+        condition_type:
+          type: integer
+          description: 条件组类型
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 单个条件
+            '2': 条件组
+          example: and
+        conditions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item3'
+          description: 条件列表
+        conjunction:
+          type: string
+          description: 条件符
+          enum:
+          - and
+          - or
+          x-enum-descriptions:
+            and: 满足所有条件
+            or: 满足任一条件
+          example: or
+    Item6:
+      type: object
+      properties:
+        condition_type:
+          type: integer
+          description: 条件组类型
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 单个条件
+            '2': 条件组
+          example: and
+        conditions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item4'
+          description: 条件列表
+        conjunction:
+          type: string
+          description: 条件符
+          enum:
+          - and
+          - or
+          x-enum-descriptions:
+            and: 满足所有条件
+            or: 满足任一条件
+          example: or
+    OtherRecRule2:
+      type: object
+      properties:
+        conditions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item4'
+          description: 记录筛选条件
+        conjunction:
+          type: string
+          description: 多个筛选条件的关系
+          enum:
+          - and
+          - or
+          x-enum-descriptions:
+            and: 与
+            or: 或
+          default: and
+          example: and
+      description: 记录筛选条件，在rec_rule.Perm为2时有意义，用于指定剩余可阅读的记录

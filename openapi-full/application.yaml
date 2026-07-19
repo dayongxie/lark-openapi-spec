@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: application
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -108,67 +108,7 @@ paths:
                       app_list:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            app_id:
-                              type: string
-                              description: 应用id
-                              example: cli_9ea69ba8026xxxx
-                            app_name:
-                              type: string
-                              description: 应用名
-                              example: SMB同学圈
-                            description:
-                              type: string
-                              description: 应用描述
-                              example: SMB同学圈
-                            app_type:
-                              type: string
-                              description: 应用类型
-                              enum:
-                              - app
-                              - shortcut
-                              x-enum-descriptions:
-                                app: 普通应用
-                                shortcut: 快捷入口
-                              example: app
-                            avatar_url:
-                              type: string
-                              description: 应用图标
-                              example: https://sf1-ttcdn-xxx/xxx/da710014fc4c975xxx
-                            open_methods:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  type:
-                                    type: string
-                                    description: applink类型
-                                    enum:
-                                    - mobile_gadget
-                                    - mobile_web
-                                    - pc_gadget
-                                    - pc_web
-                                    - bot
-                                    x-enum-descriptions:
-                                      mobile_gadget: 移动端小程序
-                                      mobile_web: 移动端Web
-                                      pc_gadget: pc端小程序
-                                      pc_web: pc端web
-                                      bot: 机器人
-                                    example: mobile_gadget
-                                  applink:
-                                    type: string
-                                    description: applink链接
-                                    example: https://applink.feishu.cn/client/web_app/open?appId=cli_xxxxxx
-                              description: 可以打开应用的方式, 包含移动端小程序applink、移动端网页applink、PC端小程序applink、移动端小程序applink、PC端网页applink、机器人applink
-                          required:
-                          - app_id
-                          - app_name
-                          - description
-                          - app_type
-                          - avatar_url
-                          - open_methods
+                          $ref: '#/components/schemas/Item5'
                         description: 应用数据列表
       x-lark-access-tokens:
       - user
@@ -288,67 +228,7 @@ paths:
                       app_list:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            app_id:
-                              type: string
-                              description: 应用id
-                              example: cli_9ea69ba8026xxxx
-                            app_name:
-                              type: string
-                              description: 应用名
-                              example: SMB同学圈
-                            description:
-                              type: string
-                              description: 应用描述
-                              example: SMB同学圈
-                            app_type:
-                              type: string
-                              description: 应用类型
-                              enum:
-                              - app
-                              - shortcut
-                              x-enum-descriptions:
-                                app: 普通应用
-                                shortcut: 快捷入口
-                              example: app
-                            avatar_url:
-                              type: string
-                              description: 应用图标
-                              example: https://sf1-ttcdn-xxx/xxx/da710014fc4c975xxx
-                            open_methods:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  type:
-                                    type: string
-                                    description: applink类型
-                                    enum:
-                                    - mobile_gadget
-                                    - mobile_web
-                                    - pc_gadget
-                                    - pc_web
-                                    - bot
-                                    x-enum-descriptions:
-                                      mobile_gadget: 移动端小程序
-                                      mobile_web: 移动端Web
-                                      pc_gadget: pc端小程序
-                                      pc_web: pc端web
-                                      bot: 机器人
-                                    example: mobile_gadget
-                                  applink:
-                                    type: string
-                                    description: applink链接
-                                    example: https://applink.feishu.cn/client/web_app/open?appId=cli_xxxxxx
-                              description: 可以打开应用的方式, 包含移动端小程序applink、移动端网页applink、PC端小程序applink、移动端小程序applink、PC端网页applink、机器人applink
-                          required:
-                          - app_id
-                          - app_name
-                          - description
-                          - app_type
-                          - avatar_url
-                          - open_methods
+                          $ref: '#/components/schemas/Item5'
                         description: 应用数据列表
       x-lark-access-tokens:
       - user
@@ -608,162 +488,12 @@ paths:
                             recommend_item_infos:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  item_id:
-                                    type: string
-                                    description: 推荐应用项 ID
-                                    example: '7137896480337625108'
-                                  item_type:
-                                    type: string
-                                    description: 推荐应用项类型
-                                    enum:
-                                    - application
-                                    - link
-                                    x-enum-descriptions:
-                                      application: 应用类型
-                                      link: 链接类型
-                                    example: application
-                                  name:
-                                    type: string
-                                    description: 推荐应用项名称
-                                    example: 审批
-                                  description:
-                                    type: string
-                                    description: 推荐应用项描述
-                                    example: 审批应用的描述
-                                  link_url:
-                                    type: string
-                                    description: 链接类型应用项的跳转链接（应用类型该字段为空）
-                                    example: http://www.example.com
-                                  client_id:
-                                    type: string
-                                    description: 应用类型应用项的 app id（链接类型该字段为空）
-                                    example: cli_a274440757b8901c
-                                  icon_url:
-                                    type: string
-                                    description: 应用项图标链接
-                                    example: https://internal-api-lark-file.feishu-boe.cn/static-resource/v1/v2_6150f3c3-ceee-453e-a1ae-7c11d7f13edj~?image_size=&cut_type=&quality=&format=&sticker_format=.webp
-                                  default_locale:
-                                    type: string
-                                    description: 链接类型应用项的默认展示语种（应用类型该字段为空）
-                                    enum:
-                                    - zh_cn
-                                    - zh_hk
-                                    - zh_tw
-                                    - en_us
-                                    - ja_jp
-                                    x-enum-descriptions:
-                                      zh_cn: 简体中文
-                                      zh_hk: 繁体中文（中国香港）
-                                      zh_tw: 繁体中文（中国台湾）
-                                      en_us: 英文
-                                      ja_jp: 日文
-                                    example: zh_cn
-                                  i18n_name:
-                                    type: object
-                                    properties:
-                                      zh_cn:
-                                        type: string
-                                        description: 应用项的简体中文名称
-                                        example: 审批
-                                      zh_hk:
-                                        type: string
-                                        description: 应用项的繁体中文（中国香港）名称
-                                        example: 審批
-                                      zh_tw:
-                                        type: string
-                                        description: 应用项的繁体中文（中国台湾）名称
-                                        example: 審批
-                                      en_us:
-                                        type: string
-                                        description: 应用项的英文名称
-                                        example: Approval
-                                      ja_jp:
-                                        type: string
-                                        description: 应用项的日文名称
-                                        example: 承認
-                                    description: 应用项的多语种名称
+                                $ref: '#/components/schemas/Item4'
                               description: 不可移除推荐应用项列表
                             distributed_recommend_item_infos:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  item_id:
-                                    type: string
-                                    description: 推荐应用项 ID
-                                    example: '7137896480337625108'
-                                  item_type:
-                                    type: string
-                                    description: 推荐应用项类型
-                                    enum:
-                                    - application
-                                    - link
-                                    x-enum-descriptions:
-                                      application: 应用类型
-                                      link: 链接类型
-                                    example: application
-                                  name:
-                                    type: string
-                                    description: 推荐应用项名称
-                                    example: 审批
-                                  description:
-                                    type: string
-                                    description: 推荐应用项描述
-                                    example: 审批应用的描述
-                                  link_url:
-                                    type: string
-                                    description: 链接类型应用项的跳转链接（应用类型该字段为空）
-                                    example: http://www.example.com
-                                  client_id:
-                                    type: string
-                                    description: 应用类型应用项的 app id（链接类型该字段为空）
-                                    example: cli_a274440757b8901c
-                                  icon_url:
-                                    type: string
-                                    description: 应用项图标链接
-                                    example: https://internal-api-lark-file.feishu-boe.cn/static-resource/v1/v2_6150f3c3-ceee-453e-a1ae-7c11d7f13edj~?image_size=&cut_type=&quality=&format=&sticker_format=.webp
-                                  default_locale:
-                                    type: string
-                                    description: 链接类型应用项的默认展示语种（应用类型该字段为空）
-                                    enum:
-                                    - zh_cn
-                                    - zh_hk
-                                    - zh_tw
-                                    - en_us
-                                    - ja_jp
-                                    x-enum-descriptions:
-                                      zh_cn: 简体中文
-                                      zh_hk: 繁体中文（中国香港）
-                                      zh_tw: 繁体中文（中国台湾）
-                                      en_us: 英文
-                                      ja_jp: 日文
-                                    example: zh_cn
-                                  i18n_name:
-                                    type: object
-                                    properties:
-                                      zh_cn:
-                                        type: string
-                                        description: 应用项的简体中文名称
-                                        example: 审批
-                                      zh_hk:
-                                        type: string
-                                        description: 应用项的繁体中文（中国香港）名称
-                                        example: 審批
-                                      zh_tw:
-                                        type: string
-                                        description: 应用项的繁体中文（中国台湾）名称
-                                        example: 審批
-                                      en_us:
-                                        type: string
-                                        description: 应用项的英文名称
-                                        example: Approval
-                                      ja_jp:
-                                        type: string
-                                        description: 应用项的日文名称
-                                        example: 承認
-                                    description: 应用项的多语种名称
+                                $ref: '#/components/schemas/Item4'
                               description: 可移除推荐应用项列表
                         description: 推荐规则列表
                       page_token:
@@ -1359,39 +1089,7 @@ paths:
                     type: object
                     properties:
                       contacts_range:
-                        type: object
-                        properties:
-                          contacts_scope_type:
-                            type: string
-                            description: 通讯录可见性类型
-                            enum:
-                            - equal_to_availability
-                            - some
-                            - all
-                            x-enum-descriptions:
-                              equal_to_availability: 与应用可用范围一致
-                              some: 部分成员
-                              all: 全部成员
-                            example: some
-                          visible_list:
-                            type: object
-                            properties:
-                              open_ids:
-                                type: array
-                                items:
-                                  type: string
-                                description: 可见性成员 open_id 列表
-                              department_ids:
-                                type: array
-                                items:
-                                  type: string
-                                description: 可见性部门的 id 列表
-                              group_ids:
-                                type: array
-                                items:
-                                  type: string
-                                description: 可见性成员 group_id 列表
-                            description: 可用名单
+                        $ref: '#/components/schemas/ContactsRange'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -1505,594 +1203,7 @@ paths:
                     type: object
                     properties:
                       app_version:
-                        type: object
-                        properties:
-                          app_id:
-                            type: string
-                            description: 应用 id
-                            example: cli_9f3ca975326b501b
-                          version:
-                            type: string
-                            description: 开发者填入的应用版本 ID
-                            example: 1.0.0
-                          version_id:
-                            type: string
-                            description: 唯一标识应用版本的 ID
-                            example: oav_d317f090b7258ad0372aa53963cda70d
-                            format: int64
-                          app_name:
-                            type: string
-                            description: 应用默认名称
-                            example: 应用名称
-                          avatar_url:
-                            type: string
-                            description: 应用头像 url
-                            example: https://www.example.com
-                          description:
-                            type: string
-                            description: 应用默认描述
-                            example: 应用描述
-                          scopes:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                scope:
-                                  type: string
-                                  description: 应用权限
-                                  example: contact:user.base
-                                description:
-                                  type: string
-                                  description: 应用权限的国际化描述
-                                  example: 获取应用信息
-                                level:
-                                  type: integer
-                                  description: 权限等级描述
-                                  enum:
-                                  - 1
-                                  - 2
-                                  - 3
-                                  - 0
-                                  x-enum-descriptions:
-                                    '1': 低级权限
-                                    '2': 高级权限
-                                    '3': 超敏感权限
-                                    '0': 未知等级
-                                  example: '1'
-                                token_types:
-                                  type: array
-                                  items:
-                                    type: string
-                                    enum:
-                                    - tenant
-                                    - user
-                                    x-enum-descriptions:
-                                      tenant: 应用身份类型
-                                      user: 用户身份类型
-                                  description: 返回用户身份类型user、应用身份类型tenant。如果两种类型都支持，则同时返回两个。
-                              required:
-                              - scope
-                            description: 应用权限列表
-                          back_home_url:
-                            type: string
-                            description: 后台主页地址
-                            example: https://www.example.com
-                          i18n:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                i18n_key:
-                                  type: string
-                                  description: 国际化语言的 key
-                                  enum:
-                                  - zh_cn
-                                  - en_us
-                                  - ja_jp
-                                  - zh_hk
-                                  - zh_tw
-                                  - id_id
-                                  - ms_my
-                                  - de_de
-                                  - es_es
-                                  - fr_fr
-                                  - it_it
-                                  - pt_br
-                                  - vi_vn
-                                  - ru_ru
-                                  - th_th
-                                  - ko_kr
-                                  x-enum-descriptions:
-                                    zh_cn: 中文
-                                    en_us: 英文
-                                    ja_jp: 日文
-                                    zh_hk: 繁体中文(中国香港)
-                                    zh_tw: 繁体中文(中国台湾)
-                                    id_id: 印度尼西亚语
-                                    ms_my: 马来语
-                                    de_de: 德语
-                                    es_es: 西班牙语
-                                    fr_fr: 法语
-                                    it_it: 意大利语
-                                    pt_br: 葡萄牙语(巴西)
-                                    vi_vn: 越南语
-                                    ru_ru: 俄语
-                                    th_th: 泰语
-                                    ko_kr: 韩语
-                                  example: zh_cn
-                                name:
-                                  type: string
-                                  description: 应用国际化名称
-                                  example: 应用名称
-                                description:
-                                  type: string
-                                  description: 应用国际化描述（副标题）
-                                  example: 应用描述
-                                help_use:
-                                  type: string
-                                  description: 帮助国际化文档链接
-                                  example: https://www.example.com
-                              required:
-                              - i18n_key
-                            description: 应用的国际化信息列表
-                          common_categories:
-                            type: array
-                            items:
-                              type: string
-                            description: 应用分类的国际化描述
-                          events:
-                            type: array
-                            items:
-                              type: string
-                            description: 应用已订阅开放平台事件列表
-                          status:
-                            type: integer
-                            description: 版本状态
-                            enum:
-                            - 0
-                            - 1
-                            - 2
-                            - 3
-                            - 4
-                            x-enum-descriptions:
-                              '0': 未知状态
-                              '1': 审核通过
-                              '2': 审核拒绝
-                              '3': 审核中
-                              '4': 未提交审核
-                            example: '1'
-                          create_time:
-                            type: string
-                            description: 版本创建时间（单位：s）
-                            example: '1610462759'
-                            format: int64
-                          publish_time:
-                            type: string
-                            description: 版本发布时间（单位：s）
-                            example: '1610462759'
-                            format: int64
-                          ability:
-                            type: object
-                            properties:
-                              gadget:
-                                type: object
-                                properties:
-                                  enable_pc_mode:
-                                    type: integer
-                                    description: pc 支持的小程序模式，bit 位表示
-                                    enum:
-                                    - 1
-                                    - 2
-                                    - 4
-                                    x-enum-descriptions:
-                                      '1': sidebar 模式
-                                      '2': pc 模式
-                                      '4': 主导航模式
-                                    example: '1'
-                                  schema_urls:
-                                    type: array
-                                    items:
-                                      type: string
-                                    description: schema url 列表
-                                  pc_use_mobile_pkg:
-                                    type: boolean
-                                    description: pc 端是否使用小程序版本
-                                    example: 'false'
-                                  pc_version:
-                                    type: string
-                                    description: pc 的小程序版本号
-                                    example: 1.0.0
-                                  mobile_version:
-                                    type: string
-                                    description: 移动端小程序版本号
-                                    example: 1.0.0
-                                  mobile_min_lark_version:
-                                    type: string
-                                    description: 移动端兼容的最低飞书版本
-                                    example: '2.0'
-                                  pc_min_lark_version:
-                                    type: string
-                                    description: pc 端兼容的最低飞书版本
-                                    example: '2.0'
-                                description: 小程序能力
-                              web_app:
-                                type: object
-                                properties:
-                                  pc_url:
-                                    type: string
-                                    description: pc 端 url
-                                    example: https://www.example.com
-                                  mobile_url:
-                                    type: string
-                                    description: 移动端 url
-                                    example: https://www.example.com
-                                description: 网页能力
-                              bot:
-                                type: object
-                                properties:
-                                  card_request_url:
-                                    type: string
-                                    description: 消息卡片回调地址
-                                    example: https://www.example.com
-                                  bot_menu_enable:
-                                    type: boolean
-                                    description: 是否启用机器人菜单
-                                    example: 'true'
-                                  bot_menus:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        menu_id:
-                                          type: string
-                                          description: 节点唯一标识，同一次请求内唯一
-                                          example: menu_1
-                                        parent_menu_id:
-                                          type: string
-                                          description: 父节点 ID，为空表示一级菜单
-                                          example: menu_parent
-                                        sort:
-                                          type: integer
-                                          description: 同层级内排序，数值越小越靠前
-                                          example: '1'
-                                        default_name:
-                                          type: string
-                                          description: 默认名称
-                                          example: 菜单名称
-                                        i18n_name:
-                                          type: string
-                                          x-lark-original-type: map
-                                          description: 国际化名称配置。了解支持语种，参考配置卡片多语言
-                                        redirect_link:
-                                          type: object
-                                          properties:
-                                            pc_url:
-                                              type: string
-                                              description: PC 端跳转链接
-                                              example: https://www.example.com
-                                            mobile_url:
-                                              type: string
-                                              description: 移动端跳转链接
-                                              example: https://www.example.com
-                                          description: 跳转链接
-                                        event_key:
-                                          type: string
-                                          description: 事件 key
-                                          example: event_key
-                                        icon_file_key:
-                                          type: string
-                                          description: 图标文件 key
-                                          example: file_key
-                                        ud_icon:
-                                          type: object
-                                          properties:
-                                            token:
-                                              type: string
-                                              description: UD icon token
-                                              example: app_outlined
-                                            color:
-                                              type: string
-                                              description: UD icon 颜色
-                                              example: blue
-                                          description: UD icon 配置
-                                        menu_content_type:
-                                          type: integer
-                                          description: 菜单内容类型
-                                          enum:
-                                          - 0
-                                          - 1
-                                          - 2
-                                          - 3
-                                          - 4
-                                          x-enum-descriptions:
-                                            '0': 未知
-                                            '1': 跳转链接
-                                            '2': 事件
-                                            '3': 展开子菜单
-                                            '4': 发送消息
-                                          example: '1'
-                                    description: 机器人菜单列表
-                                  bot_menu_display_strategy:
-                                    type: integer
-                                    description: 机器人菜单展示策略
-                                    enum:
-                                    - 0
-                                    - 1
-                                    - 2
-                                    - 3
-                                    x-enum-descriptions:
-                                      '0': 未知
-                                      '1': 优先展示菜单
-                                      '2': 优先展示输入框
-                                      '3': 浮动展示
-                                    example: '1'
-                                description: 机器人能力
-                              workplace_widgets:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    min_lark_version:
-                                      type: string
-                                      description: 最低兼容 lark 版本号
-                                      example: 1.0.0
-                                description: 小组件能力
-                              navigate:
-                                type: object
-                                properties:
-                                  pc:
-                                    type: object
-                                    properties:
-                                      version:
-                                        type: string
-                                        description: 主导航小程序版本号
-                                        example: 1.0.0
-                                      image_url:
-                                        type: string
-                                        description: 默认图片 url
-                                        example: https://www.example.com
-                                      hover_image_url:
-                                        type: string
-                                        description: 选中态图片 url
-                                        example: https://www.example.com
-                                    description: pc 端主导航信息
-                                  mobile:
-                                    type: object
-                                    properties:
-                                      version:
-                                        type: string
-                                        description: 主导航小程序版本号
-                                        example: 1.0.0
-                                      image_url:
-                                        type: string
-                                        description: 默认图片 url
-                                        example: https://www.example.com
-                                      hover_image_url:
-                                        type: string
-                                        description: 选中态图片 url
-                                        example: https://www.example.com
-                                    description: 移动端主导航信息
-                                description: 主导航小程序
-                              cloud_doc:
-                                type: object
-                                properties:
-                                  space_url:
-                                    type: string
-                                    description: 云空间重定向 url
-                                    example: https://www.example.com
-                                  i18n:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        i18n_key:
-                                          type: string
-                                          description: 国际化语言的 key
-                                          enum:
-                                          - zh_cn
-                                          - en_us
-                                          - ja_jp
-                                          x-enum-descriptions:
-                                            zh_cn: 中文
-                                            en_us: 英文
-                                            ja_jp: 日文
-                                          example: zh_cn
-                                        name:
-                                          type: string
-                                          description: 云文档国际化名称
-                                          example: 名称
-                                        read_description:
-                                          type: string
-                                          description: 云文档国际化读权限说明
-                                          example: 读权限说明
-                                        write_description:
-                                          type: string
-                                          description: 云文档国际化写权限说明
-                                          example: 写权限说明
-                                      required:
-                                      - i18n_key
-                                    description: 国际化信息
-                                  icon_url:
-                                    type: string
-                                    description: 图标链接
-                                    example: https://www.example.com
-                                  mode:
-                                    type: integer
-                                    description: 云文档支持模式
-                                    enum:
-                                    - 0
-                                    - 1
-                                    x-enum-descriptions:
-                                      '0': 未知
-                                      '1': 移动端
-                                    example: '1'
-                                description: 云文档应用
-                              docs_blocks:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    block_type_id:
-                                      type: string
-                                      description: BlockTypeID
-                                      example: blk_4fb61568435880110854c1d0
-                                    i18n:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          i18n_key:
-                                            type: string
-                                            description: 国际化语言的 key
-                                            enum:
-                                            - zh_cn
-                                            - en_us
-                                            - ja_jp
-                                            x-enum-descriptions:
-                                              zh_cn: 中文
-                                              en_us: 英文
-                                              ja_jp: 日文
-                                            example: zh_cn
-                                          name:
-                                            type: string
-                                            description: 名称
-                                            example: 名称
-                                      description: block 的国际化信息
-                                    mobile_icon_url:
-                                      type: string
-                                      description: 移动端 icon 链接
-                                      example: https://www.example.com
-                                    pc_icon_url:
-                                      type: string
-                                      description: pc 端口 icon 链接
-                                      example: https://www.example.com
-                                description: 云文档小组件
-                              message_action:
-                                type: object
-                                properties:
-                                  pc_app_link:
-                                    type: string
-                                    description: pc 端链接
-                                    example: https://www.example.com
-                                  mobile_app_link:
-                                    type: string
-                                    description: 移动端链接
-                                    example: https://www.example.com
-                                  i18n:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        i18n_key:
-                                          type: string
-                                          description: 国际化语言的 key
-                                          enum:
-                                          - zh_cn
-                                          - en_us
-                                          - ja_jp
-                                          x-enum-descriptions:
-                                            zh_cn: 中文
-                                            en_us: 英文
-                                            ja_jp: 日文
-                                          example: zh_cn
-                                        name:
-                                          type: string
-                                          description: 国际化名称
-                                          example: 名称
-                                    description: 国际化信息
-                                description: 消息快捷操作
-                              plus_menu:
-                                type: object
-                                properties:
-                                  pc_app_link:
-                                    type: string
-                                    description: pc 端链接
-                                    example: https://www.example.com
-                                  mobile_app_link:
-                                    type: string
-                                    description: 移动端链接
-                                    example: https://www.example.com
-                                description: 加号菜单
-                            description: 当前版本下应用开启的能力
-                          remark:
-                            type: object
-                            properties:
-                              remark:
-                                type: string
-                                description: 备注说明
-                                example: 备注说明
-                              update_remark:
-                                type: string
-                                description: 更新说明
-                                example: 更新说明
-                              visibility:
-                                type: object
-                                properties:
-                                  is_all:
-                                    type: boolean
-                                    description: 是否全员可见
-                                    example: 'false'
-                                  visible_list:
-                                    type: object
-                                    properties:
-                                      open_ids:
-                                        type: array
-                                        items:
-                                          type: string
-                                        description: 可见性成员 open_id 列表
-                                      department_ids:
-                                        type: array
-                                        items:
-                                          type: string
-                                        description: 可见性部门的 id 列表
-                                      group_ids:
-                                        type: array
-                                        items:
-                                          type: string
-                                        description: 可见性成员 group_id 列表
-                                    description: 可见名单
-                                  invisible_list:
-                                    type: object
-                                    properties:
-                                      open_ids:
-                                        type: array
-                                        items:
-                                          type: string
-                                        description: 可见性成员 open_id 列表
-                                      department_ids:
-                                        type: array
-                                        items:
-                                          type: string
-                                        description: 可见性部门的 id 列表
-                                      group_ids:
-                                        type: array
-                                        items:
-                                          type: string
-                                        description: 可见性成员 group_id 列表
-                                    description: 不可见名单
-                                description: 可见性名单
-                            description: 跟随应用版本的信息
-                          event_infos:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                event_type:
-                                  type: string
-                                  description: 事件类型，事件唯一标识
-                                  example: im.chat.updated_v1
-                                event_name:
-                                  type: string
-                                  description: 事件名称
-                                  example: 群配置修改事件
-                                event_description:
-                                  type: string
-                                  description: 事件描述
-                                  example: 群聊名称、头像、描述以及群编辑权限、群分享权限等被修改时推送事件
-                            description: 应用已订阅事件详情列表
-                        required:
-                        - app_id
-                        - version_id
+                        $ref: '#/components/schemas/AppVersion'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -2375,594 +1486,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            app_id:
-                              type: string
-                              description: 应用 id
-                              example: cli_9f3ca975326b501b
-                            version:
-                              type: string
-                              description: 开发者填入的应用版本 ID
-                              example: 1.0.0
-                            version_id:
-                              type: string
-                              description: 唯一标识应用版本的 ID
-                              example: oav_d317f090b7258ad0372aa53963cda70d
-                              format: int64
-                            app_name:
-                              type: string
-                              description: 应用默认名称
-                              example: 应用名称
-                            avatar_url:
-                              type: string
-                              description: 应用头像 url
-                              example: https://www.example.com
-                            description:
-                              type: string
-                              description: 应用默认描述
-                              example: 应用描述
-                            scopes:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  scope:
-                                    type: string
-                                    description: 应用权限
-                                    example: contact:user.base
-                                  description:
-                                    type: string
-                                    description: 应用权限的国际化描述
-                                    example: 获取应用信息
-                                  level:
-                                    type: integer
-                                    description: 权限等级描述
-                                    enum:
-                                    - 1
-                                    - 2
-                                    - 3
-                                    - 0
-                                    x-enum-descriptions:
-                                      '1': 低级权限
-                                      '2': 高级权限
-                                      '3': 超敏感权限
-                                      '0': 未知等级
-                                    example: '1'
-                                  token_types:
-                                    type: array
-                                    items:
-                                      type: string
-                                      enum:
-                                      - tenant
-                                      - user
-                                      x-enum-descriptions:
-                                        tenant: 应用身份类型
-                                        user: 用户身份类型
-                                    description: 返回用户身份类型user、应用身份类型tenant。如果两种类型都支持，则同时返回两个。
-                                required:
-                                - scope
-                              description: 应用权限列表
-                            back_home_url:
-                              type: string
-                              description: 后台主页地址
-                              example: https://www.example.com
-                            i18n:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  i18n_key:
-                                    type: string
-                                    description: 国际化语言的 key
-                                    enum:
-                                    - zh_cn
-                                    - en_us
-                                    - ja_jp
-                                    - zh_hk
-                                    - zh_tw
-                                    - id_id
-                                    - ms_my
-                                    - de_de
-                                    - es_es
-                                    - fr_fr
-                                    - it_it
-                                    - pt_br
-                                    - vi_vn
-                                    - ru_ru
-                                    - th_th
-                                    - ko_kr
-                                    x-enum-descriptions:
-                                      zh_cn: 中文
-                                      en_us: 英文
-                                      ja_jp: 日文
-                                      zh_hk: 繁体中文(中国香港)
-                                      zh_tw: 繁体中文(中国台湾)
-                                      id_id: 印度尼西亚语
-                                      ms_my: 马来语
-                                      de_de: 德语
-                                      es_es: 西班牙语
-                                      fr_fr: 法语
-                                      it_it: 意大利语
-                                      pt_br: 葡萄牙语(巴西)
-                                      vi_vn: 越南语
-                                      ru_ru: 俄语
-                                      th_th: 泰语
-                                      ko_kr: 韩语
-                                    example: zh_cn
-                                  name:
-                                    type: string
-                                    description: 应用国际化名称
-                                    example: 应用名称
-                                  description:
-                                    type: string
-                                    description: 应用国际化描述（副标题）
-                                    example: 应用描述
-                                  help_use:
-                                    type: string
-                                    description: 帮助国际化文档链接
-                                    example: https://www.example.com
-                                required:
-                                - i18n_key
-                              description: 应用的国际化信息列表
-                            common_categories:
-                              type: array
-                              items:
-                                type: string
-                              description: 应用分类的国际化描述
-                            events:
-                              type: array
-                              items:
-                                type: string
-                              description: 应用已订阅开放平台事件列表
-                            status:
-                              type: integer
-                              description: 版本状态
-                              enum:
-                              - 0
-                              - 1
-                              - 2
-                              - 3
-                              - 4
-                              x-enum-descriptions:
-                                '0': 未知状态
-                                '1': 审核通过
-                                '2': 审核拒绝
-                                '3': 审核中
-                                '4': 未提交审核
-                              example: '1'
-                            create_time:
-                              type: string
-                              description: 版本创建时间（单位：s）
-                              example: '1610462759'
-                              format: int64
-                            publish_time:
-                              type: string
-                              description: 版本发布时间（单位：s）
-                              example: '1610462759'
-                              format: int64
-                            ability:
-                              type: object
-                              properties:
-                                gadget:
-                                  type: object
-                                  properties:
-                                    enable_pc_mode:
-                                      type: integer
-                                      description: pc 支持的小程序模式，bit 位表示
-                                      enum:
-                                      - 1
-                                      - 2
-                                      - 4
-                                      x-enum-descriptions:
-                                        '1': sidebar 模式
-                                        '2': pc 模式
-                                        '4': 主导航模式
-                                      example: '1'
-                                    schema_urls:
-                                      type: array
-                                      items:
-                                        type: string
-                                      description: schema url 列表
-                                    pc_use_mobile_pkg:
-                                      type: boolean
-                                      description: pc 端是否使用小程序版本
-                                      example: 'false'
-                                    pc_version:
-                                      type: string
-                                      description: pc 的小程序版本号
-                                      example: 1.0.0
-                                    mobile_version:
-                                      type: string
-                                      description: 移动端小程序版本号
-                                      example: 1.0.0
-                                    mobile_min_lark_version:
-                                      type: string
-                                      description: 移动端兼容的最低飞书版本
-                                      example: '2.0'
-                                    pc_min_lark_version:
-                                      type: string
-                                      description: pc 端兼容的最低飞书版本
-                                      example: '2.0'
-                                  description: 小程序能力
-                                web_app:
-                                  type: object
-                                  properties:
-                                    pc_url:
-                                      type: string
-                                      description: pc 端 url
-                                      example: https://www.example.com
-                                    mobile_url:
-                                      type: string
-                                      description: 移动端 url
-                                      example: https://www.example.com
-                                  description: 网页能力
-                                bot:
-                                  type: object
-                                  properties:
-                                    card_request_url:
-                                      type: string
-                                      description: 消息卡片回调地址
-                                      example: https://www.example.com
-                                    bot_menu_enable:
-                                      type: boolean
-                                      description: 是否启用机器人菜单
-                                      example: 'true'
-                                    bot_menus:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          menu_id:
-                                            type: string
-                                            description: 节点唯一标识，同一次请求内唯一
-                                            example: menu_1
-                                          parent_menu_id:
-                                            type: string
-                                            description: 父节点 ID，为空表示一级菜单
-                                            example: menu_parent
-                                          sort:
-                                            type: integer
-                                            description: 同层级内排序，数值越小越靠前
-                                            example: '1'
-                                          default_name:
-                                            type: string
-                                            description: 默认名称
-                                            example: 菜单名称
-                                          i18n_name:
-                                            type: string
-                                            x-lark-original-type: map
-                                            description: 国际化名称配置。了解支持语种，参考配置卡片多语言
-                                          redirect_link:
-                                            type: object
-                                            properties:
-                                              pc_url:
-                                                type: string
-                                                description: PC 端跳转链接
-                                                example: https://www.example.com
-                                              mobile_url:
-                                                type: string
-                                                description: 移动端跳转链接
-                                                example: https://www.example.com
-                                            description: 跳转链接
-                                          event_key:
-                                            type: string
-                                            description: 事件 key
-                                            example: event_key
-                                          icon_file_key:
-                                            type: string
-                                            description: 图标文件 key
-                                            example: file_key
-                                          ud_icon:
-                                            type: object
-                                            properties:
-                                              token:
-                                                type: string
-                                                description: UD icon token
-                                                example: app_outlined
-                                              color:
-                                                type: string
-                                                description: UD icon 颜色
-                                                example: blue
-                                            description: UD icon 配置
-                                          menu_content_type:
-                                            type: integer
-                                            description: 菜单内容类型
-                                            enum:
-                                            - 0
-                                            - 1
-                                            - 2
-                                            - 3
-                                            - 4
-                                            x-enum-descriptions:
-                                              '0': 未知
-                                              '1': 跳转链接
-                                              '2': 事件
-                                              '3': 展开子菜单
-                                              '4': 发送消息
-                                            example: '1'
-                                      description: 机器人菜单列表
-                                    bot_menu_display_strategy:
-                                      type: integer
-                                      description: 机器人菜单展示策略
-                                      enum:
-                                      - 0
-                                      - 1
-                                      - 2
-                                      - 3
-                                      x-enum-descriptions:
-                                        '0': 未知
-                                        '1': 优先展示菜单
-                                        '2': 优先展示输入框
-                                        '3': 浮动展示
-                                      example: '1'
-                                  description: 机器人能力
-                                workplace_widgets:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      min_lark_version:
-                                        type: string
-                                        description: 最低兼容 lark 版本号
-                                        example: 1.0.0
-                                  description: 小组件能力
-                                navigate:
-                                  type: object
-                                  properties:
-                                    pc:
-                                      type: object
-                                      properties:
-                                        version:
-                                          type: string
-                                          description: 主导航小程序版本号
-                                          example: 1.0.0
-                                        image_url:
-                                          type: string
-                                          description: 默认图片 url
-                                          example: https://www.example.com
-                                        hover_image_url:
-                                          type: string
-                                          description: 选中态图片 url
-                                          example: https://www.example.com
-                                      description: pc 端主导航信息
-                                    mobile:
-                                      type: object
-                                      properties:
-                                        version:
-                                          type: string
-                                          description: 主导航小程序版本号
-                                          example: 1.0.0
-                                        image_url:
-                                          type: string
-                                          description: 默认图片 url
-                                          example: https://www.example.com
-                                        hover_image_url:
-                                          type: string
-                                          description: 选中态图片 url
-                                          example: https://www.example.com
-                                      description: 移动端主导航信息
-                                  description: 主导航小程序
-                                cloud_doc:
-                                  type: object
-                                  properties:
-                                    space_url:
-                                      type: string
-                                      description: 云空间重定向 url
-                                      example: https://www.example.com
-                                    i18n:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          i18n_key:
-                                            type: string
-                                            description: 国际化语言的 key
-                                            enum:
-                                            - zh_cn
-                                            - en_us
-                                            - ja_jp
-                                            x-enum-descriptions:
-                                              zh_cn: 中文
-                                              en_us: 英文
-                                              ja_jp: 日文
-                                            example: zh_cn
-                                          name:
-                                            type: string
-                                            description: 云文档国际化名称
-                                            example: 名称
-                                          read_description:
-                                            type: string
-                                            description: 云文档国际化读权限说明
-                                            example: 读权限说明
-                                          write_description:
-                                            type: string
-                                            description: 云文档国际化写权限说明
-                                            example: 写权限说明
-                                        required:
-                                        - i18n_key
-                                      description: 国际化信息
-                                    icon_url:
-                                      type: string
-                                      description: 图标链接
-                                      example: https://www.example.com
-                                    mode:
-                                      type: integer
-                                      description: 云文档支持模式
-                                      enum:
-                                      - 0
-                                      - 1
-                                      x-enum-descriptions:
-                                        '0': 未知
-                                        '1': 移动端
-                                      example: '1'
-                                  description: 云文档应用
-                                docs_blocks:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      block_type_id:
-                                        type: string
-                                        description: BlockTypeID
-                                        example: blk_4fb61568435880110854c1d0
-                                      i18n:
-                                        type: array
-                                        items:
-                                          type: object
-                                          properties:
-                                            i18n_key:
-                                              type: string
-                                              description: 国际化语言的 key
-                                              enum:
-                                              - zh_cn
-                                              - en_us
-                                              - ja_jp
-                                              x-enum-descriptions:
-                                                zh_cn: 中文
-                                                en_us: 英文
-                                                ja_jp: 日文
-                                              example: zh_cn
-                                            name:
-                                              type: string
-                                              description: 名称
-                                              example: 名称
-                                        description: block 的国际化信息
-                                      mobile_icon_url:
-                                        type: string
-                                        description: 移动端 icon 链接
-                                        example: https://www.example.com
-                                      pc_icon_url:
-                                        type: string
-                                        description: pc 端口 icon 链接
-                                        example: https://www.example.com
-                                  description: 云文档小组件
-                                message_action:
-                                  type: object
-                                  properties:
-                                    pc_app_link:
-                                      type: string
-                                      description: pc 端链接
-                                      example: https://www.example.com
-                                    mobile_app_link:
-                                      type: string
-                                      description: 移动端链接
-                                      example: https://www.example.com
-                                    i18n:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          i18n_key:
-                                            type: string
-                                            description: 国际化语言的 key
-                                            enum:
-                                            - zh_cn
-                                            - en_us
-                                            - ja_jp
-                                            x-enum-descriptions:
-                                              zh_cn: 中文
-                                              en_us: 英文
-                                              ja_jp: 日文
-                                            example: zh_cn
-                                          name:
-                                            type: string
-                                            description: 国际化名称
-                                            example: 名称
-                                      description: 国际化信息
-                                  description: 消息快捷操作
-                                plus_menu:
-                                  type: object
-                                  properties:
-                                    pc_app_link:
-                                      type: string
-                                      description: pc 端链接
-                                      example: https://www.example.com
-                                    mobile_app_link:
-                                      type: string
-                                      description: 移动端链接
-                                      example: https://www.example.com
-                                  description: 加号菜单
-                              description: 当前版本下应用开启的能力
-                            remark:
-                              type: object
-                              properties:
-                                remark:
-                                  type: string
-                                  description: 备注说明
-                                  example: 备注说明
-                                update_remark:
-                                  type: string
-                                  description: 更新说明
-                                  example: 更新说明
-                                visibility:
-                                  type: object
-                                  properties:
-                                    is_all:
-                                      type: boolean
-                                      description: 是否全员可见
-                                      example: 'false'
-                                    visible_list:
-                                      type: object
-                                      properties:
-                                        open_ids:
-                                          type: array
-                                          items:
-                                            type: string
-                                          description: 可见性成员 open_id 列表
-                                        department_ids:
-                                          type: array
-                                          items:
-                                            type: string
-                                          description: 可见性部门的 id 列表
-                                        group_ids:
-                                          type: array
-                                          items:
-                                            type: string
-                                          description: 可见性成员 group_id 列表
-                                      description: 可见名单
-                                    invisible_list:
-                                      type: object
-                                      properties:
-                                        open_ids:
-                                          type: array
-                                          items:
-                                            type: string
-                                          description: 可见性成员 open_id 列表
-                                        department_ids:
-                                          type: array
-                                          items:
-                                            type: string
-                                          description: 可见性部门的 id 列表
-                                        group_ids:
-                                          type: array
-                                          items:
-                                            type: string
-                                          description: 可见性成员 group_id 列表
-                                      description: 不可见名单
-                                  description: 可见性名单
-                              description: 跟随应用版本的信息
-                            event_infos:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  event_type:
-                                    type: string
-                                    description: 事件类型，事件唯一标识
-                                    example: im.chat.updated_v1
-                                  event_name:
-                                    type: string
-                                    description: 事件名称
-                                    example: 群配置修改事件
-                                  event_description:
-                                    type: string
-                                    description: 事件描述
-                                    example: 群聊名称、头像、描述以及群编辑权限、群分享权限等被修改时推送事件
-                              description: 应用已订阅事件详情列表
-                          required:
-                          - app_id
-                          - version_id
+                          $ref: '#/components/schemas/AppVersion'
                         description: 应用版本列表
                       page_token:
                         type: string
@@ -3630,10 +2154,10 @@ paths:
       x-lark-scopes:
       - application:application.feedback.feedback_info
       x-lark-field-scopes:
-      - contact:user.employee_id:readonly
       - contact:user.phone:readonly
       - contact:user.email:readonly
       - directory:employee.base.email:read
+      - contact:user.employee_id:readonly
       x-lark-error-mappings:
       - code: 211005
         httpCode: 400
@@ -4429,39 +2953,7 @@ paths:
                     type: object
                     properties:
                       contacts_range:
-                        type: object
-                        properties:
-                          contacts_scope_type:
-                            type: string
-                            description: 通讯录可见性类型
-                            enum:
-                            - equal_to_availability
-                            - some
-                            - all
-                            x-enum-descriptions:
-                              equal_to_availability: 与应用可用范围一致
-                              some: 部分成员
-                              all: 全部成员
-                            example: some
-                          visible_list:
-                            type: object
-                            properties:
-                              open_ids:
-                                type: array
-                                items:
-                                  type: string
-                                description: 可见性成员 open_id 列表
-                              department_ids:
-                                type: array
-                                items:
-                                  type: string
-                                description: 可见性部门的 id 列表
-                              group_ids:
-                                type: array
-                                items:
-                                  type: string
-                                description: 可见性成员 group_id 列表
-                            description: 可用名单
+                        $ref: '#/components/schemas/ContactsRange'
                       has_more:
                         type: boolean
                         description: 是否还有更多项
@@ -4564,313 +3056,8 @@ paths:
                     type: object
                     properties:
                       app:
-                        type: object
-                        properties:
-                          app_id:
-                            type: string
-                            description: 应用的 id
-                            example: cli_9b445f5258795107
-                          creator_id:
-                            type: string
-                            description: 应用创建者（所有者）
-                            example: ou_d317f090b7258ad0372aa53963cda70d
-                            format: int64
-                          status:
-                            type: integer
-                            description: 应用状态
-                            enum:
-                            - 0
-                            - 1
-                            - 2
-                            - 3
-                            x-enum-descriptions:
-                              '0': 停用状态
-                              '1': 启用状态
-                              '2': 未启用状态
-                              '3': 未知状态
-                            example: '1'
-                          scene_type:
-                            type: integer
-                            description: 应用类型
-                            enum:
-                            - 0
-                            - 1
-                            - 2
-                            - 3
-                            x-enum-descriptions:
-                              '0': 自建应用
-                              '1': 应用商店应用
-                              '2': 个人应用商店应用
-                              '3': 未知应用类型
-                            example: '0'
-                          payment_type:
-                            type: integer
-                            description: 付费类型
-                            enum:
-                            - 0
-                            - 1
-                            x-enum-descriptions:
-                              '0': 免费
-                              '1': 付费
-                            example: '0'
-                          create_source:
-                            type: string
-                            description: 应用创建来源(目前仅Base应用返回)
-                            enum:
-                            - developer_console
-                            - base
-                            - app_engine
-                            - bot_builder
-                            - aily
-                            - unknown
-                            x-enum-descriptions:
-                              developer_console: 开发者后台
-                              base: 多维表格自动化流程创建的应用
-                              app_engine: 飞书应用引擎
-                              bot_builder: 机器人助手
-                              aily: aily(智能伙伴搭建平台)
-                              unknown: 未知来源
-                            example: base
-                          redirect_urls:
-                            type: array
-                            items:
-                              type: string
-                            description: 安全设置中的重定向 URL
-                          online_version_id:
-                            type: string
-                            description: 发布在线上的应用版本
-                            example: oav_d317f090b7258ad0372aa53963cda70d
-                            format: int64
-                          unaudit_version_id:
-                            type: string
-                            description: 在审核中的版本号信息，若没有则为空
-                            example: oav_d317f090b7258ad0372aa53963cda70d
-                            format: int64
-                          app_name:
-                            type: string
-                            description: 应用默认名称，如果没有对应语言下的名称，则返回默认语言下的名称
-                            example: 应用名称
-                          avatar_url:
-                            type: string
-                            description: 应用图标链接
-                            example: https://sf1-ttcdn-tos.pstatp.com/img/avatar/d279000ca4d3f7f6aaff~72x72.jpg
-                          description:
-                            type: string
-                            description: 应用默认描述
-                            example: 应用描述
-                          scopes:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                scope:
-                                  type: string
-                                  description: 应用权限
-                                  example: contact:user.base
-                                description:
-                                  type: string
-                                  description: 应用权限的国际化描述
-                                  example: 获取应用信息
-                                level:
-                                  type: integer
-                                  description: 权限等级描述
-                                  enum:
-                                  - 1
-                                  - 2
-                                  - 3
-                                  - 0
-                                  x-enum-descriptions:
-                                    '1': 低级权限
-                                    '2': 高级权限
-                                    '3': 超敏感权限
-                                    '0': 未知等级
-                                  example: '1'
-                                token_types:
-                                  type: array
-                                  items:
-                                    type: string
-                                    enum:
-                                    - tenant
-                                    - user
-                                    x-enum-descriptions:
-                                      tenant: 应用身份类型
-                                      user: 用户身份类型
-                                  description: 返回用户身份类型user、应用身份类型tenant。如果两种类型都支持，则同时返回两个。
-                              required:
-                              - scope
-                            description: 应用权限列表
-                          back_home_url:
-                            type: string
-                            description: 后台主页地址
-                            example: https://www.example.com
-                          i18n:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                i18n_key:
-                                  type: string
-                                  description: 国际化语言的 key
-                                  enum:
-                                  - zh_cn
-                                  - en_us
-                                  - ja_jp
-                                  - zh_hk
-                                  - zh_tw
-                                  - id_id
-                                  - ms_my
-                                  - de_de
-                                  - es_es
-                                  - fr_fr
-                                  - it_it
-                                  - pt_br
-                                  - vi_vn
-                                  - ru_ru
-                                  - th_th
-                                  - ko_kr
-                                  x-enum-descriptions:
-                                    zh_cn: 中文
-                                    en_us: 英文
-                                    ja_jp: 日文
-                                    zh_hk: 繁体中文(中国香港)
-                                    zh_tw: 繁体中文(中国台湾)
-                                    id_id: 印度尼西亚语
-                                    ms_my: 马来语
-                                    de_de: 德语
-                                    es_es: 西班牙语
-                                    fr_fr: 法语
-                                    it_it: 意大利语
-                                    pt_br: 葡萄牙语(巴西)
-                                    vi_vn: 越南语
-                                    ru_ru: 俄语
-                                    th_th: 泰语
-                                    ko_kr: 韩语
-                                  example: zh_cn
-                                name:
-                                  type: string
-                                  description: 应用国际化名称
-                                  example: 应用名称
-                                description:
-                                  type: string
-                                  description: 应用国际化描述（副标题）
-                                  example: 应用描述
-                                help_use:
-                                  type: string
-                                  description: 帮助国际化文档链接
-                                  example: https://www.example.com
-                              required:
-                              - i18n_key
-                            description: 应用的国际化信息列表
-                          primary_language:
-                            type: string
-                            description: 应用主语言
-                            enum:
-                            - zh_cn
-                            - en_us
-                            - ja_jp
-                            x-enum-descriptions:
-                              zh_cn: 中文
-                              en_us: 英文
-                              ja_jp: 日文
-                            example: zh_cn
-                          common_categories:
-                            type: array
-                            items:
-                              type: string
-                            description: 应用分类的国际化描述
-                          owner:
-                            type: object
-                            properties:
-                              type:
-                                type: integer
-                                description: 应用所有者类型
-                                enum:
-                                - 0
-                                - 1
-                                - 2
-                                x-enum-descriptions:
-                                  '0': 飞书科技
-                                  '1': 飞书合作伙伴
-                                  '2': 企业内成员
-                                example: '0'
-                              owner_id:
-                                type: string
-                                description: 应用所有者ID
-                                example: ou_d317f090b7258ad0372aa53963cda70d
-                              name:
-                                type: string
-                                description: 应用开发商名称(仅商店应用返回)
-                                example: 科技有限公司
-                              help_desk:
-                                type: string
-                                description: 应用开发商服务台链接(仅商店应用返回)
-                                example: https://open.feishu.cn/
-                              email:
-                                type: string
-                                description: 应用开发商的邮箱(仅商店应用返回)
-                                example: feishu@bytedance.com
-                              phone:
-                                type: string
-                                description: 应用开发商的手机号(仅商店应用返回)
-                                example: 156xxxx5749
-                              customer_service_account:
-                                type: string
-                                description: 客服账号，仅当商店应用配置了这种联系方式时才会返回
-                                example: feishu@bytedance.com
-                            required:
-                            - type
-                            description: 应用的所有者信息
-                          mobile_default_ability:
-                            type: string
-                            description: 移动端默认能力
-                            enum:
-                            - gadget
-                            - web_app
-                            - bot
-                            x-enum-descriptions:
-                              gadget: 小程序
-                              web_app: 网页应用
-                              bot: 机器人
-                            example: gadget
-                          pc_default_ability:
-                            type: string
-                            description: PC端默认能力
-                            enum:
-                            - gadget
-                            - web_app
-                            - bot
-                            x-enum-descriptions:
-                              gadget: 小程序
-                              web_app: 网页应用
-                              bot: 机器人
-                            example: gadget
-                          allow_refresh_token:
-                            type: boolean
-                            description: 是否允许刷新user_access_token
-                          callback_info:
-                            type: object
-                            properties:
-                              callback_type:
-                                type: string
-                                description: 回调类型
-                                enum:
-                                - webhook
-                                - websocket
-                                x-enum-descriptions:
-                                  webhook: 将回调发送至开发者服务器
-                                  websocket: 使用长连接接收回调
-                              request_url:
-                                type: string
-                                description: 回调地址
-                                example: https://open.feishu.cn/
-                              subscribed_callbacks:
-                                type: array
-                                items:
-                                  type: string
-                                description: 订阅的回调列表
-                            description: 应用回调配置
-                        required:
-                        - app_id
+                        allOf:
+                        - $ref: '#/components/schemas/App'
                         description: 应用数据
       x-lark-access-tokens:
       - tenant
@@ -5109,313 +3296,7 @@ paths:
                       app_list:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            app_id:
-                              type: string
-                              description: 应用的 id
-                              example: cli_9b445f5258795107
-                            creator_id:
-                              type: string
-                              description: 应用创建者（所有者）
-                              example: ou_d317f090b7258ad0372aa53963cda70d
-                              format: int64
-                            status:
-                              type: integer
-                              description: 应用状态
-                              enum:
-                              - 0
-                              - 1
-                              - 2
-                              - 3
-                              x-enum-descriptions:
-                                '0': 停用状态
-                                '1': 启用状态
-                                '2': 未启用状态
-                                '3': 未知状态
-                              example: '1'
-                            scene_type:
-                              type: integer
-                              description: 应用类型
-                              enum:
-                              - 0
-                              - 1
-                              - 2
-                              - 3
-                              x-enum-descriptions:
-                                '0': 自建应用
-                                '1': 应用商店应用
-                                '2': 个人应用商店应用
-                                '3': 未知应用类型
-                              example: '0'
-                            payment_type:
-                              type: integer
-                              description: 付费类型
-                              enum:
-                              - 0
-                              - 1
-                              x-enum-descriptions:
-                                '0': 免费
-                                '1': 付费
-                              example: '0'
-                            create_source:
-                              type: string
-                              description: 应用创建来源(目前仅Base应用返回)
-                              enum:
-                              - developer_console
-                              - base
-                              - app_engine
-                              - bot_builder
-                              - aily
-                              - unknown
-                              x-enum-descriptions:
-                                developer_console: 开发者后台
-                                base: 多维表格自动化流程创建的应用
-                                app_engine: 飞书应用引擎
-                                bot_builder: 机器人助手
-                                aily: aily(智能伙伴搭建平台)
-                                unknown: 未知来源
-                              example: base
-                            redirect_urls:
-                              type: array
-                              items:
-                                type: string
-                              description: 安全设置中的重定向 URL
-                            online_version_id:
-                              type: string
-                              description: 发布在线上的应用版本
-                              example: oav_d317f090b7258ad0372aa53963cda70d
-                              format: int64
-                            unaudit_version_id:
-                              type: string
-                              description: 在审核中的版本号信息，若没有则为空
-                              example: oav_d317f090b7258ad0372aa53963cda70d
-                              format: int64
-                            app_name:
-                              type: string
-                              description: 应用默认名称，如果没有对应语言下的名称，则返回默认语言下的名称
-                              example: 应用名称
-                            avatar_url:
-                              type: string
-                              description: 应用图标链接
-                              example: https://sf1-ttcdn-tos.pstatp.com/img/avatar/d279000ca4d3f7f6aaff~72x72.jpg
-                            description:
-                              type: string
-                              description: 应用默认描述
-                              example: 应用描述
-                            scopes:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  scope:
-                                    type: string
-                                    description: 应用权限
-                                    example: contact:user.base
-                                  description:
-                                    type: string
-                                    description: 应用权限的国际化描述
-                                    example: 获取应用信息
-                                  level:
-                                    type: integer
-                                    description: 权限等级描述
-                                    enum:
-                                    - 1
-                                    - 2
-                                    - 3
-                                    - 0
-                                    x-enum-descriptions:
-                                      '1': 低级权限
-                                      '2': 高级权限
-                                      '3': 超敏感权限
-                                      '0': 未知等级
-                                    example: '1'
-                                  token_types:
-                                    type: array
-                                    items:
-                                      type: string
-                                      enum:
-                                      - tenant
-                                      - user
-                                      x-enum-descriptions:
-                                        tenant: 应用身份类型
-                                        user: 用户身份类型
-                                    description: 返回用户身份类型user、应用身份类型tenant。如果两种类型都支持，则同时返回两个。
-                                required:
-                                - scope
-                              description: 应用权限列表
-                            back_home_url:
-                              type: string
-                              description: 后台主页地址
-                              example: https://www.example.com
-                            i18n:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  i18n_key:
-                                    type: string
-                                    description: 国际化语言的 key
-                                    enum:
-                                    - zh_cn
-                                    - en_us
-                                    - ja_jp
-                                    - zh_hk
-                                    - zh_tw
-                                    - id_id
-                                    - ms_my
-                                    - de_de
-                                    - es_es
-                                    - fr_fr
-                                    - it_it
-                                    - pt_br
-                                    - vi_vn
-                                    - ru_ru
-                                    - th_th
-                                    - ko_kr
-                                    x-enum-descriptions:
-                                      zh_cn: 中文
-                                      en_us: 英文
-                                      ja_jp: 日文
-                                      zh_hk: 繁体中文(中国香港)
-                                      zh_tw: 繁体中文(中国台湾)
-                                      id_id: 印度尼西亚语
-                                      ms_my: 马来语
-                                      de_de: 德语
-                                      es_es: 西班牙语
-                                      fr_fr: 法语
-                                      it_it: 意大利语
-                                      pt_br: 葡萄牙语(巴西)
-                                      vi_vn: 越南语
-                                      ru_ru: 俄语
-                                      th_th: 泰语
-                                      ko_kr: 韩语
-                                    example: zh_cn
-                                  name:
-                                    type: string
-                                    description: 应用国际化名称
-                                    example: 应用名称
-                                  description:
-                                    type: string
-                                    description: 应用国际化描述（副标题）
-                                    example: 应用描述
-                                  help_use:
-                                    type: string
-                                    description: 帮助国际化文档链接
-                                    example: https://www.example.com
-                                required:
-                                - i18n_key
-                              description: 应用的国际化信息列表
-                            primary_language:
-                              type: string
-                              description: 应用主语言
-                              enum:
-                              - zh_cn
-                              - en_us
-                              - ja_jp
-                              x-enum-descriptions:
-                                zh_cn: 中文
-                                en_us: 英文
-                                ja_jp: 日文
-                              example: zh_cn
-                            common_categories:
-                              type: array
-                              items:
-                                type: string
-                              description: 应用分类的国际化描述
-                            owner:
-                              type: object
-                              properties:
-                                type:
-                                  type: integer
-                                  description: 应用所有者类型
-                                  enum:
-                                  - 0
-                                  - 1
-                                  - 2
-                                  x-enum-descriptions:
-                                    '0': 飞书科技
-                                    '1': 飞书合作伙伴
-                                    '2': 企业内成员
-                                  example: '0'
-                                owner_id:
-                                  type: string
-                                  description: 应用所有者ID
-                                  example: ou_d317f090b7258ad0372aa53963cda70d
-                                name:
-                                  type: string
-                                  description: 应用开发商名称(仅商店应用返回)
-                                  example: 科技有限公司
-                                help_desk:
-                                  type: string
-                                  description: 应用开发商服务台链接(仅商店应用返回)
-                                  example: https://open.feishu.cn/
-                                email:
-                                  type: string
-                                  description: 应用开发商的邮箱(仅商店应用返回)
-                                  example: feishu@bytedance.com
-                                phone:
-                                  type: string
-                                  description: 应用开发商的手机号(仅商店应用返回)
-                                  example: 156xxxx5749
-                                customer_service_account:
-                                  type: string
-                                  description: 客服账号，仅当商店应用配置了这种联系方式时才会返回
-                                  example: feishu@bytedance.com
-                              required:
-                              - type
-                              description: 应用的所有者信息
-                            mobile_default_ability:
-                              type: string
-                              description: 移动端默认能力
-                              enum:
-                              - gadget
-                              - web_app
-                              - bot
-                              x-enum-descriptions:
-                                gadget: 小程序
-                                web_app: 网页应用
-                                bot: 机器人
-                              example: gadget
-                            pc_default_ability:
-                              type: string
-                              description: PC端默认能力
-                              enum:
-                              - gadget
-                              - web_app
-                              - bot
-                              x-enum-descriptions:
-                                gadget: 小程序
-                                web_app: 网页应用
-                                bot: 机器人
-                              example: gadget
-                            allow_refresh_token:
-                              type: boolean
-                              description: 是否允许刷新user_access_token
-                            callback_info:
-                              type: object
-                              properties:
-                                callback_type:
-                                  type: string
-                                  description: 回调类型
-                                  enum:
-                                  - webhook
-                                  - websocket
-                                  x-enum-descriptions:
-                                    webhook: 将回调发送至开发者服务器
-                                    websocket: 使用长连接接收回调
-                                request_url:
-                                  type: string
-                                  description: 回调地址
-                                  example: https://open.feishu.cn/
-                                subscribed_callbacks:
-                                  type: array
-                                  items:
-                                    type: string
-                                  description: 订阅的回调列表
-                              description: 应用回调配置
-                          required:
-                          - app_id
+                          $ref: '#/components/schemas/App'
                         description: 应用列表
                       page_token:
                         type: string
@@ -5535,313 +3416,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            app_id:
-                              type: string
-                              description: 应用的 id
-                              example: cli_9b445f5258795107
-                            creator_id:
-                              type: string
-                              description: 应用创建者（所有者）
-                              example: ou_d317f090b7258ad0372aa53963cda70d
-                              format: int64
-                            status:
-                              type: integer
-                              description: 应用状态
-                              enum:
-                              - 0
-                              - 1
-                              - 2
-                              - 3
-                              x-enum-descriptions:
-                                '0': 停用状态
-                                '1': 启用状态
-                                '2': 未启用状态
-                                '3': 未知状态
-                              example: '1'
-                            scene_type:
-                              type: integer
-                              description: 应用类型
-                              enum:
-                              - 0
-                              - 1
-                              - 2
-                              - 3
-                              x-enum-descriptions:
-                                '0': 自建应用
-                                '1': 应用商店应用
-                                '2': 个人应用商店应用
-                                '3': 未知应用类型
-                              example: '0'
-                            payment_type:
-                              type: integer
-                              description: 付费类型
-                              enum:
-                              - 0
-                              - 1
-                              x-enum-descriptions:
-                                '0': 免费
-                                '1': 付费
-                              example: '0'
-                            create_source:
-                              type: string
-                              description: 应用创建来源(目前仅Base应用返回)
-                              enum:
-                              - developer_console
-                              - base
-                              - app_engine
-                              - bot_builder
-                              - aily
-                              - unknown
-                              x-enum-descriptions:
-                                developer_console: 开发者后台
-                                base: 多维表格自动化流程创建的应用
-                                app_engine: 飞书应用引擎
-                                bot_builder: 机器人助手
-                                aily: aily(智能伙伴搭建平台)
-                                unknown: 未知来源
-                              example: base
-                            redirect_urls:
-                              type: array
-                              items:
-                                type: string
-                              description: 安全设置中的重定向 URL
-                            online_version_id:
-                              type: string
-                              description: 发布在线上的应用版本
-                              example: oav_d317f090b7258ad0372aa53963cda70d
-                              format: int64
-                            unaudit_version_id:
-                              type: string
-                              description: 在审核中的版本号信息，若没有则为空
-                              example: oav_d317f090b7258ad0372aa53963cda70d
-                              format: int64
-                            app_name:
-                              type: string
-                              description: 应用默认名称，如果没有对应语言下的名称，则返回默认语言下的名称
-                              example: 应用名称
-                            avatar_url:
-                              type: string
-                              description: 应用图标链接
-                              example: https://sf1-ttcdn-tos.pstatp.com/img/avatar/d279000ca4d3f7f6aaff~72x72.jpg
-                            description:
-                              type: string
-                              description: 应用默认描述
-                              example: 应用描述
-                            scopes:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  scope:
-                                    type: string
-                                    description: 应用权限
-                                    example: contact:user.base
-                                  description:
-                                    type: string
-                                    description: 应用权限的国际化描述
-                                    example: 获取应用信息
-                                  level:
-                                    type: integer
-                                    description: 权限等级描述
-                                    enum:
-                                    - 1
-                                    - 2
-                                    - 3
-                                    - 0
-                                    x-enum-descriptions:
-                                      '1': 低级权限
-                                      '2': 高级权限
-                                      '3': 超敏感权限
-                                      '0': 未知等级
-                                    example: '1'
-                                  token_types:
-                                    type: array
-                                    items:
-                                      type: string
-                                      enum:
-                                      - tenant
-                                      - user
-                                      x-enum-descriptions:
-                                        tenant: 应用身份类型
-                                        user: 用户身份类型
-                                    description: 返回用户身份类型user、应用身份类型tenant。如果两种类型都支持，则同时返回两个。
-                                required:
-                                - scope
-                              description: 应用权限列表
-                            back_home_url:
-                              type: string
-                              description: 后台主页地址
-                              example: https://www.example.com
-                            i18n:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  i18n_key:
-                                    type: string
-                                    description: 国际化语言的 key
-                                    enum:
-                                    - zh_cn
-                                    - en_us
-                                    - ja_jp
-                                    - zh_hk
-                                    - zh_tw
-                                    - id_id
-                                    - ms_my
-                                    - de_de
-                                    - es_es
-                                    - fr_fr
-                                    - it_it
-                                    - pt_br
-                                    - vi_vn
-                                    - ru_ru
-                                    - th_th
-                                    - ko_kr
-                                    x-enum-descriptions:
-                                      zh_cn: 中文
-                                      en_us: 英文
-                                      ja_jp: 日文
-                                      zh_hk: 繁体中文(中国香港)
-                                      zh_tw: 繁体中文(中国台湾)
-                                      id_id: 印度尼西亚语
-                                      ms_my: 马来语
-                                      de_de: 德语
-                                      es_es: 西班牙语
-                                      fr_fr: 法语
-                                      it_it: 意大利语
-                                      pt_br: 葡萄牙语(巴西)
-                                      vi_vn: 越南语
-                                      ru_ru: 俄语
-                                      th_th: 泰语
-                                      ko_kr: 韩语
-                                    example: zh_cn
-                                  name:
-                                    type: string
-                                    description: 应用国际化名称
-                                    example: 应用名称
-                                  description:
-                                    type: string
-                                    description: 应用国际化描述（副标题）
-                                    example: 应用描述
-                                  help_use:
-                                    type: string
-                                    description: 帮助国际化文档链接
-                                    example: https://www.example.com
-                                required:
-                                - i18n_key
-                              description: 应用的国际化信息列表
-                            primary_language:
-                              type: string
-                              description: 应用主语言
-                              enum:
-                              - zh_cn
-                              - en_us
-                              - ja_jp
-                              x-enum-descriptions:
-                                zh_cn: 中文
-                                en_us: 英文
-                                ja_jp: 日文
-                              example: zh_cn
-                            common_categories:
-                              type: array
-                              items:
-                                type: string
-                              description: 应用分类的国际化描述
-                            owner:
-                              type: object
-                              properties:
-                                type:
-                                  type: integer
-                                  description: 应用所有者类型
-                                  enum:
-                                  - 0
-                                  - 1
-                                  - 2
-                                  x-enum-descriptions:
-                                    '0': 飞书科技
-                                    '1': 飞书合作伙伴
-                                    '2': 企业内成员
-                                  example: '0'
-                                owner_id:
-                                  type: string
-                                  description: 应用所有者ID
-                                  example: ou_d317f090b7258ad0372aa53963cda70d
-                                name:
-                                  type: string
-                                  description: 应用开发商名称(仅商店应用返回)
-                                  example: 科技有限公司
-                                help_desk:
-                                  type: string
-                                  description: 应用开发商服务台链接(仅商店应用返回)
-                                  example: https://open.feishu.cn/
-                                email:
-                                  type: string
-                                  description: 应用开发商的邮箱(仅商店应用返回)
-                                  example: feishu@bytedance.com
-                                phone:
-                                  type: string
-                                  description: 应用开发商的手机号(仅商店应用返回)
-                                  example: 156xxxx5749
-                                customer_service_account:
-                                  type: string
-                                  description: 客服账号，仅当商店应用配置了这种联系方式时才会返回
-                                  example: feishu@bytedance.com
-                              required:
-                              - type
-                              description: 应用的所有者信息
-                            mobile_default_ability:
-                              type: string
-                              description: 移动端默认能力
-                              enum:
-                              - gadget
-                              - web_app
-                              - bot
-                              x-enum-descriptions:
-                                gadget: 小程序
-                                web_app: 网页应用
-                                bot: 机器人
-                              example: gadget
-                            pc_default_ability:
-                              type: string
-                              description: PC端默认能力
-                              enum:
-                              - gadget
-                              - web_app
-                              - bot
-                              x-enum-descriptions:
-                                gadget: 小程序
-                                web_app: 网页应用
-                                bot: 机器人
-                              example: gadget
-                            allow_refresh_token:
-                              type: boolean
-                              description: 是否允许刷新user_access_token
-                            callback_info:
-                              type: object
-                              properties:
-                                callback_type:
-                                  type: string
-                                  description: 回调类型
-                                  enum:
-                                  - webhook
-                                  - websocket
-                                  x-enum-descriptions:
-                                    webhook: 将回调发送至开发者服务器
-                                    websocket: 使用长连接接收回调
-                                request_url:
-                                  type: string
-                                  description: 回调地址
-                                  example: https://open.feishu.cn/
-                                subscribed_callbacks:
-                                  type: array
-                                  items:
-                                    type: string
-                                  description: 订阅的回调列表
-                              description: 应用回调配置
-                          required:
-                          - app_id
+                          $ref: '#/components/schemas/App'
                         description: 待审核应用列表
                       has_more:
                         type: boolean
@@ -6146,76 +3721,7 @@ paths:
                     bot_menus:
                       type: array
                       items:
-                        type: object
-                        properties:
-                          menu_id:
-                            type: string
-                            description: 节点唯一标识，同一次请求内唯一
-                            example: menu_1
-                          parent_menu_id:
-                            type: string
-                            description: 父节点 ID，为空表示一级菜单
-                            example: menu_parent
-                          sort:
-                            type: integer
-                            description: 同层级内排序，数值越小越靠前
-                            example: '1'
-                          default_name:
-                            type: string
-                            description: 默认名称
-                            example: 菜单名称
-                          i18n_name:
-                            type: string
-                            x-lark-original-type: map
-                            description: 国际化名称配置。了解支持语种，参考配置卡片多语言
-                          redirect_link:
-                            type: object
-                            properties:
-                              pc_url:
-                                type: string
-                                description: pc端链接
-                                example: http://xxx
-                              mobile_url:
-                                type: string
-                                description: 移动端链接
-                                example: xxx
-                            description: 跳转链接
-                          event_key:
-                            type: string
-                            description: 事件 key
-                            example: event_key
-                          icon_file_key:
-                            type: string
-                            description: 图标文件 key
-                            example: file_key
-                          ud_icon:
-                            type: object
-                            properties:
-                              token:
-                                type: string
-                                description: 图标库中的图标token
-                                example: xxx
-                              color:
-                                type: string
-                                description: 图标的颜色
-                                example: xxx
-                            description: UD icon 配置
-                          menu_content_type:
-                            type: integer
-                            description: 菜单内容类型
-                            enum:
-                            - 0
-                            - 1
-                            - 2
-                            - 3
-                            - 4
-                            x-enum-descriptions:
-                              '0': 未知
-                              '1': 跳转链接
-                              '2': 事件
-                              '3': 展开子菜单
-                              '4': 发送消息
-                            example: '1'
+                        $ref: '#/components/schemas/Item2'
                       description: 机器人菜单选项列表
                     bot_menu_display_strategy:
                       type: integer
@@ -6317,60 +3823,7 @@ paths:
                 i18ns:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      i18n_key:
-                        type: string
-                        description: 国际化语言的 key
-                        enum:
-                        - zh_cn
-                        - en_us
-                        - ja_jp
-                        - zh_hk
-                        - zh_tw
-                        - id_id
-                        - ms_my
-                        - de_de
-                        - es_es
-                        - fr_fr
-                        - it_it
-                        - pt_br
-                        - vi_vn
-                        - ru_ru
-                        - th_th
-                        - ko_kr
-                        x-enum-descriptions:
-                          zh_cn: 中文
-                          en_us: 英文
-                          ja_jp: 日文
-                          zh_hk: 繁体中文(中国香港)
-                          zh_tw: 繁体中文(中国台湾)
-                          id_id: 印度尼西亚语
-                          ms_my: 马来语
-                          de_de: 德语
-                          es_es: 西班牙语
-                          fr_fr: 法语
-                          it_it: 意大利语
-                          pt_br: 葡萄牙语(巴西)
-                          vi_vn: 越南语
-                          ru_ru: 俄语
-                          th_th: 泰语
-                          ko_kr: 韩语
-                        example: zh_cn
-                      name:
-                        type: string
-                        description: 应用国际化名称
-                        example: 应用名称
-                      description:
-                        type: string
-                        description: 应用国际化描述（副标题）
-                        example: 应用描述
-                      help_use:
-                        type: string
-                        description: 帮助国际化文档链接
-                        example: https://www.example.com
-                    required:
-                    - i18n_key
+                    $ref: '#/components/schemas/Item'
                   description: 应用名称描述多语种
                 avatar_url:
                   type: string
@@ -6574,72 +4027,12 @@ paths:
                   type: object
                   properties:
                     add:
-                      type: object
-                      properties:
-                        redirect_urls:
-                          type: array
-                          items:
-                            type: string
-                          description: 重定向URL
-                        allowed_ips:
-                          type: array
-                          items:
-                            type: string
-                          description: IP白名单 IP需要填写调用方出口公网IP地址
-                        h5_trusted_domains:
-                          type: array
-                          items:
-                            type: string
-                          description: H5可信域名仅可信域名内的 H5 可以访问 JSAPI，部分需要鉴权的 JSAPI 必填。
-                        web_view_trusted_domains:
-                          type: array
-                          items:
-                            type: string
-                          description: Web-View 可信域名
-                        allowed_schemas:
-                          type: array
-                          items:
-                            type: string
-                          description: 小程序协议名白名单
-                        allowed_server_domains:
-                          type: array
-                          items:
-                            type: string
-                          description: 服务器可信域名
+                      allOf:
+                      - $ref: '#/components/schemas/Add'
                       description: 新增项
                     remove:
-                      type: object
-                      properties:
-                        redirect_urls:
-                          type: array
-                          items:
-                            type: string
-                          description: 重定向URL
-                        allowed_ips:
-                          type: array
-                          items:
-                            type: string
-                          description: IP白名单 IP需要填写调用方出口公网IP地址
-                        h5_trusted_domains:
-                          type: array
-                          items:
-                            type: string
-                          description: H5可信域名仅可信域名内的 H5 可以访问 JSAPI，部分需要鉴权的 JSAPI 必填。
-                        web_view_trusted_domains:
-                          type: array
-                          items:
-                            type: string
-                          description: Web-View 可信域名
-                        allowed_schemas:
-                          type: array
-                          items:
-                            type: string
-                          description: 小程序协议名白名单
-                        allowed_server_domains:
-                          type: array
-                          items:
-                            type: string
-                          description: 服务器可信域名
+                      allOf:
+                      - $ref: '#/components/schemas/Add'
                       description: 删除列表
                     allow_refresh_token:
                       type: boolean
@@ -6942,3 +4335,1065 @@ paths:
         msg: Lack of permission to update other app.
       x-lark-rate-limit:
         tier: 2
+components:
+  schemas:
+    AppVersion:
+      type: object
+      properties:
+        app_id:
+          type: string
+          description: 应用 id
+          example: cli_9f3ca975326b501b
+        version:
+          type: string
+          description: 开发者填入的应用版本 ID
+          example: 1.0.0
+        version_id:
+          type: string
+          description: 唯一标识应用版本的 ID
+          example: oav_d317f090b7258ad0372aa53963cda70d
+          format: int64
+        app_name:
+          type: string
+          description: 应用默认名称
+          example: 应用名称
+        avatar_url:
+          type: string
+          description: 应用头像 url
+          example: https://www.example.com
+        description:
+          type: string
+          description: 应用默认描述
+          example: 应用描述
+        scopes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item3'
+          description: 应用权限列表
+        back_home_url:
+          type: string
+          description: 后台主页地址
+          example: https://www.example.com
+        i18n:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+          description: 应用的国际化信息列表
+        common_categories:
+          type: array
+          items:
+            type: string
+          description: 应用分类的国际化描述
+        events:
+          type: array
+          items:
+            type: string
+          description: 应用已订阅开放平台事件列表
+        status:
+          type: integer
+          description: 版本状态
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          x-enum-descriptions:
+            '0': 未知状态
+            '1': 审核通过
+            '2': 审核拒绝
+            '3': 审核中
+            '4': 未提交审核
+          example: '1'
+        create_time:
+          type: string
+          description: 版本创建时间（单位：s）
+          example: '1610462759'
+          format: int64
+        publish_time:
+          type: string
+          description: 版本发布时间（单位：s）
+          example: '1610462759'
+          format: int64
+        ability:
+          allOf:
+          - $ref: '#/components/schemas/Ability'
+          description: 当前版本下应用开启的能力
+        remark:
+          allOf:
+          - $ref: '#/components/schemas/Remark'
+          description: 跟随应用版本的信息
+        event_infos:
+          type: array
+          items:
+            type: object
+            properties:
+              event_type:
+                type: string
+                description: 事件类型，事件唯一标识
+                example: im.chat.updated_v1
+              event_name:
+                type: string
+                description: 事件名称
+                example: 群配置修改事件
+              event_description:
+                type: string
+                description: 事件描述
+                example: 群聊名称、头像、描述以及群编辑权限、群分享权限等被修改时推送事件
+          description: 应用已订阅事件详情列表
+      required:
+      - app_id
+      - version_id
+    App:
+      type: object
+      properties:
+        app_id:
+          type: string
+          description: 应用的 id
+          example: cli_9b445f5258795107
+        creator_id:
+          type: string
+          description: 应用创建者（所有者）
+          example: ou_d317f090b7258ad0372aa53963cda70d
+          format: int64
+        status:
+          type: integer
+          description: 应用状态
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          x-enum-descriptions:
+            '0': 停用状态
+            '1': 启用状态
+            '2': 未启用状态
+            '3': 未知状态
+          example: '1'
+        scene_type:
+          type: integer
+          description: 应用类型
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          x-enum-descriptions:
+            '0': 自建应用
+            '1': 应用商店应用
+            '2': 个人应用商店应用
+            '3': 未知应用类型
+          example: '0'
+        payment_type:
+          type: integer
+          description: 付费类型
+          enum:
+          - 0
+          - 1
+          x-enum-descriptions:
+            '0': 免费
+            '1': 付费
+          example: '0'
+        create_source:
+          type: string
+          description: 应用创建来源(目前仅Base应用返回)
+          enum:
+          - developer_console
+          - base
+          - app_engine
+          - bot_builder
+          - aily
+          - unknown
+          x-enum-descriptions:
+            developer_console: 开发者后台
+            base: 多维表格自动化流程创建的应用
+            app_engine: 飞书应用引擎
+            bot_builder: 机器人助手
+            aily: aily(智能伙伴搭建平台)
+            unknown: 未知来源
+          example: base
+        redirect_urls:
+          type: array
+          items:
+            type: string
+          description: 安全设置中的重定向 URL
+        online_version_id:
+          type: string
+          description: 发布在线上的应用版本
+          example: oav_d317f090b7258ad0372aa53963cda70d
+          format: int64
+        unaudit_version_id:
+          type: string
+          description: 在审核中的版本号信息，若没有则为空
+          example: oav_d317f090b7258ad0372aa53963cda70d
+          format: int64
+        app_name:
+          type: string
+          description: 应用默认名称，如果没有对应语言下的名称，则返回默认语言下的名称
+          example: 应用名称
+        avatar_url:
+          type: string
+          description: 应用图标链接
+          example: https://sf1-ttcdn-tos.pstatp.com/img/avatar/d279000ca4d3f7f6aaff~72x72.jpg
+        description:
+          type: string
+          description: 应用默认描述
+          example: 应用描述
+        scopes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item3'
+          description: 应用权限列表
+        back_home_url:
+          type: string
+          description: 后台主页地址
+          example: https://www.example.com
+        i18n:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+          description: 应用的国际化信息列表
+        primary_language:
+          type: string
+          description: 应用主语言
+          enum:
+          - zh_cn
+          - en_us
+          - ja_jp
+          x-enum-descriptions:
+            zh_cn: 中文
+            en_us: 英文
+            ja_jp: 日文
+          example: zh_cn
+        common_categories:
+          type: array
+          items:
+            type: string
+          description: 应用分类的国际化描述
+        owner:
+          allOf:
+          - $ref: '#/components/schemas/Owner'
+          description: 应用的所有者信息
+        mobile_default_ability:
+          type: string
+          description: 移动端默认能力
+          enum:
+          - gadget
+          - web_app
+          - bot
+          x-enum-descriptions:
+            gadget: 小程序
+            web_app: 网页应用
+            bot: 机器人
+          example: gadget
+        pc_default_ability:
+          type: string
+          description: PC端默认能力
+          enum:
+          - gadget
+          - web_app
+          - bot
+          x-enum-descriptions:
+            gadget: 小程序
+            web_app: 网页应用
+            bot: 机器人
+          example: gadget
+        allow_refresh_token:
+          type: boolean
+          description: 是否允许刷新user_access_token
+        callback_info:
+          type: object
+          properties:
+            callback_type:
+              type: string
+              description: 回调类型
+              enum:
+              - webhook
+              - websocket
+              x-enum-descriptions:
+                webhook: 将回调发送至开发者服务器
+                websocket: 使用长连接接收回调
+            request_url:
+              type: string
+              description: 回调地址
+              example: https://open.feishu.cn/
+            subscribed_callbacks:
+              type: array
+              items:
+                type: string
+              description: 订阅的回调列表
+          description: 应用回调配置
+      required:
+      - app_id
+      description: 应用数据
+    Ability:
+      type: object
+      properties:
+        gadget:
+          allOf:
+          - $ref: '#/components/schemas/Gadget'
+          description: 小程序能力
+        web_app:
+          type: object
+          properties:
+            pc_url:
+              type: string
+              description: pc 端 url
+              example: https://www.example.com
+            mobile_url:
+              type: string
+              description: 移动端 url
+              example: https://www.example.com
+          description: 网页能力
+        bot:
+          allOf:
+          - $ref: '#/components/schemas/Bot'
+          description: 机器人能力
+        workplace_widgets:
+          type: array
+          items:
+            type: object
+            properties:
+              min_lark_version:
+                type: string
+                description: 最低兼容 lark 版本号
+                example: 1.0.0
+          description: 小组件能力
+        navigate:
+          allOf:
+          - $ref: '#/components/schemas/Navigate'
+          description: 主导航小程序
+        cloud_doc:
+          allOf:
+          - $ref: '#/components/schemas/CloudDoc'
+          description: 云文档应用
+        docs_blocks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item6'
+          description: 云文档小组件
+        message_action:
+          allOf:
+          - $ref: '#/components/schemas/MessageAction'
+          description: 消息快捷操作
+        plus_menu:
+          type: object
+          properties:
+            pc_app_link:
+              type: string
+              description: pc 端链接
+              example: https://www.example.com
+            mobile_app_link:
+              type: string
+              description: 移动端链接
+              example: https://www.example.com
+          description: 加号菜单
+      description: 当前版本下应用开启的能力
+    Item:
+      type: object
+      properties:
+        i18n_key:
+          type: string
+          description: 国际化语言的 key
+          enum:
+          - zh_cn
+          - en_us
+          - ja_jp
+          - zh_hk
+          - zh_tw
+          - id_id
+          - ms_my
+          - de_de
+          - es_es
+          - fr_fr
+          - it_it
+          - pt_br
+          - vi_vn
+          - ru_ru
+          - th_th
+          - ko_kr
+          x-enum-descriptions:
+            zh_cn: 中文
+            en_us: 英文
+            ja_jp: 日文
+            zh_hk: 繁体中文(中国香港)
+            zh_tw: 繁体中文(中国台湾)
+            id_id: 印度尼西亚语
+            ms_my: 马来语
+            de_de: 德语
+            es_es: 西班牙语
+            fr_fr: 法语
+            it_it: 意大利语
+            pt_br: 葡萄牙语(巴西)
+            vi_vn: 越南语
+            ru_ru: 俄语
+            th_th: 泰语
+            ko_kr: 韩语
+          example: zh_cn
+        name:
+          type: string
+          description: 应用国际化名称
+          example: 应用名称
+        description:
+          type: string
+          description: 应用国际化描述（副标题）
+          example: 应用描述
+        help_use:
+          type: string
+          description: 帮助国际化文档链接
+          example: https://www.example.com
+      required:
+      - i18n_key
+    Item2:
+      type: object
+      properties:
+        menu_id:
+          type: string
+          description: 节点唯一标识，同一次请求内唯一
+          example: menu_1
+        parent_menu_id:
+          type: string
+          description: 父节点 ID，为空表示一级菜单
+          example: menu_parent
+        sort:
+          type: integer
+          description: 同层级内排序，数值越小越靠前
+          example: '1'
+        default_name:
+          type: string
+          description: 默认名称
+          example: 菜单名称
+        i18n_name:
+          type: string
+          x-lark-original-type: map
+          description: 国际化名称配置。了解支持语种，参考配置卡片多语言
+        redirect_link:
+          type: object
+          properties:
+            pc_url:
+              type: string
+              description: PC 端跳转链接
+              example: https://www.example.com
+            mobile_url:
+              type: string
+              description: 移动端跳转链接
+              example: https://www.example.com
+          description: 跳转链接
+        event_key:
+          type: string
+          description: 事件 key
+          example: event_key
+        icon_file_key:
+          type: string
+          description: 图标文件 key
+          example: file_key
+        ud_icon:
+          type: object
+          properties:
+            token:
+              type: string
+              description: UD icon token
+              example: app_outlined
+            color:
+              type: string
+              description: UD icon 颜色
+              example: blue
+          description: UD icon 配置
+        menu_content_type:
+          type: integer
+          description: 菜单内容类型
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          x-enum-descriptions:
+            '0': 未知
+            '1': 跳转链接
+            '2': 事件
+            '3': 展开子菜单
+            '4': 发送消息
+          example: '1'
+    Bot:
+      type: object
+      properties:
+        card_request_url:
+          type: string
+          description: 消息卡片回调地址
+          example: https://www.example.com
+        bot_menu_enable:
+          type: boolean
+          description: 是否启用机器人菜单
+          example: 'true'
+        bot_menus:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item2'
+          description: 机器人菜单列表
+        bot_menu_display_strategy:
+          type: integer
+          description: 机器人菜单展示策略
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          x-enum-descriptions:
+            '0': 未知
+            '1': 优先展示菜单
+            '2': 优先展示输入框
+            '3': 浮动展示
+          example: '1'
+      description: 机器人能力
+    Item3:
+      type: object
+      properties:
+        scope:
+          type: string
+          description: 应用权限
+          example: contact:user.base
+        description:
+          type: string
+          description: 应用权限的国际化描述
+          example: 获取应用信息
+        level:
+          type: integer
+          description: 权限等级描述
+          enum:
+          - 1
+          - 2
+          - 3
+          - 0
+          x-enum-descriptions:
+            '1': 低级权限
+            '2': 高级权限
+            '3': 超敏感权限
+            '0': 未知等级
+          example: '1'
+        token_types:
+          type: array
+          items:
+            type: string
+            enum:
+            - tenant
+            - user
+            x-enum-descriptions:
+              tenant: 应用身份类型
+              user: 用户身份类型
+          description: 返回用户身份类型user、应用身份类型tenant。如果两种类型都支持，则同时返回两个。
+      required:
+      - scope
+    Item4:
+      type: object
+      properties:
+        item_id:
+          type: string
+          description: 推荐应用项 ID
+          example: '7137896480337625108'
+        item_type:
+          type: string
+          description: 推荐应用项类型
+          enum:
+          - application
+          - link
+          x-enum-descriptions:
+            application: 应用类型
+            link: 链接类型
+          example: application
+        name:
+          type: string
+          description: 推荐应用项名称
+          example: 审批
+        description:
+          type: string
+          description: 推荐应用项描述
+          example: 审批应用的描述
+        link_url:
+          type: string
+          description: 链接类型应用项的跳转链接（应用类型该字段为空）
+          example: http://www.example.com
+        client_id:
+          type: string
+          description: 应用类型应用项的 app id（链接类型该字段为空）
+          example: cli_a274440757b8901c
+        icon_url:
+          type: string
+          description: 应用项图标链接
+          example: https://internal-api-lark-file.feishu-boe.cn/static-resource/v1/v2_6150f3c3-ceee-453e-a1ae-7c11d7f13edj~?image_size=&cut_type=&quality=&format=&sticker_format=.webp
+        default_locale:
+          type: string
+          description: 链接类型应用项的默认展示语种（应用类型该字段为空）
+          enum:
+          - zh_cn
+          - zh_hk
+          - zh_tw
+          - en_us
+          - ja_jp
+          x-enum-descriptions:
+            zh_cn: 简体中文
+            zh_hk: 繁体中文（中国香港）
+            zh_tw: 繁体中文（中国台湾）
+            en_us: 英文
+            ja_jp: 日文
+          example: zh_cn
+        i18n_name:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 应用项的简体中文名称
+              example: 审批
+            zh_hk:
+              type: string
+              description: 应用项的繁体中文（中国香港）名称
+              example: 審批
+            zh_tw:
+              type: string
+              description: 应用项的繁体中文（中国台湾）名称
+              example: 審批
+            en_us:
+              type: string
+              description: 应用项的英文名称
+              example: Approval
+            ja_jp:
+              type: string
+              description: 应用项的日文名称
+              example: 承認
+          description: 应用项的多语种名称
+    Owner:
+      type: object
+      properties:
+        type:
+          type: integer
+          description: 应用所有者类型
+          enum:
+          - 0
+          - 1
+          - 2
+          x-enum-descriptions:
+            '0': 飞书科技
+            '1': 飞书合作伙伴
+            '2': 企业内成员
+          example: '0'
+        owner_id:
+          type: string
+          description: 应用所有者ID
+          example: ou_d317f090b7258ad0372aa53963cda70d
+        name:
+          type: string
+          description: 应用开发商名称(仅商店应用返回)
+          example: 科技有限公司
+        help_desk:
+          type: string
+          description: 应用开发商服务台链接(仅商店应用返回)
+          example: https://open.feishu.cn/
+        email:
+          type: string
+          description: 应用开发商的邮箱(仅商店应用返回)
+          example: feishu@bytedance.com
+        phone:
+          type: string
+          description: 应用开发商的手机号(仅商店应用返回)
+          example: 156xxxx5749
+        customer_service_account:
+          type: string
+          description: 客服账号，仅当商店应用配置了这种联系方式时才会返回
+          example: feishu@bytedance.com
+      required:
+      - type
+      description: 应用的所有者信息
+    Item5:
+      type: object
+      properties:
+        app_id:
+          type: string
+          description: 应用id
+          example: cli_9ea69ba8026xxxx
+        app_name:
+          type: string
+          description: 应用名
+          example: SMB同学圈
+        description:
+          type: string
+          description: 应用描述
+          example: SMB同学圈
+        app_type:
+          type: string
+          description: 应用类型
+          enum:
+          - app
+          - shortcut
+          x-enum-descriptions:
+            app: 普通应用
+            shortcut: 快捷入口
+          example: app
+        avatar_url:
+          type: string
+          description: 应用图标
+          example: https://sf1-ttcdn-xxx/xxx/da710014fc4c975xxx
+        open_methods:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                description: applink类型
+                enum:
+                - mobile_gadget
+                - mobile_web
+                - pc_gadget
+                - pc_web
+                - bot
+                x-enum-descriptions:
+                  mobile_gadget: 移动端小程序
+                  mobile_web: 移动端Web
+                  pc_gadget: pc端小程序
+                  pc_web: pc端web
+                  bot: 机器人
+                example: mobile_gadget
+              applink:
+                type: string
+                description: applink链接
+                example: https://applink.feishu.cn/client/web_app/open?appId=cli_xxxxxx
+          description: 可以打开应用的方式, 包含移动端小程序applink、移动端网页applink、PC端小程序applink、移动端小程序applink、PC端网页applink、机器人applink
+      required:
+      - app_id
+      - app_name
+      - description
+      - app_type
+      - avatar_url
+      - open_methods
+    Remark:
+      type: object
+      properties:
+        remark:
+          type: string
+          description: 备注说明
+          example: 备注说明
+        update_remark:
+          type: string
+          description: 更新说明
+          example: 更新说明
+        visibility:
+          allOf:
+          - $ref: '#/components/schemas/Visibility'
+          description: 可见性名单
+      description: 跟随应用版本的信息
+    CloudDoc:
+      type: object
+      properties:
+        space_url:
+          type: string
+          description: 云空间重定向 url
+          example: https://www.example.com
+        i18n:
+          type: array
+          items:
+            type: object
+            properties:
+              i18n_key:
+                type: string
+                description: 国际化语言的 key
+                enum:
+                - zh_cn
+                - en_us
+                - ja_jp
+                x-enum-descriptions:
+                  zh_cn: 中文
+                  en_us: 英文
+                  ja_jp: 日文
+                example: zh_cn
+              name:
+                type: string
+                description: 云文档国际化名称
+                example: 名称
+              read_description:
+                type: string
+                description: 云文档国际化读权限说明
+                example: 读权限说明
+              write_description:
+                type: string
+                description: 云文档国际化写权限说明
+                example: 写权限说明
+            required:
+            - i18n_key
+          description: 国际化信息
+        icon_url:
+          type: string
+          description: 图标链接
+          example: https://www.example.com
+        mode:
+          type: integer
+          description: 云文档支持模式
+          enum:
+          - 0
+          - 1
+          x-enum-descriptions:
+            '0': 未知
+            '1': 移动端
+          example: '1'
+      description: 云文档应用
+    Visibility:
+      type: object
+      properties:
+        is_all:
+          type: boolean
+          description: 是否全员可见
+          example: 'false'
+        visible_list:
+          type: object
+          properties:
+            open_ids:
+              type: array
+              items:
+                type: string
+              description: 可见性成员 open_id 列表
+            department_ids:
+              type: array
+              items:
+                type: string
+              description: 可见性部门的 id 列表
+            group_ids:
+              type: array
+              items:
+                type: string
+              description: 可见性成员 group_id 列表
+          description: 可见名单
+        invisible_list:
+          type: object
+          properties:
+            open_ids:
+              type: array
+              items:
+                type: string
+              description: 可见性成员 open_id 列表
+            department_ids:
+              type: array
+              items:
+                type: string
+              description: 可见性部门的 id 列表
+            group_ids:
+              type: array
+              items:
+                type: string
+              description: 可见性成员 group_id 列表
+          description: 不可见名单
+      description: 可见性名单
+    Gadget:
+      type: object
+      properties:
+        enable_pc_mode:
+          type: integer
+          description: pc 支持的小程序模式，bit 位表示
+          enum:
+          - 1
+          - 2
+          - 4
+          x-enum-descriptions:
+            '1': sidebar 模式
+            '2': pc 模式
+            '4': 主导航模式
+          example: '1'
+        schema_urls:
+          type: array
+          items:
+            type: string
+          description: schema url 列表
+        pc_use_mobile_pkg:
+          type: boolean
+          description: pc 端是否使用小程序版本
+          example: 'false'
+        pc_version:
+          type: string
+          description: pc 的小程序版本号
+          example: 1.0.0
+        mobile_version:
+          type: string
+          description: 移动端小程序版本号
+          example: 1.0.0
+        mobile_min_lark_version:
+          type: string
+          description: 移动端兼容的最低飞书版本
+          example: '2.0'
+        pc_min_lark_version:
+          type: string
+          description: pc 端兼容的最低飞书版本
+          example: '2.0'
+      description: 小程序能力
+    Item6:
+      type: object
+      properties:
+        block_type_id:
+          type: string
+          description: BlockTypeID
+          example: blk_4fb61568435880110854c1d0
+        i18n:
+          type: array
+          items:
+            type: object
+            properties:
+              i18n_key:
+                type: string
+                description: 国际化语言的 key
+                enum:
+                - zh_cn
+                - en_us
+                - ja_jp
+                x-enum-descriptions:
+                  zh_cn: 中文
+                  en_us: 英文
+                  ja_jp: 日文
+                example: zh_cn
+              name:
+                type: string
+                description: 名称
+                example: 名称
+          description: block 的国际化信息
+        mobile_icon_url:
+          type: string
+          description: 移动端 icon 链接
+          example: https://www.example.com
+        pc_icon_url:
+          type: string
+          description: pc 端口 icon 链接
+          example: https://www.example.com
+    Navigate:
+      type: object
+      properties:
+        pc:
+          type: object
+          properties:
+            version:
+              type: string
+              description: 主导航小程序版本号
+              example: 1.0.0
+            image_url:
+              type: string
+              description: 默认图片 url
+              example: https://www.example.com
+            hover_image_url:
+              type: string
+              description: 选中态图片 url
+              example: https://www.example.com
+          description: pc 端主导航信息
+        mobile:
+          type: object
+          properties:
+            version:
+              type: string
+              description: 主导航小程序版本号
+              example: 1.0.0
+            image_url:
+              type: string
+              description: 默认图片 url
+              example: https://www.example.com
+            hover_image_url:
+              type: string
+              description: 选中态图片 url
+              example: https://www.example.com
+          description: 移动端主导航信息
+      description: 主导航小程序
+    ContactsRange:
+      type: object
+      properties:
+        contacts_scope_type:
+          type: string
+          description: 通讯录可见性类型
+          enum:
+          - equal_to_availability
+          - some
+          - all
+          x-enum-descriptions:
+            equal_to_availability: 与应用可用范围一致
+            some: 部分成员
+            all: 全部成员
+          example: some
+        visible_list:
+          type: object
+          properties:
+            open_ids:
+              type: array
+              items:
+                type: string
+              description: 可见性成员 open_id 列表
+            department_ids:
+              type: array
+              items:
+                type: string
+              description: 可见性部门的 id 列表
+            group_ids:
+              type: array
+              items:
+                type: string
+              description: 可见性成员 group_id 列表
+          description: 可用名单
+    MessageAction:
+      type: object
+      properties:
+        pc_app_link:
+          type: string
+          description: pc 端链接
+          example: https://www.example.com
+        mobile_app_link:
+          type: string
+          description: 移动端链接
+          example: https://www.example.com
+        i18n:
+          type: array
+          items:
+            type: object
+            properties:
+              i18n_key:
+                type: string
+                description: 国际化语言的 key
+                enum:
+                - zh_cn
+                - en_us
+                - ja_jp
+                x-enum-descriptions:
+                  zh_cn: 中文
+                  en_us: 英文
+                  ja_jp: 日文
+                example: zh_cn
+              name:
+                type: string
+                description: 国际化名称
+                example: 名称
+          description: 国际化信息
+      description: 消息快捷操作
+    Add:
+      type: object
+      properties:
+        redirect_urls:
+          type: array
+          items:
+            type: string
+          description: 重定向URL
+        allowed_ips:
+          type: array
+          items:
+            type: string
+          description: IP白名单 IP需要填写调用方出口公网IP地址
+        h5_trusted_domains:
+          type: array
+          items:
+            type: string
+          description: H5可信域名仅可信域名内的 H5 可以访问 JSAPI，部分需要鉴权的 JSAPI 必填。
+        web_view_trusted_domains:
+          type: array
+          items:
+            type: string
+          description: Web-View 可信域名
+        allowed_schemas:
+          type: array
+          items:
+            type: string
+          description: 小程序协议名白名单
+        allowed_server_domains:
+          type: array
+          items:
+            type: string
+          description: 服务器可信域名
+      description: 新增项

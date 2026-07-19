@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: mdm
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -279,78 +279,7 @@ paths:
                       data:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            alpha_3_code:
-                              type: string
-                              description: 三位字母代码
-                              example: '-'
-                            alpha_2_code:
-                              type: string
-                              description: 两位字母代码
-                              example: '-'
-                            numeric_code:
-                              type: string
-                              description: 数字代码
-                              example: '-'
-                            name:
-                              type: object
-                              properties:
-                                value:
-                                  type: string
-                                  description: 字符串值
-                                  example: zh-name
-                                multilingual_value:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: 多语言字符串
-                                return_language:
-                                  type: string
-                                  description: 语言
-                                  example: zh-CN
-                              description: 名称
-                            mdm_code:
-                              type: string
-                              description: 主数据编码（系统生成的唯一永久代码，格式为“MDCT+8位数字”）
-                              example: '-'
-                            full_name:
-                              type: object
-                              properties:
-                                value:
-                                  type: string
-                                  description: 字符串值
-                                  example: zh-name
-                                multilingual_value:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: 多语言字符串
-                                return_language:
-                                  type: string
-                                  description: 语言
-                                  example: zh-CN
-                              description: 国家/地区全称（国家/地区行政全称，对应EA的full_name，多语行级数据映射到多语map，wukong模型新增字段）
-                            global_code:
-                              type: string
-                              description: 国际电话区号（国际电话区号，对应EA模型中的globalCode，wukong模型新增字段）
-                              example: '-'
-                            status:
-                              type: string
-                              description: 是否生效
-                              example: '-'
-                            continents:
-                              type: object
-                              properties:
-                                value:
-                                  type: string
-                                  description: 枚举值
-                                  example: '-'
-                                multilingual_name:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: '多语言枚举名，结构：{"zh-CN":"中文", "en-US": "english"}'
-                              required:
-                              - value
-                              description: 所属大洲（EA系统中用数字枚举，升级为常量集，常量的API Name对应以下数字：1-亚洲，2-欧洲，3-非洲，4-北美洲，5-南美洲，6-大洋洲，7-南极洲）
+                          $ref: '#/components/schemas/Item'
                         description: 国家/地区目录列表
       x-lark-access-tokens:
       - tenant
@@ -587,78 +516,7 @@ paths:
                       data:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            alpha_3_code:
-                              type: string
-                              description: 三位字母代码
-                              example: '-'
-                            alpha_2_code:
-                              type: string
-                              description: 两位字母代码
-                              example: '-'
-                            numeric_code:
-                              type: string
-                              description: 数字代码
-                              example: '-'
-                            name:
-                              type: object
-                              properties:
-                                value:
-                                  type: string
-                                  description: 字符串值
-                                  example: zh-name
-                                multilingual_value:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: 多语言字符串
-                                return_language:
-                                  type: string
-                                  description: 语言
-                                  example: zh-CN
-                              description: 名称
-                            mdm_code:
-                              type: string
-                              description: 主数据编码（系统生成的唯一永久代码，格式为“MDCT+8位数字”）
-                              example: '-'
-                            full_name:
-                              type: object
-                              properties:
-                                value:
-                                  type: string
-                                  description: 字符串值
-                                  example: zh-name
-                                multilingual_value:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: 多语言字符串
-                                return_language:
-                                  type: string
-                                  description: 语言
-                                  example: zh-CN
-                              description: 国家/地区全称（国家/地区行政全称，对应EA的full_name，多语行级数据映射到多语map，wukong模型新增字段）
-                            global_code:
-                              type: string
-                              description: 国际电话区号（国际电话区号，对应EA模型中的globalCode，wukong模型新增字段）
-                              example: '-'
-                            status:
-                              type: string
-                              description: 是否生效
-                              example: '-'
-                            continents:
-                              type: object
-                              properties:
-                                value:
-                                  type: string
-                                  description: 枚举值
-                                  example: '-'
-                                multilingual_name:
-                                  type: string
-                                  x-lark-original-type: map
-                                  description: '多语言枚举名，结构：{"zh-CN":"中文", "en-US": "english"}'
-                              required:
-                              - value
-                              description: 所属大洲（EA系统中用数字枚举，升级为常量集，常量的API Name对应以下数字：1-亚洲，2-欧洲，3-非洲，4-北美洲，5-南美洲，6-大洋洲，7-南极洲）
+                          $ref: '#/components/schemas/Item'
                         description: 国家/地区目录列表
                       total:
                         type: string
@@ -777,3 +635,78 @@ paths:
         msg: custom func response error
       x-lark-rate-limit:
         tier: 7
+components:
+  schemas:
+    Item:
+      type: object
+      properties:
+        alpha_3_code:
+          type: string
+          description: 三位字母代码
+          example: '-'
+        alpha_2_code:
+          type: string
+          description: 两位字母代码
+          example: '-'
+        numeric_code:
+          type: string
+          description: 数字代码
+          example: '-'
+        name:
+          type: object
+          properties:
+            value:
+              type: string
+              description: 字符串值
+              example: zh-name
+            multilingual_value:
+              type: string
+              x-lark-original-type: map
+              description: 多语言字符串
+            return_language:
+              type: string
+              description: 语言
+              example: zh-CN
+          description: 名称
+        mdm_code:
+          type: string
+          description: 主数据编码（系统生成的唯一永久代码，格式为“MDCT+8位数字”）
+          example: '-'
+        full_name:
+          type: object
+          properties:
+            value:
+              type: string
+              description: 字符串值
+              example: zh-name
+            multilingual_value:
+              type: string
+              x-lark-original-type: map
+              description: 多语言字符串
+            return_language:
+              type: string
+              description: 语言
+              example: zh-CN
+          description: 国家/地区全称（国家/地区行政全称，对应EA的full_name，多语行级数据映射到多语map，wukong模型新增字段）
+        global_code:
+          type: string
+          description: 国际电话区号（国际电话区号，对应EA模型中的globalCode，wukong模型新增字段）
+          example: '-'
+        status:
+          type: string
+          description: 是否生效
+          example: '-'
+        continents:
+          type: object
+          properties:
+            value:
+              type: string
+              description: 枚举值
+              example: '-'
+            multilingual_name:
+              type: string
+              x-lark-original-type: map
+              description: '多语言枚举名，结构：{"zh-CN":"中文", "en-US": "english"}'
+          required:
+          - value
+          description: 所属大洲（EA系统中用数字枚举，升级为常量集，常量的API Name对应以下数字：1-亚洲，2-欧洲，3-非洲，4-北美洲，5-南美洲，6-大洋洲，7-南极洲）

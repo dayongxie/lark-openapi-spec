@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: payroll
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -210,82 +210,7 @@ paths:
                             data_summary_dimensions:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  dimension_level:
-                                    type: integer
-                                    description: 层级
-                                    example: '1'
-                                  dimension_type:
-                                    type: integer
-                                    description: 类型
-                                    example: '1'
-                                  dimension_value_id:
-                                    type: string
-                                    description: 维度ID，需要再次转换
-                                    example: '6823630319749580306'
-                                  enum_dimension:
-                                    type: object
-                                    properties:
-                                      enum_value_id:
-                                        type: string
-                                        description: 枚举对象ID
-                                        example: '7188920315914207276'
-                                      enum_key:
-                                        type: string
-                                        description: 枚举对象
-                                        example: company
-                                    description: 算薪项汇总维度时，当算薪项是特定枚举值，会使用该字段返回枚举值ID以及枚举值Key
-                                  dimension_value_lookup_info:
-                                    type: object
-                                    properties:
-                                      type:
-                                        type: string
-                                        description: 引用对象类型
-                                        example: work_calendar
-                                      id:
-                                        type: string
-                                        description: 引用对象的id，可根据相关API查询到对象的完整信息
-                                        example: '6961286846093788621'
-                                      code:
-                                        type: string
-                                        description: 引用对象的code，目前下面的对象会有code
-                                        example: D1230011115
-                                    description: 维度引用对象的基础信息，当维度为引用类型字段才会有值，目前支持的引用对象类型见type
-                                  dimension_names:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        locale:
-                                          type: string
-                                          description: 语种
-                                          default: zh_cn
-                                          example: zh_cn
-                                        value:
-                                          type: string
-                                          description: 语种对应的值
-                                          example: 名称
-                                    description: 维度名称，自定义维度使用
-                                  dimension_titles:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        locale:
-                                          type: string
-                                          description: 语种
-                                          default: zh_cn
-                                          example: zh_cn
-                                        value:
-                                          type: string
-                                          description: 语种对应的值
-                                          example: 名称
-                                        id:
-                                          type: string
-                                          description: 名称对应的实体id
-                                          example: '723123123123123213'
-                                    description: 数据维度表头，自定义维度使用
+                                $ref: '#/components/schemas/Item2'
                               description: 数据维度汇总
                             compensation_cost_item:
                               type: object
@@ -648,82 +573,7 @@ paths:
                             data_summary_dimensions:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  dimension_level:
-                                    type: integer
-                                    description: 层级
-                                    example: '1'
-                                  dimension_type:
-                                    type: integer
-                                    description: 类型
-                                    example: '1'
-                                  dimension_value_id:
-                                    type: string
-                                    description: 维度ID，需要再次转换
-                                    example: '6823630319749580306'
-                                  enum_dimension:
-                                    type: object
-                                    properties:
-                                      enum_value_id:
-                                        type: string
-                                        description: 枚举对象ID
-                                        example: '7188920315914207276'
-                                      enum_key:
-                                        type: string
-                                        description: 枚举对象
-                                        example: company
-                                    description: 算薪项汇总维度时，当算薪项是特定枚举值，会使用该字段返回枚举值ID以及枚举值Key
-                                  dimension_value_lookup_info:
-                                    type: object
-                                    properties:
-                                      type:
-                                        type: string
-                                        description: 引用对象类型
-                                        example: work_calendar
-                                      id:
-                                        type: string
-                                        description: 引用对象的id，可根据相关API查询到对象的完整信息
-                                        example: '6961286846093788621'
-                                      code:
-                                        type: string
-                                        description: 引用对象的code，目前下面的对象会有code
-                                        example: D1230011115
-                                    description: 维度引用对象的基础信息，当维度为引用类型字段才会有值，目前支持的引用对象类型见type
-                                  dimension_names:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        locale:
-                                          type: string
-                                          description: 语种
-                                          default: zh_cn
-                                          example: zh_cn
-                                        value:
-                                          type: string
-                                          description: 语种对应的值
-                                          example: 名称
-                                    description: 维度名称，自定义维度使用
-                                  dimension_titles:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        locale:
-                                          type: string
-                                          description: 语种
-                                          default: zh_cn
-                                          example: zh_cn
-                                        value:
-                                          type: string
-                                          description: 语种对应的值
-                                          example: 名称
-                                        id:
-                                          type: string
-                                          description: 名称对应的实体id
-                                          example: '723123123123123213'
-                                    description: 数据维度表头，自定义维度使用
+                                $ref: '#/components/schemas/Item2'
                               description: 数据维度汇总
                             compensation_cost_item:
                               type: object
@@ -1089,44 +939,7 @@ paths:
                       records:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            active_status:
-                              type: integer
-                              description: 记录的启停用状态
-                              enum:
-                              - 1
-                              - 2
-                              x-enum-descriptions:
-                                '1': 已启用
-                                '2': 已停用
-                              example: '1'
-                            field_values:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  field_code:
-                                    type: string
-                                    description: 数据源字段编码
-                                    example: test__c
-                                  value:
-                                    type: string
-                                    description: '字段值 通过string传输，确保字段的值符合协议。  - money：金额  eg: "12.23"  超过设定精度会被四舍五入，目前只支持人民币¥元
-                                      - number：数值 eg: "12.87" 超过设定精度会被四舍五入 - text：文本 eg: "我是一段文本"。文本字符个数不允许超过500，一条记录的文本总的字符个数不允许超过3000.
-                                      - date：日期 yyyy-MM-dd  eg: "2024-05-09" - percentage：百分比 "10" 代表10%，最多保留两位小数，超过后四舍五入'
-                                    example: '123'
-                                  field_type:
-                                    type: integer
-                                    description: 字段类型
-                                    example: '1'
-                                required:
-                                - field_code
-                                - value
-                              description: 记录的字段值列表
-                          required:
-                          - active_status
-                          - field_values
+                          $ref: '#/components/schemas/Item3'
                         description: 数据记录列表
                     required:
                     - has_more
@@ -1188,44 +1001,7 @@ paths:
                 records:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      active_status:
-                        type: integer
-                        description: 记录的启停用状态
-                        enum:
-                        - 1
-                        - 2
-                        x-enum-descriptions:
-                          '1': 已启用
-                          '2': 已停用
-                        example: '1'
-                      field_values:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            field_code:
-                              type: string
-                              description: 数据源字段编码
-                              example: test__c
-                            value:
-                              type: string
-                              description: '字段值 通过string传输，确保字段的值符合协议。  - money：金额  eg: "12.23"  超过设定精度会被四舍五入，目前只支持人民币¥元 -
-                                number：数值 eg: "12.87" 超过设定精度会被四舍五入 - text：文本 eg: "我是一段文本"。文本字符个数不允许超过500，一条记录的文本总的字符个数不允许超过3000.
-                                - date：日期 yyyy-MM-dd  eg: "2024-05-09" - percentage：百分比 "10" 代表10%，最多保留两位小数，超过后四舍五入'
-                              example: '123'
-                            field_type:
-                              type: integer
-                              description: 字段类型
-                              example: '1'
-                          required:
-                          - field_code
-                          - value
-                        description: 记录的字段值列表
-                    required:
-                    - active_status
-                    - field_values
+                    $ref: '#/components/schemas/Item3'
                   description: 需保存的记录列表
       responses:
         '200':
@@ -1715,89 +1491,7 @@ paths:
                             payment_details:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: string
-                                    description: 算薪项唯一标识
-                                    example: '7202076988667019308'
-                                  accounting_item_names:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        locale:
-                                          type: string
-                                          description: 语种
-                                          default: zh_cn
-                                          example: zh_cn
-                                        value:
-                                          type: string
-                                          description: 语种对应的值
-                                          example: 名称
-                                    description: 算薪项名称
-                                  accounting_item_value:
-                                    type: object
-                                    properties:
-                                      original_value:
-                                        type: string
-                                        description: 算薪项数据原始值，当发薪明细的数据来源为「人工导入」时，如果当前算薪项类型为引用类型，那么算薪项原始值可能为空。
-                                        example: '100'
-                                      reference_values:
-                                        type: array
-                                        items:
-                                          type: object
-                                          properties:
-                                            locale:
-                                              type: string
-                                              description: 语种
-                                              default: zh_cn
-                                              example: zh_cn
-                                            value:
-                                              type: string
-                                              description: 语种对应的值
-                                              example: 名称
-                                        description: 引用类型算薪项展示值
-                                    description: 算薪项值
-                                  segment_values:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        start_time:
-                                          type: string
-                                          description: 分段开始时间-毫秒级时间戳，[start_time, end_time] 是一个左闭右闭区间。
-                                          example: '7220356259681386540'
-                                          format: int64
-                                        end_time:
-                                          type: string
-                                          description: 分段结束时间-毫秒级时间戳，[start_time, end_time] 是一个左闭右闭区间。
-                                          example: '7220356259681386540'
-                                          format: int64
-                                        reference_values:
-                                          type: array
-                                          items:
-                                            type: object
-                                            properties:
-                                              locale:
-                                                type: string
-                                                description: 语种
-                                                default: zh_cn
-                                                example: zh_cn
-                                              value:
-                                                type: string
-                                                description: 语种对应的值
-                                                example: 名称
-                                          description: 引用类型算薪项分段展示值
-                                        original_value:
-                                          type: string
-                                          description: 算薪项分段原始值
-                                          example: '10000'
-                                    description: 算薪项分段数据
-                                  accounting_item_type:
-                                    type: integer
-                                    description: 算薪项类型，1-文本；2-金额；3-数值；4-百分比；5-日期；6-引用
-                                    example: '1'
+                                $ref: '#/components/schemas/Item'
                               description: 发薪明细详情
                         description: 发薪明细列表
                       total:
@@ -1909,89 +1603,7 @@ paths:
                             payment_accounting_items:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: string
-                                    description: 算薪项唯一标识
-                                    example: '7202076988667019308'
-                                  accounting_item_names:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        locale:
-                                          type: string
-                                          description: 语种
-                                          default: zh_cn
-                                          example: zh_cn
-                                        value:
-                                          type: string
-                                          description: 语种对应的值
-                                          example: 名称
-                                    description: 算薪项名称
-                                  accounting_item_value:
-                                    type: object
-                                    properties:
-                                      original_value:
-                                        type: string
-                                        description: 算薪项数据原始值，当发薪明细的数据来源为「人工导入」时，如果当前算薪项类型为引用类型，那么算薪项原始值可能为空。
-                                        example: '100'
-                                      reference_values:
-                                        type: array
-                                        items:
-                                          type: object
-                                          properties:
-                                            locale:
-                                              type: string
-                                              description: 语种
-                                              default: zh_cn
-                                              example: zh_cn
-                                            value:
-                                              type: string
-                                              description: 语种对应的值
-                                              example: 名称
-                                        description: 引用类型算薪项展示值
-                                    description: 算薪项值
-                                  segment_values:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        start_time:
-                                          type: string
-                                          description: 分段开始时间-毫秒级时间戳，[start_time, end_time] 是一个左闭右闭区间。
-                                          example: '7220356259681386540'
-                                          format: int64
-                                        end_time:
-                                          type: string
-                                          description: 分段结束时间-毫秒级时间戳，[start_time, end_time] 是一个左闭右闭区间。
-                                          example: '7220356259681386540'
-                                          format: int64
-                                        reference_values:
-                                          type: array
-                                          items:
-                                            type: object
-                                            properties:
-                                              locale:
-                                                type: string
-                                                description: 语种
-                                                default: zh_cn
-                                                example: zh_cn
-                                              value:
-                                                type: string
-                                                description: 语种对应的值
-                                                example: 名称
-                                          description: 引用类型算薪项分段展示值
-                                        original_value:
-                                          type: string
-                                          description: 算薪项分段原始值
-                                          example: '10000'
-                                    description: 算薪项分段数据
-                                  accounting_item_type:
-                                    type: integer
-                                    description: 算薪项类型，1-文本；2-金额；3-数值；4-百分比；5-日期；6-引用
-                                    example: '1'
+                                $ref: '#/components/schemas/Item'
                               description: 发薪明细详情
                         description: 发薪明细列表
                       total:
@@ -2033,3 +1645,207 @@ paths:
         msg: Too many payment activities. Please shorten the pay date range.
       x-lark-rate-limit:
         tier: 5
+components:
+  schemas:
+    Item:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 算薪项唯一标识
+          example: '7202076988667019308'
+        accounting_item_names:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                description: 语种
+                default: zh_cn
+                example: zh_cn
+              value:
+                type: string
+                description: 语种对应的值
+                example: 名称
+          description: 算薪项名称
+        accounting_item_value:
+          type: object
+          properties:
+            original_value:
+              type: string
+              description: 算薪项数据原始值，当发薪明细的数据来源为「人工导入」时，如果当前算薪项类型为引用类型，那么算薪项原始值可能为空。
+              example: '100'
+            reference_values:
+              type: array
+              items:
+                type: object
+                properties:
+                  locale:
+                    type: string
+                    description: 语种
+                    default: zh_cn
+                    example: zh_cn
+                  value:
+                    type: string
+                    description: 语种对应的值
+                    example: 名称
+              description: 引用类型算薪项展示值
+          description: 算薪项值
+        segment_values:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item4'
+          description: 算薪项分段数据
+        accounting_item_type:
+          type: integer
+          description: 算薪项类型，1-文本；2-金额；3-数值；4-百分比；5-日期；6-引用
+          example: '1'
+    Item2:
+      type: object
+      properties:
+        dimension_level:
+          type: integer
+          description: 层级
+          example: '1'
+        dimension_type:
+          type: integer
+          description: 类型
+          example: '1'
+        dimension_value_id:
+          type: string
+          description: 维度ID，需要再次转换
+          example: '6823630319749580306'
+        enum_dimension:
+          type: object
+          properties:
+            enum_value_id:
+              type: string
+              description: 枚举对象ID
+              example: '7188920315914207276'
+            enum_key:
+              type: string
+              description: 枚举对象
+              example: company
+          description: 算薪项汇总维度时，当算薪项是特定枚举值，会使用该字段返回枚举值ID以及枚举值Key
+        dimension_value_lookup_info:
+          type: object
+          properties:
+            type:
+              type: string
+              description: 引用对象类型
+              example: work_calendar
+            id:
+              type: string
+              description: 引用对象的id，可根据相关API查询到对象的完整信息
+              example: '6961286846093788621'
+            code:
+              type: string
+              description: 引用对象的code，目前下面的对象会有code
+              example: D1230011115
+          description: 维度引用对象的基础信息，当维度为引用类型字段才会有值，目前支持的引用对象类型见type
+        dimension_names:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                description: 语种
+                default: zh_cn
+                example: zh_cn
+              value:
+                type: string
+                description: 语种对应的值
+                example: 名称
+          description: 维度名称，自定义维度使用
+        dimension_titles:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                description: 语种
+                default: zh_cn
+                example: zh_cn
+              value:
+                type: string
+                description: 语种对应的值
+                example: 名称
+              id:
+                type: string
+                description: 名称对应的实体id
+                example: '723123123123123213'
+          description: 数据维度表头，自定义维度使用
+    Item3:
+      type: object
+      properties:
+        active_status:
+          type: integer
+          description: 记录的启停用状态
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 已启用
+            '2': 已停用
+          example: '1'
+        field_values:
+          type: array
+          items:
+            type: object
+            properties:
+              field_code:
+                type: string
+                description: 数据源字段编码
+                example: test__c
+              value:
+                type: string
+                description: '字段值 通过string传输，确保字段的值符合协议。  - money：金额  eg: "12.23"  超过设定精度会被四舍五入，目前只支持人民币¥元 - number：数值 eg:
+                  "12.87" 超过设定精度会被四舍五入 - text：文本 eg: "我是一段文本"。文本字符个数不允许超过500，一条记录的文本总的字符个数不允许超过3000. - date：日期 yyyy-MM-dd  eg:
+                  "2024-05-09" - percentage：百分比 "10" 代表10%，最多保留两位小数，超过后四舍五入'
+                example: '123'
+              field_type:
+                type: integer
+                description: 字段类型
+                example: '1'
+            required:
+            - field_code
+            - value
+          description: 记录的字段值列表
+      required:
+      - active_status
+      - field_values
+    Item4:
+      type: object
+      properties:
+        start_time:
+          type: string
+          description: 分段开始时间-毫秒级时间戳，[start_time, end_time] 是一个左闭右闭区间。
+          example: '7220356259681386540'
+          format: int64
+        end_time:
+          type: string
+          description: 分段结束时间-毫秒级时间戳，[start_time, end_time] 是一个左闭右闭区间。
+          example: '7220356259681386540'
+          format: int64
+        reference_values:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                description: 语种
+                default: zh_cn
+                example: zh_cn
+              value:
+                type: string
+                description: 语种对应的值
+                example: 名称
+          description: 引用类型算薪项分段展示值
+        original_value:
+          type: string
+          description: 算薪项分段原始值
+          example: '10000'

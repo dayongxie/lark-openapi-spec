@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: lingo
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -252,113 +252,8 @@ paths:
                   description: 详情描述
                   example: 企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
                 related_meta:
-                  type: object
-                  properties:
-                    users:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 数据 id
-                            example: 7dab8a3d3cdcc9da365777c7ad535d62
-                          title:
-                            type: string
-                            description: 标题
-                            example: 飞书官网
-                        required:
-                        - id
-                      description: 关联用户信息
-                    chats:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 数据 id
-                            example: 7dab8a3d3cdcc9da365777c7ad535d62
-                        required:
-                        - id
-                      description: 关联群组信息
-                    docs:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          title:
-                            type: string
-                            description: 标题
-                            example: 飞书官网
-                          url:
-                            type: string
-                            description: 链接地址
-                            example: https://www.feishu.cn/hc/zh-CN
-                      description: 关联文档信息
-                    oncalls:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 数据 id
-                            example: 7dab8a3d3cdcc9da365777c7ad535d62
-                        required:
-                        - id
-                      description: 关联值班者信息
-                    links:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          title:
-                            type: string
-                            description: 标题
-                            example: 飞书官网
-                          url:
-                            type: string
-                            description: 链接地址
-                            example: https://www.feishu.cn/hc/zh-CN
-                      description: 关联链接信息
-                    abbreviations:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 相关其他词条 id
-                            example: enterprise_51587960
-                      description: 相关词条信息
-                    classifications:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 唯一分类 ID
-                            example: '7049606926702837761'
-                          father_id:
-                            type: string
-                            description: 父级分类的 ID
-                            example: '7049606926702837777'
-                        required:
-                        - id
-                      description: 所属分类信息（不支持传入一级分类。词条不可同时属于同一个一级分类下的多个二级分类，一级分类下的二级分类互斥）
-                    images:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          token:
-                            type: string
-                            description: 通过文件接口上传后的图片 token
-                        required:
-                        - token
-                      description: 上传的相关图片
+                  allOf:
+                  - $ref: '#/components/schemas/RelatedMeta2'
                   description: 相关数据
                 outer_info:
                   type: object
@@ -413,308 +308,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      draft:
-                        type: object
-                        properties:
-                          draft_id:
-                            type: string
-                            description: 草稿 Id
-                            example: '42322'
-                            format: int64
-                          entity:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: 实体词 Id
-                                example: enterprise_40217521
-                              main_keys:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    key:
-                                      type: string
-                                      description: 名称
-                                      example: 企业百科
-                                    display_status:
-                                      type: object
-                                      properties:
-                                        allow_highlight:
-                                          type: boolean
-                                          description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                                          example: 'true'
-                                        allow_search:
-                                          type: boolean
-                                          description: 是否允许在飞书中被搜索到
-                                          example: 'true'
-                                      required:
-                                      - allow_highlight
-                                      - allow_search
-                                      description: 展示状态
-                                  required:
-                                  - key
-                                  - display_status
-                                description: 词条名
-                              aliases:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    key:
-                                      type: string
-                                      description: 名称
-                                      example: 企业百科
-                                    display_status:
-                                      type: object
-                                      properties:
-                                        allow_highlight:
-                                          type: boolean
-                                          description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                                          example: 'true'
-                                        allow_search:
-                                          type: boolean
-                                          description: 是否允许在飞书中被搜索到
-                                          example: 'true'
-                                      required:
-                                      - allow_highlight
-                                      - allow_search
-                                      description: 展示状态
-                                  required:
-                                  - key
-                                  - display_status
-                                description: 别名
-                              description:
-                                type: string
-                                description: 详情描述
-                                example: 企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                              creator:
-                                type: string
-                                description: 创建者
-                                example: ou_30b07b63089ea46518789914dac63d36
-                                format: int64
-                              create_time:
-                                type: string
-                                description: 词条创建时间（秒级时间戳）
-                                example: '1649318125'
-                                format: int64
-                              updater:
-                                type: string
-                                description: 最近一次更新者
-                                example: ou_30b07b63089ea46518789914dac63d36
-                                format: int64
-                              update_time:
-                                type: string
-                                description: 最近一次更新词条时间（秒级时间戳）
-                                example: '1649318125'
-                                format: int64
-                              related_meta:
-                                type: object
-                                properties:
-                                  users:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: 数据 id
-                                          example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                        title:
-                                          type: string
-                                          description: 标题
-                                          example: 飞书官网
-                                        url:
-                                          type: string
-                                          description: 链接地址
-                                          example: https://www.feishu.cn/hc/zh-CN
-                                      required:
-                                      - id
-                                    description: 关联用户信息
-                                  chats:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: 数据 id
-                                          example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                        title:
-                                          type: string
-                                          description: 标题
-                                          example: 飞书官网
-                                        url:
-                                          type: string
-                                          description: 链接地址
-                                          example: https://www.feishu.cn/hc/zh-CN
-                                      required:
-                                      - id
-                                    description: 关联群组信息
-                                  docs:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        title:
-                                          type: string
-                                          description: 标题
-                                          example: 飞书官网
-                                        url:
-                                          type: string
-                                          description: 链接地址
-                                          example: https://www.feishu.cn/hc/zh-CN
-                                    description: 关联文档信息
-                                  oncalls:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: 数据 id
-                                          example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                        title:
-                                          type: string
-                                          description: 标题
-                                          example: 飞书官网
-                                        url:
-                                          type: string
-                                          description: 链接地址
-                                          example: https://www.feishu.cn/hc/zh-CN
-                                      required:
-                                      - id
-                                    description: 关联值班者信息
-                                  links:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        title:
-                                          type: string
-                                          description: 标题
-                                          example: 飞书官网
-                                        url:
-                                          type: string
-                                          description: 链接地址
-                                          example: https://www.feishu.cn/hc/zh-CN
-                                    description: 关联链接信息
-                                  abbreviations:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: 相关其他词条 id
-                                          example: enterprise_51587960
-                                    description: 相关词条信息
-                                  classifications:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: 唯一分类 ID
-                                          example: '7049606926702837761'
-                                        father_id:
-                                          type: string
-                                          description: 父级分类的 ID
-                                          example: '7049606926702837777'
-                                      required:
-                                      - id
-                                    description: 所属分类信息（不支持传入一级分类。词条不可同时属于同一个一级分类下的多个二级分类，一级分类下的二级分类互斥）
-                                  images:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        token:
-                                          type: string
-                                          description: 通过文件接口上传后的图片 token
-                                      required:
-                                      - token
-                                    description: 上传的相关图片
-                                description: 相关数据
-                              statistics:
-                                type: object
-                                properties:
-                                  like_count:
-                                    type: integer
-                                    description: 点赞数量
-                                    example: '55'
-                                  dislike_count:
-                                    type: integer
-                                    description: 点踩数量
-                                    example: '3'
-                                required:
-                                - like_count
-                                - dislike_count
-                                description: 统计数据
-                              outer_info:
-                                type: object
-                                properties:
-                                  provider:
-                                    type: string
-                                    description: 数据提供方（不能包含中横线 "-"）
-                                    example: 星云
-                                  outer_id:
-                                    type: string
-                                    description: 唯一标识，可用来和其他平台的内容进行绑定。需保证和百科词条唯一对应（不能包含中横线 "-"）
-                                    example: 12345abc
-                                required:
-                                - provider
-                                - outer_id
-                                description: 外部 id 关联数据
-                              rich_text:
-                                type: string
-                                description: 富文本格式（当填写富文本内容时，description字段将会失效可不填写），支持的格式参考[企业百科指南](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/overview)中的释义部分
-                                example: '&lt;b&gt;加粗&lt;/b&gt;&lt;i&gt;斜体&lt;/i&gt;&lt;p&gt;&lt;a href="https://feishu.cn"&gt;l链接&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span&gt;企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通&lt;/span&gt;&lt;/p&gt;'
-                              source:
-                                type: integer
-                                description: 词条的创建来源，1：用户主动创建，2：批量导入，3：官方词，4：OpenAPI 创建
-                                example: '1'
-                              i18n_descs:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    language:
-                                      type: integer
-                                      description: 语言类型
-                                      enum:
-                                      - 1
-                                      - 2
-                                      - 3
-                                      x-enum-descriptions:
-                                        '1': 中文
-                                        '2': 英文
-                                        '3': 日文
-                                      example: '1'
-                                    description:
-                                      type: string
-                                      description: 纯文本释义
-                                      example: 词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                                    rich_text:
-                                      type: string
-                                      description: 富文本描述
-                                      example: <p><span>词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通</span></p>
-                                  required:
-                                  - language
-                                description: 国际化的词条释义
-                            required:
-                            - main_keys
-                            description: 实体词
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - user
       - tenant
@@ -857,113 +451,8 @@ paths:
                   description: 详情描述
                   example: 企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
                 related_meta:
-                  type: object
-                  properties:
-                    users:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 数据 id
-                            example: 7dab8a3d3cdcc9da365777c7ad535d62
-                          title:
-                            type: string
-                            description: 标题
-                            example: 飞书官网
-                        required:
-                        - id
-                      description: 关联用户信息
-                    chats:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 数据 id
-                            example: 7dab8a3d3cdcc9da365777c7ad535d62
-                        required:
-                        - id
-                      description: 关联群组信息
-                    docs:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          title:
-                            type: string
-                            description: 标题
-                            example: 飞书官网
-                          url:
-                            type: string
-                            description: 链接地址
-                            example: https://www.feishu.cn/hc/zh-CN
-                      description: 关联文档信息
-                    oncalls:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 数据 id
-                            example: 7dab8a3d3cdcc9da365777c7ad535d62
-                        required:
-                        - id
-                      description: 关联值班者信息
-                    links:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          title:
-                            type: string
-                            description: 标题
-                            example: 飞书官网
-                          url:
-                            type: string
-                            description: 链接地址
-                            example: https://www.feishu.cn/hc/zh-CN
-                      description: 关联链接信息
-                    abbreviations:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 相关其他词条 id
-                            example: enterprise_51587960
-                      description: 相关词条信息
-                    classifications:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 唯一分类 ID
-                            example: '7049606926702837761'
-                          father_id:
-                            type: string
-                            description: 父级分类的 ID
-                            example: '7049606926702837777'
-                        required:
-                        - id
-                      description: 所属分类信息（不支持传入一级分类。词条不可同时属于同一个一级分类下的多个二级分类，一级分类下的二级分类互斥）
-                    images:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          token:
-                            type: string
-                            description: 通过文件接口上传后的图片 token
-                        required:
-                        - token
-                      description: 上传的相关图片
+                  allOf:
+                  - $ref: '#/components/schemas/RelatedMeta2'
                   description: 相关数据
                 rich_text:
                   type: string
@@ -1003,308 +492,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      draft:
-                        type: object
-                        properties:
-                          draft_id:
-                            type: string
-                            description: 草稿 Id
-                            example: '42322'
-                            format: int64
-                          entity:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: 实体词 Id
-                                example: enterprise_40217521
-                              main_keys:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    key:
-                                      type: string
-                                      description: 名称
-                                      example: 企业百科
-                                    display_status:
-                                      type: object
-                                      properties:
-                                        allow_highlight:
-                                          type: boolean
-                                          description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                                          example: 'true'
-                                        allow_search:
-                                          type: boolean
-                                          description: 是否允许在飞书中被搜索到
-                                          example: 'true'
-                                      required:
-                                      - allow_highlight
-                                      - allow_search
-                                      description: 展示状态
-                                  required:
-                                  - key
-                                  - display_status
-                                description: 词条名
-                              aliases:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    key:
-                                      type: string
-                                      description: 名称
-                                      example: 企业百科
-                                    display_status:
-                                      type: object
-                                      properties:
-                                        allow_highlight:
-                                          type: boolean
-                                          description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                                          example: 'true'
-                                        allow_search:
-                                          type: boolean
-                                          description: 是否允许在飞书中被搜索到
-                                          example: 'true'
-                                      required:
-                                      - allow_highlight
-                                      - allow_search
-                                      description: 展示状态
-                                  required:
-                                  - key
-                                  - display_status
-                                description: 别名
-                              description:
-                                type: string
-                                description: 详情描述
-                                example: 企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                              creator:
-                                type: string
-                                description: 创建者
-                                example: ou_30b07b63089ea46518789914dac63d36
-                                format: int64
-                              create_time:
-                                type: string
-                                description: 词条创建时间（秒级时间戳）
-                                example: '1649318125'
-                                format: int64
-                              updater:
-                                type: string
-                                description: 最近一次更新者
-                                example: ou_30b07b63089ea46518789914dac63d36
-                                format: int64
-                              update_time:
-                                type: string
-                                description: 最近一次更新词条时间（秒级时间戳）
-                                example: '1649318125'
-                                format: int64
-                              related_meta:
-                                type: object
-                                properties:
-                                  users:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: 数据 id
-                                          example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                        title:
-                                          type: string
-                                          description: 标题
-                                          example: 飞书官网
-                                        url:
-                                          type: string
-                                          description: 链接地址
-                                          example: https://www.feishu.cn/hc/zh-CN
-                                      required:
-                                      - id
-                                    description: 关联用户信息
-                                  chats:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: 数据 id
-                                          example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                        title:
-                                          type: string
-                                          description: 标题
-                                          example: 飞书官网
-                                        url:
-                                          type: string
-                                          description: 链接地址
-                                          example: https://www.feishu.cn/hc/zh-CN
-                                      required:
-                                      - id
-                                    description: 关联群组信息
-                                  docs:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        title:
-                                          type: string
-                                          description: 标题
-                                          example: 飞书官网
-                                        url:
-                                          type: string
-                                          description: 链接地址
-                                          example: https://www.feishu.cn/hc/zh-CN
-                                    description: 关联文档信息
-                                  oncalls:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: 数据 id
-                                          example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                        title:
-                                          type: string
-                                          description: 标题
-                                          example: 飞书官网
-                                        url:
-                                          type: string
-                                          description: 链接地址
-                                          example: https://www.feishu.cn/hc/zh-CN
-                                      required:
-                                      - id
-                                    description: 关联值班者信息
-                                  links:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        title:
-                                          type: string
-                                          description: 标题
-                                          example: 飞书官网
-                                        url:
-                                          type: string
-                                          description: 链接地址
-                                          example: https://www.feishu.cn/hc/zh-CN
-                                    description: 关联链接信息
-                                  abbreviations:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: 相关其他词条 id
-                                          example: enterprise_51587960
-                                    description: 相关词条信息
-                                  classifications:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: 唯一分类 ID
-                                          example: '7049606926702837761'
-                                        father_id:
-                                          type: string
-                                          description: 父级分类的 ID
-                                          example: '7049606926702837777'
-                                      required:
-                                      - id
-                                    description: 所属分类信息（不支持传入一级分类。词条不可同时属于同一个一级分类下的多个二级分类，一级分类下的二级分类互斥）
-                                  images:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        token:
-                                          type: string
-                                          description: 通过文件接口上传后的图片 token
-                                      required:
-                                      - token
-                                    description: 上传的相关图片
-                                description: 相关数据
-                              statistics:
-                                type: object
-                                properties:
-                                  like_count:
-                                    type: integer
-                                    description: 点赞数量
-                                    example: '55'
-                                  dislike_count:
-                                    type: integer
-                                    description: 点踩数量
-                                    example: '3'
-                                required:
-                                - like_count
-                                - dislike_count
-                                description: 统计数据
-                              outer_info:
-                                type: object
-                                properties:
-                                  provider:
-                                    type: string
-                                    description: 数据提供方（不能包含中横线 "-"）
-                                    example: 星云
-                                  outer_id:
-                                    type: string
-                                    description: 唯一标识，可用来和其他平台的内容进行绑定。需保证和百科词条唯一对应（不能包含中横线 "-"）
-                                    example: 12345abc
-                                required:
-                                - provider
-                                - outer_id
-                                description: 外部 id 关联数据
-                              rich_text:
-                                type: string
-                                description: 富文本格式（当填写富文本内容时，description字段将会失效可不填写），支持的格式参考[企业百科指南](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/overview)中的释义部分
-                                example: '&lt;b&gt;加粗&lt;/b&gt;&lt;i&gt;斜体&lt;/i&gt;&lt;p&gt;&lt;a href="https://feishu.cn"&gt;l链接&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span&gt;企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通&lt;/span&gt;&lt;/p&gt;'
-                              source:
-                                type: integer
-                                description: 词条的创建来源，1：用户主动创建，2：批量导入，3：官方词，4：OpenAPI 创建
-                                example: '1'
-                              i18n_descs:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    language:
-                                      type: integer
-                                      description: 语言类型
-                                      enum:
-                                      - 1
-                                      - 2
-                                      - 3
-                                      x-enum-descriptions:
-                                        '1': 中文
-                                        '2': 英文
-                                        '3': 日文
-                                      example: '1'
-                                    description:
-                                      type: string
-                                      description: 纯文本释义
-                                      example: 词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                                    rich_text:
-                                      type: string
-                                      description: 富文本描述
-                                      example: <p><span>词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通</span></p>
-                                  required:
-                                  - language
-                                description: 国际化的词条释义
-                            required:
-                            - main_keys
-                            description: 实体词
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - user
       - tenant
@@ -1383,523 +571,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                main_keys:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      key:
-                        type: string
-                        description: 名称
-                        example: 企业百科
-                      display_status:
-                        type: object
-                        properties:
-                          allow_highlight:
-                            type: boolean
-                            description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                            example: 'true'
-                          allow_search:
-                            type: boolean
-                            description: 是否允许在飞书中被搜索到
-                            example: 'true'
-                        required:
-                        - allow_highlight
-                        - allow_search
-                        description: 展示状态
-                    required:
-                    - key
-                    - display_status
-                  description: 词条名
-                aliases:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      key:
-                        type: string
-                        description: 名称
-                        example: 企业百科
-                      display_status:
-                        type: object
-                        properties:
-                          allow_highlight:
-                            type: boolean
-                            description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                            example: 'true'
-                          allow_search:
-                            type: boolean
-                            description: 是否允许在飞书中被搜索到
-                            example: 'true'
-                        required:
-                        - allow_highlight
-                        - allow_search
-                        description: 展示状态
-                    required:
-                    - key
-                    - display_status
-                  description: 别名
-                description:
-                  type: string
-                  description: 详情描述
-                  example: 企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                related_meta:
-                  type: object
-                  properties:
-                    users:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 数据 id
-                            example: 7dab8a3d3cdcc9da365777c7ad535d62
-                          title:
-                            type: string
-                            description: 标题
-                            example: 飞书官网
-                        required:
-                        - id
-                      description: 关联用户信息
-                    chats:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 数据 id
-                            example: 7dab8a3d3cdcc9da365777c7ad535d62
-                        required:
-                        - id
-                      description: 关联群组信息
-                    docs:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          title:
-                            type: string
-                            description: 标题
-                            example: 飞书官网
-                          url:
-                            type: string
-                            description: 链接地址
-                            example: https://www.feishu.cn/hc/zh-CN
-                      description: 关联文档信息
-                    oncalls:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 数据 id
-                            example: 7dab8a3d3cdcc9da365777c7ad535d62
-                        required:
-                        - id
-                      description: 关联值班者信息
-                    links:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          title:
-                            type: string
-                            description: 标题
-                            example: 飞书官网
-                          url:
-                            type: string
-                            description: 链接地址
-                            example: https://www.feishu.cn/hc/zh-CN
-                      description: 关联链接信息
-                    abbreviations:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 相关其他词条 id
-                            example: enterprise_51587960
-                      description: 相关词条信息
-                    classifications:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 唯一分类 ID
-                            example: '7049606926702837761'
-                          father_id:
-                            type: string
-                            description: 父级分类的 ID
-                            example: '7049606926702837777'
-                        required:
-                        - id
-                      description: 所属分类信息（不支持传入一级分类。词条不可同时属于同一个一级分类下的多个二级分类，一级分类下的二级分类互斥）
-                    images:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          token:
-                            type: string
-                            description: 通过文件接口上传后的图片 token
-                        required:
-                        - token
-                      description: 上传的相关图片
-                  description: 相关数据
-                outer_info:
-                  type: object
-                  properties:
-                    provider:
-                      type: string
-                      description: 数据提供方（不能包含中横线 "-"）
-                      example: 星云
-                    outer_id:
-                      type: string
-                      description: 唯一标识，可用来和其他平台的内容进行绑定。需保证和百科词条唯一对应（不能包含中横线 "-"）
-                      example: 12345abc
-                  required:
-                  - provider
-                  - outer_id
-                  description: 外部 id 关联数据
-                rich_text:
-                  type: string
-                  description: 富文本格式（当填写富文本内容时，description字段将会失效可不填写），支持的格式参考[企业百科指南](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/overview)中的释义部分
-                  example: '&lt;b&gt;加粗&lt;/b&gt;&lt;i&gt;斜体&lt;/i&gt;&lt;p&gt;&lt;a href="https://feishu.cn"&gt;l链接&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span&gt;企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通&lt;/span&gt;&lt;/p&gt;'
-                i18n_descs:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      language:
-                        type: integer
-                        description: 语言类型
-                        enum:
-                        - 1
-                        - 2
-                        - 3
-                        x-enum-descriptions:
-                          '1': 中文
-                          '2': 英文
-                          '3': 日文
-                        example: '1'
-                      description:
-                        type: string
-                        description: 纯文本释义
-                        example: 词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                      rich_text:
-                        type: string
-                        description: 富文本描述
-                        example: <p><span>词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通</span></p>
-                    required:
-                    - language
-                  description: 国际化的词条释义
+              $ref: '#/components/schemas/Schema4'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      entity:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 实体词 Id
-                            example: enterprise_40217521
-                          main_keys:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                key:
-                                  type: string
-                                  description: 名称
-                                  example: 企业百科
-                                display_status:
-                                  type: object
-                                  properties:
-                                    allow_highlight:
-                                      type: boolean
-                                      description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                                      example: 'true'
-                                    allow_search:
-                                      type: boolean
-                                      description: 是否允许在飞书中被搜索到
-                                      example: 'true'
-                                  required:
-                                  - allow_highlight
-                                  - allow_search
-                                  description: 展示状态
-                              required:
-                              - key
-                              - display_status
-                            description: 词条名
-                          aliases:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                key:
-                                  type: string
-                                  description: 名称
-                                  example: 企业百科
-                                display_status:
-                                  type: object
-                                  properties:
-                                    allow_highlight:
-                                      type: boolean
-                                      description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                                      example: 'true'
-                                    allow_search:
-                                      type: boolean
-                                      description: 是否允许在飞书中被搜索到
-                                      example: 'true'
-                                  required:
-                                  - allow_highlight
-                                  - allow_search
-                                  description: 展示状态
-                              required:
-                              - key
-                              - display_status
-                            description: 别名
-                          description:
-                            type: string
-                            description: 详情描述
-                            example: 企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                          creator:
-                            type: string
-                            description: 创建者
-                            example: ou_30b07b63089ea46518789914dac63d36
-                            format: int64
-                          create_time:
-                            type: string
-                            description: 词条创建时间（秒级时间戳）
-                            example: '1649318125'
-                            format: int64
-                          updater:
-                            type: string
-                            description: 最近一次更新者
-                            example: ou_30b07b63089ea46518789914dac63d36
-                            format: int64
-                          update_time:
-                            type: string
-                            description: 最近一次更新词条时间（秒级时间戳）
-                            example: '1649318125'
-                            format: int64
-                          related_meta:
-                            type: object
-                            properties:
-                              users:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                      description: 数据 id
-                                      example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                    title:
-                                      type: string
-                                      description: 标题
-                                      example: 飞书官网
-                                    url:
-                                      type: string
-                                      description: 链接地址
-                                      example: https://www.feishu.cn/hc/zh-CN
-                                  required:
-                                  - id
-                                description: 关联用户信息
-                              chats:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                      description: 数据 id
-                                      example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                    title:
-                                      type: string
-                                      description: 标题
-                                      example: 飞书官网
-                                    url:
-                                      type: string
-                                      description: 链接地址
-                                      example: https://www.feishu.cn/hc/zh-CN
-                                  required:
-                                  - id
-                                description: 关联群组信息
-                              docs:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    title:
-                                      type: string
-                                      description: 标题
-                                      example: 飞书官网
-                                    url:
-                                      type: string
-                                      description: 链接地址
-                                      example: https://www.feishu.cn/hc/zh-CN
-                                description: 关联文档信息
-                              oncalls:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                      description: 数据 id
-                                      example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                    title:
-                                      type: string
-                                      description: 标题
-                                      example: 飞书官网
-                                    url:
-                                      type: string
-                                      description: 链接地址
-                                      example: https://www.feishu.cn/hc/zh-CN
-                                  required:
-                                  - id
-                                description: 关联值班者信息
-                              links:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    title:
-                                      type: string
-                                      description: 标题
-                                      example: 飞书官网
-                                    url:
-                                      type: string
-                                      description: 链接地址
-                                      example: https://www.feishu.cn/hc/zh-CN
-                                description: 关联链接信息
-                              abbreviations:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                      description: 相关其他词条 id
-                                      example: enterprise_51587960
-                                description: 相关词条信息
-                              classifications:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                      description: 唯一分类 ID
-                                      example: '7049606926702837761'
-                                    father_id:
-                                      type: string
-                                      description: 父级分类的 ID
-                                      example: '7049606926702837777'
-                                  required:
-                                  - id
-                                description: 所属分类信息（不支持传入一级分类。词条不可同时属于同一个一级分类下的多个二级分类，一级分类下的二级分类互斥）
-                              images:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    token:
-                                      type: string
-                                      description: 通过文件接口上传后的图片 token
-                                  required:
-                                  - token
-                                description: 上传的相关图片
-                            description: 相关数据
-                          statistics:
-                            type: object
-                            properties:
-                              like_count:
-                                type: integer
-                                description: 点赞数量
-                                example: '55'
-                              dislike_count:
-                                type: integer
-                                description: 点踩数量
-                                example: '3'
-                            required:
-                            - like_count
-                            - dislike_count
-                            description: 统计数据
-                          outer_info:
-                            type: object
-                            properties:
-                              provider:
-                                type: string
-                                description: 数据提供方（不能包含中横线 "-"）
-                                example: 星云
-                              outer_id:
-                                type: string
-                                description: 唯一标识，可用来和其他平台的内容进行绑定。需保证和百科词条唯一对应（不能包含中横线 "-"）
-                                example: 12345abc
-                            required:
-                            - provider
-                            - outer_id
-                            description: 外部 id 关联数据
-                          rich_text:
-                            type: string
-                            description: 富文本格式（当填写富文本内容时，description字段将会失效可不填写），支持的格式参考[企业百科指南](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/overview)中的释义部分
-                            example: '&lt;b&gt;加粗&lt;/b&gt;&lt;i&gt;斜体&lt;/i&gt;&lt;p&gt;&lt;a href="https://feishu.cn"&gt;l链接&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span&gt;企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通&lt;/span&gt;&lt;/p&gt;'
-                          source:
-                            type: integer
-                            description: 词条的创建来源，1：用户主动创建，2：批量导入，3：官方词，4：OpenAPI 创建
-                            example: '1'
-                          i18n_descs:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                language:
-                                  type: integer
-                                  description: 语言类型
-                                  enum:
-                                  - 1
-                                  - 2
-                                  - 3
-                                  x-enum-descriptions:
-                                    '1': 中文
-                                    '2': 英文
-                                    '3': 日文
-                                  example: '1'
-                                description:
-                                  type: string
-                                  description: 纯文本释义
-                                  example: 词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                                rich_text:
-                                  type: string
-                                  description: 富文本描述
-                                  example: <p><span>词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通</span></p>
-                              required:
-                              - language
-                            description: 国际化的词条释义
-                        required:
-                        - main_keys
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -1995,310 +674,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      entities:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 实体词 Id
-                              example: enterprise_40217521
-                            main_keys:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  key:
-                                    type: string
-                                    description: 名称
-                                    example: 企业百科
-                                  display_status:
-                                    type: object
-                                    properties:
-                                      allow_highlight:
-                                        type: boolean
-                                        description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                                        example: 'true'
-                                      allow_search:
-                                        type: boolean
-                                        description: 是否允许在飞书中被搜索到
-                                        example: 'true'
-                                    required:
-                                    - allow_highlight
-                                    - allow_search
-                                    description: 展示状态
-                                required:
-                                - key
-                                - display_status
-                              description: 词条名
-                            aliases:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  key:
-                                    type: string
-                                    description: 名称
-                                    example: 企业百科
-                                  display_status:
-                                    type: object
-                                    properties:
-                                      allow_highlight:
-                                        type: boolean
-                                        description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                                        example: 'true'
-                                      allow_search:
-                                        type: boolean
-                                        description: 是否允许在飞书中被搜索到
-                                        example: 'true'
-                                    required:
-                                    - allow_highlight
-                                    - allow_search
-                                    description: 展示状态
-                                required:
-                                - key
-                                - display_status
-                              description: 别名
-                            description:
-                              type: string
-                              description: 详情描述
-                              example: 企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                            creator:
-                              type: string
-                              description: 创建者
-                              example: ou_30b07b63089ea46518789914dac63d36
-                              format: int64
-                            create_time:
-                              type: string
-                              description: 词条创建时间（秒级时间戳）
-                              example: '1649318125'
-                              format: int64
-                            updater:
-                              type: string
-                              description: 最近一次更新者
-                              example: ou_30b07b63089ea46518789914dac63d36
-                              format: int64
-                            update_time:
-                              type: string
-                              description: 最近一次更新词条时间（秒级时间戳）
-                              example: '1649318125'
-                              format: int64
-                            related_meta:
-                              type: object
-                              properties:
-                                users:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      id:
-                                        type: string
-                                        description: 数据 id
-                                        example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                      title:
-                                        type: string
-                                        description: 标题
-                                        example: 飞书官网
-                                      url:
-                                        type: string
-                                        description: 链接地址
-                                        example: https://www.feishu.cn/hc/zh-CN
-                                    required:
-                                    - id
-                                  description: 关联用户信息
-                                chats:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      id:
-                                        type: string
-                                        description: 数据 id
-                                        example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                      title:
-                                        type: string
-                                        description: 标题
-                                        example: 飞书官网
-                                      url:
-                                        type: string
-                                        description: 链接地址
-                                        example: https://www.feishu.cn/hc/zh-CN
-                                    required:
-                                    - id
-                                  description: 关联群组信息
-                                docs:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      title:
-                                        type: string
-                                        description: 标题
-                                        example: 飞书官网
-                                      url:
-                                        type: string
-                                        description: 链接地址
-                                        example: https://www.feishu.cn/hc/zh-CN
-                                  description: 关联文档信息
-                                oncalls:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      id:
-                                        type: string
-                                        description: 数据 id
-                                        example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                      title:
-                                        type: string
-                                        description: 标题
-                                        example: 飞书官网
-                                      url:
-                                        type: string
-                                        description: 链接地址
-                                        example: https://www.feishu.cn/hc/zh-CN
-                                    required:
-                                    - id
-                                  description: 关联值班者信息
-                                links:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      title:
-                                        type: string
-                                        description: 标题
-                                        example: 飞书官网
-                                      url:
-                                        type: string
-                                        description: 链接地址
-                                        example: https://www.feishu.cn/hc/zh-CN
-                                  description: 关联链接信息
-                                abbreviations:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      id:
-                                        type: string
-                                        description: 相关其他词条 id
-                                        example: enterprise_51587960
-                                  description: 相关词条信息
-                                classifications:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      id:
-                                        type: string
-                                        description: 唯一分类 ID
-                                        example: '7049606926702837761'
-                                      father_id:
-                                        type: string
-                                        description: 父级分类的 ID
-                                        example: '7049606926702837777'
-                                    required:
-                                    - id
-                                  description: 所属分类信息（不支持传入一级分类。词条不可同时属于同一个一级分类下的多个二级分类，一级分类下的二级分类互斥）
-                                images:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      token:
-                                        type: string
-                                        description: 通过文件接口上传后的图片 token
-                                    required:
-                                    - token
-                                  description: 上传的相关图片
-                              description: 相关数据
-                            statistics:
-                              type: object
-                              properties:
-                                like_count:
-                                  type: integer
-                                  description: 点赞数量
-                                  example: '55'
-                                dislike_count:
-                                  type: integer
-                                  description: 点踩数量
-                                  example: '3'
-                              required:
-                              - like_count
-                              - dislike_count
-                              description: 统计数据
-                            outer_info:
-                              type: object
-                              properties:
-                                provider:
-                                  type: string
-                                  description: 数据提供方（不能包含中横线 "-"）
-                                  example: 星云
-                                outer_id:
-                                  type: string
-                                  description: 唯一标识，可用来和其他平台的内容进行绑定。需保证和百科词条唯一对应（不能包含中横线 "-"）
-                                  example: 12345abc
-                              required:
-                              - provider
-                              - outer_id
-                              description: 外部 id 关联数据
-                            rich_text:
-                              type: string
-                              description: 富文本格式（当填写富文本内容时，description字段将会失效可不填写），支持的格式参考[企业百科指南](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/overview)中的释义部分
-                              example: '&lt;b&gt;加粗&lt;/b&gt;&lt;i&gt;斜体&lt;/i&gt;&lt;p&gt;&lt;a href="https://feishu.cn"&gt;l链接&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span&gt;企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通&lt;/span&gt;&lt;/p&gt;'
-                            source:
-                              type: integer
-                              description: 词条的创建来源，1：用户主动创建，2：批量导入，3：官方词，4：OpenAPI 创建
-                              example: '1'
-                            i18n_descs:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  language:
-                                    type: integer
-                                    description: 语言类型
-                                    enum:
-                                    - 1
-                                    - 2
-                                    - 3
-                                    x-enum-descriptions:
-                                      '1': 中文
-                                      '2': 英文
-                                      '3': 日文
-                                    example: '1'
-                                  description:
-                                    type: string
-                                    description: 纯文本释义
-                                    example: 词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                                  rich_text:
-                                    type: string
-                                    description: 富文本描述
-                                    example: <p><span>词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通</span></p>
-                                required:
-                                - language
-                              description: 国际化的词条释义
-                          required:
-                          - main_keys
-                        description: 词条列表
-                      page_token:
-                        type: string
-                        description: 分页标记，当还有下一页时会返回新的 page_token，否则 page_token 为空
-                        example: 408ecac018b2e3518db37275e812aad7bb8ad3e755fc886f322ac6c430ba
-                      has_more:
-                        type: boolean
-                        description: 是否有下一页
-                        example: 'false'
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       - user
@@ -2430,300 +806,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      entity:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 实体词 Id
-                            example: enterprise_40217521
-                          main_keys:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                key:
-                                  type: string
-                                  description: 名称
-                                  example: 企业百科
-                                display_status:
-                                  type: object
-                                  properties:
-                                    allow_highlight:
-                                      type: boolean
-                                      description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                                      example: 'true'
-                                    allow_search:
-                                      type: boolean
-                                      description: 是否允许在飞书中被搜索到
-                                      example: 'true'
-                                  required:
-                                  - allow_highlight
-                                  - allow_search
-                                  description: 展示状态
-                              required:
-                              - key
-                              - display_status
-                            description: 词条名
-                          aliases:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                key:
-                                  type: string
-                                  description: 名称
-                                  example: 企业百科
-                                display_status:
-                                  type: object
-                                  properties:
-                                    allow_highlight:
-                                      type: boolean
-                                      description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                                      example: 'true'
-                                    allow_search:
-                                      type: boolean
-                                      description: 是否允许在飞书中被搜索到
-                                      example: 'true'
-                                  required:
-                                  - allow_highlight
-                                  - allow_search
-                                  description: 展示状态
-                              required:
-                              - key
-                              - display_status
-                            description: 别名
-                          description:
-                            type: string
-                            description: 详情描述
-                            example: 企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                          creator:
-                            type: string
-                            description: 创建者
-                            example: ou_30b07b63089ea46518789914dac63d36
-                            format: int64
-                          create_time:
-                            type: string
-                            description: 词条创建时间（秒级时间戳）
-                            example: '1649318125'
-                            format: int64
-                          updater:
-                            type: string
-                            description: 最近一次更新者
-                            example: ou_30b07b63089ea46518789914dac63d36
-                            format: int64
-                          update_time:
-                            type: string
-                            description: 最近一次更新词条时间（秒级时间戳）
-                            example: '1649318125'
-                            format: int64
-                          related_meta:
-                            type: object
-                            properties:
-                              users:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                      description: 数据 id
-                                      example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                    title:
-                                      type: string
-                                      description: 标题
-                                      example: 飞书官网
-                                    url:
-                                      type: string
-                                      description: 链接地址
-                                      example: https://www.feishu.cn/hc/zh-CN
-                                  required:
-                                  - id
-                                description: 关联用户信息
-                              chats:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                      description: 数据 id
-                                      example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                    title:
-                                      type: string
-                                      description: 标题
-                                      example: 飞书官网
-                                    url:
-                                      type: string
-                                      description: 链接地址
-                                      example: https://www.feishu.cn/hc/zh-CN
-                                  required:
-                                  - id
-                                description: 关联群组信息
-                              docs:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    title:
-                                      type: string
-                                      description: 标题
-                                      example: 飞书官网
-                                    url:
-                                      type: string
-                                      description: 链接地址
-                                      example: https://www.feishu.cn/hc/zh-CN
-                                description: 关联文档信息
-                              oncalls:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                      description: 数据 id
-                                      example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                    title:
-                                      type: string
-                                      description: 标题
-                                      example: 飞书官网
-                                    url:
-                                      type: string
-                                      description: 链接地址
-                                      example: https://www.feishu.cn/hc/zh-CN
-                                  required:
-                                  - id
-                                description: 关联值班者信息
-                              links:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    title:
-                                      type: string
-                                      description: 标题
-                                      example: 飞书官网
-                                    url:
-                                      type: string
-                                      description: 链接地址
-                                      example: https://www.feishu.cn/hc/zh-CN
-                                description: 关联链接信息
-                              abbreviations:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                      description: 相关其他词条 id
-                                      example: enterprise_51587960
-                                description: 相关词条信息
-                              classifications:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                      description: 唯一分类 ID
-                                      example: '7049606926702837761'
-                                    father_id:
-                                      type: string
-                                      description: 父级分类的 ID
-                                      example: '7049606926702837777'
-                                  required:
-                                  - id
-                                description: 所属分类信息（不支持传入一级分类。词条不可同时属于同一个一级分类下的多个二级分类，一级分类下的二级分类互斥）
-                              images:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    token:
-                                      type: string
-                                      description: 通过文件接口上传后的图片 token
-                                  required:
-                                  - token
-                                description: 上传的相关图片
-                            description: 相关数据
-                          statistics:
-                            type: object
-                            properties:
-                              like_count:
-                                type: integer
-                                description: 点赞数量
-                                example: '55'
-                              dislike_count:
-                                type: integer
-                                description: 点踩数量
-                                example: '3'
-                            required:
-                            - like_count
-                            - dislike_count
-                            description: 统计数据
-                          outer_info:
-                            type: object
-                            properties:
-                              provider:
-                                type: string
-                                description: 数据提供方（不能包含中横线 "-"）
-                                example: 星云
-                              outer_id:
-                                type: string
-                                description: 唯一标识，可用来和其他平台的内容进行绑定。需保证和百科词条唯一对应（不能包含中横线 "-"）
-                                example: 12345abc
-                            required:
-                            - provider
-                            - outer_id
-                            description: 外部 id 关联数据
-                          rich_text:
-                            type: string
-                            description: 富文本格式（当填写富文本内容时，description字段将会失效可不填写），支持的格式参考[企业百科指南](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/overview)中的释义部分
-                            example: '&lt;b&gt;加粗&lt;/b&gt;&lt;i&gt;斜体&lt;/i&gt;&lt;p&gt;&lt;a href="https://feishu.cn"&gt;l链接&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span&gt;企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通&lt;/span&gt;&lt;/p&gt;'
-                          source:
-                            type: integer
-                            description: 词条的创建来源，1：用户主动创建，2：批量导入，3：官方词，4：OpenAPI 创建
-                            example: '1'
-                          i18n_descs:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                language:
-                                  type: integer
-                                  description: 语言类型
-                                  enum:
-                                  - 1
-                                  - 2
-                                  - 3
-                                  x-enum-descriptions:
-                                    '1': 中文
-                                    '2': 英文
-                                    '3': 日文
-                                  example: '1'
-                                description:
-                                  type: string
-                                  description: 纯文本释义
-                                  example: 词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                                rich_text:
-                                  type: string
-                                  description: 富文本描述
-                                  example: <p><span>词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通</span></p>
-                              required:
-                              - language
-                            description: 国际化的词条释义
-                        required:
-                        - main_keys
-                        description: 实体词
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       - tenant
@@ -2781,523 +864,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                main_keys:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      key:
-                        type: string
-                        description: 名称
-                        example: 企业百科
-                      display_status:
-                        type: object
-                        properties:
-                          allow_highlight:
-                            type: boolean
-                            description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                            example: 'true'
-                          allow_search:
-                            type: boolean
-                            description: 是否允许在飞书中被搜索到
-                            example: 'true'
-                        required:
-                        - allow_highlight
-                        - allow_search
-                        description: 展示状态
-                    required:
-                    - key
-                    - display_status
-                  description: 词条名
-                aliases:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      key:
-                        type: string
-                        description: 名称
-                        example: 企业百科
-                      display_status:
-                        type: object
-                        properties:
-                          allow_highlight:
-                            type: boolean
-                            description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                            example: 'true'
-                          allow_search:
-                            type: boolean
-                            description: 是否允许在飞书中被搜索到
-                            example: 'true'
-                        required:
-                        - allow_highlight
-                        - allow_search
-                        description: 展示状态
-                    required:
-                    - key
-                    - display_status
-                  description: 别名
-                description:
-                  type: string
-                  description: 详情描述
-                  example: 企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                related_meta:
-                  type: object
-                  properties:
-                    users:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 数据 id
-                            example: 7dab8a3d3cdcc9da365777c7ad535d62
-                          title:
-                            type: string
-                            description: 标题
-                            example: 飞书官网
-                        required:
-                        - id
-                      description: 关联用户信息
-                    chats:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 数据 id
-                            example: 7dab8a3d3cdcc9da365777c7ad535d62
-                        required:
-                        - id
-                      description: 关联群组信息
-                    docs:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          title:
-                            type: string
-                            description: 标题
-                            example: 飞书官网
-                          url:
-                            type: string
-                            description: 链接地址
-                            example: https://www.feishu.cn/hc/zh-CN
-                      description: 关联文档信息
-                    oncalls:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 数据 id
-                            example: 7dab8a3d3cdcc9da365777c7ad535d62
-                        required:
-                        - id
-                      description: 关联值班者信息
-                    links:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          title:
-                            type: string
-                            description: 标题
-                            example: 飞书官网
-                          url:
-                            type: string
-                            description: 链接地址
-                            example: https://www.feishu.cn/hc/zh-CN
-                      description: 关联链接信息
-                    abbreviations:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 相关其他词条 id
-                            example: enterprise_51587960
-                      description: 相关词条信息
-                    classifications:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 唯一分类 ID
-                            example: '7049606926702837761'
-                          father_id:
-                            type: string
-                            description: 父级分类的 ID
-                            example: '7049606926702837777'
-                        required:
-                        - id
-                      description: 所属分类信息（不支持传入一级分类。词条不可同时属于同一个一级分类下的多个二级分类，一级分类下的二级分类互斥）
-                    images:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          token:
-                            type: string
-                            description: 通过文件接口上传后的图片 token
-                        required:
-                        - token
-                      description: 上传的相关图片
-                  description: 相关数据
-                outer_info:
-                  type: object
-                  properties:
-                    provider:
-                      type: string
-                      description: 数据提供方（不能包含中横线 "-"）
-                      example: 星云
-                    outer_id:
-                      type: string
-                      description: 唯一标识，可用来和其他平台的内容进行绑定。需保证和百科词条唯一对应（不能包含中横线 "-"）
-                      example: 12345abc
-                  required:
-                  - provider
-                  - outer_id
-                  description: 外部 id 关联数据
-                rich_text:
-                  type: string
-                  description: 富文本格式（当填写富文本内容时，description字段将会失效可不填写），支持的格式参考[企业百科指南](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/overview)中的释义部分
-                  example: '&lt;b&gt;加粗&lt;/b&gt;&lt;i&gt;斜体&lt;/i&gt;&lt;p&gt;&lt;a href="https://feishu.cn"&gt;l链接&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span&gt;企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通&lt;/span&gt;&lt;/p&gt;'
-                i18n_descs:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      language:
-                        type: integer
-                        description: 语言类型
-                        enum:
-                        - 1
-                        - 2
-                        - 3
-                        x-enum-descriptions:
-                          '1': 中文
-                          '2': 英文
-                          '3': 日文
-                        example: '1'
-                      description:
-                        type: string
-                        description: 纯文本释义
-                        example: 词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                      rich_text:
-                        type: string
-                        description: 富文本描述
-                        example: <p><span>词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通</span></p>
-                    required:
-                    - language
-                  description: 国际化的词条释义
+              $ref: '#/components/schemas/Schema4'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      entity:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 实体词 Id
-                            example: enterprise_40217521
-                          main_keys:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                key:
-                                  type: string
-                                  description: 名称
-                                  example: 企业百科
-                                display_status:
-                                  type: object
-                                  properties:
-                                    allow_highlight:
-                                      type: boolean
-                                      description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                                      example: 'true'
-                                    allow_search:
-                                      type: boolean
-                                      description: 是否允许在飞书中被搜索到
-                                      example: 'true'
-                                  required:
-                                  - allow_highlight
-                                  - allow_search
-                                  description: 展示状态
-                              required:
-                              - key
-                              - display_status
-                            description: 词条名
-                          aliases:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                key:
-                                  type: string
-                                  description: 名称
-                                  example: 企业百科
-                                display_status:
-                                  type: object
-                                  properties:
-                                    allow_highlight:
-                                      type: boolean
-                                      description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                                      example: 'true'
-                                    allow_search:
-                                      type: boolean
-                                      description: 是否允许在飞书中被搜索到
-                                      example: 'true'
-                                  required:
-                                  - allow_highlight
-                                  - allow_search
-                                  description: 展示状态
-                              required:
-                              - key
-                              - display_status
-                            description: 别名
-                          description:
-                            type: string
-                            description: 详情描述
-                            example: 企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                          creator:
-                            type: string
-                            description: 创建者
-                            example: ou_30b07b63089ea46518789914dac63d36
-                            format: int64
-                          create_time:
-                            type: string
-                            description: 词条创建时间（秒级时间戳）
-                            example: '1649318125'
-                            format: int64
-                          updater:
-                            type: string
-                            description: 最近一次更新者
-                            example: ou_30b07b63089ea46518789914dac63d36
-                            format: int64
-                          update_time:
-                            type: string
-                            description: 最近一次更新词条时间（秒级时间戳）
-                            example: '1649318125'
-                            format: int64
-                          related_meta:
-                            type: object
-                            properties:
-                              users:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                      description: 数据 id
-                                      example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                    title:
-                                      type: string
-                                      description: 标题
-                                      example: 飞书官网
-                                    url:
-                                      type: string
-                                      description: 链接地址
-                                      example: https://www.feishu.cn/hc/zh-CN
-                                  required:
-                                  - id
-                                description: 关联用户信息
-                              chats:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                      description: 数据 id
-                                      example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                    title:
-                                      type: string
-                                      description: 标题
-                                      example: 飞书官网
-                                    url:
-                                      type: string
-                                      description: 链接地址
-                                      example: https://www.feishu.cn/hc/zh-CN
-                                  required:
-                                  - id
-                                description: 关联群组信息
-                              docs:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    title:
-                                      type: string
-                                      description: 标题
-                                      example: 飞书官网
-                                    url:
-                                      type: string
-                                      description: 链接地址
-                                      example: https://www.feishu.cn/hc/zh-CN
-                                description: 关联文档信息
-                              oncalls:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                      description: 数据 id
-                                      example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                    title:
-                                      type: string
-                                      description: 标题
-                                      example: 飞书官网
-                                    url:
-                                      type: string
-                                      description: 链接地址
-                                      example: https://www.feishu.cn/hc/zh-CN
-                                  required:
-                                  - id
-                                description: 关联值班者信息
-                              links:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    title:
-                                      type: string
-                                      description: 标题
-                                      example: 飞书官网
-                                    url:
-                                      type: string
-                                      description: 链接地址
-                                      example: https://www.feishu.cn/hc/zh-CN
-                                description: 关联链接信息
-                              abbreviations:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                      description: 相关其他词条 id
-                                      example: enterprise_51587960
-                                description: 相关词条信息
-                              classifications:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                      description: 唯一分类 ID
-                                      example: '7049606926702837761'
-                                    father_id:
-                                      type: string
-                                      description: 父级分类的 ID
-                                      example: '7049606926702837777'
-                                  required:
-                                  - id
-                                description: 所属分类信息（不支持传入一级分类。词条不可同时属于同一个一级分类下的多个二级分类，一级分类下的二级分类互斥）
-                              images:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    token:
-                                      type: string
-                                      description: 通过文件接口上传后的图片 token
-                                  required:
-                                  - token
-                                description: 上传的相关图片
-                            description: 相关数据
-                          statistics:
-                            type: object
-                            properties:
-                              like_count:
-                                type: integer
-                                description: 点赞数量
-                                example: '55'
-                              dislike_count:
-                                type: integer
-                                description: 点踩数量
-                                example: '3'
-                            required:
-                            - like_count
-                            - dislike_count
-                            description: 统计数据
-                          outer_info:
-                            type: object
-                            properties:
-                              provider:
-                                type: string
-                                description: 数据提供方（不能包含中横线 "-"）
-                                example: 星云
-                              outer_id:
-                                type: string
-                                description: 唯一标识，可用来和其他平台的内容进行绑定。需保证和百科词条唯一对应（不能包含中横线 "-"）
-                                example: 12345abc
-                            required:
-                            - provider
-                            - outer_id
-                            description: 外部 id 关联数据
-                          rich_text:
-                            type: string
-                            description: 富文本格式（当填写富文本内容时，description字段将会失效可不填写），支持的格式参考[企业百科指南](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/overview)中的释义部分
-                            example: '&lt;b&gt;加粗&lt;/b&gt;&lt;i&gt;斜体&lt;/i&gt;&lt;p&gt;&lt;a href="https://feishu.cn"&gt;l链接&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span&gt;企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通&lt;/span&gt;&lt;/p&gt;'
-                          source:
-                            type: integer
-                            description: 词条的创建来源，1：用户主动创建，2：批量导入，3：官方词，4：OpenAPI 创建
-                            example: '1'
-                          i18n_descs:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                language:
-                                  type: integer
-                                  description: 语言类型
-                                  enum:
-                                  - 1
-                                  - 2
-                                  - 3
-                                  x-enum-descriptions:
-                                    '1': 中文
-                                    '2': 英文
-                                    '3': 日文
-                                  example: '1'
-                                description:
-                                  type: string
-                                  description: 纯文本释义
-                                  example: 词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                                rich_text:
-                                  type: string
-                                  description: 富文本描述
-                                  example: <p><span>词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通</span></p>
-                              required:
-                              - language
-                            description: 国际化的词条释义
-                        required:
-                        - main_keys
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -3590,310 +1164,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      entities:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 实体词 Id
-                              example: enterprise_40217521
-                            main_keys:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  key:
-                                    type: string
-                                    description: 名称
-                                    example: 企业百科
-                                  display_status:
-                                    type: object
-                                    properties:
-                                      allow_highlight:
-                                        type: boolean
-                                        description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                                        example: 'true'
-                                      allow_search:
-                                        type: boolean
-                                        description: 是否允许在飞书中被搜索到
-                                        example: 'true'
-                                    required:
-                                    - allow_highlight
-                                    - allow_search
-                                    description: 展示状态
-                                required:
-                                - key
-                                - display_status
-                              description: 词条名
-                            aliases:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  key:
-                                    type: string
-                                    description: 名称
-                                    example: 企业百科
-                                  display_status:
-                                    type: object
-                                    properties:
-                                      allow_highlight:
-                                        type: boolean
-                                        description: 是否允许在 IM 和 Doc 等场景进行高亮提示
-                                        example: 'true'
-                                      allow_search:
-                                        type: boolean
-                                        description: 是否允许在飞书中被搜索到
-                                        example: 'true'
-                                    required:
-                                    - allow_highlight
-                                    - allow_search
-                                    description: 展示状态
-                                required:
-                                - key
-                                - display_status
-                              description: 别名
-                            description:
-                              type: string
-                              description: 详情描述
-                              example: 企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                            creator:
-                              type: string
-                              description: 创建者
-                              example: ou_30b07b63089ea46518789914dac63d36
-                              format: int64
-                            create_time:
-                              type: string
-                              description: 词条创建时间（秒级时间戳）
-                              example: '1649318125'
-                              format: int64
-                            updater:
-                              type: string
-                              description: 最近一次更新者
-                              example: ou_30b07b63089ea46518789914dac63d36
-                              format: int64
-                            update_time:
-                              type: string
-                              description: 最近一次更新词条时间（秒级时间戳）
-                              example: '1649318125'
-                              format: int64
-                            related_meta:
-                              type: object
-                              properties:
-                                users:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      id:
-                                        type: string
-                                        description: 数据 id
-                                        example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                      title:
-                                        type: string
-                                        description: 标题
-                                        example: 飞书官网
-                                      url:
-                                        type: string
-                                        description: 链接地址
-                                        example: https://www.feishu.cn/hc/zh-CN
-                                    required:
-                                    - id
-                                  description: 关联用户信息
-                                chats:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      id:
-                                        type: string
-                                        description: 数据 id
-                                        example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                      title:
-                                        type: string
-                                        description: 标题
-                                        example: 飞书官网
-                                      url:
-                                        type: string
-                                        description: 链接地址
-                                        example: https://www.feishu.cn/hc/zh-CN
-                                    required:
-                                    - id
-                                  description: 关联群组信息
-                                docs:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      title:
-                                        type: string
-                                        description: 标题
-                                        example: 飞书官网
-                                      url:
-                                        type: string
-                                        description: 链接地址
-                                        example: https://www.feishu.cn/hc/zh-CN
-                                  description: 关联文档信息
-                                oncalls:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      id:
-                                        type: string
-                                        description: 数据 id
-                                        example: 7dab8a3d3cdcc9da365777c7ad535d62
-                                      title:
-                                        type: string
-                                        description: 标题
-                                        example: 飞书官网
-                                      url:
-                                        type: string
-                                        description: 链接地址
-                                        example: https://www.feishu.cn/hc/zh-CN
-                                    required:
-                                    - id
-                                  description: 关联值班者信息
-                                links:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      title:
-                                        type: string
-                                        description: 标题
-                                        example: 飞书官网
-                                      url:
-                                        type: string
-                                        description: 链接地址
-                                        example: https://www.feishu.cn/hc/zh-CN
-                                  description: 关联链接信息
-                                abbreviations:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      id:
-                                        type: string
-                                        description: 相关其他词条 id
-                                        example: enterprise_51587960
-                                  description: 相关词条信息
-                                classifications:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      id:
-                                        type: string
-                                        description: 唯一分类 ID
-                                        example: '7049606926702837761'
-                                      father_id:
-                                        type: string
-                                        description: 父级分类的 ID
-                                        example: '7049606926702837777'
-                                    required:
-                                    - id
-                                  description: 所属分类信息（不支持传入一级分类。词条不可同时属于同一个一级分类下的多个二级分类，一级分类下的二级分类互斥）
-                                images:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      token:
-                                        type: string
-                                        description: 通过文件接口上传后的图片 token
-                                    required:
-                                    - token
-                                  description: 上传的相关图片
-                              description: 相关数据
-                            statistics:
-                              type: object
-                              properties:
-                                like_count:
-                                  type: integer
-                                  description: 点赞数量
-                                  example: '55'
-                                dislike_count:
-                                  type: integer
-                                  description: 点踩数量
-                                  example: '3'
-                              required:
-                              - like_count
-                              - dislike_count
-                              description: 统计数据
-                            outer_info:
-                              type: object
-                              properties:
-                                provider:
-                                  type: string
-                                  description: 数据提供方（不能包含中横线 "-"）
-                                  example: 星云
-                                outer_id:
-                                  type: string
-                                  description: 唯一标识，可用来和其他平台的内容进行绑定。需保证和百科词条唯一对应（不能包含中横线 "-"）
-                                  example: 12345abc
-                              required:
-                              - provider
-                              - outer_id
-                              description: 外部 id 关联数据
-                            rich_text:
-                              type: string
-                              description: 富文本格式（当填写富文本内容时，description字段将会失效可不填写），支持的格式参考[企业百科指南](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/overview)中的释义部分
-                              example: '&lt;b&gt;加粗&lt;/b&gt;&lt;i&gt;斜体&lt;/i&gt;&lt;p&gt;&lt;a href="https://feishu.cn"&gt;l链接&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span&gt;企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通&lt;/span&gt;&lt;/p&gt;'
-                            source:
-                              type: integer
-                              description: 词条的创建来源，1：用户主动创建，2：批量导入，3：官方词，4：OpenAPI 创建
-                              example: '1'
-                            i18n_descs:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  language:
-                                    type: integer
-                                    description: 语言类型
-                                    enum:
-                                    - 1
-                                    - 2
-                                    - 3
-                                    x-enum-descriptions:
-                                      '1': 中文
-                                      '2': 英文
-                                      '3': 日文
-                                    example: '1'
-                                  description:
-                                    type: string
-                                    description: 纯文本释义
-                                    example: 词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
-                                  rich_text:
-                                    type: string
-                                    description: 富文本描述
-                                    example: <p><span>词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通</span></p>
-                                required:
-                                - language
-                              description: 国际化的词条释义
-                          required:
-                          - main_keys
-                        description: 数据数组
-                      page_token:
-                        type: string
-                        description: 分页标记，当还有下一页时会返回新的 page_token，否则 page_token 为空
-                        example: b152fa6e6f62a291019a04c3a93f365f8ac641910506ff15ff4cad6534e087cb4ed8fa2c
-                      has_more:
-                        type: boolean
-                        description: 是否有下一页
-                        example: 'false'
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       - user
@@ -4080,3 +1351,582 @@ paths:
         msg: param is invalid
       x-lark-rate-limit:
         tier: 4
+components:
+  schemas:
+    Entity:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 实体词 Id
+          example: enterprise_40217521
+        main_keys:
+          type: array
+          items:
+            type: object
+            properties:
+              key:
+                type: string
+                description: 名称
+                example: 企业百科
+              display_status:
+                type: object
+                properties:
+                  allow_highlight:
+                    type: boolean
+                    description: 是否允许在 IM 和 Doc 等场景进行高亮提示
+                    example: 'true'
+                  allow_search:
+                    type: boolean
+                    description: 是否允许在飞书中被搜索到
+                    example: 'true'
+                required:
+                - allow_highlight
+                - allow_search
+                description: 展示状态
+            required:
+            - key
+            - display_status
+          description: 词条名
+        aliases:
+          type: array
+          items:
+            type: object
+            properties:
+              key:
+                type: string
+                description: 名称
+                example: 企业百科
+              display_status:
+                type: object
+                properties:
+                  allow_highlight:
+                    type: boolean
+                    description: 是否允许在 IM 和 Doc 等场景进行高亮提示
+                    example: 'true'
+                  allow_search:
+                    type: boolean
+                    description: 是否允许在飞书中被搜索到
+                    example: 'true'
+                required:
+                - allow_highlight
+                - allow_search
+                description: 展示状态
+            required:
+            - key
+            - display_status
+          description: 别名
+        description:
+          type: string
+          description: 详情描述
+          example: 企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
+        creator:
+          type: string
+          description: 创建者
+          example: ou_30b07b63089ea46518789914dac63d36
+          format: int64
+        create_time:
+          type: string
+          description: 词条创建时间（秒级时间戳）
+          example: '1649318125'
+          format: int64
+        updater:
+          type: string
+          description: 最近一次更新者
+          example: ou_30b07b63089ea46518789914dac63d36
+          format: int64
+        update_time:
+          type: string
+          description: 最近一次更新词条时间（秒级时间戳）
+          example: '1649318125'
+          format: int64
+        related_meta:
+          allOf:
+          - $ref: '#/components/schemas/RelatedMeta'
+          description: 相关数据
+        statistics:
+          type: object
+          properties:
+            like_count:
+              type: integer
+              description: 点赞数量
+              example: '55'
+            dislike_count:
+              type: integer
+              description: 点踩数量
+              example: '3'
+          required:
+          - like_count
+          - dislike_count
+          description: 统计数据
+        outer_info:
+          type: object
+          properties:
+            provider:
+              type: string
+              description: 数据提供方（不能包含中横线 "-"）
+              example: 星云
+            outer_id:
+              type: string
+              description: 唯一标识，可用来和其他平台的内容进行绑定。需保证和百科词条唯一对应（不能包含中横线 "-"）
+              example: 12345abc
+          required:
+          - provider
+          - outer_id
+          description: 外部 id 关联数据
+        rich_text:
+          type: string
+          description: 富文本格式（当填写富文本内容时，description字段将会失效可不填写），支持的格式参考[企业百科指南](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/overview)中的释义部分
+          example: '&lt;b&gt;加粗&lt;/b&gt;&lt;i&gt;斜体&lt;/i&gt;&lt;p&gt;&lt;a href="https://feishu.cn"&gt;l链接&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span&gt;企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通&lt;/span&gt;&lt;/p&gt;'
+        source:
+          type: integer
+          description: 词条的创建来源，1：用户主动创建，2：批量导入，3：官方词，4：OpenAPI 创建
+          example: '1'
+        i18n_descs:
+          type: array
+          items:
+            type: object
+            properties:
+              language:
+                type: integer
+                description: 语言类型
+                enum:
+                - 1
+                - 2
+                - 3
+                x-enum-descriptions:
+                  '1': 中文
+                  '2': 英文
+                  '3': 日文
+                example: '1'
+              description:
+                type: string
+                description: 纯文本释义
+                example: 词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
+              rich_text:
+                type: string
+                description: 富文本描述
+                example: <p><span>词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通</span></p>
+            required:
+            - language
+          description: 国际化的词条释义
+      required:
+      - main_keys
+      description: 实体词
+    RelatedMeta:
+      type: object
+      properties:
+        users:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 数据 id
+                example: 7dab8a3d3cdcc9da365777c7ad535d62
+              title:
+                type: string
+                description: 标题
+                example: 飞书官网
+              url:
+                type: string
+                description: 链接地址
+                example: https://www.feishu.cn/hc/zh-CN
+            required:
+            - id
+          description: 关联用户信息
+        chats:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 数据 id
+                example: 7dab8a3d3cdcc9da365777c7ad535d62
+              title:
+                type: string
+                description: 标题
+                example: 飞书官网
+              url:
+                type: string
+                description: 链接地址
+                example: https://www.feishu.cn/hc/zh-CN
+            required:
+            - id
+          description: 关联群组信息
+        docs:
+          type: array
+          items:
+            type: object
+            properties:
+              title:
+                type: string
+                description: 标题
+                example: 飞书官网
+              url:
+                type: string
+                description: 链接地址
+                example: https://www.feishu.cn/hc/zh-CN
+          description: 关联文档信息
+        oncalls:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 数据 id
+                example: 7dab8a3d3cdcc9da365777c7ad535d62
+              title:
+                type: string
+                description: 标题
+                example: 飞书官网
+              url:
+                type: string
+                description: 链接地址
+                example: https://www.feishu.cn/hc/zh-CN
+            required:
+            - id
+          description: 关联值班者信息
+        links:
+          type: array
+          items:
+            type: object
+            properties:
+              title:
+                type: string
+                description: 标题
+                example: 飞书官网
+              url:
+                type: string
+                description: 链接地址
+                example: https://www.feishu.cn/hc/zh-CN
+          description: 关联链接信息
+        abbreviations:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 相关其他词条 id
+                example: enterprise_51587960
+          description: 相关词条信息
+        classifications:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 唯一分类 ID
+                example: '7049606926702837761'
+              father_id:
+                type: string
+                description: 父级分类的 ID
+                example: '7049606926702837777'
+            required:
+            - id
+          description: 所属分类信息（不支持传入一级分类。词条不可同时属于同一个一级分类下的多个二级分类，一级分类下的二级分类互斥）
+        images:
+          type: array
+          items:
+            type: object
+            properties:
+              token:
+                type: string
+                description: 通过文件接口上传后的图片 token
+            required:
+            - token
+          description: 上传的相关图片
+      description: 相关数据
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    Data:
+      type: object
+      properties:
+        entity:
+          $ref: '#/components/schemas/Entity'
+    Schema2:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data2'
+    Schema3:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data3'
+    Data2:
+      type: object
+      properties:
+        entities:
+          type: array
+          items:
+            $ref: '#/components/schemas/Entity'
+          description: 词条列表
+        page_token:
+          type: string
+          description: 分页标记，当还有下一页时会返回新的 page_token，否则 page_token 为空
+          example: 408ecac018b2e3518db37275e812aad7bb8ad3e755fc886f322ac6c430ba
+        has_more:
+          type: boolean
+          description: 是否有下一页
+          example: 'false'
+    Data3:
+      type: object
+      properties:
+        draft:
+          $ref: '#/components/schemas/Draft'
+    Draft:
+      type: object
+      properties:
+        draft_id:
+          type: string
+          description: 草稿 Id
+          example: '42322'
+          format: int64
+        entity:
+          allOf:
+          - $ref: '#/components/schemas/Entity'
+          description: 实体词
+    Schema4:
+      type: object
+      properties:
+        main_keys:
+          type: array
+          items:
+            type: object
+            properties:
+              key:
+                type: string
+                description: 名称
+                example: 企业百科
+              display_status:
+                type: object
+                properties:
+                  allow_highlight:
+                    type: boolean
+                    description: 是否允许在 IM 和 Doc 等场景进行高亮提示
+                    example: 'true'
+                  allow_search:
+                    type: boolean
+                    description: 是否允许在飞书中被搜索到
+                    example: 'true'
+                required:
+                - allow_highlight
+                - allow_search
+                description: 展示状态
+            required:
+            - key
+            - display_status
+          description: 词条名
+        aliases:
+          type: array
+          items:
+            type: object
+            properties:
+              key:
+                type: string
+                description: 名称
+                example: 企业百科
+              display_status:
+                type: object
+                properties:
+                  allow_highlight:
+                    type: boolean
+                    description: 是否允许在 IM 和 Doc 等场景进行高亮提示
+                    example: 'true'
+                  allow_search:
+                    type: boolean
+                    description: 是否允许在飞书中被搜索到
+                    example: 'true'
+                required:
+                - allow_highlight
+                - allow_search
+                description: 展示状态
+            required:
+            - key
+            - display_status
+          description: 别名
+        description:
+          type: string
+          description: 详情描述
+          example: 企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
+        related_meta:
+          allOf:
+          - $ref: '#/components/schemas/RelatedMeta2'
+          description: 相关数据
+        outer_info:
+          type: object
+          properties:
+            provider:
+              type: string
+              description: 数据提供方（不能包含中横线 "-"）
+              example: 星云
+            outer_id:
+              type: string
+              description: 唯一标识，可用来和其他平台的内容进行绑定。需保证和百科词条唯一对应（不能包含中横线 "-"）
+              example: 12345abc
+          required:
+          - provider
+          - outer_id
+          description: 外部 id 关联数据
+        rich_text:
+          type: string
+          description: 富文本格式（当填写富文本内容时，description字段将会失效可不填写），支持的格式参考[企业百科指南](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1/overview)中的释义部分
+          example: '&lt;b&gt;加粗&lt;/b&gt;&lt;i&gt;斜体&lt;/i&gt;&lt;p&gt;&lt;a href="https://feishu.cn"&gt;l链接&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span&gt;企业百科是飞书提供的一款知识管理工具，通过企业百科可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通&lt;/span&gt;&lt;/p&gt;'
+        i18n_descs:
+          type: array
+          items:
+            type: object
+            properties:
+              language:
+                type: integer
+                description: 语言类型
+                enum:
+                - 1
+                - 2
+                - 3
+                x-enum-descriptions:
+                  '1': 中文
+                  '2': 英文
+                  '3': 日文
+                example: '1'
+              description:
+                type: string
+                description: 纯文本释义
+                example: 词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通
+              rich_text:
+                type: string
+                description: 富文本描述
+                example: <p><span>词典是飞书提供的一款知识管理工具，通过飞书词典可以帮助企业将分散的知识信息进行聚合，并通过UGC的方式，促进企业知识的保鲜和流通</span></p>
+            required:
+            - language
+          description: 国际化的词条释义
+    RelatedMeta2:
+      type: object
+      properties:
+        users:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 数据 id
+                example: 7dab8a3d3cdcc9da365777c7ad535d62
+              title:
+                type: string
+                description: 标题
+                example: 飞书官网
+            required:
+            - id
+          description: 关联用户信息
+        chats:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 数据 id
+                example: 7dab8a3d3cdcc9da365777c7ad535d62
+            required:
+            - id
+          description: 关联群组信息
+        docs:
+          type: array
+          items:
+            type: object
+            properties:
+              title:
+                type: string
+                description: 标题
+                example: 飞书官网
+              url:
+                type: string
+                description: 链接地址
+                example: https://www.feishu.cn/hc/zh-CN
+          description: 关联文档信息
+        oncalls:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 数据 id
+                example: 7dab8a3d3cdcc9da365777c7ad535d62
+            required:
+            - id
+          description: 关联值班者信息
+        links:
+          type: array
+          items:
+            type: object
+            properties:
+              title:
+                type: string
+                description: 标题
+                example: 飞书官网
+              url:
+                type: string
+                description: 链接地址
+                example: https://www.feishu.cn/hc/zh-CN
+          description: 关联链接信息
+        abbreviations:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 相关其他词条 id
+                example: enterprise_51587960
+          description: 相关词条信息
+        classifications:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 唯一分类 ID
+                example: '7049606926702837761'
+              father_id:
+                type: string
+                description: 父级分类的 ID
+                example: '7049606926702837777'
+            required:
+            - id
+          description: 所属分类信息（不支持传入一级分类。词条不可同时属于同一个一级分类下的多个二级分类，一级分类下的二级分类互斥）
+        images:
+          type: array
+          items:
+            type: object
+            properties:
+              token:
+                type: string
+                description: 通过文件接口上传后的图片 token
+            required:
+            - token
+          description: 上传的相关图片
+      description: 相关数据

@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: contact
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -246,104 +246,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              description: 部门名称
-                              example: DemoName
-                            i18n_name:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 部门的中文名
-                                ja_jp:
-                                  type: string
-                                  description: 部门的日文名
-                                en_us:
-                                  type: string
-                                  description: 部门的英文名
-                              description: 国际化的部门名称
-                            parent_department_id:
-                              type: string
-                              description: 父部门的部门ID
-                              example: D067
-                            department_id:
-                              type: string
-                              description: 本部门的自定义部门ID
-                            open_department_id:
-                              type: string
-                              description: 部门的open_id
-                            leader_user_id:
-                              type: string
-                              description: 部门主管用户ID
-                              example: ou_7dab8a3d3cdcc9da365777c7ad535d62
-                            chat_id:
-                              type: string
-                              description: 部门群ID
-                              example: oc_5ad11d72b830411d72b836c20
-                              x-lark-id-types:
-                                chat_id: chat
-                            order:
-                              type: string
-                              description: 部门的排序
-                              example: '100'
-                              format: int64
-                            unit_ids:
-                              type: array
-                              items:
-                                type: string
-                              description: 部门单位自定义ID列表，当前只支持一个
-                            member_count:
-                              type: integer
-                              description: 部门下用户的个数
-                              example: '100'
-                            status:
-                              type: object
-                              properties:
-                                is_deleted:
-                                  type: boolean
-                                  description: 是否被删除
-                              description: 部门状态
-                            leaders:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  leaderType:
-                                    type: integer
-                                    description: 负责人类型
-                                    enum:
-                                    - 1
-                                    - 2
-                                    x-enum-descriptions:
-                                      '1': 主负责人
-                                      '2': 副负责人
-                                  leaderID:
-                                    type: string
-                                    description: 负责人ID
-                                required:
-                                - leaderType
-                                - leaderID
-                              description: 部门负责人
-                            group_chat_employee_types:
-                              type: array
-                              items:
-                                type: integer
-                              description: 部门群雇员类型限制
-                            department_hrbps:
-                              type: array
-                              items:
-                                type: string
-                              description: 部门HRBP
-                            primary_member_count:
-                              type: integer
-                              description: 部门下主属用户的个数
-                              example: '100'
-                          required:
-                          - name
-                          - parent_department_id
+                          $ref: '#/components/schemas/Department'
                         description: 查询到的部门信息，其中异常的部门ID不返回结果。
       x-lark-access-tokens:
       - tenant
@@ -351,13 +254,13 @@ paths:
       x-lark-scopes:
       - contact:contact.base:readonly
       x-lark-field-scopes:
-      - contact:department.hrbp:readonly
-      - contact:user.employee_id:readonly
       - contact:contact:readonly
       - contact:department.base:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
       - contact:department.organize:readonly
+      - contact:department.hrbp:readonly
+      - contact:user.employee_id:readonly
       x-lark-error-mappings:
       - code: 40001
         httpCode: 400
@@ -485,123 +388,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      has_more:
-                        type: boolean
-                        description: 是否有下一页数据
-                      page_token:
-                        type: string
-                        description: 下一页分页的token
-                      items:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              description: 部门名称
-                              example: DemoName
-                            i18n_name:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 部门的中文名
-                                ja_jp:
-                                  type: string
-                                  description: 部门的日文名
-                                en_us:
-                                  type: string
-                                  description: 部门的英文名
-                              description: 国际化的部门名称
-                            parent_department_id:
-                              type: string
-                              description: 父部门的部门ID
-                              example: D067
-                            department_id:
-                              type: string
-                              description: 本部门的自定义部门ID
-                            open_department_id:
-                              type: string
-                              description: 部门的open_id
-                            leader_user_id:
-                              type: string
-                              description: 部门主管用户ID
-                              example: ou_7dab8a3d3cdcc9da365777c7ad535d62
-                            chat_id:
-                              type: string
-                              description: 部门群ID
-                              example: oc_5ad11d72b830411d72b836c20
-                              x-lark-id-types:
-                                chat_id: chat
-                            order:
-                              type: string
-                              description: 部门的排序
-                              example: '100'
-                              format: int64
-                            unit_ids:
-                              type: array
-                              items:
-                                type: string
-                              description: 部门单位自定义ID列表，当前只支持一个
-                            member_count:
-                              type: integer
-                              description: 部门下用户的个数
-                              example: '100'
-                            status:
-                              type: object
-                              properties:
-                                is_deleted:
-                                  type: boolean
-                                  description: 是否被删除
-                              description: 部门状态
-                            leaders:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  leaderType:
-                                    type: integer
-                                    description: 负责人类型
-                                    enum:
-                                    - 1
-                                    - 2
-                                    x-enum-descriptions:
-                                      '1': 主负责人
-                                      '2': 副负责人
-                                  leaderID:
-                                    type: string
-                                    description: 负责人ID
-                                required:
-                                - leaderType
-                                - leaderID
-                              description: 部门负责人
-                            group_chat_employee_types:
-                              type: array
-                              items:
-                                type: integer
-                              description: 部门群雇员类型限制
-                            department_hrbps:
-                              type: array
-                              items:
-                                type: string
-                              description: 部门HRBP
-                            primary_member_count:
-                              type: integer
-                              description: 部门下主属用户的个数
-                              example: '100'
-                          required:
-                          - name
-                          - parent_department_id
-                        description: 部门列表
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       - user
@@ -612,13 +399,13 @@ paths:
       - contact:contact:readonly
       - contact:contact:readonly_as_app
       x-lark-field-scopes:
-      - contact:department.hrbp:readonly
-      - contact:user.employee_id:readonly
       - contact:contact:readonly
       - contact:department.base:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
       - contact:department.organize:readonly
+      - contact:department.hrbp:readonly
+      - contact:user.employee_id:readonly
       x-lark-error-mappings:
       - code: 43010
         httpCode: 400
@@ -793,114 +580,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      department:
-                        type: object
-                        properties:
-                          name:
-                            type: string
-                            description: 部门名称
-                            example: DemoName
-                          i18n_name:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 部门的中文名
-                              ja_jp:
-                                type: string
-                                description: 部门的日文名
-                              en_us:
-                                type: string
-                                description: 部门的英文名
-                            description: 国际化的部门名称
-                          parent_department_id:
-                            type: string
-                            description: 父部门的部门ID
-                            example: D067
-                          department_id:
-                            type: string
-                            description: 本部门的自定义部门ID
-                          open_department_id:
-                            type: string
-                            description: 部门的open_id
-                          leader_user_id:
-                            type: string
-                            description: 部门主管用户ID
-                            example: ou_7dab8a3d3cdcc9da365777c7ad535d62
-                          chat_id:
-                            type: string
-                            description: 部门群ID
-                            example: oc_5ad11d72b830411d72b836c20
-                            x-lark-id-types:
-                              chat_id: chat
-                          order:
-                            type: string
-                            description: 部门的排序
-                            example: '100'
-                            format: int64
-                          unit_ids:
-                            type: array
-                            items:
-                              type: string
-                            description: 部门单位自定义ID列表，当前只支持一个
-                          member_count:
-                            type: integer
-                            description: 部门下用户的个数
-                            example: '100'
-                          status:
-                            type: object
-                            properties:
-                              is_deleted:
-                                type: boolean
-                                description: 是否被删除
-                            description: 部门状态
-                          leaders:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                leaderType:
-                                  type: integer
-                                  description: 负责人类型
-                                  enum:
-                                  - 1
-                                  - 2
-                                  x-enum-descriptions:
-                                    '1': 主负责人
-                                    '2': 副负责人
-                                leaderID:
-                                  type: string
-                                  description: 负责人ID
-                              required:
-                              - leaderType
-                              - leaderID
-                            description: 部门负责人
-                          group_chat_employee_types:
-                            type: array
-                            items:
-                              type: integer
-                            description: 部门群雇员类型限制
-                          department_hrbps:
-                            type: array
-                            items:
-                              type: string
-                            description: 部门HRBP
-                          primary_member_count:
-                            type: integer
-                            description: 部门下主属用户的个数
-                            example: '100'
-                        required:
-                        - name
-                        - parent_department_id
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -1115,122 +795,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      has_more:
-                        type: boolean
-                        description: 是否有下一页数据
-                      page_token:
-                        type: string
-                        description: 下一页分页的token
-                      items:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              description: 部门名称
-                              example: DemoName
-                            i18n_name:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 部门的中文名
-                                ja_jp:
-                                  type: string
-                                  description: 部门的日文名
-                                en_us:
-                                  type: string
-                                  description: 部门的英文名
-                              description: 国际化的部门名称
-                            parent_department_id:
-                              type: string
-                              description: 父部门的部门ID
-                              example: D067
-                            department_id:
-                              type: string
-                              description: 本部门的自定义部门ID
-                            open_department_id:
-                              type: string
-                              description: 部门的open_id
-                            leader_user_id:
-                              type: string
-                              description: 部门主管用户ID
-                              example: ou_7dab8a3d3cdcc9da365777c7ad535d62
-                            chat_id:
-                              type: string
-                              description: 部门群ID
-                              example: oc_5ad11d72b830411d72b836c20
-                              x-lark-id-types:
-                                chat_id: chat
-                            order:
-                              type: string
-                              description: 部门的排序
-                              example: '100'
-                              format: int64
-                            unit_ids:
-                              type: array
-                              items:
-                                type: string
-                              description: 部门单位自定义ID列表，当前只支持一个
-                            member_count:
-                              type: integer
-                              description: 部门下用户的个数
-                              example: '100'
-                            status:
-                              type: object
-                              properties:
-                                is_deleted:
-                                  type: boolean
-                                  description: 是否被删除
-                              description: 部门状态
-                            leaders:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  leaderType:
-                                    type: integer
-                                    description: 负责人类型
-                                    enum:
-                                    - 1
-                                    - 2
-                                    x-enum-descriptions:
-                                      '1': 主负责人
-                                      '2': 副负责人
-                                  leaderID:
-                                    type: string
-                                    description: 负责人ID
-                                required:
-                                - leaderType
-                                - leaderID
-                              description: 部门负责人
-                            group_chat_employee_types:
-                              type: array
-                              items:
-                                type: integer
-                              description: 部门群雇员类型限制
-                            department_hrbps:
-                              type: array
-                              items:
-                                type: string
-                              description: 部门HRBP
-                            primary_member_count:
-                              type: integer
-                              description: 部门下主属用户的个数
-                              example: '100'
-                          required:
-                          - name
-                          - parent_department_id
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       - user
@@ -1241,13 +806,13 @@ paths:
       - contact:contact:readonly
       - contact:contact:readonly_as_app
       x-lark-field-scopes:
-      - contact:contact:readonly
       - contact:department.base:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
       - contact:department.organize:readonly
       - contact:department.hrbp:readonly
       - contact:user.employee_id:readonly
+      - contact:contact:readonly
       x-lark-error-mappings:
       - code: 43010
         httpCode: 400
@@ -1433,114 +998,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      department:
-                        type: object
-                        properties:
-                          name:
-                            type: string
-                            description: 部门名称
-                            example: DemoName
-                          i18n_name:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 部门的中文名
-                              ja_jp:
-                                type: string
-                                description: 部门的日文名
-                              en_us:
-                                type: string
-                                description: 部门的英文名
-                            description: 国际化的部门名称
-                          parent_department_id:
-                            type: string
-                            description: 父部门的部门ID
-                            example: D067
-                          department_id:
-                            type: string
-                            description: 本部门的自定义部门ID
-                          open_department_id:
-                            type: string
-                            description: 部门的open_id
-                          leader_user_id:
-                            type: string
-                            description: 部门主管用户ID
-                            example: ou_7dab8a3d3cdcc9da365777c7ad535d62
-                          chat_id:
-                            type: string
-                            description: 部门群ID
-                            example: oc_5ad11d72b830411d72b836c20
-                            x-lark-id-types:
-                              chat_id: chat
-                          order:
-                            type: string
-                            description: 部门的排序
-                            example: '100'
-                            format: int64
-                          unit_ids:
-                            type: array
-                            items:
-                              type: string
-                            description: 部门单位自定义ID列表，当前只支持一个
-                          member_count:
-                            type: integer
-                            description: 部门下用户的个数
-                            example: '100'
-                          status:
-                            type: object
-                            properties:
-                              is_deleted:
-                                type: boolean
-                                description: 是否被删除
-                            description: 部门状态
-                          leaders:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                leaderType:
-                                  type: integer
-                                  description: 负责人类型
-                                  enum:
-                                  - 1
-                                  - 2
-                                  x-enum-descriptions:
-                                    '1': 主负责人
-                                    '2': 副负责人
-                                leaderID:
-                                  type: string
-                                  description: 负责人ID
-                              required:
-                              - leaderType
-                              - leaderID
-                            description: 部门负责人
-                          group_chat_employee_types:
-                            type: array
-                            items:
-                              type: integer
-                            description: 部门群雇员类型限制
-                          department_hrbps:
-                            type: array
-                            items:
-                              type: string
-                            description: 部门HRBP
-                          primary_member_count:
-                            type: integer
-                            description: 部门下主属用户的个数
-                            example: '100'
-                        required:
-                        - name
-                        - parent_department_id
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       - user
@@ -1550,13 +1008,13 @@ paths:
       - contact:contact:readonly
       - contact:contact:readonly_as_app
       x-lark-field-scopes:
-      - contact:department.hrbp:readonly
-      - contact:user.employee_id:readonly
       - contact:contact:readonly
       - contact:department.base:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
       - contact:department.organize:readonly
+      - contact:department.hrbp:readonly
+      - contact:user.employee_id:readonly
       x-lark-error-mappings:
       - code: 40001
         httpCode: 400
@@ -1718,126 +1176,19 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      department:
-                        type: object
-                        properties:
-                          name:
-                            type: string
-                            description: 部门名称
-                            example: DemoName
-                          i18n_name:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 部门的中文名
-                              ja_jp:
-                                type: string
-                                description: 部门的日文名
-                              en_us:
-                                type: string
-                                description: 部门的英文名
-                            description: 国际化的部门名称
-                          parent_department_id:
-                            type: string
-                            description: 父部门的部门ID
-                            example: D067
-                          department_id:
-                            type: string
-                            description: 本部门的自定义部门ID
-                          open_department_id:
-                            type: string
-                            description: 部门的open_id
-                          leader_user_id:
-                            type: string
-                            description: 部门主管用户ID
-                            example: ou_7dab8a3d3cdcc9da365777c7ad535d62
-                          chat_id:
-                            type: string
-                            description: 部门群ID
-                            example: oc_5ad11d72b830411d72b836c20
-                            x-lark-id-types:
-                              chat_id: chat
-                          order:
-                            type: string
-                            description: 部门的排序
-                            example: '100'
-                            format: int64
-                          unit_ids:
-                            type: array
-                            items:
-                              type: string
-                            description: 部门单位自定义ID列表，当前只支持一个
-                          member_count:
-                            type: integer
-                            description: 部门下用户的个数
-                            example: '100'
-                          status:
-                            type: object
-                            properties:
-                              is_deleted:
-                                type: boolean
-                                description: 是否被删除
-                            description: 部门状态
-                          leaders:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                leaderType:
-                                  type: integer
-                                  description: 负责人类型
-                                  enum:
-                                  - 1
-                                  - 2
-                                  x-enum-descriptions:
-                                    '1': 主负责人
-                                    '2': 副负责人
-                                leaderID:
-                                  type: string
-                                  description: 负责人ID
-                              required:
-                              - leaderType
-                              - leaderID
-                            description: 部门负责人
-                          group_chat_employee_types:
-                            type: array
-                            items:
-                              type: integer
-                            description: 部门群雇员类型限制
-                          department_hrbps:
-                            type: array
-                            items:
-                              type: string
-                            description: 部门HRBP
-                          primary_member_count:
-                            type: integer
-                            description: 部门下主属用户的个数
-                            example: '100'
-                        required:
-                        - name
-                        - parent_department_id
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
       - contact:contact
       x-lark-field-scopes:
+      - contact:contact:access_as_app
+      - contact:contact:readonly_as_app
+      - contact:department.organize:readonly
       - contact:department.hrbp:readonly
       - contact:user.employee_id:readonly
       - contact:contact:readonly
       - contact:department.base:readonly
-      - contact:contact:access_as_app
-      - contact:contact:readonly_as_app
-      - contact:department.organize:readonly
       x-lark-error-mappings:
       - code: 43005
         httpCode: 400
@@ -2179,12 +1530,12 @@ paths:
       x-lark-scopes:
       - contact:contact
       x-lark-field-scopes:
+      - contact:contact:readonly_as_app
+      - contact:department.organize:readonly
       - contact:user.employee_id:readonly
       - contact:contact:readonly
       - contact:department.base:readonly
       - contact:contact:access_as_app
-      - contact:contact:readonly_as_app
-      - contact:department.organize:readonly
       x-lark-error-mappings:
       - code: 43005
         httpCode: 400
@@ -2367,123 +1718,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      has_more:
-                        type: boolean
-                        description: 是否有下一页数据
-                      page_token:
-                        type: string
-                        description: 下一页分页的token
-                      items:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              description: 部门名称
-                              example: DemoName
-                            i18n_name:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 部门的中文名
-                                ja_jp:
-                                  type: string
-                                  description: 部门的日文名
-                                en_us:
-                                  type: string
-                                  description: 部门的英文名
-                              description: 国际化的部门名称
-                            parent_department_id:
-                              type: string
-                              description: 父部门的部门ID
-                              example: D067
-                            department_id:
-                              type: string
-                              description: 本部门的自定义部门ID
-                            open_department_id:
-                              type: string
-                              description: 部门的open_id
-                            leader_user_id:
-                              type: string
-                              description: 部门主管用户ID
-                              example: ou_7dab8a3d3cdcc9da365777c7ad535d62
-                            chat_id:
-                              type: string
-                              description: 部门群ID
-                              example: oc_5ad11d72b830411d72b836c20
-                              x-lark-id-types:
-                                chat_id: chat
-                            order:
-                              type: string
-                              description: 部门的排序
-                              example: '100'
-                              format: int64
-                            unit_ids:
-                              type: array
-                              items:
-                                type: string
-                              description: 部门单位自定义ID列表，当前只支持一个
-                            member_count:
-                              type: integer
-                              description: 部门下用户的个数
-                              example: '100'
-                            status:
-                              type: object
-                              properties:
-                                is_deleted:
-                                  type: boolean
-                                  description: 是否被删除
-                              description: 部门状态
-                            leaders:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  leaderType:
-                                    type: integer
-                                    description: 负责人类型
-                                    enum:
-                                    - 1
-                                    - 2
-                                    x-enum-descriptions:
-                                      '1': 主负责人
-                                      '2': 副负责人
-                                  leaderID:
-                                    type: string
-                                    description: 负责人ID
-                                required:
-                                - leaderType
-                                - leaderID
-                              description: 部门负责人
-                            group_chat_employee_types:
-                              type: array
-                              items:
-                                type: integer
-                              description: 部门群雇员类型限制
-                            department_hrbps:
-                              type: array
-                              items:
-                                type: string
-                              description: 部门HRBP
-                            primary_member_count:
-                              type: integer
-                              description: 部门下主属用户的个数
-                              example: '100'
-                          required:
-                          - name
-                          - parent_department_id
-                        description: 部门列表
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       - user
@@ -2494,13 +1729,13 @@ paths:
       - contact:contact:readonly
       - contact:contact:readonly_as_app
       x-lark-field-scopes:
+      - contact:contact:readonly_as_app
       - contact:department.organize:readonly
       - contact:department.hrbp:readonly
       - contact:user.employee_id:readonly
       - contact:contact:readonly
       - contact:department.base:readonly
       - contact:contact:access_as_app
-      - contact:contact:readonly_as_app
       x-lark-error-mappings:
       - code: 43001
         httpCode: 409
@@ -2668,104 +1903,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              description: 部门名称
-                              example: DemoName
-                            i18n_name:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 部门的中文名
-                                ja_jp:
-                                  type: string
-                                  description: 部门的日文名
-                                en_us:
-                                  type: string
-                                  description: 部门的英文名
-                              description: 国际化的部门名称
-                            parent_department_id:
-                              type: string
-                              description: 父部门的部门ID
-                              example: D067
-                            department_id:
-                              type: string
-                              description: 本部门的自定义部门ID
-                            open_department_id:
-                              type: string
-                              description: 部门的open_id
-                            leader_user_id:
-                              type: string
-                              description: 部门主管用户ID
-                              example: ou_7dab8a3d3cdcc9da365777c7ad535d62
-                            chat_id:
-                              type: string
-                              description: 部门群ID
-                              example: oc_5ad11d72b830411d72b836c20
-                              x-lark-id-types:
-                                chat_id: chat
-                            order:
-                              type: string
-                              description: 部门的排序
-                              example: '100'
-                              format: int64
-                            unit_ids:
-                              type: array
-                              items:
-                                type: string
-                              description: 部门单位自定义ID列表，当前只支持一个
-                            member_count:
-                              type: integer
-                              description: 部门下用户的个数
-                              example: '100'
-                            status:
-                              type: object
-                              properties:
-                                is_deleted:
-                                  type: boolean
-                                  description: 是否被删除
-                              description: 部门状态
-                            leaders:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  leaderType:
-                                    type: integer
-                                    description: 负责人类型
-                                    enum:
-                                    - 1
-                                    - 2
-                                    x-enum-descriptions:
-                                      '1': 主负责人
-                                      '2': 副负责人
-                                  leaderID:
-                                    type: string
-                                    description: 负责人ID
-                                required:
-                                - leaderType
-                                - leaderID
-                              description: 部门负责人
-                            group_chat_employee_types:
-                              type: array
-                              items:
-                                type: integer
-                              description: 部门群雇员类型限制
-                            department_hrbps:
-                              type: array
-                              items:
-                                type: string
-                              description: 部门HRBP
-                            primary_member_count:
-                              type: integer
-                              description: 部门下主属用户的个数
-                              example: '100'
-                          required:
-                          - name
-                          - parent_department_id
+                          $ref: '#/components/schemas/Department'
                         description: 部门列表
                       page_token:
                         type: string
@@ -2974,104 +2112,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                content:
-                  type: string
-                  description: 枚举内容
-                enum_type:
-                  type: integer
-                  description: 类型
-                  enum:
-                  - 1
-                  - 2
-                  x-enum-descriptions:
-                    '1': 内置类型
-                    '2': 自定义
-                enum_status:
-                  type: integer
-                  description: 类型
-                  enum:
-                  - 1
-                  - 2
-                  x-enum-descriptions:
-                    '1': 激活
-                    '2': 未激活
-                i18n_content:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      locale:
-                        type: string
-                        description: 语言
-                      value:
-                        type: string
-                        description: i18n内容
-                  description: i18n定义
+              $ref: '#/components/schemas/Schema9'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      employee_type_enum:
-                        type: object
-                        properties:
-                          enum_id:
-                            type: string
-                            description: 枚举值id
-                          enum_value:
-                            type: string
-                            description: 枚举值
-                            format: int64
-                          content:
-                            type: string
-                            description: 枚举内容
-                          enum_type:
-                            type: integer
-                            description: 类型
-                            enum:
-                            - 1
-                            - 2
-                            x-enum-descriptions:
-                              '1': 内置类型
-                              '2': 自定义
-                          enum_status:
-                            type: integer
-                            description: 类型
-                            enum:
-                            - 1
-                            - 2
-                            x-enum-descriptions:
-                              '1': 激活
-                              '2': 未激活
-                          i18n_content:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                locale:
-                                  type: string
-                                  description: 语言
-                                value:
-                                  type: string
-                                  description: i18n内容
-                            description: i18n定义
-                        required:
-                        - content
-                        - enum_type
-                        - enum_status
-                        description: 创建人员类型接口
+                $ref: '#/components/schemas/Schema5'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -3128,52 +2176,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            enum_id:
-                              type: string
-                              description: 枚举值id
-                            enum_value:
-                              type: string
-                              description: 枚举值
-                              format: int64
-                            content:
-                              type: string
-                              description: 枚举内容
-                            enum_type:
-                              type: integer
-                              description: 类型
-                              enum:
-                              - 1
-                              - 2
-                              x-enum-descriptions:
-                                '1': 内置类型
-                                '2': 自定义
-                            enum_status:
-                              type: integer
-                              description: 类型
-                              enum:
-                              - 1
-                              - 2
-                              x-enum-descriptions:
-                                '1': 激活
-                                '2': 未激活
-                            i18n_content:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  locale:
-                                    type: string
-                                    description: 语言
-                                  value:
-                                    type: string
-                                    description: i18n内容
-                              description: i18n定义
-                          required:
-                          - content
-                          - enum_type
-                          - enum_status
+                          $ref: '#/components/schemas/EmployeeTypeEnum'
                         description: 雇员类型列表
                       has_more:
                         type: boolean
@@ -3248,103 +2251,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                content:
-                  type: string
-                  description: 枚举内容
-                enum_type:
-                  type: integer
-                  description: 类型
-                  enum:
-                  - 1
-                  - 2
-                  x-enum-descriptions:
-                    '1': 内置类型
-                    '2': 自定义
-                enum_status:
-                  type: integer
-                  description: 类型
-                  enum:
-                  - 1
-                  - 2
-                  x-enum-descriptions:
-                    '1': 激活
-                    '2': 未激活
-                i18n_content:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      locale:
-                        type: string
-                        description: 语言
-                      value:
-                        type: string
-                        description: i18n内容
-                  description: i18n定义
+              $ref: '#/components/schemas/Schema9'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      employee_type_enum:
-                        type: object
-                        properties:
-                          enum_id:
-                            type: string
-                            description: 枚举值id
-                          enum_value:
-                            type: string
-                            description: 枚举值
-                            format: int64
-                          content:
-                            type: string
-                            description: 枚举内容
-                          enum_type:
-                            type: integer
-                            description: 类型
-                            enum:
-                            - 1
-                            - 2
-                            x-enum-descriptions:
-                              '1': 内置类型
-                              '2': 自定义
-                          enum_status:
-                            type: integer
-                            description: 类型
-                            enum:
-                            - 1
-                            - 2
-                            x-enum-descriptions:
-                              '1': 激活
-                              '2': 未激活
-                          i18n_content:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                locale:
-                                  type: string
-                                  description: 语言
-                                value:
-                                  type: string
-                                  description: i18n内容
-                            description: i18n定义
-                        required:
-                        - content
-                        - enum_type
-                        - enum_status
+                $ref: '#/components/schemas/Schema5'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -3405,47 +2319,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      results:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            user_id:
-                              type: string
-                              description: 用户ID
-                              example: od-4e6ac4d14bcd5071a37a39de902c7141
-                            reason:
-                              type: integer
-                              description: 成员处理结果
-                              enum:
-                              - 1
-                              - 2
-                              - 3
-                              - 4
-                              - 5
-                              - 6
-                              x-enum-descriptions:
-                                '1': 处理成功
-                                '2': 用户ID无效
-                                '3': 用户ID无权限
-                                '4': 用户已存在在该角色中
-                                '5': 用户不存在在该角色中
-                                '6': 对该角色内该用户旧的管理范围无权限
-                              default: 1
-                              example: '1'
-                          required:
-                          - user_id
-                          - reason
-                        description: 批量新增角色成员结果集
+                $ref: '#/components/schemas/Schema8'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -3899,47 +2773,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      results:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            user_id:
-                              type: string
-                              description: 用户ID
-                              example: od-4e6ac4d14bcd5071a37a39de902c7141
-                            reason:
-                              type: integer
-                              description: 成员处理结果
-                              enum:
-                              - 1
-                              - 2
-                              - 3
-                              - 4
-                              - 5
-                              - 6
-                              x-enum-descriptions:
-                                '1': 处理成功
-                                '2': 用户ID无效
-                                '3': 用户ID无权限
-                                '4': 用户已存在在该角色中
-                                '5': 用户不存在在该角色中
-                                '6': 对该角色内该用户旧的管理范围无权限
-                              default: 1
-                              example: '1'
-                          required:
-                          - user_id
-                          - reason
-                        description: 批量更新角色成员管理范围结果集
+                $ref: '#/components/schemas/Schema8'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -5478,111 +4312,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: 序列名称。1-100字符，支持中、英文及符号
-                  example: 产品
-                description:
-                  type: string
-                  description: 序列描述，描述序列详情信息
-                  example: 负责产品策略制定的相关工作
-                parent_job_family_id:
-                  type: string
-                  description: 上级序列ID。需是该租户的序列ID列表中的值，对应唯一的序列名称。
-                  example: mga5oa8ayjlp9rb
-                status:
-                  type: boolean
-                  description: 是否启用
-                  example: true 表示启用, false表示未启用
-                i18n_name:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      locale:
-                        type: string
-                        description: 语言
-                      value:
-                        type: string
-                        description: i18n内容
-                  description: 多语言序列名称
-                i18n_description:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      locale:
-                        type: string
-                        description: 语言
-                      value:
-                        type: string
-                        description: i18n内容
-                  description: 多语言描述
+              $ref: '#/components/schemas/Schema6'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      job_family:
-                        type: object
-                        properties:
-                          name:
-                            type: string
-                            description: 序列名称。1-100字符，支持中、英文及符号
-                            example: 产品
-                          description:
-                            type: string
-                            description: 序列描述，描述序列详情信息
-                            example: 负责产品策略制定的相关工作
-                          parent_job_family_id:
-                            type: string
-                            description: 上级序列ID。需是该租户的序列ID列表中的值，对应唯一的序列名称。
-                            example: mga5oa8ayjlp9rb
-                          status:
-                            type: boolean
-                            description: 是否启用
-                            example: true 表示启用, false表示未启用
-                          i18n_name:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                locale:
-                                  type: string
-                                  description: 语言
-                                value:
-                                  type: string
-                                  description: i18n内容
-                            description: 多语言序列名称
-                          i18n_description:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                locale:
-                                  type: string
-                                  description: 语言
-                                value:
-                                  type: string
-                                  description: i18n内容
-                            description: 多语言描述
-                          job_family_id:
-                            type: string
-                            description: 职级序列ID
-                            example: mga5oa8ayjlp9rb
-                        description: 序列信息
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -5679,52 +4416,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              description: 序列名称。1-100字符，支持中、英文及符号
-                              example: 产品
-                            description:
-                              type: string
-                              description: 序列描述，描述序列详情信息
-                              example: 负责产品策略制定的相关工作
-                            parent_job_family_id:
-                              type: string
-                              description: 上级序列ID。需是该租户的序列ID列表中的值，对应唯一的序列名称。
-                              example: mga5oa8ayjlp9rb
-                            status:
-                              type: boolean
-                              description: 是否启用
-                              example: true 表示启用, false表示未启用
-                            i18n_name:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  locale:
-                                    type: string
-                                    description: 语言
-                                  value:
-                                    type: string
-                                    description: i18n内容
-                              description: 多语言序列名称
-                            i18n_description:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  locale:
-                                    type: string
-                                    description: 语言
-                                  value:
-                                    type: string
-                                    description: i18n内容
-                              description: 多语言描述
-                            job_family_id:
-                              type: string
-                              description: 职级序列ID
-                              example: mga5oa8ayjlp9rb
+                          $ref: '#/components/schemas/JobFamily'
                         description: 序列信息
                       page_token:
                         type: string
@@ -5813,63 +4505,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      job_family:
-                        type: object
-                        properties:
-                          name:
-                            type: string
-                            description: 序列名称。1-100字符，支持中、英文及符号
-                            example: 产品
-                          description:
-                            type: string
-                            description: 序列描述，描述序列详情信息
-                            example: 负责产品策略制定的相关工作
-                          parent_job_family_id:
-                            type: string
-                            description: 上级序列ID。需是该租户的序列ID列表中的值，对应唯一的序列名称。
-                            example: mga5oa8ayjlp9rb
-                          status:
-                            type: boolean
-                            description: 是否启用
-                            example: true 表示启用, false表示未启用
-                          i18n_name:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                locale:
-                                  type: string
-                                  description: 语言
-                                value:
-                                  type: string
-                                  description: i18n内容
-                            description: 多语言序列名称
-                          i18n_description:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                locale:
-                                  type: string
-                                  description: 语言
-                                value:
-                                  type: string
-                                  description: i18n内容
-                            description: 多语言描述
-                          job_family_id:
-                            type: string
-                            description: 职级序列ID
-                            example: mga5oa8ayjlp9rb
-                        description: 序列信息
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -5903,111 +4539,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: 序列名称。1-100字符，支持中、英文及符号
-                  example: 产品
-                description:
-                  type: string
-                  description: 序列描述，描述序列详情信息
-                  example: 负责产品策略制定的相关工作
-                parent_job_family_id:
-                  type: string
-                  description: 上级序列ID。需是该租户的序列ID列表中的值，对应唯一的序列名称。
-                  example: mga5oa8ayjlp9rb
-                status:
-                  type: boolean
-                  description: 是否启用
-                  example: true 表示启用, false表示未启用
-                i18n_name:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      locale:
-                        type: string
-                        description: 语言
-                      value:
-                        type: string
-                        description: i18n内容
-                  description: 多语言序列名称
-                i18n_description:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      locale:
-                        type: string
-                        description: 语言
-                      value:
-                        type: string
-                        description: i18n内容
-                  description: 多语言描述
+              $ref: '#/components/schemas/Schema6'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      job_family:
-                        type: object
-                        properties:
-                          name:
-                            type: string
-                            description: 序列名称。1-100字符，支持中、英文及符号
-                            example: 产品
-                          description:
-                            type: string
-                            description: 序列描述，描述序列详情信息
-                            example: 负责产品策略制定的相关工作
-                          parent_job_family_id:
-                            type: string
-                            description: 上级序列ID。需是该租户的序列ID列表中的值，对应唯一的序列名称。
-                            example: mga5oa8ayjlp9rb
-                          status:
-                            type: boolean
-                            description: 是否启用
-                            example: true 表示启用, false表示未启用
-                          i18n_name:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                locale:
-                                  type: string
-                                  description: 语言
-                                value:
-                                  type: string
-                                  description: i18n内容
-                            description: 多语言序列名称
-                          i18n_description:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                locale:
-                                  type: string
-                                  description: 语言
-                                value:
-                                  type: string
-                                  description: i18n内容
-                            description: 多语言描述
-                          job_family_id:
-                            type: string
-                            description: 职级序列ID
-                            example: mga5oa8ayjlp9rb
-                        description: 更新后的序列信息
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -6066,111 +4605,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: 职级名称
-                  example: 高级专家
-                description:
-                  type: string
-                  description: 职级描述
-                  example: 公司内部中高级职称，有一定专业技术能力的人员
-                order:
-                  type: integer
-                  description: 职级的排序，可填入自然数100-100000的数值，系统按照数值大小从小到大排序。不填写该字段时，默认新增排序在当前职级列表中最后位（最大值）
-                  example: '200'
-                status:
-                  type: boolean
-                  description: 是否启用
-                  example: 'true'
-                i18n_name:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      locale:
-                        type: string
-                        description: 语言
-                      value:
-                        type: string
-                        description: i18n内容
-                  description: 多语言名称
-                i18n_description:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      locale:
-                        type: string
-                        description: 语言
-                      value:
-                        type: string
-                        description: i18n内容
-                  description: 多语言描述
+              $ref: '#/components/schemas/Schema7'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      job_level:
-                        type: object
-                        properties:
-                          name:
-                            type: string
-                            description: 职级名称
-                            example: 高级专家
-                          description:
-                            type: string
-                            description: 职级描述
-                            example: 公司内部中高级职称，有一定专业技术能力的人员
-                          order:
-                            type: integer
-                            description: 职级的排序，可填入自然数100-100000的数值，系统按照数值大小从小到大排序。不填写该字段时，默认新增排序在当前职级列表中最后位（最大值）
-                            example: '200'
-                          status:
-                            type: boolean
-                            description: 是否启用
-                            example: 'true'
-                          job_level_id:
-                            type: string
-                            description: 职级ID
-                            example: mga5oa8ayjlp9rb
-                          i18n_name:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                locale:
-                                  type: string
-                                  description: 语言
-                                value:
-                                  type: string
-                                  description: i18n内容
-                            description: 多语言名称
-                          i18n_description:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                locale:
-                                  type: string
-                                  description: 语言
-                                value:
-                                  type: string
-                                  description: i18n内容
-                            description: 多语言描述
-                        description: 职级信息
+                $ref: '#/components/schemas/Schema4'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -6255,52 +4697,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              description: 职级名称
-                              example: 高级专家
-                            description:
-                              type: string
-                              description: 职级描述
-                              example: 公司内部中高级职称，有一定专业技术能力的人员
-                            order:
-                              type: integer
-                              description: 职级的排序，可填入自然数100-100000的数值，系统按照数值大小从小到大排序。不填写该字段时，默认新增排序在当前职级列表中最后位（最大值）
-                              example: '200'
-                            status:
-                              type: boolean
-                              description: 是否启用
-                              example: 'true'
-                            job_level_id:
-                              type: string
-                              description: 职级ID
-                              example: mga5oa8ayjlp9rb
-                            i18n_name:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  locale:
-                                    type: string
-                                    description: 语言
-                                  value:
-                                    type: string
-                                    description: i18n内容
-                              description: 多语言名称
-                            i18n_description:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  locale:
-                                    type: string
-                                    description: 语言
-                                  value:
-                                    type: string
-                                    description: i18n内容
-                              description: 多语言描述
+                          $ref: '#/components/schemas/JobLevel'
                         description: 职级列表
                       page_token:
                         type: string
@@ -6386,63 +4783,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      job_level:
-                        type: object
-                        properties:
-                          name:
-                            type: string
-                            description: 职级名称
-                            example: 高级专家
-                          description:
-                            type: string
-                            description: 职级描述
-                            example: 公司内部中高级职称，有一定专业技术能力的人员
-                          order:
-                            type: integer
-                            description: 职级的排序，可填入自然数100-100000的数值，系统按照数值大小从小到大排序。不填写该字段时，默认新增排序在当前职级列表中最后位（最大值）
-                            example: '200'
-                          status:
-                            type: boolean
-                            description: 是否启用
-                            example: 'true'
-                          job_level_id:
-                            type: string
-                            description: 职级ID
-                            example: mga5oa8ayjlp9rb
-                          i18n_name:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                locale:
-                                  type: string
-                                  description: 语言
-                                value:
-                                  type: string
-                                  description: i18n内容
-                            description: 多语言名称
-                          i18n_description:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                locale:
-                                  type: string
-                                  description: 语言
-                                value:
-                                  type: string
-                                  description: i18n内容
-                            description: 多语言描述
-                        description: 职级信息
+                $ref: '#/components/schemas/Schema4'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -6476,111 +4817,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: 职级名称
-                  example: 高级专家
-                description:
-                  type: string
-                  description: 职级描述
-                  example: 公司内部中高级职称，有一定专业技术能力的人员
-                order:
-                  type: integer
-                  description: 职级的排序，可填入自然数100-100000的数值，系统按照数值大小从小到大排序。不填写该字段时，默认新增排序在当前职级列表中最后位（最大值）
-                  example: '200'
-                status:
-                  type: boolean
-                  description: 是否启用
-                  example: 'true'
-                i18n_name:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      locale:
-                        type: string
-                        description: 语言
-                      value:
-                        type: string
-                        description: i18n内容
-                  description: 多语言名称
-                i18n_description:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      locale:
-                        type: string
-                        description: 语言
-                      value:
-                        type: string
-                        description: i18n内容
-                  description: 多语言描述
+              $ref: '#/components/schemas/Schema7'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      job_level:
-                        type: object
-                        properties:
-                          name:
-                            type: string
-                            description: 职级名称
-                            example: 高级专家
-                          description:
-                            type: string
-                            description: 职级描述
-                            example: 公司内部中高级职称，有一定专业技术能力的人员
-                          order:
-                            type: integer
-                            description: 职级的排序，可填入自然数100-100000的数值，系统按照数值大小从小到大排序。不填写该字段时，默认新增排序在当前职级列表中最后位（最大值）
-                            example: '200'
-                          status:
-                            type: boolean
-                            description: 是否启用
-                            example: 'true'
-                          job_level_id:
-                            type: string
-                            description: 职级ID
-                            example: mga5oa8ayjlp9rb
-                          i18n_name:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                locale:
-                                  type: string
-                                  description: 语言
-                                value:
-                                  type: string
-                                  description: i18n内容
-                            description: 多语言名称
-                          i18n_description:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                locale:
-                                  type: string
-                                  description: 语言
-                                value:
-                                  type: string
-                                  description: i18n内容
-                            description: 多语言描述
-                        description: 职级信息
+                $ref: '#/components/schemas/Schema4'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -7813,54 +6057,7 @@ paths:
                             custom_attrs:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  type:
-                                    type: string
-                                    description: 自定义属性类型
-                                  id:
-                                    type: string
-                                    description: 自定义属性ID
-                                  value:
-                                    type: object
-                                    properties:
-                                      text:
-                                        type: string
-                                        description: 属性文本
-                                      url:
-                                        type: string
-                                        description: URL
-                                      pc_url:
-                                        type: string
-                                        description: PC上的URL
-                                      option_id:
-                                        type: string
-                                        description: 选项id，自定义选项和图片此项必填
-                                      option_value:
-                                        type: string
-                                        description: 选项值
-                                      name:
-                                        type: string
-                                        description: 名称
-                                      picture_url:
-                                        type: string
-                                        description: 图片链接
-                                      generic_user:
-                                        type: object
-                                        properties:
-                                          id:
-                                            type: string
-                                            description: 用户id
-                                            example: '123456789'
-                                          type:
-                                            type: integer
-                                            description: 用户类型 1 User 2 Bot 11 Mail
-                                            example: '1'
-                                        required:
-                                        - id
-                                        - type
-                                        description: 用户信息
-                                    description: 自定义属性取值
+                                $ref: '#/components/schemas/Item'
                               description: 自定义属性
                             enterprise_email:
                               type: string
@@ -7894,109 +6091,12 @@ paths:
                             assign_info:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  subscription_id:
-                                    type: string
-                                    description: 席位id
-                                    example: '7079609167680782300'
-                                    format: int64
-                                  license_plan_key:
-                                    type: string
-                                    description: license_plan_key
-                                    example: suite_enterprise_e5
-                                  product_name:
-                                    type: string
-                                    description: 席位名称
-                                    example: 旗舰版 E5
-                                  i18n_name:
-                                    type: object
-                                    properties:
-                                      zh_cn:
-                                        type: string
-                                        description: 席位中文名
-                                        example: zh_cn_name
-                                      ja_jp:
-                                        type: string
-                                        description: 席位日文名
-                                        example: ja_jp_name
-                                      en_us:
-                                        type: string
-                                        description: 席位英文名
-                                        example: en_name
-                                    description: 国际化名称
-                                  start_time:
-                                    type: string
-                                    description: 席位起始时间
-                                    example: '1674981000'
-                                    format: int64
-                                  end_time:
-                                    type: string
-                                    description: 席位结束时间
-                                    example: '1674991000'
-                                    format: int64
+                                $ref: '#/components/schemas/Item3'
                               description: 用户席位列表
                             department_path:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  department_id:
-                                    type: string
-                                    description: 部门ID
-                                    example: od-4e6ac4d14bcd5071a37a39de902c7141
-                                    format: int64
-                                  department_name:
-                                    type: object
-                                    properties:
-                                      name:
-                                        type: string
-                                        description: 部门名
-                                        example: 测试部门名1
-                                      i18n_name:
-                                        type: object
-                                        properties:
-                                          zh_cn:
-                                            type: string
-                                            description: 部门的中文名
-                                          ja_jp:
-                                            type: string
-                                            description: 部门的日文名
-                                          en_us:
-                                            type: string
-                                            description: 部门的英文名
-                                        description: 部门国际化名
-                                    description: 部门名
-                                  department_path:
-                                    type: object
-                                    properties:
-                                      department_ids:
-                                        type: array
-                                        items:
-                                          type: string
-                                        description: 部门路径IDs
-                                      department_path_name:
-                                        type: object
-                                        properties:
-                                          name:
-                                            type: string
-                                            description: 部门名
-                                            example: 测试部门名1
-                                          i18n_name:
-                                            type: object
-                                            properties:
-                                              zh_cn:
-                                                type: string
-                                                description: 部门的中文名
-                                              ja_jp:
-                                                type: string
-                                                description: 部门的日文名
-                                              en_us:
-                                                type: string
-                                                description: 部门的英文名
-                                            description: 部门国际化名
-                                        description: 部门路径名字
-                                    description: 部门路径
+                                $ref: '#/components/schemas/Item2'
                               description: 部门路径
                             dotted_line_leader_user_ids:
                               type: array
@@ -8013,26 +6113,26 @@ paths:
       x-lark-scopes:
       - contact:contact.base:readonly
       x-lark-field-scopes:
-      - directory:employee.base.email:read
-      - contact:user.user_geo
-      - contact:contact:readonly
-      - contact:contact:access_as_app
-      - contact:user.employee_number:read
       - contact:user.email:readonly
-      - contact:user.gender:readonly
-      - contact:user.employee_id:readonly
-      - contact:user.union_id:readonly
-      - contact:user.job_family:readonly
-      - contact:user.assign_info:read
-      - contact:user.department:readonly
-      - contact:user.employee:readonly
-      - contact:user.subscription_ids:write
-      - contact:user.department_path:readonly
-      - contact:user.job_level:readonly
-      - contact:user.dotted_line_leader_info.read
-      - contact:contact:readonly_as_app
       - contact:user.phone:readonly
+      - contact:user.assign_info:read
+      - contact:user.employee:readonly
+      - contact:user.department:readonly
+      - contact:user.dotted_line_leader_info.read
+      - contact:user.subscription_ids:write
+      - contact:contact:readonly
+      - contact:user.job_level:readonly
+      - contact:user.department_path:readonly
+      - contact:user.employee_number:read
+      - contact:user.user_geo
+      - contact:user.job_family:readonly
       - contact:user.base:readonly
+      - contact:contact:access_as_app
+      - contact:contact:readonly_as_app
+      - contact:user.gender:readonly
+      - contact:user.union_id:readonly
+      - directory:employee.base.email:read
+      - contact:user.employee_id:readonly
       x-lark-error-mappings:
       - code: 40001
         httpCode: 400
@@ -8175,11 +6275,11 @@ paths:
       x-lark-scopes:
       - contact:user.id:readonly
       x-lark-field-scopes:
+      - contact:user.employee_id:readonly
+      - contact:user.employee:readonly
       - contact:contact:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
-      - contact:user.employee_id:readonly
-      - contact:user.employee:readonly
       x-lark-rate-limit:
         tier: 4
   /open-apis/contact/v3/users:
@@ -8345,45 +6445,7 @@ paths:
                 custom_attrs:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      type:
-                        type: string
-                        description: 自定义属性类型
-                      id:
-                        type: string
-                        description: 自定义属性ID
-                      value:
-                        type: object
-                        properties:
-                          text:
-                            type: string
-                            description: 属性文本
-                          url:
-                            type: string
-                            description: URL
-                          pc_url:
-                            type: string
-                            description: PC上的URL
-                          option_id:
-                            type: string
-                            description: 选项id，自定义选项和图片此项必填
-                          generic_user:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: 用户id
-                                example: '123456789'
-                              type:
-                                type: integer
-                                description: 用户类型 1 User 2 Bot 11 Mail
-                                example: '1'
-                            required:
-                            - id
-                            - type
-                            description: 用户信息
-                        description: 自定义属性取值
+                    $ref: '#/components/schemas/Item4'
                   description: 自定义属性
                 enterprise_email:
                   type: string
@@ -8575,54 +6637,7 @@ paths:
                           custom_attrs:
                             type: array
                             items:
-                              type: object
-                              properties:
-                                type:
-                                  type: string
-                                  description: 自定义属性类型
-                                id:
-                                  type: string
-                                  description: 自定义属性ID
-                                value:
-                                  type: object
-                                  properties:
-                                    text:
-                                      type: string
-                                      description: 属性文本
-                                    url:
-                                      type: string
-                                      description: URL
-                                    pc_url:
-                                      type: string
-                                      description: PC上的URL
-                                    option_id:
-                                      type: string
-                                      description: 选项id，自定义选项和图片此项必填
-                                    option_value:
-                                      type: string
-                                      description: 选项值
-                                    name:
-                                      type: string
-                                      description: 名称
-                                    picture_url:
-                                      type: string
-                                      description: 图片链接
-                                    generic_user:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: 用户id
-                                          example: '123456789'
-                                        type:
-                                          type: integer
-                                          description: 用户类型 1 User 2 Bot 11 Mail
-                                          example: '1'
-                                      required:
-                                      - id
-                                      - type
-                                      description: 用户信息
-                                  description: 自定义属性取值
+                              $ref: '#/components/schemas/Item'
                             description: 自定义属性
                           enterprise_email:
                             type: string
@@ -8661,23 +6676,23 @@ paths:
       x-lark-scopes:
       - contact:contact
       x-lark-field-scopes:
-      - contact:user.employee:readonly
-      - contact:user.email:readonly
+      - contact:contact:access_as_app
       - contact:user.user_geo
-      - contact:user.gender:readonly
-      - contact:user.employee_id:readonly
-      - contact:user.department:readonly
-      - contact:user.base:readonly
-      - contact:contact:readonly_as_app
-      - contact:user.dotted_line_leader_info.read
       - contact:user.job_level:readonly
       - contact:user.phone:readonly
-      - contact:contact:readonly
-      - contact:contact:access_as_app
+      - contact:user.dotted_line_leader_info.read
+      - contact:contact:readonly_as_app
+      - contact:user.gender:readonly
       - contact:user.employee_number:read
       - contact:user.job_family:readonly
-      - contact:user.union_id:readonly
       - directory:employee.base.email:read
+      - contact:user.employee:readonly
+      - contact:user.employee_id:readonly
+      - contact:user.union_id:readonly
+      - contact:user.email:readonly
+      - contact:user.base:readonly
+      - contact:contact:readonly
+      - contact:user.department:readonly
       x-lark-error-mappings:
       - code: 40001
         httpCode: 400
@@ -9256,51 +7271,7 @@ paths:
                             custom_attrs:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  type:
-                                    type: string
-                                    description: 自定义属性类型
-                                  id:
-                                    type: string
-                                    description: 自定义属性ID
-                                  value:
-                                    type: object
-                                    properties:
-                                      text:
-                                        type: string
-                                        description: 属性文本
-                                      url:
-                                        type: string
-                                        description: URL
-                                      pc_url:
-                                        type: string
-                                        description: PC上的URL
-                                      option_value:
-                                        type: string
-                                        description: 选项值
-                                      name:
-                                        type: string
-                                        description: 名称
-                                      picture_url:
-                                        type: string
-                                        description: 图片链接
-                                      generic_user:
-                                        type: object
-                                        properties:
-                                          id:
-                                            type: string
-                                            description: 用户id
-                                            example: '123456789'
-                                          type:
-                                            type: integer
-                                            description: 用户类型 1 User 2 Bot 11 Mail
-                                            example: '1'
-                                        required:
-                                        - id
-                                        - type
-                                        description: 用户信息
-                                    description: 自定义属性取值
+                                $ref: '#/components/schemas/Item5'
                               description: 自定义属性
                             enterprise_email:
                               type: string
@@ -9325,109 +7296,12 @@ paths:
                             assign_info:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  subscription_id:
-                                    type: string
-                                    description: 席位id
-                                    example: '7079609167680782300'
-                                    format: int64
-                                  license_plan_key:
-                                    type: string
-                                    description: license_plan_key
-                                    example: suite_enterprise_e5
-                                  product_name:
-                                    type: string
-                                    description: 席位名称
-                                    example: 旗舰版 E5
-                                  i18n_name:
-                                    type: object
-                                    properties:
-                                      zh_cn:
-                                        type: string
-                                        description: 席位中文名
-                                        example: zh_cn_name
-                                      ja_jp:
-                                        type: string
-                                        description: 席位日文名
-                                        example: ja_jp_name
-                                      en_us:
-                                        type: string
-                                        description: 席位英文名
-                                        example: en_name
-                                    description: 国际化名称
-                                  start_time:
-                                    type: string
-                                    description: 席位起始时间
-                                    example: '1674981000'
-                                    format: int64
-                                  end_time:
-                                    type: string
-                                    description: 席位结束时间
-                                    example: '1674991000'
-                                    format: int64
+                                $ref: '#/components/schemas/Item3'
                               description: 用户席位列表
                             department_path:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  department_id:
-                                    type: string
-                                    description: 部门ID
-                                    example: od-4e6ac4d14bcd5071a37a39de902c7141
-                                    format: int64
-                                  department_name:
-                                    type: object
-                                    properties:
-                                      name:
-                                        type: string
-                                        description: 部门名
-                                        example: 测试部门名1
-                                      i18n_name:
-                                        type: object
-                                        properties:
-                                          zh_cn:
-                                            type: string
-                                            description: 部门的中文名
-                                          ja_jp:
-                                            type: string
-                                            description: 部门的日文名
-                                          en_us:
-                                            type: string
-                                            description: 部门的英文名
-                                        description: 部门国际化名
-                                    description: 部门名
-                                  department_path:
-                                    type: object
-                                    properties:
-                                      department_ids:
-                                        type: array
-                                        items:
-                                          type: string
-                                        description: 部门路径IDs
-                                      department_path_name:
-                                        type: object
-                                        properties:
-                                          name:
-                                            type: string
-                                            description: 部门名
-                                            example: 测试部门名1
-                                          i18n_name:
-                                            type: object
-                                            properties:
-                                              zh_cn:
-                                                type: string
-                                                description: 部门的中文名
-                                              ja_jp:
-                                                type: string
-                                                description: 部门的日文名
-                                              en_us:
-                                                type: string
-                                                description: 部门的英文名
-                                            description: 部门国际化名
-                                        description: 部门路径名字
-                                    description: 部门路径
+                                $ref: '#/components/schemas/Item2'
                               description: 部门路径
                             dotted_line_leader_user_ids:
                               type: array
@@ -9447,25 +7321,25 @@ paths:
       - contact:contact:readonly
       - contact:contact:readonly_as_app
       x-lark-field-scopes:
-      - contact:contact:access_as_app
-      - contact:user.employee_number:read
-      - contact:user.base:readonly
-      - contact:user.assign_info:read
-      - contact:user.department_path:readonly
-      - contact:user.email:readonly
-      - contact:user.phone:readonly
-      - contact:user.job_family:readonly
-      - contact:user.dotted_line_leader_info.read
-      - contact:user.user_geo
-      - contact:user.job_level:readonly
-      - contact:user.employee:readonly
-      - contact:contact:readonly_as_app
       - contact:user.employee_id:readonly
-      - contact:contact:readonly
-      - contact:user.gender:readonly
+      - contact:user.department_path:readonly
       - directory:employee.base.email:read
       - contact:user.department:readonly
+      - contact:user.base:readonly
+      - contact:contact:readonly_as_app
+      - contact:user.job_level:readonly
+      - contact:user.dotted_line_leader_info.read
+      - contact:user.employee_number:read
+      - contact:user.phone:readonly
       - contact:user.union_id:readonly
+      - contact:user.job_family:readonly
+      - contact:user.assign_info:read
+      - contact:user.gender:readonly
+      - contact:contact:readonly
+      - contact:contact:access_as_app
+      - contact:user.employee:readonly
+      - contact:user.user_geo
+      - contact:user.email:readonly
       x-lark-error-mappings:
       - code: 41050
         httpCode: 400
@@ -9922,51 +7796,7 @@ paths:
                           custom_attrs:
                             type: array
                             items:
-                              type: object
-                              properties:
-                                type:
-                                  type: string
-                                  description: 自定义属性类型
-                                id:
-                                  type: string
-                                  description: 自定义属性ID
-                                value:
-                                  type: object
-                                  properties:
-                                    text:
-                                      type: string
-                                      description: 属性文本
-                                    url:
-                                      type: string
-                                      description: URL
-                                    pc_url:
-                                      type: string
-                                      description: PC上的URL
-                                    option_value:
-                                      type: string
-                                      description: 选项值
-                                    name:
-                                      type: string
-                                      description: 名称
-                                    picture_url:
-                                      type: string
-                                      description: 图片链接
-                                    generic_user:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: 用户id
-                                          example: '123456789'
-                                        type:
-                                          type: integer
-                                          description: 用户类型 1 User 2 Bot 11 Mail
-                                          example: '1'
-                                      required:
-                                      - id
-                                      - type
-                                      description: 用户信息
-                                  description: 自定义属性取值
+                              $ref: '#/components/schemas/Item5'
                             description: 自定义属性
                           enterprise_email:
                             type: string
@@ -9991,109 +7821,12 @@ paths:
                           assign_info:
                             type: array
                             items:
-                              type: object
-                              properties:
-                                subscription_id:
-                                  type: string
-                                  description: 席位id
-                                  example: '7079609167680782300'
-                                  format: int64
-                                license_plan_key:
-                                  type: string
-                                  description: license_plan_key
-                                  example: suite_enterprise_e5
-                                product_name:
-                                  type: string
-                                  description: 席位名称
-                                  example: 旗舰版 E5
-                                i18n_name:
-                                  type: object
-                                  properties:
-                                    zh_cn:
-                                      type: string
-                                      description: 席位中文名
-                                      example: zh_cn_name
-                                    ja_jp:
-                                      type: string
-                                      description: 席位日文名
-                                      example: ja_jp_name
-                                    en_us:
-                                      type: string
-                                      description: 席位英文名
-                                      example: en_name
-                                  description: 国际化名称
-                                start_time:
-                                  type: string
-                                  description: 席位起始时间
-                                  example: '1674981000'
-                                  format: int64
-                                end_time:
-                                  type: string
-                                  description: 席位结束时间
-                                  example: '1674991000'
-                                  format: int64
+                              $ref: '#/components/schemas/Item3'
                             description: 用户席位列表
                           department_path:
                             type: array
                             items:
-                              type: object
-                              properties:
-                                department_id:
-                                  type: string
-                                  description: 部门ID
-                                  example: od-4e6ac4d14bcd5071a37a39de902c7141
-                                  format: int64
-                                department_name:
-                                  type: object
-                                  properties:
-                                    name:
-                                      type: string
-                                      description: 部门名
-                                      example: 测试部门名1
-                                    i18n_name:
-                                      type: object
-                                      properties:
-                                        zh_cn:
-                                          type: string
-                                          description: 部门的中文名
-                                        ja_jp:
-                                          type: string
-                                          description: 部门的日文名
-                                        en_us:
-                                          type: string
-                                          description: 部门的英文名
-                                      description: 部门国际化名
-                                  description: 部门名
-                                department_path:
-                                  type: object
-                                  properties:
-                                    department_ids:
-                                      type: array
-                                      items:
-                                        type: string
-                                      description: 部门路径IDs
-                                    department_path_name:
-                                      type: object
-                                      properties:
-                                        name:
-                                          type: string
-                                          description: 部门名
-                                          example: 测试部门名1
-                                        i18n_name:
-                                          type: object
-                                          properties:
-                                            zh_cn:
-                                              type: string
-                                              description: 部门的中文名
-                                            ja_jp:
-                                              type: string
-                                              description: 部门的日文名
-                                            en_us:
-                                              type: string
-                                              description: 部门的英文名
-                                          description: 部门国际化名
-                                      description: 部门路径名字
-                                  description: 部门路径
+                              $ref: '#/components/schemas/Item2'
                             description: 部门路径
                           dotted_line_leader_user_ids:
                             type: array
@@ -10109,25 +7842,25 @@ paths:
       - contact:contact:readonly
       - contact:contact:readonly_as_app
       x-lark-field-scopes:
-      - contact:user.assign_info:read
-      - contact:contact:access_as_app
-      - contact:user.user_geo
-      - contact:user.department_path:readonly
-      - contact:user.union_id:readonly
-      - contact:user.employee_number:read
-      - contact:user.dotted_line_leader_info.read
-      - contact:user.job_level:readonly
-      - contact:user.job_family:readonly
       - contact:user.employee:readonly
-      - contact:contact:readonly
-      - contact:contact:readonly_as_app
-      - contact:user.employee_id:readonly
+      - contact:user.union_id:readonly
+      - contact:user.job_level:readonly
       - contact:user.email:readonly
       - directory:employee.base.email:read
-      - contact:user.base:readonly
-      - contact:user.gender:readonly
-      - contact:user.department:readonly
       - contact:user.phone:readonly
+      - contact:user.assign_info:read
+      - contact:contact:access_as_app
+      - contact:contact:readonly_as_app
+      - contact:user.dotted_line_leader_info.read
+      - contact:user.department:readonly
+      - contact:user.employee_number:read
+      - contact:user.gender:readonly
+      - contact:user.employee_id:readonly
+      - contact:user.base:readonly
+      - contact:contact:readonly
+      - contact:user.job_family:readonly
+      - contact:user.department_path:readonly
+      - contact:user.user_geo
       x-lark-error-mappings:
       - code: 41050
         httpCode: 400
@@ -10307,45 +8040,7 @@ paths:
                 custom_attrs:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      type:
-                        type: string
-                        description: 自定义属性类型
-                      id:
-                        type: string
-                        description: 自定义属性ID
-                      value:
-                        type: object
-                        properties:
-                          text:
-                            type: string
-                            description: 属性文本
-                          url:
-                            type: string
-                            description: URL
-                          pc_url:
-                            type: string
-                            description: PC上的URL
-                          option_id:
-                            type: string
-                            description: 选项id，自定义选项和图片此项必填
-                          generic_user:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: 用户id
-                                example: '123456789'
-                              type:
-                                type: integer
-                                description: 用户类型 1 User 2 Bot 11 Mail
-                                example: '1'
-                            required:
-                            - id
-                            - type
-                            description: 用户信息
-                        description: 自定义属性取值
+                    $ref: '#/components/schemas/Item4'
                   description: 自定义属性
                 enterprise_email:
                   type: string
@@ -10537,54 +8232,7 @@ paths:
                           custom_attrs:
                             type: array
                             items:
-                              type: object
-                              properties:
-                                type:
-                                  type: string
-                                  description: 自定义属性类型
-                                id:
-                                  type: string
-                                  description: 自定义属性ID
-                                value:
-                                  type: object
-                                  properties:
-                                    text:
-                                      type: string
-                                      description: 属性文本
-                                    url:
-                                      type: string
-                                      description: URL
-                                    pc_url:
-                                      type: string
-                                      description: PC上的URL
-                                    option_id:
-                                      type: string
-                                      description: 选项id，自定义选项和图片此项必填
-                                    option_value:
-                                      type: string
-                                      description: 选项值
-                                    name:
-                                      type: string
-                                      description: 名称
-                                    picture_url:
-                                      type: string
-                                      description: 图片链接
-                                    generic_user:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: 用户id
-                                          example: '123456789'
-                                        type:
-                                          type: integer
-                                          description: 用户类型 1 User 2 Bot 11 Mail
-                                          example: '1'
-                                      required:
-                                      - id
-                                      - type
-                                      description: 用户信息
-                                  description: 自定义属性取值
+                              $ref: '#/components/schemas/Item'
                             description: 自定义属性
                           enterprise_email:
                             type: string
@@ -10621,22 +8269,22 @@ paths:
       - contact:contact
       - contact:user.base
       x-lark-field-scopes:
-      - contact:user.union_id:readonly
-      - contact:contact:access_as_app
-      - contact:contact:readonly_as_app
-      - contact:user.gender:readonly
       - contact:user.employee_id:readonly
-      - contact:user.department:readonly
-      - contact:contact:readonly
-      - contact:user.dotted_line_leader_info.read
-      - contact:user.email:readonly
       - directory:employee.base.email:read
-      - contact:user.phone:readonly
       - contact:user.employee:readonly
       - contact:user.job_level:readonly
+      - contact:contact:readonly
+      - contact:contact:access_as_app
+      - contact:contact:readonly_as_app
+      - contact:user.department:readonly
+      - contact:user.job_family:readonly
+      - contact:user.phone:readonly
+      - contact:user.email:readonly
+      - contact:user.gender:readonly
+      - contact:user.union_id:readonly
       - contact:user.base:readonly
       - contact:user.employee_number:read
-      - contact:user.job_family:readonly
+      - contact:user.dotted_line_leader_info.read
       x-lark-error-mappings:
       - code: 40001
         httpCode: 400
@@ -11144,45 +8792,7 @@ paths:
                 custom_attrs:
                   type: array
                   items:
-                    type: object
-                    properties:
-                      type:
-                        type: string
-                        description: 自定义属性类型
-                      id:
-                        type: string
-                        description: 自定义属性ID
-                      value:
-                        type: object
-                        properties:
-                          text:
-                            type: string
-                            description: 属性文本
-                          url:
-                            type: string
-                            description: URL
-                          pc_url:
-                            type: string
-                            description: PC上的URL
-                          option_id:
-                            type: string
-                            description: 选项id，自定义选项和图片此项必填
-                          generic_user:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: 用户id
-                                example: '123456789'
-                              type:
-                                type: integer
-                                description: 用户类型 1 User 2 Bot 11 Mail
-                                example: '1'
-                            required:
-                            - id
-                            - type
-                            description: 用户信息
-                        description: 自定义属性取值
+                    $ref: '#/components/schemas/Item4'
                   description: 自定义属性
                 enterprise_email:
                   type: string
@@ -11356,54 +8966,7 @@ paths:
                           custom_attrs:
                             type: array
                             items:
-                              type: object
-                              properties:
-                                type:
-                                  type: string
-                                  description: 自定义属性类型
-                                id:
-                                  type: string
-                                  description: 自定义属性ID
-                                value:
-                                  type: object
-                                  properties:
-                                    text:
-                                      type: string
-                                      description: 属性文本
-                                    url:
-                                      type: string
-                                      description: URL
-                                    pc_url:
-                                      type: string
-                                      description: PC上的URL
-                                    option_id:
-                                      type: string
-                                      description: 选项id，自定义选项和图片此项必填
-                                    option_value:
-                                      type: string
-                                      description: 选项值
-                                    name:
-                                      type: string
-                                      description: 名称
-                                    picture_url:
-                                      type: string
-                                      description: 图片链接
-                                    generic_user:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: 用户id
-                                          example: '123456789'
-                                        type:
-                                          type: integer
-                                          description: 用户类型 1 User 2 Bot 11 Mail
-                                          example: '1'
-                                      required:
-                                      - id
-                                      - type
-                                      description: 用户信息
-                                  description: 自定义属性取值
+                              $ref: '#/components/schemas/Item'
                             description: 自定义属性
                           enterprise_email:
                             type: string
@@ -11425,19 +8988,19 @@ paths:
       x-lark-scopes:
       - contact:contact
       x-lark-field-scopes:
-      - contact:user.union_id:readonly
-      - contact:user.email:readonly
-      - contact:user.phone:readonly
-      - contact:user.department:readonly
-      - contact:user.gender:readonly
-      - contact:user.employee:readonly
-      - contact:user.employee_number:read
-      - contact:user.employee_id:readonly
+      - directory:employee.base.email:read
       - contact:contact:readonly
+      - contact:user.employee_number:read
+      - contact:user.email:readonly
+      - contact:user.union_id:readonly
+      - contact:user.employee:readonly
       - contact:contact:access_as_app
       - contact:contact:readonly_as_app
       - contact:user.base:readonly
-      - directory:employee.base.email:read
+      - contact:user.phone:readonly
+      - contact:user.gender:readonly
+      - contact:user.employee_id:readonly
+      - contact:user.department:readonly
       x-lark-error-mappings:
       - code: 40001
         httpCode: 400
@@ -12004,54 +9567,7 @@ paths:
                             custom_attrs:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  type:
-                                    type: string
-                                    description: 自定义属性类型
-                                  id:
-                                    type: string
-                                    description: 自定义属性ID
-                                  value:
-                                    type: object
-                                    properties:
-                                      text:
-                                        type: string
-                                        description: 属性文本
-                                      url:
-                                        type: string
-                                        description: URL
-                                      pc_url:
-                                        type: string
-                                        description: PC上的URL
-                                      option_id:
-                                        type: string
-                                        description: 选项id，自定义选项和图片此项必填
-                                      option_value:
-                                        type: string
-                                        description: 选项值
-                                      name:
-                                        type: string
-                                        description: 名称
-                                      picture_url:
-                                        type: string
-                                        description: 图片链接
-                                      generic_user:
-                                        type: object
-                                        properties:
-                                          id:
-                                            type: string
-                                            description: 用户id
-                                            example: '123456789'
-                                          type:
-                                            type: integer
-                                            description: 用户类型 1 User 2 Bot 11 Mail
-                                            example: '1'
-                                        required:
-                                        - id
-                                        - type
-                                        description: 用户信息
-                                    description: 自定义属性取值
+                                $ref: '#/components/schemas/Item'
                               description: 自定义属性
                             enterprise_email:
                               type: string
@@ -12080,64 +9596,7 @@ paths:
                             department_path:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  department_id:
-                                    type: string
-                                    description: 部门ID
-                                    example: od-4e6ac4d14bcd5071a37a39de902c7141
-                                    format: int64
-                                  department_name:
-                                    type: object
-                                    properties:
-                                      name:
-                                        type: string
-                                        description: 部门名
-                                        example: 测试部门名1
-                                      i18n_name:
-                                        type: object
-                                        properties:
-                                          zh_cn:
-                                            type: string
-                                            description: 部门的中文名
-                                          ja_jp:
-                                            type: string
-                                            description: 部门的日文名
-                                          en_us:
-                                            type: string
-                                            description: 部门的英文名
-                                        description: 部门国际化名
-                                    description: 部门名
-                                  department_path:
-                                    type: object
-                                    properties:
-                                      department_ids:
-                                        type: array
-                                        items:
-                                          type: string
-                                        description: 部门路径IDs
-                                      department_path_name:
-                                        type: object
-                                        properties:
-                                          name:
-                                            type: string
-                                            description: 部门名
-                                            example: 测试部门名1
-                                          i18n_name:
-                                            type: object
-                                            properties:
-                                              zh_cn:
-                                                type: string
-                                                description: 部门的中文名
-                                              ja_jp:
-                                                type: string
-                                                description: 部门的日文名
-                                              en_us:
-                                                type: string
-                                                description: 部门的英文名
-                                            description: 部门国际化名
-                                        description: 部门路径名字
-                                    description: 部门路径
+                                $ref: '#/components/schemas/Item2'
                               description: 部门路径
                             dotted_line_leader_user_ids:
                               type: array
@@ -12158,23 +9617,23 @@ paths:
       - contact:contact:readonly
       - contact:contact:readonly_as_app
       x-lark-field-scopes:
-      - contact:user.department_path:readonly
-      - contact:user.gender:readonly
-      - contact:contact:access_as_app
-      - contact:contact:readonly_as_app
-      - contact:user.user_geo
-      - contact:user.job_family:readonly
-      - contact:user.job_level:readonly
-      - contact:user.employee:readonly
-      - contact:user.phone:readonly
-      - contact:user.email:readonly
-      - directory:employee.base.email:read
-      - contact:user.dotted_line_leader_info.read
-      - contact:user.department:readonly
       - contact:user.employee_number:read
+      - contact:contact:readonly
+      - contact:contact:access_as_app
+      - contact:user.dotted_line_leader_info.read
+      - contact:user.job_family:readonly
+      - contact:user.gender:readonly
+      - contact:user.email:readonly
+      - contact:user.user_geo
+      - contact:user.job_level:readonly
       - contact:user.base:readonly
       - contact:user.union_id:readonly
-      - contact:contact:readonly
+      - contact:user.phone:readonly
+      - contact:user.department:readonly
+      - contact:user.department_path:readonly
+      - directory:employee.base.email:read
+      - contact:contact:readonly_as_app
+      - contact:user.employee:readonly
       - contact:user.employee_id:readonly
       x-lark-error-mappings:
       - code: 41050
@@ -12630,3 +10089,751 @@ paths:
       x-lark-rate-limit:
         tier: 1
       x-lark-pagination: true
+components:
+  schemas:
+    Department:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 部门名称
+          example: DemoName
+        i18n_name:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 部门的中文名
+            ja_jp:
+              type: string
+              description: 部门的日文名
+            en_us:
+              type: string
+              description: 部门的英文名
+          description: 国际化的部门名称
+        parent_department_id:
+          type: string
+          description: 父部门的部门ID
+          example: D067
+        department_id:
+          type: string
+          description: 本部门的自定义部门ID
+        open_department_id:
+          type: string
+          description: 部门的open_id
+        leader_user_id:
+          type: string
+          description: 部门主管用户ID
+          example: ou_7dab8a3d3cdcc9da365777c7ad535d62
+        chat_id:
+          type: string
+          description: 部门群ID
+          example: oc_5ad11d72b830411d72b836c20
+          x-lark-id-types:
+            chat_id: chat
+        order:
+          type: string
+          description: 部门的排序
+          example: '100'
+          format: int64
+        unit_ids:
+          type: array
+          items:
+            type: string
+          description: 部门单位自定义ID列表，当前只支持一个
+        member_count:
+          type: integer
+          description: 部门下用户的个数
+          example: '100'
+        status:
+          type: object
+          properties:
+            is_deleted:
+              type: boolean
+              description: 是否被删除
+          description: 部门状态
+        leaders:
+          type: array
+          items:
+            type: object
+            properties:
+              leaderType:
+                type: integer
+                description: 负责人类型
+                enum:
+                - 1
+                - 2
+                x-enum-descriptions:
+                  '1': 主负责人
+                  '2': 副负责人
+              leaderID:
+                type: string
+                description: 负责人ID
+            required:
+            - leaderType
+            - leaderID
+          description: 部门负责人
+        group_chat_employee_types:
+          type: array
+          items:
+            type: integer
+          description: 部门群雇员类型限制
+        department_hrbps:
+          type: array
+          items:
+            type: string
+          description: 部门HRBP
+        primary_member_count:
+          type: integer
+          description: 部门下主属用户的个数
+          example: '100'
+      required:
+      - name
+      - parent_department_id
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    Data:
+      type: object
+      properties:
+        has_more:
+          type: boolean
+          description: 是否有下一页数据
+        page_token:
+          type: string
+          description: 下一页分页的token
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Department'
+          description: 部门列表
+    Schema2:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data2'
+    Data2:
+      type: object
+      properties:
+        department:
+          $ref: '#/components/schemas/Department'
+    Item:
+      type: object
+      properties:
+        type:
+          type: string
+          description: 自定义属性类型
+        id:
+          type: string
+          description: 自定义属性ID
+        value:
+          allOf:
+          - $ref: '#/components/schemas/Value'
+          description: 自定义属性取值
+    Item2:
+      type: object
+      properties:
+        department_id:
+          type: string
+          description: 部门ID
+          example: od-4e6ac4d14bcd5071a37a39de902c7141
+          format: int64
+        department_name:
+          type: object
+          properties:
+            name:
+              type: string
+              description: 部门名
+              example: 测试部门名1
+            i18n_name:
+              type: object
+              properties:
+                zh_cn:
+                  type: string
+                  description: 部门的中文名
+                ja_jp:
+                  type: string
+                  description: 部门的日文名
+                en_us:
+                  type: string
+                  description: 部门的英文名
+              description: 部门国际化名
+          description: 部门名
+        department_path:
+          allOf:
+          - $ref: '#/components/schemas/DepartmentPath'
+          description: 部门路径
+    Value:
+      type: object
+      properties:
+        text:
+          type: string
+          description: 属性文本
+        url:
+          type: string
+          description: URL
+        pc_url:
+          type: string
+          description: PC上的URL
+        option_id:
+          type: string
+          description: 选项id，自定义选项和图片此项必填
+        option_value:
+          type: string
+          description: 选项值
+        name:
+          type: string
+          description: 名称
+        picture_url:
+          type: string
+          description: 图片链接
+        generic_user:
+          type: object
+          properties:
+            id:
+              type: string
+              description: 用户id
+              example: '123456789'
+            type:
+              type: integer
+              description: 用户类型 1 User 2 Bot 11 Mail
+              example: '1'
+          required:
+          - id
+          - type
+          description: 用户信息
+      description: 自定义属性取值
+    JobFamily:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 序列名称。1-100字符，支持中、英文及符号
+          example: 产品
+        description:
+          type: string
+          description: 序列描述，描述序列详情信息
+          example: 负责产品策略制定的相关工作
+        parent_job_family_id:
+          type: string
+          description: 上级序列ID。需是该租户的序列ID列表中的值，对应唯一的序列名称。
+          example: mga5oa8ayjlp9rb
+        status:
+          type: boolean
+          description: 是否启用
+          example: true 表示启用, false表示未启用
+        i18n_name:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                description: 语言
+              value:
+                type: string
+                description: i18n内容
+          description: 多语言序列名称
+        i18n_description:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                description: 语言
+              value:
+                type: string
+                description: i18n内容
+          description: 多语言描述
+        job_family_id:
+          type: string
+          description: 职级序列ID
+          example: mga5oa8ayjlp9rb
+      description: 序列信息
+    JobLevel:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 职级名称
+          example: 高级专家
+        description:
+          type: string
+          description: 职级描述
+          example: 公司内部中高级职称，有一定专业技术能力的人员
+        order:
+          type: integer
+          description: 职级的排序，可填入自然数100-100000的数值，系统按照数值大小从小到大排序。不填写该字段时，默认新增排序在当前职级列表中最后位（最大值）
+          example: '200'
+        status:
+          type: boolean
+          description: 是否启用
+          example: 'true'
+        job_level_id:
+          type: string
+          description: 职级ID
+          example: mga5oa8ayjlp9rb
+        i18n_name:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                description: 语言
+              value:
+                type: string
+                description: i18n内容
+          description: 多语言名称
+        i18n_description:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                description: 语言
+              value:
+                type: string
+                description: i18n内容
+          description: 多语言描述
+      description: 职级信息
+    Schema3:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data3'
+    Schema4:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data4'
+    Data3:
+      type: object
+      properties:
+        job_family:
+          allOf:
+          - $ref: '#/components/schemas/JobFamily'
+          description: 序列信息
+    Data4:
+      type: object
+      properties:
+        job_level:
+          allOf:
+          - $ref: '#/components/schemas/JobLevel'
+          description: 职级信息
+    EmployeeTypeEnum:
+      type: object
+      properties:
+        enum_id:
+          type: string
+          description: 枚举值id
+        enum_value:
+          type: string
+          description: 枚举值
+          format: int64
+        content:
+          type: string
+          description: 枚举内容
+        enum_type:
+          type: integer
+          description: 类型
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 内置类型
+            '2': 自定义
+        enum_status:
+          type: integer
+          description: 类型
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 激活
+            '2': 未激活
+        i18n_content:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                description: 语言
+              value:
+                type: string
+                description: i18n内容
+          description: i18n定义
+      required:
+      - content
+      - enum_type
+      - enum_status
+      description: 创建人员类型接口
+    Item3:
+      type: object
+      properties:
+        subscription_id:
+          type: string
+          description: 席位id
+          example: '7079609167680782300'
+          format: int64
+        license_plan_key:
+          type: string
+          description: license_plan_key
+          example: suite_enterprise_e5
+        product_name:
+          type: string
+          description: 席位名称
+          example: 旗舰版 E5
+        i18n_name:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 席位中文名
+              example: zh_cn_name
+            ja_jp:
+              type: string
+              description: 席位日文名
+              example: ja_jp_name
+            en_us:
+              type: string
+              description: 席位英文名
+              example: en_name
+          description: 国际化名称
+        start_time:
+          type: string
+          description: 席位起始时间
+          example: '1674981000'
+          format: int64
+        end_time:
+          type: string
+          description: 席位结束时间
+          example: '1674991000'
+          format: int64
+    DepartmentPath:
+      type: object
+      properties:
+        department_ids:
+          type: array
+          items:
+            type: string
+          description: 部门路径IDs
+        department_path_name:
+          type: object
+          properties:
+            name:
+              type: string
+              description: 部门名
+              example: 测试部门名1
+            i18n_name:
+              type: object
+              properties:
+                zh_cn:
+                  type: string
+                  description: 部门的中文名
+                ja_jp:
+                  type: string
+                  description: 部门的日文名
+                en_us:
+                  type: string
+                  description: 部门的英文名
+              description: 部门国际化名
+          description: 部门路径名字
+      description: 部门路径
+    Item4:
+      type: object
+      properties:
+        type:
+          type: string
+          description: 自定义属性类型
+        id:
+          type: string
+          description: 自定义属性ID
+        value:
+          allOf:
+          - $ref: '#/components/schemas/Value2'
+          description: 自定义属性取值
+    Schema5:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data5'
+    Data5:
+      type: object
+      properties:
+        employee_type_enum:
+          allOf:
+          - $ref: '#/components/schemas/EmployeeTypeEnum'
+          description: 创建人员类型接口
+    Value2:
+      type: object
+      properties:
+        text:
+          type: string
+          description: 属性文本
+        url:
+          type: string
+          description: URL
+        pc_url:
+          type: string
+          description: PC上的URL
+        option_id:
+          type: string
+          description: 选项id，自定义选项和图片此项必填
+        generic_user:
+          type: object
+          properties:
+            id:
+              type: string
+              description: 用户id
+              example: '123456789'
+            type:
+              type: integer
+              description: 用户类型 1 User 2 Bot 11 Mail
+              example: '1'
+          required:
+          - id
+          - type
+          description: 用户信息
+      description: 自定义属性取值
+    Item5:
+      type: object
+      properties:
+        type:
+          type: string
+          description: 自定义属性类型
+        id:
+          type: string
+          description: 自定义属性ID
+        value:
+          allOf:
+          - $ref: '#/components/schemas/Value3'
+          description: 自定义属性取值
+    Schema6:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 序列名称。1-100字符，支持中、英文及符号
+          example: 产品
+        description:
+          type: string
+          description: 序列描述，描述序列详情信息
+          example: 负责产品策略制定的相关工作
+        parent_job_family_id:
+          type: string
+          description: 上级序列ID。需是该租户的序列ID列表中的值，对应唯一的序列名称。
+          example: mga5oa8ayjlp9rb
+        status:
+          type: boolean
+          description: 是否启用
+          example: true 表示启用, false表示未启用
+        i18n_name:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                description: 语言
+              value:
+                type: string
+                description: i18n内容
+          description: 多语言序列名称
+        i18n_description:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                description: 语言
+              value:
+                type: string
+                description: i18n内容
+          description: 多语言描述
+    Schema7:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 职级名称
+          example: 高级专家
+        description:
+          type: string
+          description: 职级描述
+          example: 公司内部中高级职称，有一定专业技术能力的人员
+        order:
+          type: integer
+          description: 职级的排序，可填入自然数100-100000的数值，系统按照数值大小从小到大排序。不填写该字段时，默认新增排序在当前职级列表中最后位（最大值）
+          example: '200'
+        status:
+          type: boolean
+          description: 是否启用
+          example: 'true'
+        i18n_name:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                description: 语言
+              value:
+                type: string
+                description: i18n内容
+          description: 多语言名称
+        i18n_description:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                description: 语言
+              value:
+                type: string
+                description: i18n内容
+          description: 多语言描述
+    Schema8:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data6'
+    Value3:
+      type: object
+      properties:
+        text:
+          type: string
+          description: 属性文本
+        url:
+          type: string
+          description: URL
+        pc_url:
+          type: string
+          description: PC上的URL
+        option_value:
+          type: string
+          description: 选项值
+        name:
+          type: string
+          description: 名称
+        picture_url:
+          type: string
+          description: 图片链接
+        generic_user:
+          type: object
+          properties:
+            id:
+              type: string
+              description: 用户id
+              example: '123456789'
+            type:
+              type: integer
+              description: 用户类型 1 User 2 Bot 11 Mail
+              example: '1'
+          required:
+          - id
+          - type
+          description: 用户信息
+      description: 自定义属性取值
+    Schema9:
+      type: object
+      properties:
+        content:
+          type: string
+          description: 枚举内容
+        enum_type:
+          type: integer
+          description: 类型
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 内置类型
+            '2': 自定义
+        enum_status:
+          type: integer
+          description: 类型
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 激活
+            '2': 未激活
+        i18n_content:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                description: 语言
+              value:
+                type: string
+                description: i18n内容
+          description: i18n定义
+    Data6:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              user_id:
+                type: string
+                description: 用户ID
+                example: od-4e6ac4d14bcd5071a37a39de902c7141
+              reason:
+                type: integer
+                description: 成员处理结果
+                enum:
+                - 1
+                - 2
+                - 3
+                - 4
+                - 5
+                - 6
+                x-enum-descriptions:
+                  '1': 处理成功
+                  '2': 用户ID无效
+                  '3': 用户ID无权限
+                  '4': 用户已存在在该角色中
+                  '5': 用户不存在在该角色中
+                  '6': 对该角色内该用户旧的管理范围无权限
+                default: 1
+                example: '1'
+            required:
+            - user_id
+            - reason
+          description: 批量新增角色成员结果集

@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: personal_settings
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -403,55 +403,8 @@ paths:
                   default: 0
                   example: '1'
                 sync_setting:
-                  type: object
-                  properties:
-                    is_open_by_default:
-                      type: boolean
-                      description: 是否默认开启
-                      default: true
-                      example: 'true'
-                    title:
-                      type: string
-                      description: 同步设置名称，名称字符数要在1到30范围内。
-                      default: 自动开启
-                      example: 出差期间自动开启
-                    i18n_title:
-                      type: object
-                      properties:
-                        zh_cn:
-                          type: string
-                          description: 中文名
-                          example: 出差期间自动开启
-                        en_us:
-                          type: string
-                          description: 英文名
-                          example: Auto display Business Trip
-                        ja_jp:
-                          type: string
-                          description: 日文名
-                          example: 出張中に自動的にオンにする
-                      description: 同步设置国际化名称，名称字符数要在1到30范围内。
-                    explain:
-                      type: string
-                      description: 同步设置解释文案，解释字符数要在1到60范围内。
-                      default: 从相关系统进行信息同步，同步后将自动开启并优先展示该状态。
-                      example: 出差审批通过后，将自动开启并优先展示该状态。
-                    i18n_explain:
-                      type: object
-                      properties:
-                        zh_cn:
-                          type: string
-                          description: 中文名
-                          example: 出差审批通过后，该状态将自动开启并优先展示
-                        en_us:
-                          type: string
-                          description: 英文名
-                          example: Auto-display after travel request is approved.
-                        ja_jp:
-                          type: string
-                          description: 日文名
-                          example: 申請が承認されると、このステータスが優先的に表示されます
-                      description: 同步设置国际化解释文案，解释字符数要在1到60范围内。
+                  allOf:
+                  - $ref: '#/components/schemas/SyncSetting'
                   description: 同步设置
       responses:
         '200':
@@ -459,178 +412,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      system_status:
-                        type: object
-                        properties:
-                          system_status_id:
-                            type: string
-                            description: 系统状态ID
-                            example: '7101214603622940633'
-                            format: int64
-                          title:
-                            type: string
-                            description: 系统状态名称，名称字符数要在1到20范围内。
-                            example: 出差
-                          i18n_title:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文名
-                                example: 出差
-                              en_us:
-                                type: string
-                                description: 英文名
-                                example: On business trip
-                              ja_jp:
-                                type: string
-                                description: 日文名
-                                example: 出張中
-                            description: 系统状态国际化名称，名称字符数要在1到20范围内。
-                          icon_key:
-                            type: string
-                            description: 图标
-                            enum:
-                            - GeneralDoNotDisturb
-                            - GeneralInMeetingBusy
-                            - Coffee
-                            - GeneralBusinessTrip
-                            - GeneralWorkFromHome
-                            - StatusEnjoyLife
-                            - GeneralTravellingCar
-                            - StatusBus
-                            - StatusInFlight
-                            - Typing
-                            - EatingFood
-                            - SICK
-                            - GeneralSun
-                            - GeneralMoonRest
-                            - StatusReading
-                            - Status_PrivateMessage
-                            - StatusFlashOfInspiration
-                            - GeneralVacation
-                            x-enum-descriptions:
-                              GeneralDoNotDisturb: GeneralDoNotDisturb
-                              GeneralInMeetingBusy: GeneralInMeetingBusy
-                              Coffee: Coffee
-                              GeneralBusinessTrip: GeneralBusinessTrip
-                              GeneralWorkFromHome: GeneralWorkFromHome
-                              StatusEnjoyLife: StatusEnjoyLife
-                              GeneralTravellingCar: GeneralTravellingCar
-                              StatusBus: StatusBus
-                              StatusInFlight: StatusInFlight
-                              Typing: Typing
-                              EatingFood: EatingFood
-                              SICK: SICK
-                              GeneralSun: GeneralSun
-                              GeneralMoonRest: GeneralMoonRest
-                              StatusReading: StatusReading
-                              Status_PrivateMessage: Status_PrivateMessage
-                              StatusFlashOfInspiration: StatusFlashOfInspiration
-                              GeneralVacation: GeneralVacation
-                            example: GeneralBusinessTrip
-                          color:
-                            type: string
-                            description: 颜色
-                            enum:
-                            - BLUE
-                            - GRAY
-                            - INDIGO
-                            - WATHET
-                            - GREEN
-                            - TURQUOISE
-                            - YELLOW
-                            - LIME
-                            - RED
-                            - ORANGE
-                            - PURPLE
-                            - VIOLET
-                            - CARMINE
-                            x-enum-descriptions:
-                              BLUE: 蓝色
-                              GRAY: 灰色
-                              INDIGO: 靛青色
-                              WATHET: 浅蓝色
-                              GREEN: 绿色
-                              TURQUOISE: 绿松石色
-                              YELLOW: 黄色
-                              LIME: 酸橙色
-                              RED: 红色
-                              ORANGE: 橙色
-                              PURPLE: 紫色
-                              VIOLET: 紫罗兰色
-                              CARMINE: 胭脂红色
-                            default: BLUE
-                            example: BLUE
-                          priority:
-                            type: integer
-                            description: 优先级，数值越小，客户端展示的优先级越高。不同系统状态的优先级不能一样。
-                            default: 0
-                            example: '1'
-                          sync_setting:
-                            type: object
-                            properties:
-                              is_open_by_default:
-                                type: boolean
-                                description: 是否默认开启
-                                default: true
-                                example: 'true'
-                              title:
-                                type: string
-                                description: 同步设置名称，名称字符数要在1到30范围内。
-                                default: 自动开启
-                                example: 出差期间自动开启
-                              i18n_title:
-                                type: object
-                                properties:
-                                  zh_cn:
-                                    type: string
-                                    description: 中文名
-                                    example: 出差期间自动开启
-                                  en_us:
-                                    type: string
-                                    description: 英文名
-                                    example: Auto display Business Trip
-                                  ja_jp:
-                                    type: string
-                                    description: 日文名
-                                    example: 出張中に自動的にオンにする
-                                description: 同步设置国际化名称，名称字符数要在1到30范围内。
-                              explain:
-                                type: string
-                                description: 同步设置解释文案，解释字符数要在1到60范围内。
-                                default: 从相关系统进行信息同步，同步后将自动开启并优先展示该状态。
-                                example: 出差审批通过后，将自动开启并优先展示该状态。
-                              i18n_explain:
-                                type: object
-                                properties:
-                                  zh_cn:
-                                    type: string
-                                    description: 中文名
-                                    example: 出差审批通过后，该状态将自动开启并优先展示
-                                  en_us:
-                                    type: string
-                                    description: 英文名
-                                    example: Auto-display after travel request is approved.
-                                  ja_jp:
-                                    type: string
-                                    description: 日文名
-                                    example: 申請が承認されると、このステータスが優先的に表示されます
-                                description: 同步设置国际化解释文案，解释字符数要在1到60范围内。
-                            description: 同步设置
-                        required:
-                        - title
-                        - icon_key
-                        description: 系统状态
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -698,167 +480,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            system_status_id:
-                              type: string
-                              description: 系统状态ID
-                              example: '7101214603622940633'
-                              format: int64
-                            title:
-                              type: string
-                              description: 系统状态名称，名称字符数要在1到20范围内。
-                              example: 出差
-                            i18n_title:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 中文名
-                                  example: 出差
-                                en_us:
-                                  type: string
-                                  description: 英文名
-                                  example: On business trip
-                                ja_jp:
-                                  type: string
-                                  description: 日文名
-                                  example: 出張中
-                              description: 系统状态国际化名称，名称字符数要在1到20范围内。
-                            icon_key:
-                              type: string
-                              description: 图标
-                              enum:
-                              - GeneralDoNotDisturb
-                              - GeneralInMeetingBusy
-                              - Coffee
-                              - GeneralBusinessTrip
-                              - GeneralWorkFromHome
-                              - StatusEnjoyLife
-                              - GeneralTravellingCar
-                              - StatusBus
-                              - StatusInFlight
-                              - Typing
-                              - EatingFood
-                              - SICK
-                              - GeneralSun
-                              - GeneralMoonRest
-                              - StatusReading
-                              - Status_PrivateMessage
-                              - StatusFlashOfInspiration
-                              - GeneralVacation
-                              x-enum-descriptions:
-                                GeneralDoNotDisturb: GeneralDoNotDisturb
-                                GeneralInMeetingBusy: GeneralInMeetingBusy
-                                Coffee: Coffee
-                                GeneralBusinessTrip: GeneralBusinessTrip
-                                GeneralWorkFromHome: GeneralWorkFromHome
-                                StatusEnjoyLife: StatusEnjoyLife
-                                GeneralTravellingCar: GeneralTravellingCar
-                                StatusBus: StatusBus
-                                StatusInFlight: StatusInFlight
-                                Typing: Typing
-                                EatingFood: EatingFood
-                                SICK: SICK
-                                GeneralSun: GeneralSun
-                                GeneralMoonRest: GeneralMoonRest
-                                StatusReading: StatusReading
-                                Status_PrivateMessage: Status_PrivateMessage
-                                StatusFlashOfInspiration: StatusFlashOfInspiration
-                                GeneralVacation: GeneralVacation
-                              example: GeneralBusinessTrip
-                            color:
-                              type: string
-                              description: 颜色
-                              enum:
-                              - BLUE
-                              - GRAY
-                              - INDIGO
-                              - WATHET
-                              - GREEN
-                              - TURQUOISE
-                              - YELLOW
-                              - LIME
-                              - RED
-                              - ORANGE
-                              - PURPLE
-                              - VIOLET
-                              - CARMINE
-                              x-enum-descriptions:
-                                BLUE: 蓝色
-                                GRAY: 灰色
-                                INDIGO: 靛青色
-                                WATHET: 浅蓝色
-                                GREEN: 绿色
-                                TURQUOISE: 绿松石色
-                                YELLOW: 黄色
-                                LIME: 酸橙色
-                                RED: 红色
-                                ORANGE: 橙色
-                                PURPLE: 紫色
-                                VIOLET: 紫罗兰色
-                                CARMINE: 胭脂红色
-                              default: BLUE
-                              example: BLUE
-                            priority:
-                              type: integer
-                              description: 优先级，数值越小，客户端展示的优先级越高。不同系统状态的优先级不能一样。
-                              default: 0
-                              example: '1'
-                            sync_setting:
-                              type: object
-                              properties:
-                                is_open_by_default:
-                                  type: boolean
-                                  description: 是否默认开启
-                                  default: true
-                                  example: 'true'
-                                title:
-                                  type: string
-                                  description: 同步设置名称，名称字符数要在1到30范围内。
-                                  default: 自动开启
-                                  example: 出差期间自动开启
-                                i18n_title:
-                                  type: object
-                                  properties:
-                                    zh_cn:
-                                      type: string
-                                      description: 中文名
-                                      example: 出差期间自动开启
-                                    en_us:
-                                      type: string
-                                      description: 英文名
-                                      example: Auto display Business Trip
-                                    ja_jp:
-                                      type: string
-                                      description: 日文名
-                                      example: 出張中に自動的にオンにする
-                                  description: 同步设置国际化名称，名称字符数要在1到30范围内。
-                                explain:
-                                  type: string
-                                  description: 同步设置解释文案，解释字符数要在1到60范围内。
-                                  default: 从相关系统进行信息同步，同步后将自动开启并优先展示该状态。
-                                  example: 出差审批通过后，将自动开启并优先展示该状态。
-                                i18n_explain:
-                                  type: object
-                                  properties:
-                                    zh_cn:
-                                      type: string
-                                      description: 中文名
-                                      example: 出差审批通过后，该状态将自动开启并优先展示
-                                    en_us:
-                                      type: string
-                                      description: 英文名
-                                      example: Auto-display after travel request is approved.
-                                    ja_jp:
-                                      type: string
-                                      description: 日文名
-                                      example: 申請が承認されると、このステータスが優先的に表示されます
-                                  description: 同步设置国际化解释文案，解释字符数要在1到60范围内。
-                              description: 同步设置
-                          required:
-                          - title
-                          - icon_key
+                          $ref: '#/components/schemas/SystemStatu'
                         description: 租户系统状态
                       page_token:
                         type: string
@@ -1055,55 +677,8 @@ paths:
                       default: 0
                       example: '1'
                     sync_setting:
-                      type: object
-                      properties:
-                        is_open_by_default:
-                          type: boolean
-                          description: 是否默认开启
-                          default: true
-                          example: 'true'
-                        title:
-                          type: string
-                          description: 同步设置名称，名称字符数要在1到30范围内。
-                          default: 自动开启
-                          example: 出差期间自动开启
-                        i18n_title:
-                          type: object
-                          properties:
-                            zh_cn:
-                              type: string
-                              description: 中文名
-                              example: 出差期间自动开启
-                            en_us:
-                              type: string
-                              description: 英文名
-                              example: Auto display Business Trip
-                            ja_jp:
-                              type: string
-                              description: 日文名
-                              example: 出張中に自動的にオンにする
-                          description: 同步设置国际化名称，名称字符数要在1到30范围内。
-                        explain:
-                          type: string
-                          description: 同步设置解释文案，解释字符数要在1到60范围内。
-                          default: 从相关系统进行信息同步，同步后将自动开启并优先展示该状态。
-                          example: 出差审批通过后，将自动开启并优先展示该状态。
-                        i18n_explain:
-                          type: object
-                          properties:
-                            zh_cn:
-                              type: string
-                              description: 中文名
-                              example: 出差审批通过后，该状态将自动开启并优先展示
-                            en_us:
-                              type: string
-                              description: 英文名
-                              example: Auto-display after travel request is approved.
-                            ja_jp:
-                              type: string
-                              description: 日文名
-                              example: 申請が承認されると、このステータスが優先的に表示されます
-                          description: 同步设置国际化解释文案，解释字符数要在1到60范围内。
+                      allOf:
+                      - $ref: '#/components/schemas/SyncSetting'
                       description: 同步设置
                   required:
                   - title
@@ -1135,178 +710,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      system_status:
-                        type: object
-                        properties:
-                          system_status_id:
-                            type: string
-                            description: 系统状态ID
-                            example: '7101214603622940633'
-                            format: int64
-                          title:
-                            type: string
-                            description: 系统状态名称，名称字符数要在1到20范围内。
-                            example: 出差
-                          i18n_title:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文名
-                                example: 出差
-                              en_us:
-                                type: string
-                                description: 英文名
-                                example: On business trip
-                              ja_jp:
-                                type: string
-                                description: 日文名
-                                example: 出張中
-                            description: 系统状态国际化名称，名称字符数要在1到20范围内。
-                          icon_key:
-                            type: string
-                            description: 图标
-                            enum:
-                            - GeneralDoNotDisturb
-                            - GeneralInMeetingBusy
-                            - Coffee
-                            - GeneralBusinessTrip
-                            - GeneralWorkFromHome
-                            - StatusEnjoyLife
-                            - GeneralTravellingCar
-                            - StatusBus
-                            - StatusInFlight
-                            - Typing
-                            - EatingFood
-                            - SICK
-                            - GeneralSun
-                            - GeneralMoonRest
-                            - StatusReading
-                            - Status_PrivateMessage
-                            - StatusFlashOfInspiration
-                            - GeneralVacation
-                            x-enum-descriptions:
-                              GeneralDoNotDisturb: GeneralDoNotDisturb
-                              GeneralInMeetingBusy: GeneralInMeetingBusy
-                              Coffee: Coffee
-                              GeneralBusinessTrip: GeneralBusinessTrip
-                              GeneralWorkFromHome: GeneralWorkFromHome
-                              StatusEnjoyLife: StatusEnjoyLife
-                              GeneralTravellingCar: GeneralTravellingCar
-                              StatusBus: StatusBus
-                              StatusInFlight: StatusInFlight
-                              Typing: Typing
-                              EatingFood: EatingFood
-                              SICK: SICK
-                              GeneralSun: GeneralSun
-                              GeneralMoonRest: GeneralMoonRest
-                              StatusReading: StatusReading
-                              Status_PrivateMessage: Status_PrivateMessage
-                              StatusFlashOfInspiration: StatusFlashOfInspiration
-                              GeneralVacation: GeneralVacation
-                            example: GeneralBusinessTrip
-                          color:
-                            type: string
-                            description: 颜色
-                            enum:
-                            - BLUE
-                            - GRAY
-                            - INDIGO
-                            - WATHET
-                            - GREEN
-                            - TURQUOISE
-                            - YELLOW
-                            - LIME
-                            - RED
-                            - ORANGE
-                            - PURPLE
-                            - VIOLET
-                            - CARMINE
-                            x-enum-descriptions:
-                              BLUE: 蓝色
-                              GRAY: 灰色
-                              INDIGO: 靛青色
-                              WATHET: 浅蓝色
-                              GREEN: 绿色
-                              TURQUOISE: 绿松石色
-                              YELLOW: 黄色
-                              LIME: 酸橙色
-                              RED: 红色
-                              ORANGE: 橙色
-                              PURPLE: 紫色
-                              VIOLET: 紫罗兰色
-                              CARMINE: 胭脂红色
-                            default: BLUE
-                            example: BLUE
-                          priority:
-                            type: integer
-                            description: 优先级，数值越小，客户端展示的优先级越高。不同系统状态的优先级不能一样。
-                            default: 0
-                            example: '1'
-                          sync_setting:
-                            type: object
-                            properties:
-                              is_open_by_default:
-                                type: boolean
-                                description: 是否默认开启
-                                default: true
-                                example: 'true'
-                              title:
-                                type: string
-                                description: 同步设置名称，名称字符数要在1到30范围内。
-                                default: 自动开启
-                                example: 出差期间自动开启
-                              i18n_title:
-                                type: object
-                                properties:
-                                  zh_cn:
-                                    type: string
-                                    description: 中文名
-                                    example: 出差期间自动开启
-                                  en_us:
-                                    type: string
-                                    description: 英文名
-                                    example: Auto display Business Trip
-                                  ja_jp:
-                                    type: string
-                                    description: 日文名
-                                    example: 出張中に自動的にオンにする
-                                description: 同步设置国际化名称，名称字符数要在1到30范围内。
-                              explain:
-                                type: string
-                                description: 同步设置解释文案，解释字符数要在1到60范围内。
-                                default: 从相关系统进行信息同步，同步后将自动开启并优先展示该状态。
-                                example: 出差审批通过后，将自动开启并优先展示该状态。
-                              i18n_explain:
-                                type: object
-                                properties:
-                                  zh_cn:
-                                    type: string
-                                    description: 中文名
-                                    example: 出差审批通过后，该状态将自动开启并优先展示
-                                  en_us:
-                                    type: string
-                                    description: 英文名
-                                    example: Auto-display after travel request is approved.
-                                  ja_jp:
-                                    type: string
-                                    description: 日文名
-                                    example: 申請が承認されると、このステータスが優先的に表示されます
-                                description: 同步设置国际化解释文案，解释字符数要在1到60范围内。
-                            description: 同步设置
-                        required:
-                        - title
-                        - icon_key
-                        description: 系统状态
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -1329,3 +733,188 @@ paths:
         msg: ''
       x-lark-rate-limit:
         tier: 3
+components:
+  schemas:
+    SystemStatu:
+      type: object
+      properties:
+        system_status_id:
+          type: string
+          description: 系统状态ID
+          example: '7101214603622940633'
+          format: int64
+        title:
+          type: string
+          description: 系统状态名称，名称字符数要在1到20范围内。
+          example: 出差
+        i18n_title:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文名
+              example: 出差
+            en_us:
+              type: string
+              description: 英文名
+              example: On business trip
+            ja_jp:
+              type: string
+              description: 日文名
+              example: 出張中
+          description: 系统状态国际化名称，名称字符数要在1到20范围内。
+        icon_key:
+          type: string
+          description: 图标
+          enum:
+          - GeneralDoNotDisturb
+          - GeneralInMeetingBusy
+          - Coffee
+          - GeneralBusinessTrip
+          - GeneralWorkFromHome
+          - StatusEnjoyLife
+          - GeneralTravellingCar
+          - StatusBus
+          - StatusInFlight
+          - Typing
+          - EatingFood
+          - SICK
+          - GeneralSun
+          - GeneralMoonRest
+          - StatusReading
+          - Status_PrivateMessage
+          - StatusFlashOfInspiration
+          - GeneralVacation
+          x-enum-descriptions:
+            GeneralDoNotDisturb: GeneralDoNotDisturb
+            GeneralInMeetingBusy: GeneralInMeetingBusy
+            Coffee: Coffee
+            GeneralBusinessTrip: GeneralBusinessTrip
+            GeneralWorkFromHome: GeneralWorkFromHome
+            StatusEnjoyLife: StatusEnjoyLife
+            GeneralTravellingCar: GeneralTravellingCar
+            StatusBus: StatusBus
+            StatusInFlight: StatusInFlight
+            Typing: Typing
+            EatingFood: EatingFood
+            SICK: SICK
+            GeneralSun: GeneralSun
+            GeneralMoonRest: GeneralMoonRest
+            StatusReading: StatusReading
+            Status_PrivateMessage: Status_PrivateMessage
+            StatusFlashOfInspiration: StatusFlashOfInspiration
+            GeneralVacation: GeneralVacation
+          example: GeneralBusinessTrip
+        color:
+          type: string
+          description: 颜色
+          enum:
+          - BLUE
+          - GRAY
+          - INDIGO
+          - WATHET
+          - GREEN
+          - TURQUOISE
+          - YELLOW
+          - LIME
+          - RED
+          - ORANGE
+          - PURPLE
+          - VIOLET
+          - CARMINE
+          x-enum-descriptions:
+            BLUE: 蓝色
+            GRAY: 灰色
+            INDIGO: 靛青色
+            WATHET: 浅蓝色
+            GREEN: 绿色
+            TURQUOISE: 绿松石色
+            YELLOW: 黄色
+            LIME: 酸橙色
+            RED: 红色
+            ORANGE: 橙色
+            PURPLE: 紫色
+            VIOLET: 紫罗兰色
+            CARMINE: 胭脂红色
+          default: BLUE
+          example: BLUE
+        priority:
+          type: integer
+          description: 优先级，数值越小，客户端展示的优先级越高。不同系统状态的优先级不能一样。
+          default: 0
+          example: '1'
+        sync_setting:
+          allOf:
+          - $ref: '#/components/schemas/SyncSetting'
+          description: 同步设置
+      required:
+      - title
+      - icon_key
+      description: 系统状态
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    Data:
+      type: object
+      properties:
+        system_status:
+          allOf:
+          - $ref: '#/components/schemas/SystemStatu'
+          description: 系统状态
+    SyncSetting:
+      type: object
+      properties:
+        is_open_by_default:
+          type: boolean
+          description: 是否默认开启
+          default: true
+          example: 'true'
+        title:
+          type: string
+          description: 同步设置名称，名称字符数要在1到30范围内。
+          default: 自动开启
+          example: 出差期间自动开启
+        i18n_title:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文名
+              example: 出差期间自动开启
+            en_us:
+              type: string
+              description: 英文名
+              example: Auto display Business Trip
+            ja_jp:
+              type: string
+              description: 日文名
+              example: 出張中に自動的にオンにする
+          description: 同步设置国际化名称，名称字符数要在1到30范围内。
+        explain:
+          type: string
+          description: 同步设置解释文案，解释字符数要在1到60范围内。
+          default: 从相关系统进行信息同步，同步后将自动开启并优先展示该状态。
+          example: 出差审批通过后，将自动开启并优先展示该状态。
+        i18n_explain:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文名
+              example: 出差审批通过后，该状态将自动开启并优先展示
+            en_us:
+              type: string
+              description: 英文名
+              example: Auto-display after travel request is approved.
+            ja_jp:
+              type: string
+              description: 日文名
+              example: 申請が承認されると、このステータスが優先的に表示されます
+          description: 同步设置国际化解释文案，解释字符数要在1到60范围内。
+      description: 同步设置

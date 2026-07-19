@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: wiki
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -214,40 +214,8 @@ paths:
                     type: object
                     properties:
                       member:
-                        type: object
-                        properties:
-                          member_type:
-                            type: string
-                            description: 知识库协作者 ID 类型
-                            example: openid
-                          member_id:
-                            type: string
-                            description: 知识库协作者 ID
-                            example: ou_67e5ecb64ce1c0bd94612c17999db411
-                          member_role:
-                            type: string
-                            description: 知识库协作者角色
-                            example: admin
-                          type:
-                            type: string
-                            description: 知识库协作者类型
-                            enum:
-                            - user
-                            - chat
-                            - department
-                            x-enum-descriptions:
-                              user: 用户
-                              chat: 群组
-                              department: 组织架构
-                            example: user
-                          member_perm:
-                            type: string
-                            description: 知识库协作组权限
-                            example: admin
-                        required:
-                        - member_type
-                        - member_id
-                        - member_role
+                        allOf:
+                        - $ref: '#/components/schemas/Member'
                         description: 知识库协作者
       x-lark-access-tokens:
       - user
@@ -333,40 +301,7 @@ paths:
                       members:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            member_type:
-                              type: string
-                              description: 知识库协作者 ID 类型
-                              example: openid
-                            member_id:
-                              type: string
-                              description: 知识库协作者 ID
-                              example: ou_67e5ecb64ce1c0bd94612c17999db411
-                            member_role:
-                              type: string
-                              description: 知识库协作者角色
-                              example: admin
-                            type:
-                              type: string
-                              description: 知识库协作者类型
-                              enum:
-                              - user
-                              - chat
-                              - department
-                              x-enum-descriptions:
-                                user: 用户
-                                chat: 群组
-                                department: 组织架构
-                              example: user
-                            member_perm:
-                              type: string
-                              description: 知识库协作组权限
-                              example: admin
-                          required:
-                          - member_type
-                          - member_id
-                          - member_role
+                          $ref: '#/components/schemas/Member'
                         description: 空间成员列表
                       page_token:
                         type: string
@@ -478,40 +413,8 @@ paths:
                     type: object
                     properties:
                       member:
-                        type: object
-                        properties:
-                          member_type:
-                            type: string
-                            description: 知识库协作者 ID 类型
-                            example: openid
-                          member_id:
-                            type: string
-                            description: 知识库协作者 ID
-                            example: ou_67e5ecb64ce1c0bd94612c17999db411
-                          member_role:
-                            type: string
-                            description: 知识库协作者角色
-                            example: admin
-                          type:
-                            type: string
-                            description: 知识库协作者类型
-                            enum:
-                            - user
-                            - chat
-                            - department
-                            x-enum-descriptions:
-                              user: 用户
-                              chat: 群组
-                              department: 组织架构
-                            example: user
-                          member_perm:
-                            type: string
-                            description: 知识库协作组权限
-                            example: admin
-                        required:
-                        - member_type
-                        - member_id
-                        - member_role
+                        allOf:
+                        - $ref: '#/components/schemas/Member'
                         description: 成员信息
                     required:
                     - member
@@ -604,106 +507,8 @@ paths:
                     type: object
                     properties:
                       node:
-                        type: object
-                        properties:
-                          space_id:
-                            type: string
-                            description: 知识空间id，[获取方式](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-overview)
-                            example: '6946843325487906839'
-                            format: int64
-                          node_token:
-                            type: string
-                            description: 节点token，[获取方式](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-overview)
-                            example: wikcnKQ1k3p******8Vabcef
-                          obj_token:
-                            type: string
-                            description: 对应文档类型的token，可根据 obj_type 判断属于哪种文档类型。
-                            example: doccnzAaO******8g9Spprd
-                          obj_type:
-                            type: string
-                            description: 文档类型，对于快捷方式，该字段是对应的实体的obj_type。
-                            enum:
-                            - doc
-                            - sheet
-                            - mindnote
-                            - bitable
-                            - file
-                            - docx
-                            - slides
-                            x-enum-descriptions:
-                              doc: 旧版文档
-                              sheet: 表格
-                              mindnote: 思维导图
-                              bitable: 多维表格
-                              file: 文件
-                              docx: 新版文档
-                              slides: 幻灯片
-                            example: doc
-                          parent_node_token:
-                            type: string
-                            description: 父节点 token。若当前节点为一级节点，父节点 token 为空。
-                            example: wikcnKQ1k3p******8Vabcef
-                          node_type:
-                            type: string
-                            description: 节点类型
-                            enum:
-                            - origin
-                            - shortcut
-                            x-enum-descriptions:
-                              origin: 实体
-                              shortcut: 快捷方式
-                            example: origin
-                          origin_node_token:
-                            type: string
-                            description: 快捷方式对应的实体node_token，当节点为快捷方式时，该值不为空。
-                            example: wikcnKQ1k3p******8Vabcef
-                          origin_space_id:
-                            type: string
-                            description: 快捷方式对应的实体所在的spaceid
-                            example: '6946843325487912356'
-                            format: int64
-                          has_child:
-                            type: boolean
-                            description: 是否有子节点
-                            example: 'true'
-                          title:
-                            type: string
-                            description: 文档标题
-                            example: xxxx
-                          obj_create_time:
-                            type: string
-                            description: 文档创建时间
-                            example: '1642402428'
-                            format: int64
-                          obj_edit_time:
-                            type: string
-                            description: 文档最近编辑时间
-                            example: '1642402428'
-                            format: int64
-                          node_create_time:
-                            type: string
-                            description: 节点创建时间
-                            example: '1642402428'
-                            format: int64
-                          creator:
-                            type: string
-                            description: 文档创建者
-                            example: ou_xxxxx
-                          owner:
-                            type: string
-                            description: 文档所有者
-                            example: ou_xxxxx
-                          node_creator:
-                            type: string
-                            description: 节点创建者
-                            example: ou_xxxxx
-                          url:
-                            type: string
-                            description: 文档url
-                            example: https://xxx/wiki/wikcnKQ1k3p******8Vabcef
-                        required:
-                        - obj_type
-                        - node_type
+                        allOf:
+                        - $ref: '#/components/schemas/Node'
                         description: copy后的节点
                     required:
                     - node
@@ -812,117 +617,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      node:
-                        type: object
-                        properties:
-                          space_id:
-                            type: string
-                            description: 知识空间id，[获取方式](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-overview)
-                            example: '6946843325487906839'
-                            format: int64
-                          node_token:
-                            type: string
-                            description: 节点token，[获取方式](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-overview)
-                            example: wikcnKQ1k3p******8Vabcef
-                          obj_token:
-                            type: string
-                            description: 对应文档类型的token，可根据 obj_type 判断属于哪种文档类型。
-                            example: doccnzAaO******8g9Spprd
-                          obj_type:
-                            type: string
-                            description: 文档类型，对于快捷方式，该字段是对应的实体的obj_type。
-                            enum:
-                            - doc
-                            - sheet
-                            - mindnote
-                            - bitable
-                            - file
-                            - docx
-                            - slides
-                            x-enum-descriptions:
-                              doc: 旧版文档
-                              sheet: 表格
-                              mindnote: 思维导图
-                              bitable: 多维表格
-                              file: 文件
-                              docx: 新版文档
-                              slides: 幻灯片
-                            example: doc
-                          parent_node_token:
-                            type: string
-                            description: 父节点 token。若当前节点为一级节点，父节点 token 为空。
-                            example: wikcnKQ1k3p******8Vabcef
-                          node_type:
-                            type: string
-                            description: 节点类型
-                            enum:
-                            - origin
-                            - shortcut
-                            x-enum-descriptions:
-                              origin: 实体
-                              shortcut: 快捷方式
-                            example: origin
-                          origin_node_token:
-                            type: string
-                            description: 快捷方式对应的实体node_token，当节点为快捷方式时，该值不为空。
-                            example: wikcnKQ1k3p******8Vabcef
-                          origin_space_id:
-                            type: string
-                            description: 快捷方式对应的实体所在的spaceid
-                            example: '6946843325487912356'
-                            format: int64
-                          has_child:
-                            type: boolean
-                            description: 是否有子节点
-                            example: 'true'
-                          title:
-                            type: string
-                            description: 文档标题
-                            example: xxxx
-                          obj_create_time:
-                            type: string
-                            description: 文档创建时间
-                            example: '1642402428'
-                            format: int64
-                          obj_edit_time:
-                            type: string
-                            description: 文档最近编辑时间
-                            example: '1642402428'
-                            format: int64
-                          node_create_time:
-                            type: string
-                            description: 节点创建时间
-                            example: '1642402428'
-                            format: int64
-                          creator:
-                            type: string
-                            description: 文档创建者
-                            example: ou_xxxxx
-                          owner:
-                            type: string
-                            description: 文档所有者
-                            example: ou_xxxxx
-                          node_creator:
-                            type: string
-                            description: 节点创建者
-                            example: ou_xxxxx
-                          url:
-                            type: string
-                            description: 文档url
-                            example: https://xxx/wiki/wikcnKQ1k3p******8Vabcef
-                        required:
-                        - obj_type
-                        - node_type
-                        description: 节点
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       - tenant
@@ -1012,106 +707,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            space_id:
-                              type: string
-                              description: 知识空间id，[获取方式](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-overview)
-                              example: '6946843325487906839'
-                              format: int64
-                            node_token:
-                              type: string
-                              description: 节点token，[获取方式](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-overview)
-                              example: wikcnKQ1k3p******8Vabcef
-                            obj_token:
-                              type: string
-                              description: 对应文档类型的token，可根据 obj_type 判断属于哪种文档类型。
-                              example: doccnzAaO******8g9Spprd
-                            obj_type:
-                              type: string
-                              description: 文档类型，对于快捷方式，该字段是对应的实体的obj_type。
-                              enum:
-                              - doc
-                              - sheet
-                              - mindnote
-                              - bitable
-                              - file
-                              - docx
-                              - slides
-                              x-enum-descriptions:
-                                doc: 旧版文档
-                                sheet: 表格
-                                mindnote: 思维导图
-                                bitable: 多维表格
-                                file: 文件
-                                docx: 新版文档
-                                slides: 幻灯片
-                              example: doc
-                            parent_node_token:
-                              type: string
-                              description: 父节点 token。若当前节点为一级节点，父节点 token 为空。
-                              example: wikcnKQ1k3p******8Vabcef
-                            node_type:
-                              type: string
-                              description: 节点类型
-                              enum:
-                              - origin
-                              - shortcut
-                              x-enum-descriptions:
-                                origin: 实体
-                                shortcut: 快捷方式
-                              example: origin
-                            origin_node_token:
-                              type: string
-                              description: 快捷方式对应的实体node_token，当节点为快捷方式时，该值不为空。
-                              example: wikcnKQ1k3p******8Vabcef
-                            origin_space_id:
-                              type: string
-                              description: 快捷方式对应的实体所在的spaceid
-                              example: '6946843325487912356'
-                              format: int64
-                            has_child:
-                              type: boolean
-                              description: 是否有子节点
-                              example: 'true'
-                            title:
-                              type: string
-                              description: 文档标题
-                              example: xxxx
-                            obj_create_time:
-                              type: string
-                              description: 文档创建时间
-                              example: '1642402428'
-                              format: int64
-                            obj_edit_time:
-                              type: string
-                              description: 文档最近编辑时间
-                              example: '1642402428'
-                              format: int64
-                            node_create_time:
-                              type: string
-                              description: 节点创建时间
-                              example: '1642402428'
-                              format: int64
-                            creator:
-                              type: string
-                              description: 文档创建者
-                              example: ou_xxxxx
-                            owner:
-                              type: string
-                              description: 文档所有者
-                              example: ou_xxxxx
-                            node_creator:
-                              type: string
-                              description: 节点创建者
-                              example: ou_xxxxx
-                            url:
-                              type: string
-                              description: 文档url
-                              example: https://xxx/wiki/wikcnKQ1k3p******8Vabcef
-                          required:
-                          - obj_type
-                          - node_type
+                          $ref: '#/components/schemas/Node'
                         description: 知识空间节点信息
                       page_token:
                         type: string
@@ -1193,117 +789,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      node:
-                        type: object
-                        properties:
-                          space_id:
-                            type: string
-                            description: 知识空间id，[获取方式](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-overview)
-                            example: '6946843325487906839'
-                            format: int64
-                          node_token:
-                            type: string
-                            description: 节点token，[获取方式](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-overview)
-                            example: wikcnKQ1k3p******8Vabcef
-                          obj_token:
-                            type: string
-                            description: 对应文档类型的token，可根据 obj_type 判断属于哪种文档类型。
-                            example: doccnzAaO******8g9Spprd
-                          obj_type:
-                            type: string
-                            description: 文档类型，对于快捷方式，该字段是对应的实体的obj_type。
-                            enum:
-                            - doc
-                            - sheet
-                            - mindnote
-                            - bitable
-                            - file
-                            - docx
-                            - slides
-                            x-enum-descriptions:
-                              doc: 旧版文档
-                              sheet: 表格
-                              mindnote: 思维导图
-                              bitable: 多维表格
-                              file: 文件
-                              docx: 新版文档
-                              slides: 幻灯片
-                            example: doc
-                          parent_node_token:
-                            type: string
-                            description: 父节点 token。若当前节点为一级节点，父节点 token 为空。
-                            example: wikcnKQ1k3p******8Vabcef
-                          node_type:
-                            type: string
-                            description: 节点类型
-                            enum:
-                            - origin
-                            - shortcut
-                            x-enum-descriptions:
-                              origin: 实体
-                              shortcut: 快捷方式
-                            example: origin
-                          origin_node_token:
-                            type: string
-                            description: 快捷方式对应的实体node_token，当节点为快捷方式时，该值不为空。
-                            example: wikcnKQ1k3p******8Vabcef
-                          origin_space_id:
-                            type: string
-                            description: 快捷方式对应的实体所在的spaceid
-                            example: '6946843325487912356'
-                            format: int64
-                          has_child:
-                            type: boolean
-                            description: 是否有子节点
-                            example: 'true'
-                          title:
-                            type: string
-                            description: 文档标题
-                            example: xxxx
-                          obj_create_time:
-                            type: string
-                            description: 文档创建时间
-                            example: '1642402428'
-                            format: int64
-                          obj_edit_time:
-                            type: string
-                            description: 文档最近编辑时间
-                            example: '1642402428'
-                            format: int64
-                          node_create_time:
-                            type: string
-                            description: 节点创建时间
-                            example: '1642402428'
-                            format: int64
-                          creator:
-                            type: string
-                            description: 文档创建者
-                            example: ou_xxxxx
-                          owner:
-                            type: string
-                            description: 文档所有者
-                            example: ou_xxxxx
-                          node_creator:
-                            type: string
-                            description: 节点创建者
-                            example: ou_xxxxx
-                          url:
-                            type: string
-                            description: 文档url
-                            example: https://xxx/wiki/wikcnKQ1k3p******8Vabcef
-                        required:
-                        - obj_type
-                        - node_type
-                        description: 移动后的节点信息
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       - user
@@ -1661,65 +1147,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      space:
-                        type: object
-                        properties:
-                          name:
-                            type: string
-                            description: 知识空间名称
-                            example: 测试知识库
-                          description:
-                            type: string
-                            description: 知识空间描述
-                            example: 测试知识库
-                          space_id:
-                            type: string
-                            description: 知识空间id
-                            example: '6946843325487456878'
-                          space_type:
-                            type: string
-                            description: 表示知识空间类型（团队空间 或 个人空间 或 我的文档库）
-                            enum:
-                            - team
-                            - person
-                            - my_library
-                            - my_library_resigned
-                            x-enum-descriptions:
-                              team: 团队空间
-                              person: 个人空间
-                              my_library: 我的文档库
-                              my_library_resigned: 离职文档库
-                            example: team
-                          visibility:
-                            type: string
-                            description: 表示知识空间可见性（公开空间 或 私有空间）
-                            enum:
-                            - public
-                            - private
-                            x-enum-descriptions:
-                              public: 公开空间
-                              private: 私有空间
-                            example: private
-                          open_sharing:
-                            type: string
-                            description: 表示知识空间的分享状态
-                            enum:
-                            - open
-                            - closed
-                            x-enum-descriptions:
-                              open: 打开
-                              closed: 关闭
-                            example: open
-                        description: 知识空间信息
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -1798,54 +1226,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              description: 知识空间名称
-                              example: 测试知识库
-                            description:
-                              type: string
-                              description: 知识空间描述
-                              example: 测试知识库
-                            space_id:
-                              type: string
-                              description: 知识空间id
-                              example: '6946843325487456878'
-                            space_type:
-                              type: string
-                              description: 表示知识空间类型（团队空间 或 个人空间 或 我的文档库）
-                              enum:
-                              - team
-                              - person
-                              - my_library
-                              - my_library_resigned
-                              x-enum-descriptions:
-                                team: 团队空间
-                                person: 个人空间
-                                my_library: 我的文档库
-                                my_library_resigned: 离职文档库
-                              example: team
-                            visibility:
-                              type: string
-                              description: 表示知识空间可见性（公开空间 或 私有空间）
-                              enum:
-                              - public
-                              - private
-                              x-enum-descriptions:
-                                public: 公开空间
-                                private: 私有空间
-                              example: private
-                            open_sharing:
-                              type: string
-                              description: 表示知识空间的分享状态
-                              enum:
-                              - open
-                              - closed
-                              x-enum-descriptions:
-                                open: 打开
-                                closed: 关闭
-                              example: open
+                          $ref: '#/components/schemas/Space'
                         description: 知识空间列表
                       page_token:
                         type: string
@@ -1943,65 +1324,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      space:
-                        type: object
-                        properties:
-                          name:
-                            type: string
-                            description: 知识空间名称
-                            example: 测试知识库
-                          description:
-                            type: string
-                            description: 知识空间描述
-                            example: 测试知识库
-                          space_id:
-                            type: string
-                            description: 知识空间id
-                            example: '6946843325487456878'
-                          space_type:
-                            type: string
-                            description: 表示知识空间类型（团队空间 或 个人空间 或 我的文档库）
-                            enum:
-                            - team
-                            - person
-                            - my_library
-                            - my_library_resigned
-                            x-enum-descriptions:
-                              team: 团队空间
-                              person: 个人空间
-                              my_library: 我的文档库
-                              my_library_resigned: 离职文档库
-                            example: team
-                          visibility:
-                            type: string
-                            description: 表示知识空间可见性（公开空间 或 私有空间）
-                            enum:
-                            - public
-                            - private
-                            x-enum-descriptions:
-                              public: 公开空间
-                              private: 私有空间
-                            example: private
-                          open_sharing:
-                            type: string
-                            description: 表示知识空间的分享状态
-                            enum:
-                            - open
-                            - closed
-                            x-enum-descriptions:
-                              open: 打开
-                              closed: 关闭
-                            example: open
-                        description: 知识空间
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - user
       - tenant
@@ -2079,117 +1402,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      node:
-                        type: object
-                        properties:
-                          space_id:
-                            type: string
-                            description: 知识空间id，[获取方式](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-overview)
-                            example: '6946843325487906839'
-                            format: int64
-                          node_token:
-                            type: string
-                            description: 节点token，[获取方式](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-overview)
-                            example: wikcnKQ1k3p******8Vabcef
-                          obj_token:
-                            type: string
-                            description: 对应文档类型的token，可根据 obj_type 判断属于哪种文档类型。
-                            example: doccnzAaO******8g9Spprd
-                          obj_type:
-                            type: string
-                            description: 文档类型，对于快捷方式，该字段是对应的实体的obj_type。
-                            enum:
-                            - doc
-                            - sheet
-                            - mindnote
-                            - bitable
-                            - file
-                            - docx
-                            - slides
-                            x-enum-descriptions:
-                              doc: 旧版文档
-                              sheet: 表格
-                              mindnote: 思维导图
-                              bitable: 多维表格
-                              file: 文件
-                              docx: 新版文档
-                              slides: 幻灯片
-                            example: doc
-                          parent_node_token:
-                            type: string
-                            description: 父节点 token。若当前节点为一级节点，父节点 token 为空。
-                            example: wikcnKQ1k3p******8Vabcef
-                          node_type:
-                            type: string
-                            description: 节点类型
-                            enum:
-                            - origin
-                            - shortcut
-                            x-enum-descriptions:
-                              origin: 实体
-                              shortcut: 快捷方式
-                            example: origin
-                          origin_node_token:
-                            type: string
-                            description: 快捷方式对应的实体node_token，当节点为快捷方式时，该值不为空。
-                            example: wikcnKQ1k3p******8Vabcef
-                          origin_space_id:
-                            type: string
-                            description: 快捷方式对应的实体所在的spaceid
-                            example: '6946843325487912356'
-                            format: int64
-                          has_child:
-                            type: boolean
-                            description: 是否有子节点
-                            example: 'true'
-                          title:
-                            type: string
-                            description: 文档标题
-                            example: xxxx
-                          obj_create_time:
-                            type: string
-                            description: 文档创建时间
-                            example: '1642402428'
-                            format: int64
-                          obj_edit_time:
-                            type: string
-                            description: 文档最近编辑时间
-                            example: '1642402428'
-                            format: int64
-                          node_create_time:
-                            type: string
-                            description: 节点创建时间
-                            example: '1642402428'
-                            format: int64
-                          creator:
-                            type: string
-                            description: 文档创建者
-                            example: ou_xxxxx
-                          owner:
-                            type: string
-                            description: 文档所有者
-                            example: ou_xxxxx
-                          node_creator:
-                            type: string
-                            description: 节点创建者
-                            example: ou_xxxxx
-                          url:
-                            type: string
-                            description: 文档url
-                            example: https://xxx/wiki/wikcnKQ1k3p******8Vabcef
-                        required:
-                        - obj_type
-                        - node_type
-                        description: 节点信息
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       - user
@@ -2280,106 +1493,8 @@ paths:
                               type: object
                               properties:
                                 node:
-                                  type: object
-                                  properties:
-                                    space_id:
-                                      type: string
-                                      description: 知识空间id，[获取方式](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-overview)
-                                      example: '6946843325487906839'
-                                      format: int64
-                                    node_token:
-                                      type: string
-                                      description: 节点token，[获取方式](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-overview)
-                                      example: wikcnKQ1k3p******8Vabcef
-                                    obj_token:
-                                      type: string
-                                      description: 对应文档类型的token，可根据 obj_type 判断属于哪种文档类型。
-                                      example: doccnzAaO******8g9Spprd
-                                    obj_type:
-                                      type: string
-                                      description: 文档类型，对于快捷方式，该字段是对应的实体的obj_type。
-                                      enum:
-                                      - doc
-                                      - sheet
-                                      - mindnote
-                                      - bitable
-                                      - file
-                                      - docx
-                                      - slides
-                                      x-enum-descriptions:
-                                        doc: 旧版文档
-                                        sheet: 表格
-                                        mindnote: 思维导图
-                                        bitable: 多维表格
-                                        file: 文件
-                                        docx: 新版文档
-                                        slides: 幻灯片
-                                      example: doc
-                                    parent_node_token:
-                                      type: string
-                                      description: 父节点 token。若当前节点为一级节点，父节点 token 为空。
-                                      example: wikcnKQ1k3p******8Vabcef
-                                    node_type:
-                                      type: string
-                                      description: 节点类型
-                                      enum:
-                                      - origin
-                                      - shortcut
-                                      x-enum-descriptions:
-                                        origin: 实体
-                                        shortcut: 快捷方式
-                                      example: origin
-                                    origin_node_token:
-                                      type: string
-                                      description: 快捷方式对应的实体node_token，当节点为快捷方式时，该值不为空。
-                                      example: wikcnKQ1k3p******8Vabcef
-                                    origin_space_id:
-                                      type: string
-                                      description: 快捷方式对应的实体所在的spaceid
-                                      example: '6946843325487912356'
-                                      format: int64
-                                    has_child:
-                                      type: boolean
-                                      description: 是否有子节点
-                                      example: 'true'
-                                    title:
-                                      type: string
-                                      description: 文档标题
-                                      example: xxxx
-                                    obj_create_time:
-                                      type: string
-                                      description: 文档创建时间
-                                      example: '1642402428'
-                                      format: int64
-                                    obj_edit_time:
-                                      type: string
-                                      description: 文档最近编辑时间
-                                      example: '1642402428'
-                                      format: int64
-                                    node_create_time:
-                                      type: string
-                                      description: 节点创建时间
-                                      example: '1642402428'
-                                      format: int64
-                                    creator:
-                                      type: string
-                                      description: 文档创建者
-                                      example: ou_xxxxx
-                                    owner:
-                                      type: string
-                                      description: 文档所有者
-                                      example: ou_xxxxx
-                                    node_creator:
-                                      type: string
-                                      description: 节点创建者
-                                      example: ou_xxxxx
-                                    url:
-                                      type: string
-                                      description: 文档url
-                                      example: https://xxx/wiki/wikcnKQ1k3p******8Vabcef
-                                  required:
-                                  - obj_type
-                                  - node_type
+                                  allOf:
+                                  - $ref: '#/components/schemas/Node'
                                   description: 移动完成的节点信息
                                 status:
                                   type: integer
@@ -2463,3 +1578,225 @@ paths:
         msg: internal server error
       x-lark-rate-limit:
         tier: 3
+components:
+  schemas:
+    Node:
+      type: object
+      properties:
+        space_id:
+          type: string
+          description: 知识空间id，[获取方式](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-overview)
+          example: '6946843325487906839'
+          format: int64
+        node_token:
+          type: string
+          description: 节点token，[获取方式](https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-overview)
+          example: wikcnKQ1k3p******8Vabcef
+        obj_token:
+          type: string
+          description: 对应文档类型的token，可根据 obj_type 判断属于哪种文档类型。
+          example: doccnzAaO******8g9Spprd
+        obj_type:
+          type: string
+          description: 文档类型，对于快捷方式，该字段是对应的实体的obj_type。
+          enum:
+          - doc
+          - sheet
+          - mindnote
+          - bitable
+          - file
+          - docx
+          - slides
+          x-enum-descriptions:
+            doc: 旧版文档
+            sheet: 表格
+            mindnote: 思维导图
+            bitable: 多维表格
+            file: 文件
+            docx: 新版文档
+            slides: 幻灯片
+          example: doc
+        parent_node_token:
+          type: string
+          description: 父节点 token。若当前节点为一级节点，父节点 token 为空。
+          example: wikcnKQ1k3p******8Vabcef
+        node_type:
+          type: string
+          description: 节点类型
+          enum:
+          - origin
+          - shortcut
+          x-enum-descriptions:
+            origin: 实体
+            shortcut: 快捷方式
+          example: origin
+        origin_node_token:
+          type: string
+          description: 快捷方式对应的实体node_token，当节点为快捷方式时，该值不为空。
+          example: wikcnKQ1k3p******8Vabcef
+        origin_space_id:
+          type: string
+          description: 快捷方式对应的实体所在的spaceid
+          example: '6946843325487912356'
+          format: int64
+        has_child:
+          type: boolean
+          description: 是否有子节点
+          example: 'true'
+        title:
+          type: string
+          description: 文档标题
+          example: xxxx
+        obj_create_time:
+          type: string
+          description: 文档创建时间
+          example: '1642402428'
+          format: int64
+        obj_edit_time:
+          type: string
+          description: 文档最近编辑时间
+          example: '1642402428'
+          format: int64
+        node_create_time:
+          type: string
+          description: 节点创建时间
+          example: '1642402428'
+          format: int64
+        creator:
+          type: string
+          description: 文档创建者
+          example: ou_xxxxx
+        owner:
+          type: string
+          description: 文档所有者
+          example: ou_xxxxx
+        node_creator:
+          type: string
+          description: 节点创建者
+          example: ou_xxxxx
+        url:
+          type: string
+          description: 文档url
+          example: https://xxx/wiki/wikcnKQ1k3p******8Vabcef
+      required:
+      - obj_type
+      - node_type
+      description: copy后的节点
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    Data:
+      type: object
+      properties:
+        node:
+          allOf:
+          - $ref: '#/components/schemas/Node'
+          description: 节点
+    Space:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 知识空间名称
+          example: 测试知识库
+        description:
+          type: string
+          description: 知识空间描述
+          example: 测试知识库
+        space_id:
+          type: string
+          description: 知识空间id
+          example: '6946843325487456878'
+        space_type:
+          type: string
+          description: 表示知识空间类型（团队空间 或 个人空间 或 我的文档库）
+          enum:
+          - team
+          - person
+          - my_library
+          - my_library_resigned
+          x-enum-descriptions:
+            team: 团队空间
+            person: 个人空间
+            my_library: 我的文档库
+            my_library_resigned: 离职文档库
+          example: team
+        visibility:
+          type: string
+          description: 表示知识空间可见性（公开空间 或 私有空间）
+          enum:
+          - public
+          - private
+          x-enum-descriptions:
+            public: 公开空间
+            private: 私有空间
+          example: private
+        open_sharing:
+          type: string
+          description: 表示知识空间的分享状态
+          enum:
+          - open
+          - closed
+          x-enum-descriptions:
+            open: 打开
+            closed: 关闭
+          example: open
+      description: 知识空间信息
+    Schema2:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data2'
+    Member:
+      type: object
+      properties:
+        member_type:
+          type: string
+          description: 知识库协作者 ID 类型
+          example: openid
+        member_id:
+          type: string
+          description: 知识库协作者 ID
+          example: ou_67e5ecb64ce1c0bd94612c17999db411
+        member_role:
+          type: string
+          description: 知识库协作者角色
+          example: admin
+        type:
+          type: string
+          description: 知识库协作者类型
+          enum:
+          - user
+          - chat
+          - department
+          x-enum-descriptions:
+            user: 用户
+            chat: 群组
+            department: 组织架构
+          example: user
+        member_perm:
+          type: string
+          description: 知识库协作组权限
+          example: admin
+      required:
+      - member_type
+      - member_id
+      - member_role
+      description: 知识库协作者
+    Data2:
+      type: object
+      properties:
+        space:
+          allOf:
+          - $ref: '#/components/schemas/Space'
+          description: 知识空间信息

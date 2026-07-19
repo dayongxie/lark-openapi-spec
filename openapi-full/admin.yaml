@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: admin
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -1371,186 +1371,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: 授予名单名称，最多100个字符。
-                  example: 激励勋章的授予名单
-                grant_type:
-                  type: integer
-                  description: 勋章下唯一的授予事项
-                  enum:
-                  - 0
-                  - 1
-                  x-enum-descriptions:
-                    '0': 手动选择有效期
-                    '1': 匹配系统入职时间
-                  default: 0
-                  example: '0'
-                time_zone:
-                  type: string
-                  description: 授予名单的生效时间对应的时区，用于检查RuleDetail的时间戳的取值是否规范，取值范围为TZ database name
-                  example: Asia/Shanghai
-                rule_detail:
-                  type: object
-                  properties:
-                    effective_time:
-                      type: string
-                      description: 开始生效的时间戳。1.手动设置有效期类型勋章，配置有效期限需要配置该字段；2.时间戳必须是所在时区当天的零点时间戳，如时区为Asia/Shanghai时区时的1649606400
-                      example: '1649606400'
-                      format: int64
-                    expiration_time:
-                      type: string
-                      description: 结束生效的时间戳。1.手动设置有效期类型勋章，配置有效期限需要配置该字段；2.最大值：不得超过effective_time+100 年；3.非永久有效：时间戳必须是所在时区当天的23:59:59时间戳，如时区为Asia/Shanghai时区时的1649692799；4.永久有效：传值为0即可
-                      example: '1649692799'
-                      format: int64
-                    anniversary:
-                      type: integer
-                      description: 入职周年日。根据入职时间发放类型勋章，需要配置该字段。
-                      default: 1
-                      example: '1'
-                    effective_period:
-                      type: integer
-                      description: 有效期限。根据入职时间发放类型勋章，需要配置该字段。
-                      enum:
-                      - 1
-                      - 2
-                      x-enum-descriptions:
-                        '1': 有效期为一年
-                        '2': 永久有效
-                      default: 1
-                      example: '1'
-                  description: 规则详情
-                is_grant_all:
-                  type: boolean
-                  description: 是否授予给全员。1.为false时，需要关联1~500个用户群体。2.为true时，不可关联用户、用户组、部门。
-                  default: false
-                  example: 'true'
-                user_ids:
-                  type: array
-                  items:
-                    type: string
-                  description: 授予的用户ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                  example: '[u273y71]'
-                department_ids:
-                  type: array
-                  items:
-                    type: string
-                  description: 授予的部门ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                group_ids:
-                  type: array
-                  items:
-                    type: string
-                  description: 授予的用户组ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                  example: '[g122817]'
+              $ref: '#/components/schemas/Schema3'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      grant:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 租户内授予名单的唯一标识，该值由系统随机生成。
-                            example: g_49Z7CQ
-                          badge_id:
-                            type: string
-                            description: 企业勋章的唯一ID
-                            example: m_qTR2HM
-                          name:
-                            type: string
-                            description: 授予名单名称，最多100个字符。
-                            example: 激励勋章的授予名单
-                          grant_type:
-                            type: integer
-                            description: 勋章下唯一的授予事项
-                            enum:
-                            - 0
-                            - 1
-                            x-enum-descriptions:
-                              '0': 手动选择有效期
-                              '1': 匹配系统入职时间
-                            default: 0
-                            example: '0'
-                          time_zone:
-                            type: string
-                            description: 授予名单的生效时间对应的时区，用于检查RuleDetail的时间戳的取值是否规范，取值范围为TZ database name
-                            example: Asia/Shanghai
-                          rule_detail:
-                            type: object
-                            properties:
-                              effective_time:
-                                type: string
-                                description: 开始生效的时间戳。1.手动设置有效期类型勋章，配置有效期限需要配置该字段；2.时间戳必须是所在时区当天的零点时间戳，如时区为Asia/Shanghai时区时的1649606400
-                                example: '1649606400'
-                                format: int64
-                              expiration_time:
-                                type: string
-                                description: 结束生效的时间戳。1.手动设置有效期类型勋章，配置有效期限需要配置该字段；2.最大值：不得超过effective_time+100 年；3.非永久有效：时间戳必须是所在时区当天的23:59:59时间戳，如时区为Asia/Shanghai时区时的1649692799；4.永久有效：传值为0即可
-                                example: '1649692799'
-                                format: int64
-                              anniversary:
-                                type: integer
-                                description: 入职周年日。根据入职时间发放类型勋章，需要配置该字段。
-                                default: 1
-                                example: '1'
-                              effective_period:
-                                type: integer
-                                description: 有效期限。根据入职时间发放类型勋章，需要配置该字段。
-                                enum:
-                                - 1
-                                - 2
-                                x-enum-descriptions:
-                                  '1': 有效期为一年
-                                  '2': 永久有效
-                                default: 1
-                                example: '1'
-                            description: 规则详情
-                          is_grant_all:
-                            type: boolean
-                            description: 是否授予给全员。1.为false时，需要关联1~500个用户群体。2.为true时，不可关联用户、用户组、部门。
-                            default: false
-                            example: 'true'
-                          user_ids:
-                            type: array
-                            items:
-                              type: string
-                            description: 授予的用户ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                            example: '[u273y71]'
-                          department_ids:
-                            type: array
-                            items:
-                              type: string
-                            description: 授予的部门ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                          group_ids:
-                            type: array
-                            items:
-                              type: string
-                            description: 授予的用户组ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                            example: '[g122817]'
-                        required:
-                        - name
-                        - grant_type
-                        - time_zone
-                        - rule_detail
-                        - is_grant_all
-                        description: 授予名单的信息
-                        example: '{     "grant_id": "g_uS4yux",     "badge_id": "m_DjMzaK",     "name": "授权给全员用户的周年授予名单",     "grant_type":
-                          1,     "timezone": "Asia/Shanghai",     "is_grant_all": true,     "rule_detail": {         "anniversary":
-                          6,         "effective_period": 0     } }'
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -1694,93 +1522,7 @@ paths:
                       grants:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 租户内授予名单的唯一标识，该值由系统随机生成。
-                              example: g_49Z7CQ
-                            badge_id:
-                              type: string
-                              description: 企业勋章的唯一ID
-                              example: m_qTR2HM
-                            name:
-                              type: string
-                              description: 授予名单名称，最多100个字符。
-                              example: 激励勋章的授予名单
-                            grant_type:
-                              type: integer
-                              description: 勋章下唯一的授予事项
-                              enum:
-                              - 0
-                              - 1
-                              x-enum-descriptions:
-                                '0': 手动选择有效期
-                                '1': 匹配系统入职时间
-                              default: 0
-                              example: '0'
-                            time_zone:
-                              type: string
-                              description: 授予名单的生效时间对应的时区，用于检查RuleDetail的时间戳的取值是否规范，取值范围为TZ database name
-                              example: Asia/Shanghai
-                            rule_detail:
-                              type: object
-                              properties:
-                                effective_time:
-                                  type: string
-                                  description: 开始生效的时间戳。1.手动设置有效期类型勋章，配置有效期限需要配置该字段；2.时间戳必须是所在时区当天的零点时间戳，如时区为Asia/Shanghai时区时的1649606400
-                                  example: '1649606400'
-                                  format: int64
-                                expiration_time:
-                                  type: string
-                                  description: 结束生效的时间戳。1.手动设置有效期类型勋章，配置有效期限需要配置该字段；2.最大值：不得超过effective_time+100 年；3.非永久有效：时间戳必须是所在时区当天的23:59:59时间戳，如时区为Asia/Shanghai时区时的1649692799；4.永久有效：传值为0即可
-                                  example: '1649692799'
-                                  format: int64
-                                anniversary:
-                                  type: integer
-                                  description: 入职周年日。根据入职时间发放类型勋章，需要配置该字段。
-                                  default: 1
-                                  example: '1'
-                                effective_period:
-                                  type: integer
-                                  description: 有效期限。根据入职时间发放类型勋章，需要配置该字段。
-                                  enum:
-                                  - 1
-                                  - 2
-                                  x-enum-descriptions:
-                                    '1': 有效期为一年
-                                    '2': 永久有效
-                                  default: 1
-                                  example: '1'
-                              description: 规则详情
-                            is_grant_all:
-                              type: boolean
-                              description: 是否授予给全员。1.为false时，需要关联1~500个用户群体。2.为true时，不可关联用户、用户组、部门。
-                              default: false
-                              example: 'true'
-                            user_ids:
-                              type: array
-                              items:
-                                type: string
-                              description: 授予的用户ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                              example: '[u273y71]'
-                            department_ids:
-                              type: array
-                              items:
-                                type: string
-                              description: 授予的部门ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                            group_ids:
-                              type: array
-                              items:
-                                type: string
-                              description: 授予的用户组ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                              example: '[g122817]'
-                          required:
-                          - name
-                          - grant_type
-                          - time_zone
-                          - rule_detail
-                          - is_grant_all
+                          $ref: '#/components/schemas/Grant'
                         description: 授予名单列表
                         example: '[{     "grant_id": "g_uS4yux",     "badge_id": "m_DjMzaK",     "name": "授权给全员用户的周年授予名单",     "grant_type":
                           1,     "timezone": "Asia/Shanghai",     "is_grant_all": true,     "rule_detail": {         "anniversary":
@@ -1945,107 +1687,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      grant:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 租户内授予名单的唯一标识，该值由系统随机生成。
-                            example: g_49Z7CQ
-                          badge_id:
-                            type: string
-                            description: 企业勋章的唯一ID
-                            example: m_qTR2HM
-                          name:
-                            type: string
-                            description: 授予名单名称，最多100个字符。
-                            example: 激励勋章的授予名单
-                          grant_type:
-                            type: integer
-                            description: 勋章下唯一的授予事项
-                            enum:
-                            - 0
-                            - 1
-                            x-enum-descriptions:
-                              '0': 手动选择有效期
-                              '1': 匹配系统入职时间
-                            default: 0
-                            example: '0'
-                          time_zone:
-                            type: string
-                            description: 授予名单的生效时间对应的时区，用于检查RuleDetail的时间戳的取值是否规范，取值范围为TZ database name
-                            example: Asia/Shanghai
-                          rule_detail:
-                            type: object
-                            properties:
-                              effective_time:
-                                type: string
-                                description: 开始生效的时间戳。1.手动设置有效期类型勋章，配置有效期限需要配置该字段；2.时间戳必须是所在时区当天的零点时间戳，如时区为Asia/Shanghai时区时的1649606400
-                                example: '1649606400'
-                                format: int64
-                              expiration_time:
-                                type: string
-                                description: 结束生效的时间戳。1.手动设置有效期类型勋章，配置有效期限需要配置该字段；2.最大值：不得超过effective_time+100 年；3.非永久有效：时间戳必须是所在时区当天的23:59:59时间戳，如时区为Asia/Shanghai时区时的1649692799；4.永久有效：传值为0即可
-                                example: '1649692799'
-                                format: int64
-                              anniversary:
-                                type: integer
-                                description: 入职周年日。根据入职时间发放类型勋章，需要配置该字段。
-                                default: 1
-                                example: '1'
-                              effective_period:
-                                type: integer
-                                description: 有效期限。根据入职时间发放类型勋章，需要配置该字段。
-                                enum:
-                                - 1
-                                - 2
-                                x-enum-descriptions:
-                                  '1': 有效期为一年
-                                  '2': 永久有效
-                                default: 1
-                                example: '1'
-                            description: 规则详情
-                          is_grant_all:
-                            type: boolean
-                            description: 是否授予给全员。1.为false时，需要关联1~500个用户群体。2.为true时，不可关联用户、用户组、部门。
-                            default: false
-                            example: 'true'
-                          user_ids:
-                            type: array
-                            items:
-                              type: string
-                            description: 授予的用户ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                            example: '[u273y71]'
-                          department_ids:
-                            type: array
-                            items:
-                              type: string
-                            description: 授予的部门ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                          group_ids:
-                            type: array
-                            items:
-                              type: string
-                            description: 授予的用户组ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                            example: '[g122817]'
-                        required:
-                        - name
-                        - grant_type
-                        - time_zone
-                        - rule_detail
-                        - is_grant_all
-                        description: 授予名单信息
-                        example: '{     "grant_id": "g_uS4yux",     "badge_id": "m_DjMzaK",     "name": "授权给全员用户的周年授予名单",     "grant_type":
-                          1,     "timezone": "Asia/Shanghai",     "is_grant_all": true,     "rule_detail": {         "anniversary":
-                          6,         "effective_period": 0     } }'
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -2138,186 +1780,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: 授予名单名称，最多100个字符。
-                  example: 激励勋章的授予名单
-                grant_type:
-                  type: integer
-                  description: 勋章下唯一的授予事项
-                  enum:
-                  - 0
-                  - 1
-                  x-enum-descriptions:
-                    '0': 手动选择有效期
-                    '1': 匹配系统入职时间
-                  default: 0
-                  example: '0'
-                time_zone:
-                  type: string
-                  description: 授予名单的生效时间对应的时区，用于检查RuleDetail的时间戳的取值是否规范，取值范围为TZ database name
-                  example: Asia/Shanghai
-                rule_detail:
-                  type: object
-                  properties:
-                    effective_time:
-                      type: string
-                      description: 开始生效的时间戳。1.手动设置有效期类型勋章，配置有效期限需要配置该字段；2.时间戳必须是所在时区当天的零点时间戳，如时区为Asia/Shanghai时区时的1649606400
-                      example: '1649606400'
-                      format: int64
-                    expiration_time:
-                      type: string
-                      description: 结束生效的时间戳。1.手动设置有效期类型勋章，配置有效期限需要配置该字段；2.最大值：不得超过effective_time+100 年；3.非永久有效：时间戳必须是所在时区当天的23:59:59时间戳，如时区为Asia/Shanghai时区时的1649692799；4.永久有效：传值为0即可
-                      example: '1649692799'
-                      format: int64
-                    anniversary:
-                      type: integer
-                      description: 入职周年日。根据入职时间发放类型勋章，需要配置该字段。
-                      default: 1
-                      example: '1'
-                    effective_period:
-                      type: integer
-                      description: 有效期限。根据入职时间发放类型勋章，需要配置该字段。
-                      enum:
-                      - 1
-                      - 2
-                      x-enum-descriptions:
-                        '1': 有效期为一年
-                        '2': 永久有效
-                      default: 1
-                      example: '1'
-                  description: 规则详情
-                is_grant_all:
-                  type: boolean
-                  description: 是否授予给全员。1.为false时，需要关联1~500个用户群体。2.为true时，不可关联用户、用户组、部门。
-                  default: false
-                  example: 'true'
-                user_ids:
-                  type: array
-                  items:
-                    type: string
-                  description: 授予的用户ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                  example: '[u273y71]'
-                department_ids:
-                  type: array
-                  items:
-                    type: string
-                  description: 授予的部门ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                group_ids:
-                  type: array
-                  items:
-                    type: string
-                  description: 授予的用户组ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                  example: '[g122817]'
+              $ref: '#/components/schemas/Schema3'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      grant:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 租户内授予名单的唯一标识，该值由系统随机生成。
-                            example: g_49Z7CQ
-                          badge_id:
-                            type: string
-                            description: 企业勋章的唯一ID
-                            example: m_qTR2HM
-                          name:
-                            type: string
-                            description: 授予名单名称，最多100个字符。
-                            example: 激励勋章的授予名单
-                          grant_type:
-                            type: integer
-                            description: 勋章下唯一的授予事项
-                            enum:
-                            - 0
-                            - 1
-                            x-enum-descriptions:
-                              '0': 手动选择有效期
-                              '1': 匹配系统入职时间
-                            default: 0
-                            example: '0'
-                          time_zone:
-                            type: string
-                            description: 授予名单的生效时间对应的时区，用于检查RuleDetail的时间戳的取值是否规范，取值范围为TZ database name
-                            example: Asia/Shanghai
-                          rule_detail:
-                            type: object
-                            properties:
-                              effective_time:
-                                type: string
-                                description: 开始生效的时间戳。1.手动设置有效期类型勋章，配置有效期限需要配置该字段；2.时间戳必须是所在时区当天的零点时间戳，如时区为Asia/Shanghai时区时的1649606400
-                                example: '1649606400'
-                                format: int64
-                              expiration_time:
-                                type: string
-                                description: 结束生效的时间戳。1.手动设置有效期类型勋章，配置有效期限需要配置该字段；2.最大值：不得超过effective_time+100 年；3.非永久有效：时间戳必须是所在时区当天的23:59:59时间戳，如时区为Asia/Shanghai时区时的1649692799；4.永久有效：传值为0即可
-                                example: '1649692799'
-                                format: int64
-                              anniversary:
-                                type: integer
-                                description: 入职周年日。根据入职时间发放类型勋章，需要配置该字段。
-                                default: 1
-                                example: '1'
-                              effective_period:
-                                type: integer
-                                description: 有效期限。根据入职时间发放类型勋章，需要配置该字段。
-                                enum:
-                                - 1
-                                - 2
-                                x-enum-descriptions:
-                                  '1': 有效期为一年
-                                  '2': 永久有效
-                                default: 1
-                                example: '1'
-                            description: 规则详情
-                          is_grant_all:
-                            type: boolean
-                            description: 是否授予给全员。1.为false时，需要关联1~500个用户群体。2.为true时，不可关联用户、用户组、部门。
-                            default: false
-                            example: 'true'
-                          user_ids:
-                            type: array
-                            items:
-                              type: string
-                            description: 授予的用户ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                            example: '[u273y71]'
-                          department_ids:
-                            type: array
-                            items:
-                              type: string
-                            description: 授予的部门ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                          group_ids:
-                            type: array
-                            items:
-                              type: string
-                            description: 授予的用户组ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
-                            example: '[g122817]'
-                        required:
-                        - name
-                        - grant_type
-                        - time_zone
-                        - rule_detail
-                        - is_grant_all
-                        description: 授予名单
-                        example: '{     "grant_id": "g_uS4yux",     "badge_id": "m_DjMzaK",     "name": "授权给全员用户的周年授予名单",     "grant_type":
-                          1,     "timezone": "Asia/Shanghai",     "is_grant_all": true,     "rule_detail": {         "anniversary":
-                          6,         "effective_period": 0     } }'
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -2385,141 +1855,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: 租户内唯一的勋章名称，最多30个字符。
-                  example: 激励勋章
-                explanation:
-                  type: string
-                  description: 勋章的描述文案，最多100个字符。
-                  example: 这枚勋章为了激励员工颁发。
-                detail_image:
-                  type: string
-                  description: 企业勋章的详情图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。
-                  example: 75a1949f-d9df-4b46-bc88-dacc51e88f3j
-                show_image:
-                  type: string
-                  description: 企业勋章的头像挂饰图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。
-                  example: 03daa74a-159f-49e9-963e-b6c4d76103fj
-                i18n_name:
-                  type: object
-                  properties:
-                    zh_cn:
-                      type: string
-                      description: 中文文案
-                      example: 中文
-                    en_us:
-                      type: string
-                      description: 英文文案
-                      example: English
-                    ja_jp:
-                      type: string
-                      description: 日文文案
-                      example: 日本語のコピーライティング
-                  description: 勋章的多语言名称，同name字段限制，最多30个字符。
-                  example: '{         "zh_cn": "激励勋章",         "en_us": "Incentive Medal",         "ja_jp": "奨励メダル"     }'
-                i18n_explanation:
-                  type: object
-                  properties:
-                    zh_cn:
-                      type: string
-                      description: 中文文案
-                      example: 中文
-                    en_us:
-                      type: string
-                      description: 英文文案
-                      example: English
-                    ja_jp:
-                      type: string
-                      description: 日文文案
-                      example: 日本語のコピーライティング
-                  description: 勋章的多语言描述文案，同explanation字段限制，最多100个字符。
-                  example: '{         "zh_cn": "这枚勋章为了激励员工颁发。",         "en_us": "This medal is awarded to motivate employees.",         "ja_jp":
-                    "このメダルは、従業員のモチベーションを高めるために授与されます。"     }'
+              $ref: '#/components/schemas/Schema4'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      badge:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 租户内勋章的唯一标识，该值由系统随机生成。
-                            example: m_MzfKDM
-                          name:
-                            type: string
-                            description: 租户内唯一的勋章名称，最多30个字符。
-                            example: 激励勋章
-                          explanation:
-                            type: string
-                            description: 勋章的描述文案，最多100个字符。
-                            example: 这枚勋章为了激励员工颁发。
-                          detail_image:
-                            type: string
-                            description: 企业勋章的详情图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。
-                            example: 75a1949f-d9df-4b46-bc88-dacc51e88f3j
-                          show_image:
-                            type: string
-                            description: 企业勋章的头像挂饰图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。
-                            example: 03daa74a-159f-49e9-963e-b6c4d76103fj
-                          i18n_name:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文文案
-                                example: 中文
-                              en_us:
-                                type: string
-                                description: 英文文案
-                                example: English
-                              ja_jp:
-                                type: string
-                                description: 日文文案
-                                example: 日本語のコピーライティング
-                            description: 勋章的多语言名称，同name字段限制，最多30个字符。
-                            example: '{         "zh_cn": "激励勋章",         "en_us": "Incentive Medal",         "ja_jp": "奨励メダル"     }'
-                          i18n_explanation:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文文案
-                                example: 中文
-                              en_us:
-                                type: string
-                                description: 英文文案
-                                example: English
-                              ja_jp:
-                                type: string
-                                description: 日文文案
-                                example: 日本語のコピーライティング
-                            description: 勋章的多语言描述文案，同explanation字段限制，最多100个字符。
-                            example: '{         "zh_cn": "这枚勋章为了激励员工颁发。",         "en_us": "This medal is awarded to motivate
-                              employees.",         "ja_jp": "このメダルは、従業員のモチベーションを高めるために授与されます。"     }'
-                        required:
-                        - name
-                        - detail_image
-                        - show_image
-                        description: 勋章的信息
-                        example: '{     "badge_id": "m_DjMzaK",     "name": "字节范勋章",     "explanation": "奖励给值得鼓励的同学",     "badge_image":
-                          {         "image_key": "a210ea02-e406-49ee-997c-9acc57c59eac",         "image_url": "https://s1-imfile.feishucdn.com/static-resource/v1/a210ea02-e406-49ee-997c-9acc57c59eac~?image_size=noop&cut_type=&quality=&format=image&sticker_format=.webp"     },     "show_image":
-                          {         "image_key": "c23dcb4f-ee63-49c8-9b7d-85a7fe8f13cj",         "image_url": "https://s1-imfile.feishucdn.com/static-resource/v1/c23dcb4f-ee63-49c8-9b7d-85a7fe8f13cj~?image_size=noop&cut_type=&quality=&format=image&sticker_format=.webp"     }
-                          }'
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -2603,67 +1946,7 @@ paths:
                       badges:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 租户内勋章的唯一标识，该值由系统随机生成。
-                              example: m_MzfKDM
-                            name:
-                              type: string
-                              description: 租户内唯一的勋章名称，最多30个字符。
-                              example: 激励勋章
-                            explanation:
-                              type: string
-                              description: 勋章的描述文案，最多100个字符。
-                              example: 这枚勋章为了激励员工颁发。
-                            detail_image:
-                              type: string
-                              description: 企业勋章的详情图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。
-                              example: 75a1949f-d9df-4b46-bc88-dacc51e88f3j
-                            show_image:
-                              type: string
-                              description: 企业勋章的头像挂饰图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。
-                              example: 03daa74a-159f-49e9-963e-b6c4d76103fj
-                            i18n_name:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 中文文案
-                                  example: 中文
-                                en_us:
-                                  type: string
-                                  description: 英文文案
-                                  example: English
-                                ja_jp:
-                                  type: string
-                                  description: 日文文案
-                                  example: 日本語のコピーライティング
-                              description: 勋章的多语言名称，同name字段限制，最多30个字符。
-                              example: '{         "zh_cn": "激励勋章",         "en_us": "Incentive Medal",         "ja_jp": "奨励メダル"     }'
-                            i18n_explanation:
-                              type: object
-                              properties:
-                                zh_cn:
-                                  type: string
-                                  description: 中文文案
-                                  example: 中文
-                                en_us:
-                                  type: string
-                                  description: 英文文案
-                                  example: English
-                                ja_jp:
-                                  type: string
-                                  description: 日文文案
-                                  example: 日本語のコピーライティング
-                              description: 勋章的多语言描述文案，同explanation字段限制，最多100个字符。
-                              example: '{         "zh_cn": "这枚勋章为了激励员工颁发。",         "en_us": "This medal is awarded to motivate
-                                employees.",         "ja_jp": "このメダルは、従業員のモチベーションを高めるために授与されます。"     }'
-                          required:
-                          - name
-                          - detail_image
-                          - show_image
+                          $ref: '#/components/schemas/Badge'
                         description: 勋章列表
                         example: '[     {         "badge_id": "m_DjMzaK",         "name": "字节范勋章",         "explanation":
                           "奖励给值得鼓励的同学",         "badge_image": {             "image_key": "a210ea02-e406-49ee-997c-9acc57c59eac",             "image_url":
@@ -2722,81 +2005,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      badge:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 租户内勋章的唯一标识，该值由系统随机生成。
-                            example: m_MzfKDM
-                          name:
-                            type: string
-                            description: 租户内唯一的勋章名称，最多30个字符。
-                            example: 激励勋章
-                          explanation:
-                            type: string
-                            description: 勋章的描述文案，最多100个字符。
-                            example: 这枚勋章为了激励员工颁发。
-                          detail_image:
-                            type: string
-                            description: 企业勋章的详情图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。
-                            example: 75a1949f-d9df-4b46-bc88-dacc51e88f3j
-                          show_image:
-                            type: string
-                            description: 企业勋章的头像挂饰图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。
-                            example: 03daa74a-159f-49e9-963e-b6c4d76103fj
-                          i18n_name:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文文案
-                                example: 中文
-                              en_us:
-                                type: string
-                                description: 英文文案
-                                example: English
-                              ja_jp:
-                                type: string
-                                description: 日文文案
-                                example: 日本語のコピーライティング
-                            description: 勋章的多语言名称，同name字段限制，最多30个字符。
-                            example: '{         "zh_cn": "激励勋章",         "en_us": "Incentive Medal",         "ja_jp": "奨励メダル"     }'
-                          i18n_explanation:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文文案
-                                example: 中文
-                              en_us:
-                                type: string
-                                description: 英文文案
-                                example: English
-                              ja_jp:
-                                type: string
-                                description: 日文文案
-                                example: 日本語のコピーライティング
-                            description: 勋章的多语言描述文案，同explanation字段限制，最多100个字符。
-                            example: '{         "zh_cn": "这枚勋章为了激励员工颁发。",         "en_us": "This medal is awarded to motivate
-                              employees.",         "ja_jp": "このメダルは、従業員のモチベーションを高めるために授与されます。"     }'
-                        required:
-                        - name
-                        - detail_image
-                        - show_image
-                        description: 勋章信息
-                        example: '{         "badge_id": "m_DjMzaK",         "name": "字节范勋章",         "explanation": "奖励给值得鼓励的同学",         "badge_image":
-                          {             "image_key": "a210ea02-e406-49ee-997c-9acc57c59eac",             "image_url": "https://s1-imfile.feishucdn.com/static-resource/v1/a210ea02-e406-49ee-997c-9acc57c59eac~?image_size=noop&cut_type=&quality=&format=image&sticker_format=.webp"         },         "show_image":
-                          {             "image_key": "c23dcb4f-ee63-49c8-9b7d-85a7fe8f13cj",             "image_url": "https://s1-imfile.feishucdn.com/static-resource/v1/c23dcb4f-ee63-49c8-9b7d-85a7fe8f13cj~?image_size=noop&cut_type=&quality=&format=image&sticker_format=.webp"         }     }'
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -2840,141 +2049,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: 租户内唯一的勋章名称，最多30个字符。
-                  example: 激励勋章
-                explanation:
-                  type: string
-                  description: 勋章的描述文案，最多100个字符。
-                  example: 这枚勋章为了激励员工颁发。
-                detail_image:
-                  type: string
-                  description: 企业勋章的详情图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。
-                  example: 75a1949f-d9df-4b46-bc88-dacc51e88f3j
-                show_image:
-                  type: string
-                  description: 企业勋章的头像挂饰图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。
-                  example: 03daa74a-159f-49e9-963e-b6c4d76103fj
-                i18n_name:
-                  type: object
-                  properties:
-                    zh_cn:
-                      type: string
-                      description: 中文文案
-                      example: 中文
-                    en_us:
-                      type: string
-                      description: 英文文案
-                      example: English
-                    ja_jp:
-                      type: string
-                      description: 日文文案
-                      example: 日本語のコピーライティング
-                  description: 勋章的多语言名称，同name字段限制，最多30个字符。
-                  example: '{         "zh_cn": "激励勋章",         "en_us": "Incentive Medal",         "ja_jp": "奨励メダル"     }'
-                i18n_explanation:
-                  type: object
-                  properties:
-                    zh_cn:
-                      type: string
-                      description: 中文文案
-                      example: 中文
-                    en_us:
-                      type: string
-                      description: 英文文案
-                      example: English
-                    ja_jp:
-                      type: string
-                      description: 日文文案
-                      example: 日本語のコピーライティング
-                  description: 勋章的多语言描述文案，同explanation字段限制，最多100个字符。
-                  example: '{         "zh_cn": "这枚勋章为了激励员工颁发。",         "en_us": "This medal is awarded to motivate employees.",         "ja_jp":
-                    "このメダルは、従業員のモチベーションを高めるために授与されます。"     }'
+              $ref: '#/components/schemas/Schema4'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      badge:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 租户内勋章的唯一标识，该值由系统随机生成。
-                            example: m_MzfKDM
-                          name:
-                            type: string
-                            description: 租户内唯一的勋章名称，最多30个字符。
-                            example: 激励勋章
-                          explanation:
-                            type: string
-                            description: 勋章的描述文案，最多100个字符。
-                            example: 这枚勋章为了激励员工颁发。
-                          detail_image:
-                            type: string
-                            description: 企业勋章的详情图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。
-                            example: 75a1949f-d9df-4b46-bc88-dacc51e88f3j
-                          show_image:
-                            type: string
-                            description: 企业勋章的头像挂饰图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。
-                            example: 03daa74a-159f-49e9-963e-b6c4d76103fj
-                          i18n_name:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文文案
-                                example: 中文
-                              en_us:
-                                type: string
-                                description: 英文文案
-                                example: English
-                              ja_jp:
-                                type: string
-                                description: 日文文案
-                                example: 日本語のコピーライティング
-                            description: 勋章的多语言名称，同name字段限制，最多30个字符。
-                            example: '{         "zh_cn": "激励勋章",         "en_us": "Incentive Medal",         "ja_jp": "奨励メダル"     }'
-                          i18n_explanation:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文文案
-                                example: 中文
-                              en_us:
-                                type: string
-                                description: 英文文案
-                                example: English
-                              ja_jp:
-                                type: string
-                                description: 日文文案
-                                example: 日本語のコピーライティング
-                            description: 勋章的多语言描述文案，同explanation字段限制，最多100个字符。
-                            example: '{         "zh_cn": "这枚勋章为了激励员工颁发。",         "en_us": "This medal is awarded to motivate
-                              employees.",         "ja_jp": "このメダルは、従業員のモチベーションを高めるために授与されます。"     }'
-                        required:
-                        - name
-                        - detail_image
-                        - show_image
-                        description: 勋章信息
-                        example: '{     "badge_id": "m_DjMzaK",     "name": "字节范勋章",     "explanation": "奖励给值得鼓励的同学",     "badge_image":
-                          {         "image_key": "a210ea02-e406-49ee-997c-9acc57c59eac",         "image_url": "https://s1-imfile.feishucdn.com/static-resource/v1/a210ea02-e406-49ee-997c-9acc57c59eac~?image_size=noop&cut_type=&quality=&format=image&sticker_format=.webp"     },     "show_image":
-                          {         "image_key": "c23dcb4f-ee63-49c8-9b7d-85a7fe8f13cj",         "image_url": "https://s1-imfile.feishucdn.com/static-resource/v1/c23dcb4f-ee63-49c8-9b7d-85a7fe8f13cj~?image_size=noop&cut_type=&quality=&format=image&sticker_format=.webp"     }
-                          }'
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -3185,3 +2267,309 @@ paths:
           to: lark_id
         key: $.user_id
         section: 0
+components:
+  schemas:
+    Grant:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 租户内授予名单的唯一标识，该值由系统随机生成。
+          example: g_49Z7CQ
+        badge_id:
+          type: string
+          description: 企业勋章的唯一ID
+          example: m_qTR2HM
+        name:
+          type: string
+          description: 授予名单名称，最多100个字符。
+          example: 激励勋章的授予名单
+        grant_type:
+          type: integer
+          description: 勋章下唯一的授予事项
+          enum:
+          - 0
+          - 1
+          x-enum-descriptions:
+            '0': 手动选择有效期
+            '1': 匹配系统入职时间
+          default: 0
+          example: '0'
+        time_zone:
+          type: string
+          description: 授予名单的生效时间对应的时区，用于检查RuleDetail的时间戳的取值是否规范，取值范围为TZ database name
+          example: Asia/Shanghai
+        rule_detail:
+          allOf:
+          - $ref: '#/components/schemas/RuleDetail'
+          description: 规则详情
+        is_grant_all:
+          type: boolean
+          description: 是否授予给全员。1.为false时，需要关联1~500个用户群体。2.为true时，不可关联用户、用户组、部门。
+          default: false
+          example: 'true'
+        user_ids:
+          type: array
+          items:
+            type: string
+          description: 授予的用户ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
+          example: '[u273y71]'
+        department_ids:
+          type: array
+          items:
+            type: string
+          description: 授予的部门ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
+        group_ids:
+          type: array
+          items:
+            type: string
+          description: 授予的用户组ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
+          example: '[g122817]'
+      required:
+      - name
+      - grant_type
+      - time_zone
+      - rule_detail
+      - is_grant_all
+      description: 授予名单的信息
+      example: '{     "grant_id": "g_uS4yux",     "badge_id": "m_DjMzaK",     "name": "授权给全员用户的周年授予名单",     "grant_type":
+        1,     "timezone": "Asia/Shanghai",     "is_grant_all": true,     "rule_detail": {         "anniversary": 6,         "effective_period":
+        0     } }'
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    Data:
+      type: object
+      properties:
+        grant:
+          allOf:
+          - $ref: '#/components/schemas/Grant'
+          description: 授予名单的信息
+          example: '{     "grant_id": "g_uS4yux",     "badge_id": "m_DjMzaK",     "name": "授权给全员用户的周年授予名单",     "grant_type":
+            1,     "timezone": "Asia/Shanghai",     "is_grant_all": true,     "rule_detail": {         "anniversary": 6,         "effective_period":
+            0     } }'
+    Badge:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 租户内勋章的唯一标识，该值由系统随机生成。
+          example: m_MzfKDM
+        name:
+          type: string
+          description: 租户内唯一的勋章名称，最多30个字符。
+          example: 激励勋章
+        explanation:
+          type: string
+          description: 勋章的描述文案，最多100个字符。
+          example: 这枚勋章为了激励员工颁发。
+        detail_image:
+          type: string
+          description: 企业勋章的详情图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。
+          example: 75a1949f-d9df-4b46-bc88-dacc51e88f3j
+        show_image:
+          type: string
+          description: 企业勋章的头像挂饰图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。
+          example: 03daa74a-159f-49e9-963e-b6c4d76103fj
+        i18n_name:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文文案
+              example: 中文
+            en_us:
+              type: string
+              description: 英文文案
+              example: English
+            ja_jp:
+              type: string
+              description: 日文文案
+              example: 日本語のコピーライティング
+          description: 勋章的多语言名称，同name字段限制，最多30个字符。
+          example: '{         "zh_cn": "激励勋章",         "en_us": "Incentive Medal",         "ja_jp": "奨励メダル"     }'
+        i18n_explanation:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文文案
+              example: 中文
+            en_us:
+              type: string
+              description: 英文文案
+              example: English
+            ja_jp:
+              type: string
+              description: 日文文案
+              example: 日本語のコピーライティング
+          description: 勋章的多语言描述文案，同explanation字段限制，最多100个字符。
+          example: '{         "zh_cn": "这枚勋章为了激励员工颁发。",         "en_us": "This medal is awarded to motivate employees.",         "ja_jp":
+            "このメダルは、従業員のモチベーションを高めるために授与されます。"     }'
+      required:
+      - name
+      - detail_image
+      - show_image
+      description: 勋章的信息
+      example: '{     "badge_id": "m_DjMzaK",     "name": "字节范勋章",     "explanation": "奖励给值得鼓励的同学",     "badge_image": {         "image_key":
+        "a210ea02-e406-49ee-997c-9acc57c59eac",         "image_url": "https://s1-imfile.feishucdn.com/static-resource/v1/a210ea02-e406-49ee-997c-9acc57c59eac~?image_size=noop&cut_type=&quality=&format=image&sticker_format=.webp"     },     "show_image":
+        {         "image_key": "c23dcb4f-ee63-49c8-9b7d-85a7fe8f13cj",         "image_url": "https://s1-imfile.feishucdn.com/static-resource/v1/c23dcb4f-ee63-49c8-9b7d-85a7fe8f13cj~?image_size=noop&cut_type=&quality=&format=image&sticker_format=.webp"     }
+        }'
+    Schema2:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data2'
+    Data2:
+      type: object
+      properties:
+        badge:
+          allOf:
+          - $ref: '#/components/schemas/Badge'
+          description: 勋章的信息
+          example: '{     "badge_id": "m_DjMzaK",     "name": "字节范勋章",     "explanation": "奖励给值得鼓励的同学",     "badge_image":
+            {         "image_key": "a210ea02-e406-49ee-997c-9acc57c59eac",         "image_url": "https://s1-imfile.feishucdn.com/static-resource/v1/a210ea02-e406-49ee-997c-9acc57c59eac~?image_size=noop&cut_type=&quality=&format=image&sticker_format=.webp"     },     "show_image":
+            {         "image_key": "c23dcb4f-ee63-49c8-9b7d-85a7fe8f13cj",         "image_url": "https://s1-imfile.feishucdn.com/static-resource/v1/c23dcb4f-ee63-49c8-9b7d-85a7fe8f13cj~?image_size=noop&cut_type=&quality=&format=image&sticker_format=.webp"     }
+            }'
+    RuleDetail:
+      type: object
+      properties:
+        effective_time:
+          type: string
+          description: 开始生效的时间戳。1.手动设置有效期类型勋章，配置有效期限需要配置该字段；2.时间戳必须是所在时区当天的零点时间戳，如时区为Asia/Shanghai时区时的1649606400
+          example: '1649606400'
+          format: int64
+        expiration_time:
+          type: string
+          description: 结束生效的时间戳。1.手动设置有效期类型勋章，配置有效期限需要配置该字段；2.最大值：不得超过effective_time+100 年；3.非永久有效：时间戳必须是所在时区当天的23:59:59时间戳，如时区为Asia/Shanghai时区时的1649692799；4.永久有效：传值为0即可
+          example: '1649692799'
+          format: int64
+        anniversary:
+          type: integer
+          description: 入职周年日。根据入职时间发放类型勋章，需要配置该字段。
+          default: 1
+          example: '1'
+        effective_period:
+          type: integer
+          description: 有效期限。根据入职时间发放类型勋章，需要配置该字段。
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 有效期为一年
+            '2': 永久有效
+          default: 1
+          example: '1'
+      description: 规则详情
+    Schema3:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 授予名单名称，最多100个字符。
+          example: 激励勋章的授予名单
+        grant_type:
+          type: integer
+          description: 勋章下唯一的授予事项
+          enum:
+          - 0
+          - 1
+          x-enum-descriptions:
+            '0': 手动选择有效期
+            '1': 匹配系统入职时间
+          default: 0
+          example: '0'
+        time_zone:
+          type: string
+          description: 授予名单的生效时间对应的时区，用于检查RuleDetail的时间戳的取值是否规范，取值范围为TZ database name
+          example: Asia/Shanghai
+        rule_detail:
+          allOf:
+          - $ref: '#/components/schemas/RuleDetail'
+          description: 规则详情
+        is_grant_all:
+          type: boolean
+          description: 是否授予给全员。1.为false时，需要关联1~500个用户群体。2.为true时，不可关联用户、用户组、部门。
+          default: false
+          example: 'true'
+        user_ids:
+          type: array
+          items:
+            type: string
+          description: 授予的用户ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
+          example: '[u273y71]'
+        department_ids:
+          type: array
+          items:
+            type: string
+          description: 授予的部门ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
+        group_ids:
+          type: array
+          items:
+            type: string
+          description: 授予的用户组ID列表，授予名单列表接口返回结果中不返回该字段，只在详情接口返回
+          example: '[g122817]'
+    Schema4:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 租户内唯一的勋章名称，最多30个字符。
+          example: 激励勋章
+        explanation:
+          type: string
+          description: 勋章的描述文案，最多100个字符。
+          example: 这枚勋章为了激励员工颁发。
+        detail_image:
+          type: string
+          description: 企业勋章的详情图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。
+          example: 75a1949f-d9df-4b46-bc88-dacc51e88f3j
+        show_image:
+          type: string
+          description: 企业勋章的头像挂饰图Key。1.权限校验：非本租户上传的图片key，不能直接使用；2.时效校验：创建勋章，或者修改勋章图片key时，需使用1h内上传的图片key。
+          example: 03daa74a-159f-49e9-963e-b6c4d76103fj
+        i18n_name:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文文案
+              example: 中文
+            en_us:
+              type: string
+              description: 英文文案
+              example: English
+            ja_jp:
+              type: string
+              description: 日文文案
+              example: 日本語のコピーライティング
+          description: 勋章的多语言名称，同name字段限制，最多30个字符。
+          example: '{         "zh_cn": "激励勋章",         "en_us": "Incentive Medal",         "ja_jp": "奨励メダル"     }'
+        i18n_explanation:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文文案
+              example: 中文
+            en_us:
+              type: string
+              description: 英文文案
+              example: English
+            ja_jp:
+              type: string
+              description: 日文文案
+              example: 日本語のコピーライティング
+          description: 勋章的多语言描述文案，同explanation字段限制，最多100个字符。
+          example: '{         "zh_cn": "这枚勋章为了激励员工颁发。",         "en_us": "This medal is awarded to motivate employees.",         "ja_jp":
+            "このメダルは、従業員のモチベーションを高めるために授与されます。"     }'

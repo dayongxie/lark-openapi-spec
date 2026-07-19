@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: spark
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -319,41 +319,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      file_key:
-                        type: string
-                        description: 文件 ID
-                        example: '1859988692091946'
-                      file_url:
-                        type: string
-                        description: 文件 URL，相对路径
-                        example: /app/app_4jmwuym484u90/runtime/api/v1/storage/object/bucket_aadju74v6daba/1859988692091946
-                      file_name:
-                        type: string
-                        description: 文件名称
-                        example: 文件名称
-                      file_size:
-                        type: integer
-                        description: 文件大小，单位字节
-                        example: '33'
-                      mime_type:
-                        type: string
-                        description: 文件 MIME 类型
-                        example: binary/octet-stream
-                    required:
-                    - file_key
-                    - file_url
-                    - file_name
-                    - file_size
-                    - mime_type
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -399,41 +365,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      file_key:
-                        type: string
-                        description: 文件 ID
-                        example: '1859988692091946'
-                      file_url:
-                        type: string
-                        description: 文件 URL，相对路径
-                        example: /app/app_4jmwuym484u90/runtime/api/v1/storage/object/bucket_aadju74v6daba/1859988692091946
-                      file_name:
-                        type: string
-                        description: 文件名称
-                        example: 上传文件名称示例
-                      file_size:
-                        type: integer
-                        description: 文件大小，单位字节
-                        example: '104857600'
-                      mime_type:
-                        type: string
-                        description: 文件 MIME 类型
-                        example: text/plain; charset=utf-8
-                    required:
-                    - file_key
-                    - file_url
-                    - file_name
-                    - file_size
-                    - mime_type
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -1143,49 +1075,7 @@ paths:
                       columns:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              description: 列名
-                              example: column_name
-                            description:
-                              type: string
-                              description: 列描述
-                              example: column_name的描述
-                            data_type:
-                              type: string
-                              description: 数据库数据类型
-                              example: varchar
-                            is_primary_key:
-                              type: boolean
-                              description: 是否是主键
-                            is_unique:
-                              type: boolean
-                              description: 是否唯一
-                            is_auto_increment:
-                              type: boolean
-                              description: 是否是自增
-                            is_array:
-                              type: boolean
-                              description: 是否是数组类型
-                            is_allow_null:
-                              type: boolean
-                              description: 是否允许为空
-                            default_value:
-                              type: string
-                              description: 默认值
-                              example: 默认值
-                          required:
-                          - name
-                          - description
-                          - data_type
-                          - is_primary_key
-                          - is_unique
-                          - is_auto_increment
-                          - is_array
-                          - is_allow_null
-                          - default_value
+                          $ref: '#/components/schemas/Item'
                         description: 数据表列
                       indexes:
                         type: array
@@ -1350,49 +1240,7 @@ paths:
                             columns:
                               type: array
                               items:
-                                type: object
-                                properties:
-                                  name:
-                                    type: string
-                                    description: 列名
-                                    example: column_name
-                                  description:
-                                    type: string
-                                    description: 列描述
-                                    example: column_name的描述
-                                  data_type:
-                                    type: string
-                                    description: 数据库数据类型
-                                    example: varchar
-                                  is_primary_key:
-                                    type: boolean
-                                    description: 是否是主键
-                                  is_unique:
-                                    type: boolean
-                                    description: 是否唯一
-                                  is_auto_increment:
-                                    type: boolean
-                                    description: 是否是自增
-                                  is_array:
-                                    type: boolean
-                                    description: 是否是数组类型
-                                  is_allow_null:
-                                    type: boolean
-                                    description: 是否允许为空
-                                  default_value:
-                                    type: string
-                                    description: 默认值
-                                    example: 默认值
-                                required:
-                                - name
-                                - description
-                                - data_type
-                                - is_primary_key
-                                - is_unique
-                                - is_auto_increment
-                                - is_array
-                                - is_allow_null
-                                - default_value
+                                $ref: '#/components/schemas/Item'
                               description: 数据表列
                             indexes:
                               type: array
@@ -1657,60 +1505,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      app:
-                        type: object
-                        properties:
-                          app_id:
-                            type: string
-                            description: 应用唯一标识，系统自动生成，用于在接口中定位具体应用。可通过应用创建接口或开发者后台获取
-                            example: app_7d2f8a4b1c9e6035
-                          app_type:
-                            type: string
-                            description: 应用类型,full_stack或者html
-                            example: HTML
-                          name:
-                            type: string
-                            description: 应用名称，用于在管理后台和前端展示，支持中英文，长度不超过64字符
-                            example: 智能客服助手
-                          description:
-                            type: string
-                            description: 应用功能说明，用于向用户介绍应用核心能力，长度不超过200字符
-                            example: 提供7×24小时智能对话服务，支持常见问题自动解答与工单流转
-                          icon_url:
-                            type: string
-                            description: 应用图标访问地址，支持PNG/JPG格式，建议尺寸为128×128像素
-                            example: https://example.com/app-icons/customer-service.png
-                          created_at:
-                            type: string
-                            description: 应用创建时间，遵循ISO 8601 UTC格式，由系统自动生成
-                            example: '2026-05-18T10:00:00Z'
-                          updated_at:
-                            type: string
-                            description: 应用最后更新时间，遵循ISO 8601 UTC格式，应用信息变更时自动更新
-                            example: '2026-06-20T14:30:00Z'
-                          is_published:
-                            type: boolean
-                            description: 应用是否已发布
-                            example: 'true'
-                          online_url:
-                            type: string
-                            description: 应用发布后的访问地址
-                            example: http://www.tos.dlxka.com
-                          meta_token:
-                            type: string
-                            description: 应用对应的文档 token
-                            example: wfjgyiyN2Fk17H8cgfFanWe
-                        description: 妙搭应用
-                        example: app_7d2f8a4b1c9e6035
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -1808,48 +1603,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            app_id:
-                              type: string
-                              description: 应用唯一标识，系统自动生成，用于在接口中定位具体应用。可通过应用创建接口或开发者后台获取
-                              example: app_7d2f8a4b1c9e6035
-                            app_type:
-                              type: string
-                              description: 应用类型,full_stack或者html
-                              example: HTML
-                            name:
-                              type: string
-                              description: 应用名称，用于在管理后台和前端展示，支持中英文，长度不超过64字符
-                              example: 智能客服助手
-                            description:
-                              type: string
-                              description: 应用功能说明，用于向用户介绍应用核心能力，长度不超过200字符
-                              example: 提供7×24小时智能对话服务，支持常见问题自动解答与工单流转
-                            icon_url:
-                              type: string
-                              description: 应用图标访问地址，支持PNG/JPG格式，建议尺寸为128×128像素
-                              example: https://example.com/app-icons/customer-service.png
-                            created_at:
-                              type: string
-                              description: 应用创建时间，遵循ISO 8601 UTC格式，由系统自动生成
-                              example: '2026-05-18T10:00:00Z'
-                            updated_at:
-                              type: string
-                              description: 应用最后更新时间，遵循ISO 8601 UTC格式，应用信息变更时自动更新
-                              example: '2026-06-20T14:30:00Z'
-                            is_published:
-                              type: boolean
-                              description: 应用是否已发布
-                              example: 'true'
-                            online_url:
-                              type: string
-                              description: 应用发布后的访问地址
-                              example: http://www.tos.dlxka.com
-                            meta_token:
-                              type: string
-                              description: 应用对应的文档 token
-                              example: wfjgyiyN2Fk17H8cgfFanWe
+                          $ref: '#/components/schemas/App'
                         description: 应用列表数据，包含当前页返回的所有妙搭应用的详细信息
                       has_more:
                         type: boolean
@@ -1914,45 +1668,7 @@ paths:
                   msg:
                     type: string
                   data:
-                    type: object
-                    properties:
-                      scope:
-                        type: string
-                        description: Scope 可见范围类型：All/ Tenant / Range
-                        example: Range
-                      users:
-                        type: array
-                        items:
-                          type: string
-                        description: Users 仅 Scope=Range 时返回，授权用户 open_id 列表
-                      departments:
-                        type: array
-                        items:
-                          type: string
-                        description: Departments 仅 Scope=Range 时返回，授权部门 department_id 列表
-                      chats:
-                        type: array
-                        items:
-                          type: string
-                        description: Chats 仅 Scope=Range 时返回，授权群聊 chat_id 列表
-                      apply_config:
-                        type: object
-                        properties:
-                          enabled:
-                            type: boolean
-                            description: 控制审批流程是否启用。设为true时，提交申请后将触发配置的审批流程；设为false时，申请将直接通过无需审批。
-                            example: 'true'
-                          approvers:
-                            type: array
-                            items:
-                              type: string
-                            description: 仅支持配置一个用户 open_id
-                        description: ApplyConfig 当前申请访问配置（含审批人）；未启用申请时为 nil
-                        example: '{"enabled":true,"approvers":["ou_1234567890abcdef1234567890abcdef"]}'
-                      require_login:
-                        type: boolean
-                        description: 控制访问应用是否需要用户登录
-                        example: 'true'
+                    $ref: '#/components/schemas/Data2'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -2008,43 +1724,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                users:
-                  type: array
-                  items:
-                    type: string
-                  description: Users 仅 Scope=Range 时生效，授权用户 open_id 列表
-                departments:
-                  type: array
-                  items:
-                    type: string
-                  description: Departments 仅 Scope=Range 时生效，授权部门 department_id 列表
-                chats:
-                  type: array
-                  items:
-                    type: string
-                  description: Chats 仅 Scope=Range 时生效，授权群聊 chat_id 列表
-                apply_config:
-                  type: object
-                  properties:
-                    enabled:
-                      type: boolean
-                      description: 控制审批流程是否启用。设为true时，提交申请后将触发配置的审批流程；设为false时，申请将直接通过无需审批。
-                      example: 'true'
-                    approvers:
-                      type: array
-                      items:
-                        type: string
-                      description: 仅支持配置一个用户 open_id
-                  description: ApplyConfig 申请访问配置（含审批人，仅支持单个用户 open_id）
-                require_login:
-                  type: boolean
-                  description: 访问 share URL 是否需要登录
-                scope:
-                  type: string
-                  description: Scope 可见范围类型：All/ Tenant / Range
-                  example: Tenant
+              $ref: '#/components/schemas/Data2'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -2202,60 +1882,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      app:
-                        type: object
-                        properties:
-                          app_id:
-                            type: string
-                            description: 应用唯一标识，系统自动生成，用于在接口中定位具体应用。可通过应用创建接口或开发者后台获取
-                            example: app_7d2f8a4b1c9e6035
-                          app_type:
-                            type: string
-                            description: 应用类型,full_stack或者html
-                            example: HTML
-                          name:
-                            type: string
-                            description: 应用名称，用于在管理后台和前端展示，支持中英文，长度不超过64字符
-                            example: 智能客服助手
-                          description:
-                            type: string
-                            description: 应用功能说明，用于向用户介绍应用核心能力，长度不超过200字符
-                            example: 提供7×24小时智能对话服务，支持常见问题自动解答与工单流转
-                          icon_url:
-                            type: string
-                            description: 应用图标访问地址，支持PNG/JPG格式，建议尺寸为128×128像素
-                            example: https://example.com/app-icons/customer-service.png
-                          created_at:
-                            type: string
-                            description: 应用创建时间，遵循ISO 8601 UTC格式，由系统自动生成
-                            example: '2026-05-18T10:00:00Z'
-                          updated_at:
-                            type: string
-                            description: 应用最后更新时间，遵循ISO 8601 UTC格式，应用信息变更时自动更新
-                            example: '2026-06-20T14:30:00Z'
-                          is_published:
-                            type: boolean
-                            description: 应用是否已发布
-                            example: 'true'
-                          online_url:
-                            type: string
-                            description: 应用发布后的访问地址
-                            example: http://www.tos.dlxka.com
-                          meta_token:
-                            type: string
-                            description: 应用对应的文档 token
-                            example: wfjgyiyN2Fk17H8cgfFanWe
-                        description: 妙搭应用
-                        example: '{"app_id":"app_7d2f8a4b1c9e6035","name":"智能客服助手V2","description":"提供7×24小时智能对话服务，支持多轮交互与工单自动流转","icon_url":"https://example.com/app-icons/customer-service-v2.png","created_at":"2026-05-18T10:00:00Z","updated_at":"2026-06-20T15:45:00Z"}'
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -2478,3 +2105,187 @@ paths:
         msg: param is invalid
       x-lark-rate-limit:
         tier: 9
+components:
+  schemas:
+    App:
+      type: object
+      properties:
+        app_id:
+          type: string
+          description: 应用唯一标识，系统自动生成，用于在接口中定位具体应用。可通过应用创建接口或开发者后台获取
+          example: app_7d2f8a4b1c9e6035
+        app_type:
+          type: string
+          description: 应用类型,full_stack或者html
+          example: HTML
+        name:
+          type: string
+          description: 应用名称，用于在管理后台和前端展示，支持中英文，长度不超过64字符
+          example: 智能客服助手
+        description:
+          type: string
+          description: 应用功能说明，用于向用户介绍应用核心能力，长度不超过200字符
+          example: 提供7×24小时智能对话服务，支持常见问题自动解答与工单流转
+        icon_url:
+          type: string
+          description: 应用图标访问地址，支持PNG/JPG格式，建议尺寸为128×128像素
+          example: https://example.com/app-icons/customer-service.png
+        created_at:
+          type: string
+          description: 应用创建时间，遵循ISO 8601 UTC格式，由系统自动生成
+          example: '2026-05-18T10:00:00Z'
+        updated_at:
+          type: string
+          description: 应用最后更新时间，遵循ISO 8601 UTC格式，应用信息变更时自动更新
+          example: '2026-06-20T14:30:00Z'
+        is_published:
+          type: boolean
+          description: 应用是否已发布
+          example: 'true'
+        online_url:
+          type: string
+          description: 应用发布后的访问地址
+          example: http://www.tos.dlxka.com
+        meta_token:
+          type: string
+          description: 应用对应的文档 token
+          example: wfjgyiyN2Fk17H8cgfFanWe
+      description: 妙搭应用
+      example: app_7d2f8a4b1c9e6035
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    Data:
+      type: object
+      properties:
+        app:
+          allOf:
+          - $ref: '#/components/schemas/App'
+          description: 妙搭应用
+          example: app_7d2f8a4b1c9e6035
+    Item:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 列名
+          example: column_name
+        description:
+          type: string
+          description: 列描述
+          example: column_name的描述
+        data_type:
+          type: string
+          description: 数据库数据类型
+          example: varchar
+        is_primary_key:
+          type: boolean
+          description: 是否是主键
+        is_unique:
+          type: boolean
+          description: 是否唯一
+        is_auto_increment:
+          type: boolean
+          description: 是否是自增
+        is_array:
+          type: boolean
+          description: 是否是数组类型
+        is_allow_null:
+          type: boolean
+          description: 是否允许为空
+        default_value:
+          type: string
+          description: 默认值
+          example: 默认值
+      required:
+      - name
+      - description
+      - data_type
+      - is_primary_key
+      - is_unique
+      - is_auto_increment
+      - is_array
+      - is_allow_null
+      - default_value
+    Data2:
+      type: object
+      properties:
+        scope:
+          type: string
+          description: Scope 可见范围类型：All/ Tenant / Range
+          example: Range
+        users:
+          type: array
+          items:
+            type: string
+          description: Users 仅 Scope=Range 时返回，授权用户 open_id 列表
+        departments:
+          type: array
+          items:
+            type: string
+          description: Departments 仅 Scope=Range 时返回，授权部门 department_id 列表
+        chats:
+          type: array
+          items:
+            type: string
+          description: Chats 仅 Scope=Range 时返回，授权群聊 chat_id 列表
+        apply_config:
+          type: object
+          properties:
+            enabled:
+              type: boolean
+              description: 控制审批流程是否启用。设为true时，提交申请后将触发配置的审批流程；设为false时，申请将直接通过无需审批。
+              example: 'true'
+            approvers:
+              type: array
+              items:
+                type: string
+              description: 仅支持配置一个用户 open_id
+          description: ApplyConfig 当前申请访问配置（含审批人）；未启用申请时为 nil
+          example: '{"enabled":true,"approvers":["ou_1234567890abcdef1234567890abcdef"]}'
+        require_login:
+          type: boolean
+          description: 控制访问应用是否需要用户登录
+          example: 'true'
+    Schema2:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          type: object
+          properties:
+            file_key:
+              type: string
+              description: 文件 ID
+              example: '1859988692091946'
+            file_url:
+              type: string
+              description: 文件 URL，相对路径
+              example: /app/app_4jmwuym484u90/runtime/api/v1/storage/object/bucket_aadju74v6daba/1859988692091946
+            file_name:
+              type: string
+              description: 文件名称
+              example: 文件名称
+            file_size:
+              type: integer
+              description: 文件大小，单位字节
+              example: '33'
+            mime_type:
+              type: string
+              description: 文件 MIME 类型
+              example: binary/octet-stream
+          required:
+          - file_key
+          - file_url
+          - file_name
+          - file_size
+          - mime_type

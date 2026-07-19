@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: im
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -1518,61 +1518,8 @@ paths:
                       REDIRECT_LINK: 跳转链接
                   description: 修改的字段
                 chat_menu_item:
-                  type: object
-                  properties:
-                    action_type:
-                      type: string
-                      description: 菜单类型
-                      enum:
-                      - NONE
-                      - REDIRECT_LINK
-                      x-enum-descriptions:
-                        NONE: 无类型，仅一级菜单存在二级菜单时，该一级菜单设置NONE类型。
-                        REDIRECT_LINK: 跳转链接类型
-                      example: NONE
-                    redirect_link:
-                      type: object
-                      properties:
-                        common_url:
-                          type: string
-                          example: https://open.feishu.cn/
-                        ios_url:
-                          type: string
-                          example: https://open.feishu.cn/
-                        android_url:
-                          type: string
-                          example: https://open.feishu.cn/
-                        pc_url:
-                          type: string
-                          example: https://open.feishu.cn/
-                        web_url:
-                          type: string
-                          example: https://open.feishu.cn/
-                      description: 跳转链接
-                    image_key:
-                      type: string
-                      description: image_key
-                      example: img_v2_b0fbe905-7988-4282-b882-82edd010336j
-                    name:
-                      type: string
-                      description: 名称
-                      example: 评审报名
-                    i18n_names:
-                      type: object
-                      properties:
-                        zh_cn:
-                          type: string
-                          description: 中文名
-                          example: 评审报名
-                        en_us:
-                          type: string
-                          description: 英文名
-                          example: Sign up
-                        ja_jp:
-                          type: string
-                          description: 日文名
-                          example: サインアップ
-                      description: 国际化名称，一级菜单名称字符数要在1到8范围内，二级菜单名称字符数要在1到24范围内。<br><br>**注意：**<br>1中文=2英文=2其他语言字符=2字符
+                  allOf:
+                  - $ref: '#/components/schemas/ChatMenuItem'
                   description: 元信息
       responses:
         '200':
@@ -1587,64 +1534,7 @@ paths:
                   msg:
                     type: string
                   data:
-                    type: object
-                    properties:
-                      chat_menu_item:
-                        type: object
-                        properties:
-                          action_type:
-                            type: string
-                            description: 菜单类型
-                            enum:
-                            - NONE
-                            - REDIRECT_LINK
-                            x-enum-descriptions:
-                              NONE: 无类型，仅一级菜单存在二级菜单时，该一级菜单设置NONE类型。
-                              REDIRECT_LINK: 跳转链接类型
-                            example: NONE
-                          redirect_link:
-                            type: object
-                            properties:
-                              common_url:
-                                type: string
-                                example: https://open.feishu.cn/
-                              ios_url:
-                                type: string
-                                example: https://open.feishu.cn/
-                              android_url:
-                                type: string
-                                example: https://open.feishu.cn/
-                              pc_url:
-                                type: string
-                                example: https://open.feishu.cn/
-                              web_url:
-                                type: string
-                                example: https://open.feishu.cn/
-                            description: 跳转链接
-                          image_key:
-                            type: string
-                            description: image_key
-                            example: img_v2_b0fbe905-7988-4282-b882-82edd010336j
-                          name:
-                            type: string
-                            description: 名称
-                            example: 评审报名
-                          i18n_names:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文名
-                                example: 评审报名
-                              en_us:
-                                type: string
-                                description: 英文名
-                                example: Sign up
-                              ja_jp:
-                                type: string
-                                description: 日文名
-                                example: サインアップ
-                            description: 国际化名称，一级菜单名称字符数要在1到8范围内，二级菜单名称字符数要在1到24范围内。<br><br>**注意：**<br>1中文=2英文=2其他语言字符=2字符
+                    $ref: '#/components/schemas/Data5'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -1792,65 +1682,7 @@ paths:
                           children:
                             type: array
                             items:
-                              type: object
-                              properties:
-                                chat_menu_item:
-                                  type: object
-                                  properties:
-                                    action_type:
-                                      type: string
-                                      description: 菜单类型
-                                      enum:
-                                      - NONE
-                                      - REDIRECT_LINK
-                                      x-enum-descriptions:
-                                        NONE: 无类型，仅一级菜单存在二级菜单时，该一级菜单设置NONE类型。
-                                        REDIRECT_LINK: 跳转链接类型
-                                      example: NONE
-                                    redirect_link:
-                                      type: object
-                                      properties:
-                                        common_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        ios_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        android_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        pc_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        web_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                      description: 跳转链接
-                                    image_key:
-                                      type: string
-                                      description: image_key
-                                      example: img_v2_b0fbe905-7988-4282-b882-82edd010336j
-                                    name:
-                                      type: string
-                                      description: 名称
-                                      example: 评审报名
-                                    i18n_names:
-                                      type: object
-                                      properties:
-                                        zh_cn:
-                                          type: string
-                                          description: 中文名
-                                          example: 评审报名
-                                        en_us:
-                                          type: string
-                                          description: 英文名
-                                          example: Sign up
-                                        ja_jp:
-                                          type: string
-                                          description: 日文名
-                                          example: サインアップ
-                                      description: 国际化名称，一级菜单名称字符数要在1到8范围内，二级菜单名称字符数要在1到24范围内。<br><br>**注意：**<br>1中文=2英文=2其他语言字符=2字符
-                                  description: 二级菜单信息
+                              $ref: '#/components/schemas/Data5'
                             description: 二级菜单列表
                         required:
                         - chat_menu_item
@@ -1864,155 +1696,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      menu_tree:
-                        type: object
-                        properties:
-                          chat_menu_top_levels:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                chat_menu_top_level_id:
-                                  type: string
-                                  description: 一级菜单ID
-                                  example: '7117116451961487361'
-                                  format: int64
-                                chat_menu_item:
-                                  type: object
-                                  properties:
-                                    action_type:
-                                      type: string
-                                      description: 菜单类型
-                                      enum:
-                                      - NONE
-                                      - REDIRECT_LINK
-                                      x-enum-descriptions:
-                                        NONE: 无类型，仅一级菜单存在二级菜单时，该一级菜单设置NONE类型。
-                                        REDIRECT_LINK: 跳转链接类型
-                                      example: NONE
-                                    redirect_link:
-                                      type: object
-                                      properties:
-                                        common_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        ios_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        android_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        pc_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        web_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                      description: 跳转链接
-                                    image_key:
-                                      type: string
-                                      description: image_key
-                                      example: img_v2_b0fbe905-7988-4282-b882-82edd010336j
-                                    name:
-                                      type: string
-                                      description: 名称
-                                      example: 评审报名
-                                    i18n_names:
-                                      type: object
-                                      properties:
-                                        zh_cn:
-                                          type: string
-                                          description: 中文名
-                                          example: 评审报名
-                                        en_us:
-                                          type: string
-                                          description: 英文名
-                                          example: Sign up
-                                        ja_jp:
-                                          type: string
-                                          description: 日文名
-                                          example: サインアップ
-                                      description: 国际化名称，一级菜单名称字符数要在1到8范围内，二级菜单名称字符数要在1到24范围内。<br><br>**注意：**<br>1中文=2英文=2其他语言字符=2字符
-                                  description: 一级菜单信息
-                                children:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      chat_menu_second_level_id:
-                                        type: string
-                                        description: 二级菜单ID
-                                        example: '7039638308221468675'
-                                        format: int64
-                                      chat_menu_item:
-                                        type: object
-                                        properties:
-                                          action_type:
-                                            type: string
-                                            description: 菜单类型
-                                            enum:
-                                            - NONE
-                                            - REDIRECT_LINK
-                                            x-enum-descriptions:
-                                              NONE: 无类型，仅一级菜单存在二级菜单时，该一级菜单设置NONE类型。
-                                              REDIRECT_LINK: 跳转链接类型
-                                            example: NONE
-                                          redirect_link:
-                                            type: object
-                                            properties:
-                                              common_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                              ios_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                              android_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                              pc_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                              web_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                            description: 跳转链接
-                                          image_key:
-                                            type: string
-                                            description: image_key
-                                            example: img_v2_b0fbe905-7988-4282-b882-82edd010336j
-                                          name:
-                                            type: string
-                                            description: 名称
-                                            example: 评审报名
-                                          i18n_names:
-                                            type: object
-                                            properties:
-                                              zh_cn:
-                                                type: string
-                                                description: 中文名
-                                                example: 评审报名
-                                              en_us:
-                                                type: string
-                                                description: 英文名
-                                                example: Sign up
-                                              ja_jp:
-                                                type: string
-                                                description: 日文名
-                                                example: サインアップ
-                                            description: 国际化名称，一级菜单名称字符数要在1到8范围内，二级菜单名称字符数要在1到24范围内。<br><br>**注意：**<br>1中文=2英文=2其他语言字符=2字符
-                                        description: 二级菜单信息
-                                  description: 二级菜单列表
-                            description: 一级菜单列表
-                        description: 追加后群内现有菜单
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -2112,155 +1796,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      menu_tree:
-                        type: object
-                        properties:
-                          chat_menu_top_levels:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                chat_menu_top_level_id:
-                                  type: string
-                                  description: 一级菜单ID
-                                  example: '7117116451961487361'
-                                  format: int64
-                                chat_menu_item:
-                                  type: object
-                                  properties:
-                                    action_type:
-                                      type: string
-                                      description: 菜单类型
-                                      enum:
-                                      - NONE
-                                      - REDIRECT_LINK
-                                      x-enum-descriptions:
-                                        NONE: 无类型，仅一级菜单存在二级菜单时，该一级菜单设置NONE类型。
-                                        REDIRECT_LINK: 跳转链接类型
-                                      example: NONE
-                                    redirect_link:
-                                      type: object
-                                      properties:
-                                        common_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        ios_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        android_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        pc_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        web_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                      description: 跳转链接
-                                    image_key:
-                                      type: string
-                                      description: image_key
-                                      example: img_v2_b0fbe905-7988-4282-b882-82edd010336j
-                                    name:
-                                      type: string
-                                      description: 名称
-                                      example: 评审报名
-                                    i18n_names:
-                                      type: object
-                                      properties:
-                                        zh_cn:
-                                          type: string
-                                          description: 中文名
-                                          example: 评审报名
-                                        en_us:
-                                          type: string
-                                          description: 英文名
-                                          example: Sign up
-                                        ja_jp:
-                                          type: string
-                                          description: 日文名
-                                          example: サインアップ
-                                      description: 国际化名称，一级菜单名称字符数要在1到8范围内，二级菜单名称字符数要在1到24范围内。<br><br>**注意：**<br>1中文=2英文=2其他语言字符=2字符
-                                  description: 一级菜单信息
-                                children:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      chat_menu_second_level_id:
-                                        type: string
-                                        description: 二级菜单ID
-                                        example: '7039638308221468675'
-                                        format: int64
-                                      chat_menu_item:
-                                        type: object
-                                        properties:
-                                          action_type:
-                                            type: string
-                                            description: 菜单类型
-                                            enum:
-                                            - NONE
-                                            - REDIRECT_LINK
-                                            x-enum-descriptions:
-                                              NONE: 无类型，仅一级菜单存在二级菜单时，该一级菜单设置NONE类型。
-                                              REDIRECT_LINK: 跳转链接类型
-                                            example: NONE
-                                          redirect_link:
-                                            type: object
-                                            properties:
-                                              common_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                              ios_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                              android_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                              pc_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                              web_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                            description: 跳转链接
-                                          image_key:
-                                            type: string
-                                            description: image_key
-                                            example: img_v2_b0fbe905-7988-4282-b882-82edd010336j
-                                          name:
-                                            type: string
-                                            description: 名称
-                                            example: 评审报名
-                                          i18n_names:
-                                            type: object
-                                            properties:
-                                              zh_cn:
-                                                type: string
-                                                description: 中文名
-                                                example: 评审报名
-                                              en_us:
-                                                type: string
-                                                description: 英文名
-                                                example: Sign up
-                                              ja_jp:
-                                                type: string
-                                                description: 日文名
-                                                example: サインアップ
-                                            description: 国际化名称，一级菜单名称字符数要在1到8范围内，二级菜单名称字符数要在1到24范围内。<br><br>**注意：**<br>1中文=2英文=2其他语言字符=2字符
-                                        description: 二级菜单信息
-                                  description: 二级菜单列表
-                            description: 一级菜单列表
-                        description: 群内现有菜单
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -2335,155 +1871,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      menu_tree:
-                        type: object
-                        properties:
-                          chat_menu_top_levels:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                chat_menu_top_level_id:
-                                  type: string
-                                  description: 一级菜单ID
-                                  example: '7117116451961487361'
-                                  format: int64
-                                chat_menu_item:
-                                  type: object
-                                  properties:
-                                    action_type:
-                                      type: string
-                                      description: 菜单类型
-                                      enum:
-                                      - NONE
-                                      - REDIRECT_LINK
-                                      x-enum-descriptions:
-                                        NONE: 无类型，仅一级菜单存在二级菜单时，该一级菜单设置NONE类型。
-                                        REDIRECT_LINK: 跳转链接类型
-                                      example: NONE
-                                    redirect_link:
-                                      type: object
-                                      properties:
-                                        common_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        ios_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        android_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        pc_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        web_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                      description: 跳转链接
-                                    image_key:
-                                      type: string
-                                      description: image_key
-                                      example: img_v2_b0fbe905-7988-4282-b882-82edd010336j
-                                    name:
-                                      type: string
-                                      description: 名称
-                                      example: 评审报名
-                                    i18n_names:
-                                      type: object
-                                      properties:
-                                        zh_cn:
-                                          type: string
-                                          description: 中文名
-                                          example: 评审报名
-                                        en_us:
-                                          type: string
-                                          description: 英文名
-                                          example: Sign up
-                                        ja_jp:
-                                          type: string
-                                          description: 日文名
-                                          example: サインアップ
-                                      description: 国际化名称，一级菜单名称字符数要在1到8范围内，二级菜单名称字符数要在1到24范围内。<br><br>**注意：**<br>1中文=2英文=2其他语言字符=2字符
-                                  description: 一级菜单信息
-                                children:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      chat_menu_second_level_id:
-                                        type: string
-                                        description: 二级菜单ID
-                                        example: '7039638308221468675'
-                                        format: int64
-                                      chat_menu_item:
-                                        type: object
-                                        properties:
-                                          action_type:
-                                            type: string
-                                            description: 菜单类型
-                                            enum:
-                                            - NONE
-                                            - REDIRECT_LINK
-                                            x-enum-descriptions:
-                                              NONE: 无类型，仅一级菜单存在二级菜单时，该一级菜单设置NONE类型。
-                                              REDIRECT_LINK: 跳转链接类型
-                                            example: NONE
-                                          redirect_link:
-                                            type: object
-                                            properties:
-                                              common_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                              ios_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                              android_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                              pc_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                              web_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                            description: 跳转链接
-                                          image_key:
-                                            type: string
-                                            description: image_key
-                                            example: img_v2_b0fbe905-7988-4282-b882-82edd010336j
-                                          name:
-                                            type: string
-                                            description: 名称
-                                            example: 评审报名
-                                          i18n_names:
-                                            type: object
-                                            properties:
-                                              zh_cn:
-                                                type: string
-                                                description: 中文名
-                                                example: 评审报名
-                                              en_us:
-                                                type: string
-                                                description: 英文名
-                                                example: Sign up
-                                              ja_jp:
-                                                type: string
-                                                description: 日文名
-                                                example: サインアップ
-                                            description: 国际化名称，一级菜单名称字符数要在1到8范围内，二级菜单名称字符数要在1到24范围内。<br><br>**注意：**<br>1中文=2英文=2其他语言字符=2字符
-                                        description: 二级菜单信息
-                                  description: 二级菜单列表
-                            description: 一级菜单列表
-                        description: 群内所有菜单
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -2564,155 +1952,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      menu_tree:
-                        type: object
-                        properties:
-                          chat_menu_top_levels:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                chat_menu_top_level_id:
-                                  type: string
-                                  description: 一级菜单ID
-                                  example: '7117116451961487361'
-                                  format: int64
-                                chat_menu_item:
-                                  type: object
-                                  properties:
-                                    action_type:
-                                      type: string
-                                      description: 菜单类型
-                                      enum:
-                                      - NONE
-                                      - REDIRECT_LINK
-                                      x-enum-descriptions:
-                                        NONE: 无类型，仅一级菜单存在二级菜单时，该一级菜单设置NONE类型。
-                                        REDIRECT_LINK: 跳转链接类型
-                                      example: NONE
-                                    redirect_link:
-                                      type: object
-                                      properties:
-                                        common_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        ios_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        android_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        pc_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                        web_url:
-                                          type: string
-                                          example: https://open.feishu.cn/
-                                      description: 跳转链接
-                                    image_key:
-                                      type: string
-                                      description: image_key
-                                      example: img_v2_b0fbe905-7988-4282-b882-82edd010336j
-                                    name:
-                                      type: string
-                                      description: 名称
-                                      example: 评审报名
-                                    i18n_names:
-                                      type: object
-                                      properties:
-                                        zh_cn:
-                                          type: string
-                                          description: 中文名
-                                          example: 评审报名
-                                        en_us:
-                                          type: string
-                                          description: 英文名
-                                          example: Sign up
-                                        ja_jp:
-                                          type: string
-                                          description: 日文名
-                                          example: サインアップ
-                                      description: 国际化名称，一级菜单名称字符数要在1到8范围内，二级菜单名称字符数要在1到24范围内。<br><br>**注意：**<br>1中文=2英文=2其他语言字符=2字符
-                                  description: 一级菜单信息
-                                children:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      chat_menu_second_level_id:
-                                        type: string
-                                        description: 二级菜单ID
-                                        example: '7039638308221468675'
-                                        format: int64
-                                      chat_menu_item:
-                                        type: object
-                                        properties:
-                                          action_type:
-                                            type: string
-                                            description: 菜单类型
-                                            enum:
-                                            - NONE
-                                            - REDIRECT_LINK
-                                            x-enum-descriptions:
-                                              NONE: 无类型，仅一级菜单存在二级菜单时，该一级菜单设置NONE类型。
-                                              REDIRECT_LINK: 跳转链接类型
-                                            example: NONE
-                                          redirect_link:
-                                            type: object
-                                            properties:
-                                              common_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                              ios_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                              android_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                              pc_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                              web_url:
-                                                type: string
-                                                example: https://open.feishu.cn/
-                                            description: 跳转链接
-                                          image_key:
-                                            type: string
-                                            description: image_key
-                                            example: img_v2_b0fbe905-7988-4282-b882-82edd010336j
-                                          name:
-                                            type: string
-                                            description: 名称
-                                            example: 评审报名
-                                          i18n_names:
-                                            type: object
-                                            properties:
-                                              zh_cn:
-                                                type: string
-                                                description: 中文名
-                                                example: 评审报名
-                                              en_us:
-                                                type: string
-                                                description: 英文名
-                                                example: Sign up
-                                              ja_jp:
-                                                type: string
-                                                description: 日文名
-                                                example: サインアップ
-                                            description: 国际化名称，一级菜单名称字符数要在1到8范围内，二级菜单名称字符数要在1到24范围内。<br><br>**注意：**<br>1中文=2英文=2其他语言字符=2字符
-                                        description: 二级菜单信息
-                                  description: 二级菜单列表
-                            description: 一级菜单列表
-                        description: 排序后群内菜单
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -3166,90 +2406,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      chat_tabs:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            tab_id:
-                              type: string
-                              description: tabID
-                              example: '7101214603622940671'
-                            tab_name:
-                              type: string
-                              description: Tab名称
-                              example: 文档
-                            tab_type:
-                              type: string
-                              description: Tab类型
-                              enum:
-                              - message
-                              - doc_list
-                              - doc
-                              - pin
-                              - meeting_minute
-                              - chat_announcement
-                              - url
-                              - file
-                              - files_resources
-                              - images_videos
-                              - task
-                              x-enum-descriptions:
-                                message: 消息类型
-                                doc_list: 云文档列表
-                                doc: 文档
-                                pin: Pin
-                                meeting_minute: 会议纪要
-                                chat_announcement: 群公告
-                                url: URL
-                                file: 文件
-                                files_resources: 合并类型, 包含文件、Doc文档、URL链接
-                                images_videos: 合并类型，包含图片、视频
-                                task: 任务
-                            tab_content:
-                              type: object
-                              properties:
-                                url:
-                                  type: string
-                                  description: URL类型
-                                  example: https://www.feishu.cn
-                                doc:
-                                  type: string
-                                  description: Doc链接
-                                  example: https://bytedance.feishu.cn/wiki/wikcnPIcqWjJQwkwDzrB9t40123xz
-                                meeting_minute:
-                                  type: string
-                                  description: 会议纪要
-                                  example: https://bytedance.feishu.cn/docs/doccnvIXbV22i6hSD3utar4123dx
-                                task:
-                                  type: string
-                                  description: 任务
-                                  example: https://bytedance.feishu.cn/client/todo/task_list?guid=fa03fb6d-344b-47d9-83e3-049e3b3da931
-                              description: Tab内容
-                            tab_config:
-                              type: object
-                              properties:
-                                icon_key:
-                                  type: string
-                                  description: 群Tab图标
-                                  example: img_v2_b99741-7628-4abd-aad0-b881e4db83ig
-                                is_built_in:
-                                  type: boolean
-                                  description: 群tab是否App内嵌打开
-                                  example: 'false'
-                              description: Tab的配置
-                          required:
-                          - tab_type
-                        description: 群标签列表
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       - user
@@ -3353,90 +2510,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      chat_tabs:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            tab_id:
-                              type: string
-                              description: tabID
-                              example: '7101214603622940671'
-                            tab_name:
-                              type: string
-                              description: Tab名称
-                              example: 文档
-                            tab_type:
-                              type: string
-                              description: Tab类型
-                              enum:
-                              - message
-                              - doc_list
-                              - doc
-                              - pin
-                              - meeting_minute
-                              - chat_announcement
-                              - url
-                              - file
-                              - files_resources
-                              - images_videos
-                              - task
-                              x-enum-descriptions:
-                                message: 消息类型
-                                doc_list: 云文档列表
-                                doc: 文档
-                                pin: Pin
-                                meeting_minute: 会议纪要
-                                chat_announcement: 群公告
-                                url: URL
-                                file: 文件
-                                files_resources: 合并类型, 包含文件、Doc文档、URL链接
-                                images_videos: 合并类型，包含图片、视频
-                                task: 任务
-                            tab_content:
-                              type: object
-                              properties:
-                                url:
-                                  type: string
-                                  description: URL类型
-                                  example: https://www.feishu.cn
-                                doc:
-                                  type: string
-                                  description: Doc链接
-                                  example: https://bytedance.feishu.cn/wiki/wikcnPIcqWjJQwkwDzrB9t40123xz
-                                meeting_minute:
-                                  type: string
-                                  description: 会议纪要
-                                  example: https://bytedance.feishu.cn/docs/doccnvIXbV22i6hSD3utar4123dx
-                                task:
-                                  type: string
-                                  description: 任务
-                                  example: https://bytedance.feishu.cn/client/todo/task_list?guid=fa03fb6d-344b-47d9-83e3-049e3b3da931
-                              description: Tab内容
-                            tab_config:
-                              type: object
-                              properties:
-                                icon_key:
-                                  type: string
-                                  description: 群Tab图标
-                                  example: img_v2_b99741-7628-4abd-aad0-b881e4db83ig
-                                is_built_in:
-                                  type: boolean
-                                  description: 群tab是否App内嵌打开
-                                  example: 'false'
-                              description: Tab的配置
-                          required:
-                          - tab_type
-                        description: 群标签列表
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       - user
@@ -3516,90 +2590,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      chat_tabs:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            tab_id:
-                              type: string
-                              description: tabID
-                              example: '7101214603622940671'
-                            tab_name:
-                              type: string
-                              description: Tab名称
-                              example: 文档
-                            tab_type:
-                              type: string
-                              description: Tab类型
-                              enum:
-                              - message
-                              - doc_list
-                              - doc
-                              - pin
-                              - meeting_minute
-                              - chat_announcement
-                              - url
-                              - file
-                              - files_resources
-                              - images_videos
-                              - task
-                              x-enum-descriptions:
-                                message: 消息类型
-                                doc_list: 云文档列表
-                                doc: 文档
-                                pin: Pin
-                                meeting_minute: 会议纪要
-                                chat_announcement: 群公告
-                                url: URL
-                                file: 文件
-                                files_resources: 合并类型, 包含文件、Doc文档、URL链接
-                                images_videos: 合并类型，包含图片、视频
-                                task: 任务
-                            tab_content:
-                              type: object
-                              properties:
-                                url:
-                                  type: string
-                                  description: URL类型
-                                  example: https://www.feishu.cn
-                                doc:
-                                  type: string
-                                  description: Doc链接
-                                  example: https://bytedance.feishu.cn/wiki/wikcnPIcqWjJQwkwDzrB9t40123xz
-                                meeting_minute:
-                                  type: string
-                                  description: 会议纪要
-                                  example: https://bytedance.feishu.cn/docs/doccnvIXbV22i6hSD3utar4123dx
-                                task:
-                                  type: string
-                                  description: 任务
-                                  example: https://bytedance.feishu.cn/client/todo/task_list?guid=fa03fb6d-344b-47d9-83e3-049e3b3da931
-                              description: Tab内容
-                            tab_config:
-                              type: object
-                              properties:
-                                icon_key:
-                                  type: string
-                                  description: 群Tab图标
-                                  example: img_v2_b99741-7628-4abd-aad0-b881e4db83ig
-                                is_built_in:
-                                  type: boolean
-                                  description: 群tab是否App内嵌打开
-                                  example: 'false'
-                              description: Tab的配置
-                          required:
-                          - tab_type
-                        description: 会话标签页
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       - user
@@ -3683,90 +2674,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      chat_tabs:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            tab_id:
-                              type: string
-                              description: tabID
-                              example: '7101214603622940671'
-                            tab_name:
-                              type: string
-                              description: Tab名称
-                              example: 文档
-                            tab_type:
-                              type: string
-                              description: Tab类型
-                              enum:
-                              - message
-                              - doc_list
-                              - doc
-                              - pin
-                              - meeting_minute
-                              - chat_announcement
-                              - url
-                              - file
-                              - files_resources
-                              - images_videos
-                              - task
-                              x-enum-descriptions:
-                                message: 消息类型
-                                doc_list: 云文档列表
-                                doc: 文档
-                                pin: Pin
-                                meeting_minute: 会议纪要
-                                chat_announcement: 群公告
-                                url: URL
-                                file: 文件
-                                files_resources: 合并类型, 包含文件、Doc文档、URL链接
-                                images_videos: 合并类型，包含图片、视频
-                                task: 任务
-                            tab_content:
-                              type: object
-                              properties:
-                                url:
-                                  type: string
-                                  description: URL类型
-                                  example: https://www.feishu.cn
-                                doc:
-                                  type: string
-                                  description: Doc链接
-                                  example: https://bytedance.feishu.cn/wiki/wikcnPIcqWjJQwkwDzrB9t40123xz
-                                meeting_minute:
-                                  type: string
-                                  description: 会议纪要
-                                  example: https://bytedance.feishu.cn/docs/doccnvIXbV22i6hSD3utar4123dx
-                                task:
-                                  type: string
-                                  description: 任务
-                                  example: https://bytedance.feishu.cn/client/todo/task_list?guid=fa03fb6d-344b-47d9-83e3-049e3b3da931
-                              description: Tab内容
-                            tab_config:
-                              type: object
-                              properties:
-                                icon_key:
-                                  type: string
-                                  description: 群Tab图标
-                                  example: img_v2_b99741-7628-4abd-aad0-b881e4db83ig
-                                is_built_in:
-                                  type: boolean
-                                  description: 群tab是否App内嵌打开
-                                  example: 'false'
-                              description: Tab的配置
-                          required:
-                          - tab_type
-                        description: 群标签列表
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       - user
@@ -3842,173 +2750,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                chat_tabs:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      tab_id:
-                        type: string
-                        description: tabID
-                        example: '7101214603622940671'
-                      tab_name:
-                        type: string
-                        description: Tab名称
-                        example: 文档
-                      tab_type:
-                        type: string
-                        description: Tab类型
-                        enum:
-                        - message
-                        - doc_list
-                        - doc
-                        - pin
-                        - meeting_minute
-                        - chat_announcement
-                        - url
-                        - file
-                        - files_resources
-                        - images_videos
-                        - task
-                        x-enum-descriptions:
-                          message: 消息类型
-                          doc_list: 云文档列表
-                          doc: 文档
-                          pin: Pin
-                          meeting_minute: 会议纪要
-                          chat_announcement: 群公告
-                          url: URL
-                          file: 文件
-                          files_resources: 合并类型, 包含文件、Doc文档、URL链接
-                          images_videos: 合并类型，包含图片、视频
-                          task: 任务
-                      tab_content:
-                        type: object
-                        properties:
-                          url:
-                            type: string
-                            description: URL类型
-                            example: https://www.feishu.cn
-                          doc:
-                            type: string
-                            description: Doc链接
-                            example: https://bytedance.feishu.cn/wiki/wikcnPIcqWjJQwkwDzrB9t40123xz
-                          meeting_minute:
-                            type: string
-                            description: 会议纪要
-                            example: https://bytedance.feishu.cn/docs/doccnvIXbV22i6hSD3utar4123dx
-                          task:
-                            type: string
-                            description: 任务
-                            example: https://bytedance.feishu.cn/client/todo/task_list?guid=fa03fb6d-344b-47d9-83e3-049e3b3da931
-                        description: Tab内容
-                      tab_config:
-                        type: object
-                        properties:
-                          icon_key:
-                            type: string
-                            description: 群Tab图标
-                            example: img_v2_b99741-7628-4abd-aad0-b881e4db83ig
-                          is_built_in:
-                            type: boolean
-                            description: 群tab是否App内嵌打开
-                            example: 'false'
-                        description: Tab的配置
-                    required:
-                    - tab_type
-                  description: 会话标签页
+              $ref: '#/components/schemas/Data3'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      chat_tabs:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            tab_id:
-                              type: string
-                              description: tabID
-                              example: '7101214603622940671'
-                            tab_name:
-                              type: string
-                              description: Tab名称
-                              example: 文档
-                            tab_type:
-                              type: string
-                              description: Tab类型
-                              enum:
-                              - message
-                              - doc_list
-                              - doc
-                              - pin
-                              - meeting_minute
-                              - chat_announcement
-                              - url
-                              - file
-                              - files_resources
-                              - images_videos
-                              - task
-                              x-enum-descriptions:
-                                message: 消息类型
-                                doc_list: 云文档列表
-                                doc: 文档
-                                pin: Pin
-                                meeting_minute: 会议纪要
-                                chat_announcement: 群公告
-                                url: URL
-                                file: 文件
-                                files_resources: 合并类型, 包含文件、Doc文档、URL链接
-                                images_videos: 合并类型，包含图片、视频
-                                task: 任务
-                            tab_content:
-                              type: object
-                              properties:
-                                url:
-                                  type: string
-                                  description: URL类型
-                                  example: https://www.feishu.cn
-                                doc:
-                                  type: string
-                                  description: Doc链接
-                                  example: https://bytedance.feishu.cn/wiki/wikcnPIcqWjJQwkwDzrB9t40123xz
-                                meeting_minute:
-                                  type: string
-                                  description: 会议纪要
-                                  example: https://bytedance.feishu.cn/docs/doccnvIXbV22i6hSD3utar4123dx
-                                task:
-                                  type: string
-                                  description: 任务
-                                  example: https://bytedance.feishu.cn/client/todo/task_list?guid=fa03fb6d-344b-47d9-83e3-049e3b3da931
-                              description: Tab内容
-                            tab_config:
-                              type: object
-                              properties:
-                                icon_key:
-                                  type: string
-                                  description: 群Tab图标
-                                  example: img_v2_b99741-7628-4abd-aad0-b881e4db83ig
-                                is_built_in:
-                                  type: boolean
-                                  description: 群tab是否App内嵌打开
-                                  example: 'false'
-                              description: Tab的配置
-                          required:
-                          - tab_type
-                        description: 群标签列表
+                $ref: '#/components/schemas/Schema3'
       x-lark-access-tokens:
       - tenant
       - user
@@ -4434,42 +3183,8 @@ paths:
                   default: no_approval_required
                   example: no_approval_required
                 restricted_mode_setting:
-                  type: object
-                  properties:
-                    status:
-                      type: boolean
-                      description: 防泄密模式是否开启
-                      example: 'true'
-                    screenshot_has_permission_setting:
-                      type: string
-                      description: 允许截屏录屏
-                      enum:
-                      - all_members
-                      - not_anyone
-                      x-enum-descriptions:
-                        all_members: 所有成员允许截屏录屏
-                        not_anyone: 所有成员禁止截屏录屏
-                      example: all_members
-                    download_has_permission_setting:
-                      type: string
-                      description: 允许下载消息中图片、视频和文件
-                      enum:
-                      - all_members
-                      - not_anyone
-                      x-enum-descriptions:
-                        all_members: 所有成员允许下载资源
-                        not_anyone: 所有成员禁止下载资源
-                      example: all_members
-                    message_has_permission_setting:
-                      type: string
-                      description: 允许复制和转发消息
-                      enum:
-                      - all_members
-                      - not_anyone
-                      x-enum-descriptions:
-                        all_members: 所有成员允许复制和转发消息
-                        not_anyone: 所有成员禁止复制和转发消息
-                      example: all_members
+                  allOf:
+                  - $ref: '#/components/schemas/RestrictedModeSetting'
                   description: 防泄密模式设置
                 urgent_setting:
                   type: string
@@ -4645,42 +3360,8 @@ paths:
                         description: 发言权限
                         example: all_members
                       restricted_mode_setting:
-                        type: object
-                        properties:
-                          status:
-                            type: boolean
-                            description: 防泄密模式是否开启
-                            example: 'true'
-                          screenshot_has_permission_setting:
-                            type: string
-                            description: 允许截屏录屏
-                            enum:
-                            - all_members
-                            - not_anyone
-                            x-enum-descriptions:
-                              all_members: 所有成员允许截屏录屏
-                              not_anyone: 所有成员禁止截屏录屏
-                            example: all_members
-                          download_has_permission_setting:
-                            type: string
-                            description: 允许下载消息中图片、视频和文件
-                            enum:
-                            - all_members
-                            - not_anyone
-                            x-enum-descriptions:
-                              all_members: 所有成员允许下载资源
-                              not_anyone: 所有成员禁止下载资源
-                            example: all_members
-                          message_has_permission_setting:
-                            type: string
-                            description: 允许复制和转发消息
-                            enum:
-                            - all_members
-                            - not_anyone
-                            x-enum-descriptions:
-                              all_members: 所有成员允许复制和转发消息
-                              not_anyone: 所有成员禁止复制和转发消息
-                            example: all_members
+                        allOf:
+                        - $ref: '#/components/schemas/RestrictedModeSetting'
                         description: 防泄密模式设置
                       hide_member_count_setting:
                         type: string
@@ -4855,101 +3536,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      items:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            chat_id:
-                              type: string
-                              description: 群组ID
-                              example: oc_a0553eda9014c201e6969b478895c230
-                              x-lark-id-types:
-                                chat_id: chat
-                            avatar:
-                              type: string
-                              description: 群头像URL
-                              example: https://p3-lark-file.byteimg.com/img/lark-avatar-staging/default-avatar_44ae0ca3-e140-494b-956f-78091e348435~100x100.jpg
-                            name:
-                              type: string
-                              description: 群名称
-                              example: 测试群名称
-                            description:
-                              type: string
-                              description: 群描述
-                              example: 测试群描述
-                            owner_id:
-                              type: string
-                              description: 群主ID
-                              example: 4d7a3c6g
-                            owner_id_type:
-                              type: string
-                              description: 群主ID类型
-                              example: user_id
-                            external:
-                              type: boolean
-                              description: 是否是外部群
-                              example: 'false'
-                            tenant_key:
-                              type: string
-                              description: tenant key
-                              example: fawefawea
-                            chat_status:
-                              type: string
-                              description: 群状态
-                              enum:
-                              - normal
-                              - dissolved
-                              - dissolved_save
-                              x-enum-descriptions:
-                                normal: 正常
-                                dissolved: 解散
-                                dissolved_save: 解散并保留
-                              example: normal
-                            chat_mode:
-                              type: string
-                              description: 群模式;group=普通群/topic=话题群/p2p=单聊
-                              enum:
-                              - group
-                              - topic
-                              - p2p
-                              x-enum-descriptions:
-                                group: 普通群
-                                topic: 话题群
-                                p2p: 单聊
-                              example: p2p
-                            p2p_target_type:
-                              type: string
-                              description: 单聊对端类型;仅 chat_mode=p2p 时返回
-                              enum:
-                              - user
-                              - bot
-                              x-enum-descriptions:
-                                user: 用户
-                                bot: 机器人
-                              example: user
-                            p2p_target_id:
-                              type: string
-                              description: 单聊对端ID;仅 chat_mode=p2p 时返回
-                              example: ou_7d8a6e6df7621556ce0d21922b676706ccs
-                        description: chat列表
-                      page_token:
-                        type: string
-                        description: 分页标记，当 has_more 为 true 时，会同时返回新的 page_token，否则不返回 page_token
-                        example: '0'
-                      has_more:
-                        type: boolean
-                        description: 是否还有更多项
-                        example: 'false'
+                $ref: '#/components/schemas/Schema4'
       x-lark-access-tokens:
       - user
       - tenant
@@ -5222,42 +3809,8 @@ paths:
                         description: 群机器人数
                         example: '2'
                       restricted_mode_setting:
-                        type: object
-                        properties:
-                          status:
-                            type: boolean
-                            description: 防泄密模式是否开启
-                            example: 'true'
-                          screenshot_has_permission_setting:
-                            type: string
-                            description: 允许截屏录屏
-                            enum:
-                            - all_members
-                            - not_anyone
-                            x-enum-descriptions:
-                              all_members: 所有成员允许截屏录屏
-                              not_anyone: 所有成员禁止截屏录屏
-                            example: all_members
-                          download_has_permission_setting:
-                            type: string
-                            description: 允许下载消息中图片、视频和文件
-                            enum:
-                            - all_members
-                            - not_anyone
-                            x-enum-descriptions:
-                              all_members: 所有成员允许下载资源
-                              not_anyone: 所有成员禁止下载资源
-                            example: all_members
-                          message_has_permission_setting:
-                            type: string
-                            description: 允许复制和转发消息
-                            enum:
-                            - all_members
-                            - not_anyone
-                            x-enum-descriptions:
-                              all_members: 所有成员允许复制和转发消息
-                              not_anyone: 所有成员禁止复制和转发消息
-                            example: all_members
+                        allOf:
+                        - $ref: '#/components/schemas/RestrictedModeSetting'
                         description: 防泄密模式设置
                       urgent_setting:
                         type: string
@@ -5451,42 +4004,8 @@ paths:
                   description: 加群审批(no_approval_required/approval_required)
                   example: no_approval_required
                 restricted_mode_setting:
-                  type: object
-                  properties:
-                    status:
-                      type: boolean
-                      description: 防泄密模式是否开启
-                      example: 'true'
-                    screenshot_has_permission_setting:
-                      type: string
-                      description: 允许截屏录屏
-                      enum:
-                      - all_members
-                      - not_anyone
-                      x-enum-descriptions:
-                        all_members: 所有成员允许截屏录屏
-                        not_anyone: 所有成员禁止截屏录屏
-                      example: all_members
-                    download_has_permission_setting:
-                      type: string
-                      description: 允许下载消息中图片、视频和文件
-                      enum:
-                      - all_members
-                      - not_anyone
-                      x-enum-descriptions:
-                        all_members: 所有成员允许下载资源
-                        not_anyone: 所有成员禁止下载资源
-                      example: all_members
-                    message_has_permission_setting:
-                      type: string
-                      description: 允许复制和转发消息
-                      enum:
-                      - all_members
-                      - not_anyone
-                      x-enum-descriptions:
-                        all_members: 所有成员允许复制和转发消息
-                        not_anyone: 所有成员禁止复制和转发消息
-                      example: all_members
+                  allOf:
+                  - $ref: '#/components/schemas/RestrictedModeSetting'
                   description: 防泄密模式设置
                 chat_type:
                   type: string
@@ -5841,101 +4360,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      items:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            chat_id:
-                              type: string
-                              description: 群组ID
-                              example: oc_a0553eda9014c201e6969b478895c230
-                              x-lark-id-types:
-                                chat_id: chat
-                            avatar:
-                              type: string
-                              description: 群头像URL
-                              example: https://p3-lark-file.byteimg.com/img/lark-avatar-staging/default-avatar_44ae0ca3-e140-494b-956f-78091e348435~100x100.jpg
-                            name:
-                              type: string
-                              description: 群名称
-                              example: 测试群名称
-                            description:
-                              type: string
-                              description: 群描述
-                              example: 测试群描述
-                            owner_id:
-                              type: string
-                              description: 群主ID
-                              example: 4d7a3c6g
-                            owner_id_type:
-                              type: string
-                              description: 群主ID类型
-                              example: user_id
-                            external:
-                              type: boolean
-                              description: 是否是外部群
-                              example: 'false'
-                            tenant_key:
-                              type: string
-                              description: tenant key
-                              example: fawefawea
-                            chat_status:
-                              type: string
-                              description: 群状态
-                              enum:
-                              - normal
-                              - dissolved
-                              - dissolved_save
-                              x-enum-descriptions:
-                                normal: 正常
-                                dissolved: 解散
-                                dissolved_save: 解散并保留
-                              example: normal
-                            chat_mode:
-                              type: string
-                              description: 群模式;group=普通群/topic=话题群/p2p=单聊
-                              enum:
-                              - group
-                              - topic
-                              - p2p
-                              x-enum-descriptions:
-                                group: 普通群
-                                topic: 话题群
-                                p2p: 单聊
-                              example: p2p
-                            p2p_target_type:
-                              type: string
-                              description: 单聊对端类型;仅 chat_mode=p2p 时返回
-                              enum:
-                              - user
-                              - bot
-                              x-enum-descriptions:
-                                user: 用户
-                                bot: 机器人
-                              example: user
-                            p2p_target_id:
-                              type: string
-                              description: 单聊对端ID;仅 chat_mode=p2p 时返回
-                              example: ou_7d8a6e6df7621556ce0d21922b676706ccs
-                        description: chat列表
-                      page_token:
-                        type: string
-                        description: 分页标记，当 has_more 为 true 时，会同时返回新的 page_token，否则不返回 page_token
-                        example: '0'
-                      has_more:
-                        type: boolean
-                        description: 是否还有更多群组
-                        example: 'true'
+                $ref: '#/components/schemas/Schema4'
       x-lark-access-tokens:
       - user
       - tenant
@@ -6517,50 +4942,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      reaction_id:
-                        type: string
-                        description: reaction资源ID
-                      operator:
-                        type: object
-                        properties:
-                          operator_id:
-                            type: string
-                            description: 操作人ID
-                            example: ou_ff0b7ba35fb********67dfc8b885136
-                          operator_type:
-                            type: string
-                            description: 操作人身份，用户或应用
-                            enum:
-                            - app
-                            - user
-                            example: user
-                        required:
-                        - operator_id
-                        - operator_type
-                        description: 添加reaction的操作人
-                      action_time:
-                        type: string
-                        description: reaction动作的的unix timestamp(单位:ms)
-                        format: int64
-                      reaction_type:
-                        type: object
-                        properties:
-                          emoji_type:
-                            type: string
-                            description: emoji类型
-                            example: SMILE
-                        required:
-                        - emoji_type
-                        description: reaction资源类型
+                $ref: '#/components/schemas/Schema5'
       x-lark-access-tokens:
       - user
       - tenant
@@ -6710,43 +5092,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            reaction_id:
-                              type: string
-                              description: reaction资源ID
-                            operator:
-                              type: object
-                              properties:
-                                operator_id:
-                                  type: string
-                                  description: 操作人ID
-                                  example: ou_ff0b7ba35fb********67dfc8b885136
-                                operator_type:
-                                  type: string
-                                  description: 操作人身份，用户或应用
-                                  enum:
-                                  - app
-                                  - user
-                                  example: user
-                              required:
-                              - operator_id
-                              - operator_type
-                              description: 添加reaction的操作人
-                            action_time:
-                              type: string
-                              description: reaction动作的的unix timestamp(单位:ms)
-                              format: int64
-                            reaction_type:
-                              type: object
-                              properties:
-                                emoji_type:
-                                  type: string
-                                  description: emoji类型
-                                  example: SMILE
-                              required:
-                              - emoji_type
-                              description: reaction资源类型
+                          $ref: '#/components/schemas/Data6'
                         description: 查询指定reaction_type返回的reaction列表
                       has_more:
                         type: boolean
@@ -6839,50 +5185,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      reaction_id:
-                        type: string
-                        description: reaction资源ID
-                      operator:
-                        type: object
-                        properties:
-                          operator_id:
-                            type: string
-                            description: 操作人ID
-                            example: ou_ff0b7ba35fb********67dfc8b885136
-                          operator_type:
-                            type: string
-                            description: 操作人身份，用户或应用
-                            enum:
-                            - app
-                            - user
-                            example: user
-                        required:
-                        - operator_id
-                        - operator_type
-                        description: 添加reaction的操作人
-                      action_time:
-                        type: string
-                        description: reaction动作的的unix timestamp(单位:ms)
-                        format: int64
-                      reaction_type:
-                        type: object
-                        properties:
-                          emoji_type:
-                            type: string
-                            description: emoji类型
-                            example: SMILE
-                        required:
-                        - emoji_type
-                        description: reaction资源类型
+                $ref: '#/components/schemas/Schema5'
       x-lark-access-tokens:
       - user
       - tenant
@@ -7129,157 +5432,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      message_id:
-                        type: string
-                        description: 消息id open_message_id
-                        example: om_dc13264520392913993dd051dba21dcf
-                      root_id:
-                        type: string
-                        description: 根消息id open_message_id
-                        example: om_40eb06e7b84dc71c03e009ad3c754195
-                      parent_id:
-                        type: string
-                        description: 父消息的id open_message_id
-                        example: om_d4be107c616aed9c1da8ed8068570a9f
-                      thread_id:
-                        type: string
-                        description: 消息所属的话题 ID
-                        example: omt_d4be107c616a
-                      msg_type:
-                        type: string
-                        description: 消息类型 text post card image等等
-                        example: card
-                      create_time:
-                        type: string
-                        description: 消息生成的时间戳(毫秒)
-                        example: '1609296809'
-                        format: int64
-                      update_time:
-                        type: string
-                        description: 消息更新的时间戳
-                        example: '1609336806'
-                        format: int64
-                      deleted:
-                        type: boolean
-                        description: 消息是否被撤回
-                        example: 'false'
-                      updated:
-                        type: boolean
-                        description: 消息是否被更新
-                        example: 'false'
-                      chat_id:
-                        type: string
-                        description: 所属的群
-                        example: oc_5ad11d72b830411d72b836c20
-                        x-lark-id-types:
-                          chat_id: chat
-                      sender:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 该字段标识发送者的id
-                          id_type:
-                            type: string
-                            description: 该字段标识发送者的id类型
-                          sender_type:
-                            type: string
-                            description: 该字段标识发送者的类型
-                          tenant_key:
-                            type: string
-                            description: tenant key
-                            example: 736588c9260f175e
-                          open_bot_id:
-                            type: string
-                            description: 该字段表示bot发送者的openid
-                            example: ou_4df0d86a696caae0d70054633af9565b
-                          sender_i18n_names:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文名
-                                example: 群聊
-                              en_us:
-                                type: string
-                                description: 英文名
-                                example: group chat
-                              ja_jp:
-                                type: string
-                                description: 日文名
-                                example: グループチャット
-                            description: 该字段标识发送者多语种的名称
-                        required:
-                        - id
-                        - id_type
-                        - sender_type
-                        description: 发送者，可以是用户或应用
-                        example: object
-                      body:
-                        type: object
-                        properties:
-                          content:
-                            type: string
-                            description: 消息jsonContent
-                            example: text:测试消息
-                        required:
-                        - content
-                        description: 消息内容,json结构
-                        example: json结构
-                      mentions:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            key:
-                              type: string
-                              description: mention key
-                              example: 1@_user_1
-                            id:
-                              type: string
-                              description: 用户或机器人的 id, id 类型与 id_type 一致
-                              example: ou_155184d1e73cbfb8973e5a9e698e74f2
-                            id_type:
-                              type: string
-                              description: id类型，包括open_id，user_id，union_id 或 app_id
-                              example: open_id
-                            name:
-                              type: string
-                              description: 被at用户的姓名
-                              example: Tom
-                            tenant_key:
-                              type: string
-                              description: tenant key
-                              example: 736588c9260f175e
-                          required:
-                          - key
-                          - id
-                          - id_type
-                          - name
-                        description: 被艾特的人或应用的id
-                      upper_message_id:
-                        type: string
-                        description: 合并消息的上一层级消息id open_message_id
-                        example: om_40eb06e7b84dc71c03e00ida3c754892
-                      message_position:
-                        type: string
-                        description: 消息在普通群里面的位置信息，仅普通群可用
-                        example: '1'
-                        format: int64
-                      thread_message_position:
-                        type: string
-                        description: 话题回复消息在话题回复里面的位置信息，仅话题回复生效
-                        example: '1'
-                        format: int64
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       - user
@@ -7490,150 +5643,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            message_id:
-                              type: string
-                              description: 消息id open_message_id
-                              example: om_dc13264520392913993dd051dba21dcf
-                            root_id:
-                              type: string
-                              description: 根消息id open_message_id
-                              example: om_40eb06e7b84dc71c03e009ad3c754195
-                            parent_id:
-                              type: string
-                              description: 父消息的id open_message_id
-                              example: om_d4be107c616aed9c1da8ed8068570a9f
-                            thread_id:
-                              type: string
-                              description: 消息所属的话题 ID
-                              example: omt_d4be107c616a
-                            msg_type:
-                              type: string
-                              description: 消息类型 text post card image等等
-                              example: card
-                            create_time:
-                              type: string
-                              description: 消息生成的时间戳(毫秒)
-                              example: '1609296809'
-                              format: int64
-                            update_time:
-                              type: string
-                              description: 消息更新的时间戳
-                              example: '1609336806'
-                              format: int64
-                            deleted:
-                              type: boolean
-                              description: 消息是否被撤回
-                              example: 'false'
-                            updated:
-                              type: boolean
-                              description: 消息是否被更新
-                              example: 'false'
-                            chat_id:
-                              type: string
-                              description: 所属的群
-                              example: oc_5ad11d72b830411d72b836c20
-                              x-lark-id-types:
-                                chat_id: chat
-                            sender:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: 该字段标识发送者的id
-                                id_type:
-                                  type: string
-                                  description: 该字段标识发送者的id类型
-                                sender_type:
-                                  type: string
-                                  description: 该字段标识发送者的类型
-                                tenant_key:
-                                  type: string
-                                  description: tenant key
-                                  example: 736588c9260f175e
-                                open_bot_id:
-                                  type: string
-                                  description: 该字段表示bot发送者的openid
-                                  example: ou_4df0d86a696caae0d70054633af9565b
-                                sender_i18n_names:
-                                  type: object
-                                  properties:
-                                    zh_cn:
-                                      type: string
-                                      description: 中文名
-                                      example: 群聊
-                                    en_us:
-                                      type: string
-                                      description: 英文名
-                                      example: group chat
-                                    ja_jp:
-                                      type: string
-                                      description: 日文名
-                                      example: グループチャット
-                                  description: 该字段标识发送者多语种的名称
-                              required:
-                              - id
-                              - id_type
-                              - sender_type
-                              description: 发送者，可以是用户或应用
-                              example: object
-                            body:
-                              type: object
-                              properties:
-                                content:
-                                  type: string
-                                  description: 消息jsonContent
-                                  example: text:测试消息
-                              required:
-                              - content
-                              description: 消息内容,json结构
-                              example: json结构
-                            mentions:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  key:
-                                    type: string
-                                    description: mention key
-                                    example: 1@_user_1
-                                  id:
-                                    type: string
-                                    description: 用户或机器人的 id, id 类型与 id_type 一致
-                                    example: ou_155184d1e73cbfb8973e5a9e698e74f2
-                                  id_type:
-                                    type: string
-                                    description: id类型，包括open_id，user_id，union_id 或 app_id
-                                    example: open_id
-                                  name:
-                                    type: string
-                                    description: 被at用户的姓名
-                                    example: Tom
-                                  tenant_key:
-                                    type: string
-                                    description: tenant key
-                                    example: 736588c9260f175e
-                                required:
-                                - key
-                                - id
-                                - id_type
-                                - name
-                              description: 被艾特的人或应用的id
-                            upper_message_id:
-                              type: string
-                              description: 合并消息的上一层级消息id open_message_id
-                              example: om_40eb06e7b84dc71c03e00ida3c754892
-                            message_position:
-                              type: string
-                              description: 消息在普通群里面的位置信息，仅普通群可用
-                              example: '1'
-                              format: int64
-                            thread_message_position:
-                              type: string
-                              description: 话题回复消息在话题回复里面的位置信息，仅话题回复生效
-                              example: '1'
-                              format: int64
+                          $ref: '#/components/schemas/Data'
                         description: message[]
       x-lark-access-tokens:
       - tenant
@@ -7824,150 +5834,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            message_id:
-                              type: string
-                              description: 消息id open_message_id
-                              example: om_dc13264520392913993dd051dba21dcf
-                            root_id:
-                              type: string
-                              description: 根消息id open_message_id
-                              example: om_40eb06e7b84dc71c03e009ad3c754195
-                            parent_id:
-                              type: string
-                              description: 父消息的id open_message_id
-                              example: om_d4be107c616aed9c1da8ed8068570a9f
-                            thread_id:
-                              type: string
-                              description: 消息所属的话题 ID
-                              example: omt_d4be107c616a
-                            msg_type:
-                              type: string
-                              description: 消息类型 text post card image等等
-                              example: card
-                            create_time:
-                              type: string
-                              description: 消息生成的时间戳(毫秒)
-                              example: '1609296809'
-                              format: int64
-                            update_time:
-                              type: string
-                              description: 消息更新的时间戳
-                              example: '1609336806'
-                              format: int64
-                            deleted:
-                              type: boolean
-                              description: 消息是否被撤回
-                              example: 'false'
-                            updated:
-                              type: boolean
-                              description: 消息是否被更新
-                              example: 'false'
-                            chat_id:
-                              type: string
-                              description: 所属的群
-                              example: oc_5ad11d72b830411d72b836c20
-                              x-lark-id-types:
-                                chat_id: chat
-                            sender:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: 该字段标识发送者的id
-                                id_type:
-                                  type: string
-                                  description: 该字段标识发送者的id类型
-                                sender_type:
-                                  type: string
-                                  description: 该字段标识发送者的类型
-                                tenant_key:
-                                  type: string
-                                  description: tenant key
-                                  example: 736588c9260f175e
-                                open_bot_id:
-                                  type: string
-                                  description: 该字段表示bot发送者的openid
-                                  example: ou_4df0d86a696caae0d70054633af9565b
-                                sender_i18n_names:
-                                  type: object
-                                  properties:
-                                    zh_cn:
-                                      type: string
-                                      description: 中文名
-                                      example: 群聊
-                                    en_us:
-                                      type: string
-                                      description: 英文名
-                                      example: group chat
-                                    ja_jp:
-                                      type: string
-                                      description: 日文名
-                                      example: グループチャット
-                                  description: 该字段标识发送者多语种的名称
-                              required:
-                              - id
-                              - id_type
-                              - sender_type
-                              description: 发送者，可以是用户或应用
-                              example: object
-                            body:
-                              type: object
-                              properties:
-                                content:
-                                  type: string
-                                  description: 消息jsonContent
-                                  example: text:测试消息
-                              required:
-                              - content
-                              description: 消息内容,json结构
-                              example: json结构
-                            mentions:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  key:
-                                    type: string
-                                    description: mention key
-                                    example: 1@_user_1
-                                  id:
-                                    type: string
-                                    description: 用户或机器人的 id, id 类型与 id_type 一致
-                                    example: ou_155184d1e73cbfb8973e5a9e698e74f2
-                                  id_type:
-                                    type: string
-                                    description: id类型，包括open_id，user_id，union_id 或 app_id
-                                    example: open_id
-                                  name:
-                                    type: string
-                                    description: 被at用户的姓名
-                                    example: Tom
-                                  tenant_key:
-                                    type: string
-                                    description: tenant key
-                                    example: 736588c9260f175e
-                                required:
-                                - key
-                                - id
-                                - id_type
-                                - name
-                              description: 被艾特的人或应用的id
-                            upper_message_id:
-                              type: string
-                              description: 合并消息的上一层级消息id open_message_id
-                              example: om_40eb06e7b84dc71c03e00ida3c754892
-                            message_position:
-                              type: string
-                              description: 消息在普通群里面的位置信息，仅普通群可用
-                              example: '1'
-                              format: int64
-                            thread_message_position:
-                              type: string
-                              description: 话题回复消息在话题回复里面的位置信息，仅话题回复生效
-                              example: '1'
-                              format: int64
+                          $ref: '#/components/schemas/Data'
                         description: message[]
       x-lark-access-tokens:
       - tenant
@@ -8150,157 +6017,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      message_id:
-                        type: string
-                        description: 消息id open_message_id
-                        example: om_dc13264520392913993dd051dba21dcf
-                      root_id:
-                        type: string
-                        description: 根消息id open_message_id
-                        example: om_40eb06e7b84dc71c03e009ad3c754195
-                      parent_id:
-                        type: string
-                        description: 父消息的id open_message_id
-                        example: om_d4be107c616aed9c1da8ed8068570a9f
-                      thread_id:
-                        type: string
-                        description: 消息所属的话题 ID
-                        example: omt_d4be107c616a
-                      msg_type:
-                        type: string
-                        description: 消息类型 text post card image等等
-                        example: card
-                      create_time:
-                        type: string
-                        description: 消息生成的时间戳(毫秒)
-                        example: '1609296809'
-                        format: int64
-                      update_time:
-                        type: string
-                        description: 消息更新的时间戳
-                        example: '1609336806'
-                        format: int64
-                      deleted:
-                        type: boolean
-                        description: 消息是否被撤回
-                        example: 'false'
-                      updated:
-                        type: boolean
-                        description: 消息是否被更新
-                        example: 'false'
-                      chat_id:
-                        type: string
-                        description: 所属的群
-                        example: oc_5ad11d72b830411d72b836c20
-                        x-lark-id-types:
-                          chat_id: chat
-                      sender:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 该字段标识发送者的id
-                          id_type:
-                            type: string
-                            description: 该字段标识发送者的id类型
-                          sender_type:
-                            type: string
-                            description: 该字段标识发送者的类型
-                          tenant_key:
-                            type: string
-                            description: tenant key
-                            example: 736588c9260f175e
-                          open_bot_id:
-                            type: string
-                            description: 该字段表示bot发送者的openid
-                            example: ou_4df0d86a696caae0d70054633af9565b
-                          sender_i18n_names:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文名
-                                example: 群聊
-                              en_us:
-                                type: string
-                                description: 英文名
-                                example: group chat
-                              ja_jp:
-                                type: string
-                                description: 日文名
-                                example: グループチャット
-                            description: 该字段标识发送者多语种的名称
-                        required:
-                        - id
-                        - id_type
-                        - sender_type
-                        description: 发送者，可以是用户或应用
-                        example: object
-                      body:
-                        type: object
-                        properties:
-                          content:
-                            type: string
-                            description: 消息jsonContent
-                            example: text:测试消息
-                        required:
-                        - content
-                        description: 消息内容,json结构
-                        example: json结构
-                      mentions:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            key:
-                              type: string
-                              description: mention key
-                              example: 1@_user_1
-                            id:
-                              type: string
-                              description: 用户或机器人的 id, id 类型与 id_type 一致
-                              example: ou_155184d1e73cbfb8973e5a9e698e74f2
-                            id_type:
-                              type: string
-                              description: id类型，包括open_id，user_id，union_id 或 app_id
-                              example: open_id
-                            name:
-                              type: string
-                              description: 被at用户的姓名
-                              example: Tom
-                            tenant_key:
-                              type: string
-                              description: tenant key
-                              example: 736588c9260f175e
-                          required:
-                          - key
-                          - id
-                          - id_type
-                          - name
-                        description: 被艾特的人或应用的id
-                      upper_message_id:
-                        type: string
-                        description: 合并消息的上一层级消息id open_message_id
-                        example: om_40eb06e7b84dc71c03e00ida3c754892
-                      message_position:
-                        type: string
-                        description: 消息在普通群里面的位置信息，仅普通群可用
-                        example: '1'
-                        format: int64
-                      thread_message_position:
-                        type: string
-                        description: 话题回复消息在话题回复里面的位置信息，仅话题回复生效
-                        example: '1'
-                        format: int64
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -8458,157 +6175,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      message_id:
-                        type: string
-                        description: 消息id open_message_id
-                        example: om_dc13264520392913993dd051dba21dcf
-                      root_id:
-                        type: string
-                        description: 根消息id open_message_id
-                        example: om_40eb06e7b84dc71c03e009ad3c754195
-                      parent_id:
-                        type: string
-                        description: 父消息的id open_message_id
-                        example: om_d4be107c616aed9c1da8ed8068570a9f
-                      thread_id:
-                        type: string
-                        description: 消息所属的话题 ID
-                        example: omt_d4be107c616a
-                      msg_type:
-                        type: string
-                        description: 消息类型 text post card image等等
-                        example: card
-                      create_time:
-                        type: string
-                        description: 消息生成的时间戳(毫秒)
-                        example: '1609296809'
-                        format: int64
-                      update_time:
-                        type: string
-                        description: 消息更新的时间戳
-                        example: '1609336806'
-                        format: int64
-                      deleted:
-                        type: boolean
-                        description: 消息是否被撤回
-                        example: 'false'
-                      updated:
-                        type: boolean
-                        description: 消息是否被更新
-                        example: 'false'
-                      chat_id:
-                        type: string
-                        description: 所属的群
-                        example: oc_5ad11d72b830411d72b836c20
-                        x-lark-id-types:
-                          chat_id: chat
-                      sender:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 该字段标识发送者的id
-                          id_type:
-                            type: string
-                            description: 该字段标识发送者的id类型
-                          sender_type:
-                            type: string
-                            description: 该字段标识发送者的类型
-                          tenant_key:
-                            type: string
-                            description: tenant key
-                            example: 736588c9260f175e
-                          open_bot_id:
-                            type: string
-                            description: 该字段表示bot发送者的openid
-                            example: ou_4df0d86a696caae0d70054633af9565b
-                          sender_i18n_names:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文名
-                                example: 群聊
-                              en_us:
-                                type: string
-                                description: 英文名
-                                example: group chat
-                              ja_jp:
-                                type: string
-                                description: 日文名
-                                example: グループチャット
-                            description: 该字段标识发送者多语种的名称
-                        required:
-                        - id
-                        - id_type
-                        - sender_type
-                        description: 发送者，可以是用户或应用
-                        example: object
-                      body:
-                        type: object
-                        properties:
-                          content:
-                            type: string
-                            description: 消息jsonContent
-                            example: text:测试消息
-                        required:
-                        - content
-                        description: 消息内容,json结构
-                        example: json结构
-                      mentions:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            key:
-                              type: string
-                              description: mention key
-                              example: 1@_user_1
-                            id:
-                              type: string
-                              description: 用户或机器人的 id, id 类型与 id_type 一致
-                              example: ou_155184d1e73cbfb8973e5a9e698e74f2
-                            id_type:
-                              type: string
-                              description: id类型，包括open_id，user_id，union_id 或 app_id
-                              example: open_id
-                            name:
-                              type: string
-                              description: 被at用户的姓名
-                              example: Tom
-                            tenant_key:
-                              type: string
-                              description: tenant key
-                              example: 736588c9260f175e
-                          required:
-                          - key
-                          - id
-                          - id_type
-                          - name
-                        description: 被艾特的人或应用的id
-                      upper_message_id:
-                        type: string
-                        description: 合并消息的上一层级消息id open_message_id
-                        example: om_40eb06e7b84dc71c03e00ida3c754892
-                      message_position:
-                        type: string
-                        description: 消息在普通群里面的位置信息，仅普通群可用
-                        example: '1'
-                        format: int64
-                      thread_message_position:
-                        type: string
-                        description: 话题回复消息在话题回复里面的位置信息，仅话题回复生效
-                        example: '1'
-                        format: int64
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       - tenant
@@ -8790,150 +6357,8 @@ paths:
                     type: object
                     properties:
                       message:
-                        type: object
-                        properties:
-                          message_id:
-                            type: string
-                            description: 消息id open_message_id
-                            example: om_dc13264520392913993dd051dba21dcf
-                          root_id:
-                            type: string
-                            description: 根消息id open_message_id
-                            example: om_40eb06e7b84dc71c03e009ad3c754195
-                          parent_id:
-                            type: string
-                            description: 父消息的id open_message_id
-                            example: om_d4be107c616aed9c1da8ed8068570a9f
-                          thread_id:
-                            type: string
-                            description: 消息所属的话题 ID
-                            example: omt_d4be107c616a
-                          msg_type:
-                            type: string
-                            description: 消息类型 text post card image等等
-                            example: card
-                          create_time:
-                            type: string
-                            description: 消息生成的时间戳(毫秒)
-                            example: '1609296809'
-                            format: int64
-                          update_time:
-                            type: string
-                            description: 消息更新的时间戳
-                            example: '1609336806'
-                            format: int64
-                          deleted:
-                            type: boolean
-                            description: 消息是否被撤回
-                            example: 'false'
-                          updated:
-                            type: boolean
-                            description: 消息是否被更新
-                            example: 'false'
-                          chat_id:
-                            type: string
-                            description: 所属的群
-                            example: oc_5ad11d72b830411d72b836c20
-                            x-lark-id-types:
-                              chat_id: chat
-                          sender:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: 该字段标识发送者的id
-                              id_type:
-                                type: string
-                                description: 该字段标识发送者的id类型
-                              sender_type:
-                                type: string
-                                description: 该字段标识发送者的类型
-                              tenant_key:
-                                type: string
-                                description: tenant key
-                                example: 736588c9260f175e
-                              open_bot_id:
-                                type: string
-                                description: 该字段表示bot发送者的openid
-                                example: ou_4df0d86a696caae0d70054633af9565b
-                              sender_i18n_names:
-                                type: object
-                                properties:
-                                  zh_cn:
-                                    type: string
-                                    description: 中文名
-                                    example: 群聊
-                                  en_us:
-                                    type: string
-                                    description: 英文名
-                                    example: group chat
-                                  ja_jp:
-                                    type: string
-                                    description: 日文名
-                                    example: グループチャット
-                                description: 该字段标识发送者多语种的名称
-                            required:
-                            - id
-                            - id_type
-                            - sender_type
-                            description: 发送者，可以是用户或应用
-                            example: object
-                          body:
-                            type: object
-                            properties:
-                              content:
-                                type: string
-                                description: 消息jsonContent
-                                example: text:测试消息
-                            required:
-                            - content
-                            description: 消息内容,json结构
-                            example: json结构
-                          mentions:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                key:
-                                  type: string
-                                  description: mention key
-                                  example: 1@_user_1
-                                id:
-                                  type: string
-                                  description: 用户或机器人的 id, id 类型与 id_type 一致
-                                  example: ou_155184d1e73cbfb8973e5a9e698e74f2
-                                id_type:
-                                  type: string
-                                  description: id类型，包括open_id，user_id，union_id 或 app_id
-                                  example: open_id
-                                name:
-                                  type: string
-                                  description: 被at用户的姓名
-                                  example: Tom
-                                tenant_key:
-                                  type: string
-                                  description: tenant key
-                                  example: 736588c9260f175e
-                              required:
-                              - key
-                              - id
-                              - id_type
-                              - name
-                            description: 被艾特的人或应用的id
-                          upper_message_id:
-                            type: string
-                            description: 合并消息的上一层级消息id open_message_id
-                            example: om_40eb06e7b84dc71c03e00ida3c754892
-                          message_position:
-                            type: string
-                            description: 消息在普通群里面的位置信息，仅普通群可用
-                            example: '1'
-                            format: int64
-                          thread_message_position:
-                            type: string
-                            description: 话题回复消息在话题回复里面的位置信息，仅话题回复生效
-                            example: '1'
-                            format: int64
+                        allOf:
+                        - $ref: '#/components/schemas/Data'
                         description: 合并转发生成的新消息
                         example: --
                       invalid_message_id_list:
@@ -9379,157 +6804,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      message_id:
-                        type: string
-                        description: 消息id open_message_id
-                        example: om_dc13264520392913993dd051dba21dcf
-                      root_id:
-                        type: string
-                        description: 根消息id open_message_id
-                        example: om_40eb06e7b84dc71c03e009ad3c754195
-                      parent_id:
-                        type: string
-                        description: 父消息的id open_message_id
-                        example: om_d4be107c616aed9c1da8ed8068570a9f
-                      thread_id:
-                        type: string
-                        description: 消息所属的话题 ID
-                        example: omt_d4be107c616a
-                      msg_type:
-                        type: string
-                        description: 消息类型 text post card image等等
-                        example: card
-                      create_time:
-                        type: string
-                        description: 消息生成的时间戳(毫秒)
-                        example: '1609296809'
-                        format: int64
-                      update_time:
-                        type: string
-                        description: 消息更新的时间戳
-                        example: '1609336806'
-                        format: int64
-                      deleted:
-                        type: boolean
-                        description: 消息是否被撤回
-                        example: 'false'
-                      updated:
-                        type: boolean
-                        description: 消息是否被更新
-                        example: 'false'
-                      chat_id:
-                        type: string
-                        description: 所属的群
-                        example: oc_5ad11d72b830411d72b836c20
-                        x-lark-id-types:
-                          chat_id: chat
-                      sender:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 该字段标识发送者的id
-                          id_type:
-                            type: string
-                            description: 该字段标识发送者的id类型
-                          sender_type:
-                            type: string
-                            description: 该字段标识发送者的类型
-                          tenant_key:
-                            type: string
-                            description: tenant key
-                            example: 736588c9260f175e
-                          open_bot_id:
-                            type: string
-                            description: 该字段表示bot发送者的openid
-                            example: ou_4df0d86a696caae0d70054633af9565b
-                          sender_i18n_names:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文名
-                                example: 群聊
-                              en_us:
-                                type: string
-                                description: 英文名
-                                example: group chat
-                              ja_jp:
-                                type: string
-                                description: 日文名
-                                example: グループチャット
-                            description: 该字段标识发送者多语种的名称
-                        required:
-                        - id
-                        - id_type
-                        - sender_type
-                        description: 发送者，可以是用户或应用
-                        example: object
-                      body:
-                        type: object
-                        properties:
-                          content:
-                            type: string
-                            description: 消息jsonContent
-                            example: text:测试消息
-                        required:
-                        - content
-                        description: 消息内容,json结构
-                        example: json结构
-                      mentions:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            key:
-                              type: string
-                              description: mention key
-                              example: 1@_user_1
-                            id:
-                              type: string
-                              description: 用户或机器人的 id, id 类型与 id_type 一致
-                              example: ou_155184d1e73cbfb8973e5a9e698e74f2
-                            id_type:
-                              type: string
-                              description: id类型，包括open_id，user_id，union_id 或 app_id
-                              example: open_id
-                            name:
-                              type: string
-                              description: 被at用户的姓名
-                              example: Tom
-                            tenant_key:
-                              type: string
-                              description: tenant key
-                              example: 736588c9260f175e
-                          required:
-                          - key
-                          - id
-                          - id_type
-                          - name
-                        description: 被艾特的人或应用的id
-                      upper_message_id:
-                        type: string
-                        description: 合并消息的上一层级消息id open_message_id
-                        example: om_40eb06e7b84dc71c03e00ida3c754892
-                      message_position:
-                        type: string
-                        description: 消息在普通群里面的位置信息，仅普通群可用
-                        example: '1'
-                        format: int64
-                      thread_message_position:
-                        type: string
-                        description: 话题回复消息在话题回复里面的位置信息，仅话题回复生效
-                        example: '1'
-                        format: int64
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       - user
@@ -10762,157 +8037,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      message_id:
-                        type: string
-                        description: 消息id open_message_id
-                        example: om_dc13264520392913993dd051dba21dcf
-                      root_id:
-                        type: string
-                        description: 根消息id open_message_id
-                        example: om_40eb06e7b84dc71c03e009ad3c754195
-                      parent_id:
-                        type: string
-                        description: 父消息的id open_message_id
-                        example: om_d4be107c616aed9c1da8ed8068570a9f
-                      thread_id:
-                        type: string
-                        description: 消息所属的话题 ID
-                        example: omt_d4be107c616a
-                      msg_type:
-                        type: string
-                        description: 消息类型 text post card image等等
-                        example: card
-                      create_time:
-                        type: string
-                        description: 消息生成的时间戳(毫秒)
-                        example: '1609296809'
-                        format: int64
-                      update_time:
-                        type: string
-                        description: 消息更新的时间戳
-                        example: '1609336806'
-                        format: int64
-                      deleted:
-                        type: boolean
-                        description: 消息是否被撤回
-                        example: 'false'
-                      updated:
-                        type: boolean
-                        description: 消息是否被更新
-                        example: 'false'
-                      chat_id:
-                        type: string
-                        description: 所属的群
-                        example: oc_5ad11d72b830411d72b836c20
-                        x-lark-id-types:
-                          chat_id: chat
-                      sender:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 该字段标识发送者的id
-                          id_type:
-                            type: string
-                            description: 该字段标识发送者的id类型
-                          sender_type:
-                            type: string
-                            description: 该字段标识发送者的类型
-                          tenant_key:
-                            type: string
-                            description: tenant key
-                            example: 736588c9260f175e
-                          open_bot_id:
-                            type: string
-                            description: 该字段表示bot发送者的openid
-                            example: ou_4df0d86a696caae0d70054633af9565b
-                          sender_i18n_names:
-                            type: object
-                            properties:
-                              zh_cn:
-                                type: string
-                                description: 中文名
-                                example: 群聊
-                              en_us:
-                                type: string
-                                description: 英文名
-                                example: group chat
-                              ja_jp:
-                                type: string
-                                description: 日文名
-                                example: グループチャット
-                            description: 该字段标识发送者多语种的名称
-                        required:
-                        - id
-                        - id_type
-                        - sender_type
-                        description: 发送者，可以是用户或应用
-                        example: object
-                      body:
-                        type: object
-                        properties:
-                          content:
-                            type: string
-                            description: 消息jsonContent
-                            example: text:测试消息
-                        required:
-                        - content
-                        description: 消息内容,json结构
-                        example: json结构
-                      mentions:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            key:
-                              type: string
-                              description: mention key
-                              example: 1@_user_1
-                            id:
-                              type: string
-                              description: 用户或机器人的 id, id 类型与 id_type 一致
-                              example: ou_155184d1e73cbfb8973e5a9e698e74f2
-                            id_type:
-                              type: string
-                              description: id类型，包括open_id，user_id，union_id 或 app_id
-                              example: open_id
-                            name:
-                              type: string
-                              description: 被at用户的姓名
-                              example: Tom
-                            tenant_key:
-                              type: string
-                              description: tenant key
-                              example: 736588c9260f175e
-                          required:
-                          - key
-                          - id
-                          - id_type
-                          - name
-                        description: 被艾特的人或应用的id
-                      upper_message_id:
-                        type: string
-                        description: 合并消息的上一层级消息id open_message_id
-                        example: om_40eb06e7b84dc71c03e00ida3c754892
-                      message_position:
-                        type: string
-                        description: 消息在普通群里面的位置信息，仅普通群可用
-                        example: '1'
-                        format: int64
-                      thread_message_position:
-                        type: string
-                        description: 话题回复消息在话题回复里面的位置信息，仅话题回复生效
-                        example: '1'
-                        format: int64
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       - tenant
@@ -11069,46 +8194,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      failed_cards:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            biz_id:
-                              type: string
-                              description: 业务 ID
-                              example: bdf22389-87ec-4890-9eb6-78a7efaeecbb
-                            user_id:
-                              type: string
-                              description: 用户 ID
-                            reason:
-                              type: string
-                              description: 原因
-                              enum:
-                              - '0'
-                              - '1'
-                              - '2'
-                              - '3'
-                              - '4'
-                              x-enum-descriptions:
-                                '0': 未知
-                                '1': 无权限
-                                '2': 未创建
-                                '3': 频率限制
-                                '4': 重复
-                          required:
-                          - biz_id
-                          - user_id
-                        description: 失败的卡片
+                $ref: '#/components/schemas/Schema6'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -11172,153 +8258,8 @@ paths:
                     type: object
                     properties:
                       app_feed_card:
-                        type: object
-                        properties:
-                          biz_id:
-                            type: string
-                            description: 业务 ID
-                            example: 096e2927-40a6-41a3-9562-314d641d09ae
-                          title:
-                            type: string
-                            description: 主标题
-                            example: 主标题
-                          avatar_key:
-                            type: string
-                            description: 头像 key
-                            example: v3_0041_007bca9f-67ba-4199-bf00-4031b12cf226
-                          preview:
-                            type: string
-                            description: 预览信息
-                            example: 预览信息
-                          status_label:
-                            type: object
-                            properties:
-                              text:
-                                type: string
-                                description: 标签文字
-                                example: 标签文字
-                              type:
-                                type: string
-                                description: 标签类型
-                                enum:
-                                - primary
-                                - secondary
-                                - success
-                                - danger
-                                x-enum-descriptions:
-                                  primary: 主类型
-                                  secondary: 次要类型
-                                  success: 成功类型
-                                  danger: 危险类型
-                                default: primary
-                                example: primary
-                            required:
-                            - text
-                            - type
-                            description: 状态标签
-                          buttons:
-                            type: object
-                            properties:
-                              buttons:
-                                type: array
-                                items:
-                                  type: object
-                                  properties:
-                                    multi_url:
-                                      type: object
-                                      properties:
-                                        url:
-                                          type: string
-                                          description: 默认 URL
-                                          example: https://www.feishu.cn/
-                                        android_url:
-                                          type: string
-                                          description: Android 平台 URL
-                                          example: https://www.feishu.cn/
-                                        ios_url:
-                                          type: string
-                                          description: iOS 平台 URL
-                                          example: https://www.feishu.cn/
-                                        pc_url:
-                                          type: string
-                                          description: PC URL
-                                          example: https://www.feishu.cn/
-                                      description: 跳转 URL
-                                    action_type:
-                                      type: string
-                                      description: 交互类型
-                                      enum:
-                                      - url_page
-                                      - webhook
-                                      x-enum-descriptions:
-                                        url_page: URL 页面
-                                        webhook: 回调
-                                      example: url_page
-                                    text:
-                                      type: object
-                                      properties:
-                                        text:
-                                          type: string
-                                          description: 文本
-                                          example: 文本
-                                      required:
-                                      - text
-                                      description: 文字
-                                    button_type:
-                                      type: string
-                                      description: 按钮类型
-                                      enum:
-                                      - default
-                                      - primary
-                                      - success
-                                      x-enum-descriptions:
-                                        default: 默认
-                                        primary: 主要
-                                        success: 成功
-                                      default: default
-                                      example: default
-                                    action_map:
-                                      type: string
-                                      x-lark-original-type: map
-                                      description: action 字典
-                                  required:
-                                  - action_type
-                                  - text
-                                description: 按钮组合
-                            required:
-                            - buttons
-                            description: 交互按钮
-                          link:
-                            type: object
-                            properties:
-                              link:
-                                type: string
-                                description: 链接
-                                example: https://www.feishu.cn/
-                            description: 跳转链接
-                          time_sensitive:
-                            type: boolean
-                            description: 即时提醒状态，true-打开，false-关闭
-                            default: false
-                            example: 'false'
-                          notify:
-                            type: object
-                            properties:
-                              close_notify:
-                                type: boolean
-                                description: 是否关闭通知
-                                default: false
-                                example: 'true'
-                              custom_sound_text:
-                                type: string
-                                description: 自定义语音播报文本内容
-                                example: 您有新的订单
-                              with_custom_sound:
-                                type: boolean
-                                description: 是否播报自定义语音
-                                default: false
-                                example: 'true'
-                            description: 通知设置，当前可设置通知是否关闭，为空时默认进行通知
+                        allOf:
+                        - $ref: '#/components/schemas/AppFeedCard'
                         description: 应用消息卡片
                       user_id:
                         type: string
@@ -11361,46 +8302,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      failed_cards:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            biz_id:
-                              type: string
-                              description: 业务 ID
-                              example: bdf22389-87ec-4890-9eb6-78a7efaeecbb
-                            user_id:
-                              type: string
-                              description: 用户 ID
-                            reason:
-                              type: string
-                              description: 原因
-                              enum:
-                              - '0'
-                              - '1'
-                              - '2'
-                              - '3'
-                              - '4'
-                              x-enum-descriptions:
-                                '0': 未知
-                                '1': 无权限
-                                '2': 未创建
-                                '3': 频率限制
-                                '4': 重复
-                          required:
-                          - biz_id
-                          - user_id
-                        description: 失败的卡片
+                $ref: '#/components/schemas/Schema6'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -11460,153 +8362,8 @@ paths:
               type: object
               properties:
                 app_feed_card:
-                  type: object
-                  properties:
-                    biz_id:
-                      type: string
-                      description: 业务 ID
-                      example: 096e2927-40a6-41a3-9562-314d641d09ae
-                    title:
-                      type: string
-                      description: 主标题
-                      example: 主标题
-                    avatar_key:
-                      type: string
-                      description: 头像 key
-                      example: v3_0041_007bca9f-67ba-4199-bf00-4031b12cf226
-                    preview:
-                      type: string
-                      description: 预览信息
-                      example: 预览信息
-                    status_label:
-                      type: object
-                      properties:
-                        text:
-                          type: string
-                          description: 标签文字
-                          example: 标签文字
-                        type:
-                          type: string
-                          description: 标签类型
-                          enum:
-                          - primary
-                          - secondary
-                          - success
-                          - danger
-                          x-enum-descriptions:
-                            primary: 主类型
-                            secondary: 次要类型
-                            success: 成功类型
-                            danger: 危险类型
-                          default: primary
-                          example: primary
-                      required:
-                      - text
-                      - type
-                      description: 状态标签
-                    buttons:
-                      type: object
-                      properties:
-                        buttons:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              multi_url:
-                                type: object
-                                properties:
-                                  url:
-                                    type: string
-                                    description: 默认 URL
-                                    example: https://www.feishu.cn/
-                                  android_url:
-                                    type: string
-                                    description: Android 平台 URL
-                                    example: https://www.feishu.cn/
-                                  ios_url:
-                                    type: string
-                                    description: iOS 平台 URL
-                                    example: https://www.feishu.cn/
-                                  pc_url:
-                                    type: string
-                                    description: PC URL
-                                    example: https://www.feishu.cn/
-                                description: 跳转 URL
-                              action_type:
-                                type: string
-                                description: 交互类型
-                                enum:
-                                - url_page
-                                - webhook
-                                x-enum-descriptions:
-                                  url_page: URL 页面
-                                  webhook: 回调
-                                example: url_page
-                              text:
-                                type: object
-                                properties:
-                                  text:
-                                    type: string
-                                    description: 文本
-                                    example: 文本
-                                required:
-                                - text
-                                description: 文字
-                              button_type:
-                                type: string
-                                description: 按钮类型
-                                enum:
-                                - default
-                                - primary
-                                - success
-                                x-enum-descriptions:
-                                  default: 默认
-                                  primary: 主要
-                                  success: 成功
-                                default: default
-                                example: default
-                              action_map:
-                                type: string
-                                x-lark-original-type: map
-                                description: action 字典
-                            required:
-                            - action_type
-                            - text
-                          description: 按钮组合
-                      required:
-                      - buttons
-                      description: 交互按钮
-                    link:
-                      type: object
-                      properties:
-                        link:
-                          type: string
-                          description: 链接
-                          example: https://www.feishu.cn/
-                      description: 跳转链接
-                    time_sensitive:
-                      type: boolean
-                      description: 即时提醒状态，true-打开，false-关闭
-                      default: false
-                      example: 'false'
-                    notify:
-                      type: object
-                      properties:
-                        close_notify:
-                          type: boolean
-                          description: 是否关闭通知
-                          default: false
-                          example: 'true'
-                        custom_sound_text:
-                          type: string
-                          description: 自定义语音播报文本内容
-                          example: 您有新的订单
-                        with_custom_sound:
-                          type: boolean
-                          description: 是否播报自定义语音
-                          default: false
-                          example: 'true'
-                      description: 通知设置，当前可设置通知是否关闭，为空时默认进行通知
+                  allOf:
+                  - $ref: '#/components/schemas/AppFeedCard'
                   description: 应用消息卡片
                 user_ids:
                   type: array
@@ -11798,42 +8555,8 @@ paths:
                           type: object
                           properties:
                             tag_info:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: id
-                                  example: 716168xxxxx
-                                tag_type:
-                                  type: string
-                                  description: 标签类型
-                                  example: tenant
-                                name:
-                                  type: string
-                                  description: name
-                                  example: tagName1
-                                i18n_names:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      locale:
-                                        type: string
-                                        description: 语言
-                                        example: zh-CN
-                                      name:
-                                        type: string
-                                        description: 名称
-                                        example: tagName1
-                                  description: i18n name
-                                create_time:
-                                  type: string
-                                  description: 创建时间
-                                  example: '1700793403850'
-                                update_time:
-                                  type: string
-                                  description: 更新时间
-                                  example: '1700793403850'
+                              allOf:
+                              - $ref: '#/components/schemas/TagInfo'
                               description: 标签内容
                             bind_version:
                               type: string
@@ -12225,76 +8948,8 @@ paths:
                   x-lark-id-types:
                     chat_id: chat
                 buttons:
-                  type: object
-                  properties:
-                    buttons:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          multi_url:
-                            type: object
-                            properties:
-                              url:
-                                type: string
-                                description: 默认 URL
-                                example: https://www.feishu.cn/
-                              android_url:
-                                type: string
-                                description: Android 平台 URL
-                                example: https://www.feishu.cn/
-                              ios_url:
-                                type: string
-                                description: iOS 平台 URL
-                                example: https://www.feishu.cn/
-                              pc_url:
-                                type: string
-                                description: PC URL
-                                example: https://www.feishu.cn/
-                            description: 跳转 URL
-                          action_type:
-                            type: string
-                            description: 交互类型
-                            enum:
-                            - url_page
-                            - webhook
-                            x-enum-descriptions:
-                              url_page: URL 页面
-                              webhook: 回调
-                            example: url_page
-                          text:
-                            type: object
-                            properties:
-                              text:
-                                type: string
-                                description: 文本
-                                example: 文本
-                            required:
-                            - text
-                            description: 文字
-                          button_type:
-                            type: string
-                            description: 按钮类型
-                            enum:
-                            - default
-                            - primary
-                            - success
-                            x-enum-descriptions:
-                              default: 默认
-                              primary: 主要
-                              success: 成功
-                            default: default
-                            example: default
-                          action_map:
-                            type: string
-                            x-lark-original-type: map
-                            description: action 字典
-                        required:
-                        - action_type
-                        - text
-                      description: 按钮组合
-                  required:
-                  - buttons
+                  allOf:
+                  - $ref: '#/components/schemas/Button'
                   description: 按钮
       responses:
         '200':
@@ -12754,42 +9409,8 @@ paths:
                     type: object
                     properties:
                       tag_info:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: id
-                            example: 716168xxxxx
-                          tag_type:
-                            type: string
-                            description: 标签类型
-                            example: tenant
-                          name:
-                            type: string
-                            description: name
-                            example: tagName1
-                          i18n_names:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                locale:
-                                  type: string
-                                  description: 语言
-                                  example: zh-CN
-                                name:
-                                  type: string
-                                  description: 名称
-                                  example: tagName1
-                            description: i18n name
-                          create_time:
-                            type: string
-                            description: 创建时间
-                            example: '1700793403850'
-                          update_time:
-                            type: string
-                            description: 更新时间
-                            example: '1700793403850'
+                        allOf:
+                        - $ref: '#/components/schemas/TagInfo'
                         description: 编辑后的taginfo
                       patch_tag_fail_reason:
                         type: object
@@ -12868,3 +9489,790 @@ paths:
         msg: param is invalid
       x-lark-rate-limit:
         tier: 6
+components:
+  schemas:
+    Data:
+      type: object
+      properties:
+        message_id:
+          type: string
+          description: 消息id open_message_id
+          example: om_dc13264520392913993dd051dba21dcf
+        root_id:
+          type: string
+          description: 根消息id open_message_id
+          example: om_40eb06e7b84dc71c03e009ad3c754195
+        parent_id:
+          type: string
+          description: 父消息的id open_message_id
+          example: om_d4be107c616aed9c1da8ed8068570a9f
+        thread_id:
+          type: string
+          description: 消息所属的话题 ID
+          example: omt_d4be107c616a
+        msg_type:
+          type: string
+          description: 消息类型 text post card image等等
+          example: card
+        create_time:
+          type: string
+          description: 消息生成的时间戳(毫秒)
+          example: '1609296809'
+          format: int64
+        update_time:
+          type: string
+          description: 消息更新的时间戳
+          example: '1609336806'
+          format: int64
+        deleted:
+          type: boolean
+          description: 消息是否被撤回
+          example: 'false'
+        updated:
+          type: boolean
+          description: 消息是否被更新
+          example: 'false'
+        chat_id:
+          type: string
+          description: 所属的群
+          example: oc_5ad11d72b830411d72b836c20
+          x-lark-id-types:
+            chat_id: chat
+        sender:
+          allOf:
+          - $ref: '#/components/schemas/Sender'
+          description: 发送者，可以是用户或应用
+          example: object
+        body:
+          type: object
+          properties:
+            content:
+              type: string
+              description: 消息jsonContent
+              example: text:测试消息
+          required:
+          - content
+          description: 消息内容,json结构
+          example: json结构
+        mentions:
+          type: array
+          items:
+            type: object
+            properties:
+              key:
+                type: string
+                description: mention key
+                example: 1@_user_1
+              id:
+                type: string
+                description: 用户或机器人的 id, id 类型与 id_type 一致
+                example: ou_155184d1e73cbfb8973e5a9e698e74f2
+              id_type:
+                type: string
+                description: id类型，包括open_id，user_id，union_id 或 app_id
+                example: open_id
+              name:
+                type: string
+                description: 被at用户的姓名
+                example: Tom
+              tenant_key:
+                type: string
+                description: tenant key
+                example: 736588c9260f175e
+            required:
+            - key
+            - id
+            - id_type
+            - name
+          description: 被艾特的人或应用的id
+        upper_message_id:
+          type: string
+          description: 合并消息的上一层级消息id open_message_id
+          example: om_40eb06e7b84dc71c03e00ida3c754892
+        message_position:
+          type: string
+          description: 消息在普通群里面的位置信息，仅普通群可用
+          example: '1'
+          format: int64
+        thread_message_position:
+          type: string
+          description: 话题回复消息在话题回复里面的位置信息，仅话题回复生效
+          example: '1'
+          format: int64
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    ChatMenuItem:
+      type: object
+      properties:
+        action_type:
+          type: string
+          description: 菜单类型
+          enum:
+          - NONE
+          - REDIRECT_LINK
+          x-enum-descriptions:
+            NONE: 无类型，仅一级菜单存在二级菜单时，该一级菜单设置NONE类型。
+            REDIRECT_LINK: 跳转链接类型
+          example: NONE
+        redirect_link:
+          type: object
+          properties:
+            common_url:
+              type: string
+              example: https://open.feishu.cn/
+            ios_url:
+              type: string
+              example: https://open.feishu.cn/
+            android_url:
+              type: string
+              example: https://open.feishu.cn/
+            pc_url:
+              type: string
+              example: https://open.feishu.cn/
+            web_url:
+              type: string
+              example: https://open.feishu.cn/
+          description: 跳转链接
+        image_key:
+          type: string
+          description: image_key
+          example: img_v2_b0fbe905-7988-4282-b882-82edd010336j
+        name:
+          type: string
+          description: 名称
+          example: 评审报名
+        i18n_names:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文名
+              example: 评审报名
+            en_us:
+              type: string
+              description: 英文名
+              example: Sign up
+            ja_jp:
+              type: string
+              description: 日文名
+              example: サインアップ
+          description: 国际化名称，一级菜单名称字符数要在1到8范围内，二级菜单名称字符数要在1到24范围内。<br><br>**注意：**<br>1中文=2英文=2其他语言字符=2字符
+      description: 元信息
+    Schema2:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data2'
+    Data2:
+      type: object
+      properties:
+        menu_tree:
+          allOf:
+          - $ref: '#/components/schemas/MenuTree'
+          description: 追加后群内现有菜单
+    MenuTree:
+      type: object
+      properties:
+        chat_menu_top_levels:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+          description: 一级菜单列表
+      description: 追加后群内现有菜单
+    Item:
+      type: object
+      properties:
+        chat_menu_top_level_id:
+          type: string
+          description: 一级菜单ID
+          example: '7117116451961487361'
+          format: int64
+        chat_menu_item:
+          allOf:
+          - $ref: '#/components/schemas/ChatMenuItem'
+          description: 一级菜单信息
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item3'
+          description: 二级菜单列表
+    Data3:
+      type: object
+      properties:
+        chat_tabs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item2'
+          description: 群标签列表
+    Item2:
+      type: object
+      properties:
+        tab_id:
+          type: string
+          description: tabID
+          example: '7101214603622940671'
+        tab_name:
+          type: string
+          description: Tab名称
+          example: 文档
+        tab_type:
+          type: string
+          description: Tab类型
+          enum:
+          - message
+          - doc_list
+          - doc
+          - pin
+          - meeting_minute
+          - chat_announcement
+          - url
+          - file
+          - files_resources
+          - images_videos
+          - task
+          x-enum-descriptions:
+            message: 消息类型
+            doc_list: 云文档列表
+            doc: 文档
+            pin: Pin
+            meeting_minute: 会议纪要
+            chat_announcement: 群公告
+            url: URL
+            file: 文件
+            files_resources: 合并类型, 包含文件、Doc文档、URL链接
+            images_videos: 合并类型，包含图片、视频
+            task: 任务
+        tab_content:
+          type: object
+          properties:
+            url:
+              type: string
+              description: URL类型
+              example: https://www.feishu.cn
+            doc:
+              type: string
+              description: Doc链接
+              example: https://bytedance.feishu.cn/wiki/wikcnPIcqWjJQwkwDzrB9t40123xz
+            meeting_minute:
+              type: string
+              description: 会议纪要
+              example: https://bytedance.feishu.cn/docs/doccnvIXbV22i6hSD3utar4123dx
+            task:
+              type: string
+              description: 任务
+              example: https://bytedance.feishu.cn/client/todo/task_list?guid=fa03fb6d-344b-47d9-83e3-049e3b3da931
+          description: Tab内容
+        tab_config:
+          type: object
+          properties:
+            icon_key:
+              type: string
+              description: 群Tab图标
+              example: img_v2_b99741-7628-4abd-aad0-b881e4db83ig
+            is_built_in:
+              type: boolean
+              description: 群tab是否App内嵌打开
+              example: 'false'
+          description: Tab的配置
+      required:
+      - tab_type
+    Schema3:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data3'
+    Sender:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 该字段标识发送者的id
+        id_type:
+          type: string
+          description: 该字段标识发送者的id类型
+        sender_type:
+          type: string
+          description: 该字段标识发送者的类型
+        tenant_key:
+          type: string
+          description: tenant key
+          example: 736588c9260f175e
+        open_bot_id:
+          type: string
+          description: 该字段表示bot发送者的openid
+          example: ou_4df0d86a696caae0d70054633af9565b
+        sender_i18n_names:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文名
+              example: 群聊
+            en_us:
+              type: string
+              description: 英文名
+              example: group chat
+            ja_jp:
+              type: string
+              description: 日文名
+              example: グループチャット
+          description: 该字段标识发送者多语种的名称
+      required:
+      - id
+      - id_type
+      - sender_type
+      description: 发送者，可以是用户或应用
+      example: object
+    AppFeedCard:
+      type: object
+      properties:
+        biz_id:
+          type: string
+          description: 业务 ID
+          example: 096e2927-40a6-41a3-9562-314d641d09ae
+        title:
+          type: string
+          description: 主标题
+          example: 主标题
+        avatar_key:
+          type: string
+          description: 头像 key
+          example: v3_0041_007bca9f-67ba-4199-bf00-4031b12cf226
+        preview:
+          type: string
+          description: 预览信息
+          example: 预览信息
+        status_label:
+          type: object
+          properties:
+            text:
+              type: string
+              description: 标签文字
+              example: 标签文字
+            type:
+              type: string
+              description: 标签类型
+              enum:
+              - primary
+              - secondary
+              - success
+              - danger
+              x-enum-descriptions:
+                primary: 主类型
+                secondary: 次要类型
+                success: 成功类型
+                danger: 危险类型
+              default: primary
+              example: primary
+          required:
+          - text
+          - type
+          description: 状态标签
+        buttons:
+          allOf:
+          - $ref: '#/components/schemas/Button'
+          description: 交互按钮
+        link:
+          type: object
+          properties:
+            link:
+              type: string
+              description: 链接
+              example: https://www.feishu.cn/
+          description: 跳转链接
+        time_sensitive:
+          type: boolean
+          description: 即时提醒状态，true-打开，false-关闭
+          default: false
+          example: 'false'
+        notify:
+          type: object
+          properties:
+            close_notify:
+              type: boolean
+              description: 是否关闭通知
+              default: false
+              example: 'true'
+            custom_sound_text:
+              type: string
+              description: 自定义语音播报文本内容
+              example: 您有新的订单
+            with_custom_sound:
+              type: boolean
+              description: 是否播报自定义语音
+              default: false
+              example: 'true'
+          description: 通知设置，当前可设置通知是否关闭，为空时默认进行通知
+      description: 应用消息卡片
+    Item3:
+      type: object
+      properties:
+        chat_menu_second_level_id:
+          type: string
+          description: 二级菜单ID
+          example: '7039638308221468675'
+          format: int64
+        chat_menu_item:
+          allOf:
+          - $ref: '#/components/schemas/ChatMenuItem'
+          description: 二级菜单信息
+    Button:
+      type: object
+      properties:
+        buttons:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item4'
+          description: 按钮组合
+      required:
+      - buttons
+      description: 交互按钮
+    Schema4:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data4'
+    Item4:
+      type: object
+      properties:
+        multi_url:
+          type: object
+          properties:
+            url:
+              type: string
+              description: 默认 URL
+              example: https://www.feishu.cn/
+            android_url:
+              type: string
+              description: Android 平台 URL
+              example: https://www.feishu.cn/
+            ios_url:
+              type: string
+              description: iOS 平台 URL
+              example: https://www.feishu.cn/
+            pc_url:
+              type: string
+              description: PC URL
+              example: https://www.feishu.cn/
+          description: 跳转 URL
+        action_type:
+          type: string
+          description: 交互类型
+          enum:
+          - url_page
+          - webhook
+          x-enum-descriptions:
+            url_page: URL 页面
+            webhook: 回调
+          example: url_page
+        text:
+          type: object
+          properties:
+            text:
+              type: string
+              description: 文本
+              example: 文本
+          required:
+          - text
+          description: 文字
+        button_type:
+          type: string
+          description: 按钮类型
+          enum:
+          - default
+          - primary
+          - success
+          x-enum-descriptions:
+            default: 默认
+            primary: 主要
+            success: 成功
+          default: default
+          example: default
+        action_map:
+          type: string
+          x-lark-original-type: map
+          description: action 字典
+      required:
+      - action_type
+      - text
+    Data4:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item5'
+          description: chat列表
+        page_token:
+          type: string
+          description: 分页标记，当 has_more 为 true 时，会同时返回新的 page_token，否则不返回 page_token
+          example: '0'
+        has_more:
+          type: boolean
+          description: 是否还有更多项
+          example: 'false'
+    RestrictedModeSetting:
+      type: object
+      properties:
+        status:
+          type: boolean
+          description: 防泄密模式是否开启
+          example: 'true'
+        screenshot_has_permission_setting:
+          type: string
+          description: 允许截屏录屏
+          enum:
+          - all_members
+          - not_anyone
+          x-enum-descriptions:
+            all_members: 所有成员允许截屏录屏
+            not_anyone: 所有成员禁止截屏录屏
+          example: all_members
+        download_has_permission_setting:
+          type: string
+          description: 允许下载消息中图片、视频和文件
+          enum:
+          - all_members
+          - not_anyone
+          x-enum-descriptions:
+            all_members: 所有成员允许下载资源
+            not_anyone: 所有成员禁止下载资源
+          example: all_members
+        message_has_permission_setting:
+          type: string
+          description: 允许复制和转发消息
+          enum:
+          - all_members
+          - not_anyone
+          x-enum-descriptions:
+            all_members: 所有成员允许复制和转发消息
+            not_anyone: 所有成员禁止复制和转发消息
+          example: all_members
+      description: 防泄密模式设置
+    Item5:
+      type: object
+      properties:
+        chat_id:
+          type: string
+          description: 群组ID
+          example: oc_a0553eda9014c201e6969b478895c230
+          x-lark-id-types:
+            chat_id: chat
+        avatar:
+          type: string
+          description: 群头像URL
+          example: https://p3-lark-file.byteimg.com/img/lark-avatar-staging/default-avatar_44ae0ca3-e140-494b-956f-78091e348435~100x100.jpg
+        name:
+          type: string
+          description: 群名称
+          example: 测试群名称
+        description:
+          type: string
+          description: 群描述
+          example: 测试群描述
+        owner_id:
+          type: string
+          description: 群主ID
+          example: 4d7a3c6g
+        owner_id_type:
+          type: string
+          description: 群主ID类型
+          example: user_id
+        external:
+          type: boolean
+          description: 是否是外部群
+          example: 'false'
+        tenant_key:
+          type: string
+          description: tenant key
+          example: fawefawea
+        chat_status:
+          type: string
+          description: 群状态
+          enum:
+          - normal
+          - dissolved
+          - dissolved_save
+          x-enum-descriptions:
+            normal: 正常
+            dissolved: 解散
+            dissolved_save: 解散并保留
+          example: normal
+        chat_mode:
+          type: string
+          description: 群模式;group=普通群/topic=话题群/p2p=单聊
+          enum:
+          - group
+          - topic
+          - p2p
+          x-enum-descriptions:
+            group: 普通群
+            topic: 话题群
+            p2p: 单聊
+          example: p2p
+        p2p_target_type:
+          type: string
+          description: 单聊对端类型;仅 chat_mode=p2p 时返回
+          enum:
+          - user
+          - bot
+          x-enum-descriptions:
+            user: 用户
+            bot: 机器人
+          example: user
+        p2p_target_id:
+          type: string
+          description: 单聊对端ID;仅 chat_mode=p2p 时返回
+          example: ou_7d8a6e6df7621556ce0d21922b676706ccs
+    Data5:
+      type: object
+      properties:
+        chat_menu_item:
+          $ref: '#/components/schemas/ChatMenuItem'
+    Data6:
+      type: object
+      properties:
+        reaction_id:
+          type: string
+          description: reaction资源ID
+        operator:
+          type: object
+          properties:
+            operator_id:
+              type: string
+              description: 操作人ID
+              example: ou_ff0b7ba35fb********67dfc8b885136
+            operator_type:
+              type: string
+              description: 操作人身份，用户或应用
+              enum:
+              - app
+              - user
+              example: user
+          required:
+          - operator_id
+          - operator_type
+          description: 添加reaction的操作人
+        action_time:
+          type: string
+          description: reaction动作的的unix timestamp(单位:ms)
+          format: int64
+        reaction_type:
+          type: object
+          properties:
+            emoji_type:
+              type: string
+              description: emoji类型
+              example: SMILE
+          required:
+          - emoji_type
+          description: reaction资源类型
+    Schema5:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data6'
+    Schema6:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data7'
+    TagInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          description: id
+          example: 716168xxxxx
+        tag_type:
+          type: string
+          description: 标签类型
+          example: tenant
+        name:
+          type: string
+          description: name
+          example: tagName1
+        i18n_names:
+          type: array
+          items:
+            type: object
+            properties:
+              locale:
+                type: string
+                description: 语言
+                example: zh-CN
+              name:
+                type: string
+                description: 名称
+                example: tagName1
+          description: i18n name
+        create_time:
+          type: string
+          description: 创建时间
+          example: '1700793403850'
+        update_time:
+          type: string
+          description: 更新时间
+          example: '1700793403850'
+      description: 标签内容
+    Data7:
+      type: object
+      properties:
+        failed_cards:
+          type: array
+          items:
+            type: object
+            properties:
+              biz_id:
+                type: string
+                description: 业务 ID
+                example: bdf22389-87ec-4890-9eb6-78a7efaeecbb
+              user_id:
+                type: string
+                description: 用户 ID
+              reason:
+                type: string
+                description: 原因
+                enum:
+                - '0'
+                - '1'
+                - '2'
+                - '3'
+                - '4'
+                x-enum-descriptions:
+                  '0': 未知
+                  '1': 无权限
+                  '2': 未创建
+                  '3': 频率限制
+                  '4': 重复
+            required:
+            - biz_id
+            - user_id
+          description: 失败的卡片

@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: vc
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -1867,202 +1867,7 @@ paths:
                     type: object
                     properties:
                       meeting:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 会议ID
-                            example: '6911188411934433028'
-                            format: int64
-                          topic:
-                            type: string
-                            description: 会议主题
-                            example: my meeting
-                          url:
-                            type: string
-                            description: 会议链接
-                            example: https://vc.feishu.cn/j/337736498
-                          meeting_no:
-                            type: string
-                            description: 会议号
-                            example: '123456789'
-                          password:
-                            type: string
-                            description: 会议密码
-                            example: '971024'
-                          create_time:
-                            type: string
-                            description: 会议创建时间（unix时间，单位sec）
-                            example: '1608885566'
-                            format: int64
-                          start_time:
-                            type: string
-                            description: 会议开始时间（unix时间，单位sec）
-                            example: '1608883322'
-                            format: int64
-                          end_time:
-                            type: string
-                            description: 会议结束时间（unix时间，单位sec）
-                            example: '1608888867'
-                            format: int64
-                          host_user:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: 用户ID
-                                example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
-                              user_type:
-                                type: integer
-                                description: 用户类型
-                                enum:
-                                - 1
-                                - 2
-                                - 3
-                                - 4
-                                - 5
-                                - 6
-                                - 7
-                                x-enum-descriptions:
-                                  '1': lark用户
-                                  '2': rooms用户
-                                  '3': 文档用户
-                                  '4': neo单品用户
-                                  '5': neo单品游客用户
-                                  '6': pstn用户
-                                  '7': sip用户
-                                example: '1'
-                            description: 主持人
-                          meeting_connect:
-                            type: boolean
-                            description: 该会议是否支持互通
-                            example: 'true'
-                          status:
-                            type: integer
-                            description: 会议状态
-                            enum:
-                            - 1
-                            - 2
-                            - 3
-                            x-enum-descriptions:
-                              '1': 会议呼叫中
-                              '2': 会议进行中
-                              '3': 会议已结束
-                            example: '2'
-                          participant_count:
-                            type: string
-                            description: 峰值参会人数
-                            example: '999'
-                            format: int64
-                          participant_count_accumulated:
-                            type: string
-                            description: 累计参会人数
-                            example: '10'
-                            format: int64
-                          participants:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: 用户ID
-                                  example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
-                                first_join_time:
-                                  type: string
-                                  description: 首次入会时间，秒级Unix时间戳
-                                  example: '1624438144'
-                                  format: int64
-                                final_leave_time:
-                                  type: string
-                                  description: 最终离会时间，秒级Unix时间戳
-                                  example: '1624438144'
-                                  format: int64
-                                in_meeting_duration:
-                                  type: string
-                                  description: 累计在会中时间，时间单位：秒
-                                  example: '123'
-                                  format: int64
-                                user_type:
-                                  type: integer
-                                  description: 用户类型
-                                  enum:
-                                  - 1
-                                  - 2
-                                  - 3
-                                  - 4
-                                  - 5
-                                  - 6
-                                  - 7
-                                  x-enum-descriptions:
-                                    '1': lark用户
-                                    '2': rooms用户
-                                    '3': 文档用户
-                                    '4': neo单品用户
-                                    '5': neo单品游客用户
-                                    '6': pstn用户
-                                    '7': sip用户
-                                  example: '1'
-                                is_host:
-                                  type: boolean
-                                  description: 是否为主持人
-                                  example: 'true'
-                                is_cohost:
-                                  type: boolean
-                                  description: 是否为联席主持人
-                                  example: 'false'
-                                is_external:
-                                  type: boolean
-                                  description: 是否为外部参会人
-                                  example: 'false'
-                                status:
-                                  type: integer
-                                  description: 参会人状态
-                                  enum:
-                                  - 1
-                                  - 2
-                                  - 3
-                                  - 4
-                                  x-enum-descriptions:
-                                    '1': 呼叫中
-                                    '2': 在会中
-                                    '3': 正在响铃
-                                    '4': 不在会中或已经离开会议
-                                  example: '2'
-                            description: 参会人列表
-                          ability:
-                            type: object
-                            properties:
-                              use_video:
-                                type: boolean
-                                description: 是否使用视频
-                                example: 'true'
-                              use_audio:
-                                type: boolean
-                                description: 是否使用音频
-                                example: 'true'
-                              use_share_screen:
-                                type: boolean
-                                description: 是否使用共享屏幕
-                                example: 'true'
-                              use_follow_screen:
-                                type: boolean
-                                description: 是否使用妙享（magic share）
-                                example: 'true'
-                              use_recording:
-                                type: boolean
-                                description: 是否使用录制
-                                example: 'true'
-                              use_pstn:
-                                type: boolean
-                                description: 是否使用PSTN
-                                example: 'true'
-                            description: 会中使用的能力
-                          note_id:
-                            type: string
-                            description: 纪要ID
-                            example: '6943848821689040898'
-                            format: int64
+                        $ref: '#/components/schemas/Meeting'
                       related_artifacts:
                         type: object
                         properties:
@@ -4226,100 +4031,12 @@ paths:
                                   example: 100ms
                               description: 音频
                             video:
-                              type: object
-                              properties:
-                                time:
-                                  type: string
-                                  description: 时间
-                                  example: 2022.12.23 11:16:00 (GMT+08:00)
-                                bitrate_received:
-                                  type: string
-                                  description: 码率（接收）
-                                  example: 8kbps
-                                latency_received:
-                                  type: string
-                                  description: 延迟（接收）
-                                  example: 100ms
-                                jitter_received:
-                                  type: string
-                                  description: 抖动（接收）
-                                  example: 100ms
-                                maximum_resolution_received:
-                                  type: string
-                                  description: 最大分辨率（接收）
-                                  example: 1080P
-                                framerate_received:
-                                  type: string
-                                  description: 帧率（接收）
-                                  example: 100fps
-                                bitrate_sent:
-                                  type: string
-                                  description: 码率（发送）
-                                  example: 9kbps
-                                latency_sent:
-                                  type: string
-                                  description: 延迟（发送）
-                                  example: 100ms
-                                jitter_sent:
-                                  type: string
-                                  description: 抖动（发送）
-                                  example: 100ms
-                                maximum_resolution_sent:
-                                  type: string
-                                  description: 最大分辨率（发送）
-                                  example: 4K
-                                framerate_sent:
-                                  type: string
-                                  description: 帧率（发送）
-                                  example: 90fps
+                              allOf:
+                              - $ref: '#/components/schemas/Video'
                               description: 视频
                             screen_sharing:
-                              type: object
-                              properties:
-                                time:
-                                  type: string
-                                  description: 时间
-                                  example: 2022.12.23 11:16:00 (GMT+08:00)
-                                bitrate_received:
-                                  type: string
-                                  description: 码率（接收）
-                                  example: 8kbps
-                                latency_received:
-                                  type: string
-                                  description: 延迟（接收）
-                                  example: 100ms
-                                jitter_received:
-                                  type: string
-                                  description: 抖动（接收）
-                                  example: 100ms
-                                maximum_resolution_received:
-                                  type: string
-                                  description: 最大分辨率（接收）
-                                  example: 1080P
-                                framerate_received:
-                                  type: string
-                                  description: 帧率（接收）
-                                  example: 100fps
-                                bitrate_sent:
-                                  type: string
-                                  description: 码率（发送）
-                                  example: 9kbps
-                                latency_sent:
-                                  type: string
-                                  description: 延迟（发送）
-                                  example: 100ms
-                                jitter_sent:
-                                  type: string
-                                  description: 抖动（发送）
-                                  example: 100ms
-                                maximum_resolution_sent:
-                                  type: string
-                                  description: 最大分辨率（发送）
-                                  example: 4K
-                                framerate_sent:
-                                  type: string
-                                  description: 帧率（发送）
-                                  example: 90fps
+                              allOf:
+                              - $ref: '#/components/schemas/Video'
                               description: 共享屏幕
                             cpu_usage:
                               type: object
@@ -4737,160 +4454,8 @@ paths:
                   description: 指定会议归属人，使用tenant_access_token时生效且必传，使用user_access_token时不生效，必须指定为同租户下的合法lark用户
                   example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
                 meeting_settings:
-                  type: object
-                  properties:
-                    topic:
-                      type: string
-                      description: 会议主题
-                      example: my meeting
-                    action_permissions:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          permission:
-                            type: integer
-                            description: 权限项
-                            enum:
-                            - 1
-                            - 2
-                            - 3
-                            x-enum-descriptions:
-                              '1': 是否能成为主持人
-                              '2': 是否能邀请参会人
-                              '3': 是否能加入会议
-                            example: '1'
-                          permission_checkers:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                check_field:
-                                  type: integer
-                                  description: 检查字段类型
-                                  enum:
-                                  - 1
-                                  - 2
-                                  - 3
-                                  x-enum-descriptions:
-                                    '1': 用户ID
-                                    '2': 用户类型
-                                    '3': 租户ID
-                                  example: '1'
-                                check_mode:
-                                  type: integer
-                                  description: 检查方式
-                                  enum:
-                                  - 1
-                                  - 2
-                                  x-enum-descriptions:
-                                    '1': 在check_list中为有权限（白名单）
-                                    '2': 不在check_list中为有权限（黑名单）
-                                  example: '1'
-                                check_list:
-                                  type: array
-                                  items:
-                                    type: string
-                                  description: 检查字段列表
-                              required:
-                              - check_field
-                              - check_mode
-                              - check_list
-                            description: 权限检查器列表，权限检查器之间为"逻辑或"的关系（即 有一个为true则拥有该权限）
-                        required:
-                        - permission
-                        - permission_checkers
-                      description: 会议权限配置列表，如果存在相同的权限配置项则它们之间为"逻辑或"的关系（即 有一个为true则拥有该权限）
-                    meeting_initial_type:
-                      type: integer
-                      description: 会议初始类型
-                      enum:
-                      - 1
-                      - 2
-                      x-enum-descriptions:
-                        '1': 多人会议
-                        '2': 1v1呼叫
-                      example: '1'
-                    meeting_connect:
-                      type: boolean
-                      description: 该会议是否支持互通，不支持更新（注：该字段内测中）
-                      example: 'true'
-                    call_setting:
-                      type: object
-                      properties:
-                        callee:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 用户ID
-                              example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
-                            user_type:
-                              type: integer
-                              description: 用户类型
-                              enum:
-                              - 1
-                              - 2
-                              - 3
-                              - 4
-                              - 5
-                              - 6
-                              - 7
-                              x-enum-descriptions:
-                                '1': lark用户
-                                '2': rooms用户
-                                '3': 文档用户
-                                '4': neo单品用户
-                                '5': neo单品游客用户
-                                '6': pstn用户
-                                '7': sip用户
-                              example: '1'
-                            pstn_sip_info:
-                              type: object
-                              properties:
-                                nickname:
-                                  type: string
-                                  description: 给pstn/sip用户设置的临时昵称
-                                  example: dodo
-                                main_address:
-                                  type: string
-                                  description: pstn/sip主机号
-                                  example: '1234'
-                              required:
-                              - main_address
-                              description: pstn/sip信息
-                          required:
-                          - user_type
-                          description: 被呼叫的用户
-                      required:
-                      - callee
-                      description: 1v1呼叫相关参数
-                    auto_record:
-                      type: boolean
-                      description: 使用飞书视频会议时，是否开启自动录制，默认false
-                      example: 'true'
-                    assign_host_list:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          user_type:
-                            type: integer
-                            description: 用户类型，仅支持设置同租户下的 Lark 用户
-                            enum:
-                            - 1
-                            x-enum-descriptions:
-                              '1': lark用户
-                            example: '1'
-                          id:
-                            type: string
-                            description: 用户ID
-                            example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
-                      description: 指定主持人列表
-                    password:
-                      type: string
-                      description: 设置会议密码，仅支持 4-9 位数字
-                      example: '971024'
+                  allOf:
+                  - $ref: '#/components/schemas/MeetingSetting'
                   description: 会议设置
       responses:
         '200':
@@ -5166,60 +4731,7 @@ paths:
                               action_permissions:
                                 type: array
                                 items:
-                                  type: object
-                                  properties:
-                                    permission:
-                                      type: integer
-                                      description: 权限项
-                                      enum:
-                                      - 1
-                                      - 2
-                                      - 3
-                                      x-enum-descriptions:
-                                        '1': 是否能成为主持人
-                                        '2': 是否能邀请参会人
-                                        '3': 是否能加入会议
-                                      example: '1'
-                                    permission_checkers:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          check_field:
-                                            type: integer
-                                            description: 检查字段类型
-                                            enum:
-                                            - 1
-                                            - 2
-                                            - 3
-                                            x-enum-descriptions:
-                                              '1': 用户ID
-                                              '2': 用户类型
-                                              '3': 租户ID
-                                            example: '1'
-                                          check_mode:
-                                            type: integer
-                                            description: 检查方式
-                                            enum:
-                                            - 1
-                                            - 2
-                                            x-enum-descriptions:
-                                              '1': 在check_list中为有权限（白名单）
-                                              '2': 不在check_list中为有权限（黑名单）
-                                            example: '1'
-                                          check_list:
-                                            type: array
-                                            items:
-                                              type: string
-                                            description: 检查字段列表
-                                        required:
-                                        - check_field
-                                        - check_mode
-                                        - check_list
-                                      description: 权限检查器列表，权限检查器之间为"逻辑或"的关系（即 有一个为true则拥有该权限）
-                                  required:
-                                  - permission
-                                  - permission_checkers
+                                  $ref: '#/components/schemas/Item2'
                                 description: 会议权限配置列表，如果存在相同的权限配置项则它们之间为"逻辑或"的关系（即 有一个为true则拥有该权限）
                               meeting_initial_type:
                                 type: integer
@@ -5236,54 +4748,8 @@ paths:
                                 description: 该会议是否支持互通，不支持更新（注：该字段内测中）
                                 example: 'true'
                               call_setting:
-                                type: object
-                                properties:
-                                  callee:
-                                    type: object
-                                    properties:
-                                      id:
-                                        type: string
-                                        description: 用户ID
-                                        example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
-                                      user_type:
-                                        type: integer
-                                        description: 用户类型
-                                        enum:
-                                        - 1
-                                        - 2
-                                        - 3
-                                        - 4
-                                        - 5
-                                        - 6
-                                        - 7
-                                        x-enum-descriptions:
-                                          '1': lark用户
-                                          '2': rooms用户
-                                          '3': 文档用户
-                                          '4': neo单品用户
-                                          '5': neo单品游客用户
-                                          '6': pstn用户
-                                          '7': sip用户
-                                        example: '1'
-                                      pstn_sip_info:
-                                        type: object
-                                        properties:
-                                          nickname:
-                                            type: string
-                                            description: 给pstn/sip用户设置的临时昵称
-                                            example: dodo
-                                          main_address:
-                                            type: string
-                                            description: pstn/sip主机号
-                                            example: '1234'
-                                        required:
-                                        - main_address
-                                        description: pstn/sip信息
-                                    required:
-                                    - user_type
-                                    description: 被呼叫的用户
-                                required:
-                                - callee
+                                allOf:
+                                - $ref: '#/components/schemas/CallSetting'
                                 description: 1v1呼叫相关参数
                               auto_record:
                                 type: boolean
@@ -5381,160 +4847,8 @@ paths:
                   example: '1608888867'
                   format: int64
                 meeting_settings:
-                  type: object
-                  properties:
-                    topic:
-                      type: string
-                      description: 会议主题
-                      example: my meeting
-                    action_permissions:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          permission:
-                            type: integer
-                            description: 权限项
-                            enum:
-                            - 1
-                            - 2
-                            - 3
-                            x-enum-descriptions:
-                              '1': 是否能成为主持人
-                              '2': 是否能邀请参会人
-                              '3': 是否能加入会议
-                            example: '1'
-                          permission_checkers:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                check_field:
-                                  type: integer
-                                  description: 检查字段类型
-                                  enum:
-                                  - 1
-                                  - 2
-                                  - 3
-                                  x-enum-descriptions:
-                                    '1': 用户ID
-                                    '2': 用户类型
-                                    '3': 租户ID
-                                  example: '1'
-                                check_mode:
-                                  type: integer
-                                  description: 检查方式
-                                  enum:
-                                  - 1
-                                  - 2
-                                  x-enum-descriptions:
-                                    '1': 在check_list中为有权限（白名单）
-                                    '2': 不在check_list中为有权限（黑名单）
-                                  example: '1'
-                                check_list:
-                                  type: array
-                                  items:
-                                    type: string
-                                  description: 检查字段列表
-                              required:
-                              - check_field
-                              - check_mode
-                              - check_list
-                            description: 权限检查器列表，权限检查器之间为"逻辑或"的关系（即 有一个为true则拥有该权限）
-                        required:
-                        - permission
-                        - permission_checkers
-                      description: 会议权限配置列表，如果存在相同的权限配置项则它们之间为"逻辑或"的关系（即 有一个为true则拥有该权限）
-                    meeting_initial_type:
-                      type: integer
-                      description: 会议初始类型
-                      enum:
-                      - 1
-                      - 2
-                      x-enum-descriptions:
-                        '1': 多人会议
-                        '2': 1v1呼叫
-                      example: '1'
-                    meeting_connect:
-                      type: boolean
-                      description: 该会议是否支持互通，不支持更新（注：该字段内测中）
-                      example: 'true'
-                    call_setting:
-                      type: object
-                      properties:
-                        callee:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 用户ID
-                              example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
-                            user_type:
-                              type: integer
-                              description: 用户类型
-                              enum:
-                              - 1
-                              - 2
-                              - 3
-                              - 4
-                              - 5
-                              - 6
-                              - 7
-                              x-enum-descriptions:
-                                '1': lark用户
-                                '2': rooms用户
-                                '3': 文档用户
-                                '4': neo单品用户
-                                '5': neo单品游客用户
-                                '6': pstn用户
-                                '7': sip用户
-                              example: '1'
-                            pstn_sip_info:
-                              type: object
-                              properties:
-                                nickname:
-                                  type: string
-                                  description: 给pstn/sip用户设置的临时昵称
-                                  example: dodo
-                                main_address:
-                                  type: string
-                                  description: pstn/sip主机号
-                                  example: '1234'
-                              required:
-                              - main_address
-                              description: pstn/sip信息
-                          required:
-                          - user_type
-                          description: 被呼叫的用户
-                      required:
-                      - callee
-                      description: 1v1呼叫相关参数
-                    auto_record:
-                      type: boolean
-                      description: 使用飞书视频会议时，是否开启自动录制，默认false
-                      example: 'true'
-                    assign_host_list:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          user_type:
-                            type: integer
-                            description: 用户类型，仅支持设置同租户下的 Lark 用户
-                            enum:
-                            - 1
-                            x-enum-descriptions:
-                              '1': lark用户
-                            example: '1'
-                          id:
-                            type: string
-                            description: 用户ID
-                            example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
-                      description: 指定主持人列表
-                    password:
-                      type: string
-                      description: 设置会议密码，仅支持 4-9 位数字
-                      example: '971024'
+                  allOf:
+                  - $ref: '#/components/schemas/MeetingSetting'
                   description: 会议设置
       responses:
         '200':
@@ -5711,202 +5025,7 @@ paths:
                     type: object
                     properties:
                       meeting:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 会议ID
-                            example: '6911188411934433028'
-                            format: int64
-                          topic:
-                            type: string
-                            description: 会议主题
-                            example: my meeting
-                          url:
-                            type: string
-                            description: 会议链接
-                            example: https://vc.feishu.cn/j/337736498
-                          meeting_no:
-                            type: string
-                            description: 会议号
-                            example: '123456789'
-                          password:
-                            type: string
-                            description: 会议密码
-                            example: '971024'
-                          create_time:
-                            type: string
-                            description: 会议创建时间（unix时间，单位sec）
-                            example: '1608885566'
-                            format: int64
-                          start_time:
-                            type: string
-                            description: 会议开始时间（unix时间，单位sec）
-                            example: '1608883322'
-                            format: int64
-                          end_time:
-                            type: string
-                            description: 会议结束时间（unix时间，单位sec）
-                            example: '1608888867'
-                            format: int64
-                          host_user:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: 用户ID
-                                example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
-                              user_type:
-                                type: integer
-                                description: 用户类型
-                                enum:
-                                - 1
-                                - 2
-                                - 3
-                                - 4
-                                - 5
-                                - 6
-                                - 7
-                                x-enum-descriptions:
-                                  '1': lark用户
-                                  '2': rooms用户
-                                  '3': 文档用户
-                                  '4': neo单品用户
-                                  '5': neo单品游客用户
-                                  '6': pstn用户
-                                  '7': sip用户
-                                example: '1'
-                            description: 主持人
-                          meeting_connect:
-                            type: boolean
-                            description: 该会议是否支持互通
-                            example: 'true'
-                          status:
-                            type: integer
-                            description: 会议状态
-                            enum:
-                            - 1
-                            - 2
-                            - 3
-                            x-enum-descriptions:
-                              '1': 会议呼叫中
-                              '2': 会议进行中
-                              '3': 会议已结束
-                            example: '2'
-                          participant_count:
-                            type: string
-                            description: 峰值参会人数
-                            example: '999'
-                            format: int64
-                          participant_count_accumulated:
-                            type: string
-                            description: 累计参会人数
-                            example: '10'
-                            format: int64
-                          participants:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: 用户ID
-                                  example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
-                                first_join_time:
-                                  type: string
-                                  description: 首次入会时间，秒级Unix时间戳
-                                  example: '1624438144'
-                                  format: int64
-                                final_leave_time:
-                                  type: string
-                                  description: 最终离会时间，秒级Unix时间戳
-                                  example: '1624438144'
-                                  format: int64
-                                in_meeting_duration:
-                                  type: string
-                                  description: 累计在会中时间，时间单位：秒
-                                  example: '123'
-                                  format: int64
-                                user_type:
-                                  type: integer
-                                  description: 用户类型
-                                  enum:
-                                  - 1
-                                  - 2
-                                  - 3
-                                  - 4
-                                  - 5
-                                  - 6
-                                  - 7
-                                  x-enum-descriptions:
-                                    '1': lark用户
-                                    '2': rooms用户
-                                    '3': 文档用户
-                                    '4': neo单品用户
-                                    '5': neo单品游客用户
-                                    '6': pstn用户
-                                    '7': sip用户
-                                  example: '1'
-                                is_host:
-                                  type: boolean
-                                  description: 是否为主持人
-                                  example: 'true'
-                                is_cohost:
-                                  type: boolean
-                                  description: 是否为联席主持人
-                                  example: 'false'
-                                is_external:
-                                  type: boolean
-                                  description: 是否为外部参会人
-                                  example: 'false'
-                                status:
-                                  type: integer
-                                  description: 参会人状态
-                                  enum:
-                                  - 1
-                                  - 2
-                                  - 3
-                                  - 4
-                                  x-enum-descriptions:
-                                    '1': 呼叫中
-                                    '2': 在会中
-                                    '3': 正在响铃
-                                    '4': 不在会中或已经离开会议
-                                  example: '2'
-                            description: 参会人列表
-                          ability:
-                            type: object
-                            properties:
-                              use_video:
-                                type: boolean
-                                description: 是否使用视频
-                                example: 'true'
-                              use_audio:
-                                type: boolean
-                                description: 是否使用音频
-                                example: 'true'
-                              use_share_screen:
-                                type: boolean
-                                description: 是否使用共享屏幕
-                                example: 'true'
-                              use_follow_screen:
-                                type: boolean
-                                description: 是否使用妙享（magic share）
-                                example: 'true'
-                              use_recording:
-                                type: boolean
-                                description: 是否使用录制
-                                example: 'true'
-                              use_pstn:
-                                type: boolean
-                                description: 是否使用PSTN
-                                example: 'true'
-                            description: 会中使用的能力
-                          note_id:
-                            type: string
-                            description: 纪要ID
-                            example: '6943848821689040898'
-                            format: int64
+                        $ref: '#/components/schemas/Meeting'
       x-lark-access-tokens:
       - user
       - tenant
@@ -5990,34 +5109,8 @@ paths:
                     type: object
                     properties:
                       reserve_admin_config:
-                        type: object
-                        properties:
-                          depts:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                department_id:
-                                  type: string
-                                  description: 预定部门id
-                                  example: od-5c07f0c117cf8795f25610a69363ce31
-                                  format: int64
-                              required:
-                              - department_id
-                            description: 预定管理部门
-                          users:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                user_id:
-                                  type: string
-                                  description: 预订人id
-                                  example: ou_e8bce6c3935ef1fc1b432992fd9d3db8
-                                  format: int64
-                              required:
-                              - user_id
-                            description: 预定管理用户
+                        allOf:
+                        - $ref: '#/components/schemas/ReserveAdminConfig'
                         description: 预定管理员/部门
                     required:
                     - reserve_admin_config
@@ -6096,34 +5189,8 @@ paths:
                   description: 1代表层级，2代表会议室
                   example: '2'
                 reserve_admin_config:
-                  type: object
-                  properties:
-                    depts:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          department_id:
-                            type: string
-                            description: 预定部门id
-                            example: od-5c07f0c117cf8795f25610a69363ce31
-                            format: int64
-                        required:
-                        - department_id
-                      description: 预定管理部门
-                    users:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          user_id:
-                            type: string
-                            description: 预订人id
-                            example: ou_e8bce6c3935ef1fc1b432992fd9d3db8
-                            format: int64
-                        required:
-                        - user_id
-                      description: 预定管理用户
+                  allOf:
+                  - $ref: '#/components/schemas/ReserveAdminConfig'
                   description: 预定管理员或部门
       responses:
         '200':
@@ -6254,45 +5321,8 @@ paths:
                     type: object
                     properties:
                       disable_inform:
-                        type: object
-                        properties:
-                          if_cover_child_scope:
-                            type: boolean
-                            description: 是否覆盖子层级及会议室
-                            example: 'true'
-                          if_inform:
-                            type: boolean
-                            description: 禁用状态变更通知开关
-                            default: false
-                            example: 'false'
-                          informed_users:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                user_id:
-                                  type: string
-                                  description: 预订人id
-                                  example: ou_e8bce6c3935ef1fc1b432992fd9d3db8
-                                  format: int64
-                              required:
-                              - user_id
-                            description: 通知成员列表
-                          informed_depts:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                department_id:
-                                  type: string
-                                  description: 预定部门id
-                                  example: od-5c07f0c117cf8795f25610a69363ce31
-                                  format: int64
-                              required:
-                              - department_id
-                            description: 通知部门列表
-                        required:
-                        - if_inform
+                        allOf:
+                        - $ref: '#/components/schemas/DisableInform'
                         description: 会议室禁用通知配置
       x-lark-access-tokens:
       - tenant
@@ -6366,45 +5396,8 @@ paths:
                   description: 1表示会议室层级，2表示会议室
                   example: '2'
                 disable_inform:
-                  type: object
-                  properties:
-                    if_cover_child_scope:
-                      type: boolean
-                      description: 是否覆盖子层级及会议室
-                      example: 'true'
-                    if_inform:
-                      type: boolean
-                      description: 禁用状态变更通知开关
-                      default: false
-                      example: 'false'
-                    informed_users:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          user_id:
-                            type: string
-                            description: 预订人id
-                            example: ou_e8bce6c3935ef1fc1b432992fd9d3db8
-                            format: int64
-                        required:
-                        - user_id
-                      description: 通知成员列表
-                    informed_depts:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          department_id:
-                            type: string
-                            description: 预定部门id
-                            example: od-5c07f0c117cf8795f25610a69363ce31
-                            format: int64
-                        required:
-                        - department_id
-                      description: 通知部门列表
-                  required:
-                  - if_inform
+                  allOf:
+                  - $ref: '#/components/schemas/DisableInform'
                   description: 禁用通知配置
       responses:
         '200':
@@ -6532,40 +5525,8 @@ paths:
                     type: object
                     properties:
                       reserve_form_config:
-                        type: object
-                        properties:
-                          if_cover_child_scope:
-                            type: boolean
-                            description: 是否覆盖子层级及会议室
-                            example: 'true'
-                          reserve_form:
-                            type: boolean
-                            description: 预定表单开关
-                            default: false
-                            example: 'false'
-                          notified_users:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                user_id:
-                                  type: string
-                                  description: 预订人id
-                                  example: ou_e8bce6c3935ef1fc1b432992fd9d3db8
-                                  format: int64
-                              required:
-                              - user_id
-                            description: 通知人列表
-                          notified_time:
-                            type: integer
-                            description: 最晚于会议开始前 notified_time收到通知(单位:分/时/天)
-                            example: '3'
-                          time_unit:
-                            type: integer
-                            description: 时间单位,1为分钟;2为小时;3为天，默认为天
-                            example: '3'
-                        required:
-                        - reserve_form
+                        allOf:
+                        - $ref: '#/components/schemas/ReserveFormConfig'
                         description: 预定表单
                     required:
                     - reserve_form_config
@@ -6644,40 +5605,8 @@ paths:
                   description: 1代表层级，2代表会议室
                   example: '2'
                 reserve_form_config:
-                  type: object
-                  properties:
-                    if_cover_child_scope:
-                      type: boolean
-                      description: 是否覆盖子层级及会议室
-                      example: 'true'
-                    reserve_form:
-                      type: boolean
-                      description: 预定表单开关
-                      default: false
-                      example: 'false'
-                    notified_users:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          user_id:
-                            type: string
-                            description: 预订人id
-                            example: ou_e8bce6c3935ef1fc1b432992fd9d3db8
-                            format: int64
-                        required:
-                        - user_id
-                      description: 通知人列表
-                    notified_time:
-                      type: integer
-                      description: 最晚于会议开始前 notified_time收到通知(单位:分/时/天)
-                      example: '3'
-                    time_unit:
-                      type: integer
-                      description: 时间单位,1为分钟;2为小时;3为天，默认为天
-                      example: '3'
-                  required:
-                  - reserve_form
+                  allOf:
+                  - $ref: '#/components/schemas/ReserveFormConfig'
                   description: 预定表单设置
       responses:
         '200':
@@ -6790,111 +5719,16 @@ paths:
                   example: '2'
                   format: int64
                 approval_config:
-                  type: object
-                  properties:
-                    approval_switch:
-                      type: integer
-                      description: 预定审批开关，0关闭，1打开
-                      example: '0'
-                    approval_condition:
-                      type: integer
-                      description: 预定审批条件，0所有预定需要审批，1满足条件需审批
-                      example: '0'
-                    meeting_duration:
-                      type: number
-                      description: 超过 meeting_duration小时需要审批
-                      example: '1'
-                    approvers:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          user_id:
-                            type: string
-                            description: 预订人id
-                            example: ou_e8bce6c3935ef1fc1b432992fd9d3db8
-                            format: int64
-                        required:
-                        - user_id
-                      description: 审批人列表
-                      example: '[{user_id:"ou_e8bce6c3935ef1fc1b432992fd9d3db8"}]'
+                  allOf:
+                  - $ref: '#/components/schemas/ApproveConfig'
                   description: 预定审批设置
                 time_config:
-                  type: object
-                  properties:
-                    if_cover_child_scope:
-                      type: boolean
-                      description: 是否覆盖子层级及会议室
-                      example: 'true'
-                    time_switch:
-                      type: integer
-                      description: 预定时间开关，0关闭，1开启
-                      example: '0'
-                    days_in_advance:
-                      type: integer
-                      description: 最早可提前#{days_in_advance}天预定会议室，以天为单位
-                      example: '7'
-                    opening_hour:
-                      type: string
-                      description: 开放当天可于#{opening_hour} 开始预定，以秒为单位
-                      example: '13465'
-                      format: int64
-                    start_time:
-                      type: string
-                      description: 每日可预定时间范围开始时间，以秒为单位
-                      example: '45565'
-                      format: int64
-                    end_time:
-                      type: string
-                      description: 每日可预定时间范围结束时间，以秒为单位
-                      example: '45469'
-                      format: int64
-                    max_duration:
-                      type: integer
-                      description: 单次可预定时长上限,以小时为单位
-                      example: '3'
-                  required:
-                  - time_switch
+                  allOf:
+                  - $ref: '#/components/schemas/TimeConfig'
                   description: 预定时间设置
                 reserve_scope_config:
-                  type: object
-                  properties:
-                    if_cover_child_scope:
-                      type: boolean
-                      description: 是否覆盖子层级及会议室
-                      example: 'true'
-                    allow_all_users:
-                      type: integer
-                      description: 可预定成员范围，0部分成员，1全部成员
-                      example: '1'
-                    allow_users:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          user_id:
-                            type: string
-                            description: 预订人id
-                            example: ou_e8bce6c3935ef1fc1b432992fd9d3db8
-                            format: int64
-                        required:
-                        - user_id
-                      description: 可预定成员列表
-                      example: '[{user_id:"ou_e8bce6c3935ef1fc1b432992fd9d3db8"}]'
-                    allow_depts:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          department_id:
-                            type: string
-                            description: 预定部门id
-                            example: od-5c07f0c117cf8795f25610a69363ce31
-                            format: int64
-                        required:
-                        - department_id
-                      description: 可预定部门列表
-                      example: '[{department_id:"od-5c07f0c117cf8795f25610a69363ce31"}]'
+                  allOf:
+                  - $ref: '#/components/schemas/ReserveScopeConfig'
                   description: 预定范围设置
       responses:
         '200':
@@ -7031,111 +5865,16 @@ paths:
                     type: object
                     properties:
                       approve_config:
-                        type: object
-                        properties:
-                          approval_switch:
-                            type: integer
-                            description: 预定审批开关，0关闭，1打开
-                            example: '0'
-                          approval_condition:
-                            type: integer
-                            description: 预定审批条件，0所有预定需要审批，1满足条件需审批
-                            example: '0'
-                          meeting_duration:
-                            type: number
-                            description: 超过 meeting_duration小时需要审批
-                            example: '1'
-                          approvers:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                user_id:
-                                  type: string
-                                  description: 预订人id
-                                  example: ou_e8bce6c3935ef1fc1b432992fd9d3db8
-                                  format: int64
-                              required:
-                              - user_id
-                            description: 审批人列表
-                            example: '[{user_id:"ou_e8bce6c3935ef1fc1b432992fd9d3db8"}]'
+                        allOf:
+                        - $ref: '#/components/schemas/ApproveConfig'
                         description: 预定审批设置
                       time_config:
-                        type: object
-                        properties:
-                          if_cover_child_scope:
-                            type: boolean
-                            description: 是否覆盖子层级及会议室
-                            example: 'true'
-                          time_switch:
-                            type: integer
-                            description: 预定时间开关，0关闭，1开启
-                            example: '0'
-                          days_in_advance:
-                            type: integer
-                            description: 最早可提前#{days_in_advance}天预定会议室，以天为单位
-                            example: '7'
-                          opening_hour:
-                            type: string
-                            description: 开放当天可于#{opening_hour} 开始预定，以秒为单位
-                            example: '13465'
-                            format: int64
-                          start_time:
-                            type: string
-                            description: 每日可预定时间范围开始时间，以秒为单位
-                            example: '45565'
-                            format: int64
-                          end_time:
-                            type: string
-                            description: 每日可预定时间范围结束时间，以秒为单位
-                            example: '45469'
-                            format: int64
-                          max_duration:
-                            type: integer
-                            description: 单次可预定时长上限,以小时为单位
-                            example: '3'
-                        required:
-                        - time_switch
+                        allOf:
+                        - $ref: '#/components/schemas/TimeConfig'
                         description: 预定时间设置
                       reserve_scope_config:
-                        type: object
-                        properties:
-                          if_cover_child_scope:
-                            type: boolean
-                            description: 是否覆盖子层级及会议室
-                            example: 'true'
-                          allow_all_users:
-                            type: integer
-                            description: 可预定成员范围，0部分成员，1全部成员
-                            example: '1'
-                          allow_users:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                user_id:
-                                  type: string
-                                  description: 预订人id
-                                  example: ou_e8bce6c3935ef1fc1b432992fd9d3db8
-                                  format: int64
-                              required:
-                              - user_id
-                            description: 可预定成员列表
-                            example: '[{user_id:"ou_e8bce6c3935ef1fc1b432992fd9d3db8"}]'
-                          allow_depts:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                department_id:
-                                  type: string
-                                  description: 预定部门id
-                                  example: od-5c07f0c117cf8795f25610a69363ce31
-                                  format: int64
-                              required:
-                              - department_id
-                            description: 可预定部门列表
-                            example: '[{department_id:"od-5c07f0c117cf8795f25610a69363ce31"}]'
+                        allOf:
+                        - $ref: '#/components/schemas/ReserveScopeConfig'
                         description: 预定范围设置
       x-lark-access-tokens:
       - tenant
@@ -7401,186 +6140,14 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: 会议室名称
-                  example: 测试会议室
-                capacity:
-                  type: integer
-                  description: 会议室能容纳的人数
-                  example: '10'
-                description:
-                  type: string
-                  description: 会议室的相关描述
-                  example: 测试会议室描述
-                custom_room_id:
-                  type: string
-                  description: 自定义的会议室ID
-                  example: '1234'
-                room_level_id:
-                  type: string
-                  description: 层级ID
-                  example: omb_8d020b12fe49e82847c2af3c193d5754
-                room_status:
-                  type: object
-                  properties:
-                    status:
-                      type: boolean
-                      description: 是否启用会议室
-                      example: 'true'
-                    schedule_status:
-                      type: boolean
-                      description: 会议室未来状态为启用或禁用
-                      example: 'true'
-                    disable_start_time:
-                      type: string
-                      description: 禁用开始时间（unix时间，单位sec）
-                      example: '1652356050'
-                      format: int64
-                    disable_end_time:
-                      type: string
-                      description: 禁用结束时间（unix时间，单位sec，数值0表示永久禁用）
-                      example: '1652442450'
-                      format: int64
-                    disable_reason:
-                      type: string
-                      description: 禁用原因
-                      example: 测试占用
-                    contact_ids:
-                      type: array
-                      items:
-                        type: string
-                      description: 联系人列表，id类型由user_id_type参数决定
-                    disable_notice:
-                      type: boolean
-                      description: 是否在禁用时发送通知给预定了该会议室的员工
-                      example: 'true'
-                    resume_notice:
-                      type: boolean
-                      description: 是否在恢复启用时发送通知给预定了该会议室的员工
-                      example: 'true'
-                  required:
-                  - status
-                  description: 会议室状态
-                device:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      name:
-                        type: string
-                        description: 设施名称
-                        example: 电话
-                    required:
-                    - name
-                  description: 设施信息列表
+              $ref: '#/components/schemas/Schema3'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      room:
-                        type: object
-                        properties:
-                          room_id:
-                            type: string
-                            description: 会议室ID
-                            example: omm_4de32cf10a4358788ff4e09e37ebbf9b
-                          name:
-                            type: string
-                            description: 会议室名称
-                            example: 测试会议室
-                          capacity:
-                            type: integer
-                            description: 会议室能容纳的人数
-                            example: '10'
-                          description:
-                            type: string
-                            description: 会议室的相关描述
-                            example: 测试会议室描述
-                          display_id:
-                            type: string
-                            description: 会议室的展示ID
-                            example: LM134742334
-                          custom_room_id:
-                            type: string
-                            description: 自定义的会议室ID
-                            example: '1234'
-                          room_level_id:
-                            type: string
-                            description: 层级ID
-                            example: omb_8d020b12fe49e82847c2af3c193d5754
-                          path:
-                            type: array
-                            items:
-                              type: string
-                            description: 层级路径
-                            example: '[omb_8d020b12fe49e82847c2af3c193d5754,omb_8d020b12fe49e82847c2af3c193d5754]'
-                          room_status:
-                            type: object
-                            properties:
-                              status:
-                                type: boolean
-                                description: 是否启用会议室
-                                example: 'true'
-                              schedule_status:
-                                type: boolean
-                                description: 会议室未来状态为启用或禁用
-                                example: 'true'
-                              disable_start_time:
-                                type: string
-                                description: 禁用开始时间（unix时间，单位sec）
-                                example: '1652356050'
-                                format: int64
-                              disable_end_time:
-                                type: string
-                                description: 禁用结束时间（unix时间，单位sec，数值0表示永久禁用）
-                                example: '1652442450'
-                                format: int64
-                              disable_reason:
-                                type: string
-                                description: 禁用原因
-                                example: 测试占用
-                              contact_ids:
-                                type: array
-                                items:
-                                  type: string
-                                description: 联系人列表，id类型由user_id_type参数决定
-                              disable_notice:
-                                type: boolean
-                                description: 是否在禁用时发送通知给预定了该会议室的员工
-                                example: 'true'
-                              resume_notice:
-                                type: boolean
-                                description: 是否在恢复启用时发送通知给预定了该会议室的员工
-                                example: 'true'
-                            required:
-                            - status
-                            description: 会议室状态
-                          device:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                name:
-                                  type: string
-                                  description: 设施名称
-                                  example: 电话
-                              required:
-                              - name
-                            description: 设施信息列表
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -7673,116 +6240,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      rooms:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            room_id:
-                              type: string
-                              description: 会议室ID
-                              example: omm_4de32cf10a4358788ff4e09e37ebbf9b
-                            name:
-                              type: string
-                              description: 会议室名称
-                              example: 测试会议室
-                            capacity:
-                              type: integer
-                              description: 会议室能容纳的人数
-                              example: '10'
-                            description:
-                              type: string
-                              description: 会议室的相关描述
-                              example: 测试会议室描述
-                            display_id:
-                              type: string
-                              description: 会议室的展示ID
-                              example: LM134742334
-                            custom_room_id:
-                              type: string
-                              description: 自定义的会议室ID
-                              example: '1234'
-                            room_level_id:
-                              type: string
-                              description: 层级ID
-                              example: omb_8d020b12fe49e82847c2af3c193d5754
-                            path:
-                              type: array
-                              items:
-                                type: string
-                              description: 层级路径
-                              example: '[omb_8d020b12fe49e82847c2af3c193d5754,omb_8d020b12fe49e82847c2af3c193d5754]'
-                            room_status:
-                              type: object
-                              properties:
-                                status:
-                                  type: boolean
-                                  description: 是否启用会议室
-                                  example: 'true'
-                                schedule_status:
-                                  type: boolean
-                                  description: 会议室未来状态为启用或禁用
-                                  example: 'true'
-                                disable_start_time:
-                                  type: string
-                                  description: 禁用开始时间（unix时间，单位sec）
-                                  example: '1652356050'
-                                  format: int64
-                                disable_end_time:
-                                  type: string
-                                  description: 禁用结束时间（unix时间，单位sec，数值0表示永久禁用）
-                                  example: '1652442450'
-                                  format: int64
-                                disable_reason:
-                                  type: string
-                                  description: 禁用原因
-                                  example: 测试占用
-                                contact_ids:
-                                  type: array
-                                  items:
-                                    type: string
-                                  description: 联系人列表，id类型由user_id_type参数决定
-                                disable_notice:
-                                  type: boolean
-                                  description: 是否在禁用时发送通知给预定了该会议室的员工
-                                  example: 'true'
-                                resume_notice:
-                                  type: boolean
-                                  description: 是否在恢复启用时发送通知给预定了该会议室的员工
-                                  example: 'true'
-                              required:
-                              - status
-                              description: 会议室状态
-                            device:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  name:
-                                    type: string
-                                    description: 设施名称
-                                    example: 电话
-                                required:
-                                - name
-                              description: 设施信息列表
-                        description: 会议室列表
-                      page_token:
-                        type: string
-                        description: 下一页分页的token，下次请求时传入
-                        example: '50'
-                      has_more:
-                        type: boolean
-                        description: 是否还有数据
-                        example: 'true'
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -7910,105 +6368,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      room:
-                        type: object
-                        properties:
-                          room_id:
-                            type: string
-                            description: 会议室ID
-                            example: omm_4de32cf10a4358788ff4e09e37ebbf9b
-                          name:
-                            type: string
-                            description: 会议室名称
-                            example: 测试会议室
-                          capacity:
-                            type: integer
-                            description: 会议室能容纳的人数
-                            example: '10'
-                          description:
-                            type: string
-                            description: 会议室的相关描述
-                            example: 测试会议室描述
-                          display_id:
-                            type: string
-                            description: 会议室的展示ID
-                            example: LM134742334
-                          custom_room_id:
-                            type: string
-                            description: 自定义的会议室ID
-                            example: '1234'
-                          room_level_id:
-                            type: string
-                            description: 层级ID
-                            example: omb_8d020b12fe49e82847c2af3c193d5754
-                          path:
-                            type: array
-                            items:
-                              type: string
-                            description: 层级路径
-                            example: '[omb_8d020b12fe49e82847c2af3c193d5754,omb_8d020b12fe49e82847c2af3c193d5754]'
-                          room_status:
-                            type: object
-                            properties:
-                              status:
-                                type: boolean
-                                description: 是否启用会议室
-                                example: 'true'
-                              schedule_status:
-                                type: boolean
-                                description: 会议室未来状态为启用或禁用
-                                example: 'true'
-                              disable_start_time:
-                                type: string
-                                description: 禁用开始时间（unix时间，单位sec）
-                                example: '1652356050'
-                                format: int64
-                              disable_end_time:
-                                type: string
-                                description: 禁用结束时间（unix时间，单位sec，数值0表示永久禁用）
-                                example: '1652442450'
-                                format: int64
-                              disable_reason:
-                                type: string
-                                description: 禁用原因
-                                example: 测试占用
-                              contact_ids:
-                                type: array
-                                items:
-                                  type: string
-                                description: 联系人列表，id类型由user_id_type参数决定
-                              disable_notice:
-                                type: boolean
-                                description: 是否在禁用时发送通知给预定了该会议室的员工
-                                example: 'true'
-                              resume_notice:
-                                type: boolean
-                                description: 是否在恢复启用时发送通知给预定了该会议室的员工
-                                example: 'true'
-                            required:
-                            - status
-                            description: 会议室状态
-                          device:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                name:
-                                  type: string
-                                  description: 设施名称
-                                  example: 电话
-                              required:
-                              - name
-                            description: 设施信息列表
+                $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -8078,81 +6438,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: 会议室名称
-                  example: 测试会议室
-                capacity:
-                  type: integer
-                  description: 会议室能容纳的人数
-                  example: '10'
-                description:
-                  type: string
-                  description: 会议室的相关描述
-                  example: 测试会议室描述
-                custom_room_id:
-                  type: string
-                  description: 自定义的会议室ID
-                  example: '1234'
-                room_level_id:
-                  type: string
-                  description: 层级ID
-                  example: omb_8d020b12fe49e82847c2af3c193d5754
-                room_status:
-                  type: object
-                  properties:
-                    status:
-                      type: boolean
-                      description: 是否启用会议室
-                      example: 'true'
-                    schedule_status:
-                      type: boolean
-                      description: 会议室未来状态为启用或禁用
-                      example: 'true'
-                    disable_start_time:
-                      type: string
-                      description: 禁用开始时间（unix时间，单位sec）
-                      example: '1652356050'
-                      format: int64
-                    disable_end_time:
-                      type: string
-                      description: 禁用结束时间（unix时间，单位sec，数值0表示永久禁用）
-                      example: '1652442450'
-                      format: int64
-                    disable_reason:
-                      type: string
-                      description: 禁用原因
-                      example: 测试占用
-                    contact_ids:
-                      type: array
-                      items:
-                        type: string
-                      description: 联系人列表，id类型由user_id_type参数决定
-                    disable_notice:
-                      type: boolean
-                      description: 是否在禁用时发送通知给预定了该会议室的员工
-                      example: 'true'
-                    resume_notice:
-                      type: boolean
-                      description: 是否在恢复启用时发送通知给预定了该会议室的员工
-                      example: 'true'
-                  required:
-                  - status
-                  description: 会议室状态
-                device:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      name:
-                        type: string
-                        description: 设施名称
-                        example: 电话
-                    required:
-                    - name
-                  description: 设施信息列表
+              $ref: '#/components/schemas/Schema3'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -8265,95 +6551,7 @@ paths:
                       items:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            room_id:
-                              type: string
-                              description: 会议室ID
-                              example: omm_4de32cf10a4358788ff4e09e37ebbf9b
-                            name:
-                              type: string
-                              description: 会议室名称
-                              example: 测试会议室
-                            capacity:
-                              type: integer
-                              description: 会议室能容纳的人数
-                              example: '10'
-                            description:
-                              type: string
-                              description: 会议室的相关描述
-                              example: 测试会议室描述
-                            display_id:
-                              type: string
-                              description: 会议室的展示ID
-                              example: LM134742334
-                            custom_room_id:
-                              type: string
-                              description: 自定义的会议室ID
-                              example: '1234'
-                            room_level_id:
-                              type: string
-                              description: 层级ID
-                              example: omb_8d020b12fe49e82847c2af3c193d5754
-                            path:
-                              type: array
-                              items:
-                                type: string
-                              description: 层级路径
-                              example: '[omb_8d020b12fe49e82847c2af3c193d5754,omb_8d020b12fe49e82847c2af3c193d5754]'
-                            room_status:
-                              type: object
-                              properties:
-                                status:
-                                  type: boolean
-                                  description: 是否启用会议室
-                                  example: 'true'
-                                schedule_status:
-                                  type: boolean
-                                  description: 会议室未来状态为启用或禁用
-                                  example: 'true'
-                                disable_start_time:
-                                  type: string
-                                  description: 禁用开始时间（unix时间，单位sec）
-                                  example: '1652356050'
-                                  format: int64
-                                disable_end_time:
-                                  type: string
-                                  description: 禁用结束时间（unix时间，单位sec，数值0表示永久禁用）
-                                  example: '1652442450'
-                                  format: int64
-                                disable_reason:
-                                  type: string
-                                  description: 禁用原因
-                                  example: 测试占用
-                                contact_ids:
-                                  type: array
-                                  items:
-                                    type: string
-                                  description: 联系人列表，id类型由user_id_type参数决定
-                                disable_notice:
-                                  type: boolean
-                                  description: 是否在禁用时发送通知给预定了该会议室的员工
-                                  example: 'true'
-                                resume_notice:
-                                  type: boolean
-                                  description: 是否在恢复启用时发送通知给预定了该会议室的员工
-                                  example: 'true'
-                              required:
-                              - status
-                              description: 会议室状态
-                            device:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  name:
-                                    type: string
-                                    description: 设施名称
-                                    example: 电话
-                                required:
-                                - name
-                              description: 设施信息列表
+                          $ref: '#/components/schemas/Room'
                         description: 会议室列表
       x-lark-access-tokens:
       - tenant
@@ -8449,116 +6647,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      rooms:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            room_id:
-                              type: string
-                              description: 会议室ID
-                              example: omm_4de32cf10a4358788ff4e09e37ebbf9b
-                            name:
-                              type: string
-                              description: 会议室名称
-                              example: 测试会议室
-                            capacity:
-                              type: integer
-                              description: 会议室能容纳的人数
-                              example: '10'
-                            description:
-                              type: string
-                              description: 会议室的相关描述
-                              example: 测试会议室描述
-                            display_id:
-                              type: string
-                              description: 会议室的展示ID
-                              example: LM134742334
-                            custom_room_id:
-                              type: string
-                              description: 自定义的会议室ID
-                              example: '1234'
-                            room_level_id:
-                              type: string
-                              description: 层级ID
-                              example: omb_8d020b12fe49e82847c2af3c193d5754
-                            path:
-                              type: array
-                              items:
-                                type: string
-                              description: 层级路径
-                              example: '[omb_8d020b12fe49e82847c2af3c193d5754,omb_8d020b12fe49e82847c2af3c193d5754]'
-                            room_status:
-                              type: object
-                              properties:
-                                status:
-                                  type: boolean
-                                  description: 是否启用会议室
-                                  example: 'true'
-                                schedule_status:
-                                  type: boolean
-                                  description: 会议室未来状态为启用或禁用
-                                  example: 'true'
-                                disable_start_time:
-                                  type: string
-                                  description: 禁用开始时间（unix时间，单位sec）
-                                  example: '1652356050'
-                                  format: int64
-                                disable_end_time:
-                                  type: string
-                                  description: 禁用结束时间（unix时间，单位sec，数值0表示永久禁用）
-                                  example: '1652442450'
-                                  format: int64
-                                disable_reason:
-                                  type: string
-                                  description: 禁用原因
-                                  example: 测试占用
-                                contact_ids:
-                                  type: array
-                                  items:
-                                    type: string
-                                  description: 联系人列表，id类型由user_id_type参数决定
-                                disable_notice:
-                                  type: boolean
-                                  description: 是否在禁用时发送通知给预定了该会议室的员工
-                                  example: 'true'
-                                resume_notice:
-                                  type: boolean
-                                  description: 是否在恢复启用时发送通知给预定了该会议室的员工
-                                  example: 'true'
-                              required:
-                              - status
-                              description: 会议室状态
-                            device:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  name:
-                                    type: string
-                                    description: 设施名称
-                                    example: 电话
-                                required:
-                                - name
-                              description: 设施信息列表
-                        description: 会议室列表
-                      page_token:
-                        type: string
-                        description: 下一页分页的token，下次请求时传入
-                        example: '50'
-                      has_more:
-                        type: boolean
-                        description: 是否还有数据
-                        example: 'true'
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -8685,205 +6774,7 @@ paths:
                   msg:
                     type: string
                   data:
-                    type: object
-                    properties:
-                      room_background:
-                        type: string
-                        description: 飞书会议室背景图
-                        example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                      display_background:
-                        type: string
-                        description: 飞书签到板背景图
-                        example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                      digital_signage:
-                        type: object
-                        properties:
-                          if_cover_child_scope:
-                            type: boolean
-                            description: 是否覆盖子层级及会议室
-                            example: 'true'
-                          enable:
-                            type: boolean
-                            description: 是否开启数字标牌功能
-                            example: 'true'
-                          mute:
-                            type: boolean
-                            description: 是否静音播放
-                            example: 'true'
-                          start_display:
-                            type: integer
-                            description: 日程会议开始前n分钟结束播放
-                            example: '3'
-                          stop_display:
-                            type: integer
-                            description: 会议结束后n分钟开始播放
-                            example: '3'
-                          materials:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: 素材ID
-                                  example: '7847784676276'
-                                name:
-                                  type: string
-                                  description: 素材名称
-                                  example: 测试.jpeg
-                                material_type:
-                                  type: integer
-                                  description: 素材类型
-                                  enum:
-                                  - 1
-                                  - 2
-                                  - 3
-                                  x-enum-descriptions:
-                                    '1': 图片
-                                    '2': 视频
-                                    '3': GIF
-                                  example: '1'
-                                url:
-                                  type: string
-                                  description: 素材url
-                                  example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                                duration:
-                                  type: integer
-                                  description: 播放时长（单位sec）
-                                  example: '15'
-                                cover:
-                                  type: string
-                                  description: 素材封面url
-                                  example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                                md5:
-                                  type: string
-                                  description: 素材文件md5
-                                  example: ed076287532e86365e841e92bfc50d8c
-                                vid:
-                                  type: string
-                                  description: 素材文件vid
-                                  example: vid
-                                size:
-                                  type: string
-                                  description: 素材文件大小（单位byte）
-                                  example: '100'
-                            description: 素材列表
-                        description: 飞书会议室数字标牌
-                      room_box_digital_signage:
-                        type: object
-                        properties:
-                          if_cover_child_scope:
-                            type: boolean
-                            description: 是否覆盖子层级及会议室
-                            example: 'true'
-                          enable:
-                            type: boolean
-                            description: 是否开启数字标牌功能
-                            example: 'true'
-                          mute:
-                            type: boolean
-                            description: 是否静音播放
-                            example: 'true'
-                          start_display:
-                            type: integer
-                            description: 日程会议开始前n分钟结束播放
-                            example: '3'
-                          stop_display:
-                            type: integer
-                            description: 会议结束后n分钟开始播放
-                            example: '3'
-                          materials:
-                            type: array
-                            items:
-                              type: object
-                              properties:
-                                id:
-                                  type: string
-                                  description: 素材ID
-                                  example: '7847784676276'
-                                name:
-                                  type: string
-                                  description: 素材名称
-                                  example: 测试.jpeg
-                                material_type:
-                                  type: integer
-                                  description: 素材类型
-                                  enum:
-                                  - 1
-                                  - 2
-                                  - 3
-                                  x-enum-descriptions:
-                                    '1': 图片
-                                    '2': 视频
-                                    '3': GIF
-                                  example: '1'
-                                url:
-                                  type: string
-                                  description: 素材url
-                                  example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                                duration:
-                                  type: integer
-                                  description: 播放时长（单位sec）
-                                  example: '15'
-                                cover:
-                                  type: string
-                                  description: 素材封面url
-                                  example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                                md5:
-                                  type: string
-                                  description: 素材文件md5
-                                  example: ed076287532e86365e841e92bfc50d8c
-                                vid:
-                                  type: string
-                                  description: 素材文件vid
-                                  example: v039b2g10000ca89uj3c77u5pfdkfvpg
-                                size:
-                                  type: string
-                                  description: 素材文件大小
-                                  example: '100'
-                            description: 素材列表
-                        description: 飞书投屏盒子数字标牌
-                      room_status:
-                        type: object
-                        properties:
-                          status:
-                            type: boolean
-                            description: 是否启用会议室
-                            example: 'true'
-                          schedule_status:
-                            type: boolean
-                            description: 会议室未来状态为启用或禁用
-                            example: 'true'
-                          disable_start_time:
-                            type: string
-                            description: 禁用开始时间（unix时间，单位sec）
-                            example: '1652356050'
-                            format: int64
-                          disable_end_time:
-                            type: string
-                            description: 禁用结束时间（unix时间，单位sec，数值0表示永久禁用）
-                            example: '1652442450'
-                            format: int64
-                          disable_reason:
-                            type: string
-                            description: 禁用原因
-                            example: 测试占用
-                          contact_ids:
-                            type: array
-                            items:
-                              type: string
-                            description: 联系人列表，id类型由user_id_type参数决定
-                          disable_notice:
-                            type: boolean
-                            description: 是否在禁用时发送通知给预定了该会议室的员工
-                            example: 'true'
-                          resume_notice:
-                            type: boolean
-                            description: 是否在恢复启用时发送通知给预定了该会议室的员工
-                            example: 'true'
-                        required:
-                        - status
-                        description: 会议室状态
+                    $ref: '#/components/schemas/ScopeConfig'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -8990,152 +6881,12 @@ paths:
                       description: 飞书签到板背景图
                       example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
                     digital_signage:
-                      type: object
-                      properties:
-                        if_cover_child_scope:
-                          type: boolean
-                          description: 是否覆盖子层级及会议室
-                          example: 'true'
-                        enable:
-                          type: boolean
-                          description: 是否开启数字标牌功能
-                          example: 'true'
-                        mute:
-                          type: boolean
-                          description: 是否静音播放
-                          example: 'true'
-                        start_display:
-                          type: integer
-                          description: 日程会议开始前n分钟结束播放
-                          example: '3'
-                        stop_display:
-                          type: integer
-                          description: 会议结束后n分钟开始播放
-                          example: '3'
-                        materials:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: 素材ID
-                                example: '7847784676276'
-                              name:
-                                type: string
-                                description: 素材名称
-                                example: 测试.jpeg
-                              material_type:
-                                type: integer
-                                description: 素材类型
-                                enum:
-                                - 1
-                                - 2
-                                - 3
-                                x-enum-descriptions:
-                                  '1': 图片
-                                  '2': 视频
-                                  '3': GIF
-                                example: '1'
-                              url:
-                                type: string
-                                description: 素材url
-                                example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                              duration:
-                                type: integer
-                                description: 播放时长（单位sec）
-                                example: '15'
-                              cover:
-                                type: string
-                                description: 素材封面url
-                                example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                              md5:
-                                type: string
-                                description: 素材文件md5
-                                example: ed076287532e86365e841e92bfc50d8c
-                              vid:
-                                type: string
-                                description: 素材文件vid
-                                example: vid
-                              size:
-                                type: string
-                                description: 素材文件大小（单位byte）
-                                example: '100'
-                          description: 素材列表
+                      allOf:
+                      - $ref: '#/components/schemas/DigitalSignage'
                       description: 飞书会议室数字标牌
                     room_box_digital_signage:
-                      type: object
-                      properties:
-                        if_cover_child_scope:
-                          type: boolean
-                          description: 是否覆盖子层级及会议室
-                          example: 'true'
-                        enable:
-                          type: boolean
-                          description: 是否开启数字标牌功能
-                          example: 'true'
-                        mute:
-                          type: boolean
-                          description: 是否静音播放
-                          example: 'true'
-                        start_display:
-                          type: integer
-                          description: 日程会议开始前n分钟结束播放
-                          example: '3'
-                        stop_display:
-                          type: integer
-                          description: 会议结束后n分钟开始播放
-                          example: '3'
-                        materials:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: 素材ID
-                                example: '7847784676276'
-                              name:
-                                type: string
-                                description: 素材名称
-                                example: 测试.jpeg
-                              material_type:
-                                type: integer
-                                description: 素材类型
-                                enum:
-                                - 1
-                                - 2
-                                - 3
-                                x-enum-descriptions:
-                                  '1': 图片
-                                  '2': 视频
-                                  '3': GIF
-                                example: '1'
-                              url:
-                                type: string
-                                description: 素材url
-                                example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                              duration:
-                                type: integer
-                                description: 播放时长（单位sec）
-                                example: '15'
-                              cover:
-                                type: string
-                                description: 素材封面url
-                                example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                              md5:
-                                type: string
-                                description: 素材文件md5
-                                example: ed076287532e86365e841e92bfc50d8c
-                              vid:
-                                type: string
-                                description: 素材文件vid
-                                example: v039b2g10000ca89uj3c77u5pfdkfvpg
-                              size:
-                                type: string
-                                description: 素材文件大小
-                                example: '100'
-                          description: 素材列表
+                      allOf:
+                      - $ref: '#/components/schemas/DigitalSignage'
                       description: 飞书投屏盒子数字标牌
                     room_status:
                       type: object
@@ -9233,58 +6984,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                scope:
-                  type: integer
-                  description: 设置节点范围
-                  enum:
-                  - 1
-                  - 2
-                  - 3
-                  - 4
-                  - 5
-                  - 6
-                  x-enum-descriptions:
-                    '1': 租户
-                    '2': 国家/地区
-                    '3': 城市
-                    '4': 建筑
-                    '5': 楼层
-                    '6': 会议室
-                  example: '5'
-                country_id:
-                  type: string
-                  description: 国家/地区ID scope为2，3时需要此参数
-                  example: '1'
-                district_id:
-                  type: string
-                  description: 城市ID scope为3时需要此参数
-                  example: '2'
-                building_id:
-                  type: string
-                  description: 建筑ID scope为4，5时需要此参数
-                  example: '3'
-                floor_name:
-                  type: string
-                  description: 楼层 scope为5时需要此参数
-                  example: '4'
-                room_id:
-                  type: string
-                  description: 会议室ID scope为6时需要此参数
-                  example: '67687262867363'
-                valid_day:
-                  type: integer
-                  description: 有效天数
-                  enum:
-                  - 1
-                  - 7
-                  - 30
-                  x-enum-descriptions:
-                    '1': 1天
-                    '7': 7天
-                    '30': 30天
-                  example: '1'
+              $ref: '#/components/schemas/Schema4'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -9337,58 +7037,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                scope:
-                  type: integer
-                  description: 设置节点范围
-                  enum:
-                  - 1
-                  - 2
-                  - 3
-                  - 4
-                  - 5
-                  - 6
-                  x-enum-descriptions:
-                    '1': 租户
-                    '2': 国家/地区
-                    '3': 城市
-                    '4': 建筑
-                    '5': 楼层
-                    '6': 会议室
-                  example: '5'
-                country_id:
-                  type: string
-                  description: 国家/地区ID scope为2，3时需要此参数
-                  example: '1'
-                district_id:
-                  type: string
-                  description: 城市ID scope为3时需要此参数
-                  example: '2'
-                building_id:
-                  type: string
-                  description: 建筑ID scope为4，5时需要此参数
-                  example: '3'
-                floor_name:
-                  type: string
-                  description: 楼层 scope为5时需要此参数
-                  example: '4'
-                room_id:
-                  type: string
-                  description: 会议室ID scope为6时需要此参数
-                  example: '67687262867363'
-                valid_day:
-                  type: integer
-                  description: 有效天数
-                  enum:
-                  - 1
-                  - 7
-                  - 30
-                  x-enum-descriptions:
-                    '1': 1天
-                    '7': 7天
-                    '30': 30天
-                  example: '1'
+              $ref: '#/components/schemas/Schema4'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -9462,44 +7111,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      room_level:
-                        type: object
-                        properties:
-                          room_level_id:
-                            type: string
-                            description: 层级ID
-                            example: omb_8d020b12fe49e82847c2af3c193d5754
-                          name:
-                            type: string
-                            description: 层级名称
-                            example: 多层级测试online
-                          parent_id:
-                            type: string
-                            description: 父层级ID
-                            example: omb_8d020b12fe49e82847c2af3c193d5754
-                          path:
-                            type: array
-                            items:
-                              type: string
-                            description: 层级路径
-                            example: '[omb_8d020b12fe49e82847c2af3c193d5754, omb_8d020b12fe49e82847c2af3c193d5754]'
-                          has_child:
-                            type: boolean
-                            description: 是否有子层级
-                            example: 'false'
-                          custom_group_id:
-                            type: string
-                            description: 自定义层级id
-                            example: zidingyi
+                $ref: '#/components/schemas/Schema5'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -9725,44 +7337,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      room_level:
-                        type: object
-                        properties:
-                          room_level_id:
-                            type: string
-                            description: 层级ID
-                            example: omb_8d020b12fe49e82847c2af3c193d5754
-                          name:
-                            type: string
-                            description: 层级名称
-                            example: 多层级测试online
-                          parent_id:
-                            type: string
-                            description: 父层级ID
-                            example: omb_8d020b12fe49e82847c2af3c193d5754
-                          path:
-                            type: array
-                            items:
-                              type: string
-                            description: 层级路径
-                            example: '[omb_8d020b12fe49e82847c2af3c193d5754, omb_8d020b12fe49e82847c2af3c193d5754]'
-                          has_child:
-                            type: boolean
-                            description: 是否有子层级
-                            example: 'false'
-                          custom_group_id:
-                            type: string
-                            description: 自定义层级id
-                            example: zidingyi
+                $ref: '#/components/schemas/Schema5'
       x-lark-access-tokens:
       - tenant
       x-lark-scopes:
@@ -10075,205 +7650,8 @@ paths:
                   description: 查询节点ID：如果scope_type为1，则为层级ID，如果scope_type为2，则为会议室ID
                   example: omm_608d34d82d531b27fa993902d350a307
                 scope_config:
-                  type: object
-                  properties:
-                    room_background:
-                      type: string
-                      description: 飞书会议室背景图
-                      example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                    display_background:
-                      type: string
-                      description: 飞书签到板背景图
-                      example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                    digital_signage:
-                      type: object
-                      properties:
-                        if_cover_child_scope:
-                          type: boolean
-                          description: 是否覆盖子层级及会议室
-                          example: 'true'
-                        enable:
-                          type: boolean
-                          description: 是否开启数字标牌功能
-                          example: 'true'
-                        mute:
-                          type: boolean
-                          description: 是否静音播放
-                          example: 'true'
-                        start_display:
-                          type: integer
-                          description: 日程会议开始前n分钟结束播放
-                          example: '3'
-                        stop_display:
-                          type: integer
-                          description: 会议结束后n分钟开始播放
-                          example: '3'
-                        materials:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: 素材ID
-                                example: '7847784676276'
-                              name:
-                                type: string
-                                description: 素材名称
-                                example: 测试.jpeg
-                              material_type:
-                                type: integer
-                                description: 素材类型
-                                enum:
-                                - 1
-                                - 2
-                                - 3
-                                x-enum-descriptions:
-                                  '1': 图片
-                                  '2': 视频
-                                  '3': GIF
-                                example: '1'
-                              url:
-                                type: string
-                                description: 素材url
-                                example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                              duration:
-                                type: integer
-                                description: 播放时长（单位sec）
-                                example: '15'
-                              cover:
-                                type: string
-                                description: 素材封面url
-                                example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                              md5:
-                                type: string
-                                description: 素材文件md5
-                                example: ed076287532e86365e841e92bfc50d8c
-                              vid:
-                                type: string
-                                description: 素材文件vid
-                                example: vid
-                              size:
-                                type: string
-                                description: 素材文件大小（单位byte）
-                                example: '100'
-                          description: 素材列表
-                      description: 飞书会议室数字标牌
-                    room_box_digital_signage:
-                      type: object
-                      properties:
-                        if_cover_child_scope:
-                          type: boolean
-                          description: 是否覆盖子层级及会议室
-                          example: 'true'
-                        enable:
-                          type: boolean
-                          description: 是否开启数字标牌功能
-                          example: 'true'
-                        mute:
-                          type: boolean
-                          description: 是否静音播放
-                          example: 'true'
-                        start_display:
-                          type: integer
-                          description: 日程会议开始前n分钟结束播放
-                          example: '3'
-                        stop_display:
-                          type: integer
-                          description: 会议结束后n分钟开始播放
-                          example: '3'
-                        materials:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: string
-                                description: 素材ID
-                                example: '7847784676276'
-                              name:
-                                type: string
-                                description: 素材名称
-                                example: 测试.jpeg
-                              material_type:
-                                type: integer
-                                description: 素材类型
-                                enum:
-                                - 1
-                                - 2
-                                - 3
-                                x-enum-descriptions:
-                                  '1': 图片
-                                  '2': 视频
-                                  '3': GIF
-                                example: '1'
-                              url:
-                                type: string
-                                description: 素材url
-                                example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                              duration:
-                                type: integer
-                                description: 播放时长（单位sec）
-                                example: '15'
-                              cover:
-                                type: string
-                                description: 素材封面url
-                                example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                              md5:
-                                type: string
-                                description: 素材文件md5
-                                example: ed076287532e86365e841e92bfc50d8c
-                              vid:
-                                type: string
-                                description: 素材文件vid
-                                example: v039b2g10000ca89uj3c77u5pfdkfvpg
-                              size:
-                                type: string
-                                description: 素材文件大小
-                                example: '100'
-                          description: 素材列表
-                      description: 飞书投屏盒子数字标牌
-                    room_status:
-                      type: object
-                      properties:
-                        status:
-                          type: boolean
-                          description: 是否启用会议室
-                          example: 'true'
-                        schedule_status:
-                          type: boolean
-                          description: 会议室未来状态为启用或禁用
-                          example: 'true'
-                        disable_start_time:
-                          type: string
-                          description: 禁用开始时间（unix时间，单位sec）
-                          example: '1652356050'
-                          format: int64
-                        disable_end_time:
-                          type: string
-                          description: 禁用结束时间（unix时间，单位sec，数值0表示永久禁用）
-                          example: '1652442450'
-                          format: int64
-                        disable_reason:
-                          type: string
-                          description: 禁用原因
-                          example: 测试占用
-                        contact_ids:
-                          type: array
-                          items:
-                            type: string
-                          description: 联系人列表，id类型由user_id_type参数决定
-                        disable_notice:
-                          type: boolean
-                          description: 是否在禁用时发送通知给预定了该会议室的员工
-                          example: 'true'
-                        resume_notice:
-                          type: boolean
-                          description: 是否在恢复启用时发送通知给预定了该会议室的员工
-                          example: 'true'
-                      required:
-                      - status
-                      description: 会议室状态
+                  allOf:
+                  - $ref: '#/components/schemas/ScopeConfig'
                   description: 节点配置
       responses:
         '200':
@@ -10388,450 +7766,13 @@ paths:
                     type: object
                     properties:
                       current_config:
-                        type: object
-                        properties:
-                          scope_type:
-                            type: integer
-                            description: 查询节点范围
-                            enum:
-                            - 1
-                            - 2
-                            x-enum-descriptions:
-                              '1': 会议室层级
-                              '2': 会议室
-                            example: '1'
-                          scope_id:
-                            type: string
-                            description: 查询节点ID：如果scope_type为1，则为层级ID，如果scope_type为2，则为会议室ID
-                            example: omm_608d34d82d531b27fa993902d350a307
-                          scope_config:
-                            type: object
-                            properties:
-                              room_background:
-                                type: string
-                                description: 飞书会议室背景图
-                                example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                              display_background:
-                                type: string
-                                description: 飞书签到板背景图
-                                example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                              digital_signage:
-                                type: object
-                                properties:
-                                  if_cover_child_scope:
-                                    type: boolean
-                                    description: 是否覆盖子层级及会议室
-                                    example: 'true'
-                                  enable:
-                                    type: boolean
-                                    description: 是否开启数字标牌功能
-                                    example: 'true'
-                                  mute:
-                                    type: boolean
-                                    description: 是否静音播放
-                                    example: 'true'
-                                  start_display:
-                                    type: integer
-                                    description: 日程会议开始前n分钟结束播放
-                                    example: '3'
-                                  stop_display:
-                                    type: integer
-                                    description: 会议结束后n分钟开始播放
-                                    example: '3'
-                                  materials:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: 素材ID
-                                          example: '7847784676276'
-                                        name:
-                                          type: string
-                                          description: 素材名称
-                                          example: 测试.jpeg
-                                        material_type:
-                                          type: integer
-                                          description: 素材类型
-                                          enum:
-                                          - 1
-                                          - 2
-                                          - 3
-                                          x-enum-descriptions:
-                                            '1': 图片
-                                            '2': 视频
-                                            '3': GIF
-                                          example: '1'
-                                        url:
-                                          type: string
-                                          description: 素材url
-                                          example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                                        duration:
-                                          type: integer
-                                          description: 播放时长（单位sec）
-                                          example: '15'
-                                        cover:
-                                          type: string
-                                          description: 素材封面url
-                                          example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                                        md5:
-                                          type: string
-                                          description: 素材文件md5
-                                          example: ed076287532e86365e841e92bfc50d8c
-                                        vid:
-                                          type: string
-                                          description: 素材文件vid
-                                          example: vid
-                                        size:
-                                          type: string
-                                          description: 素材文件大小（单位byte）
-                                          example: '100'
-                                    description: 素材列表
-                                description: 飞书会议室数字标牌
-                              room_box_digital_signage:
-                                type: object
-                                properties:
-                                  if_cover_child_scope:
-                                    type: boolean
-                                    description: 是否覆盖子层级及会议室
-                                    example: 'true'
-                                  enable:
-                                    type: boolean
-                                    description: 是否开启数字标牌功能
-                                    example: 'true'
-                                  mute:
-                                    type: boolean
-                                    description: 是否静音播放
-                                    example: 'true'
-                                  start_display:
-                                    type: integer
-                                    description: 日程会议开始前n分钟结束播放
-                                    example: '3'
-                                  stop_display:
-                                    type: integer
-                                    description: 会议结束后n分钟开始播放
-                                    example: '3'
-                                  materials:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        id:
-                                          type: string
-                                          description: 素材ID
-                                          example: '7847784676276'
-                                        name:
-                                          type: string
-                                          description: 素材名称
-                                          example: 测试.jpeg
-                                        material_type:
-                                          type: integer
-                                          description: 素材类型
-                                          enum:
-                                          - 1
-                                          - 2
-                                          - 3
-                                          x-enum-descriptions:
-                                            '1': 图片
-                                            '2': 视频
-                                            '3': GIF
-                                          example: '1'
-                                        url:
-                                          type: string
-                                          description: 素材url
-                                          example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                                        duration:
-                                          type: integer
-                                          description: 播放时长（单位sec）
-                                          example: '15'
-                                        cover:
-                                          type: string
-                                          description: 素材封面url
-                                          example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                                        md5:
-                                          type: string
-                                          description: 素材文件md5
-                                          example: ed076287532e86365e841e92bfc50d8c
-                                        vid:
-                                          type: string
-                                          description: 素材文件vid
-                                          example: v039b2g10000ca89uj3c77u5pfdkfvpg
-                                        size:
-                                          type: string
-                                          description: 素材文件大小
-                                          example: '100'
-                                    description: 素材列表
-                                description: 飞书投屏盒子数字标牌
-                              room_status:
-                                type: object
-                                properties:
-                                  status:
-                                    type: boolean
-                                    description: 是否启用会议室
-                                    example: 'true'
-                                  schedule_status:
-                                    type: boolean
-                                    description: 会议室未来状态为启用或禁用
-                                    example: 'true'
-                                  disable_start_time:
-                                    type: string
-                                    description: 禁用开始时间（unix时间，单位sec）
-                                    example: '1652356050'
-                                    format: int64
-                                  disable_end_time:
-                                    type: string
-                                    description: 禁用结束时间（unix时间，单位sec，数值0表示永久禁用）
-                                    example: '1652442450'
-                                    format: int64
-                                  disable_reason:
-                                    type: string
-                                    description: 禁用原因
-                                    example: 测试占用
-                                  contact_ids:
-                                    type: array
-                                    items:
-                                      type: string
-                                    description: 联系人列表，id类型由user_id_type参数决定
-                                  disable_notice:
-                                    type: boolean
-                                    description: 是否在禁用时发送通知给预定了该会议室的员工
-                                    example: 'true'
-                                  resume_notice:
-                                    type: boolean
-                                    description: 是否在恢复启用时发送通知给预定了该会议室的员工
-                                    example: 'true'
-                                required:
-                                - status
-                                description: 会议室状态
-                            description: 节点配置
-                        required:
-                        - scope_type
-                        - scope_id
+                        allOf:
+                        - $ref: '#/components/schemas/CurrentConfig'
                         description: 当前节点的配置，根据层级顺序从底向上进行合并计算后的结果；如果当前节点某个值已配置，则取该节点的值，否则会从该节点的父层级节点获取，如果父节点依然未配置，则继续向上递归获取；若所有节点均未配置，则该值返回为空
                       origin_configs:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            scope_type:
-                              type: integer
-                              description: 查询节点范围
-                              enum:
-                              - 1
-                              - 2
-                              x-enum-descriptions:
-                                '1': 会议室层级
-                                '2': 会议室
-                              example: '1'
-                            scope_id:
-                              type: string
-                              description: 查询节点ID：如果scope_type为1，则为层级ID，如果scope_type为2，则为会议室ID
-                              example: omm_608d34d82d531b27fa993902d350a307
-                            scope_config:
-                              type: object
-                              properties:
-                                room_background:
-                                  type: string
-                                  description: 飞书会议室背景图
-                                  example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                                display_background:
-                                  type: string
-                                  description: 飞书签到板背景图
-                                  example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                                digital_signage:
-                                  type: object
-                                  properties:
-                                    if_cover_child_scope:
-                                      type: boolean
-                                      description: 是否覆盖子层级及会议室
-                                      example: 'true'
-                                    enable:
-                                      type: boolean
-                                      description: 是否开启数字标牌功能
-                                      example: 'true'
-                                    mute:
-                                      type: boolean
-                                      description: 是否静音播放
-                                      example: 'true'
-                                    start_display:
-                                      type: integer
-                                      description: 日程会议开始前n分钟结束播放
-                                      example: '3'
-                                    stop_display:
-                                      type: integer
-                                      description: 会议结束后n分钟开始播放
-                                      example: '3'
-                                    materials:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          id:
-                                            type: string
-                                            description: 素材ID
-                                            example: '7847784676276'
-                                          name:
-                                            type: string
-                                            description: 素材名称
-                                            example: 测试.jpeg
-                                          material_type:
-                                            type: integer
-                                            description: 素材类型
-                                            enum:
-                                            - 1
-                                            - 2
-                                            - 3
-                                            x-enum-descriptions:
-                                              '1': 图片
-                                              '2': 视频
-                                              '3': GIF
-                                            example: '1'
-                                          url:
-                                            type: string
-                                            description: 素材url
-                                            example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                                          duration:
-                                            type: integer
-                                            description: 播放时长（单位sec）
-                                            example: '15'
-                                          cover:
-                                            type: string
-                                            description: 素材封面url
-                                            example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                                          md5:
-                                            type: string
-                                            description: 素材文件md5
-                                            example: ed076287532e86365e841e92bfc50d8c
-                                          vid:
-                                            type: string
-                                            description: 素材文件vid
-                                            example: vid
-                                          size:
-                                            type: string
-                                            description: 素材文件大小（单位byte）
-                                            example: '100'
-                                      description: 素材列表
-                                  description: 飞书会议室数字标牌
-                                room_box_digital_signage:
-                                  type: object
-                                  properties:
-                                    if_cover_child_scope:
-                                      type: boolean
-                                      description: 是否覆盖子层级及会议室
-                                      example: 'true'
-                                    enable:
-                                      type: boolean
-                                      description: 是否开启数字标牌功能
-                                      example: 'true'
-                                    mute:
-                                      type: boolean
-                                      description: 是否静音播放
-                                      example: 'true'
-                                    start_display:
-                                      type: integer
-                                      description: 日程会议开始前n分钟结束播放
-                                      example: '3'
-                                    stop_display:
-                                      type: integer
-                                      description: 会议结束后n分钟开始播放
-                                      example: '3'
-                                    materials:
-                                      type: array
-                                      items:
-                                        type: object
-                                        properties:
-                                          id:
-                                            type: string
-                                            description: 素材ID
-                                            example: '7847784676276'
-                                          name:
-                                            type: string
-                                            description: 素材名称
-                                            example: 测试.jpeg
-                                          material_type:
-                                            type: integer
-                                            description: 素材类型
-                                            enum:
-                                            - 1
-                                            - 2
-                                            - 3
-                                            x-enum-descriptions:
-                                              '1': 图片
-                                              '2': 视频
-                                              '3': GIF
-                                            example: '1'
-                                          url:
-                                            type: string
-                                            description: 素材url
-                                            example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                                          duration:
-                                            type: integer
-                                            description: 播放时长（单位sec）
-                                            example: '15'
-                                          cover:
-                                            type: string
-                                            description: 素材封面url
-                                            example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
-                                          md5:
-                                            type: string
-                                            description: 素材文件md5
-                                            example: ed076287532e86365e841e92bfc50d8c
-                                          vid:
-                                            type: string
-                                            description: 素材文件vid
-                                            example: v039b2g10000ca89uj3c77u5pfdkfvpg
-                                          size:
-                                            type: string
-                                            description: 素材文件大小
-                                            example: '100'
-                                      description: 素材列表
-                                  description: 飞书投屏盒子数字标牌
-                                room_status:
-                                  type: object
-                                  properties:
-                                    status:
-                                      type: boolean
-                                      description: 是否启用会议室
-                                      example: 'true'
-                                    schedule_status:
-                                      type: boolean
-                                      description: 会议室未来状态为启用或禁用
-                                      example: 'true'
-                                    disable_start_time:
-                                      type: string
-                                      description: 禁用开始时间（unix时间，单位sec）
-                                      example: '1652356050'
-                                      format: int64
-                                    disable_end_time:
-                                      type: string
-                                      description: 禁用结束时间（unix时间，单位sec，数值0表示永久禁用）
-                                      example: '1652442450'
-                                      format: int64
-                                    disable_reason:
-                                      type: string
-                                      description: 禁用原因
-                                      example: 测试占用
-                                    contact_ids:
-                                      type: array
-                                      items:
-                                        type: string
-                                      description: 联系人列表，id类型由user_id_type参数决定
-                                    disable_notice:
-                                      type: boolean
-                                      description: 是否在禁用时发送通知给预定了该会议室的员工
-                                      example: 'true'
-                                    resume_notice:
-                                      type: boolean
-                                      description: 是否在恢复启用时发送通知给预定了该会议室的员工
-                                      example: 'true'
-                                  required:
-                                  - status
-                                  description: 会议室状态
-                              description: 节点配置
-                          required:
-                          - scope_type
-                          - scope_id
+                          $ref: '#/components/schemas/CurrentConfig'
                         description: 所有节点的原始配置，按照层级顺序从底向上返回；如果某节点某个值未配置，则该值返回为空
       x-lark-access-tokens:
       - tenant
@@ -10862,3 +7803,1024 @@ paths:
         msg: ''
       x-lark-rate-limit:
         tier: 4
+components:
+  schemas:
+    ScopeConfig:
+      type: object
+      properties:
+        room_background:
+          type: string
+          description: 飞书会议室背景图
+          example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
+        display_background:
+          type: string
+          description: 飞书签到板背景图
+          example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
+        digital_signage:
+          allOf:
+          - $ref: '#/components/schemas/DigitalSignage'
+          description: 飞书会议室数字标牌
+        room_box_digital_signage:
+          allOf:
+          - $ref: '#/components/schemas/DigitalSignage'
+          description: 飞书投屏盒子数字标牌
+        room_status:
+          allOf:
+          - $ref: '#/components/schemas/RoomStatu'
+          description: 会议室状态
+    DigitalSignage:
+      type: object
+      properties:
+        if_cover_child_scope:
+          type: boolean
+          description: 是否覆盖子层级及会议室
+          example: 'true'
+        enable:
+          type: boolean
+          description: 是否开启数字标牌功能
+          example: 'true'
+        mute:
+          type: boolean
+          description: 是否静音播放
+          example: 'true'
+        start_display:
+          type: integer
+          description: 日程会议开始前n分钟结束播放
+          example: '3'
+        stop_display:
+          type: integer
+          description: 会议结束后n分钟开始播放
+          example: '3'
+        materials:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+          description: 素材列表
+      description: 飞书会议室数字标牌
+    Item:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 素材ID
+          example: '7847784676276'
+        name:
+          type: string
+          description: 素材名称
+          example: 测试.jpeg
+        material_type:
+          type: integer
+          description: 素材类型
+          enum:
+          - 1
+          - 2
+          - 3
+          x-enum-descriptions:
+            '1': 图片
+            '2': 视频
+            '3': GIF
+          example: '1'
+        url:
+          type: string
+          description: 素材url
+          example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
+        duration:
+          type: integer
+          description: 播放时长（单位sec）
+          example: '15'
+        cover:
+          type: string
+          description: 素材封面url
+          example: https://lf1-ttcdn-tos.pstatp.com/obj/xxx
+        md5:
+          type: string
+          description: 素材文件md5
+          example: ed076287532e86365e841e92bfc50d8c
+        vid:
+          type: string
+          description: 素材文件vid
+          example: vid
+        size:
+          type: string
+          description: 素材文件大小（单位byte）
+          example: '100'
+    RoomStatu:
+      type: object
+      properties:
+        status:
+          type: boolean
+          description: 是否启用会议室
+          example: 'true'
+        schedule_status:
+          type: boolean
+          description: 会议室未来状态为启用或禁用
+          example: 'true'
+        disable_start_time:
+          type: string
+          description: 禁用开始时间（unix时间，单位sec）
+          example: '1652356050'
+          format: int64
+        disable_end_time:
+          type: string
+          description: 禁用结束时间（unix时间，单位sec，数值0表示永久禁用）
+          example: '1652442450'
+          format: int64
+        disable_reason:
+          type: string
+          description: 禁用原因
+          example: 测试占用
+        contact_ids:
+          type: array
+          items:
+            type: string
+          description: 联系人列表，id类型由user_id_type参数决定
+        disable_notice:
+          type: boolean
+          description: 是否在禁用时发送通知给预定了该会议室的员工
+          example: 'true'
+        resume_notice:
+          type: boolean
+          description: 是否在恢复启用时发送通知给预定了该会议室的员工
+          example: 'true'
+      required:
+      - status
+      description: 会议室状态
+    Room:
+      type: object
+      properties:
+        room_id:
+          type: string
+          description: 会议室ID
+          example: omm_4de32cf10a4358788ff4e09e37ebbf9b
+        name:
+          type: string
+          description: 会议室名称
+          example: 测试会议室
+        capacity:
+          type: integer
+          description: 会议室能容纳的人数
+          example: '10'
+        description:
+          type: string
+          description: 会议室的相关描述
+          example: 测试会议室描述
+        display_id:
+          type: string
+          description: 会议室的展示ID
+          example: LM134742334
+        custom_room_id:
+          type: string
+          description: 自定义的会议室ID
+          example: '1234'
+        room_level_id:
+          type: string
+          description: 层级ID
+          example: omb_8d020b12fe49e82847c2af3c193d5754
+        path:
+          type: array
+          items:
+            type: string
+          description: 层级路径
+          example: '[omb_8d020b12fe49e82847c2af3c193d5754,omb_8d020b12fe49e82847c2af3c193d5754]'
+        room_status:
+          allOf:
+          - $ref: '#/components/schemas/RoomStatu'
+          description: 会议室状态
+        device:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: 设施名称
+                example: 电话
+            required:
+            - name
+          description: 设施信息列表
+    CurrentConfig:
+      type: object
+      properties:
+        scope_type:
+          type: integer
+          description: 查询节点范围
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 会议室层级
+            '2': 会议室
+          example: '1'
+        scope_id:
+          type: string
+          description: 查询节点ID：如果scope_type为1，则为层级ID，如果scope_type为2，则为会议室ID
+          example: omm_608d34d82d531b27fa993902d350a307
+        scope_config:
+          allOf:
+          - $ref: '#/components/schemas/ScopeConfig'
+          description: 节点配置
+      required:
+      - scope_type
+      - scope_id
+      description: 当前节点的配置，根据层级顺序从底向上进行合并计算后的结果；如果当前节点某个值已配置，则取该节点的值，否则会从该节点的父层级节点获取，如果父节点依然未配置，则继续向上递归获取；若所有节点均未配置，则该值返回为空
+    Meeting:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 会议ID
+          example: '6911188411934433028'
+          format: int64
+        topic:
+          type: string
+          description: 会议主题
+          example: my meeting
+        url:
+          type: string
+          description: 会议链接
+          example: https://vc.feishu.cn/j/337736498
+        meeting_no:
+          type: string
+          description: 会议号
+          example: '123456789'
+        password:
+          type: string
+          description: 会议密码
+          example: '971024'
+        create_time:
+          type: string
+          description: 会议创建时间（unix时间，单位sec）
+          example: '1608885566'
+          format: int64
+        start_time:
+          type: string
+          description: 会议开始时间（unix时间，单位sec）
+          example: '1608883322'
+          format: int64
+        end_time:
+          type: string
+          description: 会议结束时间（unix时间，单位sec）
+          example: '1608888867'
+          format: int64
+        host_user:
+          type: object
+          properties:
+            id:
+              type: string
+              description: 用户ID
+              example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
+            user_type:
+              type: integer
+              description: 用户类型
+              enum:
+              - 1
+              - 2
+              - 3
+              - 4
+              - 5
+              - 6
+              - 7
+              x-enum-descriptions:
+                '1': lark用户
+                '2': rooms用户
+                '3': 文档用户
+                '4': neo单品用户
+                '5': neo单品游客用户
+                '6': pstn用户
+                '7': sip用户
+              example: '1'
+          description: 主持人
+        meeting_connect:
+          type: boolean
+          description: 该会议是否支持互通
+          example: 'true'
+        status:
+          type: integer
+          description: 会议状态
+          enum:
+          - 1
+          - 2
+          - 3
+          x-enum-descriptions:
+            '1': 会议呼叫中
+            '2': 会议进行中
+            '3': 会议已结束
+          example: '2'
+        participant_count:
+          type: string
+          description: 峰值参会人数
+          example: '999'
+          format: int64
+        participant_count_accumulated:
+          type: string
+          description: 累计参会人数
+          example: '10'
+          format: int64
+        participants:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item3'
+          description: 参会人列表
+        ability:
+          type: object
+          properties:
+            use_video:
+              type: boolean
+              description: 是否使用视频
+              example: 'true'
+            use_audio:
+              type: boolean
+              description: 是否使用音频
+              example: 'true'
+            use_share_screen:
+              type: boolean
+              description: 是否使用共享屏幕
+              example: 'true'
+            use_follow_screen:
+              type: boolean
+              description: 是否使用妙享（magic share）
+              example: 'true'
+            use_recording:
+              type: boolean
+              description: 是否使用录制
+              example: 'true'
+            use_pstn:
+              type: boolean
+              description: 是否使用PSTN
+              example: 'true'
+          description: 会中使用的能力
+        note_id:
+          type: string
+          description: 纪要ID
+          example: '6943848821689040898'
+          format: int64
+    MeetingSetting:
+      type: object
+      properties:
+        topic:
+          type: string
+          description: 会议主题
+          example: my meeting
+        action_permissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item2'
+          description: 会议权限配置列表，如果存在相同的权限配置项则它们之间为"逻辑或"的关系（即 有一个为true则拥有该权限）
+        meeting_initial_type:
+          type: integer
+          description: 会议初始类型
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 多人会议
+            '2': 1v1呼叫
+          example: '1'
+        meeting_connect:
+          type: boolean
+          description: 该会议是否支持互通，不支持更新（注：该字段内测中）
+          example: 'true'
+        call_setting:
+          allOf:
+          - $ref: '#/components/schemas/CallSetting'
+          description: 1v1呼叫相关参数
+        auto_record:
+          type: boolean
+          description: 使用飞书视频会议时，是否开启自动录制，默认false
+          example: 'true'
+        assign_host_list:
+          type: array
+          items:
+            type: object
+            properties:
+              user_type:
+                type: integer
+                description: 用户类型，仅支持设置同租户下的 Lark 用户
+                enum:
+                - 1
+                x-enum-descriptions:
+                  '1': lark用户
+                example: '1'
+              id:
+                type: string
+                description: 用户ID
+                example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
+          description: 指定主持人列表
+        password:
+          type: string
+          description: 设置会议密码，仅支持 4-9 位数字
+          example: '971024'
+      description: 会议设置
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    Data:
+      type: object
+      properties:
+        rooms:
+          type: array
+          items:
+            $ref: '#/components/schemas/Room'
+          description: 会议室列表
+        page_token:
+          type: string
+          description: 下一页分页的token，下次请求时传入
+          example: '50'
+        has_more:
+          type: boolean
+          description: 是否还有数据
+          example: 'true'
+    Schema2:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data2'
+    Data2:
+      type: object
+      properties:
+        room:
+          $ref: '#/components/schemas/Room'
+    Item2:
+      type: object
+      properties:
+        permission:
+          type: integer
+          description: 权限项
+          enum:
+          - 1
+          - 2
+          - 3
+          x-enum-descriptions:
+            '1': 是否能成为主持人
+            '2': 是否能邀请参会人
+            '3': 是否能加入会议
+          example: '1'
+        permission_checkers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item4'
+          description: 权限检查器列表，权限检查器之间为"逻辑或"的关系（即 有一个为true则拥有该权限）
+      required:
+      - permission
+      - permission_checkers
+    Schema3:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 会议室名称
+          example: 测试会议室
+        capacity:
+          type: integer
+          description: 会议室能容纳的人数
+          example: '10'
+        description:
+          type: string
+          description: 会议室的相关描述
+          example: 测试会议室描述
+        custom_room_id:
+          type: string
+          description: 自定义的会议室ID
+          example: '1234'
+        room_level_id:
+          type: string
+          description: 层级ID
+          example: omb_8d020b12fe49e82847c2af3c193d5754
+        room_status:
+          allOf:
+          - $ref: '#/components/schemas/RoomStatu'
+          description: 会议室状态
+        device:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: 设施名称
+                example: 电话
+            required:
+            - name
+          description: 设施信息列表
+    CallSetting:
+      type: object
+      properties:
+        callee:
+          allOf:
+          - $ref: '#/components/schemas/Callee'
+          description: 被呼叫的用户
+      required:
+      - callee
+      description: 1v1呼叫相关参数
+    Item3:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 用户ID
+          example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
+        first_join_time:
+          type: string
+          description: 首次入会时间，秒级Unix时间戳
+          example: '1624438144'
+          format: int64
+        final_leave_time:
+          type: string
+          description: 最终离会时间，秒级Unix时间戳
+          example: '1624438144'
+          format: int64
+        in_meeting_duration:
+          type: string
+          description: 累计在会中时间，时间单位：秒
+          example: '123'
+          format: int64
+        user_type:
+          type: integer
+          description: 用户类型
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          x-enum-descriptions:
+            '1': lark用户
+            '2': rooms用户
+            '3': 文档用户
+            '4': neo单品用户
+            '5': neo单品游客用户
+            '6': pstn用户
+            '7': sip用户
+          example: '1'
+        is_host:
+          type: boolean
+          description: 是否为主持人
+          example: 'true'
+        is_cohost:
+          type: boolean
+          description: 是否为联席主持人
+          example: 'false'
+        is_external:
+          type: boolean
+          description: 是否为外部参会人
+          example: 'false'
+        status:
+          type: integer
+          description: 参会人状态
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          x-enum-descriptions:
+            '1': 呼叫中
+            '2': 在会中
+            '3': 正在响铃
+            '4': 不在会中或已经离开会议
+          example: '2'
+    Callee:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 用户ID
+          example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
+        user_type:
+          type: integer
+          description: 用户类型
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          x-enum-descriptions:
+            '1': lark用户
+            '2': rooms用户
+            '3': 文档用户
+            '4': neo单品用户
+            '5': neo单品游客用户
+            '6': pstn用户
+            '7': sip用户
+          example: '1'
+        pstn_sip_info:
+          type: object
+          properties:
+            nickname:
+              type: string
+              description: 给pstn/sip用户设置的临时昵称
+              example: dodo
+            main_address:
+              type: string
+              description: pstn/sip主机号
+              example: '1234'
+          required:
+          - main_address
+          description: pstn/sip信息
+      required:
+      - user_type
+      description: 被呼叫的用户
+    Schema4:
+      type: object
+      properties:
+        scope:
+          type: integer
+          description: 设置节点范围
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          x-enum-descriptions:
+            '1': 租户
+            '2': 国家/地区
+            '3': 城市
+            '4': 建筑
+            '5': 楼层
+            '6': 会议室
+          example: '5'
+        country_id:
+          type: string
+          description: 国家/地区ID scope为2，3时需要此参数
+          example: '1'
+        district_id:
+          type: string
+          description: 城市ID scope为3时需要此参数
+          example: '2'
+        building_id:
+          type: string
+          description: 建筑ID scope为4，5时需要此参数
+          example: '3'
+        floor_name:
+          type: string
+          description: 楼层 scope为5时需要此参数
+          example: '4'
+        room_id:
+          type: string
+          description: 会议室ID scope为6时需要此参数
+          example: '67687262867363'
+        valid_day:
+          type: integer
+          description: 有效天数
+          enum:
+          - 1
+          - 7
+          - 30
+          x-enum-descriptions:
+            '1': 1天
+            '7': 7天
+            '30': 30天
+          example: '1'
+    Item4:
+      type: object
+      properties:
+        check_field:
+          type: integer
+          description: 检查字段类型
+          enum:
+          - 1
+          - 2
+          - 3
+          x-enum-descriptions:
+            '1': 用户ID
+            '2': 用户类型
+            '3': 租户ID
+          example: '1'
+        check_mode:
+          type: integer
+          description: 检查方式
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 在check_list中为有权限（白名单）
+            '2': 不在check_list中为有权限（黑名单）
+          example: '1'
+        check_list:
+          type: array
+          items:
+            type: string
+          description: 检查字段列表
+      required:
+      - check_field
+      - check_mode
+      - check_list
+    Video:
+      type: object
+      properties:
+        time:
+          type: string
+          description: 时间
+          example: 2022.12.23 11:16:00 (GMT+08:00)
+        bitrate_received:
+          type: string
+          description: 码率（接收）
+          example: 8kbps
+        latency_received:
+          type: string
+          description: 延迟（接收）
+          example: 100ms
+        jitter_received:
+          type: string
+          description: 抖动（接收）
+          example: 100ms
+        maximum_resolution_received:
+          type: string
+          description: 最大分辨率（接收）
+          example: 1080P
+        framerate_received:
+          type: string
+          description: 帧率（接收）
+          example: 100fps
+        bitrate_sent:
+          type: string
+          description: 码率（发送）
+          example: 9kbps
+        latency_sent:
+          type: string
+          description: 延迟（发送）
+          example: 100ms
+        jitter_sent:
+          type: string
+          description: 抖动（发送）
+          example: 100ms
+        maximum_resolution_sent:
+          type: string
+          description: 最大分辨率（发送）
+          example: 4K
+        framerate_sent:
+          type: string
+          description: 帧率（发送）
+          example: 90fps
+      description: 视频
+    DisableInform:
+      type: object
+      properties:
+        if_cover_child_scope:
+          type: boolean
+          description: 是否覆盖子层级及会议室
+          example: 'true'
+        if_inform:
+          type: boolean
+          description: 禁用状态变更通知开关
+          default: false
+          example: 'false'
+        informed_users:
+          type: array
+          items:
+            type: object
+            properties:
+              user_id:
+                type: string
+                description: 预订人id
+                example: ou_e8bce6c3935ef1fc1b432992fd9d3db8
+                format: int64
+            required:
+            - user_id
+          description: 通知成员列表
+        informed_depts:
+          type: array
+          items:
+            type: object
+            properties:
+              department_id:
+                type: string
+                description: 预定部门id
+                example: od-5c07f0c117cf8795f25610a69363ce31
+                format: int64
+            required:
+            - department_id
+          description: 通知部门列表
+      required:
+      - if_inform
+      description: 会议室禁用通知配置
+    ReserveScopeConfig:
+      type: object
+      properties:
+        if_cover_child_scope:
+          type: boolean
+          description: 是否覆盖子层级及会议室
+          example: 'true'
+        allow_all_users:
+          type: integer
+          description: 可预定成员范围，0部分成员，1全部成员
+          example: '1'
+        allow_users:
+          type: array
+          items:
+            type: object
+            properties:
+              user_id:
+                type: string
+                description: 预订人id
+                example: ou_e8bce6c3935ef1fc1b432992fd9d3db8
+                format: int64
+            required:
+            - user_id
+          description: 可预定成员列表
+          example: '[{user_id:"ou_e8bce6c3935ef1fc1b432992fd9d3db8"}]'
+        allow_depts:
+          type: array
+          items:
+            type: object
+            properties:
+              department_id:
+                type: string
+                description: 预定部门id
+                example: od-5c07f0c117cf8795f25610a69363ce31
+                format: int64
+            required:
+            - department_id
+          description: 可预定部门列表
+          example: '[{department_id:"od-5c07f0c117cf8795f25610a69363ce31"}]'
+      description: 预定范围设置
+    Schema5:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data3'
+    TimeConfig:
+      type: object
+      properties:
+        if_cover_child_scope:
+          type: boolean
+          description: 是否覆盖子层级及会议室
+          example: 'true'
+        time_switch:
+          type: integer
+          description: 预定时间开关，0关闭，1开启
+          example: '0'
+        days_in_advance:
+          type: integer
+          description: 最早可提前#{days_in_advance}天预定会议室，以天为单位
+          example: '7'
+        opening_hour:
+          type: string
+          description: 开放当天可于#{opening_hour} 开始预定，以秒为单位
+          example: '13465'
+          format: int64
+        start_time:
+          type: string
+          description: 每日可预定时间范围开始时间，以秒为单位
+          example: '45565'
+          format: int64
+        end_time:
+          type: string
+          description: 每日可预定时间范围结束时间，以秒为单位
+          example: '45469'
+          format: int64
+        max_duration:
+          type: integer
+          description: 单次可预定时长上限,以小时为单位
+          example: '3'
+      required:
+      - time_switch
+      description: 预定时间设置
+    ReserveFormConfig:
+      type: object
+      properties:
+        if_cover_child_scope:
+          type: boolean
+          description: 是否覆盖子层级及会议室
+          example: 'true'
+        reserve_form:
+          type: boolean
+          description: 预定表单开关
+          default: false
+          example: 'false'
+        notified_users:
+          type: array
+          items:
+            type: object
+            properties:
+              user_id:
+                type: string
+                description: 预订人id
+                example: ou_e8bce6c3935ef1fc1b432992fd9d3db8
+                format: int64
+            required:
+            - user_id
+          description: 通知人列表
+        notified_time:
+          type: integer
+          description: 最晚于会议开始前 notified_time收到通知(单位:分/时/天)
+          example: '3'
+        time_unit:
+          type: integer
+          description: 时间单位,1为分钟;2为小时;3为天，默认为天
+          example: '3'
+      required:
+      - reserve_form
+      description: 预定表单
+    Data3:
+      type: object
+      properties:
+        room_level:
+          type: object
+          properties:
+            room_level_id:
+              type: string
+              description: 层级ID
+              example: omb_8d020b12fe49e82847c2af3c193d5754
+            name:
+              type: string
+              description: 层级名称
+              example: 多层级测试online
+            parent_id:
+              type: string
+              description: 父层级ID
+              example: omb_8d020b12fe49e82847c2af3c193d5754
+            path:
+              type: array
+              items:
+                type: string
+              description: 层级路径
+              example: '[omb_8d020b12fe49e82847c2af3c193d5754, omb_8d020b12fe49e82847c2af3c193d5754]'
+            has_child:
+              type: boolean
+              description: 是否有子层级
+              example: 'false'
+            custom_group_id:
+              type: string
+              description: 自定义层级id
+              example: zidingyi
+    ReserveAdminConfig:
+      type: object
+      properties:
+        depts:
+          type: array
+          items:
+            type: object
+            properties:
+              department_id:
+                type: string
+                description: 预定部门id
+                example: od-5c07f0c117cf8795f25610a69363ce31
+                format: int64
+            required:
+            - department_id
+          description: 预定管理部门
+        users:
+          type: array
+          items:
+            type: object
+            properties:
+              user_id:
+                type: string
+                description: 预订人id
+                example: ou_e8bce6c3935ef1fc1b432992fd9d3db8
+                format: int64
+            required:
+            - user_id
+          description: 预定管理用户
+      description: 预定管理员/部门
+    ApproveConfig:
+      type: object
+      properties:
+        approval_switch:
+          type: integer
+          description: 预定审批开关，0关闭，1打开
+          example: '0'
+        approval_condition:
+          type: integer
+          description: 预定审批条件，0所有预定需要审批，1满足条件需审批
+          example: '0'
+        meeting_duration:
+          type: number
+          description: 超过 meeting_duration小时需要审批
+          example: '1'
+        approvers:
+          type: array
+          items:
+            type: object
+            properties:
+              user_id:
+                type: string
+                description: 预订人id
+                example: ou_e8bce6c3935ef1fc1b432992fd9d3db8
+                format: int64
+            required:
+            - user_id
+          description: 审批人列表
+          example: '[{user_id:"ou_e8bce6c3935ef1fc1b432992fd9d3db8"}]'
+      description: 预定审批设置

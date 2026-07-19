@@ -21,6 +21,8 @@ from pathlib import Path
 
 import yaml
 
+from dedupe_openapi import dedupe_document
+
 GENERATOR = "lark-openapi-spec tools/build_openapi_full.py"
 
 INDEX_PATH = Path("raw/explorer/index.json")
@@ -382,11 +384,13 @@ def main() -> int:
                 seen_tags.add(entry["resource"])
                 doc["tags"].append({"name": entry["resource"]})
 
+        doc, n_comps = dedupe_document(doc)
         out = args.out_dir / f"{project}.yaml"
         dump_yaml(doc, out)
         n = sum(len(p) for p in doc["paths"].values())
         total_ops += n
-        print(f"  {project:15s} -> {out.name:18s} ({n} operations)")
+        print(f"  {project:15s} -> {out.name:18s} ({n} operations, "
+              f"{n_comps} shared components)")
 
     # merge full-track stats into the manifest
     manifest = {}

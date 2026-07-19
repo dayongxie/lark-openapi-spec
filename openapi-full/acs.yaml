@@ -9,10 +9,10 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T03:22:04Z'
+  version: '2026-07-19T03:40:11Z'
   x-lark-project: acs
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T03:22:04Z'
+  x-lark-generated-at: '2026-07-19T03:40:11Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -346,171 +346,8 @@ paths:
               type: object
               properties:
                 rule:
-                  type: object
-                  properties:
-                    id:
-                      type: string
-                      description: 权限组id
-                      example: '34252345234523'
-                      format: int64
-                    name:
-                      type: string
-                      description: 权限组名称
-                      example: 南门
-                    devices:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                            description: 设备id
-                            example: '534545234523452345'
-                            format: int64
-                          name:
-                            type: string
-                            description: 设备名称
-                            example: 北门
-                      description: 权限组包含的设备
-                    user_count:
-                      type: string
-                      description: 权限组包含的员工个数
-                      example: '3'
-                      format: int64
-                    users:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          user_type:
-                            type: integer
-                            description: 用户类型
-                            enum:
-                            - 1
-                            - 2
-                            - 10
-                            - 11
-                            x-enum-descriptions:
-                              '1': 员工
-                              '2': 部门
-                              '10': 全体员工
-                              '11': 访客
-                            example: '1'
-                          user_id:
-                            type: string
-                            description: 用户id
-                            example: ou_7dab8a3d3cdcc9da365777c7ad535d62
-                            format: int64
-                          user_name:
-                            type: string
-                            description: 用户名称
-                            example: 张三
-                          phone_num:
-                            type: string
-                            description: 电话号码
-                            example: '1357890001'
-                          department_id:
-                            type: string
-                            description: 部门id
-                            example: od-f7d44ab733f7602f5cc5194735fd9aaf
-                            format: int64
-                        required:
-                        - user_type
-                      description: 权限组包含的员工列表
-                    visitor_count:
-                      type: string
-                      description: 权限组包含的访客个数
-                      example: '3'
-                      format: int64
-                    visitors:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          user_type:
-                            type: integer
-                            description: 用户类型
-                            enum:
-                            - 1
-                            - 2
-                            - 10
-                            - 11
-                            x-enum-descriptions:
-                              '1': 员工
-                              '2': 部门
-                              '10': 全体员工
-                              '11': 访客
-                            example: '1'
-                          user_id:
-                            type: string
-                            description: 用户id
-                            example: ou_7dab8a3d3cdcc9da365777c7ad535d62
-                            format: int64
-                          user_name:
-                            type: string
-                            description: 用户名称
-                            example: 张三
-                          phone_num:
-                            type: string
-                            description: 电话号码
-                            example: '1357890001'
-                          department_id:
-                            type: string
-                            description: 部门id
-                            example: od-f7d44ab733f7602f5cc5194735fd9aaf
-                            format: int64
-                        required:
-                        - user_type
-                      description: 权限组包含的访客列表
-                    remind_face:
-                      type: boolean
-                      description: 是否通知人员录入
-                      example: 'false'
-                    opening_time:
-                      type: object
-                      properties:
-                        valid_day:
-                          type: object
-                          properties:
-                            start_day:
-                              type: integer
-                              description: 权限开始时间
-                              example: '1699031483'
-                            end_day:
-                              type: integer
-                              description: 权限结束时间
-                              example: '1699931483'
-                          required:
-                          - start_day
-                          - end_day
-                          description: 有效日期
-                        weekdays:
-                          type: array
-                          items:
-                            type: integer
-                          description: 有效星期
-                        day_times:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              start_hhmm:
-                                type: integer
-                                description: 起始时间
-                                example: '1200'
-                              end_hhmm:
-                                type: integer
-                                description: 结束时间
-                                example: '1400'
-                            required:
-                            - start_hhmm
-                            - end_hhmm
-                          description: 有效时间
-                      description: 开门时间段
-                    is_temp:
-                      type: boolean
-                      description: 是否为临时权限组
-                      example: 'false'
+                  allOf:
+                  - $ref: '#/components/schemas/Rule'
                   description: 权限组信息
       responses:
         '200':
@@ -690,171 +527,7 @@ paths:
                       rules:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            id:
-                              type: string
-                              description: 权限组id
-                              example: '34252345234523'
-                              format: int64
-                            name:
-                              type: string
-                              description: 权限组名称
-                              example: 南门
-                            devices:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  id:
-                                    type: string
-                                    description: 设备id
-                                    example: '534545234523452345'
-                                    format: int64
-                                  name:
-                                    type: string
-                                    description: 设备名称
-                                    example: 北门
-                              description: 权限组包含的设备
-                            user_count:
-                              type: string
-                              description: 权限组包含的员工个数
-                              example: '3'
-                              format: int64
-                            users:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  user_type:
-                                    type: integer
-                                    description: 用户类型
-                                    enum:
-                                    - 1
-                                    - 2
-                                    - 10
-                                    - 11
-                                    x-enum-descriptions:
-                                      '1': 员工
-                                      '2': 部门
-                                      '10': 全体员工
-                                      '11': 访客
-                                    example: '1'
-                                  user_id:
-                                    type: string
-                                    description: 用户id
-                                    example: ou_7dab8a3d3cdcc9da365777c7ad535d62
-                                    format: int64
-                                  user_name:
-                                    type: string
-                                    description: 用户名称
-                                    example: 张三
-                                  phone_num:
-                                    type: string
-                                    description: 电话号码
-                                    example: '1357890001'
-                                  department_id:
-                                    type: string
-                                    description: 部门id
-                                    example: od-f7d44ab733f7602f5cc5194735fd9aaf
-                                    format: int64
-                                required:
-                                - user_type
-                              description: 权限组包含的员工列表
-                            visitor_count:
-                              type: string
-                              description: 权限组包含的访客个数
-                              example: '3'
-                              format: int64
-                            visitors:
-                              type: array
-                              items:
-                                type: object
-                                properties:
-                                  user_type:
-                                    type: integer
-                                    description: 用户类型
-                                    enum:
-                                    - 1
-                                    - 2
-                                    - 10
-                                    - 11
-                                    x-enum-descriptions:
-                                      '1': 员工
-                                      '2': 部门
-                                      '10': 全体员工
-                                      '11': 访客
-                                    example: '1'
-                                  user_id:
-                                    type: string
-                                    description: 用户id
-                                    example: ou_7dab8a3d3cdcc9da365777c7ad535d62
-                                    format: int64
-                                  user_name:
-                                    type: string
-                                    description: 用户名称
-                                    example: 张三
-                                  phone_num:
-                                    type: string
-                                    description: 电话号码
-                                    example: '1357890001'
-                                  department_id:
-                                    type: string
-                                    description: 部门id
-                                    example: od-f7d44ab733f7602f5cc5194735fd9aaf
-                                    format: int64
-                                required:
-                                - user_type
-                              description: 权限组包含的访客列表
-                            remind_face:
-                              type: boolean
-                              description: 是否通知人员录入
-                              example: 'false'
-                            opening_time:
-                              type: object
-                              properties:
-                                valid_day:
-                                  type: object
-                                  properties:
-                                    start_day:
-                                      type: integer
-                                      description: 权限开始时间
-                                      example: '1699031483'
-                                    end_day:
-                                      type: integer
-                                      description: 权限结束时间
-                                      example: '1699931483'
-                                  required:
-                                  - start_day
-                                  - end_day
-                                  description: 有效日期
-                                weekdays:
-                                  type: array
-                                  items:
-                                    type: integer
-                                  description: 有效星期
-                                day_times:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      start_hhmm:
-                                        type: integer
-                                        description: 起始时间
-                                        example: '1200'
-                                      end_hhmm:
-                                        type: integer
-                                        description: 结束时间
-                                        example: '1400'
-                                    required:
-                                    - start_hhmm
-                                    - end_hhmm
-                                  description: 有效时间
-                              description: 开门时间段
-                            is_temp:
-                              type: boolean
-                              description: 是否为临时权限组
-                              example: 'false'
+                          $ref: '#/components/schemas/Rule'
                         description: 设备权限组信息
                     required:
                     - rules
@@ -1395,42 +1068,8 @@ paths:
               type: object
               properties:
                 user:
-                  type: object
-                  properties:
-                    user_type:
-                      type: integer
-                      description: 用户类型
-                      enum:
-                      - 1
-                      - 2
-                      - 10
-                      - 11
-                      x-enum-descriptions:
-                        '1': 员工
-                        '2': 部门
-                        '10': 全体员工
-                        '11': 访客
-                      example: '1'
-                    user_id:
-                      type: string
-                      description: 用户id
-                      example: ou_7dab8a3d3cdcc9da365777c7ad535d62
-                      format: int64
-                    user_name:
-                      type: string
-                      description: 用户名称
-                      example: 张三
-                    phone_num:
-                      type: string
-                      description: 电话号码
-                      example: '1357890001'
-                    department_id:
-                      type: string
-                      description: 部门id
-                      example: od-f7d44ab733f7602f5cc5194735fd9aaf
-                      format: int64
-                  required:
-                  - user_type
+                  allOf:
+                  - $ref: '#/components/schemas/User'
                   description: 访客信息
       responses:
         '200':
@@ -1553,3 +1192,143 @@ paths:
           to: lark_id
         key: visitor_id
         section: 3
+components:
+  schemas:
+    Rule:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 权限组id
+          example: '34252345234523'
+          format: int64
+        name:
+          type: string
+          description: 权限组名称
+          example: 南门
+        devices:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 设备id
+                example: '534545234523452345'
+                format: int64
+              name:
+                type: string
+                description: 设备名称
+                example: 北门
+          description: 权限组包含的设备
+        user_count:
+          type: string
+          description: 权限组包含的员工个数
+          example: '3'
+          format: int64
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+          description: 权限组包含的员工列表
+        visitor_count:
+          type: string
+          description: 权限组包含的访客个数
+          example: '3'
+          format: int64
+        visitors:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+          description: 权限组包含的访客列表
+        remind_face:
+          type: boolean
+          description: 是否通知人员录入
+          example: 'false'
+        opening_time:
+          allOf:
+          - $ref: '#/components/schemas/OpeningTime'
+          description: 开门时间段
+        is_temp:
+          type: boolean
+          description: 是否为临时权限组
+          example: 'false'
+      description: 权限组信息
+    User:
+      type: object
+      properties:
+        user_type:
+          type: integer
+          description: 用户类型
+          enum:
+          - 1
+          - 2
+          - 10
+          - 11
+          x-enum-descriptions:
+            '1': 员工
+            '2': 部门
+            '10': 全体员工
+            '11': 访客
+          example: '1'
+        user_id:
+          type: string
+          description: 用户id
+          example: ou_7dab8a3d3cdcc9da365777c7ad535d62
+          format: int64
+        user_name:
+          type: string
+          description: 用户名称
+          example: 张三
+        phone_num:
+          type: string
+          description: 电话号码
+          example: '1357890001'
+        department_id:
+          type: string
+          description: 部门id
+          example: od-f7d44ab733f7602f5cc5194735fd9aaf
+          format: int64
+      required:
+      - user_type
+    OpeningTime:
+      type: object
+      properties:
+        valid_day:
+          type: object
+          properties:
+            start_day:
+              type: integer
+              description: 权限开始时间
+              example: '1699031483'
+            end_day:
+              type: integer
+              description: 权限结束时间
+              example: '1699931483'
+          required:
+          - start_day
+          - end_day
+          description: 有效日期
+        weekdays:
+          type: array
+          items:
+            type: integer
+          description: 有效星期
+        day_times:
+          type: array
+          items:
+            type: object
+            properties:
+              start_hhmm:
+                type: integer
+                description: 起始时间
+                example: '1200'
+              end_hhmm:
+                type: integer
+                description: 结束时间
+                example: '1400'
+            required:
+            - start_hhmm
+            - end_hhmm
+          description: 有效时间
+      description: 开门时间段
