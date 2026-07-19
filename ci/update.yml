@@ -1,0 +1,122 @@
+# 这是 .github/workflows/update.yml 的暂存副本（内容完全相同）。
+# 由于 OAuth 令牌缺少 workflow 权限，无法通过 API 直接写入 .github/workflows/。
+# 请把本文件内容原样复制到 .github/workflows/update.yml（在仓库页面 Add file -> Create new file），
+# 提交后 CI 会自动引导生成全部 YAML 产物。本文件随后会被清理。
+#
+# ---- 以下为目标文件完整内容（含本注释之外的行，复制时请从 "name:" 开始）----
+#
+# name: Update API specs
+#
+# 为避免歧义，下面是去掉注释前缀的纯 YAML（从下一行起才是真正的文件内容）：
+---
+name: Update API specs
+
+on:
+  schedule:
+    # Daily at 01:17 UTC (off the top-of-hour rush)
+    - cron: "17 1 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    # Changing the converter or this workflow regenerates the specs —
+    # also covers the first-run bootstrap (no raw/registry.json committed yet).
+    paths:
+      - "tools/**"
+      - ".github/workflows/update.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-specs
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r tools/requirements.txt
+
+      # ------------------------------------------------------------------
+      # 1. Registry (typed API metadata) — incremental check by data_version.
+      #    The endpoint returns an empty payload when nothing changed.
+      # ------------------------------------------------------------------
+      - name: Check registry for updates
+        id: registry
+        run: |
+          if [ -f raw/registry.json ]; then
+            cp raw/registry.json /tmp/registry.old.json
+          else
+            # bootstrap: no snapshot committed yet — diff against an empty registry
+            echo '{"version": "", "services": []}' > /tmp/registry.old.json
+          fi
+          python tools/fetch_registry.py --check >> "$GITHUB_OUTPUT"
+
+      - name: Rebuild OpenAPI specs
+        if: steps.registry.outputs.changed == 'true'
+        run: |
+          PYTHONPATH=tools python tools/build_openapi.py
+          python tools/diff_registry.py /tmp/registry.old.json raw/registry.json \
+            --version "${{ steps.registry.outputs.version }}" --prepend CHANGELOG.md
+
+      # ------------------------------------------------------------------
+      # 2. Shortcut reference — follows lark-cli releases.
+      # ------------------------------------------------------------------
+      - name: Check lark-cli release
+        id: cli
+        run: |
+          LATEST=$(curl -fsSL https://api.github.com/repos/larksuite/cli/releases/latest | jq -r .tag_name)
+          CURRENT=$(grep -m1 '^cli_version:' shortcuts/im.yaml | awk '{print $2}' || echo "none")
+          echo "latest=$LATEST" >> "$GITHUB_OUTPUT"
+          echo "current=$CURRENT" >> "$GITHUB_OUTPUT"
+          if [ "$LATEST" != "v$CURRENT" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Extract shortcut reference
+        if: steps.cli.outputs.changed == 'true'
+        run: |
+          VER="${{ steps.cli.outputs.latest }}"
+          curl -fsSL -o /tmp/lark-cli.tar.gz \
+            "https://github.com/larksuite/cli/releases/download/${VER}/lark-cli-${VER#v}-linux-amd64.tar.gz"
+          tar xzf /tmp/lark-cli.tar.gz -C /tmp
+          python tools/extract_shortcuts.py --cli /tmp/lark-cli --cli-version "${VER#v}"
+
+      # ------------------------------------------------------------------
+      # 3. Commit everything that changed in one go.
+      # ------------------------------------------------------------------
+      - name: Commit updates
+        if: steps.registry.outputs.changed == 'true' || steps.cli.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add raw openapi shortcuts manifest.yaml CHANGELOG.md
+          MSG=""
+          if [ "${{ steps.registry.outputs.changed }}" = "true" ]; then
+            MSG="registry v${{ steps.registry.outputs.version }}"
+          fi
+          if [ "${{ steps.cli.outputs.changed }}" = "true" ]; then
+            MSG="${MSG:+$MSG, }shortcuts @ lark-cli ${{ steps.cli.outputs.latest }}"
+          fi
+          git commit -m "chore: update specs ($MSG)"
+          git push
+
+      - name: Tag and release registry update
+        if: steps.registry.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="registry-v${{ steps.registry.outputs.version }}"
+          git tag "$TAG" || true
+          git push origin "$TAG" || true
+          gh release create "$TAG" --title "Registry v${{ steps.registry.outputs.version }}" \
+            --notes "API registry v${{ steps.registry.outputs.version }}. See CHANGELOG.md for the method-level diff." || true
