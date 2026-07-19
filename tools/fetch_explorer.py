@@ -106,6 +106,22 @@ def fetch_catalog() -> tuple[list, dict]:
 # Definitions
 # --------------------------------------------------------------------------
 
+def normalize_def(data: dict) -> dict:
+    """Canonicalize upstream fields whose order is non-deterministic.
+
+    The Explorer backend returns `scopesOfFieldRequired` (a set of scope
+    strings) in random order on every request — presumably map iteration
+    order. Without sorting, the content hash flaps on every run and the
+    changelog fills up with false-positive "definition changed" entries.
+    """
+    if not isinstance(data, dict):
+        return data
+    scopes = data.get("scopesOfFieldRequired")
+    if isinstance(scopes, list) and all(isinstance(s, str) for s in scopes):
+        data["scopesOfFieldRequired"] = sorted(scopes)
+    return data
+
+
 def fetch_one(key: str, ident: dict) -> tuple[str, dict | None, str | None]:
     """Fetch one definition; returns (key, data, error)."""
     url = (f"{BASE}/api_definition?project={ident['project']}"
@@ -115,7 +131,7 @@ def fetch_one(key: str, ident: dict) -> tuple[str, dict | None, str | None]:
         payload = http_get(url, timeout=30, retries=3)
         if payload.get("code") != 0:
             return key, None, f"code={payload.get('code')}"
-        return key, payload.get("data"), None
+        return key, normalize_def(payload.get("data")), None
     except Exception as exc:  # noqa: BLE001 — per-API failures are tolerable
         return key, None, str(exc)
 

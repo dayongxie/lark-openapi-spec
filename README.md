@@ -91,7 +91,10 @@ A GitHub Actions workflow runs daily:
 2. **Full track** — the upstream has no version field, so the whole catalog +
    all 1627 definitions are re-fetched daily and compared by content hash;
    commits happen only on real changes (added/removed/changed go to
-   CHANGELOG.md).
+   CHANGELOG.md). The fetcher sorts the upstream's randomly-ordered
+   field-scope list before hashing, and the output is fully deterministic:
+   `info.version` is a content hash (`1.0.0+<hash>`) with no build
+   timestamps, so rebuilding an unchanged document is byte-identical.
 3. **Shortcuts** — re-extracted whenever lark-cli publishes a new release.
 
 Pushing changes to `tools/` or the workflow itself also triggers a rebuild.

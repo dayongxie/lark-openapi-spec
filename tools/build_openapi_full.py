@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import hashlib
 import json
 import re
 import sys
@@ -351,10 +352,11 @@ def main() -> int:
                     "本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) "
                     "项目从飞书官方 API Explorer 数据自动生成，非官方发布物。"
                     "权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。"),
-                "version": generated_at,
+                # Filled after the document is built: a content-derived
+                # version keeps unchanged files byte-identical across runs.
+                "version": "",
                 "x-lark-project": project,
                 "x-lark-track": "full (official API Explorer)",
-                "x-lark-generated-at": generated_at,
                 "x-generator": GENERATOR,
             },
             "servers": SERVERS,
@@ -385,6 +387,12 @@ def main() -> int:
                 doc["tags"].append({"name": entry["resource"]})
 
         doc, n_comps = dedupe_document(doc)
+        # Content-derived version: changes iff the document content changes,
+        # so a rebuild over unchanged definitions is a git no-op.
+        digest = hashlib.sha256(json.dumps(
+            {k: doc[k] for k in ("paths", "components", "tags") if k in doc},
+            ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()[:8]
+        doc["info"]["version"] = f"1.0.0+{digest}"
         out = args.out_dir / f"{project}.yaml"
         dump_yaml(doc, out)
         n = sum(len(p) for p in doc["paths"].values())

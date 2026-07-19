@@ -9,10 +9,9 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T04:09:08Z'
+  version: 1.0.0+daa46de5
   x-lark-project: hire
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T04:09:08Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -730,8 +729,8 @@ paths:
       - hire:agency_account
       - hire:agency_account:readonly
       x-lark-field-scopes:
-      - hire:agency.mobile:readonly
       - hire:agency.email:readonly
+      - hire:agency.mobile:readonly
       x-lark-error-mappings:
       - code: 1002001
         httpCode: 500
@@ -1772,8 +1771,8 @@ paths:
       - hire:people_cli
       x-lark-field-scopes:
       - contact:user.employee_id:readonly
-      - hire:job:readonly
       - hire:job
+      - hire:job:readonly
       - hire:people_cli
       x-lark-error-mappings:
       - code: 1002001
@@ -3312,27 +3311,27 @@ paths:
       - hire:application
       - hire:people_cli
       x-lark-field-scopes:
-      - hire:agency_salary:readonly
-      - hire:referral
-      - hire:employee
-      - hire:offer
-      - hire:site
-      - hire:job:readonly
-      - hire:evaluation:readonly
-      - hire:offer:readonly
-      - hire:talent:readonly
-      - hire:offer_salary:readonly
-      - hire:employee:readonly
-      - hire:site:readonly
-      - hire:job
-      - hire:agency:readonly
-      - hire:referral:readonly
-      - hire:talent
-      - hire:interview:readonly
-      - hire:agency
       - contact:user.employee_id:readonly
-      - hire:people_cli
+      - hire:agency
+      - hire:agency:readonly
+      - hire:agency_salary:readonly
+      - hire:employee
+      - hire:employee:readonly
+      - hire:evaluation:readonly
       - hire:interview
+      - hire:interview:readonly
+      - hire:job
+      - hire:job:readonly
+      - hire:offer
+      - hire:offer:readonly
+      - hire:offer_salary:readonly
+      - hire:people_cli
+      - hire:referral
+      - hire:referral:readonly
+      - hire:site
+      - hire:site:readonly
+      - hire:talent
+      - hire:talent:readonly
       x-lark-error-mappings:
       - code: 1002001
         httpCode: 500
@@ -4492,10 +4491,10 @@ paths:
       - hire:background_check_order
       - hire:background_check_order:readonly
       x-lark-field-scopes:
-      - hire:talent.email:readonly
-      - hire:employee.mobile:readonly
-      - hire:employee.email:readonly
       - contact:user.employee_id:readonly
+      - hire:employee.email:readonly
+      - hire:employee.mobile:readonly
+      - hire:talent.email:readonly
       - hire:talent.mobile:readonly
       x-lark-error-mappings:
       - code: 1002001
@@ -28857,15 +28856,15 @@ paths:
       - hire:talent:readonly
       - hire:people_cli
       x-lark-field-scopes:
-      - hire:talent_blocklist
-      - hire:talent_folder
-      - hire:note:readonly
-      - hire:note
       - contact:user.employee_id:readonly
-      - hire:talent_tag:readonly
-      - hire:talent_tag
+      - hire:note
+      - hire:note:readonly
+      - hire:talent_blocklist
       - hire:talent_blocklist:readonly
+      - hire:talent_folder
       - hire:talent_folder:readonly
+      - hire:talent_tag
+      - hire:talent_tag:readonly
       x-lark-error-mappings:
       - code: 1002001
         httpCode: 500

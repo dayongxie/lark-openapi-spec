@@ -9,10 +9,9 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T04:09:08Z'
+  version: 1.0.0+8f0c3f32
   x-lark-project: calendar
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T04:09:08Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -6238,8 +6237,8 @@ paths:
       - calendar:calendar
       - calendar:exchange.bindings:create
       x-lark-field-scopes:
-      - contact:user.employee_id:readonly
       - contact:user.email:readonly
+      - contact:user.employee_id:readonly
       - directory:employee.base.email:read
       x-lark-error-mappings:
       - code: 190002
@@ -6462,8 +6461,8 @@ paths:
       - calendar:calendar:readonly
       - calendar:exchange.bindings:read
       x-lark-field-scopes:
-      - contact:user.employee_id:readonly
       - contact:user.email:readonly
+      - contact:user.employee_id:readonly
       - directory:employee.base.email:read
       x-lark-error-mappings:
       - code: 190002

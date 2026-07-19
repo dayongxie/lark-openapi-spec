@@ -9,10 +9,9 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: '2026-07-19T04:09:08Z'
+  version: 1.0.0+6a43957f
   x-lark-project: corehr
   x-lark-track: full (official API Explorer)
-  x-lark-generated-at: '2026-07-19T04:09:08Z'
   x-generator: lark-openapi-spec tools/build_openapi_full.py
 servers:
 - url: https://open.feishu.cn
@@ -5149,11 +5148,11 @@ paths:
       - corehr:employment:write
       - corehr:employment.patch:write
       x-lark-field-scopes:
-      - corehr:job_data.work_shift:read
       - contact:user.employee_id:readonly
-      - corehr:job_data.service_company:read
-      - corehr:people_cli
       - corehr:job_data.compensation_type:read
+      - corehr:job_data.service_company:read
+      - corehr:job_data.work_shift:read
+      - corehr:people_cli
       x-lark-error-mappings:
       - code: 1160025
         httpCode: 500
@@ -6103,11 +6102,11 @@ paths:
       x-lark-field-scopes:
       - contact:user.employee_id:readonly
       - corehr:job_change.employment_custom_field:read
-      - corehr:job_data.compensation_type:read
-      - corehr:people_cli
-      - corehr:job_data.service_company:read
       - corehr:job_change.pathway:read
       - corehr:job_change.pathway:write
+      - corehr:job_data.compensation_type:read
+      - corehr:job_data.service_company:read
+      - corehr:people_cli
       x-lark-error-mappings:
       - code: 1160100
         httpCode: 400
@@ -6536,13 +6535,13 @@ paths:
       - corehr:corehr
       - corehr:job_data:write
       x-lark-field-scopes:
-      - corehr:job_data.compensation_type:read
-      - corehr:people_cli
-      - corehr:job_data.service_company:read
-      - corehr:employment.pathway:write
-      - corehr:employment.pathway:read
       - contact:user.employee_id:readonly
+      - corehr:employment.pathway:read
+      - corehr:employment.pathway:write
+      - corehr:job_data.compensation_type:read
+      - corehr:job_data.service_company:read
       - corehr:job_data.work_shift:read
+      - corehr:people_cli
       x-lark-error-mappings:
       - code: 1160004
         httpCode: 400
@@ -6984,16 +6983,16 @@ paths:
       - corehr:job_data:write
       - corehr:job_data:read
       x-lark-field-scopes:
-      - corehr:employment.position:write
+      - contact:user.employee_id:readonly
       - corehr:employment.pathway:read
+      - corehr:employment.pathway:write
+      - corehr:employment.position:read
+      - corehr:employment.position:write
+      - corehr:job_data.compensation_type:read
       - corehr:job_data.job_data_reason:read
+      - corehr:job_data.service_company:read
       - corehr:job_data.work_shift:read
       - corehr:people_cli
-      - corehr:employment.position:read
-      - corehr:employment.pathway:write
-      - contact:user.employee_id:readonly
-      - corehr:job_data.compensation_type:read
-      - corehr:job_data.service_company:read
       x-lark-error-mappings:
       - code: 1160004
         httpCode: 400
@@ -7390,16 +7389,16 @@ paths:
       - corehr:corehr
       - corehr:corehr:readonly
       x-lark-field-scopes:
-      - corehr:job_data.compensation_type:read
-      - corehr:employment.position:read
-      - corehr:employment.pathway:read
-      - corehr:job_data.job_data_reason:read
       - contact:user.employee_id:readonly
+      - corehr:employment.pathway:read
+      - corehr:employment.pathway:write
+      - corehr:employment.position:read
+      - corehr:employment.position:write
+      - corehr:job_data.compensation_type:read
+      - corehr:job_data.job_data_reason:read
+      - corehr:job_data.service_company:read
       - corehr:job_data.work_shift:read
       - corehr:people_cli
-      - corehr:job_data.service_company:read
-      - corehr:employment.position:write
-      - corehr:employment.pathway:write
       x-lark-error-mappings:
       - code: 1160004
         httpCode: 400
@@ -7646,12 +7645,12 @@ paths:
       - corehr:job_data:write
       x-lark-field-scopes:
       - contact:user.employee_id:readonly
-      - corehr:job_data.work_shift:read
-      - corehr:job_data.compensation_type:read
-      - corehr:people_cli
-      - corehr:job_data.service_company:read
-      - corehr:employment.pathway:write
       - corehr:employment.pathway:read
+      - corehr:employment.pathway:write
+      - corehr:job_data.compensation_type:read
+      - corehr:job_data.service_company:read
+      - corehr:job_data.work_shift:read
+      - corehr:people_cli
       x-lark-error-mappings:
       - code: 1160004
         httpCode: 400
@@ -11592,20 +11591,20 @@ paths:
       - corehr:offboarding:write
       - corehr:people_cli
       x-lark-field-scopes:
-      - corehr:employment.offboarding_reason:read
-      - corehr:offboarding.last_attendance_date:read
       - contact:user.employee_id:readonly
+      - corehr:employment.offboarding_reason:read
+      - corehr:offboarding.block_list:read
+      - corehr:offboarding.block_list:write
+      - corehr:offboarding.custom_field:read
+      - corehr:offboarding.last_attendance_date:read
+      - corehr:offboarding.minor_reason:read
       - corehr:offboarding.minor_reason:write
       - corehr:offboarding.noncompete_agreement:read
-      - corehr:offboarding.block_list:write
-      - corehr:people_cli
       - corehr:offboarding.retain_account:read
-      - corehr:offboarding.custom_field:read
       - corehr:offboarding.retain_account:write
-      - corehr:offboarding.social_insurance:read
       - corehr:offboarding.signature:read
-      - corehr:offboarding.minor_reason:read
-      - corehr:offboarding.block_list:read
+      - corehr:offboarding.social_insurance:read
+      - corehr:people_cli
       x-lark-error-mappings:
       - code: 1160102
         httpCode: 400
@@ -16099,8 +16098,8 @@ paths:
       x-lark-scopes:
       - corehr:approval_groups.orgdraft_department_change:read
       x-lark-field-scopes:
-      - corehr:orgrole_info:read
       - contact:user.employee_id:readonly
+      - corehr:orgrole_info:read
       x-lark-error-mappings:
       - code: 1162001
         httpCode: 200
@@ -17405,13 +17404,13 @@ paths:
       x-lark-scopes:
       - corehr:approval_groups.orgdraft_job_change:read
       x-lark-field-scopes:
-      - corehr:employment.job_level:write
+      - contact:user.employee_id:readonly
       - corehr:employment.job:read
       - corehr:employment.job_grade:read
       - corehr:employment.job_grade:write
-      - corehr:people_cli
-      - contact:user.employee_id:readonly
       - corehr:employment.job_level:read
+      - corehr:employment.job_level:write
+      - corehr:people_cli
       x-lark-error-mappings:
       - code: 1162001
         httpCode: 200
@@ -17776,14 +17775,14 @@ paths:
       x-lark-scopes:
       - corehr:approval_groups.orgdraft_position_change:read
       x-lark-field-scopes:
+      - contact:user.employee_id:readonly
+      - corehr:position.direct_leader:read
       - corehr:position.employee_type:read
+      - corehr:position.job:read
+      - corehr:position.job_family:read
       - corehr:position.job_grade:read
       - corehr:position.job_level:read
-      - corehr:position.direct_leader:read
-      - contact:user.employee_id:readonly
-      - corehr:position.job_family:read
       - corehr:position.working_hours_type:read
-      - corehr:position.job:read
       x-lark-error-mappings:
       - code: 1162001
         httpCode: 400
@@ -20631,11 +20630,11 @@ paths:
       - corehr:contract:write
       x-lark-field-scopes:
       - contact:user.employee_id:readonly
+      - corehr:contract.company:read
+      - corehr:contract.company:write
       - corehr:contract.period:read
       - corehr:contract.period:write
       - corehr:people_cli
-      - corehr:contract.company:read
-      - corehr:contract.company:write
       x-lark-rate-limit:
         tier: 4
       x-lark-pagination: true
@@ -23652,12 +23651,12 @@ paths:
       - corehr:department:read
       - corehr:department:write
       x-lark-field-scopes:
-      - corehr:department.manager:read
-      - corehr:department.custom_fields:read
-      - corehr:department.cost_center_id:read
-      - corehr:people_cli
       - contact:user.employee_id:readonly
+      - corehr:department.cost_center_id:read
+      - corehr:department.custom_fields:read
+      - corehr:department.manager:read
       - corehr:department.organize:read
+      - corehr:people_cli
       x-lark-error-mappings:
       - code: 1160102
         httpCode: 400
@@ -24308,12 +24307,12 @@ paths:
       - corehr:department:read
       - corehr:department:write
       x-lark-field-scopes:
-      - corehr:department.organize:read
-      - corehr:department.manager:read
-      - corehr:people_cli
-      - corehr:department.custom_fields:read
-      - corehr:department.cost_center_id:read
       - contact:user.employee_id:readonly
+      - corehr:department.cost_center_id:read
+      - corehr:department.custom_fields:read
+      - corehr:department.manager:read
+      - corehr:department.organize:read
+      - corehr:people_cli
       x-lark-error-mappings:
       - code: 1161204
         httpCode: 503
@@ -24704,12 +24703,12 @@ paths:
       - corehr:department:read
       - corehr:department:write
       x-lark-field-scopes:
-      - corehr:people_cli
-      - corehr:department.custom_fields:read
-      - corehr:department.cost_center_id:read
       - contact:user.employee_id:readonly
-      - corehr:department.organize:read
+      - corehr:department.cost_center_id:read
+      - corehr:department.custom_fields:read
       - corehr:department.manager:read
+      - corehr:department.organize:read
+      - corehr:people_cli
       x-lark-error-mappings:
       - code: 1161204
         httpCode: 503
@@ -24889,10 +24888,10 @@ paths:
       - corehr:people_cli
       x-lark-field-scopes:
       - contact:user.employee_id:readonly
-      - corehr:department.organize:read
-      - corehr:department.manager:read
-      - corehr:department.custom_fields:read
       - corehr:department.cost_center_id:read
+      - corehr:department.custom_fields:read
+      - corehr:department.manager:read
+      - corehr:department.organize:read
       - corehr:people_cli
       x-lark-error-mappings:
       - code: 1160102
@@ -25553,8 +25552,8 @@ paths:
       - corehr:employment.custom_org:write
       x-lark-field-scopes:
       - contact:user.employee_id:readonly
-      - corehr:employment.custom_org_field:write
       - corehr:employment.custom_org_field:read
+      - corehr:employment.custom_org_field:write
       x-lark-error-mappings:
       - code: 1160400
         httpCode: 400
@@ -25660,8 +25659,8 @@ paths:
       - corehr:employment.custom_org:write
       - corehr:employment.custom_org:read
       x-lark-field-scopes:
-      - corehr:employment.custom_org_field:read
       - contact:user.employee_id:readonly
+      - corehr:employment.custom_org_field:read
       - corehr:employment.custom_org_field:write
       x-lark-error-mappings:
       - code: 1160001
@@ -25774,107 +25773,107 @@ paths:
       - corehr:employee:read
       - corehr:employee:write
       x-lark-field-scopes:
-      - corehr:person.date_entered_workforce:read
-      - corehr:person.entry_leave_time:write
-      - corehr:employment.assignment:read
-      - corehr:person.is_old_alone:read
-      - corehr:person.resident_tax_custom_field:write
-      - corehr:person.email:write
-      - corehr:person.entry_leave_time:read
-      - corehr:employment.job_grade:read
-      - corehr:person.gender:write
-      - corehr:contract.period:read
-      - corehr:employment.pathway:read
-      - corehr:person.address:read
-      - corehr:person.race:read
-      - corehr:person.legal_name_v2:read
-      - corehr:person.national_id_v2:write
-      - corehr:person.native_region:write
-      - corehr:person.marital_status:read
-      - corehr:person.legal_name:read
-      - corehr:job_data.compensation_type:read
-      - corehr:person.emergency_contact:read
-      - corehr:person.hukou:read
-      - corehr:person.bank_account:read
-      - corehr:person.religion:read
-      - corehr:person.work_experience:write
-      - corehr:employment.custom_field:read
-      - corehr:person.dependent:read
-      - corehr:person.education:read
-      - corehr:person.national_id:read
-      - corehr:person.passport:read
-      - corehr:employment.job_level:read
-      - corehr:job_data.work_shift:read
-      - corehr:person.born_country_region:read
-      - corehr:person.religion:write
-      - corehr:employment.individuals_with_headcount_or_not:read
-      - corehr:person.legal_name_v2:write
-      - corehr:employment.seniority_adjust_information:read
-      - corehr:person.education:write
-      - corehr:person.is_disabled:write
-      - corehr:person.dependent:write
-      - corehr:person.nationality:read
-      - corehr:person.passport:write
-      - corehr:person.personal_profile:read
-      - corehr:employment.pay_group:read
-      - corehr:person.gender:read
-      - corehr:employment.is_direct_leader:read
-      - corehr:person.visa:write
-      - corehr:person.is_disabled:read
-      - corehr:person.resident_tax:write
-      - corehr:person.work_experience:read
-      - corehr:employee.all_bp:read
       - contact:user.employee_id:readonly
-      - corehr:person.bank_account:write
-      - corehr:person.person_for_country:write
-      - corehr:person.phone:write
-      - corehr:person.personal_profile:write
-      - corehr:employment.job_grade:write
-      - corehr:person.custom_field:read
-      - corehr:person.resident_tax_custom_field:read
-      - corehr:employment.job:read
-      - corehr:person.date_of_birth:write
-      - corehr:employment.pathway:write
-      - corehr:person.date_of_birth:read
-      - corehr:people_cli
-      - corehr:person.national_id:write
-      - corehr:person.martyr_family:read
-      - corehr:employee.bp:read
-      - corehr:person.political_affiliation:read
-      - corehr:employment.seniority_adjust_information:write
-      - corehr:person.legal_name:write
-      - corehr:employment.offboarding_reason:read
-      - corehr:person.resident_tax:read
-      - corehr:job.job_level:read
-      - corehr:employment.job_level:write
-      - corehr:person.email:read
-      - corehr:person.hukou:write
-      - corehr:person.preferred_name_v2:read
-      - corehr:person.date_entered_workforce:write
-      - corehr:person.visa:read
-      - corehr:employment.custom_org_field:write
-      - corehr:employment.contract_type:read
-      - corehr:employment.archive_cpst_plan:read
-      - corehr:job_data.service_company:read
-      - corehr:person.political_affiliation:write
-      - corehr:person.emergency_contact:write
-      - corehr:person.born_country_region:write
-      - corehr:employment.is_dotted_leader:read
-      - corehr:employment.assignment_pay_group:read
-      - corehr:employment.position:read
-      - corehr:employment.custom_org_field:read
-      - corehr:person.address:write
-      - corehr:person.national_id_v2:read
-      - corehr:person.person_for_country:read
-      - corehr:person.phone:read
-      - corehr:person.nationality:write
-      - corehr:person.martyr_family:write
-      - corehr:person.custom_field:write
+      - corehr:contract.period:read
       - corehr:contract.period:write
-      - corehr:person.marital_status:write
-      - corehr:person.is_old_alone:write
+      - corehr:employee.all_bp:read
+      - corehr:employee.bp:read
+      - corehr:employment.archive_cpst_plan:read
+      - corehr:employment.assignment:read
+      - corehr:employment.assignment_pay_group:read
+      - corehr:employment.contract_type:read
+      - corehr:employment.custom_field:read
+      - corehr:employment.custom_org_field:read
+      - corehr:employment.custom_org_field:write
+      - corehr:employment.individuals_with_headcount_or_not:read
+      - corehr:employment.is_direct_leader:read
+      - corehr:employment.is_dotted_leader:read
+      - corehr:employment.job:read
+      - corehr:employment.job_grade:read
+      - corehr:employment.job_grade:write
+      - corehr:employment.job_level:read
+      - corehr:employment.job_level:write
+      - corehr:employment.offboarding_reason:read
+      - corehr:employment.pathway:read
+      - corehr:employment.pathway:write
+      - corehr:employment.pay_group:read
+      - corehr:employment.position:read
       - corehr:employment.position:write
+      - corehr:employment.seniority_adjust_information:read
+      - corehr:employment.seniority_adjust_information:write
+      - corehr:job.job_level:read
+      - corehr:job_data.compensation_type:read
+      - corehr:job_data.service_company:read
+      - corehr:job_data.work_shift:read
+      - corehr:people_cli
+      - corehr:person.address:read
+      - corehr:person.address:write
+      - corehr:person.bank_account:read
+      - corehr:person.bank_account:write
+      - corehr:person.born_country_region:read
+      - corehr:person.born_country_region:write
+      - corehr:person.custom_field:read
+      - corehr:person.custom_field:write
+      - corehr:person.date_entered_workforce:read
+      - corehr:person.date_entered_workforce:write
+      - corehr:person.date_of_birth:read
+      - corehr:person.date_of_birth:write
+      - corehr:person.dependent:read
+      - corehr:person.dependent:write
+      - corehr:person.education:read
+      - corehr:person.education:write
+      - corehr:person.email:read
+      - corehr:person.email:write
+      - corehr:person.emergency_contact:read
+      - corehr:person.emergency_contact:write
+      - corehr:person.entry_leave_time:read
+      - corehr:person.entry_leave_time:write
+      - corehr:person.gender:read
+      - corehr:person.gender:write
+      - corehr:person.hukou:read
+      - corehr:person.hukou:write
+      - corehr:person.is_disabled:read
+      - corehr:person.is_disabled:write
+      - corehr:person.is_old_alone:read
+      - corehr:person.is_old_alone:write
+      - corehr:person.legal_name:read
+      - corehr:person.legal_name:write
+      - corehr:person.legal_name_v2:read
+      - corehr:person.legal_name_v2:write
+      - corehr:person.marital_status:read
+      - corehr:person.marital_status:write
+      - corehr:person.martyr_family:read
+      - corehr:person.martyr_family:write
+      - corehr:person.national_id:read
+      - corehr:person.national_id:write
+      - corehr:person.national_id_v2:read
+      - corehr:person.national_id_v2:write
+      - corehr:person.nationality:read
+      - corehr:person.nationality:write
       - corehr:person.native_region:read
+      - corehr:person.native_region:write
+      - corehr:person.passport:read
+      - corehr:person.passport:write
+      - corehr:person.person_for_country:read
+      - corehr:person.person_for_country:write
+      - corehr:person.personal_profile:read
+      - corehr:person.personal_profile:write
+      - corehr:person.phone:read
+      - corehr:person.phone:write
+      - corehr:person.political_affiliation:read
+      - corehr:person.political_affiliation:write
+      - corehr:person.preferred_name_v2:read
+      - corehr:person.race:read
+      - corehr:person.religion:read
+      - corehr:person.religion:write
+      - corehr:person.resident_tax:read
+      - corehr:person.resident_tax:write
+      - corehr:person.resident_tax_custom_field:read
+      - corehr:person.resident_tax_custom_field:write
+      - corehr:person.visa:read
+      - corehr:person.visa:write
+      - corehr:person.work_experience:read
+      - corehr:person.work_experience:write
       x-lark-error-mappings:
       - code: 1160102
         httpCode: 400
@@ -27526,107 +27525,107 @@ paths:
       - corehr:employee:read
       - corehr:employee:write
       x-lark-field-scopes:
-      - corehr:employment.archive_cpst_plan:read
-      - corehr:person.resident_tax:write
-      - corehr:person.visa:read
-      - corehr:person.gender:write
-      - corehr:person.bank_account:read
-      - corehr:person.work_experience:read
-      - corehr:employment.seniority_adjust_information:write
-      - corehr:person.is_old_alone:write
-      - corehr:person.is_disabled:read
-      - corehr:person.national_id:read
-      - corehr:employment.job_level:read
-      - corehr:employment.job_level:write
-      - corehr:employment.pathway:write
-      - corehr:person.email:read
-      - corehr:job.job_level:read
-      - corehr:person.political_affiliation:read
+      - contact:user.employee_id:readonly
       - corehr:contract.period:read
       - corehr:contract.period:write
-      - corehr:person.national_id_v2:write
-      - corehr:person.born_country_region:read
-      - corehr:job_data.work_shift:read
-      - corehr:person.email:write
-      - corehr:person.born_country_region:write
+      - corehr:employee.all_bp:read
+      - corehr:employee.bp:read
+      - corehr:employment.archive_cpst_plan:read
+      - corehr:employment.assignment:read
+      - corehr:employment.assignment_pay_group:read
+      - corehr:employment.contract_type:read
+      - corehr:employment.custom_field:read
+      - corehr:employment.custom_org_field:read
       - corehr:employment.custom_org_field:write
-      - corehr:person.phone:write
+      - corehr:employment.individuals_with_headcount_or_not:read
+      - corehr:employment.is_direct_leader:read
+      - corehr:employment.is_dotted_leader:read
+      - corehr:employment.job:read
+      - corehr:employment.job_grade:read
+      - corehr:employment.job_grade:write
+      - corehr:employment.job_level:read
+      - corehr:employment.job_level:write
+      - corehr:employment.offboarding_reason:read
+      - corehr:employment.pathway:read
+      - corehr:employment.pathway:write
+      - corehr:employment.pay_group:read
+      - corehr:employment.position:read
+      - corehr:employment.position:write
+      - corehr:employment.seniority_adjust_information:read
+      - corehr:employment.seniority_adjust_information:write
+      - corehr:job.job_level:read
+      - corehr:job_data.compensation_type:read
+      - corehr:job_data.service_company:read
+      - corehr:job_data.work_shift:read
+      - corehr:people_cli
+      - corehr:person.address:read
+      - corehr:person.address:write
+      - corehr:person.bank_account:read
+      - corehr:person.bank_account:write
+      - corehr:person.born_country_region:read
+      - corehr:person.born_country_region:write
+      - corehr:person.custom_field:read
+      - corehr:person.custom_field:write
+      - corehr:person.date_entered_workforce:read
+      - corehr:person.date_entered_workforce:write
+      - corehr:person.date_of_birth:read
+      - corehr:person.date_of_birth:write
+      - corehr:person.dependent:read
+      - corehr:person.dependent:write
+      - corehr:person.education:read
+      - corehr:person.education:write
+      - corehr:person.email:read
+      - corehr:person.email:write
+      - corehr:person.emergency_contact:read
+      - corehr:person.emergency_contact:write
+      - corehr:person.entry_leave_time:read
       - corehr:person.entry_leave_time:write
       - corehr:person.gender:read
-      - corehr:person.marital_status:write
-      - corehr:person.preferred_name_v2:read
-      - corehr:person.political_affiliation:write
-      - corehr:person.resident_tax:read
-      - corehr:person.nationality:write
-      - corehr:employment.seniority_adjust_information:read
-      - corehr:person.custom_field:read
-      - corehr:employment.position:read
-      - corehr:person.religion:write
-      - corehr:employment.is_dotted_leader:read
-      - corehr:employment.assignment_pay_group:read
-      - corehr:job_data.service_company:read
-      - corehr:person.passport:write
-      - corehr:employee.bp:read
-      - corehr:person.dependent:read
-      - corehr:person.emergency_contact:read
-      - corehr:person.native_region:write
-      - contact:user.employee_id:readonly
+      - corehr:person.gender:write
       - corehr:person.hukou:read
-      - corehr:employment.offboarding_reason:read
-      - corehr:person.native_region:read
-      - corehr:person.education:read
-      - corehr:person.date_of_birth:write
-      - corehr:employment.custom_field:read
-      - corehr:person.resident_tax_custom_field:write
-      - corehr:person.resident_tax_custom_field:read
-      - corehr:employment.position:write
-      - corehr:person.religion:read
-      - corehr:employment.contract_type:read
-      - corehr:job_data.compensation_type:read
-      - corehr:person.date_of_birth:read
-      - corehr:employment.individuals_with_headcount_or_not:read
-      - corehr:person.emergency_contact:write
-      - corehr:person.custom_field:write
-      - corehr:person.national_id:write
-      - corehr:employment.job_grade:write
-      - corehr:employment.is_direct_leader:read
-      - corehr:person.dependent:write
-      - corehr:employment.assignment:read
-      - corehr:person.education:write
-      - corehr:employment.pay_group:read
-      - corehr:person.martyr_family:write
       - corehr:person.hukou:write
-      - corehr:person.passport:read
-      - corehr:person.visa:write
-      - corehr:person.legal_name:read
-      - corehr:person.work_experience:write
-      - corehr:person.personal_profile:write
+      - corehr:person.is_disabled:read
       - corehr:person.is_disabled:write
-      - corehr:person.bank_account:write
-      - corehr:person.person_for_country:write
-      - corehr:employment.job:read
+      - corehr:person.is_old_alone:read
+      - corehr:person.is_old_alone:write
+      - corehr:person.legal_name:read
+      - corehr:person.legal_name:write
       - corehr:person.legal_name_v2:read
       - corehr:person.legal_name_v2:write
-      - corehr:employment.pathway:read
-      - corehr:person.national_id_v2:read
-      - corehr:person.nationality:read
-      - corehr:person.person_for_country:read
-      - corehr:person.personal_profile:read
-      - corehr:person.martyr_family:read
-      - corehr:employee.all_bp:read
       - corehr:person.marital_status:read
-      - corehr:person.address:write
-      - corehr:person.entry_leave_time:read
-      - corehr:person.race:read
-      - corehr:person.legal_name:write
-      - corehr:person.is_old_alone:read
-      - corehr:person.date_entered_workforce:write
-      - corehr:employment.job_grade:read
+      - corehr:person.marital_status:write
+      - corehr:person.martyr_family:read
+      - corehr:person.martyr_family:write
+      - corehr:person.national_id:read
+      - corehr:person.national_id:write
+      - corehr:person.national_id_v2:read
+      - corehr:person.national_id_v2:write
+      - corehr:person.nationality:read
+      - corehr:person.nationality:write
+      - corehr:person.native_region:read
+      - corehr:person.native_region:write
+      - corehr:person.passport:read
+      - corehr:person.passport:write
+      - corehr:person.person_for_country:read
+      - corehr:person.person_for_country:write
+      - corehr:person.personal_profile:read
+      - corehr:person.personal_profile:write
       - corehr:person.phone:read
-      - corehr:person.address:read
-      - corehr:people_cli
-      - corehr:employment.custom_org_field:read
-      - corehr:person.date_entered_workforce:read
+      - corehr:person.phone:write
+      - corehr:person.political_affiliation:read
+      - corehr:person.political_affiliation:write
+      - corehr:person.preferred_name_v2:read
+      - corehr:person.race:read
+      - corehr:person.religion:read
+      - corehr:person.religion:write
+      - corehr:person.resident_tax:read
+      - corehr:person.resident_tax:write
+      - corehr:person.resident_tax_custom_field:read
+      - corehr:person.resident_tax_custom_field:write
+      - corehr:person.visa:read
+      - corehr:person.visa:write
+      - corehr:person.work_experience:read
+      - corehr:person.work_experience:write
       x-lark-error-mappings:
       - code: 1160102
         httpCode: 400
@@ -27834,18 +27833,18 @@ paths:
       - corehr:additional_job:write
       x-lark-field-scopes:
       - contact:user.employee_id:readonly
-      - corehr:additional_job.job_level:write
-      - corehr:additional_job.compensation_type:write
       - corehr:additional_job.compensation_type:read
-      - corehr:additional_job.service_company:write
-      - corehr:additional_job.position:write
-      - corehr:additional_job.position:read
-      - corehr:additional_job.job:write
+      - corehr:additional_job.compensation_type:write
       - corehr:additional_job.job:read
+      - corehr:additional_job.job:write
       - corehr:additional_job.job_level:read
-      - corehr:additional_job.work_shift:write
-      - corehr:additional_job.work_shift:read
+      - corehr:additional_job.job_level:write
+      - corehr:additional_job.position:read
+      - corehr:additional_job.position:write
       - corehr:additional_job.service_company:read
+      - corehr:additional_job.service_company:write
+      - corehr:additional_job.work_shift:read
+      - corehr:additional_job.work_shift:write
       x-lark-rate-limit:
         tier: 3
       x-lark-pagination: true
@@ -28029,13 +28028,13 @@ paths:
       x-lark-scopes:
       - corehr:additional_job:write
       x-lark-field-scopes:
+      - contact:user.employee_id:readonly
+      - corehr:additional_job.compensation_type:write
       - corehr:additional_job.job:write
       - corehr:additional_job.job_level:write
-      - corehr:additional_job.work_shift:write
-      - corehr:additional_job.compensation_type:write
-      - corehr:additional_job.service_company:write
       - corehr:additional_job.position:write
-      - contact:user.employee_id:readonly
+      - corehr:additional_job.service_company:write
+      - corehr:additional_job.work_shift:write
       x-lark-error-mappings:
       - code: 1160001
         httpCode: 200
@@ -28295,13 +28294,13 @@ paths:
       x-lark-scopes:
       - corehr:additional_job:write
       x-lark-field-scopes:
-      - corehr:additional_job.service_company:write
-      - corehr:additional_job.position:write
       - contact:user.employee_id:readonly
+      - corehr:additional_job.compensation_type:write
       - corehr:additional_job.job:write
       - corehr:additional_job.job_level:write
+      - corehr:additional_job.position:write
+      - corehr:additional_job.service_company:write
       - corehr:additional_job.work_shift:write
-      - corehr:additional_job.compensation_type:write
       x-lark-error-mappings:
       - code: 1160001
         httpCode: 200
@@ -28730,20 +28729,20 @@ paths:
       - corehr:employees.international_assignment:write
       x-lark-field-scopes:
       - contact:user.employee_id:readonly
-      - corehr:employment.international_assignment.compensation_type:write
-      - corehr:employment.international_assignment.work_shift:write
-      - corehr:employment.international_assignment.work_calendar:write
-      - corehr:employment.international_assignment.job:write
       - corehr:employment.international_assignment.accommodation:write
-      - corehr:employment.international_assignment.work_location:write
-      - corehr:employment.international_assignment.working_hours_type:write
+      - corehr:employment.international_assignment.compensation_type:write
+      - corehr:employment.international_assignment.custom_field:write
+      - corehr:employment.international_assignment.international_assignment_allowance:write
+      - corehr:employment.international_assignment.job:write
       - corehr:employment.international_assignment.job_grade:write
       - corehr:employment.international_assignment.job_level:write
-      - corehr:employment.international_assignment.international_assignment_allowance:write
       - corehr:employment.international_assignment.position:write
-      - corehr:employment.international_assignment.custom_field:write
-      - corehr:employment.international_assignment.weekly_working_hours:write
       - corehr:employment.international_assignment.service_company:write
+      - corehr:employment.international_assignment.weekly_working_hours:write
+      - corehr:employment.international_assignment.work_calendar:write
+      - corehr:employment.international_assignment.work_location:write
+      - corehr:employment.international_assignment.work_shift:write
+      - corehr:employment.international_assignment.working_hours_type:write
       x-lark-error-mappings:
       - code: 1160001
         httpCode: 400
@@ -29441,31 +29440,31 @@ paths:
       - corehr:employees.international_assignment:read
       - corehr:employees.international_assignment:write
       x-lark-field-scopes:
-      - corehr:employment.international_assignment.job:write
-      - corehr:employment.international_assignment.compensation_type:read
-      - corehr:employment.international_assignment.working_hours_type:write
-      - corehr:employment.international_assignment.job:read
-      - corehr:employment.international_assignment.work_calendar:write
-      - corehr:employment.international_assignment.custom_field:write
-      - corehr:employment.international_assignment.service_company:write
-      - corehr:employment.international_assignment.work_shift:read
-      - corehr:employment.international_assignment.working_hours_type:read
-      - corehr:employment.international_assignment.job_grade:write
       - contact:user.employee_id:readonly
-      - corehr:employment.international_assignment.work_location:write
-      - corehr:employment.international_assignment.job_grade:read
-      - corehr:employment.international_assignment.position:read
-      - corehr:employment.international_assignment.service_company:read
-      - corehr:employment.international_assignment.job_level:read
+      - corehr:employment.international_assignment.compensation_type:read
       - corehr:employment.international_assignment.compensation_type:write
-      - corehr:employment.international_assignment.weekly_working_hours:write
-      - corehr:employment.international_assignment.weekly_working_hours:read
-      - corehr:employment.international_assignment.work_calendar:read
-      - corehr:employment.international_assignment.position:write
       - corehr:employment.international_assignment.custom_field:read
-      - corehr:employment.international_assignment.work_shift:write
+      - corehr:employment.international_assignment.custom_field:write
+      - corehr:employment.international_assignment.job:read
+      - corehr:employment.international_assignment.job:write
+      - corehr:employment.international_assignment.job_grade:read
+      - corehr:employment.international_assignment.job_grade:write
+      - corehr:employment.international_assignment.job_level:read
       - corehr:employment.international_assignment.job_level:write
+      - corehr:employment.international_assignment.position:read
+      - corehr:employment.international_assignment.position:write
+      - corehr:employment.international_assignment.service_company:read
+      - corehr:employment.international_assignment.service_company:write
+      - corehr:employment.international_assignment.weekly_working_hours:read
+      - corehr:employment.international_assignment.weekly_working_hours:write
+      - corehr:employment.international_assignment.work_calendar:read
+      - corehr:employment.international_assignment.work_calendar:write
       - corehr:employment.international_assignment.work_location:read
+      - corehr:employment.international_assignment.work_location:write
+      - corehr:employment.international_assignment.work_shift:read
+      - corehr:employment.international_assignment.work_shift:write
+      - corehr:employment.international_assignment.working_hours_type:read
+      - corehr:employment.international_assignment.working_hours_type:write
       x-lark-error-mappings:
       - code: 1160001
         httpCode: 400
@@ -29806,21 +29805,21 @@ paths:
       x-lark-scopes:
       - corehr:employees.international_assignment:write
       x-lark-field-scopes:
-      - corehr:employment.international_assignment.work_calendar:write
-      - corehr:employment.international_assignment.working_hours_type:write
-      - corehr:employment.international_assignment.accommodation:write
       - contact:user.employee_id:readonly
-      - corehr:employment.international_assignment.work_location:write
-      - corehr:employment.international_assignment.job:write
+      - corehr:employment.international_assignment.accommodation:write
       - corehr:employment.international_assignment.compensation_type:write
+      - corehr:employment.international_assignment.custom_field:write
+      - corehr:employment.international_assignment.international_assignment_allowance:write
+      - corehr:employment.international_assignment.job:write
+      - corehr:employment.international_assignment.job_grade:write
       - corehr:employment.international_assignment.job_level:write
       - corehr:employment.international_assignment.position:write
-      - corehr:employment.international_assignment.weekly_working_hours:write
-      - corehr:employment.international_assignment.custom_field:write
-      - corehr:employment.international_assignment.work_shift:write
-      - corehr:employment.international_assignment.job_grade:write
-      - corehr:employment.international_assignment.international_assignment_allowance:write
       - corehr:employment.international_assignment.service_company:write
+      - corehr:employment.international_assignment.weekly_working_hours:write
+      - corehr:employment.international_assignment.work_calendar:write
+      - corehr:employment.international_assignment.work_location:write
+      - corehr:employment.international_assignment.work_shift:write
+      - corehr:employment.international_assignment.working_hours_type:write
       x-lark-error-mappings:
       - code: 1160001
         httpCode: 400
@@ -30299,23 +30298,23 @@ paths:
       - corehr:job_data:read
       - corehr:job_data:write
       x-lark-field-scopes:
-      - corehr:employment.pathway:read
-      - corehr:people_cli
-      - corehr:job_data.compensation_type:read
-      - corehr:job_data.work_calendar:read
-      - corehr:employment.job_level:read
-      - corehr:employment.job_level:write
-      - corehr:job_data.assignment_start_reason:read
-      - corehr:employment.position:read
-      - corehr:job_data.service_company:read
+      - contact:user.employee_id:readonly
+      - corehr:employment.job:read
       - corehr:employment.job_grade:read
       - corehr:employment.job_grade:write
-      - corehr:employment.job:read
-      - corehr:job_data.job_data_reason:read
+      - corehr:employment.job_level:read
+      - corehr:employment.job_level:write
+      - corehr:employment.pathway:read
       - corehr:employment.pathway:write
-      - contact:user.employee_id:readonly
-      - corehr:job_data.work_shift:read
+      - corehr:employment.position:read
       - corehr:employment.position:write
+      - corehr:job_data.assignment_start_reason:read
+      - corehr:job_data.compensation_type:read
+      - corehr:job_data.job_data_reason:read
+      - corehr:job_data.service_company:read
+      - corehr:job_data.work_calendar:read
+      - corehr:job_data.work_shift:read
+      - corehr:people_cli
       x-lark-error-mappings:
       - code: 1160013
         httpCode: 400
@@ -30807,23 +30806,23 @@ paths:
       - corehr:job_data:read
       - corehr:job_data:write
       x-lark-field-scopes:
+      - contact:user.employee_id:readonly
+      - corehr:employment.job:read
+      - corehr:employment.job_grade:read
+      - corehr:employment.job_grade:write
       - corehr:employment.job_level:read
       - corehr:employment.job_level:write
-      - corehr:job_data.compensation_type:read
-      - corehr:job_data.service_company:read
-      - corehr:employment.position:read
-      - corehr:employment.job:read
-      - corehr:employment.job_grade:write
-      - corehr:people_cli
-      - corehr:job_data.work_shift:read
       - corehr:employment.pathway:read
-      - corehr:employment.job_grade:read
-      - corehr:job_data.assignment_start_reason:read
-      - contact:user.employee_id:readonly
-      - corehr:employment.position:write
-      - corehr:job_data.job_data_reason:read
       - corehr:employment.pathway:write
+      - corehr:employment.position:read
+      - corehr:employment.position:write
+      - corehr:job_data.assignment_start_reason:read
+      - corehr:job_data.compensation_type:read
+      - corehr:job_data.job_data_reason:read
+      - corehr:job_data.service_company:read
       - corehr:job_data.work_calendar:read
+      - corehr:job_data.work_shift:read
+      - corehr:people_cli
       x-lark-error-mappings:
       - code: 1160013
         httpCode: 400
@@ -31989,27 +31988,27 @@ paths:
       x-lark-scopes:
       - corehr:job_change:create
       x-lark-field-scopes:
-      - corehr:job_change.employment_custom_field:read
-      - corehr:employment.job_level:read
       - contact:user.employee_id:readonly
-      - corehr:job_change.custom_field:read
-      - corehr:job_data.compensation_type:read
-      - corehr:employment.job_grade:write
-      - corehr:employment.job_level:write
-      - corehr:job_change.pathway:write
+      - corehr:contract.company:read
       - corehr:contract.company:write
-      - corehr:job_data.service_company:read
       - corehr:contract.period:read
       - corehr:contract.period:write
-      - corehr:job_change.pathway:read
-      - corehr:job_change.is_adjust_salary:read
-      - corehr:job_change.remark:read
-      - corehr:job_change.notice_period:read
-      - corehr:people_cli
-      - corehr:employment.job_grade:read
-      - corehr:contract.company:read
-      - corehr:job_change.social_security_city:read
       - corehr:employment.job:read
+      - corehr:employment.job_grade:read
+      - corehr:employment.job_grade:write
+      - corehr:employment.job_level:read
+      - corehr:employment.job_level:write
+      - corehr:job_change.custom_field:read
+      - corehr:job_change.employment_custom_field:read
+      - corehr:job_change.is_adjust_salary:read
+      - corehr:job_change.notice_period:read
+      - corehr:job_change.pathway:read
+      - corehr:job_change.pathway:write
+      - corehr:job_change.remark:read
+      - corehr:job_change.social_security_city:read
+      - corehr:job_data.compensation_type:read
+      - corehr:job_data.service_company:read
+      - corehr:people_cli
       x-lark-error-mappings:
       - code: 1160100
         httpCode: 400
@@ -32443,27 +32442,27 @@ paths:
       - corehr:job_change:read
       - corehr:people_cli
       x-lark-field-scopes:
-      - corehr:employment.job_grade:read
-      - corehr:employment.job_grade:write
-      - corehr:job_change.notice_period:read
-      - corehr:job_data.compensation_type:read
-      - corehr:job_change.social_security_city:read
-      - corehr:people_cli
-      - corehr:contract.period:read
-      - corehr:employment.job:read
+      - contact:user.employee_id:readonly
       - corehr:contract.company:read
       - corehr:contract.company:write
-      - corehr:job_change.employment_custom_field:read
-      - corehr:job_change.custom_field:read
-      - corehr:employment.job_level:write
+      - corehr:contract.period:read
       - corehr:contract.period:write
+      - corehr:employment.job:read
+      - corehr:employment.job_grade:read
+      - corehr:employment.job_grade:write
+      - corehr:employment.job_level:read
+      - corehr:employment.job_level:write
+      - corehr:job_change.custom_field:read
+      - corehr:job_change.employment_custom_field:read
+      - corehr:job_change.is_adjust_salary:read
+      - corehr:job_change.notice_period:read
       - corehr:job_change.pathway:read
       - corehr:job_change.pathway:write
-      - corehr:job_change.is_adjust_salary:read
-      - corehr:job_data.service_company:read
-      - contact:user.employee_id:readonly
-      - corehr:employment.job_level:read
       - corehr:job_change.remark:read
+      - corehr:job_change.social_security_city:read
+      - corehr:job_data.compensation_type:read
+      - corehr:job_data.service_company:read
+      - corehr:people_cli
       x-lark-error-mappings:
       - code: 1160101
         httpCode: 500
@@ -35653,71 +35652,71 @@ paths:
       x-lark-scopes:
       - corehr:person:write
       x-lark-field-scopes:
+      - corehr:person.address:read
+      - corehr:person.address:write
       - corehr:person.bank_account:read
       - corehr:person.bank_account:write
-      - corehr:person.legal_name_v2:read
-      - corehr:person.address:write
-      - corehr:person.gender:write
-      - corehr:person.martyr_family:read
-      - corehr:person.custom_field:write
-      - corehr:person.gender:read
-      - corehr:person.date_entered_workforce:read
-      - corehr:person.address:read
-      - corehr:person.phone:read
-      - corehr:person.date_of_birth:write
-      - corehr:person.native_region:write
-      - corehr:person.national_id_v2:read
-      - corehr:person.dependent:write
-      - corehr:person.legal_name_v2:write
-      - corehr:person.person_for_country:write
-      - corehr:person.email:write
-      - corehr:person.hukou:read
-      - corehr:person.national_id:read
-      - corehr:person.personal_profile:write
-      - corehr:person.date_of_birth:read
-      - corehr:person.dependent:read
-      - corehr:person.resident_tax_custom_field:read
-      - corehr:person.legal_name:read
-      - corehr:person.visa:write
-      - corehr:person.is_disabled:write
-      - corehr:person.date_entered_workforce:write
-      - corehr:person.visa:read
-      - corehr:person.race:read
-      - corehr:person.is_old_alone:read
-      - corehr:person.email:read
-      - corehr:person.national_id:write
-      - corehr:person.personal_profile:read
       - corehr:person.born_country_region:read
-      - corehr:person.work_experience:write
-      - corehr:person.preferred_name_v2:read
-      - corehr:person.emergency_contact:write
-      - corehr:person.education:read
-      - corehr:person.is_old_alone:write
-      - corehr:person.national_id_v2:write
-      - corehr:person.marital_status:write
-      - corehr:person.hukou:write
-      - corehr:person.phone:write
-      - corehr:person.education:write
       - corehr:person.born_country_region:write
-      - corehr:person.nationality:write
-      - corehr:person.resident_tax:read
+      - corehr:person.custom_field:read
+      - corehr:person.custom_field:write
+      - corehr:person.date_entered_workforce:read
+      - corehr:person.date_entered_workforce:write
+      - corehr:person.date_of_birth:read
+      - corehr:person.date_of_birth:write
+      - corehr:person.dependent:read
+      - corehr:person.dependent:write
+      - corehr:person.education:read
+      - corehr:person.education:write
+      - corehr:person.email:read
+      - corehr:person.email:write
+      - corehr:person.emergency_contact:read
+      - corehr:person.emergency_contact:write
+      - corehr:person.entry_leave_time:read
+      - corehr:person.entry_leave_time:write
+      - corehr:person.gender:read
+      - corehr:person.gender:write
+      - corehr:person.hukou:read
+      - corehr:person.hukou:write
+      - corehr:person.is_disabled:read
+      - corehr:person.is_disabled:write
+      - corehr:person.is_old_alone:read
+      - corehr:person.is_old_alone:write
+      - corehr:person.legal_name:read
+      - corehr:person.legal_name:write
+      - corehr:person.legal_name_v2:read
+      - corehr:person.legal_name_v2:write
       - corehr:person.marital_status:read
+      - corehr:person.marital_status:write
+      - corehr:person.martyr_family:read
+      - corehr:person.martyr_family:write
+      - corehr:person.national_id:read
+      - corehr:person.national_id:write
+      - corehr:person.national_id_v2:read
+      - corehr:person.national_id_v2:write
+      - corehr:person.nationality:read
+      - corehr:person.nationality:write
+      - corehr:person.native_region:read
+      - corehr:person.native_region:write
+      - corehr:person.passport:read
+      - corehr:person.passport:write
       - corehr:person.passport_number:read
       - corehr:person.person_for_country:read
-      - corehr:person.emergency_contact:read
-      - corehr:person.native_region:read
-      - corehr:person.custom_field:read
-      - corehr:person.entry_leave_time:write
-      - corehr:person.resident_tax_custom_field:write
-      - corehr:person.martyr_family:write
-      - corehr:person.is_disabled:read
-      - corehr:person.entry_leave_time:read
+      - corehr:person.person_for_country:write
+      - corehr:person.personal_profile:read
+      - corehr:person.personal_profile:write
+      - corehr:person.phone:read
+      - corehr:person.phone:write
+      - corehr:person.preferred_name_v2:read
+      - corehr:person.race:read
+      - corehr:person.resident_tax:read
       - corehr:person.resident_tax:write
-      - corehr:person.passport:read
-      - corehr:person.legal_name:write
-      - corehr:person.passport:write
+      - corehr:person.resident_tax_custom_field:read
+      - corehr:person.resident_tax_custom_field:write
+      - corehr:person.visa:read
+      - corehr:person.visa:write
       - corehr:person.work_experience:read
-      - corehr:person.nationality:read
+      - corehr:person.work_experience:write
       x-lark-error-mappings:
       - code: 1160001
         httpCode: 400
@@ -36130,70 +36129,70 @@ paths:
       x-lark-scopes:
       - corehr:person:write
       x-lark-field-scopes:
-      - corehr:person.person_for_country:read
-      - corehr:person.legal_name:write
-      - corehr:person.personal_profile:write
-      - corehr:person.national_id_v2:read
-      - corehr:person.date_entered_workforce:read
-      - corehr:person.hukou:write
-      - corehr:person.resident_tax:read
-      - corehr:person.address:write
-      - corehr:person.email:write
-      - corehr:person.martyr_family:write
-      - corehr:person.native_region:read
-      - corehr:person.is_disabled:write
-      - corehr:person.education:write
-      - corehr:person.is_old_alone:write
-      - corehr:person.gender:write
-      - corehr:person.legal_name_v2:read
-      - corehr:person.resident_tax_custom_field:read
-      - corehr:person.emergency_contact:write
-      - corehr:person.personal_profile:read
-      - corehr:person.education:read
-      - corehr:person.custom_field:write
-      - corehr:person.passport:read
-      - corehr:person.born_country_region:read
-      - corehr:person.marital_status:read
-      - corehr:person.martyr_family:read
-      - corehr:person.dependent:write
-      - corehr:person.resident_tax_custom_field:write
-      - corehr:person.national_id_v2:write
-      - corehr:person.legal_name:read
-      - corehr:person.national_id:read
-      - corehr:person.bank_account:read
-      - corehr:person.custom_field:read
-      - corehr:person.born_country_region:write
-      - corehr:person.marital_status:write
-      - corehr:person.person_for_country:write
-      - corehr:person.legal_name_v2:write
-      - corehr:person.nationality:read
-      - corehr:person.visa:write
-      - corehr:person.date_of_birth:read
-      - corehr:person.gender:read
-      - corehr:person.phone:read
-      - corehr:person.preferred_name_v2:read
-      - corehr:person.entry_leave_time:read
-      - corehr:person.national_id:write
-      - corehr:person.passport:write
       - corehr:person.address:read
+      - corehr:person.address:write
+      - corehr:person.bank_account:read
+      - corehr:person.bank_account:write
+      - corehr:person.born_country_region:read
+      - corehr:person.born_country_region:write
+      - corehr:person.custom_field:read
+      - corehr:person.custom_field:write
+      - corehr:person.date_entered_workforce:read
       - corehr:person.date_entered_workforce:write
+      - corehr:person.date_of_birth:read
+      - corehr:person.date_of_birth:write
+      - corehr:person.dependent:read
+      - corehr:person.dependent:write
+      - corehr:person.education:read
+      - corehr:person.education:write
+      - corehr:person.email:read
+      - corehr:person.email:write
+      - corehr:person.emergency_contact:read
+      - corehr:person.emergency_contact:write
+      - corehr:person.entry_leave_time:read
+      - corehr:person.entry_leave_time:write
+      - corehr:person.gender:read
+      - corehr:person.gender:write
+      - corehr:person.hukou:read
+      - corehr:person.hukou:write
+      - corehr:person.is_disabled:read
+      - corehr:person.is_disabled:write
       - corehr:person.is_old_alone:read
+      - corehr:person.is_old_alone:write
+      - corehr:person.legal_name:read
+      - corehr:person.legal_name:write
+      - corehr:person.legal_name_v2:read
+      - corehr:person.legal_name_v2:write
+      - corehr:person.marital_status:read
+      - corehr:person.marital_status:write
+      - corehr:person.martyr_family:read
+      - corehr:person.martyr_family:write
+      - corehr:person.national_id:read
+      - corehr:person.national_id:write
+      - corehr:person.national_id_v2:read
+      - corehr:person.national_id_v2:write
+      - corehr:person.nationality:read
+      - corehr:person.nationality:write
+      - corehr:person.native_region:read
+      - corehr:person.native_region:write
+      - corehr:person.passport:read
+      - corehr:person.passport:write
+      - corehr:person.person_for_country:read
+      - corehr:person.person_for_country:write
+      - corehr:person.personal_profile:read
+      - corehr:person.personal_profile:write
+      - corehr:person.phone:read
+      - corehr:person.phone:write
+      - corehr:person.preferred_name_v2:read
+      - corehr:person.race:read
+      - corehr:person.resident_tax:read
+      - corehr:person.resident_tax:write
+      - corehr:person.resident_tax_custom_field:read
+      - corehr:person.resident_tax_custom_field:write
+      - corehr:person.visa:read
+      - corehr:person.visa:write
       - corehr:person.work_experience:read
       - corehr:person.work_experience:write
-      - corehr:person.dependent:read
-      - corehr:person.visa:read
-      - corehr:person.race:read
-      - corehr:person.email:read
-      - corehr:person.phone:write
-      - corehr:person.nationality:write
-      - corehr:person.resident_tax:write
-      - corehr:person.bank_account:write
-      - corehr:person.emergency_contact:read
-      - corehr:person.date_of_birth:write
-      - corehr:person.entry_leave_time:write
-      - corehr:person.is_disabled:read
-      - corehr:person.hukou:read
-      - corehr:person.native_region:write
       x-lark-error-mappings:
       - code: 1160001
         httpCode: 400
@@ -39682,115 +39681,115 @@ paths:
       x-lark-scopes:
       - corehr:pre_hire:read_only
       x-lark-field-scopes:
-      - corehr:pre_hire.background_check_order_result:read
-      - corehr:person.person_for_country:write
-      - corehr:person.person_for_country:read
-      - corehr:person.hukou:write
-      - corehr:pre_hire.abnormal_reason_field:read
-      - corehr:person.nationality:read
-      - corehr:person.is_old_alone:write
       - contact:user.employee_id:readonly
-      - corehr:pre_hire.background_check_order_complete_time:read
-      - corehr:person.work_experience:read
-      - corehr:person.email:write
-      - corehr:pre_hire.background_check_order_start_time:read
-      - corehr:person.passport:write
-      - corehr:person.date_entered_workforce:read
-      - corehr:person.native_region:read
-      - corehr:person.legal_name_v2:read
-      - corehr:employment.job_grade:write
-      - corehr:contract.period:read
-      - corehr:person.national_id:write
-      - corehr:person.dependent:write
-      - corehr:person.national_id_v2:write
-      - corehr:person.email:read
-      - corehr:employment.recruitment_project_id:read
-      - corehr:employment.has_offer_salary:read
-      - corehr:person.emergency_contact:write
-      - corehr:employment.job_level:write
-      - corehr:person.religion:read
-      - corehr:person.is_old_alone:read
-      - corehr:pre_hire.background_check_order_supplier_name:read
-      - corehr:person.personal_profile:read
-      - corehr:person.hukou:read
-      - corehr:pre_hire.company_manual_updated:read
-      - corehr:person.passport_number:read
-      - corehr:pre_hire.background_check_order_id:read
-      - corehr:person.address:write
-      - corehr:person.passport:read
-      - corehr:person.national_id:read
-      - corehr:employment.pay_group:read
-      - corehr:job_data.work_shift:read
-      - corehr:pre_hire.onboarding_address:read
-      - corehr:person.custom_field:write
-      - corehr:person.preferred_name_v2:read
-      - corehr:person.nationality:write
-      - corehr:person.martyr_family:write
-      - corehr:person.visa:write
-      - corehr:person.legal_name:read
-      - corehr:person.phone:read
-      - corehr:person.gender:read
-      - corehr:person.address:read
-      - corehr:person.personal_profile:write
-      - corehr:pre_hire.background_check_order_status:read
-      - corehr:person.visa:read
-      - corehr:employment.job_level:read
-      - corehr:person.native_region:write
-      - corehr:pre_hire.company_sponsored_visa:read
-      - corehr:employment.compensation_type:write
-      - corehr:person.date_of_birth:read
-      - corehr:pre_hire.background_check_order_name:read
-      - corehr:person.marital_status:write
-      - corehr:person.education:read
-      - corehr:pre_hire.office_address:read
-      - corehr:person.work_experience:write
-      - corehr:pre_hire.contract_file_id:read
-      - corehr:employment.custom_field:read
-      - corehr:pre_hire.flow_id:read
-      - corehr:pre_hire.check_in_data:read
-      - corehr:person.custom_field:read
-      - corehr:person.resident_tax_custom_field:write
-      - corehr:person.emergency_contact:read
-      - corehr:person.bank_account:read
-      - corehr:person.gender:write
-      - corehr:pre_hire.background_check_order_package_name:read
-      - corehr:pre_hire.suspected_rehiring:read
-      - corehr:person.political_affiliation:read
-      - corehr:contract.company:write
-      - corehr:person.born_country_region:write
-      - corehr:person.legal_name:write
       - corehr:contract.company:read
-      - corehr:person.is_disabled:read
-      - corehr:employment.position:write
-      - corehr:employment.non_compete_covenant:read
-      - corehr:employment.job_grade:read
-      - corehr:pre_hire.withdrawn_reason:read
-      - corehr:employment.job:read
-      - corehr:person.phone:write
-      - corehr:person.marital_status:read
-      - corehr:person.resident_tax:read
+      - corehr:contract.company:write
+      - corehr:contract.period:read
       - corehr:contract.period:write
-      - corehr:pre_hire.working_calendar:read
       - corehr:employment.compensation_type:read
-      - corehr:people_cli
-      - corehr:person.bank_account:write
-      - corehr:person.resident_tax:write
-      - corehr:person.martyr_family:read
-      - corehr:person.resident_tax_custom_field:read
-      - corehr:pre_hire.background_check_order_account_name:read
-      - corehr:person.date_entered_workforce:write
-      - corehr:employment.position:read
-      - corehr:person.race:read
-      - corehr:person.born_country_region:read
-      - corehr:person.national_id_v2:read
-      - corehr:person.dependent:read
-      - corehr:person.education:write
-      - corehr:person.religion:write
-      - corehr:pre_hire.dotted_line_manager:read
+      - corehr:employment.compensation_type:write
+      - corehr:employment.custom_field:read
+      - corehr:employment.has_offer_salary:read
+      - corehr:employment.job:read
+      - corehr:employment.job_grade:read
+      - corehr:employment.job_grade:write
+      - corehr:employment.job_level:read
+      - corehr:employment.job_level:write
+      - corehr:employment.non_compete_covenant:read
       - corehr:employment.non_compete_covenant:write
-      - corehr:person.is_disabled:write
+      - corehr:employment.pay_group:read
+      - corehr:employment.position:read
+      - corehr:employment.position:write
+      - corehr:employment.recruitment_project_id:read
+      - corehr:job_data.work_shift:read
+      - corehr:people_cli
+      - corehr:person.address:read
+      - corehr:person.address:write
+      - corehr:person.bank_account:read
+      - corehr:person.bank_account:write
+      - corehr:person.born_country_region:read
+      - corehr:person.born_country_region:write
+      - corehr:person.custom_field:read
+      - corehr:person.custom_field:write
+      - corehr:person.date_entered_workforce:read
+      - corehr:person.date_entered_workforce:write
+      - corehr:person.date_of_birth:read
       - corehr:person.date_of_birth:write
+      - corehr:person.dependent:read
+      - corehr:person.dependent:write
+      - corehr:person.education:read
+      - corehr:person.education:write
+      - corehr:person.email:read
+      - corehr:person.email:write
+      - corehr:person.emergency_contact:read
+      - corehr:person.emergency_contact:write
+      - corehr:person.gender:read
+      - corehr:person.gender:write
+      - corehr:person.hukou:read
+      - corehr:person.hukou:write
+      - corehr:person.is_disabled:read
+      - corehr:person.is_disabled:write
+      - corehr:person.is_old_alone:read
+      - corehr:person.is_old_alone:write
+      - corehr:person.legal_name:read
+      - corehr:person.legal_name:write
+      - corehr:person.legal_name_v2:read
       - corehr:person.legal_name_v2:write
+      - corehr:person.marital_status:read
+      - corehr:person.marital_status:write
+      - corehr:person.martyr_family:read
+      - corehr:person.martyr_family:write
+      - corehr:person.national_id:read
+      - corehr:person.national_id:write
+      - corehr:person.national_id_v2:read
+      - corehr:person.national_id_v2:write
+      - corehr:person.nationality:read
+      - corehr:person.nationality:write
+      - corehr:person.native_region:read
+      - corehr:person.native_region:write
+      - corehr:person.passport:read
+      - corehr:person.passport:write
+      - corehr:person.passport_number:read
+      - corehr:person.person_for_country:read
+      - corehr:person.person_for_country:write
+      - corehr:person.personal_profile:read
+      - corehr:person.personal_profile:write
+      - corehr:person.phone:read
+      - corehr:person.phone:write
+      - corehr:person.political_affiliation:read
+      - corehr:person.preferred_name_v2:read
+      - corehr:person.race:read
+      - corehr:person.religion:read
+      - corehr:person.religion:write
+      - corehr:person.resident_tax:read
+      - corehr:person.resident_tax:write
+      - corehr:person.resident_tax_custom_field:read
+      - corehr:person.resident_tax_custom_field:write
+      - corehr:person.visa:read
+      - corehr:person.visa:write
+      - corehr:person.work_experience:read
+      - corehr:person.work_experience:write
+      - corehr:pre_hire.abnormal_reason_field:read
+      - corehr:pre_hire.background_check_order_account_name:read
+      - corehr:pre_hire.background_check_order_complete_time:read
+      - corehr:pre_hire.background_check_order_id:read
+      - corehr:pre_hire.background_check_order_name:read
+      - corehr:pre_hire.background_check_order_package_name:read
+      - corehr:pre_hire.background_check_order_result:read
+      - corehr:pre_hire.background_check_order_start_time:read
+      - corehr:pre_hire.background_check_order_status:read
+      - corehr:pre_hire.background_check_order_supplier_name:read
+      - corehr:pre_hire.check_in_data:read
+      - corehr:pre_hire.company_manual_updated:read
+      - corehr:pre_hire.company_sponsored_visa:read
+      - corehr:pre_hire.contract_file_id:read
+      - corehr:pre_hire.dotted_line_manager:read
+      - corehr:pre_hire.flow_id:read
+      - corehr:pre_hire.office_address:read
+      - corehr:pre_hire.onboarding_address:read
+      - corehr:pre_hire.suspected_rehiring:read
+      - corehr:pre_hire.withdrawn_reason:read
+      - corehr:pre_hire.working_calendar:read
       x-lark-error-mappings:
       - code: 1161204
         httpCode: 503
@@ -40335,115 +40334,115 @@ paths:
       - corehr:pre_hire:write
       - corehr:pre_hire.search:read
       x-lark-field-scopes:
-      - corehr:person.bank_account:write
-      - corehr:person.date_of_birth:write
-      - corehr:person.address:read
-      - corehr:employment.non_compete_covenant:write
-      - corehr:person.emergency_contact:write
-      - corehr:contract.period:write
-      - corehr:person.address:write
-      - corehr:pre_hire.background_check_order_name:read
-      - corehr:employment.pay_group:read
+      - contact:user.employee_id:readonly
+      - corehr:contract.company:read
+      - corehr:contract.company:write
       - corehr:contract.period:read
-      - corehr:person.legal_name:read
-      - corehr:person.hukou:read
-      - corehr:people_cli
-      - corehr:person.marital_status:read
-      - corehr:pre_hire.company_manual_updated:read
-      - corehr:pre_hire.background_check_order_result:read
-      - corehr:person.nationality:write
+      - corehr:contract.period:write
+      - corehr:employment.compensation_type:read
       - corehr:employment.compensation_type:write
-      - corehr:pre_hire.working_calendar:read
-      - corehr:person.marital_status:write
-      - corehr:person.national_id:write
+      - corehr:employment.custom_field:read
+      - corehr:employment.has_offer_salary:read
+      - corehr:employment.job:read
+      - corehr:employment.job_grade:read
+      - corehr:employment.job_grade:write
       - corehr:employment.job_level:read
-      - corehr:pre_hire.background_check_order_account_name:read
-      - corehr:person.nationality:read
-      - corehr:pre_hire.office_address:read
-      - corehr:pre_hire.background_check_order_package_name:read
+      - corehr:employment.job_level:write
+      - corehr:employment.non_compete_covenant:read
+      - corehr:employment.non_compete_covenant:write
+      - corehr:employment.pay_group:read
+      - corehr:employment.position:read
       - corehr:employment.position:write
-      - corehr:pre_hire.onboarding_address:read
-      - corehr:person.religion:write
-      - corehr:person.national_id_v2:write
-      - corehr:person.emergency_contact:read
-      - corehr:pre_hire.suspected_rehiring:read
-      - corehr:person.resident_tax_custom_field:read
-      - corehr:person.native_region:write
+      - corehr:employment.recruitment_project_id:read
+      - corehr:job_data.work_shift:read
+      - corehr:people_cli
+      - corehr:person.address:read
+      - corehr:person.address:write
+      - corehr:person.bank_account:read
+      - corehr:person.bank_account:write
+      - corehr:person.born_country_region:read
+      - corehr:person.born_country_region:write
+      - corehr:person.custom_field:read
+      - corehr:person.custom_field:write
       - corehr:person.date_entered_workforce:read
       - corehr:person.date_entered_workforce:write
-      - corehr:employment.custom_field:read
-      - corehr:person.work_experience:read
-      - corehr:person.legal_name_v2:read
-      - corehr:person.visa:write
-      - corehr:person.email:write
-      - corehr:person.preferred_name_v2:read
-      - corehr:person.person_for_country:write
-      - corehr:person.national_id:read
-      - corehr:person.is_old_alone:write
-      - corehr:pre_hire.flow_id:read
-      - corehr:employment.compensation_type:read
-      - corehr:employment.job_level:write
-      - corehr:person.religion:read
-      - corehr:person.dependent:write
-      - corehr:person.visa:read
-      - corehr:person.passport:read
-      - corehr:person.martyr_family:write
-      - corehr:employment.position:read
-      - corehr:pre_hire.company_sponsored_visa:read
-      - corehr:pre_hire.check_in_data:read
-      - corehr:person.work_experience:write
-      - corehr:person.passport:write
-      - corehr:pre_hire.withdrawn_reason:read
-      - corehr:employment.non_compete_covenant:read
-      - corehr:person.legal_name_v2:write
-      - corehr:employment.job_grade:read
-      - contact:user.employee_id:readonly
-      - corehr:person.bank_account:read
-      - corehr:person.personal_profile:read
-      - corehr:pre_hire.background_check_order_status:read
-      - corehr:person.resident_tax_custom_field:write
-      - corehr:pre_hire.background_check_order_complete_time:read
       - corehr:person.date_of_birth:read
-      - corehr:person.is_disabled:read
-      - corehr:job_data.work_shift:read
-      - corehr:pre_hire.dotted_line_manager:read
-      - corehr:person.personal_profile:write
-      - corehr:employment.job_grade:write
-      - corehr:person.gender:write
-      - corehr:person.person_for_country:read
-      - corehr:person.passport_number:read
-      - corehr:contract.company:read
-      - corehr:person.email:read
-      - corehr:employment.recruitment_project_id:read
-      - corehr:pre_hire.background_check_order_supplier_name:read
-      - corehr:person.resident_tax:read
-      - corehr:person.legal_name:write
-      - corehr:person.custom_field:read
-      - corehr:person.martyr_family:read
-      - corehr:person.race:read
-      - corehr:person.native_region:read
-      - corehr:employment.has_offer_salary:read
-      - corehr:person.is_old_alone:read
-      - corehr:person.education:write
-      - corehr:pre_hire.background_check_order_id:read
-      - corehr:pre_hire.contract_file_id:read
-      - corehr:person.phone:write
-      - corehr:employment.job:read
-      - corehr:person.national_id_v2:read
-      - corehr:pre_hire.background_check_order_start_time:read
-      - corehr:person.gender:read
-      - corehr:person.is_disabled:write
-      - corehr:pre_hire.abnormal_reason_field:read
-      - corehr:person.custom_field:write
-      - corehr:person.political_affiliation:read
-      - corehr:person.phone:read
-      - corehr:person.born_country_region:write
-      - corehr:person.resident_tax:write
-      - corehr:person.education:read
-      - corehr:contract.company:write
-      - corehr:person.born_country_region:read
-      - corehr:person.hukou:write
+      - corehr:person.date_of_birth:write
       - corehr:person.dependent:read
+      - corehr:person.dependent:write
+      - corehr:person.education:read
+      - corehr:person.education:write
+      - corehr:person.email:read
+      - corehr:person.email:write
+      - corehr:person.emergency_contact:read
+      - corehr:person.emergency_contact:write
+      - corehr:person.gender:read
+      - corehr:person.gender:write
+      - corehr:person.hukou:read
+      - corehr:person.hukou:write
+      - corehr:person.is_disabled:read
+      - corehr:person.is_disabled:write
+      - corehr:person.is_old_alone:read
+      - corehr:person.is_old_alone:write
+      - corehr:person.legal_name:read
+      - corehr:person.legal_name:write
+      - corehr:person.legal_name_v2:read
+      - corehr:person.legal_name_v2:write
+      - corehr:person.marital_status:read
+      - corehr:person.marital_status:write
+      - corehr:person.martyr_family:read
+      - corehr:person.martyr_family:write
+      - corehr:person.national_id:read
+      - corehr:person.national_id:write
+      - corehr:person.national_id_v2:read
+      - corehr:person.national_id_v2:write
+      - corehr:person.nationality:read
+      - corehr:person.nationality:write
+      - corehr:person.native_region:read
+      - corehr:person.native_region:write
+      - corehr:person.passport:read
+      - corehr:person.passport:write
+      - corehr:person.passport_number:read
+      - corehr:person.person_for_country:read
+      - corehr:person.person_for_country:write
+      - corehr:person.personal_profile:read
+      - corehr:person.personal_profile:write
+      - corehr:person.phone:read
+      - corehr:person.phone:write
+      - corehr:person.political_affiliation:read
+      - corehr:person.preferred_name_v2:read
+      - corehr:person.race:read
+      - corehr:person.religion:read
+      - corehr:person.religion:write
+      - corehr:person.resident_tax:read
+      - corehr:person.resident_tax:write
+      - corehr:person.resident_tax_custom_field:read
+      - corehr:person.resident_tax_custom_field:write
+      - corehr:person.visa:read
+      - corehr:person.visa:write
+      - corehr:person.work_experience:read
+      - corehr:person.work_experience:write
+      - corehr:pre_hire.abnormal_reason_field:read
+      - corehr:pre_hire.background_check_order_account_name:read
+      - corehr:pre_hire.background_check_order_complete_time:read
+      - corehr:pre_hire.background_check_order_id:read
+      - corehr:pre_hire.background_check_order_name:read
+      - corehr:pre_hire.background_check_order_package_name:read
+      - corehr:pre_hire.background_check_order_result:read
+      - corehr:pre_hire.background_check_order_start_time:read
+      - corehr:pre_hire.background_check_order_status:read
+      - corehr:pre_hire.background_check_order_supplier_name:read
+      - corehr:pre_hire.check_in_data:read
+      - corehr:pre_hire.company_manual_updated:read
+      - corehr:pre_hire.company_sponsored_visa:read
+      - corehr:pre_hire.contract_file_id:read
+      - corehr:pre_hire.dotted_line_manager:read
+      - corehr:pre_hire.flow_id:read
+      - corehr:pre_hire.office_address:read
+      - corehr:pre_hire.onboarding_address:read
+      - corehr:pre_hire.suspected_rehiring:read
+      - corehr:pre_hire.withdrawn_reason:read
+      - corehr:pre_hire.working_calendar:read
       x-lark-error-mappings:
       - code: 1160102
         httpCode: 400
@@ -41768,17 +41767,17 @@ paths:
       - corehr:probation:write
       - corehr:probation:read
       x-lark-field-scopes:
-      - corehr:probation.notes:read
-      - corehr:probation.custom_field:read
-      - corehr:probation.custom_field:write
       - contact:user.employee_id:readonly
-      - corehr:probation.self_review:write
-      - corehr:probation.notes:write
       - corehr:probation.assessment:read
       - corehr:probation.assessment:write
+      - corehr:probation.custom_field:read
+      - corehr:probation.custom_field:write
+      - corehr:probation.notes:read
+      - corehr:probation.notes:write
       - corehr:probation.probation_outcome:read
       - corehr:probation.probation_outcome:write
       - corehr:probation.self_review:read
+      - corehr:probation.self_review:write
       x-lark-error-mappings:
       - code: 1160017
         httpCode: 400
@@ -42121,15 +42120,15 @@ paths:
       x-lark-scopes:
       - corehr:probation:write
       x-lark-field-scopes:
-      - corehr:probation.assessment:read
-      - corehr:probation.self_review:write
-      - corehr:probation.custom_field:write
-      - corehr:probation.assessment:write
       - contact:user.employee_id:readonly
-      - corehr:probation.self_review:read
+      - corehr:probation.assessment:read
+      - corehr:probation.assessment:write
+      - corehr:probation.custom_field:read
+      - corehr:probation.custom_field:write
       - corehr:probation.notes:read
       - corehr:probation.notes:write
-      - corehr:probation.custom_field:read
+      - corehr:probation.self_review:read
+      - corehr:probation.self_review:write
       x-lark-rate-limit:
         tier: 3
       x-lark-id-transform:

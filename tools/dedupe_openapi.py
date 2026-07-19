@@ -125,8 +125,10 @@ def pick_name(occurrences: list[Occ]) -> str:
         hints = [o.hint for o in occurrences if o.hint]
     if not hints:
         return "SharedSchema"
-    # most frequent hint wins; ties broken by shortest name
-    best = max(set(hints), key=lambda h: (hints.count(h), -len(h)))
+    # most frequent hint wins; ties broken by shortest name, then
+    # alphabetically — a total order keeps the pick deterministic
+    # (max() over a bare set depends on hash randomization)
+    best = min(set(hints), key=lambda h: (-hints.count(h), len(h), h))
     return pascal(singular(best))
 
 
