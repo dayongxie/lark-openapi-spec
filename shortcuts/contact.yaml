@@ -1,0 +1,116 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: contact
+description: Contacts operations
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +get-user
+  summary: Get user info (omit user_id for self; provide user_id for specific user)
+  description: Get user info (omit user_id for self; provide user_id for specific user)
+  usage: lark-cli contact +get-user [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +get-user
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --user-id
+    shorthand: null
+    type: string
+    description: user ID (omit to get current user)
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: 'user ID type: open_id | union_id | user_id'
+    default: open_id
+- name: +search-user
+  summary: Search Lark/Feishu users by keyword, open_id list, or filter (requires --as user)
+  description: Search Lark/Feishu users by keyword, open_id list, or filter (requires --as user)
+  usage: lark-cli contact +search-user [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --exclude-external-users
+    shorthand: null
+    type: bool
+    description: exclude external (cross-tenant) users; default includes them (omit to disable; =false rejected)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --has-chatted
+    shorthand: null
+    type: bool
+    description: restrict to users you've chatted with (omit to disable; =false rejected)
+  - name: --has-enterprise-email
+    shorthand: null
+    type: bool
+    description: restrict to users with enterprise email (omit to disable; =false rejected)
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +search-user
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --lang
+    shorthand: null
+    type: string
+    description: override locale for localized_name (e.g. zh_cn, en_us)
+  - name: --left-organization
+    shorthand: null
+    type: bool
+    description: restrict to users who have left the organization (omit to disable; =false rejected)
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: rows per request, 1-30
+    default: '20'
+  - name: --queries
+    shorthand: null
+    type: string
+    description: comma-separated keywords searched in parallel; output is a flat users[] with matched_query plus a queries[]
+      sidecar
+  - name: --query
+    shorthand: null
+    type: string
+    description: search keyword (≤ 50 characters)
+  - name: --user-ids
+    shorthand: null
+    type: string
+    description: open_ids to look up or restrict --query against (CSV; me = caller; ≤ 100)

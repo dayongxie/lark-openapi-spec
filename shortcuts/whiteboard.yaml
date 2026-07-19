@@ -1,0 +1,108 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: whiteboard
+description: Create and edit boards
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +query
+  summary: Query a existing whiteboard, export it as preview image or raw nodes structure.
+  description: Query a existing whiteboard, export it as preview image or raw nodes structure.
+  usage: lark-cli whiteboard +query [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +query
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --output
+    shorthand: null
+    type: string
+    description: output directory. It is required when output as image. If not specified when --output_as svg/code/raw, it
+      will output directly.
+  - name: --output_as
+    shorthand: null
+    type: string
+    description: 'output whiteboard as: image | svg | code | raw.'
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: overwrite existing file if it exists
+  - name: --whiteboard-token
+    shorthand: null
+    type: string
+    description: whiteboard token of the whiteboard. You will need read permission to download preview image.
+- name: +update
+  summary: Update an existing whiteboard in lark document with mermaid, plantuml or whiteboard dsl. refer to lark-whiteboard
+    skill for more details.
+  description: Update an existing whiteboard in lark document with mermaid, plantuml or whiteboard dsl. refer to lark-whiteboard
+    skill for more details.
+  usage: lark-cli whiteboard +update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +update
+  - name: --idempotent-token
+    shorthand: null
+    type: string
+    description: idempotent token to ensure the update is idempotent. Default is empty. min length is 10.
+  - name: --input_format
+    shorthand: null
+    type: string
+    description: 'format of input data: raw | plantuml | mermaid | svg. Default is raw.'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: overwrite the whiteboard content, delete all existing content before update. Default is false.
+  - name: --source
+    shorthand: null
+    type: string
+    description: Input whiteboard data. (supports @file, - reads stdin (one flag per call; use @file for others))
+  - name: --whiteboard-token
+    shorthand: null
+    type: string
+    description: whiteboard token of the whiteboard to update. You will need edit permission to update the whiteboard.

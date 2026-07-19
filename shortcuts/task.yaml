@@ -1,0 +1,839 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: task
+description: Task, task list, and subtask management
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +assign
+  summary: assign or remove task members
+  description: assign or remove task members
+  usage: lark-cli task +assign [flags]
+  risk: write
+  flags:
+  - name: --add
+    shorthand: null
+    type: string
+    description: comma-separated assignee IDs to add; use open_id (ou_xxx) when assignee is user, use app id (cli_xxx) when
+      assignee is app
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +assign
+  - name: --idempotency-key
+    shorthand: null
+    type: string
+    description: client token for idempotency (used for add_members)
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --remove
+    shorthand: null
+    type: string
+    description: comma-separated assignee IDs to remove; use open_id (ou_xxx) when assignee is user, use app id (cli_xxx)
+      when assignee is app
+  - name: --task-id
+    shorthand: null
+    type: string
+    description: task id
+- name: +comment
+  summary: add a comment to a task
+  description: add a comment to a task
+  usage: lark-cli task +comment [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --content
+    shorthand: null
+    type: string
+    description: comment content
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +comment
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --task-id
+    shorthand: null
+    type: string
+    description: task id
+- name: +complete
+  summary: mark a task as complete
+  description: mark a task as complete
+  usage: lark-cli task +complete [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +complete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --task-id
+    shorthand: null
+    type: string
+    description: task id
+- name: +create
+  summary: create a task
+  description: create a task
+  usage: lark-cli task +create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --assignee
+    shorthand: null
+    type: string
+    description: task assignee id added during create; use open_id (ou_xxx) when assignee is user, use app id (cli_xxx) when
+      assignee is app
+  - name: --data
+    shorthand: null
+    type: string
+    description: JSON payload for creating task
+  - name: --description
+    shorthand: null
+    type: string
+    description: task description
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --due
+    shorthand: null
+    type: string
+    description: due date (ISO 8601 / date:YYYY-MM-DD / relative:+2d / ms timestamp)
+  - name: --follower
+    shorthand: null
+    type: string
+    description: task follower id added during create; use open_id (ou_xxx) when follower is user, use app id (cli_xxx) when
+      follower is app
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +create
+  - name: --idempotency-key
+    shorthand: null
+    type: string
+    description: client token for idempotency
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --summary
+    shorthand: null
+    type: string
+    description: task title
+  - name: --tasklist-id
+    shorthand: null
+    type: string
+    description: tasklist id or applink URL
+- name: +followers
+  summary: manage task followers
+  description: manage task followers
+  usage: lark-cli task +followers [flags]
+  risk: write
+  flags:
+  - name: --add
+    shorthand: null
+    type: string
+    description: comma-separated follower IDs to add; use open_id (ou_xxx) when follower is user, use app id (cli_xxx) when
+      follower is app
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +followers
+  - name: --idempotency-key
+    shorthand: null
+    type: string
+    description: client token for idempotency (used for add_members)
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --remove
+    shorthand: null
+    type: string
+    description: comma-separated follower IDs to remove; use open_id (ou_xxx) when follower is user, use app id (cli_xxx)
+      when follower is app
+  - name: --task-id
+    shorthand: null
+    type: string
+    description: task id
+- name: +get-my-tasks
+  summary: List tasks assigned to me
+  description: List tasks assigned to me
+  usage: lark-cli task +get-my-tasks [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --complete
+    shorthand: null
+    type: bool
+    description: if true, query completed tasks;if false, query incompleted tasks; if not provided, both completed and incompleted
+      tasks are queried.
+  - name: --created_at
+    shorthand: null
+    type: string
+    description: query tasks created after this time (date/relative/ms)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --due-end
+    shorthand: null
+    type: string
+    description: query tasks with due date before this time (date/relative/ms)
+  - name: --due-start
+    shorthand: null
+    type: string
+    description: query tasks with due date after this time (date/relative/ms)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +get-my-tasks
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-all
+    shorthand: null
+    type: bool
+    description: automatically paginate through all pages (max 40)
+  - name: --page-limit
+    shorthand: null
+    type: int
+    description: max page limit (default 20, max 40 with --page-all)
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: start from the specified page token
+  - name: --query
+    shorthand: null
+    type: string
+    description: search for tasks by summary (exact match first, then partial match)
+- name: +get-related-tasks
+  summary: list tasks related to me
+  description: list tasks related to me
+  usage: lark-cli task +get-related-tasks [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --created-by-me
+    shorthand: null
+    type: bool
+    description: client-side filter to tasks created by me; pagination still follows upstream related-task pages
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --followed-by-me
+    shorthand: null
+    type: bool
+    description: client-side filter to tasks followed by me; pagination still follows upstream related-task pages
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +get-related-tasks
+  - name: --include-complete
+    shorthand: null
+    type: bool
+    description: default true; set false to return only incomplete tasks
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-all
+    shorthand: null
+    type: bool
+    description: automatically paginate through all pages (max 40)
+  - name: --page-limit
+    shorthand: null
+    type: int
+    description: max page limit (default 20, max 40)
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: page token / updated_at cursor in microseconds
+- name: +reminder
+  summary: manage task reminders
+  description: manage task reminders
+  usage: lark-cli task +reminder [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +reminder
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --remove
+    shorthand: null
+    type: bool
+    description: removes all existing reminders
+  - name: --set
+    shorthand: null
+    type: string
+    description: relative fire minutes to set (e.g. 15m, 1h, 1d)
+  - name: --task-id
+    shorthand: null
+    type: string
+    description: task id
+- name: +reopen
+  summary: reopen a completed task
+  description: reopen a completed task
+  usage: lark-cli task +reopen [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +reopen
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --task-id
+    shorthand: null
+    type: string
+    description: task id
+- name: +search
+  summary: search tasks
+  description: search tasks
+  usage: lark-cli task +search [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --assignee
+    shorthand: null
+    type: string
+    description: assignee open_ids, comma-separated
+  - name: --completed
+    shorthand: null
+    type: bool
+    description: set true for completed or false for incomplete tasks
+  - name: --creator
+    shorthand: null
+    type: string
+    description: creator open_ids, comma-separated
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --due
+    shorthand: null
+    type: string
+    description: 'due time range: start,end (supports ISO/date/relative/ms)'
+  - name: --follower
+    shorthand: null
+    type: string
+    description: follower open_ids, comma-separated
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +search
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-all
+    shorthand: null
+    type: bool
+    description: automatically paginate through all pages (max 40)
+  - name: --page-limit
+    shorthand: null
+    type: int
+    description: max page limit (default 20, max 40)
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: page token
+  - name: --query
+    shorthand: null
+    type: string
+    description: search keyword
+- name: +set-ancestor
+  summary: set or clear a task ancestor
+  description: set or clear a task ancestor
+  usage: lark-cli task +set-ancestor [flags]
+  risk: write
+  flags:
+  - name: --ancestor-id
+    shorthand: null
+    type: string
+    description: ancestor task guid; omit to make it independent
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +set-ancestor
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --task-id
+    shorthand: null
+    type: string
+    description: task guid to update
+- name: +tasklist-create
+  summary: create a tasklist and optionally add tasks
+  description: create a tasklist and optionally add tasks
+  usage: lark-cli task +tasklist-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --data
+    shorthand: null
+    type: string
+    description: JSON array of tasks to create within this tasklist
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +tasklist-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --member
+    shorthand: null
+    type: string
+    description: comma-separated open_ids to add as editors
+  - name: --name
+    shorthand: null
+    type: string
+    description: tasklist name
+- name: +tasklist-members
+  summary: manage tasklist members
+  description: manage tasklist members
+  usage: lark-cli task +tasklist-members [flags]
+  risk: write
+  flags:
+  - name: --add
+    shorthand: null
+    type: string
+    description: comma-separated open_ids to add as members
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +tasklist-members
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --remove
+    shorthand: null
+    type: string
+    description: comma-separated open_ids to remove from members
+  - name: --set
+    shorthand: null
+    type: string
+    description: comma-separated open_ids to set as exact members (replaces existing)
+  - name: --tasklist-id
+    shorthand: null
+    type: string
+    description: tasklist id
+- name: +tasklist-search
+  summary: search tasklists
+  description: search tasklists
+  usage: lark-cli task +tasklist-search [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --create-time
+    shorthand: null
+    type: string
+    description: 'create time range: start,end (supports ISO/date/relative/ms)'
+  - name: --creator
+    shorthand: null
+    type: string
+    description: creator open_ids, comma-separated
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +tasklist-search
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-all
+    shorthand: null
+    type: bool
+    description: automatically paginate through all pages (max 40)
+  - name: --page-limit
+    shorthand: null
+    type: int
+    description: max page limit (default 20, max 40)
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: page token
+  - name: --query
+    shorthand: null
+    type: string
+    description: search keyword
+- name: +tasklist-task-add
+  summary: add tasks to a tasklist
+  description: add tasks to a tasklist
+  usage: lark-cli task +tasklist-task-add [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +tasklist-task-add
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --section-guid
+    shorthand: null
+    type: string
+    description: section guid
+  - name: --task-id
+    shorthand: null
+    type: string
+    description: task id (comma-separated for multiple)
+  - name: --tasklist-id
+    shorthand: null
+    type: string
+    description: tasklist id
+- name: +update
+  summary: update task attributes
+  description: update task attributes
+  usage: lark-cli task +update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --data
+    shorthand: null
+    type: string
+    description: JSON payload for task object
+  - name: --description
+    shorthand: null
+    type: string
+    description: task description
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --due
+    shorthand: null
+    type: string
+    description: due date (ISO 8601 / date:YYYY-MM-DD / relative:+2d / ms timestamp)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --summary
+    shorthand: null
+    type: string
+    description: task title
+  - name: --task-id
+    shorthand: null
+    type: string
+    description: task id (comma-separated for multiple)
+- name: +upload-attachment
+  summary: upload a local file as an attachment to a task
+  description: upload a local file as an attachment to a task
+  usage: lark-cli task +upload-attachment [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file
+    shorthand: null
+    type: string
+    description: local file path (single file, <= 50MB)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +upload-attachment
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --resource-id
+    shorthand: null
+    type: string
+    description: task guid (or task applink URL)
+  - name: --resource-type
+    shorthand: null
+    type: string
+    description: 'owning resource type (default: task); use task_delivery when uploading to task agents'
+    default: task
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: 'user id type (default: open_id)'
+    default: open_id

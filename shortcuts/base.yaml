@@ -1,0 +1,3845 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: base
+description: Table, field, record, view, dashboard, workflow, form, role & permission management
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +advperm-disable
+  summary: Disable advanced permissions for a Base
+  description: Disable advanced permissions for a Base
+  usage: lark-cli base +advperm-disable [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +advperm-disable
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +advperm-enable
+  summary: Enable advanced permissions for a Base
+  description: Enable advanced permissions for a Base
+  usage: lark-cli base +advperm-enable [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +advperm-enable
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +base-block-create
+  summary: Create a block
+  description: Create a block
+  usage: lark-cli base +base-block-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +base-block-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: block name
+  - name: --parent-id
+    shorthand: null
+    type: string
+    description: folder block id; when omitted, create at root
+  - name: --type
+    shorthand: null
+    type: string
+    description: resource type (folder|table|docx|dashboard|workflow)
+- name: +base-block-delete
+  summary: Delete a block
+  description: Delete a block
+  usage: lark-cli base +base-block-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --block-id
+    shorthand: null
+    type: string
+    description: block id
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +base-block-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +base-block-list
+  summary: List blocks in a base
+  description: List blocks in a base
+  usage: lark-cli base +base-block-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +base-block-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --parent-id
+    shorthand: null
+    type: string
+    description: folder block id; when omitted, list all blocks
+  - name: --type
+    shorthand: null
+    type: string
+    description: filter by resource type (folder|table|docx|dashboard|workflow)
+- name: +base-block-move
+  summary: Move a block
+  description: Move a block
+  usage: lark-cli base +base-block-move [flags]
+  risk: write
+  flags:
+  - name: --after-id
+    shorthand: null
+    type: string
+    description: sibling block id; move the block after this sibling in the target folder/root order
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --before-id
+    shorthand: null
+    type: string
+    description: sibling block id; move the block before this sibling in the target folder/root order
+  - name: --block-id
+    shorthand: null
+    type: string
+    description: block id
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +base-block-move
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --parent-id
+    shorthand: null
+    type: string
+    description: target folder block id; when omitted, move to root
+- name: +base-block-rename
+  summary: Rename a block
+  description: Rename a block
+  usage: lark-cli base +base-block-rename [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --block-id
+    shorthand: null
+    type: string
+    description: block id
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +base-block-rename
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: new unique block name; must not duplicate another block name in this base
+- name: +base-copy
+  summary: Copy a base resource
+  description: Copy a base resource
+  usage: lark-cli base +base-copy [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --folder-token
+    shorthand: null
+    type: string
+    description: folder token for destination
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +base-copy
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: new base name
+  - name: --time-zone
+    shorthand: null
+    type: string
+    description: time zone, e.g. Asia/Shanghai
+  - name: --without-content
+    shorthand: null
+    type: bool
+    description: copy structure only
+- name: +base-create
+  summary: Create a new base resource
+  description: Create a new base resource
+  usage: lark-cli base +base-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --fields
+    shorthand: null
+    type: string
+    description: field JSON array for the first table schema; use with --table-name, e.g. [{"name":"Title","type":"text"},{"name":"Status","type":"select","options":[{"name":"Todo"},{"name":"Done"}]}]
+  - name: --folder-token
+    shorthand: null
+    type: string
+    description: folder token for destination
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +base-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: base name
+  - name: --table-name
+    shorthand: null
+    type: string
+    description: first table name for the custom first table schema; use with --fields
+  - name: --time-zone
+    shorthand: null
+    type: string
+    description: time zone, e.g. Asia/Shanghai
+- name: +base-get
+  summary: Get a base resource
+  description: Get a base resource
+  usage: lark-cli base +base-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +base-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +dashboard-arrange
+  summary: Auto-arrange dashboard blocks layout (server-side smart layout)
+  description: Auto-arrange dashboard blocks layout (server-side smart layout)
+  usage: lark-cli base +dashboard-arrange [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dashboard-id
+    shorthand: null
+    type: string
+    description: dashboard ID
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dashboard-arrange
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: 'user ID type: open_id / union_id / user_id'
+- name: +dashboard-block-create
+  summary: Create a block in a dashboard
+  description: Create a block in a dashboard
+  usage: lark-cli base +dashboard-block-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dashboard-id
+    shorthand: null
+    type: string
+    description: dashboard ID
+  - name: --data-config
+    shorthand: null
+    type: string
+    description: data_config JSON object; read dashboard-block-data-config.md for the SSOT
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dashboard-block-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: block name
+  - name: --no-validate
+    shorthand: null
+    type: bool
+    description: skip local data_config validation and normalization; send data_config as-is
+  - name: --type
+    shorthand: null
+    type: string
+    description: 'block type: column(柱状图)|bar(条形图)|line(折线图)|pie(饼图)|ring(环形图)|area(面积图)|combo(组合图)|scatter(散点图)|funnel(漏斗图)|wordCloud(词云)|radar(雷达图)|statistics(指标卡)|text(文本).
+      Read dashboard-block-data-config.md before creating.'
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: 'user ID type for user fields in filters: open_id / union_id / user_id'
+- name: +dashboard-block-delete
+  summary: Delete a dashboard block
+  description: Delete a dashboard block
+  usage: lark-cli base +dashboard-block-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --block-id
+    shorthand: null
+    type: string
+    description: dashboard block ID
+  - name: --dashboard-id
+    shorthand: null
+    type: string
+    description: dashboard ID
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dashboard-block-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +dashboard-block-get
+  summary: Get a dashboard block by ID
+  description: Get a dashboard block by ID
+  usage: lark-cli base +dashboard-block-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --block-id
+    shorthand: null
+    type: string
+    description: dashboard block ID
+  - name: --dashboard-id
+    shorthand: null
+    type: string
+    description: dashboard ID
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dashboard-block-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: 'user ID type: open_id / union_id / user_id'
+- name: +dashboard-block-get-data
+  summary: Get computed data for a dashboard chart block
+  description: Get computed data for a dashboard chart block
+  usage: lark-cli base +dashboard-block-get-data [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --block-id
+    shorthand: null
+    type: string
+    description: dashboard block ID
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dashboard-block-get-data
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +dashboard-block-list
+  summary: List blocks in a dashboard
+  description: List blocks in a dashboard
+  usage: lark-cli base +dashboard-block-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dashboard-id
+    shorthand: null
+    type: string
+    description: dashboard ID
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dashboard-block-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size, range 1-100
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token
+- name: +dashboard-block-update
+  summary: Update a dashboard block
+  description: Update a dashboard block
+  usage: lark-cli base +dashboard-block-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --block-id
+    shorthand: null
+    type: string
+    description: dashboard block ID
+  - name: --dashboard-id
+    shorthand: null
+    type: string
+    description: dashboard ID
+  - name: --data-config
+    shorthand: null
+    type: string
+    description: data_config JSON object; read dashboard-block-data-config.md for the SSOT
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dashboard-block-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: new block name
+  - name: --no-validate
+    shorthand: null
+    type: bool
+    description: skip local data_config validation and normalization; send data_config as-is
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: 'user ID type for user fields in filters: open_id / union_id / user_id'
+- name: +dashboard-create
+  summary: Create a dashboard in a base
+  description: Create a dashboard in a base
+  usage: lark-cli base +dashboard-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dashboard-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: dashboard name
+  - name: --theme-style
+    shorthand: null
+    type: string
+    description: theme style, defaults to platform default when omitted
+- name: +dashboard-delete
+  summary: Delete a dashboard
+  description: Delete a dashboard
+  usage: lark-cli base +dashboard-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dashboard-id
+    shorthand: null
+    type: string
+    description: dashboard ID
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dashboard-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +dashboard-get
+  summary: Get a dashboard by ID
+  description: Get a dashboard by ID
+  usage: lark-cli base +dashboard-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dashboard-id
+    shorthand: null
+    type: string
+    description: dashboard ID
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dashboard-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +dashboard-list
+  summary: List dashboards in a base
+  description: List dashboards in a base
+  usage: lark-cli base +dashboard-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dashboard-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size, range 1-100
+    default: '100'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token
+- name: +dashboard-update
+  summary: Update a dashboard
+  description: Update a dashboard
+  usage: lark-cli base +dashboard-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dashboard-id
+    shorthand: null
+    type: string
+    description: dashboard ID
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dashboard-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: new dashboard name
+  - name: --theme-style
+    shorthand: null
+    type: string
+    description: theme style, leave empty to keep current theme
+- name: +data-query
+  summary: Query and analyze Base data with JSON DSL (aggregation, filter, sort)
+  description: Query and analyze Base data with JSON DSL (aggregation, filter, sort)
+  usage: lark-cli base +data-query [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --dsl
+    shorthand: null
+    type: string
+    description: query JSON DSL; read lark-base-data-query-guide.md first, then lark-base-data-query.md for the full DSL SSOT
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +data-query
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +field-create
+  summary: Create a field
+  description: Create a field
+  usage: lark-cli base +field-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +field-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: field property JSON object
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+- name: +field-delete
+  summary: Delete a field by ID or name
+  description: Delete a field by ID or name
+  usage: lark-cli base +field-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --field-id
+    shorthand: null
+    type: string
+    description: field ID or name
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +field-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +field-get
+  summary: Get a field by ID or name
+  description: Get a field by ID or name
+  usage: lark-cli base +field-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --field-id
+    shorthand: null
+    type: string
+    description: field ID or name
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +field-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+- name: +field-list
+  summary: List fields in a table
+  description: List fields in a table
+  usage: lark-cli base +field-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +field-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --limit
+    shorthand: null
+    type: int
+    description: pagination size, range 1-200
+    default: '100'
+  - name: --offset
+    shorthand: null
+    type: int
+    description: pagination offset
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+- name: +field-search-options
+  summary: Search select options of a field
+  description: Search select options of a field
+  usage: lark-cli base +field-search-options [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --field-id
+    shorthand: null
+    type: string
+    description: field ID or name
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +field-search-options
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --keyword
+    shorthand: null
+    type: string
+    description: keyword for option query
+  - name: --limit
+    shorthand: null
+    type: int
+    description: pagination size, range 1-200
+    default: '30'
+  - name: --offset
+    shorthand: null
+    type: int
+    description: pagination offset
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+- name: +field-update
+  summary: Update a field by ID or name
+  description: Update a field by ID or name
+  usage: lark-cli base +field-update [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --field-id
+    shorthand: null
+    type: string
+    description: field ID or name
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +field-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: complete field definition JSON object; update uses full PUT semantics, not a patch
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +form-create
+  summary: Create a form in a Base table
+  description: Create a form in a Base table
+  usage: lark-cli base +form-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: Base token (base_token)
+  - name: --description
+    shorthand: null
+    type: string
+    description: form description (plain text or markdown link like [text](https://example.com))
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +form-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: form name
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID
+- name: +form-delete
+  summary: Delete a form in a Base table
+  description: Delete a form in a Base table
+  usage: lark-cli base +form-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --form-id
+    shorthand: null
+    type: string
+    description: form ID
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +form-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +form-detail
+  summary: Get form detail by share token
+  description: Get form detail by share token
+  usage: lark-cli base +form-detail [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +form-detail
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --share-token
+    shorthand: null
+    type: string
+    description: Form share token (share_token)
+- name: +form-get
+  summary: Get a form in a Base table
+  description: Get a form in a Base table
+  usage: lark-cli base +form-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --form-id
+    shorthand: null
+    type: string
+    description: form ID
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +form-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID
+- name: +form-list
+  summary: List all forms in a Base table (auto-paginated)
+  description: List all forms in a Base table (auto-paginated)
+  usage: lark-cli base +form-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: Base token (base_token)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +form-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size per request, range 1-100
+    default: '100'
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID
+- name: +form-questions-create
+  summary: Create questions for a form in a Base table
+  description: Create questions for a form in a Base table
+  usage: lark-cli base +form-questions-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: Base token (base_token)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --form-id
+    shorthand: null
+    type: string
+    description: form ID
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +form-questions-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --questions
+    shorthand: null
+    type: string
+    description: 'questions JSON array, max 10 items. Each item requires "title"(field title) and "type"(text/number/select/datetime/user/attachment/location).
+      Optional fields: "description"(plain text or markdown link like [text](https://example.com)),"required","option_display_mode"(0=dropdown/1=vertical/2=horizontal,select
+      only),"multiple"(bool,select/user),"options"([{"name":"opt","hue":"Blue"}],select only),"style"({"type":"plain/phone/url/email/barcode/rating","precision":2,"format":"yyyy/MM/dd","icon":"star","min":1,"max":5}).
+      E.g. ''[{"type":"text","title":"Your name","required":true}]'''
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID
+- name: +form-questions-delete
+  summary: Delete questions from a form in a Base table
+  description: Delete questions from a form in a Base table
+  usage: lark-cli base +form-questions-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: Base token (base_token)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --form-id
+    shorthand: null
+    type: string
+    description: form ID
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +form-questions-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --question-ids
+    shorthand: null
+    type: string
+    description: JSON array of question IDs to delete, max 10 items, e.g. '["q_001","q_002"]'
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +form-questions-list
+  summary: List questions of a form in a Base table
+  description: List questions of a form in a Base table
+  usage: lark-cli base +form-questions-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --form-id
+    shorthand: null
+    type: string
+    description: form ID
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +form-questions-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID
+- name: +form-questions-update
+  summary: Update questions of a form in a Base table
+  description: Update questions of a form in a Base table
+  usage: lark-cli base +form-questions-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: Base token (base_token)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --form-id
+    shorthand: null
+    type: string
+    description: form ID
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +form-questions-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --questions
+    shorthand: null
+    type: string
+    description: 'questions JSON array, max 10 items, each item must include "id". Supported fields: "id"(required),"title","description"(plain
+      text or markdown link like [text](https://example.com)),"required","option_display_mode"(0=dropdown,1=vertical,2=horizontal,select
+      only). E.g. ''[{"id":"q_001","title":"Updated?","required":true}]'''
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID
+- name: +form-submit
+  summary: Submit a form (fill and submit form data)
+  description: Submit a form (fill and submit form data)
+  usage: lark-cli base +form-submit [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: Base token (required when --json contains attachments, used for uploading attachments to Base Drive Media)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +form-submit
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: 'JSON object containing "fields" (field values) and "attachments" (attachment file paths). Example: ''{"fields":{"Rating":5,"Review":"Good"},"attachments":{"Attachment":["./a.pdf","./b.png"]}}'''
+  - name: --share-token
+    shorthand: null
+    type: string
+    description: Form share token (required), extracted from the form share link
+- name: +form-update
+  summary: Update a form in a Base table
+  description: Update a form in a Base table
+  usage: lark-cli base +form-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: Base token (base_token)
+  - name: --description
+    shorthand: null
+    type: string
+    description: new form description (plain text or markdown link like [text](https://example.com))
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --form-id
+    shorthand: null
+    type: string
+    description: form ID
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +form-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: new form name
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID
+- name: +record-batch-create
+  summary: Batch create records
+  description: Batch create records
+  usage: lark-cli base +record-batch-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +record-batch-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: batch create JSON object, e.g. {"fields":["Name","Status"],"rows":[["Task A","Todo"],["Task B",null]]}; rows
+      follow fields order
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+- name: +record-batch-update
+  summary: Batch update records
+  description: Batch update records
+  usage: lark-cli base +record-batch-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +record-batch-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: batch update JSON object, e.g. {"record_id_list":["rec_xxx"],"patch":{"Status":"Done"}}; same patch applies
+      to all records
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+- name: +record-delete
+  summary: Delete one or more records by ID
+  description: Delete one or more records by ID
+  usage: lark-cli base +record-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +record-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: JSON object with record_id_list, e.g. {"record_id_list":["rec_xxx"]}
+  - name: --record-id
+    shorthand: null
+    type: stringArray
+    description: record ID (repeatable)
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +record-get
+  summary: Get one or more records by ID
+  description: Get one or more records by ID
+  usage: lark-cli base +record-get [flags]
+  risk: read
+  flags:
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --record-id
+    shorthand: null
+    type: stringArray
+    description: record ID (repeatable)
+  - name: --field-id
+    shorthand: null
+    type: stringArray
+    description: field ID or name to project; repeat to keep only needed columns
+  - name: --json
+    shorthand: null
+    type: string
+    description: JSON object with record_id_list, e.g. {"record_id_list":["rec_xxx"]}
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: markdown (default) | json (markdown|json)'
+    default: markdown
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +record-get
+- name: +record-history-list
+  summary: List record change history
+  description: List record change history
+  usage: lark-cli base +record-history-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +record-history-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --max-version
+    shorthand: null
+    type: int
+    description: max version for next page
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: pagination size, range 1-50
+    default: '30'
+  - name: --record-id
+    shorthand: null
+    type: string
+    description: record ID
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+- name: +record-list
+  summary: List records in a table
+  description: List records in a table
+  usage: lark-cli base +record-list [flags]
+  risk: read
+  flags:
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --field-id
+    shorthand: null
+    type: stringArray
+    description: field ID or name to include; repeat to project only needed fields
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name; omit for reading all table records, or set to read a user-specified or temporary filtered/sorted
+      view
+  - name: --filter-json
+    shorthand: null
+    type: string
+    description: filter JSON object or @file, same shape as view filter JSON; overrides --view-id view filters (supports @file)
+  - name: --sort-json
+    shorthand: null
+    type: string
+    description: sort JSON array or @file, e.g. [{"field":"Updated","desc":true}]; also accepts {"sort_config":[...]}; order
+      is priority; max 10 (supports @file)
+  - name: --offset
+    shorthand: null
+    type: int
+    description: pagination offset
+  - name: --limit
+    shorthand: null
+    type: int
+    description: pagination size, range 1-200
+    default: '100'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: markdown (default) | json (markdown|json)'
+    default: markdown
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +record-list
+- name: +record-remove-attachment
+  summary: Remove one or more file_token values from a Base record attachment cell
+  description: Remove one or more file_token values from a Base record attachment cell
+  usage: lark-cli base +record-remove-attachment [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --field-id
+    shorthand: null
+    type: string
+    description: field ID or name
+  - name: --file-token
+    shorthand: null
+    type: stringArray
+    description: attachment file_token to remove from the target cell; repeat to remove multiple attachments; max 50 tokens
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +record-remove-attachment
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --record-id
+    shorthand: null
+    type: string
+    description: record ID
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +record-search
+  summary: Search records in a table
+  description: Search records in a table
+  usage: lark-cli base +record-search [flags]
+  risk: read
+  flags:
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --json
+    shorthand: null
+    type: string
+    description: record search JSON object for the full request body, e.g. {"keyword":"Alice","search_fields":["Name"],"select_fields":["Name","Status"],"filter":{"logic":"and","conditions":[]},"sort":[{"field":"Updated","desc":true}],"limit":50};
+      escape hatch for advanced cases
+  - name: --keyword
+    shorthand: null
+    type: string
+    description: keyword for record search; required unless --json is used
+  - name: --search-field
+    shorthand: null
+    type: stringArray
+    description: field ID or name to search; repeat for multiple fields; required unless --json is used
+  - name: --field-id
+    shorthand: null
+    type: stringArray
+    description: field ID or name to include; repeat to project only needed fields
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name; omit for reading all table records, or set to read a user-specified or temporary filtered/sorted
+      view
+  - name: --filter-json
+    shorthand: null
+    type: string
+    description: filter JSON object or @file, same shape as view filter JSON; overrides --view-id view filters (supports @file)
+  - name: --sort-json
+    shorthand: null
+    type: string
+    description: sort JSON array or @file, e.g. [{"field":"Updated","desc":true}]; also accepts {"sort_config":[...]}; order
+      is priority; max 10 (supports @file)
+  - name: --offset
+    shorthand: null
+    type: int
+    description: pagination offset
+  - name: --limit
+    shorthand: null
+    type: int
+    description: pagination size, range 1-200
+    default: '10'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: markdown (default) | json (markdown|json)'
+    default: markdown
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +record-search
+- name: +record-share-link-create
+  summary: Generate share links for one or more records (max 100 per request)
+  description: Generate share links for one or more records (max 100 per request)
+  usage: lark-cli base +record-share-link-create [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +record-share-link-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --record-ids
+    shorthand: null
+    type: strings
+    description: record IDs to generate share links for (comma-separated or repeatable, max 100)
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+- name: +record-upload-attachment
+  summary: Upload one or more local files and append the returned file_token values to a Base attachment cell
+  description: Upload one or more local files and append the returned file_token values to a Base attachment cell
+  usage: lark-cli base +record-upload-attachment [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --field-id
+    shorthand: null
+    type: string
+    description: field ID or name
+  - name: --file
+    shorthand: null
+    type: stringArray
+    description: local file path; repeat to append multiple attachments in one cell; max 50 files, max 2GB each; files > 20MB
+      use multipart upload automatically
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +record-upload-attachment
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --record-id
+    shorthand: null
+    type: string
+    description: record ID
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+- name: +record-upsert
+  summary: Create or update a record
+  description: Create or update a record
+  usage: lark-cli base +record-upsert [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +record-upsert
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: record field map JSON object, e.g. {"Name":"Alice","Status":"Todo"}; do not wrap in fields
+  - name: --record-id
+    shorthand: null
+    type: string
+    description: record ID
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+- name: +role-create
+  summary: Create a custom role in a Base
+  description: Create a custom role in a Base
+  usage: lark-cli base +role-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +role-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: role config JSON; read lark-base-role-guide.md and role-config.md before constructing permissions
+- name: +role-delete
+  summary: Delete a custom role (system roles cannot be deleted)
+  description: Delete a custom role (system roles cannot be deleted)
+  usage: lark-cli base +role-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +role-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --role-id
+    shorthand: null
+    type: string
+    description: role ID (e.g. rolxxxxxx4)
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +role-get
+  summary: Get full config of a role
+  description: Get full config of a role
+  usage: lark-cli base +role-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +role-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --role-id
+    shorthand: null
+    type: string
+    description: role ID (e.g. rolxxxxxx4)
+- name: +role-list
+  summary: List all roles in a Base
+  description: List all roles in a Base
+  usage: lark-cli base +role-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +role-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +role-update
+  summary: Update a role config (delta merge, only changed fields needed)
+  description: Update a role config (delta merge, only changed fields needed)
+  usage: lark-cli base +role-update [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +role-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: delta role config JSON; read lark-base-role-guide.md and role-config.md before changing permissions
+  - name: --role-id
+    shorthand: null
+    type: string
+    description: role ID (e.g. rolxxxxxx4)
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +table-create
+  summary: Create a table and optional fields/views
+  description: Create a table and optional fields/views
+  usage: lark-cli base +table-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --fields
+    shorthand: null
+    type: string
+    description: field JSON array for create, e.g. [{"name":"Title","type":"text"},{"name":"Status","type":"select","options":[{"name":"Todo"},{"name":"Done"}]}]
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +table-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: table name
+  - name: --view
+    shorthand: null
+    type: string
+    description: view JSON object/array for create
+- name: +table-delete
+  summary: Delete a table by ID or name
+  description: Delete a table by ID or name
+  usage: lark-cli base +table-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +table-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +table-get
+  summary: Get a table by ID or name
+  description: Get a table by ID or name
+  usage: lark-cli base +table-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +table-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+- name: +table-list
+  summary: List tables in a base
+  description: List tables in a base
+  usage: lark-cli base +table-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +table-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --limit
+    shorthand: null
+    type: int
+    description: pagination size, range 1-100
+    default: '50'
+  - name: --offset
+    shorthand: null
+    type: int
+    description: pagination offset
+- name: +table-update
+  summary: Rename a table by ID or name
+  description: Rename a table by ID or name
+  usage: lark-cli base +table-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +table-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: new table name
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+- name: +title-resolve
+  summary: Resolve a Base title or keyword through Drive search
+  description: Resolve a Base title or keyword through Drive search
+  usage: lark-cli base +title-resolve [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +title-resolve
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --title
+    shorthand: null
+    type: string
+    description: Base title keyword to search via Drive (30 characters or fewer)
+- name: +url-resolve
+  summary: Resolve a Base-related URL into Base coordinates
+  description: Resolve a Base-related URL into Base coordinates
+  usage: lark-cli base +url-resolve [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +url-resolve
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --url
+    shorthand: null
+    type: string
+    description: Base/Wiki/record-share URL to resolve
+- name: +view-create
+  summary: Create one or more views
+  description: Create one or more views
+  usage: lark-cli base +view-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: 'view JSON object/array; type defaults to grid; type range: grid, kanban, gallery, calendar, gantt'
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+- name: +view-delete
+  summary: Delete a view by ID or name
+  description: Delete a view by ID or name
+  usage: lark-cli base +view-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +view-get
+  summary: Get a view by ID or name
+  description: Get a view by ID or name
+  usage: lark-cli base +view-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name
+- name: +view-get-card
+  summary: Get view card configuration
+  description: Get view card configuration
+  usage: lark-cli base +view-get-card [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-get-card
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name
+- name: +view-get-filter
+  summary: Get view filter configuration
+  description: Get view filter configuration
+  usage: lark-cli base +view-get-filter [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-get-filter
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name
+- name: +view-get-group
+  summary: Get view group configuration
+  description: Get view group configuration
+  usage: lark-cli base +view-get-group [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-get-group
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name
+- name: +view-get-sort
+  summary: Get view sort configuration
+  description: Get view sort configuration
+  usage: lark-cli base +view-get-sort [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-get-sort
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name
+- name: +view-get-timebar
+  summary: Get view timebar configuration
+  description: Get view timebar configuration
+  usage: lark-cli base +view-get-timebar [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-get-timebar
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name
+- name: +view-get-visible-fields
+  summary: Get view visible fields configuration
+  description: Get view visible fields configuration
+  usage: lark-cli base +view-get-visible-fields [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-get-visible-fields
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name
+- name: +view-list
+  summary: List views in a table
+  description: List views in a table
+  usage: lark-cli base +view-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --limit
+    shorthand: null
+    type: int
+    description: pagination size, range 1-200
+    default: '100'
+  - name: --offset
+    shorthand: null
+    type: int
+    description: pagination offset
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+- name: +view-rename
+  summary: Rename a view by ID or name
+  description: Rename a view by ID or name
+  usage: lark-cli base +view-rename [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-rename
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: new view name
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name
+- name: +view-set-card
+  summary: Set view card configuration
+  description: Set view card configuration
+  usage: lark-cli base +view-set-card [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-set-card
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: card JSON object, e.g. {"cover_field":"Cover"} or {"cover_field":null} to clear
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name
+- name: +view-set-filter
+  summary: Set view filter configuration
+  description: Set view filter configuration
+  usage: lark-cli base +view-set-filter [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-set-filter
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: filter JSON object, e.g. {"logic":"and","conditions":[["Status","==","Todo"]]}
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name
+- name: +view-set-group
+  summary: Set view group configuration
+  description: Set view group configuration
+  usage: lark-cli base +view-set-group [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-set-group
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: group JSON object with group_config array, e.g. {"group_config":[{"field":"Status","desc":false}]}; use {"group_config":[]}
+      to clear
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name
+- name: +view-set-sort
+  summary: Set view sort configuration
+  description: Set view sort configuration
+  usage: lark-cli base +view-set-sort [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-set-sort
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: sort_config JSON object, e.g. {"sort_config":[{"field":"Priority","desc":true}]}; use {"sort_config":[]}
+      to clear; max 10 items
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name
+- name: +view-set-timebar
+  summary: Set view timebar configuration
+  description: Set view timebar configuration
+  usage: lark-cli base +view-set-timebar [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-set-timebar
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: timebar JSON object with start_time, end_time, title, e.g. {"start_time":"Start Date","end_time":"End Date","title":"Name"}
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name
+- name: +view-set-visible-fields
+  summary: Set view visible fields
+  description: Set view visible fields
+  usage: lark-cli base +view-set-visible-fields [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +view-set-visible-fields
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: visible fields JSON object, e.g. {"visible_fields":["Name","Status"]}
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: view ID or name
+- name: +workflow-create
+  summary: Create a new workflow in a base
+  description: Create a new workflow in a base
+  usage: lark-cli base +workflow-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +workflow-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: workflow body JSON; read lark-base-workflow-guide.md and lark-base-workflow-schema.md before constructing
+      steps
+- name: +workflow-disable
+  summary: Disable a workflow in a base
+  description: Disable a workflow in a base
+  usage: lark-cli base +workflow-disable [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +workflow-disable
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --workflow-id
+    shorthand: null
+    type: string
+    description: workflow ID (wkf... prefix)
+- name: +workflow-enable
+  summary: Enable a workflow in a base
+  description: Enable a workflow in a base
+  usage: lark-cli base +workflow-enable [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +workflow-enable
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --workflow-id
+    shorthand: null
+    type: string
+    description: workflow ID (wkf... prefix)
+- name: +workflow-get
+  summary: Get a single workflow definition (including steps) from a base
+  description: Get a single workflow definition (including steps) from a base
+  usage: lark-cli base +workflow-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +workflow-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: user ID type for creator/updater fields, default open_id (open_id|union_id|user_id)
+  - name: --workflow-id
+    shorthand: null
+    type: string
+    description: workflow ID (wkf... prefix)
+- name: +workflow-list
+  summary: List all workflows in a base (auto-paginated)
+  description: List all workflows in a base (auto-paginated)
+  usage: lark-cli base +workflow-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +workflow-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size per request, range 1-100
+    default: '100'
+  - name: --status
+    shorthand: null
+    type: string
+    description: filter by status (enabled|disabled)
+- name: +workflow-update
+  summary: Replace a workflow's full definition (title and/or steps) in a base
+  description: Replace a workflow's full definition (title and/or steps) in a base
+  usage: lark-cli base +workflow-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +workflow-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: workflow body JSON; read lark-base-workflow-guide.md and lark-base-workflow-schema.md before replacing steps
+  - name: --workflow-id
+    shorthand: null
+    type: string
+    description: workflow ID (wkf... prefix)

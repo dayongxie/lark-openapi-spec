@@ -1,0 +1,3663 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: apps
+description: Develop, deploy HTML, web pages and applications
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +access-scope-get
+  summary: Get app access scope configuration
+  description: Get app access scope configuration
+  usage: lark-cli apps +access-scope-get [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +access-scope-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +access-scope-set
+  summary: Set app access scope (specific / public / tenant)
+  description: Set app access scope (specific / public / tenant)
+  usage: lark-cli apps +access-scope-set [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --apply-enabled
+    shorthand: null
+    type: bool
+    description: allow apply for access (scope=specific)
+  - name: --approver
+    shorthand: null
+    type: string
+    description: approver open_id (when --apply-enabled; server allows exactly one)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +access-scope-set
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --require-login
+    shorthand: null
+    type: bool
+    description: require login (scope=public)
+  - name: --scope
+    shorthand: null
+    type: string
+    description: 'scope: specific | public | tenant (specific|public|tenant)'
+  - name: --targets
+    shorthand: null
+    type: string
+    description: 'targets JSON array: [{"type":"user|department|chat","id":"..."}, ...]'
+- name: +analytics-list
+  summary: List online app user and page-view analytics
+  description: List online app user and page-view analytics
+  usage: lark-cli apps +analytics-list [flags]
+  risk: read
+  flags:
+  - name: --analytics
+    shorthand: null
+    type: string
+    description: analytics family to list (users|page-view)
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID whose online analytics should be listed
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --device-type
+    shorthand: null
+    type: string
+    description: device type filter (desktop|mobile)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: observability environment; only online is supported
+    default: online
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --granularity
+    shorthand: null
+    type: string
+    description: analytics aggregation granularity (day|week|month)
+    default: day
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +analytics-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page
+    shorthand: null
+    type: string
+    description: frontend page or route filter
+  - name: --series
+    shorthand: null
+    type: string
+    description: analytics series within the family, such as active-users or desktop-view
+  - name: --since
+    shorthand: null
+    type: string
+    description: start time, relative duration (30s, 5m, 0.5h, 2h, 3d, 1w), local date/time, or RFC3339; defaults to 30 days
+      before --until
+  - name: --until
+    shorthand: null
+    type: string
+    description: end time, relative duration (30s, 5m, 0.5h, 2h, 3d, 1w), local date/time, or RFC3339; defaults to now
+- name: +automation-create
+  summary: Create an automation trigger (cron/record-change/webhook/feishu-approval); created disabled
+  description: Create an automation trigger (cron/record-change/webhook/feishu-approval); created disabled
+  usage: lark-cli apps +automation-create [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --approval-code
+    shorthand: null
+    type: string
+    description: '[feishu-approval] approval definition code; omit to match all approval definitions'
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --cron
+    shorthand: null
+    type: string
+    description: '[cron] 5-field cron expression, e.g. ''0 9 * * *'' (min interval 30m)'
+  - name: --description
+    shorthand: null
+    type: string
+    description: optional description (<=50 chars)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --event
+    shorthand: null
+    type: string
+    description: '[record-change] INSERT | UPDATE | UPSERT | DELETE'
+  - name: --event-type
+    shorthand: null
+    type: string
+    description: '[feishu-approval] approval_instance | approval_task'
+  - name: --fields
+    shorthand: null
+    type: string
+    description: '[record-change] JSON array of field ids for UPDATE/UPSERT, ["*"] = all'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +automation-create
+  - name: --instance-status
+    shorthand: null
+    type: stringArray
+    description: '[feishu-approval] statuses for approval_instance'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: trigger name (unique within app, <=100 chars)
+  - name: --status
+    shorthand: null
+    type: string
+    description: 'optional initial status: enabled | disabled'
+    default: disabled; backend supports create+enable in one call
+  - name: --task-status
+    shorthand: null
+    type: stringArray
+    description: '[feishu-approval] statuses for approval_task'
+  - name: --timezone
+    shorthand: null
+    type: string
+    description: '[cron] IANA timezone'
+    default: Asia/Shanghai
+  - name: --trigger-type
+    shorthand: null
+    type: string
+    description: cron | record-change | webhook | feishu-approval
+  - name: --white-ip-list
+    shorthand: null
+    type: string
+    description: '[webhook] JSON array of allowed IPs'
+- name: +automation-disable
+  summary: Disable an automation trigger (stops auto-firing; does not delete)
+  description: Disable an automation trigger (stops auto-firing; does not delete)
+  usage: lark-cli apps +automation-disable [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +automation-disable
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: trigger name
+- name: +automation-enable
+  summary: Enable (activate) an automation trigger
+  description: Enable (activate) an automation trigger
+  usage: lark-cli apps +automation-enable [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +automation-enable
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: trigger name
+- name: +automation-get
+  summary: Get an automation trigger's config (webhook Bearer Token redacted)
+  description: Get an automation trigger's config (webhook Bearer Token redacted)
+  usage: lark-cli apps +automation-get [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +automation-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: trigger name
+- name: +automation-list
+  summary: List a Miaoda app's automation triggers (cron/record-change/webhook/feishu-approval)
+  description: List a Miaoda app's automation triggers (cron/record-change/webhook/feishu-approval)
+  usage: lark-cli apps +automation-list [flags]
+  risk: read
+  flags:
+  - name: --all
+    shorthand: null
+    type: bool
+    description: auto-aggregate all pages until has_more=false
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +automation-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size (server default 50, max 100)
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination cursor from previous response
+  - name: --trigger-type
+    shorthand: null
+    type: string
+    description: 'filter by type: cron | record-change | webhook | feishu-approval'
+- name: +automation-update
+  summary: Update a trigger's condition/description, or manage webhook URL/Token via dedicated flags
+  description: Update a trigger's condition/description, or manage webhook URL/Token via dedicated flags
+  usage: lark-cli apps +automation-update [flags]
+  risk: high-risk-write
+  flags:
+  - name: --app-env
+    shorthand: null
+    type: string
+    description: '[webhook] preview | runtime (required with --reset-url)'
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --approval-code
+    shorthand: null
+    type: string
+    description: '[feishu-approval] approval definition code; omit to match all approval definitions'
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --cron
+    shorthand: null
+    type: string
+    description: '[cron] new 5-field cron expression'
+  - name: --description
+    shorthand: null
+    type: string
+    description: new description
+  - name: --disable-token
+    shorthand: null
+    type: bool
+    description: '[webhook] disable bearer token; re-enable generates a new token'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --enable-token
+    shorthand: null
+    type: bool
+    description: '[webhook] enable bearer token (shown once)'
+  - name: --event
+    shorthand: null
+    type: string
+    description: '[record-change] INSERT | UPDATE | UPSERT | DELETE'
+  - name: --event-type
+    shorthand: null
+    type: string
+    description: '[feishu-approval] approval_instance | approval_task'
+  - name: --fields
+    shorthand: null
+    type: string
+    description: '[record-change] JSON array of field ids for UPDATE/UPSERT, ["*"] = all'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +automation-update
+  - name: --instance-status
+    shorthand: null
+    type: stringArray
+    description: '[feishu-approval] statuses for approval_instance'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: trigger name
+  - name: --reset-token
+    shorthand: null
+    type: bool
+    description: '[webhook] rotate bearer token (old token invalidated, shown once)'
+  - name: --reset-url
+    shorthand: null
+    type: bool
+    description: '[webhook] rotate callback URL for --app-env (old URL invalidated)'
+  - name: --task-status
+    shorthand: null
+    type: stringArray
+    description: '[feishu-approval] statuses for approval_task'
+  - name: --timezone
+    shorthand: null
+    type: string
+    description: '[cron] new timezone'
+  - name: --trigger-type
+    shorthand: null
+    type: string
+    description: type of the trigger being updated (for condition PATCH)
+  - name: --white-ip-list
+    shorthand: null
+    type: string
+    description: '[webhook] full replacement JSON array of allowed IPs'
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +chat
+  summary: Send a message to a session to start/continue a conversation
+  description: Send a message to a session to start/continue a conversation
+  usage: lark-cli apps +chat [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +chat
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --message
+    shorthand: null
+    type: string
+    description: user message text
+  - name: --session-id
+    shorthand: null
+    type: string
+    description: session ID
+- name: +create
+  summary: Create a new app
+  description: Create a new app
+  usage: lark-cli apps +create [flags]
+  risk: write
+  flags:
+  - name: --app-type
+    shorthand: null
+    type: string
+    description: app type (html|full_stack)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --description
+    shorthand: null
+    type: string
+    description: app description
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +create
+  - name: --icon-url
+    shorthand: null
+    type: string
+    description: app icon URL (server uses default if omitted)
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: app display name
+- name: +db-audit-disable
+  summary: Disable row-change audit logging for a table
+  description: Disable row-change audit logging for a table
+  usage: lark-cli apps +db-audit-disable [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: target db environment; leave unset to auto-select (multi-env app uses dev, single-env uses online), or pass
+      dev/online (dev|online)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +db-audit-disable
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table
+    shorthand: null
+    type: string
+    description: table to disable audit for
+- name: +db-audit-enable
+  summary: Enable row-change audit logging for a table
+  description: Enable row-change audit logging for a table
+  usage: lark-cli apps +db-audit-enable [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: target db environment; leave unset to auto-select (multi-env app uses dev, single-env uses online), or pass
+      dev/online (dev|online)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +db-audit-enable
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --retention
+    shorthand: null
+    type: string
+    description: how long to keep audit logs (7d|30d|180d|360d|forever)
+    default: 7d
+  - name: --table
+    shorthand: null
+    type: string
+    description: table to enable audit for
+- name: +db-audit-list
+  summary: List row-change audit events for one or more tables (cursor pagination)
+  description: List row-change audit events for one or more tables (cursor pagination)
+  usage: lark-cli apps +db-audit-list [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: target db environment; leave unset to auto-select (multi-env app uses dev, single-env uses online), or pass
+      dev/online (dev|online)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +db-audit-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination cursor from previous response
+  - name: --since
+    shorthand: null
+    type: string
+    description: 'filter: event at or after; relative (7d/2h) | date | datetime | ISO 8601 w/ TZ (bare date/datetime read
+      in local timezone)'
+  - name: --table
+    shorthand: null
+    type: strings
+    description: table(s) to list audit events for (repeatable)
+  - name: --until
+    shorthand: null
+    type: string
+    description: 'filter: event at or before; same formats as --since'
+- name: +db-audit-status
+  summary: Show table audit (row-change tracking) status
+  description: Show table audit (row-change tracking) status
+  usage: lark-cli apps +db-audit-status [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: target db environment; leave unset to auto-select (multi-env app uses dev, single-env uses online), or pass
+      dev/online (dev|online)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +db-audit-status
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table
+    shorthand: null
+    type: string
+    description: 'show status for a single table (default: all configured tables)'
+- name: +db-changelog-list
+  summary: List a Miaoda app database's DDL change history (cursor pagination)
+  description: List a Miaoda app database's DDL change history (cursor pagination)
+  usage: lark-cli apps +db-changelog-list [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --change-id
+    shorthand: null
+    type: string
+    description: look up a single change by id (returns that one record only)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: target db environment; leave unset to auto-select (multi-env app uses dev, single-env uses online), or pass
+      dev/online (dev|online)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +db-changelog-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination cursor from previous response
+  - name: --since
+    shorthand: null
+    type: string
+    description: 'filter: changed at or after; relative (7d/2h) | date | datetime | ISO 8601 w/ TZ (bare date/datetime read
+      in local timezone)'
+  - name: --table
+    shorthand: null
+    type: string
+    description: filter by target table
+  - name: --until
+    shorthand: null
+    type: string
+    description: 'filter: changed at or before; same formats as --since'
+- name: +db-data-export
+  summary: Export rows from a Miaoda app table to a local file (csv/json/sql)
+  description: Export rows from a Miaoda app table to a local file (csv/json/sql)
+  usage: lark-cli apps +db-data-export [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: source db environment; leave unset to auto-select (multi-env app uses dev, single-env uses online), or pass
+      dev/online (dev|online)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +db-data-export
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --limit
+    shorthand: null
+    type: int
+    description: max rows to export (1..5000)
+    default: '5000'
+  - name: --output
+    shorthand: null
+    type: string
+    description: 'local output path; extension picks format .csv/.json/.sql (default: <table>.csv)'
+  - name: --table
+    shorthand: null
+    type: string
+    description: source table
+- name: +db-data-import
+  summary: Import rows from a local csv/json file into a Miaoda app table
+  description: Import rows from a local csv/json file into a Miaoda app table
+  usage: lark-cli apps +db-data-import [flags]
+  risk: high-risk-write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: target db environment; leave unset to auto-select (multi-env app uses dev, single-env uses online), or pass
+      dev/online (dev|online)
+  - name: --file
+    shorthand: null
+    type: string
+    description: local data file (.csv/.json), relative to cwd
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +db-data-import
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table
+    shorthand: null
+    type: string
+    description: 'target table (default: file name without extension)'
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +db-env-create
+  summary: Create a DB environment (split single-env DB into dev/online, irreversible)
+  description: Create a DB environment (split single-env DB into dev/online, irreversible)
+  usage: lark-cli apps +db-env-create [flags]
+  risk: high-risk-write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: environment to create (only dev supported for now) (dev)
+    default: dev
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +db-env-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --sync-data
+    shorthand: null
+    type: bool
+    description: copy existing online data into the new environment
+    default: 'off'
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +db-env-diff
+  summary: Preview pending dev→online schema changes (no apply)
+  description: Preview pending dev→online schema changes (no apply)
+  usage: lark-cli apps +db-env-diff [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +db-env-diff
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +db-env-migrate
+  summary: Publish pending dev→online schema changes (irreversible)
+  description: Publish pending dev→online schema changes (irreversible)
+  usage: lark-cli apps +db-env-migrate [flags]
+  risk: high-risk-write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +db-env-migrate
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +db-execute
+  summary: Execute SQL (SELECT / DML / DDL) against a Miaoda app database
+  description: Execute SQL (SELECT / DML / DDL) against a Miaoda app database
+  usage: lark-cli apps +db-execute [flags]
+  risk: high-risk-write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: target db environment; leave unset to auto-select (multi-env app uses dev, single-env uses online), or pass
+      dev/online (dev|online)
+  - name: --file
+    shorthand: null
+    type: string
+    description: path to a .sql file (relative to cwd). Mutually exclusive with --sql
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +db-execute
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --sql
+    shorthand: null
+    type: string
+    description: SQL text; use - to read stdin. Mutually exclusive with --file (supports - reads stdin (one flag per call;
+      use @file for others))
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +db-quota-get
+  summary: Get an app's database storage usage
+  description: Get an app's database storage usage
+  usage: lark-cli apps +db-quota-get [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: target db environment; leave unset to auto-select (multi-env app uses dev, single-env uses online), or pass
+      dev/online (dev|online)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +db-quota-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +db-recovery-apply
+  summary: Restore the database to a point in time (overwrites current data, irreversible)
+  description: Restore the database to a point in time (overwrites current data, irreversible)
+  usage: lark-cli apps +db-recovery-apply [flags]
+  risk: high-risk-write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: target db environment; leave unset to auto-select (multi-env app uses dev, single-env uses online), or pass
+      dev/online (dev|online)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +db-recovery-apply
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --target
+    shorthand: null
+    type: string
+    description: point in time to restore to; relative (2h/3d) | date | datetime | ISO 8601 w/ TZ
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +db-recovery-diff
+  summary: Preview restoring the database to a point in time (PITR diff)
+  description: Preview restoring the database to a point in time (PITR diff)
+  usage: lark-cli apps +db-recovery-diff [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: target db environment; leave unset to auto-select (multi-env app uses dev, single-env uses online), or pass
+      dev/online (dev|online)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +db-recovery-diff
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --target
+    shorthand: null
+    type: string
+    description: point in time to restore to; relative (2h/3d) | date | datetime | ISO 8601 w/ TZ
+- name: +db-table-get
+  summary: 'Get a table''s structure: columns, indexes and constraints'
+  description: 'Get a table''s structure: columns, indexes and constraints'
+  usage: lark-cli apps +db-table-get [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: target db environment; leave unset to auto-select (multi-env app uses dev, single-env uses online), or pass
+      dev/online (dev|online)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +db-table-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table
+    shorthand: null
+    type: string
+    description: table name
+- name: +db-table-list
+  summary: List tables in an app database (cursor pagination)
+  description: List tables in an app database (cursor pagination)
+  usage: lark-cli apps +db-table-list [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: target db environment; leave unset to auto-select (multi-env app uses dev, single-env uses online), or pass
+      dev/online (dev|online)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +db-table-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination cursor from previous response
+- name: +env-delete
+  summary: Delete app environment variables
+  description: Delete app environment variables
+  usage: lark-cli apps +env-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: target environment (dev|online)
+    default: dev
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +env-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --key
+    shorthand: null
+    type: stringArray
+    description: environment variable key; repeatable
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +env-list
+  summary: List app environment variables
+  description: List app environment variables
+  usage: lark-cli apps +env-list [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: target environment (dev|online)
+    default: dev
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +env-list
+  - name: --include-values
+    shorthand: null
+    type: bool
+    description: include environment variable values
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +env-pull
+  summary: Pull app startup env vars into the local project .env.local
+  description: Pull app startup env vars into the local project .env.local
+  usage: lark-cli apps +env-pull [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +env-pull
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --project-path
+    shorthand: null
+    type: string
+    description: local project root path (defaults to current directory)
+- name: +env-set
+  summary: Set an app environment variable
+  description: Set an app environment variable
+  usage: lark-cli apps +env-set [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: target environment (dev|online)
+    default: dev
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +env-set
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --key
+    shorthand: null
+    type: string
+    description: environment variable key
+  - name: --value
+    shorthand: null
+    type: string
+    description: environment variable value (supports @file, - reads stdin (one flag per call; use @file for others))
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm setting variables in online
+- name: +file-delete
+  summary: Delete one or more files by remote path (batch)
+  description: Delete one or more files by remote path (batch)
+  usage: lark-cli apps +file-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +file-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --path
+    shorthand: null
+    type: strings
+    description: remote file path to delete (repeatable)
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +file-download
+  summary: Download a file to a local path (via a signed URL)
+  description: Download a file to a local path (via a signed URL)
+  usage: lark-cli apps +file-download [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +file-download
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --output
+    shorthand: null
+    type: string
+    description: 'local output path (default: remote file basename in cwd)'
+  - name: --path
+    shorthand: null
+    type: string
+    description: remote file path
+- name: +file-get
+  summary: Get a single file's metadata by path
+  description: Get a single file's metadata by path
+  usage: lark-cli apps +file-get [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +file-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --path
+    shorthand: null
+    type: string
+    description: remote file path
+- name: +file-list
+  summary: List files in a Miaoda app's storage (cursor pagination)
+  description: List files in a Miaoda app's storage (cursor pagination)
+  usage: lark-cli apps +file-list [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +file-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: filter by exact file name
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination cursor from previous response
+  - name: --path
+    shorthand: null
+    type: string
+    description: filter by exact remote path
+  - name: --size-gt
+    shorthand: null
+    type: int
+    description: 'filter: size greater than (bytes)'
+  - name: --size-lt
+    shorthand: null
+    type: int
+    description: 'filter: size less than (bytes)'
+  - name: --type
+    shorthand: null
+    type: string
+    description: filter by MIME type
+  - name: --uploaded-since
+    shorthand: null
+    type: string
+    description: 'filter: uploaded at or after; relative (7d/2h/30s) | date (2026-04-15) | datetime (2026-04-15T10:00:00)
+      | ISO 8601 w/ TZ (bare date/datetime read in local timezone)'
+  - name: --uploaded-until
+    shorthand: null
+    type: string
+    description: 'filter: uploaded at or before; relative (7d/2h/30s) | date (2026-04-15) | datetime (2026-04-15T10:00:00)
+      | ISO 8601 w/ TZ (bare date/datetime read in local timezone)'
+- name: +file-quota-get
+  summary: Get an app's file-storage usage
+  description: Get an app's file-storage usage
+  usage: lark-cli apps +file-quota-get [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +file-quota-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +file-sign
+  summary: Generate a temporary signed download URL for a file
+  description: Generate a temporary signed download URL for a file
+  usage: lark-cli apps +file-sign [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --expires-in
+    shorthand: null
+    type: int
+    description: link validity in seconds (max 2592000 = 30d)
+    default: '86400'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +file-sign
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --path
+    shorthand: null
+    type: string
+    description: remote file path
+- name: +file-upload
+  summary: Upload a local file to an app's storage
+  description: Upload a local file to an app's storage
+  usage: lark-cli apps +file-upload [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file
+    shorthand: null
+    type: string
+    description: local file to upload (file_name = basename)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +file-upload
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +get
+  summary: Get a single app's detail by app ID (returns app_type, name, description, publish status, etc.)
+  description: Get a single app's detail by app ID (returns app_type, name, description, publish status, etc.)
+  usage: lark-cli apps +get [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +git-credential-init
+  summary: Initialize Git credentials and a URL-scoped Git helper for an app repository
+  description: Initialize Git credentials and a URL-scoped Git helper for an app repository
+  usage: lark-cli apps +git-credential-init [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +git-credential-init
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +git-credential-list
+  summary: List local Git credentials for app repositories
+  description: List local Git credentials for app repositories
+  usage: lark-cli apps +git-credential-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +git-credential-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +html-publish
+  summary: Publish HTML to an app (returns url or release_id depending on app type)
+  description: Publish HTML to an app (returns url or release_id depending on app type)
+  usage: lark-cli apps +html-publish [flags]
+  risk: write
+  flags:
+  - name: --allow-sensitive
+    shorthand: null
+    type: bool
+    description: skip the credential-file scan (allow .env / .npmrc / .aws/credentials / etc. in the publish payload)
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +html-publish
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --path
+    shorthand: null
+    type: string
+    description: path to HTML file or directory
+- name: +init
+  summary: Initialize an app's code and local development environment
+  description: Initialize an app's code and local development environment
+  usage: lark-cli apps +init [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dir
+    shorthand: null
+    type: string
+    description: clone target directory; absolute or relative path
+    default: ./<app-id>
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +init
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --source-path
+    shorthand: null
+    type: string
+    description: path to existing source files (e.g. HTML output from an agent) to incorporate into the initialized project
+- name: +list
+  summary: List apps visible to the calling user (cursor pagination)
+  description: List apps visible to the calling user (cursor pagination)
+  usage: lark-cli apps +list [flags]
+  risk: read
+  flags:
+  - name: --app-type
+    shorthand: null
+    type: string
+    description: app type filter (html or full_stack) (html|full_stack)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --keyword
+    shorthand: null
+    type: string
+    description: fuzzy match on app name
+  - name: --ownership
+    shorthand: null
+    type: string
+    description: 'ownership filter: all (created by me + shared with me) | mine | shared (all|mine|shared)'
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination cursor from previous response
+- name: +log-get
+  summary: Get one online app log by log ID
+  description: Get one online app log by log ID
+  usage: lark-cli apps +log-get [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID whose online logs should be searched
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: observability environment; only online is supported
+    default: online
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +log-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --log-id
+    shorthand: null
+    type: string
+    description: log ID to fetch
+- name: +log-list
+  summary: Search online app logs with observability filters
+  description: Search online app logs with observability filters
+  usage: lark-cli apps +log-list [flags]
+  risk: read
+  flags:
+  - name: --api
+    shorthand: null
+    type: string
+    description: API path/name filter
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID whose online logs should be searched
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: observability environment; only online is supported
+    default: online
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +log-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --keyword
+    shorthand: null
+    type: string
+    description: keyword filter applied by the log search backend
+  - name: --level
+    shorthand: null
+    type: stringArray
+    description: log level filter; repeatable, one of DEBUG, INFO, WARN, ERROR (case-insensitive)
+  - name: --max-duration
+    shorthand: null
+    type: int
+    description: maximum duration in milliseconds; must be non-negative and >= --min-duration
+  - name: --min-duration
+    shorthand: null
+    type: int
+    description: minimum duration in milliseconds; must be non-negative
+  - name: --module
+    shorthand: null
+    type: string
+    description: module name filter
+  - name: --page
+    shorthand: null
+    type: string
+    description: frontend page or route filter
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size, 1..100
+    default: '50'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination cursor from a previous log search response
+  - name: --since
+    shorthand: null
+    type: string
+    description: start time, relative duration (30s, 5m, 0.5h, 2h, 3d, 1w), local date/time, or RFC3339
+  - name: --trace-id
+    shorthand: null
+    type: stringArray
+    description: trace ID filter; repeatable
+  - name: --until
+    shorthand: null
+    type: string
+    description: end time, relative duration (30s, 5m, 0.5h, 2h, 3d, 1w), local date/time, or RFC3339
+  - name: --user-id
+    shorthand: null
+    type: string
+    description: end user ID filter
+- name: +metric-list
+  summary: List online app request, latency, CPU, and memory metrics
+  description: List online app request, latency, CPU, and memory metrics
+  usage: lark-cli apps +metric-list [flags]
+  risk: read
+  flags:
+  - name: --api
+    shorthand: null
+    type: stringArray
+    description: API path/name filter; repeatable
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID whose online metrics should be listed
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --down-sample
+    shorthand: null
+    type: string
+    description: metric down-sample interval (1m|1h|1d)
+    default: 1m
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: observability environment; only online is supported
+    default: online
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +metric-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --metric
+    shorthand: null
+    type: string
+    description: metric family to list (requests|latency|cpu|memory)
+  - name: --page
+    shorthand: null
+    type: stringArray
+    description: frontend page or route filter; repeatable
+  - name: --series
+    shorthand: null
+    type: string
+    description: metric series within the family, such as total/error or p50/p99
+  - name: --since
+    shorthand: null
+    type: string
+    description: start time, relative duration (30s, 5m, 0.5h, 2h, 3d, 1w), local date/time, or RFC3339; defaults to 30 days
+      before --until
+  - name: --until
+    shorthand: null
+    type: string
+    description: end time, relative duration (30s, 5m, 0.5h, 2h, 3d, 1w), local date/time, or RFC3339; defaults to now
+- name: +openapi-key-create
+  summary: Create an open API key (returns the raw secret once)
+  description: Create an open API key (returns the raw secret once)
+  usage: lark-cli apps +openapi-key-create [flags]
+  risk: write
+  flags:
+  - name: --allow-preview
+    shorthand: null
+    type: bool
+    description: allow preview-env access (config.is_allow_access_preview)
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +openapi-key-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: API key name
+  - name: --scope
+    shorthand: null
+    type: string
+    description: 'advanced: raw JSON for config.request_scope (mutually exclusive with --scope-all/--scope-api)'
+  - name: --scope-all
+    shorthand: null
+    type: bool
+    description: grant access to all /openapi/** routes (request_scope.allow_all)
+  - name: --scope-api
+    shorthand: null
+    type: stringArray
+    description: 'grant one route, repeatable: ''METHOD /openapi/path'' (from the app''s docs/openapi.json)'
+- name: +openapi-key-delete
+  summary: Delete an open API key (irreversible; prefer +openapi-key-disable)
+  description: Delete an open API key (irreversible; prefer +openapi-key-disable)
+  usage: lark-cli apps +openapi-key-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +openapi-key-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --key-id
+    shorthand: null
+    type: string
+    description: API key ID
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +openapi-key-disable
+  summary: Disable an open API key (minimal safety brake)
+  description: Disable an open API key (minimal safety brake)
+  usage: lark-cli apps +openapi-key-disable [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +openapi-key-disable
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --key-id
+    shorthand: null
+    type: string
+    description: API key ID
+- name: +openapi-key-enable
+  summary: Enable an open API key
+  description: Enable an open API key
+  usage: lark-cli apps +openapi-key-enable [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +openapi-key-enable
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --key-id
+    shorthand: null
+    type: string
+    description: API key ID
+- name: +openapi-key-get
+  summary: Get an open API key detail (secret redacted)
+  description: Get an open API key detail (secret redacted)
+  usage: lark-cli apps +openapi-key-get [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +openapi-key-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --key-id
+    shorthand: null
+    type: string
+    description: API key ID
+- name: +openapi-key-list
+  summary: List an app's open API keys (secrets redacted)
+  description: List an app's open API keys (secrets redacted)
+  usage: lark-cli apps +openapi-key-list [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +openapi-key-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --limit
+    shorthand: null
+    type: int
+    description: page size (server default if omitted)
+  - name: --offset
+    shorthand: null
+    type: int
+    description: page offset
+- name: +openapi-key-reset
+  summary: Reset (rotate) an open API key; returns a new raw secret once
+  description: Reset (rotate) an open API key; returns a new raw secret once
+  usage: lark-cli apps +openapi-key-reset [flags]
+  risk: high-risk-write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +openapi-key-reset
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --key-id
+    shorthand: null
+    type: string
+    description: API key ID
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +openapi-key-update
+  summary: Update an open API key's name and/or scope
+  description: Update an open API key's name and/or scope
+  usage: lark-cli apps +openapi-key-update [flags]
+  risk: write
+  flags:
+  - name: --allow-preview
+    shorthand: null
+    type: bool
+    description: allow preview-env access (config.is_allow_access_preview)
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +openapi-key-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --key-id
+    shorthand: null
+    type: string
+    description: API key ID
+  - name: --name
+    shorthand: null
+    type: string
+    description: new name
+  - name: --scope
+    shorthand: null
+    type: string
+    description: 'advanced: raw JSON for config.request_scope (mutually exclusive with --scope-all/--scope-api)'
+  - name: --scope-all
+    shorthand: null
+    type: bool
+    description: grant access to all /openapi/** routes (request_scope.allow_all)
+  - name: --scope-api
+    shorthand: null
+    type: stringArray
+    description: 'grant one route, repeatable: ''METHOD /openapi/path'' (from the app''s docs/openapi.json)'
+- name: +plugin-install
+  summary: Install a plugin package (download, extract, update package.json)
+  description: Install a plugin package (download, extract, update package.json)
+  usage: lark-cli apps +plugin-install [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +plugin-install
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: plugin key (e.g. @official-plugins/ai-text-generate); omit to install all declared plugins
+  - name: --version
+    shorthand: null
+    type: string
+    description: plugin version (e.g. 1.0.0); omit to install latest
+- name: +plugin-list
+  summary: List locally installed plugin packages and their installation status
+  description: List locally installed plugin packages and their installation status
+  usage: lark-cli apps +plugin-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +plugin-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +plugin-uninstall
+  summary: Uninstall a plugin package (remove from node_modules and package.json)
+  description: Uninstall a plugin package (remove from node_modules and package.json)
+  usage: lark-cli apps +plugin-uninstall [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +plugin-uninstall
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: plugin key (e.g. @official-plugins/ai-text-generate)
+- name: +release-create
+  summary: Create a release for an app (returns release_id for status polling)
+  description: Create a release for an app (returns release_id for status polling)
+  usage: lark-cli apps +release-create [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --branch
+    shorthand: null
+    type: string
+    description: release branch (server uses default if omitted)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +release-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +release-get
+  summary: Get a single release's status/detail by release ID
+  description: Get a single release's status/detail by release ID
+  usage: lark-cli apps +release-get [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +release-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --release-id
+    shorthand: null
+    type: string
+    description: release ID (the release_id returned by +release-create)
+- name: +release-list
+  summary: List an app's release history (most recent first)
+  description: List an app's release history (most recent first)
+  usage: lark-cli apps +release-list [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +release-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size (max 500)
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination cursor from a previous response
+  - name: --status
+    shorthand: null
+    type: string
+    description: 'filter by release status: publishing | finished | failed (publishing|finished|failed)'
+- name: +role-create
+  summary: Create an app role
+  description: Create an app role
+  usage: lark-cli apps +role-create [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app ID (required; app_...; use apps +list to find it)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --description
+    shorthand: null
+    type: string
+    description: role description
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +role-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: role name (required)
+  - name: --role-id
+    shorthand: null
+    type: string
+    description: optional caller-provided role ID ([A-Za-z0-9_-]{1,64})
+- name: +role-delete
+  summary: Delete an app role
+  description: Delete an app role
+  usage: lark-cli apps +role-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app ID (required; app_...; use apps +list to find it)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +role-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --role-id
+    shorthand: null
+    type: string
+    description: role ID (required; [A-Za-z0-9_-]{1,64}; use role-list to find it)
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +role-get
+  summary: Get an app role
+  description: Get an app role
+  usage: lark-cli apps +role-get [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app ID (required; app_...; use apps +list to find it)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +role-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --role-id
+    shorthand: null
+    type: string
+    description: role ID (required; [A-Za-z0-9_-]{1,64}; use role-list to find it)
+- name: +role-list
+  summary: List app roles
+  description: List app roles
+  usage: lark-cli apps +role-list [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app ID (required; app_...; use apps +list to find it)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +role-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: filter roles by exact name
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size (1-100)
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: integer offset returned by the previous role-list response
+- name: +role-match-list
+  summary: List app roles matching a user
+  description: List app roles matching a user
+  usage: lark-cli apps +role-match-list [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app ID (required; app_...; use apps +list to find it)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +role-match-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --user-id
+    shorthand: null
+    type: string
+    description: user open ID (required; ou_...; do not pass a role ID, name, or email)
+- name: +role-member-add
+  summary: Add app role members
+  description: Add app role members
+  usage: lark-cli apps +role-member-add [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app ID (required; app_...; use apps +list to find it)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --chats
+    shorthand: null
+    type: string
+    description: comma-separated open_chat_id values
+  - name: --departments
+    shorthand: null
+    type: string
+    description: comma-separated open_department_id values
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +role-member-add
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --role-id
+    shorthand: null
+    type: string
+    description: role ID (required; [A-Za-z0-9_-]{1,64}; use role-list to find it)
+  - name: --users
+    shorthand: null
+    type: string
+    description: comma-separated user open IDs; do not pass names or emails
+- name: +role-member-list
+  summary: List app role members
+  description: List app role members
+  usage: lark-cli apps +role-member-list [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app ID (required; app_...; use apps +list to find it)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +role-member-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --member-type
+    shorthand: null
+    type: string
+    description: filter member type (user|department|chat)
+  - name: --role-id
+    shorthand: null
+    type: string
+    description: role ID (required; [A-Za-z0-9_-]{1,64}; use role-list to find it)
+- name: +role-member-remove
+  summary: Remove app role members
+  description: Remove app role members
+  usage: lark-cli apps +role-member-remove [flags]
+  risk: high-risk-write
+  flags:
+  - name: --all
+    shorthand: null
+    type: bool
+    description: remove all members from the role
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app ID (required; app_...; use apps +list to find it)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --chats
+    shorthand: null
+    type: string
+    description: comma-separated open_chat_id values
+  - name: --departments
+    shorthand: null
+    type: string
+    description: comma-separated open_department_id values
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +role-member-remove
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --role-id
+    shorthand: null
+    type: string
+    description: role ID (required; [A-Za-z0-9_-]{1,64}; use role-list to find it)
+  - name: --users
+    shorthand: null
+    type: string
+    description: comma-separated user open IDs; do not pass names or emails
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +role-update
+  summary: Update an app role
+  description: Update an app role
+  usage: lark-cli apps +role-update [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app ID (required; app_...; use apps +list to find it)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --description
+    shorthand: null
+    type: string
+    description: new role description
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +role-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: new role name
+  - name: --role-id
+    shorthand: null
+    type: string
+    description: role ID (required; [A-Za-z0-9_-]{1,64}; use role-list to find it)
+- name: +session-create
+  summary: Create a session under an app
+  description: Create a session under an app
+  usage: lark-cli apps +session-create [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +session-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +session-get
+  summary: Read a session's current status, queued turns, and latest turn
+  description: Read a session's current status, queued turns, and latest turn
+  usage: lark-cli apps +session-get [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +session-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --session-id
+    shorthand: null
+    type: string
+    description: session ID
+- name: +session-list
+  summary: List sessions under an app (cursor pagination)
+  description: List sessions under an app (cursor pagination)
+  usage: lark-cli apps +session-list [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +session-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size (max 50)
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination cursor from previous response
+- name: +session-stop
+  summary: Stop (interrupt) the running turn of a session
+  description: Stop (interrupt) the running turn of a session
+  usage: lark-cli apps +session-stop [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +session-stop
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --session-id
+    shorthand: null
+    type: string
+    description: session ID
+  - name: --turn-id
+    shorthand: null
+    type: string
+    description: turn ID to stop (from +session-get latest_turn.turn_id)
+- name: +trace-get
+  summary: Get one online app trace by trace ID
+  description: Get one online app trace by trace ID
+  usage: lark-cli apps +trace-get [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID whose online trace should be fetched
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: observability environment; only online is supported
+    default: online
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +trace-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --trace-id
+    shorthand: null
+    type: string
+    description: trace ID to fetch
+- name: +trace-list
+  summary: Search online app traces with observability filters
+  description: Search online app traces with observability filters
+  usage: lark-cli apps +trace-list [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID whose online traces should be searched
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --environment
+    shorthand: null
+    type: string
+    description: observability environment; only online is supported
+    default: online
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +trace-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size, 1..100
+    default: '50'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination cursor from a previous trace search response
+  - name: --root-span
+    shorthand: null
+    type: string
+    description: root span keyword filter applied by the trace search backend
+  - name: --since
+    shorthand: null
+    type: string
+    description: start time, relative duration (30s, 5m, 0.5h, 2h, 3d, 1w), local date/time, or RFC3339
+  - name: --trace-id
+    shorthand: null
+    type: stringArray
+    description: trace ID filter; repeatable
+  - name: --until
+    shorthand: null
+    type: string
+    description: end time, relative duration (30s, 5m, 0.5h, 2h, 3d, 1w), local date/time, or RFC3339
+  - name: --user-id
+    shorthand: null
+    type: string
+    description: end user ID filter
+- name: +update
+  summary: Partially update an app (only provided fields are sent)
+  description: Partially update an app (only provided fields are sent)
+  usage: lark-cli apps +update [flags]
+  risk: write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: app ID
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --description
+    shorthand: null
+    type: string
+    description: new app description
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: new app display name

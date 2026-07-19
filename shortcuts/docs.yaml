@@ -1,0 +1,818 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: docs
+description: Document and content operations
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +create
+  summary: Create a Lark document
+  description: 'Create a Lark document Start here (required for AI agents): lark-cli skills read lark-doc references/lark-doc-create.md
+    AI agents MUST read the matching embedded skill before choosing flags or running docs commands. Do not skip this step,
+    and do not infer workflows from --help alone. MUST NOT grep/open local SKILL.md files to discover this guidance; use lark-cli
+    skills read lark-doc references/lark-doc-create.md so content stays version-matched with this CLI. Skills ship with the
+    CLI and include docs workflows, selector/block-id usage, XML/Markdown formats, and copy-paste examples. skills read lark-doc                Docs
+    workflow guide skills read lark-doc <path>         Read a referenced docs skill file'
+  usage: lark-cli docs +create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --content
+    shorthand: null
+    type: string
+    description: document body; XML by default or Markdown when --doc-format markdown. AI agents MUST read lark-cli skills
+      read lark-doc references/lark-doc-xml.md before writing any --content payload; when using --doc-format markdown, also
+      read lark-cli skills read lark-doc references/lark-doc-md.md. Follow the latest rules there, and MUST NOT grep/open
+      local SKILL.md files to discover this guidance; use --help for the latest command flags (supports @file, - reads stdin
+      (one flag per call; use @file for others))
+  - name: --doc-format
+    shorthand: null
+    type: string
+    description: content format; xml is default and supports richer DocxXML blocks, markdown imports plain Markdown (xml|markdown)
+    default: xml
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --parent-position
+    shorthand: null
+    type: string
+    description: parent position such as my_library; mutually exclusive with --parent-token
+  - name: --parent-token
+    shorthand: null
+    type: string
+    description: parent folder token or wiki node token; mutually exclusive with --parent-position
+  - name: --reference-map
+    shorthand: null
+    type: reference_map
+    description: 结构化 reference_map JSON object；必须与 `--content` 一起使用。普通写入优先把结构写在正文里；`--reference-map` 主要用于保留或回放已有 `document.reference_map`。支持直接
+      JSON、`@reference-map.json`（相对路径）或 `-` 从 stdin 读取。 (supports @file, - reads stdin (one flag per call; use @file for others))
+  - name: --title
+    shorthand: null
+    type: string
+    description: document title; when provided, the CLI prepends it to --content as <title>...</title> so the title wins over
+      later content titles
+- name: +fetch
+  summary: Fetch Lark document content
+  description: 'Fetch Lark document content Start here (required for AI agents): lark-cli skills read lark-doc references/lark-doc-fetch.md
+    AI agents MUST read the matching embedded skill before choosing flags or running docs commands. Do not skip this step,
+    and do not infer workflows from --help alone. MUST NOT grep/open local SKILL.md files to discover this guidance; use lark-cli
+    skills read lark-doc references/lark-doc-fetch.md so content stays version-matched with this CLI. Skills ship with the
+    CLI and include docs workflows, selector/block-id usage, XML/Markdown formats, and copy-paste examples. skills read lark-doc                Docs
+    workflow guide skills read lark-doc <path>         Read a referenced docs skill file'
+  usage: lark-cli docs +fetch [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --context-after
+    shorthand: null
+    type: int
+    description: 'range/keyword/section context: sibling blocks after selected top-level blocks'
+  - name: --context-before
+    shorthand: null
+    type: int
+    description: 'range/keyword/section context: sibling blocks before selected top-level blocks'
+  - name: --detail
+    shorthand: null
+    type: string
+    description: detail level; simple for reading, with-ids for block references, full for styles and edit metadata (simple|with-ids|full)
+    default: simple
+  - name: --doc
+    shorthand: null
+    type: string
+    description: document URL or token
+  - name: --doc-format
+    shorthand: null
+    type: string
+    description: output content format; xml keeps DocxXML structure and optional block ids, markdown is plain export, im-markdown
+      downgrades residual DocxXML fragments for IM messages (xml|markdown|im-markdown)
+    default: xml
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --end-block-id
+    shorthand: null
+    type: string
+    description: range end block id; -1 means through document end
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +fetch
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --keyword
+    shorthand: null
+    type: string
+    description: keyword scope query; supports case-insensitive substring/regex fallback and '|' OR branches, e.g. foo|bar
+      or bug|缺陷
+  - name: --lang
+    shorthand: null
+    type: string
+    description: user cite display language, e.g. en-US, zh-CN, ja-JP
+  - name: --max-depth
+    shorthand: null
+    type: int
+    description: outline heading level cap; other scopes subtree depth where -1 is unlimited and 0 is block only
+    default: '-1'
+  - name: --revision-id
+    shorthand: null
+    type: int
+    description: document revision id; -1 means latest
+    default: '-1'
+  - name: --scope
+    shorthand: null
+    type: string
+    description: read scope; full reads whole doc, outline lists headings, section expands from heading anchor, range uses
+      block ids, keyword searches text (full|outline|range|keyword|section)
+    default: full
+  - name: --start-block-id
+    shorthand: null
+    type: string
+    description: range/section anchor block id; required for section and optional start for range
+- name: +history-list
+  summary: List Lark document history versions
+  description: 'List Lark document history versions Start here (required for AI agents): lark-cli skills read lark-doc references/lark-doc-history.md
+    AI agents MUST read the matching embedded skill before choosing flags or running docs commands. Do not skip this step,
+    and do not infer workflows from --help alone. MUST NOT grep/open local SKILL.md files to discover this guidance; use lark-cli
+    skills read lark-doc references/lark-doc-history.md so content stays version-matched with this CLI. Skills ship with the
+    CLI and include docs workflows, selector/block-id usage, XML/Markdown formats, and copy-paste examples. skills read lark-doc                Docs
+    workflow guide skills read lark-doc <path>         Read a referenced docs skill file'
+  usage: lark-cli docs +history-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --doc
+    shorthand: null
+    type: string
+    description: document URL or token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +history-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: history entries to return, range 1-20
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token from the previous page's page_token
+- name: +history-revert
+  summary: Revert a Lark document to a historical version
+  description: 'Revert a Lark document to a historical version Start here (required for AI agents): lark-cli skills read lark-doc
+    references/lark-doc-history.md AI agents MUST read the matching embedded skill before choosing flags or running docs commands.
+    Do not skip this step, and do not infer workflows from --help alone. MUST NOT grep/open local SKILL.md files to discover
+    this guidance; use lark-cli skills read lark-doc references/lark-doc-history.md so content stays version-matched with
+    this CLI. Skills ship with the CLI and include docs workflows, selector/block-id usage, XML/Markdown formats, and copy-paste
+    examples. skills read lark-doc                Docs workflow guide skills read lark-doc <path>         Read a referenced
+    docs skill file'
+  usage: lark-cli docs +history-revert [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --doc
+    shorthand: null
+    type: string
+    description: document URL or token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +history-revert
+  - name: --history-version-id
+    shorthand: null
+    type: string
+    description: history_version_id from docs +history-list to revert to
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --wait-timeout-ms
+    shorthand: null
+    type: int
+    description: milliseconds to wait for revert completion before returning, range 0-30000
+    default: '30000'
+- name: +media-download
+  summary: Download document media or whiteboard thumbnail (auto-detects extension)
+  description: Download document media or whiteboard thumbnail (auto-detects extension)
+  usage: lark-cli docs +media-download [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +media-download
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --output
+    shorthand: null
+    type: string
+    description: local save path
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: overwrite existing output file
+  - name: --token
+    shorthand: null
+    type: string
+    description: resource token (file_token or whiteboard_id)
+  - name: --type
+    shorthand: null
+    type: string
+    description: 'resource type: media (default) | whiteboard'
+    default: media
+- name: +media-insert
+  summary: Insert a local image or file into a Lark document (4-step orchestration + auto-rollback); appends to end by default,
+    or inserts relative to a text selection with --selection-with-ellipsis
+  description: Insert a local image or file into a Lark document (4-step orchestration + auto-rollback); appends to end by
+    default, or inserts relative to a text selection with --selection-with-ellipsis
+  usage: lark-cli docs +media-insert [flags]
+  risk: write
+  flags:
+  - name: --align
+    shorthand: null
+    type: string
+    description: 'alignment: left | center | right'
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --before
+    shorthand: null
+    type: bool
+    description: insert before the matched block instead of after (requires --selection-with-ellipsis)
+  - name: --caption
+    shorthand: null
+    type: string
+    description: image caption text
+  - name: --doc
+    shorthand: null
+    type: string
+    description: document URL or document_id
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file
+    shorthand: null
+    type: string
+    description: local file path (files > 20MB use multipart upload automatically)
+  - name: --file-view
+    shorthand: null
+    type: string
+    description: 'file block rendering: card (default) | preview | inline; only applies when --type=file. preview renders
+      audio/video as an inline player'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --from-clipboard
+    shorthand: null
+    type: bool
+    description: read image from system clipboard instead of a local file (macOS/Windows built-in; Linux requires xclip, xsel
+      or wl-paste)
+  - name: --height
+    shorthand: null
+    type: int
+    description: image display height in pixels (only for --type=image); if --width is omitted it is auto-computed from the
+      source image aspect ratio
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +media-insert
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --selection-with-ellipsis
+    shorthand: null
+    type: string
+    description: plain text (or 'start...end' to disambiguate) matching the target block's content. Media is inserted at the
+      top-level ancestor of the matched block — i.e., when the selection is inside a callout, table cell, or nested list,
+      media lands outside that container, not inside it. Pass 'start...end' (a unique prefix and suffix separated by '...')
+      when the plain text appears in more than one block
+  - name: --type
+    shorthand: null
+    type: string
+    description: 'type: image | file'
+    default: image
+  - name: --width
+    shorthand: null
+    type: int
+    description: image display width in pixels (only for --type=image); if --height is omitted it is auto-computed from the
+      source image aspect ratio
+- name: +media-preview
+  summary: Preview document media file (auto-detects extension)
+  description: Preview document media file (auto-detects extension)
+  usage: lark-cli docs +media-preview [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +media-preview
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --output
+    shorthand: null
+    type: string
+    description: local save path
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: overwrite existing output file
+  - name: --token
+    shorthand: null
+    type: string
+    description: media file token
+- name: +media-upload
+  summary: Upload media file (image/attachment) to a document block
+  description: Upload media file (image/attachment) to a document block
+  usage: lark-cli docs +media-upload [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --doc-id
+    shorthand: null
+    type: string
+    description: document ID (for drive_route_token)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file
+    shorthand: null
+    type: string
+    description: local file path (files > 20MB use multipart upload automatically)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +media-upload
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --parent-node
+    shorthand: null
+    type: string
+    description: parent node ID (block_id for docx, board_token for whiteboard, mindnote token for mindnote)
+  - name: --parent-type
+    shorthand: null
+    type: string
+    description: 'parent type: docx_image | docx_file | whiteboard | mindnote_image'
+- name: +resource-delete
+  summary: Delete a document resource (type=cover is idempotent when empty)
+  description: Delete a document resource (type=cover is idempotent when empty)
+  usage: lark-cli docs +resource-delete [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --doc
+    shorthand: null
+    type: string
+    description: document URL or document_id
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +resource-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --type
+    shorthand: null
+    type: string
+    description: 'resource type: cover'
+    default: cover
+- name: +resource-download
+  summary: Download a document resource (type=cover downloads the cover image content)
+  description: Download a document resource (type=cover downloads the cover image content)
+  usage: lark-cli docs +resource-download [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --doc
+    shorthand: null
+    type: string
+    description: document URL or document_id
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +resource-download
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --output
+    shorthand: null
+    type: string
+    description: local save path
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: overwrite existing output file
+  - name: --type
+    shorthand: null
+    type: string
+    description: 'resource type: cover'
+    default: cover
+- name: +resource-update
+  summary: Upload and update a document resource (type=cover)
+  description: Upload and update a document resource (type=cover)
+  usage: lark-cli docs +resource-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --doc
+    shorthand: null
+    type: string
+    description: document URL or document_id
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file
+    shorthand: null
+    type: string
+    description: local image file path (files > 20MB use multipart upload automatically)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --from-clipboard
+    shorthand: null
+    type: bool
+    description: read image from system clipboard instead of a local file
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +resource-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --offset-ratio-x
+    shorthand: null
+    type: float
+    description: cover horizontal offset ratio
+  - name: --offset-ratio-y
+    shorthand: null
+    type: float
+    description: cover vertical offset ratio
+  - name: --type
+    shorthand: null
+    type: string
+    description: 'resource type: cover'
+    default: cover
+  - name: --url
+    shorthand: null
+    type: string
+    description: HTTPS image URL to download and upload
+- name: +search
+  summary: 'Search Lark docs, Wiki, and spreadsheet files (Search v2: doc_wiki/search)'
+  description: 'Search Lark docs, Wiki, and spreadsheet files (Search v2: doc_wiki/search)'
+  usage: lark-cli docs +search [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --filter
+    shorthand: null
+    type: string
+    description: filter conditions (JSON object)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +search
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: string
+    description: page size (default 15, max 20)
+    default: '15'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: page token
+  - name: --query
+    shorthand: null
+    type: string
+    description: search keyword
+- name: +update
+  summary: Update a Lark document
+  description: 'Update a Lark document Start here (required for AI agents): lark-cli skills read lark-doc references/lark-doc-update.md
+    AI agents MUST read the matching embedded skill before choosing flags or running docs commands. Do not skip this step,
+    and do not infer workflows from --help alone. MUST NOT grep/open local SKILL.md files to discover this guidance; use lark-cli
+    skills read lark-doc references/lark-doc-update.md so content stays version-matched with this CLI. Skills ship with the
+    CLI and include docs workflows, selector/block-id usage, XML/Markdown formats, and copy-paste examples. skills read lark-doc                Docs
+    workflow guide skills read lark-doc <path>         Read a referenced docs skill file'
+  usage: lark-cli docs +update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --block-id
+    shorthand: null
+    type: string
+    description: target block ID(s) for block operations (comma-separated for batch delete); -1 means document end where supported
+  - name: --command
+    shorthand: null
+    type: string
+    description: 'operation; requirements: str_replace(--pattern), block_delete(--block-id, comma-separated for batch), block_insert_after/block_replace(--block-id,--content),
+      block_copy_insert_after/block_move_after(--block-id,--src-block-ids), overwrite/append(--content) (str_replace|block_delete|block_insert_after|block_copy_insert_after|block_replace|block_move_after|overwrite|append)'
+  - name: --content
+    shorthand: null
+    type: string
+    description: replacement or inserted content; XML by default or Markdown when --doc-format markdown; empty with str_replace
+      deletes match. AI agents MUST read lark-cli skills read lark-doc references/lark-doc-xml.md before writing any --content
+      payload; when using --doc-format markdown, also read lark-cli skills read lark-doc references/lark-doc-md.md. Follow
+      the latest rules there, and MUST NOT grep/open local SKILL.md files to discover this guidance; use --help for the latest
+      command flags (supports @file, - reads stdin (one flag per call; use @file for others))
+  - name: --doc
+    shorthand: null
+    type: string
+    description: document URL or token
+  - name: --doc-format
+    shorthand: null
+    type: string
+    description: content format for --content; xml is default for precise rich edits, markdown for user-provided Markdown
+      or plain append/overwrite (xml|markdown)
+    default: xml
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --pattern
+    shorthand: null
+    type: string
+    description: str_replace match pattern; XML mode is inline text, Markdown mode can match multiline text
+  - name: --reference-map
+    shorthand: null
+    type: reference_map
+    description: 结构化 reference_map JSON object；必须与 `--content` 一起使用。普通写入优先把结构写在正文里；`--reference-map` 主要用于保留或回放已有 `document.reference_map`。支持直接
+      JSON、`@reference-map.json`（相对路径）或 `-` 从 stdin 读取。 (supports @file, - reads stdin (one flag per call; use @file for others))
+  - name: --revision-id
+    shorthand: null
+    type: int
+    description: base revision id; -1 means latest
+    default: '-1'
+  - name: --src-block-ids
+    shorthand: null
+    type: string
+    description: comma-separated source block ids for block_copy_insert_after and block_move_after
+- name: +whiteboard-update
+  summary: Update an existing whiteboard in lark document with mermaid, plantuml or whiteboard dsl. refer to lark-whiteboard
+    skill for more details.
+  description: Update an existing whiteboard in lark document with mermaid, plantuml or whiteboard dsl. refer to lark-whiteboard
+    skill for more details.
+  usage: lark-cli docs +whiteboard-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +whiteboard-update
+  - name: --idempotent-token
+    shorthand: null
+    type: string
+    description: idempotent token to ensure the update is idempotent. Default is empty. min length is 10.
+  - name: --input_format
+    shorthand: null
+    type: string
+    description: 'format of input data: raw | plantuml | mermaid | svg. Default is raw.'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: overwrite the whiteboard content, delete all existing content before update. Default is false.
+  - name: --source
+    shorthand: null
+    type: string
+    description: Input whiteboard data. (supports @file, - reads stdin (one flag per call; use @file for others))
+  - name: --whiteboard-token
+    shorthand: null
+    type: string
+    description: whiteboard token of the whiteboard to update. You will need edit permission to update the whiteboard.

@@ -1,0 +1,1206 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: im
+description: Message and group chat management
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +chat-create
+  summary: Create a group chat or topic chat; user/bot; --chat-mode group|topic; private/public; invites users/bots; optionally
+    sets bot manager
+  description: Create a group chat or topic chat; user/bot; --chat-mode group|topic; private/public; invites users/bots; optionally
+    sets bot manager
+  usage: lark-cli im +chat-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: bot | user'
+  - name: --bots
+    shorthand: null
+    type: string
+    description: comma-separated bot app IDs (cli_xxx) to invite, max 5
+  - name: --chat-mode
+    shorthand: null
+    type: string
+    description: group mode ("topic" creates a topic chat; differs from a normal group in topic-message mode) (group|topic)
+    default: group
+  - name: --description
+    shorthand: null
+    type: string
+    description: group description (max 100 chars)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +chat-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: group name (required for public groups, max 60 chars)
+  - name: --owner
+    shorthand: null
+    type: string
+    description: owner open_id (ou_xxx); defaults to bot (--as bot) or authorized user (--as user)
+  - name: --set-bot-manager
+    shorthand: null
+    type: bool
+    description: set the bot that creates this chat as manager (bot identity only)
+  - name: --type
+    shorthand: null
+    type: string
+    description: chat type (private|public)
+    default: private
+  - name: --users
+    shorthand: null
+    type: string
+    description: comma-separated user open_ids (ou_xxx) to invite, max 50
+- name: +chat-list
+  summary: List chats the current user/bot is a member of; defaults to groups; pass --types=p2p,group to include p2p single
+    chats (user-only); user/bot; supports sorting, pagination, --exclude-muted (user-only)
+  description: List chats the current user/bot is a member of; defaults to groups; pass --types=p2p,group to include p2p single
+    chats (user-only); user/bot; supports sorting, pagination, --exclude-muted (user-only)
+  usage: lark-cli im +chat-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --exclude-muted
+    shorthand: null
+    type: bool
+    description: (user identity only) drop chats the current user has muted (do-not-disturb); bot identity returns all chats
+      unfiltered
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +chat-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size (1-100)
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token for next page
+  - name: --sort
+    shorthand: null
+    type: string
+    description: 'sort field: create_time (ascending) | active_time (descending) (create_time|active_time)'
+    default: create_time
+  - name: --types
+    shorthand: null
+    type: strings
+    description: chat types to include (group, p2p); omit = groups only (backward compatible); p2p requires user identity
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: ID type for owner_id in response (open_id|union_id|user_id)
+    default: open_id
+- name: +chat-members-list
+  summary: List members of a chat; returns separate users[] / bots[] buckets; callable as user or bot; --member-types filters
+    which kinds to return; --page-all pagination; surfaces truncations[] when the server caps a bucket
+  description: List members of a chat; returns separate users[] / bots[] buckets; callable as user or bot; --member-types
+    filters which kinds to return; --page-all pagination; surfaces truncations[] when the server caps a bucket
+  usage: lark-cli im +chat-members-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --chat-id
+    shorthand: null
+    type: string
+    description: chat ID (oc_xxx)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +chat-members-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --member-id-type
+    shorthand: null
+    type: string
+    description: ID type for member_id in response (open_id|union_id|user_id)
+    default: open_id
+  - name: --member-types
+    shorthand: null
+    type: strings
+    description: member types to return (user, bot); omit = all
+  - name: --page-all
+    shorthand: null
+    type: bool
+    description: automatically paginate through all pages (capped by --page-limit)
+  - name: --page-delay
+    shorthand: null
+    type: int
+    description: delay in ms between pages when --page-all (0 = no delay)
+    default: '200'
+  - name: --page-limit
+    shorthand: null
+    type: int
+    description: max pages to fetch with --page-all (default 10, 0 = unlimited)
+    default: '10'
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size, 1-100
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: page token; implies single-page fetch (no auto-pagination)
+- name: +chat-messages-list
+  summary: List messages in a chat or P2P conversation; user/bot; accepts --chat-id or --user-id, resolves P2P chat_id, supports
+    time range/sort/pagination
+  description: List messages in a chat or P2P conversation; user/bot; accepts --chat-id or --user-id, resolves P2P chat_id,
+    supports time range/sort/pagination
+  usage: lark-cli im +chat-messages-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --chat-id
+    shorthand: null
+    type: string
+    description: (required, mutually exclusive with --user-id) chat ID (oc_xxx)
+  - name: --download-resources
+    shorthand: null
+    type: bool
+    description: 'download image/file/audio/video/media resources (and post-embedded, excluding stickers) into ./lark-im-resources/
+      (default: off; no extra requests when off)'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --end
+    shorthand: null
+    type: string
+    description: end time (ISO 8601)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +chat-messages-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --no-reactions
+    shorthand: null
+    type: bool
+    description: 'skip auto-fetching reactions for each message (default: enrichment enabled)'
+  - name: --order
+    shorthand: null
+    type: string
+    description: 'sort order: asc | desc (asc|desc)'
+    default: desc
+  - name: --page-size
+    shorthand: null
+    type: string
+    description: page size (1-50)
+    default: '50'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token for next page
+  - name: --start
+    shorthand: null
+    type: string
+    description: start time (ISO 8601)
+  - name: --user-id
+    shorthand: null
+    type: string
+    description: (required, mutually exclusive with --chat-id; user identity only) user open_id (ou_xxx)
+- name: +chat-search
+  summary: Search visible group chats by --query keyword and/or --member-ids; user/bot; e.g. look up chat_id by group name;
+    supports type filters, sorting, pagination, and --exclude-muted (user identity only)
+  description: Search visible group chats by --query keyword and/or --member-ids; user/bot; e.g. look up chat_id by group
+    name; supports type filters, sorting, pagination, and --exclude-muted (user identity only)
+  usage: lark-cli im +chat-search [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --chat-modes
+    shorthand: null
+    type: string
+    description: filter by chat mode, comma-separated (group, topic)
+  - name: --disable-search-by-user
+    shorthand: null
+    type: bool
+    description: 'disable search-by-member-name (default: search by member name first, then group name)'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --exclude-muted
+    shorthand: null
+    type: bool
+    description: (user identity only) drop chats the current user has muted (do-not-disturb); bot identity returns all chats
+      unfiltered
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +chat-search
+  - name: --is-manager
+    shorthand: null
+    type: bool
+    description: only show chats you created or manage
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --member-ids
+    shorthand: null
+    type: string
+    description: filter by member open_ids, comma-separated
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size (1-100)
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token for next page
+  - name: --query
+    shorthand: null
+    type: string
+    description: search keyword (server may return data.notice for overly long input)
+  - name: --search-types
+    shorthand: null
+    type: string
+    description: chat types, comma-separated (private, external, public_joined, public_not_joined)
+  - name: --sort
+    shorthand: null
+    type: string
+    description: 'sort field (always descending): create_time | update_time | member_count (create_time|update_time|member_count)'
+- name: +chat-update
+  summary: Update group chat name or description; user/bot; updates a chat's name or description
+  description: Update group chat name or description; user/bot; updates a chat's name or description
+  usage: lark-cli im +chat-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --chat-id
+    shorthand: null
+    type: string
+    description: chat ID (oc_xxx)
+  - name: --description
+    shorthand: null
+    type: string
+    description: group description (max 100 chars)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +chat-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: group name (max 60 chars)
+- name: +feed-group-list
+  summary: List the caller's feed groups (tags); user-only; supports `--page-all` auto-pagination
+  description: List the caller's feed groups (tags); user-only; supports `--page-all` auto-pagination
+  usage: lark-cli im +feed-group-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --end-time
+    shorthand: null
+    type: string
+    description: update-time window end (Unix milliseconds as a decimal string)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +feed-group-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-all
+    shorthand: null
+    type: bool
+    description: automatically paginate through all pages
+  - name: --page-limit
+    shorthand: null
+    type: int
+    description: max pages when auto-pagination is enabled (default 20, max 1000)
+    default: '20'
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size (1-50)
+    default: '50'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token for next page
+  - name: --start-time
+    shorthand: null
+    type: string
+    description: update-time window start (Unix milliseconds as a decimal string)
+- name: +feed-group-list-item
+  summary: List feed cards in a feed group (tag); user-only; enriches each item with chat_name resolved from feed_id; supports
+    --page-all auto-pagination
+  description: List feed cards in a feed group (tag); user-only; enriches each item with chat_name resolved from feed_id;
+    supports --page-all auto-pagination
+  usage: lark-cli im +feed-group-list-item [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --end-time
+    shorthand: null
+    type: string
+    description: update-time window end (Unix milliseconds as a decimal string)
+  - name: --feed-group-id
+    shorthand: null
+    type: string
+    description: feed group ID (ofg_xxx); path parameter (required)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +feed-group-list-item
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-all
+    shorthand: null
+    type: bool
+    description: automatically paginate through all pages
+  - name: --page-limit
+    shorthand: null
+    type: int
+    description: max pages when auto-pagination is enabled (default 20, max 1000)
+    default: '20'
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size (1-50)
+    default: '50'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token for next page
+  - name: --start-time
+    shorthand: null
+    type: string
+    description: update-time window start (Unix milliseconds as a decimal string)
+- name: +feed-group-query-item
+  summary: Look up specific feed cards in a feed group (tag) by ID; user-only; enriches each item with chat_name resolved
+    from feed_id
+  description: Look up specific feed cards in a feed group (tag) by ID; user-only; enriches each item with chat_name resolved
+    from feed_id
+  usage: lark-cli im +feed-group-query-item [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --feed-group-id
+    shorthand: null
+    type: string
+    description: feed group ID (ofg_xxx); path parameter (required)
+  - name: --feed-id
+    shorthand: null
+    type: string
+    description: comma-separated chat IDs (oc_xxx); feed_type is fixed to chat (required)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +feed-group-query-item
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +feed-shortcut-create
+  summary: Add chats to the user's feed shortcuts; user-only; batch up to 10 chat IDs per call; --head/--tail controls insertion
+    order
+  description: Add chats to the user's feed shortcuts; user-only; batch up to 10 chat IDs per call; --head/--tail controls
+    insertion order
+  usage: lark-cli im +feed-shortcut-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --chat-id
+    shorthand: null
+    type: strings
+    description: open_chat_id to add as a feed shortcut (oc_xxx); required; repeat the flag or pass comma-separated; max 10
+      per call
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --head
+    shorthand: null
+    type: bool
+    description: insert at the top of the shortcut list (default); mutually exclusive with --tail
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +feed-shortcut-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --tail
+    shorthand: null
+    type: bool
+    description: append at the bottom of the shortcut list; mutually exclusive with --head
+- name: +feed-shortcut-list
+  summary: List one page of the user's feed shortcuts; user-only; first call omits --page-token, subsequent calls pass the
+    previous response's page_token; each entry is auto-enriched with the full per-type info object attached as `detail` (pass
+    --no-detail to skip)
+  description: List one page of the user's feed shortcuts; user-only; first call omits --page-token, subsequent calls pass
+    the previous response's page_token; each entry is auto-enriched with the full per-type info object attached as `detail`
+    (pass --no-detail to skip)
+  usage: lark-cli im +feed-shortcut-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +feed-shortcut-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --no-detail
+    shorthand: null
+    type: bool
+    description: 'skip fetching the full info object for each shortcut (default: enrichment enabled — CHAT-type entries call
+      im.chats.batch_query, require im:chat:read, and attach the object under the detail field)'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: opaque pagination token from the previous response; omit for the first page. If a token is rejected because
+      the list changed, restart by omitting it.
+- name: +feed-shortcut-remove
+  summary: Remove chats from the user's feed shortcuts; user-only; batch up to 10 chat IDs per call; per-item failures return
+    ok:false with failed_shortcuts
+  description: Remove chats from the user's feed shortcuts; user-only; batch up to 10 chat IDs per call; per-item failures
+    return ok:false with failed_shortcuts
+  usage: lark-cli im +feed-shortcut-remove [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --chat-id
+    shorthand: null
+    type: strings
+    description: open_chat_id to remove from feed shortcuts (oc_xxx); required; repeat the flag or pass comma-separated; max
+      10 per call
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +feed-shortcut-remove
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +flag-cancel
+  summary: 'Cancel (remove) a bookmark. When no --flag-type is given, best-effort double-cancel: removes message layer and
+    (when chat_type is determinable) feed layer'
+  description: 'Cancel (remove) a bookmark. When no --flag-type is given, best-effort double-cancel: removes message layer
+    and (when chat_type is determinable) feed layer'
+  usage: lark-cli im +flag-cancel [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-type
+    shorthand: null
+    type: string
+    description: 'flag type override: message|feed; omit to double-cancel both layers'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +flag-cancel
+  - name: --item-type
+    shorthand: null
+    type: string
+    description: 'item type override: default|thread|msg_thread'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --message-id
+    shorthand: null
+    type: string
+    description: message ID (om_xxx)
+- name: +flag-create
+  summary: Create a bookmark on a message; user-only; defaults to message-layer flag; use --flag-type feed for feed-layer
+    flag (item_type auto-detected from chat mode)
+  description: Create a bookmark on a message; user-only; defaults to message-layer flag; use --flag-type feed for feed-layer
+    flag (item_type auto-detected from chat mode)
+  usage: lark-cli im +flag-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-type
+    shorthand: null
+    type: string
+    description: 'flag type: message (default) or feed'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +flag-create
+  - name: --item-type
+    shorthand: null
+    type: string
+    description: 'item type override: default|thread|msg_thread (rarely needed)'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --message-id
+    shorthand: null
+    type: string
+    description: message ID (om_xxx)
+- name: +flag-list
+  summary: List bookmarks; user-only; auto-enriches feed-type thread entries with message content; supports `--page-all` auto-pagination
+  description: List bookmarks; user-only; auto-enriches feed-type thread entries with message content; supports `--page-all`
+    auto-pagination
+  usage: lark-cli im +flag-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --enrich-feed-thread
+    shorthand: null
+    type: bool
+    description: fetch message content for feed-type thread entries (default true; may call messages/mget and require im:message.group_msg:get_as_user/im:message.p2p_msg:get_as_user;
+      use --enrich-feed-thread=false to avoid extra scopes)
+    default: 'true'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +flag-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-all
+    shorthand: null
+    type: bool
+    description: automatically paginate through all pages
+  - name: --page-limit
+    shorthand: null
+    type: int
+    description: max pages when auto-pagination is enabled (default 20, max 1000)
+    default: '20'
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size (1-50)
+    default: '50'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token for next page
+- name: +messages-mget
+  summary: Batch get messages by IDs; user/bot; fetches up to 50 om_ message IDs, formats sender names, expands thread replies
+  description: Batch get messages by IDs; user/bot; fetches up to 50 om_ message IDs, formats sender names, expands thread
+    replies
+  usage: lark-cli im +messages-mget [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --download-resources
+    shorthand: null
+    type: bool
+    description: 'download image/file/audio/video/media resources (and post-embedded, excluding stickers) into ./lark-im-resources/
+      (default: off; no extra requests when off)'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +messages-mget
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --message-ids
+    shorthand: null
+    type: string
+    description: message IDs, comma-separated (om_xxx,om_yyy)
+  - name: --no-reactions
+    shorthand: null
+    type: bool
+    description: 'skip auto-fetching reactions for each message (default: enrichment enabled)'
+- name: +messages-reply
+  summary: Reply to a message (supports thread replies); user/bot; supports text/markdown/post/media replies, reply-in-thread,
+    idempotency key
+  description: Reply to a message (supports thread replies); user/bot; supports text/markdown/post/media replies, reply-in-thread,
+    idempotency key
+  usage: lark-cli im +messages-reply [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: bot | user'
+  - name: --audio
+    shorthand: null
+    type: string
+    description: audio file key (file_xxx), URL, or cwd-relative local path for a voice message (absolute paths and .. are
+      rejected); local paths and URLs must be Opus (.opus or Ogg Opus .ogg). For mp3/wav, convert to .opus first, or use --file
+      to send as an attachment
+  - name: --content
+    shorthand: null
+    type: string
+    description: (one of --content/--text/--markdown/--image/--file/--video/--audio required) message content JSON
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file
+    shorthand: null
+    type: string
+    description: file key (file_xxx), URL, or cwd-relative local path (absolute paths and .. are rejected)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +messages-reply
+  - name: --idempotency-key
+    shorthand: null
+    type: string
+    description: idempotency key, max 50 characters (prevents duplicate sends)
+  - name: --image
+    shorthand: null
+    type: string
+    description: image key (img_xxx), URL, or cwd-relative local path (absolute paths and .. are rejected)
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --markdown
+    shorthand: null
+    type: string
+    description: markdown text (auto-wrapped as post format with style optimization; image URLs auto-resolved)
+  - name: --message-id
+    shorthand: null
+    type: string
+    description: message ID (om_xxx)
+  - name: --msg-type
+    shorthand: null
+    type: string
+    description: message type for --content JSON; when using --text/--markdown/--image/--file/--video/--audio, the effective
+      type is inferred automatically (text|post|image|file|audio|media|interactive|share_chat|share_user)
+    default: text
+  - name: --reply-in-thread
+    shorthand: null
+    type: bool
+    description: reply in thread (message appears in thread stream instead of main chat)
+  - name: --text
+    shorthand: null
+    type: string
+    description: plain text message (auto-wrapped as JSON)
+  - name: --video
+    shorthand: null
+    type: string
+    description: video file key (file_xxx), URL, or cwd-relative local path (absolute paths and .. are rejected); must be
+      used together with --video-cover
+  - name: --video-cover
+    shorthand: null
+    type: string
+    description: video cover image key (img_xxx), URL, or cwd-relative local path (absolute paths and .. are rejected); required
+      when using --video
+- name: +messages-search
+  summary: Search messages across chats (supports keyword, sender, time range filters) with user identity; user-only; filters
+    by chat/sender/attachment/time, enriches results via mget and chats batch_query
+  description: Search messages across chats (supports keyword, sender, time range filters) with user identity; user-only;
+    filters by chat/sender/attachment/time, enriches results via mget and chats batch_query
+  usage: lark-cli im +messages-search [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --at-chatter-ids
+    shorthand: null
+    type: string
+    description: filter by @mentioned user open_ids, comma-separated (also matches messages that @all)
+  - name: --chat-id
+    shorthand: null
+    type: string
+    description: limit to chat IDs, comma-separated
+  - name: --chat-type
+    shorthand: null
+    type: string
+    description: chat type (group|p2p)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --end
+    shorthand: null
+    type: string
+    description: end time(ISO 8601) with local timezone offset (e.g. 2026-03-25T23:59:59+08:00)
+  - name: --exclude-sender-type
+    shorthand: null
+    type: string
+    description: exclude sender type (user|bot)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +messages-search
+  - name: --include-attachment-type
+    shorthand: null
+    type: string
+    description: include attachment type filter (file|image|video|link)
+  - name: --is-at-me
+    shorthand: null
+    type: bool
+    description: only messages that @me
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --no-reactions
+    shorthand: null
+    type: bool
+    description: 'skip auto-fetching reactions for each message (default: enrichment enabled)'
+  - name: --page-all
+    shorthand: null
+    type: bool
+    description: automatically paginate search results
+  - name: --page-limit
+    shorthand: null
+    type: int
+    description: max search pages when auto-pagination is enabled (default 20, max 40)
+    default: '20'
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size (1-50)
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: page token
+  - name: --query
+    shorthand: null
+    type: string
+    description: search keyword
+  - name: --sender
+    shorthand: null
+    type: string
+    description: sender open_ids, comma-separated
+  - name: --sender-type
+    shorthand: null
+    type: string
+    description: sender type (user|bot)
+  - name: --start
+    shorthand: null
+    type: string
+    description: start time(ISO 8601) with local timezone offset (e.g. 2026-03-24T00:00:00+08:00)
+- name: +messages-send
+  summary: Send a message to a chat or direct message; user/bot; sends to chat-id or user-id with text/markdown/post/media,
+    supports idempotency key
+  description: Send a message to a chat or direct message; user/bot; sends to chat-id or user-id with text/markdown/post/media,
+    supports idempotency key
+  usage: lark-cli im +messages-send [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: bot | user'
+  - name: --audio
+    shorthand: null
+    type: string
+    description: audio file key (file_xxx), URL, or cwd-relative local path for a voice message (absolute paths and .. are
+      rejected); local paths and URLs must be Opus (.opus or Ogg Opus .ogg). For mp3/wav, convert to .opus first, or use --file
+      to send as an attachment
+  - name: --chat-id
+    shorthand: null
+    type: string
+    description: (required, mutually exclusive with --user-id) chat ID (oc_xxx)
+  - name: --content
+    shorthand: null
+    type: string
+    description: (one of --content/--text/--markdown/--image/--file/--video/--audio required) message content JSON
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file
+    shorthand: null
+    type: string
+    description: file key (file_xxx), URL, or cwd-relative local path (absolute paths and .. are rejected)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +messages-send
+  - name: --idempotency-key
+    shorthand: null
+    type: string
+    description: idempotency key, max 50 characters (prevents duplicate sends)
+  - name: --image
+    shorthand: null
+    type: string
+    description: image key (img_xxx), URL, or cwd-relative local path (absolute paths and .. are rejected)
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --markdown
+    shorthand: null
+    type: string
+    description: markdown text (auto-wrapped as post format with style optimization; image URLs auto-resolved)
+  - name: --msg-type
+    shorthand: null
+    type: string
+    description: message type for --content JSON; when using --text/--markdown/--image/--file/--video/--audio, the effective
+      type is inferred automatically (text|post|image|file|audio|media|interactive|share_chat|share_user)
+    default: text
+  - name: --text
+    shorthand: null
+    type: string
+    description: plain text message (auto-wrapped as JSON)
+  - name: --user-id
+    shorthand: null
+    type: string
+    description: (required, mutually exclusive with --chat-id) user open_id (ou_xxx)
+  - name: --video
+    shorthand: null
+    type: string
+    description: video file key (file_xxx), URL, or cwd-relative local path (absolute paths and .. are rejected); must be
+      used together with --video-cover
+  - name: --video-cover
+    shorthand: null
+    type: string
+    description: video cover image key (img_xxx), URL, or cwd-relative local path (absolute paths and .. are rejected); required
+      when using --video
+- name: +threads-messages-list
+  summary: List messages in a thread; user/bot; accepts om_/omt_ input, resolves message IDs to thread_id, supports sort/pagination
+  description: List messages in a thread; user/bot; accepts om_/omt_ input, resolves message IDs to thread_id, supports sort/pagination
+  usage: lark-cli im +threads-messages-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --download-resources
+    shorthand: null
+    type: bool
+    description: 'download image/file/audio/video/media resources (and post-embedded, excluding stickers) into ./lark-im-resources/
+      (default: off; no extra requests when off)'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +threads-messages-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --no-reactions
+    shorthand: null
+    type: bool
+    description: 'skip auto-fetching reactions for each message (default: enrichment enabled)'
+  - name: --order
+    shorthand: null
+    type: string
+    description: 'sort order: asc | desc (asc|desc)'
+    default: asc
+  - name: --page-size
+    shorthand: null
+    type: string
+    description: page size (1-500)
+    default: '50'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: page token
+  - name: --thread
+    shorthand: null
+    type: string
+    description: thread ID (om_xxx or omt_xxx)

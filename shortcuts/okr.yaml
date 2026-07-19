@@ -1,0 +1,647 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: okr
+description: Lark OKR objectives, key results, alignments, indicators, progresses
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +batch-create
+  summary: Batch create OKR objectives and key results with rollback on failure
+  description: Batch create OKR objectives and key results with rollback on failure
+  usage: lark-cli okr +batch-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --cycle-id
+    shorthand: null
+    type: string
+    description: OKR cycle ID (int64)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +batch-create
+  - name: --input
+    shorthand: null
+    type: string
+    description: 'JSON array of objectives: [{"text":"...","mention":["..."],"krs":[{"text":"...","mention":["..."]}]}] (supports
+      @file, - reads stdin (one flag per call; use @file for others))'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: 'user ID type: open_id | union_id | user_id'
+    default: open_id
+- name: +cycle-detail
+  summary: List objectives and key results under an OKR cycle
+  description: List objectives and key results under an OKR cycle
+  usage: lark-cli okr +cycle-detail [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --cycle-id
+    shorthand: null
+    type: string
+    description: OKR cycle id (int64)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cycle-detail
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --style
+    shorthand: null
+    type: string
+    description: 'output style: simple (semi-plain text JSON) | richtext (ContentBlock JSON) (simple|richtext)'
+    default: simple
+- name: +cycle-list
+  summary: List okr cycles of a certain user
+  description: List okr cycles of a certain user
+  usage: lark-cli okr +cycle-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cycle-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --time-range
+    shorthand: null
+    type: string
+    description: specify time range. Use Format as YYYY-MM--YYYY-MM. leave empty to fetch all user cycles.
+  - name: --user-id
+    shorthand: null
+    type: string
+    description: user ID
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: 'user ID type: open_id | union_id | user_id'
+    default: open_id
+- name: +indicator-update
+  summary: Update the indicator current value for an objective or key result
+  description: Update the indicator current value for an objective or key result
+  usage: lark-cli okr +indicator-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +indicator-update
+  - name: --id
+    shorthand: null
+    type: string
+    description: objective or key result ID (int64), Required.
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --level
+    shorthand: null
+    type: string
+    description: 'level to update: objective | key-result, Required. (objective|key-result)'
+  - name: --value
+    shorthand: null
+    type: string
+    description: new current value for the indicator (number), Required.
+- name: +patch
+  summary: Patch an OKR objective or key result (content, notes, score, deadline)
+  description: Patch an OKR objective or key result (content, notes, score, deadline)
+  usage: lark-cli okr +patch [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --content
+    shorthand: null
+    type: string
+    description: 'content: semi-plain JSON {"text":"...","mention":["..."]} (simple) or ContentBlock JSON (richtext) (supports
+      @file, - reads stdin (one flag per call; use @file for others))'
+  - name: --deadline
+    shorthand: null
+    type: string
+    description: deadline as millisecond timestamp
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +patch
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --level
+    shorthand: null
+    type: string
+    description: 'patch level: objective | key-result (objective|key-result)'
+  - name: --notes
+    shorthand: null
+    type: string
+    description: 'notes (objective only): semi-plain JSON {"text":"...","mention":["..."]} (simple) or ContentBlock JSON (richtext)
+      (supports @file, - reads stdin (one flag per call; use @file for others))'
+  - name: --score
+    shorthand: null
+    type: string
+    description: score value between 0 and 1, with at most one decimal place (e.g., 0.5)
+  - name: --style
+    shorthand: null
+    type: string
+    description: 'input style for content/notes: simple (semi-plain text JSON) | richtext (ContentBlock JSON) (simple|richtext)'
+    default: simple
+  - name: --target-id
+    shorthand: null
+    type: string
+    description: target ID (objective or key result ID)
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: 'user ID type: open_id | union_id | user_id'
+    default: open_id
+- name: +progress-create
+  summary: Create an OKR progress
+  description: Create an OKR progress
+  usage: lark-cli okr +progress-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --content
+    shorthand: null
+    type: string
+    description: 'progress content: semi-plain JSON {"text":"...","mention":["..."]} (simple style) or ContentBlock JSON (richtext
+      style) (supports @file, - reads stdin (one flag per call; use @file for others))'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +progress-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --progress-percent
+    shorthand: null
+    type: string
+    description: progress percentage
+  - name: --progress-status
+    shorthand: null
+    type: string
+    description: 'progress status: normal | overdue | done. must provided with --progress-percent (normal|overdue|done)'
+  - name: --source-title
+    shorthand: null
+    type: string
+    description: source title for display
+    default: created by lark-cli
+  - name: --source-url
+    shorthand: null
+    type: string
+    description: source URL for display (defaults to open platform URL based on brand)
+  - name: --style
+    shorthand: null
+    type: string
+    description: 'input style: simple (semi-plain text JSON) | richtext (ContentBlock JSON) (simple|richtext)'
+    default: simple
+  - name: --target-id
+    shorthand: null
+    type: string
+    description: target ID (objective or key result ID)
+  - name: --target-type
+    shorthand: null
+    type: string
+    description: 'target type: objective | key_result (objective|key_result)'
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: 'user ID type: open_id | union_id | user_id'
+    default: open_id
+- name: +progress-delete
+  summary: Delete an OKR progress by ID
+  description: Delete an OKR progress by ID
+  usage: lark-cli okr +progress-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +progress-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --progress-id
+    shorthand: null
+    type: string
+    description: progress ID (int64)
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +progress-get
+  summary: Get an OKR progress by ID
+  description: Get an OKR progress by ID
+  usage: lark-cli okr +progress-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +progress-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --progress-id
+    shorthand: null
+    type: string
+    description: progress ID (int64)
+  - name: --style
+    shorthand: null
+    type: string
+    description: 'output style: simple (semi-plain text JSON) | richtext (ContentBlock JSON) (simple|richtext)'
+    default: simple
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: 'user ID type: open_id | union_id | user_id'
+    default: open_id
+- name: +progress-list
+  summary: List progress for an objective or key result
+  description: List progress for an objective or key result
+  usage: lark-cli okr +progress-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --department-id-type
+    shorthand: null
+    type: string
+    description: 'department ID type: department_id | open_department_id'
+    default: open_department_id
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +progress-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --target-id
+    shorthand: null
+    type: string
+    description: target ID (objective or key result ID)
+  - name: --target-type
+    shorthand: null
+    type: string
+    description: 'target type: objective | key_result (objective|key_result)'
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: 'user ID type: open_id | union_id | user_id'
+    default: open_id
+- name: +progress-update
+  summary: Update an OKR progress
+  description: Update an OKR progress
+  usage: lark-cli okr +progress-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --content
+    shorthand: null
+    type: string
+    description: 'progress content: semi-plain JSON {"text":"...","mention":["..."]} (simple style) or ContentBlock JSON (richtext
+      style) (supports @file, - reads stdin (one flag per call; use @file for others))'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +progress-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --progress-id
+    shorthand: null
+    type: string
+    description: progress ID (int64)
+  - name: --progress-percent
+    shorthand: null
+    type: string
+    description: progress percentage
+  - name: --progress-status
+    shorthand: null
+    type: string
+    description: 'progress status: normal | overdue | done (normal|overdue|done)'
+  - name: --style
+    shorthand: null
+    type: string
+    description: 'input style: simple (semi-plain text JSON) | richtext (ContentBlock JSON) (simple|richtext)'
+    default: simple
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: 'user ID type: open_id | union_id | user_id'
+    default: open_id
+- name: +reorder
+  summary: Adjust the position (order) of OKR objectives or key results
+  description: Adjust the position (order) of OKR objectives or key results
+  usage: lark-cli okr +reorder [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --cycle-id
+    shorthand: null
+    type: string
+    description: OKR cycle ID (int64), Required.
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +reorder
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --level
+    shorthand: null
+    type: string
+    description: 'level to reorder: objective | key-result, Required. (objective|key-result)'
+  - name: --objective-id
+    shorthand: null
+    type: string
+    description: objective ID (required when --level=key-result)
+  - name: --ops
+    shorthand: null
+    type: string
+    description: 'JSON array of reorder operations: [{"id":"...","position":1}], Required. (supports @file, - reads stdin
+      (one flag per call; use @file for others))'
+- name: +upload-image
+  summary: Upload an image for use in OKR progress rich text
+  description: Upload an image for use in OKR progress rich text
+  usage: lark-cli okr +upload-image [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file
+    shorthand: null
+    type: string
+    description: local image path (supports JPG, JPEG, PNG, GIF, BMP)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +upload-image
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --target-id
+    shorthand: null
+    type: string
+    description: target ID (objective or key result ID) for the progress
+  - name: --target-type
+    shorthand: null
+    type: string
+    description: 'target type: objective | key_result (objective|key_result)'
+- name: +weight
+  summary: Adjust the weight of OKR objectives or key results
+  description: Adjust the weight of OKR objectives or key results
+  usage: lark-cli okr +weight [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --cycle-id
+    shorthand: null
+    type: string
+    description: OKR cycle ID (int64)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +weight
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --level
+    shorthand: null
+    type: string
+    description: 'level to adjust: objective | key-result (objective|key-result)'
+  - name: --objective-id
+    shorthand: null
+    type: string
+    description: objective ID (required when --level=key-result)
+  - name: --weights
+    shorthand: null
+    type: string
+    description: 'JSON array of weight assignments: [{"id":"...","weight":0.5}] (supports @file, - reads stdin (one flag per
+      call; use @file for others))'

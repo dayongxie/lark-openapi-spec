@@ -1,14 +1,3 @@
-# 这是 .github/workflows/update.yml 的暂存副本（内容完全相同）。
-# 由于 OAuth 令牌缺少 workflow 权限，无法通过 API 直接写入 .github/workflows/。
-# 请把本文件内容原样复制到 .github/workflows/update.yml（在仓库页面 Add file -> Create new file），
-# 提交后 CI 会自动引导生成全部 YAML 产物。本文件随后会被清理。
-#
-# ---- 以下为目标文件完整内容（含本注释之外的行，复制时请从 "name:" 开始）----
-#
-# name: Update API specs
-#
-# 为避免歧义，下面是去掉注释前缀的纯 YAML（从下一行起才是真正的文件内容）：
----
 name: Update API specs
 
 on:

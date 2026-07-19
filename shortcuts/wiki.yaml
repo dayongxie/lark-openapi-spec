@@ -1,0 +1,561 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: wiki
+description: Wiki space and node management
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +delete-space
+  summary: Delete a wiki space, polling the async delete task when needed
+  description: Delete a wiki space, polling the async delete task when needed
+  usage: lark-cli wiki +delete-space [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +delete-space
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --space-id
+    shorthand: null
+    type: string
+    description: wiki space ID to delete
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +member-add
+  summary: Add a member to a wiki space
+  description: Add a member to a wiki space
+  usage: lark-cli wiki +member-add [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +member-add
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --member-id
+    shorthand: null
+    type: string
+    description: member ID; interpretation is decided by --member-type
+  - name: --member-role
+    shorthand: null
+    type: string
+    description: role granted within the space (admin|member)
+  - name: --member-type
+    shorthand: null
+    type: string
+    description: ID type for --member-id (openid|userid|email|unionid|openchat|opendepartmentid|appid)
+  - name: --need-notification
+    shorthand: null
+    type: bool
+    description: send an in-app notification to the new member after the grant
+  - name: --space-id
+    shorthand: null
+    type: string
+    description: wiki space ID; use my_library for the personal document library (user only)
+- name: +member-list
+  summary: List members of a wiki space
+  description: List members of a wiki space
+  usage: lark-cli wiki +member-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +member-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-all
+    shorthand: null
+    type: bool
+    description: automatically paginate through all pages (capped by --page-limit)
+  - name: --page-limit
+    shorthand: null
+    type: int
+    description: max pages to fetch with --page-all (default 10, 0 = unlimited)
+    default: '10'
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size, 1-50
+    default: '50'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: page token; implies single-page fetch (no auto-pagination)
+  - name: --space-id
+    shorthand: null
+    type: string
+    description: wiki space ID; use my_library for the personal document library (user only)
+- name: +move
+  summary: Move a wiki node, or move a Drive document into Wiki
+  description: Move a wiki node, or move a Drive document into Wiki
+  usage: lark-cli wiki +move [flags]
+  risk: write
+  flags:
+  - name: --apply
+    shorthand: null
+    type: bool
+    description: submit a move request when the caller lacks permission to move the document immediately
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +move
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --node-token
+    shorthand: null
+    type: string
+    description: wiki node token to move inside Wiki
+  - name: --obj-token
+    shorthand: null
+    type: string
+    description: Drive document token for docs-to-wiki mode
+  - name: --obj-type
+    shorthand: null
+    type: string
+    description: Drive document type for docs-to-wiki mode (doc|sheet|bitable|mindnote|docx|file|slides)
+  - name: --source-space-id
+    shorthand: null
+    type: string
+    description: source wiki space ID for --node-token; if omitted, it is resolved from the node token
+  - name: --target-parent-token
+    shorthand: null
+    type: string
+    description: target parent wiki node token; if omitted for docs-to-wiki, the document is moved to the target space root
+  - name: --target-space-id
+    shorthand: null
+    type: string
+    description: target wiki space ID; required for docs-to-wiki, optional for node move when --target-parent-token is set
+- name: +node-copy
+  summary: Copy a wiki node to a target space or parent node
+  description: Copy a wiki node to a target space or parent node
+  usage: lark-cli wiki +node-copy [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +node-copy
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --node-token
+    shorthand: null
+    type: string
+    description: source node token to copy
+  - name: --space-id
+    shorthand: null
+    type: string
+    description: source wiki space ID
+  - name: --target-parent-node-token
+    shorthand: null
+    type: string
+    description: target parent node token; required if --target-space-id is not set
+  - name: --target-space-id
+    shorthand: null
+    type: string
+    description: target wiki space ID; required if --target-parent-node-token is not set
+  - name: --title
+    shorthand: null
+    type: string
+    description: new title for the copied node; leave empty to keep the original title
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +node-create
+  summary: Create a wiki node with automatic space resolution
+  description: Create a wiki node with automatic space resolution
+  usage: lark-cli wiki +node-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +node-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --node-type
+    shorthand: null
+    type: string
+    description: node type (origin|shortcut)
+    default: origin
+  - name: --obj-type
+    shorthand: null
+    type: string
+    description: target object type (sheet|mindnote|bitable|docx|slides)
+    default: docx
+  - name: --origin-node-token
+    shorthand: null
+    type: string
+    description: source node token when --node-type=shortcut
+  - name: --parent-node-token
+    shorthand: null
+    type: string
+    description: parent wiki node token; if set, the new node is created under that parent
+  - name: --space-id
+    shorthand: null
+    type: string
+    description: target wiki space ID; use my_library for the personal document library
+  - name: --title
+    shorthand: null
+    type: string
+    description: node title
+- name: +node-delete
+  summary: Delete a wiki node, polling the async delete task when needed
+  description: Delete a wiki node, polling the async delete task when needed
+  usage: lark-cli wiki +node-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +node-delete
+  - name: --include-children
+    shorthand: null
+    type: bool
+    description: cascade delete the subtree (default); pass --include-children=false to lift direct children up to the parent
+    default: 'true'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --node-token
+    shorthand: null
+    type: string
+    description: wiki node_token, cloud-doc obj_token, or a Lark URL embedding one of them
+  - name: --obj-type
+    shorthand: null
+    type: string
+    description: token kind; no default — pass explicitly when --node-token is a raw token (URL inputs auto-infer) (wiki|doc|docx|sheet|bitable|mindnote|slides|file)
+  - name: --space-id
+    shorthand: null
+    type: string
+    description: wiki space ID; auto-resolved via get_node when omitted
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +node-get
+  summary: Get wiki node details by node_token, obj_token, or Lark URL
+  description: Get wiki node details by node_token, obj_token, or Lark URL
+  usage: lark-cli wiki +node-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +node-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --node-token
+    shorthand: null
+    type: string
+    description: wiki node_token, obj_token, or a Lark URL embedding one of them
+  - name: --obj-type
+    shorthand: null
+    type: string
+    description: obj_type when --node-token is an obj_token; auto-inferred from URL path when omitted (doc|docx|sheet|bitable|mindnote|slides|file)
+  - name: --space-id
+    shorthand: null
+    type: string
+    description: 'optional: assert the resolved node lives in this space'
+- name: +node-list
+  summary: List wiki nodes in a space or under a parent node
+  description: List wiki nodes in a space or under a parent node
+  usage: lark-cli wiki +node-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +node-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-all
+    shorthand: null
+    type: bool
+    description: automatically paginate through all pages (capped by --page-limit)
+  - name: --page-limit
+    shorthand: null
+    type: int
+    description: max pages to fetch with --page-all (default 10, 0 = unlimited)
+    default: '10'
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size, 1-50
+    default: '50'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: page token; implies single-page fetch (no auto-pagination)
+  - name: --parent-node-token
+    shorthand: null
+    type: string
+    description: parent node token; if omitted, lists the root-level nodes of the space
+  - name: --space-id
+    shorthand: null
+    type: string
+    description: wiki space ID; use my_library for the personal document library, or +space-list to discover other space IDs
+- name: +space-create
+  summary: Create a wiki space
+  description: Create a wiki space
+  usage: lark-cli wiki +space-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --description
+    shorthand: null
+    type: string
+    description: wiki space description
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +space-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: wiki space name
+- name: +space-list
+  summary: List wiki spaces accessible to the caller
+  description: List wiki spaces accessible to the caller
+  usage: lark-cli wiki +space-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +space-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-all
+    shorthand: null
+    type: bool
+    description: automatically paginate through all pages (capped by --page-limit)
+  - name: --page-limit
+    shorthand: null
+    type: int
+    description: max pages to fetch with --page-all (default 10, 0 = unlimited)
+    default: '10'
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size, 1-50
+    default: '50'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: page token; implies single-page fetch (no auto-pagination)

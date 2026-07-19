@@ -1,0 +1,247 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: markdown
+description: Drive-native Markdown file create, fetch, and overwrite
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +create
+  summary: Create a Markdown file in Drive
+  description: Create a Markdown file in Drive
+  usage: lark-cli markdown +create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --content
+    shorthand: null
+    type: string
+    description: Markdown content (supports @file, - reads stdin (one flag per call; use @file for others))
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file
+    shorthand: null
+    type: string
+    description: local .md file path
+  - name: --folder-token
+    shorthand: null
+    type: string
+    description: 'target Drive folder token (default: root folder; mutually exclusive with --wiki-token)'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: file name with .md suffix; required with --content, optional with --file
+  - name: --wiki-token
+    shorthand: null
+    type: string
+    description: target wiki node token (uploads under that wiki node; mutually exclusive with --folder-token)
+- name: +diff
+  summary: Compare remote Markdown versions or compare remote Markdown against a local file
+  description: Compare remote Markdown versions or compare remote Markdown against a local file
+  usage: lark-cli markdown +diff [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --context-lines
+    shorthand: null
+    type: int
+    description: number of unchanged context lines to include around each diff hunk
+    default: '3'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file
+    shorthand: null
+    type: string
+    description: local .md file path to compare against the remote content
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: target Markdown file token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --from-version
+    shorthand: null
+    type: string
+    description: base remote version; when --to-version is omitted, compare this version to the latest remote version
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +diff
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --to-version
+    shorthand: null
+    type: string
+    description: target remote version; requires --from-version
+- name: +fetch
+  summary: Fetch a Markdown file from Drive
+  description: Fetch a Markdown file from Drive
+  usage: lark-cli markdown +fetch [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: Markdown file token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +fetch
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --output
+    shorthand: null
+    type: string
+    description: local save path or directory; omit to return content directly
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: overwrite existing local output file
+- name: +overwrite
+  summary: Overwrite an existing Markdown file in Drive
+  description: Overwrite an existing Markdown file in Drive
+  usage: lark-cli markdown +overwrite [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --content
+    shorthand: null
+    type: string
+    description: new Markdown content (supports @file, - reads stdin (one flag per call; use @file for others))
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file
+    shorthand: null
+    type: string
+    description: local .md file path
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: target Markdown file token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +overwrite
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: optional file name with .md suffix; overrides the existing/local file name
+- name: +patch
+  summary: Patch a Markdown file in Drive via fetch-local-replace-overwrite
+  description: Patch a Markdown file in Drive via fetch-local-replace-overwrite
+  usage: lark-cli markdown +patch [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --content
+    shorthand: null
+    type: string
+    description: replacement Markdown content (supports @file, - reads stdin (one flag per call; use @file for others))
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: target Markdown file token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +patch
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --pattern
+    shorthand: null
+    type: string
+    description: literal text or RE2 regex to match (supports @file, - reads stdin (one flag per call; use @file for others))
+  - name: --regex
+    shorthand: null
+    type: bool
+    description: interpret --pattern as RE2 regular expression

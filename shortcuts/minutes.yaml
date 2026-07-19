@@ -1,0 +1,435 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: minutes
+description: Minutes content and metadata retrieval
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +detail
+  summary: Query minute details with selective artifact flags (summary, todo, chapter, transcript, keyword)
+  description: Query minute details with selective artifact flags (summary, todo, chapter, transcript, keyword)
+  usage: lark-cli minutes +detail [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --chapter
+    shorthand: null
+    type: bool
+    description: include chapters
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +detail
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --keyword
+    shorthand: null
+    type: bool
+    description: include keywords
+  - name: --minute-tokens
+    shorthand: null
+    type: string
+    description: minute tokens, comma-separated for batch
+  - name: --output-dir
+    shorthand: null
+    type: string
+    description: 'output directory for transcript files (default: ./minutes/{minute_token}/)'
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: overwrite existing transcript files
+  - name: --summary
+    shorthand: null
+    type: bool
+    description: include summary
+  - name: --todo
+    shorthand: null
+    type: bool
+    description: include todos
+  - name: --transcript
+    shorthand: null
+    type: bool
+    description: include transcript (saved to file)
+- name: +download
+  summary: Download audio/video media file of a minute
+  description: Download audio/video media file of a minute
+  usage: lark-cli minutes +download [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +download
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --minute-tokens
+    shorthand: null
+    type: string
+    description: minute tokens, comma-separated for batch download (max 50)
+  - name: --output
+    shorthand: null
+    type: string
+    description: output file path (single token)
+  - name: --output-dir
+    shorthand: null
+    type: string
+    description: 'output directory (default: ./minutes/{minute_token}/)'
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: overwrite existing output file
+  - name: --url-only
+    shorthand: null
+    type: bool
+    description: only print the download URL(s) without downloading
+- name: +search
+  summary: Search minutes by keyword, owners, participants, and time range
+  description: Search minutes by keyword, owners, participants, and time range
+  usage: lark-cli minutes +search [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --end
+    shorthand: null
+    type: string
+    description: time upper bound (ISO 8601 or YYYY-MM-DD)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +search
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --owner-ids
+    shorthand: null
+    type: string
+    description: owner open_id list, comma-separated (use "me" for current user)
+  - name: --page-size
+    shorthand: null
+    type: string
+    description: page size, 1-30 (default 15)
+    default: '15'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: page token for next page
+  - name: --participant-ids
+    shorthand: null
+    type: string
+    description: participant open_id list, comma-separated (use "me" for current user)
+  - name: --query
+    shorthand: null
+    type: string
+    description: search keyword
+  - name: --start
+    shorthand: null
+    type: string
+    description: time lower bound (ISO 8601 or YYYY-MM-DD)
+- name: +speaker-replace
+  summary: Replace a speaker in a minute's transcript (rebind from one user to another)
+  description: Replace a speaker in a minute's transcript (rebind from one user to another)
+  usage: lark-cli minutes +speaker-replace [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --from-speaker-id
+    shorthand: null
+    type: string
+    description: 'speaker to replace: opaque speaker_id from transcript speakerlist API (do not pass display names)'
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +speaker-replace
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --minute-token
+    shorthand: null
+    type: string
+    description: minute token
+  - name: --to-user-id
+    shorthand: null
+    type: string
+    description: new speaker, must be an open_id starting with 'ou_'
+- name: +summary
+  summary: Replace the AI summary of a minute
+  description: Replace the AI summary of a minute
+  usage: lark-cli minutes +summary [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +summary
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --minute-token
+    shorthand: null
+    type: string
+    description: minute token
+  - name: --summary
+    shorthand: null
+    type: string
+    description: replacement summary text (Markdown subset renders best in Minutes) (supports @file, - reads stdin (one flag
+      per call; use @file for others))
+- name: +todo
+  summary: Add, update, or delete todo item(s) on a minute
+  description: Add, update, or delete todo item(s) on a minute
+  usage: lark-cli minutes +todo [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +todo
+  - name: --is-done
+    shorthand: null
+    type: bool
+    description: completion flag; required by single add/update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --minute-token
+    shorthand: null
+    type: string
+    description: minute token (required)
+  - name: --operation
+    shorthand: null
+    type: string
+    description: operation for a single todo (required unless --todos) (add|update|delete)
+  - name: --todo
+    shorthand: null
+    type: string
+    description: todo plain-text content; required by single add/update (supports @file, - reads stdin (one flag per call;
+      use @file for others))
+  - name: --todo-id
+    shorthand: null
+    type: string
+    description: id of an existing todo; required by single update/delete
+  - name: --todos
+    shorthand: null
+    type: string
+    description: batch todo_items JSON array; each item has operation add|update|delete (supports @file / @-) (supports @file,
+      - reads stdin (one flag per call; use @file for others))
+- name: +update
+  summary: Update a minute's title
+  description: Update a minute's title
+  usage: lark-cli minutes +update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --minute-token
+    shorthand: null
+    type: string
+    description: minute token
+  - name: --topic
+    shorthand: null
+    type: string
+    description: new minute title
+- name: +upload
+  summary: Upload a media file token to generate a minute
+  description: Upload a media file token to generate a minute
+  usage: lark-cli minutes +upload [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: file_token of a supported audio/video file already uploaded to Drive
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +upload
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +word-replace
+  summary: Batch replace words in a minute's transcript
+  description: Batch replace words in a minute's transcript
+  usage: lark-cli minutes +word-replace [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +word-replace
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --minute-token
+    shorthand: null
+    type: string
+    description: minute token
+  - name: --replace-words
+    shorthand: null
+    type: string
+    description: JSON array of replacements, e.g. [{"source_word":"old","target_word":"new"}] (supports @file, - reads stdin
+      (one flag per call; use @file for others))

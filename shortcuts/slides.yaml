@@ -1,0 +1,306 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: slides
+description: Create and manage presentations, read content, and add or remove slides
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +create
+  summary: Create a Lark Slides presentation
+  description: Create a Lark Slides presentation
+  usage: lark-cli slides +create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --slides
+    shorthand: null
+    type: string
+    description: slide content JSON array (each element is a <slide> XML string, max 10; for more pages, create first then
+      add via xml_presentation.slide.create). <img src="@./local.png"> placeholders are auto-uploaded and replaced with file_token.
+  - name: --title
+    shorthand: null
+    type: string
+    description: presentation title
+- name: +media-upload
+  summary: Upload a local image to a slides presentation and return the file_token (use as <img src=...>)
+  description: Upload a local image to a slides presentation and return the file_token (use as <img src=...>)
+  usage: lark-cli slides +media-upload [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file
+    shorthand: null
+    type: string
+    description: local image path (max 20 MB)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +media-upload
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --presentation
+    shorthand: null
+    type: string
+    description: xml_presentation_id, slides URL, or wiki URL that resolves to slides
+- name: +replace-pages
+  summary: Batch rebuild pages inside an existing Slides presentation (create before old page, then delete old page; not atomic)
+  description: Batch rebuild pages inside an existing Slides presentation (create before old page, then delete old page; not
+    atomic)
+  usage: lark-cli slides +replace-pages [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --continue-on-error
+    shorthand: null
+    type: bool
+    description: continue with later pages after a create/delete failure; default false
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +replace-pages
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --pages
+    shorthand: null
+    type: string
+    description: 'JSON array of page replacements (each: {slide_id, content}); supports @file or - (supports @file, - reads
+      stdin (one flag per call; use @file for others))'
+  - name: --presentation
+    shorthand: null
+    type: string
+    description: xml_presentation_id, slides URL, or wiki URL that resolves to slides
+  - name: --validate-only
+    shorthand: null
+    type: bool
+    description: validate input and build the create/delete plan without write calls
+- name: +replace-slide
+  summary: Replace elements on a slide via block_replace / block_insert parts (auto-injects id + <content/> on shape elements)
+  description: Replace elements on a slide via block_replace / block_insert parts (auto-injects id + <content/> on shape elements)
+  usage: lark-cli slides +replace-slide [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +replace-slide
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --parts
+    shorthand: null
+    type: string
+    description: 'JSON array of replace parts (each: {action: block_replace|block_insert, ...}); max 200 (supports @file,
+      - reads stdin (one flag per call; use @file for others))'
+  - name: --presentation
+    shorthand: null
+    type: string
+    description: xml_presentation_id, slides URL, or wiki URL that resolves to slides
+  - name: --revision-id
+    shorthand: null
+    type: int
+    description: presentation revision (-1 = latest; pass a specific number for optimistic locking)
+    default: '-1'
+  - name: --slide-id
+    shorthand: null
+    type: string
+    description: slide page identifier (slide_id)
+  - name: --tid
+    shorthand: null
+    type: string
+    description: transaction id for concurrent-edit locking (usually empty)
+- name: +screenshot
+  summary: Save up to 10 slide screenshots to local files without printing Base64 image data
+  description: Save up to 10 slide screenshots to local files without printing Base64 image data
+  usage: lark-cli slides +screenshot [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --content
+    shorthand: null
+    type: string
+    description: slide XML content to render directly instead of fetching existing slides (supports @file, - reads stdin (one
+      flag per call; use @file for others))
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +screenshot
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --output-dir
+    shorthand: null
+    type: string
+    description: relative directory for saved screenshots
+    default: .lark-slides/screenshots
+  - name: --output-name
+    shorthand: null
+    type: string
+    description: file name stem for --content render output
+  - name: --presentation
+    shorthand: null
+    type: string
+    description: xml_presentation_id, slides URL, or wiki URL that resolves to slides; list mode only
+  - name: --slide-id
+    shorthand: null
+    type: stringArray
+    description: slide page identifier (repeat for multiple slides; max 10 pages per request)
+  - name: --slide-number
+    shorthand: null
+    type: ints
+    description: slide page number (repeat for multiple slides; max 10 pages per request)
+- name: +xml-get
+  summary: Fetch presentation XML or one slide XML
+  description: Fetch presentation XML or one slide XML
+  usage: lark-cli slides +xml-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +xml-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --output
+    shorthand: null
+    type: string
+    description: local XML output path; must be a relative path within the current directory; existing file is overwritten;
+      omit to return XML in the JSON envelope
+  - name: --presentation
+    shorthand: null
+    type: string
+    description: xml_presentation_id, slides URL, or wiki URL that resolves to slides
+  - name: --raw
+    shorthand: null
+    type: bool
+    description: print raw XML to stdout instead of the JSON envelope; incompatible with --output and --jq
+  - name: --remove-attr-id
+    shorthand: null
+    type: bool
+    description: remove XML id attributes in the returned content; useful for read-only inspection, not precise block editing
+  - name: --revision-id
+    shorthand: null
+    type: int
+    description: presentation revision_id; -1 means latest
+    default: '-1'
+  - name: --slide-id
+    shorthand: null
+    type: string
+    description: slide page identifier; omit both slide selectors to fetch full presentation XML
+  - name: --slide-number
+    shorthand: null
+    type: int
+    description: 1-based slide page number; omit both slide selectors to fetch full presentation XML

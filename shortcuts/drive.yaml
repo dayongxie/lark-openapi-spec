@@ -1,0 +1,1484 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: drive
+description: File, comment, permission, and upload management
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +add-comment
+  summary: Add a comment to doc/docx/file/sheet/slides/base(bitable); file targets support selected extensions and full comments
+    only
+  description: Add a comment to doc/docx/file/sheet/slides/base(bitable); file targets support selected extensions and full
+    comments only
+  usage: lark-cli drive +add-comment [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --block-id
+    shorthand: null
+    type: string
+    description: 'for docx: anchor block ID; for sheet: <sheetId>!<cell>; for slides: <slide-block-type>!<xml-id>; for base(bitable):
+      <table-id>!<record-id>!<view-id>'
+  - name: --content
+    shorthand: null
+    type: string
+    description: reply_elements JSON string (supports @file, - reads stdin (one flag per call; use @file for others))
+  - name: --doc
+    shorthand: null
+    type: string
+    description: document URL/token, file URL/token, sheet/slides/base/bitable URL, or wiki URL that resolves to doc/docx/file/sheet/slides/base(bitable)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --full-comment
+    shorthand: null
+    type: bool
+    description: create a full-document comment; also the default when no location is provided
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +add-comment
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --selection-with-ellipsis
+    shorthand: null
+    type: string
+    description: target content locator (plain text or 'start...end')
+  - name: --type
+    shorthand: null
+    type: string
+    description: 'document type: doc, docx, file, sheet, slides, bitable, base (required when --doc is a bare token; auto-detected
+      for URLs; use bitable as the wire value, base is accepted as a compatibility alias) (doc|docx|file|sheet|slides|bitable|base)'
+- name: +apply-permission
+  summary: Apply to the document owner for view or edit permission on a doc/sheet/file/wiki/bitable/docx/mindnote/slides
+  description: Apply to the document owner for view or edit permission on a doc/sheet/file/wiki/bitable/docx/mindnote/slides
+  usage: lark-cli drive +apply-permission [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +apply-permission
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --perm
+    shorthand: null
+    type: string
+    description: permission to request (view|edit)
+  - name: --remark
+    shorthand: null
+    type: string
+    description: optional note shown on the request card sent to the owner
+  - name: --token
+    shorthand: null
+    type: string
+    description: target token or document URL (docx/sheets/base/file/wiki/doc/mindnote/slides)
+  - name: --type
+    shorthand: null
+    type: string
+    description: target type; auto-inferred from URL when omitted (doc|sheet|file|wiki|bitable|docx|mindnote|slides)
+- name: +cover
+  summary: List or download stable cover presets for a Drive file
+  description: List or download stable cover presets for a Drive file
+  usage: lark-cli drive +cover [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: Drive file token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cover
+  - name: --if-exists
+    shorthand: null
+    type: string
+    description: 'output conflict policy: error | overwrite | rename (error|overwrite|rename)'
+    default: error
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --list-only
+    shorthand: null
+    type: bool
+    description: list built-in cover specs without downloading
+  - name: --output
+    shorthand: null
+    type: string
+    description: local output path for downloaded cover
+  - name: --spec
+    shorthand: null
+    type: string
+    description: 'cover preset: default | icon | grid | small | middle | big | square'
+  - name: --version
+    shorthand: null
+    type: string
+    description: optional file version
+- name: +create-folder
+  summary: Create a folder in Drive
+  description: Create a folder in Drive
+  usage: lark-cli drive +create-folder [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --folder-token
+    shorthand: null
+    type: string
+    description: 'parent folder token (default: root folder)'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +create-folder
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: folder name
+- name: +create-shortcut
+  summary: Create a Drive shortcut in another folder
+  description: Create a Drive shortcut in another folder
+  usage: lark-cli drive +create-shortcut [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: source file token to reference
+  - name: --folder-token
+    shorthand: null
+    type: string
+    description: target folder token for the new shortcut
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +create-shortcut
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --type
+    shorthand: null
+    type: string
+    description: source file type (file, docx, bitable, doc, sheet, mindnote, slides)
+- name: +delete
+  summary: Delete a file or folder in Drive
+  description: Delete a file or folder in Drive
+  usage: lark-cli drive +delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: file or folder token to delete
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --type
+    shorthand: null
+    type: string
+    description: file type (file, docx, bitable, doc, sheet, mindnote, folder, shortcut, slides)
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +download
+  summary: Download a file from Drive to local
+  description: Download a file from Drive to local
+  usage: lark-cli drive +download [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: file token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +download
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --output
+    shorthand: null
+    type: string
+    description: local save path
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: overwrite existing output file
+- name: +export
+  summary: Export a doc/docx/sheet/bitable/slides or wiki document to a local file with limited polling
+  description: Export a doc/docx/sheet/bitable/slides or wiki document to a local file with limited polling
+  usage: lark-cli drive +export [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --doc-type
+    shorthand: null
+    type: string
+    description: 'source document type: doc | docx | sheet | bitable | slides | wiki (required only when --token is a bare
+      token) (doc|docx|sheet|bitable|slides|wiki)'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-extension
+    shorthand: null
+    type: string
+    description: 'export format: docx | pdf | xlsx | csv | markdown | base (bitable only) | pptx (slides only) (docx|pdf|xlsx|csv|markdown|base|pptx)'
+  - name: --file-name
+    shorthand: null
+    type: string
+    description: preferred output filename (optional)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +export
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --only-schema
+    shorthand: null
+    type: bool
+    description: export only bitable schema when --doc-type bitable --file-extension base
+  - name: --output-dir
+    shorthand: null
+    type: string
+    description: 'local output directory (default: current directory)'
+    default: .
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: overwrite existing output file
+  - name: --sub-id
+    shorthand: null
+    type: string
+    description: sub-table/sheet ID, required when exporting sheet/bitable as csv
+  - name: --token
+    shorthand: null
+    type: string
+    description: source document token; bare tokens require --doc-type, and wiki tokens should use --doc-type wiki
+  - name: --url
+    shorthand: null
+    type: string
+    description: source document URL; doc type and token are inferred, and wiki URLs are resolved to the underlying document
+- name: +export-download
+  summary: Download an exported file by file_token
+  description: Download an exported file by file_token
+  usage: lark-cli drive +export-download [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-name
+    shorthand: null
+    type: string
+    description: preferred output filename (optional)
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: exported file token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +export-download
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --output-dir
+    shorthand: null
+    type: string
+    description: 'local output directory (default: current directory)'
+    default: .
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: overwrite existing output file
+- name: +import
+  summary: Import a local file to Drive as a cloud document (docx, sheet, bitable, slides)
+  description: Import a local file to Drive as a cloud document (docx, sheet, bitable, slides)
+  usage: lark-cli drive +import [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file
+    shorthand: null
+    type: string
+    description: local file path (e.g. .docx, .xlsx, .md, .base, .pptx; large files auto use multipart upload; .base is capped
+      at 20MB, .pptx at 500MB)
+  - name: --folder-token
+    shorthand: null
+    type: string
+    description: target folder token (omit for root folder; API accepts empty mount_key as root)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +import
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: 'imported file name (default: local file name without extension)'
+  - name: --target-token
+    shorthand: null
+    type: string
+    description: existing token to import data into (only for type=bitable); when set, data is mounted into this bitable instead
+      of creating a new one
+  - name: --type
+    shorthand: null
+    type: string
+    description: target document type (docx, sheet, bitable, slides)
+- name: +inspect
+  summary: Inspect a Lark document URL to get its type, title, and canonical token (with wiki unwrapping)
+  description: Inspect a Lark document URL to get its type, title, and canonical token (with wiki unwrapping)
+  usage: lark-cli drive +inspect [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +inspect
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --type
+    shorthand: null
+    type: string
+    description: document type (required when --url is a bare token; auto-detected for URLs) (doc|docx|sheet|bitable|wiki|file|folder|mindnote|slides)
+  - name: --url
+    shorthand: null
+    type: string
+    description: Lark/Feishu document URL (docx, doc, sheet, bitable, wiki, file, folder, mindnote, slides)
+- name: +list-comments
+  summary: List comments for doc/docx/sheet/file/slides/base(bitable)/apps, with URL parsing and Wiki token unwrapping
+  description: List comments for doc/docx/sheet/file/slides/base(bitable)/apps, with URL parsing and Wiki token unwrapping
+  usage: lark-cli drive +list-comments [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --comment-scope
+    shorthand: null
+    type: string
+    description: 'comment scope filter: all=all comments, whole=full-document comments, partial=local/selection comments (all|whole|partial)'
+    default: all
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +list-comments
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --need-reaction
+    shorthand: null
+    type: bool
+    description: include reaction data on comment cards
+  - name: --need-relation
+    shorthand: null
+    type: bool
+    description: include docx comment relation data; ignored for non-docx targets
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size, 1-100
+    default: '50'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token from previous response
+  - name: --solved-status
+    shorthand: null
+    type: string
+    description: 'comment solved filter: false=unresolved, true=solved, all=all comments (false|true|all)'
+    default: 'false'
+  - name: --token
+    shorthand: null
+    type: string
+    description: document token, Wiki token, or document URL; bare tokens require --type
+  - name: --type
+    shorthand: null
+    type: string
+    description: document type for bare --token; optional for URLs but must match the URL type when provided (doc|docx|sheet|file|slides|bitable|base|apps|wiki)
+  - name: --url
+    shorthand: null
+    type: string
+    description: 'recommended: Lark/Feishu document URL (doc/docx/sheet/file/slides/base/bitable/apps/wiki); apps Miaoda URLs
+      use /page/<token>; Wiki URLs are unwrapped automatically'
+- name: +member-add
+  summary: Add a collaborator/member permission to a Drive document, file, folder, or wiki node
+  description: Add a collaborator/member permission to a Drive document, file, folder, or wiki node
+  usage: lark-cli drive +member-add [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +member-add
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --member-id
+    shorthand: null
+    type: string
+    description: collaborator ID; comma-separated for batch (max 10). Interpretation is decided by --member-type
+  - name: --member-kind
+    shorthand: null
+    type: string
+    description: request body type when --member-type=wikispaceid; one of wiki_space_member|wiki_space_viewer|wiki_space_editor
+  - name: --member-type
+    shorthand: null
+    type: string
+    description: 'ID type for --member-id; supported: email|openid|unionid|openchat|opendepartmentid|groupid|appid|wikispaceid'
+  - name: --need-notification
+    shorthand: null
+    type: bool
+    description: send an in-app notification after the grant (user identity only)
+  - name: --perm
+    shorthand: null
+    type: string
+    description: permission role to grant; defaults to view
+  - name: --perm-type
+    shorthand: null
+    type: string
+    description: wiki permission scope; defaults to container; rejected for non-wiki types
+  - name: --token
+    shorthand: null
+    type: string
+    description: target token or document URL; type is auto-inferred from URL path when omitted
+  - name: --type
+    shorthand: null
+    type: string
+    description: target resource type; required when --token is a bare token
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +move
+  summary: Move a file or folder to another location in Drive
+  description: Move a file or folder to another location in Drive
+  usage: lark-cli drive +move [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: file or folder token to move
+  - name: --folder-token
+    shorthand: null
+    type: string
+    description: 'target folder token (default: root folder)'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +move
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --type
+    shorthand: null
+    type: string
+    description: file type (file, docx, bitable, doc, sheet, mindnote, folder, slides)
+- name: +preview
+  summary: List or download available preview artifacts for a Drive file
+  description: List or download available preview artifacts for a Drive file
+  usage: lark-cli drive +preview [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: Drive file token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +preview
+  - name: --if-exists
+    shorthand: null
+    type: string
+    description: 'output conflict policy: error | overwrite | rename (error|overwrite|rename)'
+    default: error
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --list-only
+    shorthand: null
+    type: bool
+    description: list preview candidates without downloading
+  - name: --output
+    shorthand: null
+    type: string
+    description: local output path for downloaded preview
+  - name: --type
+    shorthand: null
+    type: string
+    description: 'preview type to download: pdf | html | text | image | source'
+  - name: --version
+    shorthand: null
+    type: string
+    description: optional file version
+- name: +pull
+  summary: One-way file-level mirror of a Drive folder onto a local directory (Drive → local)
+  description: One-way file-level mirror of a Drive folder onto a local directory (Drive → local)
+  usage: lark-cli drive +pull [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --delete-local
+    shorthand: null
+    type: bool
+    description: delete local regular files absent from Drive (file-level mirror; empty directories are NOT pruned); requires
+      --yes
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --folder-token
+    shorthand: null
+    type: string
+    description: source Drive folder token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +pull
+  - name: --if-exists
+    shorthand: null
+    type: string
+    description: policy when a local file already exists (skip = never touch existing files; smart = skip when local mtime
+      is already up to date; overwrite = always replace) (overwrite|smart|skip)
+    default: overwrite
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --local-dir
+    shorthand: null
+    type: string
+    description: local root directory (relative to cwd)
+  - name: --on-duplicate-remote
+    shorthand: null
+    type: string
+    description: policy when multiple remote Drive entries map to the same rel_path (fail|rename|newest|oldest)
+    default: fail
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm --delete-local before deleting local files
+- name: +push
+  summary: File-level mirror of a local directory onto a Drive folder (local → Drive; remote-only directories are not removed)
+  description: File-level mirror of a local directory onto a Drive folder (local → Drive; remote-only directories are not
+    removed)
+  usage: lark-cli drive +push [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --delete-remote
+    shorthand: null
+    type: bool
+    description: delete Drive files absent locally (file-level mirror; remote-only directories are not removed); requires
+      --yes
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --folder-token
+    shorthand: null
+    type: string
+    description: target Drive folder token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +push
+  - name: --if-exists
+    shorthand: null
+    type: string
+    description: policy when a Drive file already exists at the same rel_path (skip = never touch existing remote files; smart
+      = skip when remote modified_time already matches or is newer, otherwise fall through to overwrite semantics; overwrite
+      = always replace) (overwrite|smart|skip)
+    default: skip
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --local-dir
+    shorthand: null
+    type: string
+    description: local root directory (relative to cwd)
+  - name: --on-duplicate-remote
+    shorthand: null
+    type: string
+    description: policy when multiple remote Drive entries map to the same rel_path (fail|newest|oldest)
+    default: fail
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm --delete-remote before deleting Drive files
+- name: +search
+  summary: 'Search Lark docs, Wiki, and spreadsheet files with flat filters (Search v2: doc_wiki/search)'
+  description: 'Search Lark docs, Wiki, and spreadsheet files with flat filters (Search v2: doc_wiki/search)'
+  usage: lark-cli drive +search [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --chat-ids
+    shorthand: null
+    type: string
+    description: comma-separated chat IDs
+  - name: --commented-since
+    shorthand: null
+    type: string
+    description: start of [my commented] time window
+  - name: --commented-until
+    shorthand: null
+    type: string
+    description: end of [my commented] time window
+  - name: --created-by-me
+    shorthand: null
+    type: bool
+    description: restrict to docs originally created by me (uses current user's open_id as original_creator_ids)
+  - name: --created-since
+    shorthand: null
+    type: string
+    description: start of [document created] time window
+  - name: --created-until
+    shorthand: null
+    type: string
+    description: end of [document created] time window
+  - name: --creator-ids
+    shorthand: null
+    type: string
+    description: comma-separated owner open_ids (API field is creator_ids but matched by owner); mutually exclusive with --mine
+  - name: --doc-types
+    shorthand: null
+    type: string
+    description: 'comma-separated types: doc,sheet,bitable,mindnote,file,wiki,docx,folder,catalog,slides,shortcut'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --edited-since
+    shorthand: null
+    type: string
+    description: start of [my edited] time window (e.g. 7d, 1m, 1y, 2026-04-01, RFC3339, unix seconds)
+  - name: --edited-until
+    shorthand: null
+    type: string
+    description: end of [my edited] time window
+  - name: --folder-tokens
+    shorthand: null
+    type: string
+    description: comma-separated folder tokens (doc-only; mutually exclusive with --space-ids)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +search
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mine
+    shorthand: null
+    type: bool
+    description: restrict to docs I own (server-side owner semantic, NOT original creator; uses current user's open_id)
+  - name: --only-comment
+    shorthand: null
+    type: bool
+    description: search comments only
+  - name: --only-title
+    shorthand: null
+    type: bool
+    description: match titles only
+  - name: --opened-since
+    shorthand: null
+    type: string
+    description: start of [my opened] time window
+  - name: --opened-until
+    shorthand: null
+    type: string
+    description: end of [my opened] time window
+  - name: --original-creator-ids
+    shorthand: null
+    type: string
+    description: comma-separated original creator open_ids; mutually exclusive with --created-by-me
+  - name: --page-size
+    shorthand: null
+    type: string
+    description: page size (1-20, default 15)
+    default: '15'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token from a previous response
+  - name: --query
+    shorthand: null
+    type: string
+    description: search keyword (may be empty to browse by filter only); max 30 characters by Unicode code point (CJK counts
+      1 each), over 30 the server rejects with 99992402 field validation failed
+  - name: --sharer-ids
+    shorthand: null
+    type: string
+    description: comma-separated sharer open_ids
+  - name: --sort
+    shorthand: null
+    type: string
+    description: sort type (default|edit_time|edit_time_asc|open_time|create_time)
+  - name: --space-ids
+    shorthand: null
+    type: string
+    description: comma-separated wiki space IDs (wiki-only; mutually exclusive with --folder-tokens)
+- name: +secure-label-list
+  summary: List secure labels available to the current user
+  description: List secure labels available to the current user
+  usage: lark-cli drive +secure-label-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +secure-label-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --lang
+    shorthand: null
+    type: string
+    description: label language (zh|en|ja)
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size, 1-10
+    default: '10'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token from previous response
+- name: +secure-label-update
+  summary: Update the secure label on a Drive file or document
+  description: Update the secure label on a Drive file or document
+  usage: lark-cli drive +secure-label-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +secure-label-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --label-id
+    shorthand: null
+    type: string
+    description: secure label ID to set
+  - name: --token
+    shorthand: null
+    type: string
+    description: target file token or document URL (docx/sheets/base/file/wiki/doc/mindnote/slides)
+  - name: --type
+    shorthand: null
+    type: string
+    description: target type; auto-inferred from URL when omitted (doc|sheet|file|wiki|bitable|docx|mindnote|slides)
+- name: +status
+  summary: Compare a local directory with a Drive folder by exact hash or quick modified_time
+  description: Compare a local directory with a Drive folder by exact hash or quick modified_time
+  usage: lark-cli drive +status [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --folder-token
+    shorthand: null
+    type: string
+    description: Drive folder token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +status
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --local-dir
+    shorthand: null
+    type: string
+    description: local root directory (relative to cwd)
+  - name: --quick
+    shorthand: null
+    type: bool
+    description: compare modified_time only and skip remote downloads for files present on both sides
+- name: +sync
+  summary: Two-way sync between a local directory and a Drive folder
+  description: Two-way sync between a local directory and a Drive folder
+  usage: lark-cli drive +sync [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --folder-token
+    shorthand: null
+    type: string
+    description: Drive folder token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +sync
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --local-dir
+    shorthand: null
+    type: string
+    description: local root directory (relative to cwd)
+  - name: --on-conflict
+    shorthand: null
+    type: string
+    description: conflict resolution when both sides modified a file (local-wins|remote-wins|keep-both|ask)
+    default: remote-wins
+  - name: --on-duplicate-remote
+    shorthand: null
+    type: string
+    description: policy when multiple remote Drive entries map to the same rel_path (fail|newest|oldest)
+    default: fail
+  - name: --quick
+    shorthand: null
+    type: bool
+    description: use best-effort modified_time comparison instead of SHA-256 hash; mismatched timestamps can still trigger
+      real sync writes
+- name: +task_result
+  summary: Poll async task result for import, export, drive move/delete, wiki move, wiki move-to-drive, or wiki delete operations
+  description: Poll async task result for import, export, drive move/delete, wiki move, wiki move-to-drive, or wiki delete
+    operations
+  usage: lark-cli drive +task_result [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: source document token used for export task status lookup
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +task_result
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --scenario
+    shorthand: null
+    type: string
+    description: 'task scenario: import, export, task_check, wiki_move, wiki_move_to_drive, wiki_delete_space, or wiki_delete_node'
+  - name: --task-id
+    shorthand: null
+    type: string
+    description: async task ID (for drive task_check and all wiki task scenarios)
+  - name: --ticket
+    shorthand: null
+    type: string
+    description: async task ticket (for import/export tasks)
+- name: +upload
+  summary: Upload a local file to Drive
+  description: Upload a local file to Drive
+  usage: lark-cli drive +upload [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file
+    shorthand: null
+    type: string
+    description: local file path (files > 20MB use multipart upload automatically)
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: existing file token to overwrite in place
+  - name: --folder-token
+    shorthand: null
+    type: string
+    description: 'target folder token (default: root folder; mutually exclusive with --wiki-token)'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +upload
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: 'uploaded file name (default: local file name)'
+  - name: --wiki-token
+    shorthand: null
+    type: string
+    description: target wiki node token (uploads under that wiki node; mutually exclusive with --folder-token)
+- name: +version-delete
+  summary: Delete a specific historical version of a Drive file
+  description: Delete a specific historical version of a Drive file
+  usage: lark-cli drive +version-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: target file token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +version-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --version
+    shorthand: null
+    type: string
+    description: version from drive +version-history to delete (not tag)
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +version-get
+  summary: Download a specific version of a Drive file
+  description: Download a specific version of a Drive file
+  usage: lark-cli drive +version-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: target file token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +version-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --output
+    shorthand: null
+    type: string
+    description: local save path or directory; omit to save into the current directory using the server filename
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: overwrite existing output file
+  - name: --version
+    shorthand: null
+    type: string
+    description: version from drive +version-history (not tag)
+- name: +version-history
+  summary: List the version history of a Drive file
+  description: List the version history of a Drive file
+  usage: lark-cli drive +version-history [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --cursor
+    shorthand: null
+    type: string
+    description: pagination cursor from the previous page's next_cursor
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: target file token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +version-history
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --limit
+    shorthand: null
+    type: int
+    description: max versions to return (1-200)
+    default: '20'
+- name: +version-revert
+  summary: Revert a Drive file to a specific historical version
+  description: Revert a Drive file to a specific historical version
+  usage: lark-cli drive +version-revert [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: target file token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +version-revert
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --version
+    shorthand: null
+    type: string
+    description: version from drive +version-history to revert to (not tag)

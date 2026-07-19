@@ -1,0 +1,535 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: calendar
+description: Calendar, event, and attendee management
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +agenda
+  summary: View calendar agenda (defaults to today)
+  description: View calendar agenda (defaults to today)
+  usage: lark-cli calendar +agenda [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --calendar-id
+    shorthand: null
+    type: string
+    description: 'calendar ID (default: primary)'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --end
+    shorthand: null
+    type: string
+    description: 'end time (ISO 8601, default: end of start day)'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +agenda
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --start
+    shorthand: null
+    type: string
+    description: 'start time (ISO 8601, default: start of today)'
+- name: +create
+  summary: Create a calendar event and optionally invite attendees
+  description: Create a calendar event and optionally invite attendees
+  usage: lark-cli calendar +create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --attendee-ids
+    shorthand: null
+    type: string
+    description: attendee IDs, comma-separated (supports user ou_, chat oc_, room omm_)
+  - name: --calendar-id
+    shorthand: null
+    type: string
+    description: 'calendar ID (default: primary)'
+  - name: --description
+    shorthand: null
+    type: string
+    description: event description
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --end
+    shorthand: null
+    type: string
+    description: end time (ISO 8601)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --rrule
+    shorthand: null
+    type: string
+    description: recurrence rule (rfc5545)
+  - name: --start
+    shorthand: null
+    type: string
+    description: start time (ISO 8601)
+  - name: --summary
+    shorthand: null
+    type: string
+    description: event title
+- name: +freebusy
+  summary: Query user free/busy and RSVP status
+  description: Query user free/busy and RSVP status
+  usage: lark-cli calendar +freebusy [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --end
+    shorthand: null
+    type: string
+    description: 'end time (ISO 8601, default: end of start day)'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +freebusy
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --start
+    shorthand: null
+    type: string
+    description: 'start time (ISO 8601, default: today)'
+  - name: --user-id
+    shorthand: null
+    type: string
+    description: 'target user open_id (ou_ prefix, default: current user)'
+- name: +get
+  summary: Get a single calendar event detail by calendar-id and event-id
+  description: Get a single calendar event detail by calendar-id and event-id
+  usage: lark-cli calendar +get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --calendar-id
+    shorthand: null
+    type: string
+    description: 'calendar ID (default: primary)'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --event-id
+    shorthand: null
+    type: string
+    description: event ID
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +meeting
+  summary: Get meeting info for calendar events (meeting_id, meeting_note)
+  description: Get meeting info for calendar events (meeting_id, meeting_note)
+  usage: lark-cli calendar +meeting [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --calendar-id
+    shorthand: null
+    type: string
+    description: 'calendar ID (default: primary)'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --event-ids
+    shorthand: null
+    type: string
+    description: calendar event instance IDs, comma-separated for batch
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +meeting
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +room-find
+  summary: Find available meeting room candidates for one or more event time slots
+  description: Find available meeting room candidates for one or more event time slots
+  usage: lark-cli calendar +room-find [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --attendee-ids
+    shorthand: null
+    type: string
+    description: attendee IDs, comma-separated (supports user ou_, chat oc_)
+  - name: --building
+    shorthand: null
+    type: string
+    description: meeting room building constraint
+  - name: --city
+    shorthand: null
+    type: string
+    description: meeting room city constraint
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --event-rrule
+    shorthand: null
+    type: string
+    description: event recurrence rule
+  - name: --floor
+    shorthand: null
+    type: string
+    description: meeting room floor constraint (e.g., F2)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +room-find
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --max-capacity
+    shorthand: null
+    type: int
+    description: maximum meeting room capacity
+  - name: --min-capacity
+    shorthand: null
+    type: int
+    description: minimum meeting room capacity
+  - name: --room-name
+    shorthand: null
+    type: string
+    description: meeting room name constraint; comma-separated for multiple names (e.g., 01,02,03)
+  - name: --slot
+    shorthand: null
+    type: stringArray
+    description: event time slot in start~end format; repeatable
+  - name: --timezone
+    shorthand: null
+    type: string
+    description: current time zone
+- name: +rsvp
+  summary: Reply to a calendar event (accept/decline/tentative)
+  description: Reply to a calendar event (accept/decline/tentative)
+  usage: lark-cli calendar +rsvp [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --calendar-id
+    shorthand: null
+    type: string
+    description: 'calendar ID (default: primary)'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --event-id
+    shorthand: null
+    type: string
+    description: event ID
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +rsvp
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --rsvp-status
+    shorthand: null
+    type: string
+    description: reply status (accept|decline|tentative)
+- name: +search-event
+  summary: Search calendar events by keyword, time range, and attendees
+  description: Search calendar events by keyword, time range, and attendees
+  usage: lark-cli calendar +search-event [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --attendee-ids
+    shorthand: null
+    type: string
+    description: attendee IDs, comma-separated (supports user ou_, chat oc_, room omm_)
+  - name: --calendar-id
+    shorthand: null
+    type: string
+    description: 'calendar ID (default: primary)'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --end
+    shorthand: null
+    type: string
+    description: search time range end (ISO 8601 or YYYY-MM-DD)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +search-event
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: string
+    description: page size, 1-30 (default 20)
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: page token for next page
+  - name: --query
+    shorthand: null
+    type: string
+    description: search keyword
+  - name: --start
+    shorthand: null
+    type: string
+    description: search time range start (ISO 8601 or YYYY-MM-DD)
+- name: +suggestion
+  summary: Intelligently suggest available time blocks based on unclear time ranges
+  description: Intelligently suggest available time blocks based on unclear time ranges
+  usage: lark-cli calendar +suggestion [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --attendee-ids
+    shorthand: null
+    type: string
+    description: attendee IDs, comma-separated (supports user (open_id) ou_xxx, or chat oc_xxx) ids
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --duration-minutes
+    shorthand: null
+    type: int
+    description: duration (minutes)
+  - name: --end
+    shorthand: null
+    type: string
+    description: 'search end time (ISO 8601, default: end of start day)'
+  - name: --event-rrule
+    shorthand: null
+    type: string
+    description: event recurrence rules
+  - name: --exclude
+    shorthand: null
+    type: string
+    description: excluded event times (ISO 8601, e.g. '2026-03-19T10:00:00+08:00~2026-03-19T11:00:00+08:00'), comma-separated
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +suggestion
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --start
+    shorthand: null
+    type: string
+    description: 'search start time (ISO 8601, default: current time)'
+  - name: --timezone
+    shorthand: null
+    type: string
+    description: current time zone
+- name: +update
+  summary: Update a calendar event and incrementally add or remove attendees
+  description: Update a calendar event and incrementally add or remove attendees
+  usage: lark-cli calendar +update [flags]
+  risk: write
+  flags:
+  - name: --add-attendee-ids
+    shorthand: null
+    type: string
+    description: attendee IDs to add, comma-separated (supports user ou_, chat oc_, room omm_)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --calendar-id
+    shorthand: null
+    type: string
+    description: 'calendar ID (default: primary)'
+  - name: --description
+    shorthand: null
+    type: string
+    description: event description
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --end
+    shorthand: null
+    type: string
+    description: new end time (ISO 8601); requires --start
+  - name: --event-id
+    shorthand: null
+    type: string
+    description: event ID to update
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --notify
+    shorthand: null
+    type: bool
+    description: send update notification to attendees
+    default: 'true'
+  - name: --remove-attendee-ids
+    shorthand: null
+    type: string
+    description: attendee IDs to remove, comma-separated (supports user ou_, chat oc_, room omm_)
+  - name: --rrule
+    shorthand: null
+    type: string
+    description: recurrence rule (rfc5545)
+  - name: --start
+    shorthand: null
+    type: string
+    description: new start time (ISO 8601); requires --end
+  - name: --summary
+    shorthand: null
+    type: string
+    description: event title

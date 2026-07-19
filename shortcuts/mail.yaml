@@ -1,0 +1,1674 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: mail
+description: Email, draft, folder, and contacts management
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +decline-receipt
+  summary: Dismiss the read-receipt request banner on an incoming mail by clearing its READ_RECEIPT_REQUEST label, without
+    sending a receipt. Use when the user wants to silence the prompt but refuse to confirm they have read it. Idempotent —
+    safe to re-run.
+  description: Dismiss the read-receipt request banner on an incoming mail by clearing its READ_RECEIPT_REQUEST label, without
+    sending a receipt. Use when the user wants to silence the prompt but refuse to confirm they have read it. Idempotent —
+    safe to re-run.
+  usage: lark-cli mail +decline-receipt [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +decline-receipt
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'Mailbox email address that owns the message (default: me).'
+  - name: --message-id
+    shorthand: null
+    type: string
+    description: Required. Message ID of the incoming mail that requested a read receipt.
+- name: +draft-create
+  summary: Create a brand-new mail draft from scratch (NOT for reply or forward). For reply drafts use +reply; for forward
+    drafts use +forward. Only use +draft-create when composing a new email with no parent message.
+  description: Create a brand-new mail draft from scratch (NOT for reply or forward). For reply drafts use +reply; for forward
+    drafts use +forward. Only use +draft-create when composing a new email with no parent message.
+  usage: lark-cli mail +draft-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --attach
+    shorthand: null
+    type: string
+    description: Optional. Regular attachment file paths (relative path only). Separate multiple paths with commas. Each path
+      must point to a readable local file.
+  - name: --bcc
+    shorthand: null
+    type: string
+    description: Optional. Full Bcc recipient list. Separate multiple addresses with commas. Display-name format is supported.
+  - name: --body
+    shorthand: null
+    type: string
+    description: Full email body. Prefer HTML for rich formatting (bold, lists, links); plain text is also supported. Body
+      type is auto-detected. Use --plain-text to force plain-text mode. Mutually exclusive with --body-file. Required unless
+      --template-id supplies a non-empty body.
+  - name: --body-file
+    shorthand: null
+    type: string
+    description: Path (relative, within cwd subtree) to a file containing the email body HTML. Mutually exclusive with --body.
+      Size capped at 32 MB. (supports @file)
+  - name: --cc
+    shorthand: null
+    type: string
+    description: Optional. Full Cc recipient list. Separate multiple addresses with commas. Display-name format is supported.
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --event-end
+    shorthand: null
+    type: string
+    description: Event end time (ISO 8601). Required when --event-summary is set.
+  - name: --event-location
+    shorthand: null
+    type: string
+    description: Event location (optional).
+  - name: --event-start
+    shorthand: null
+    type: string
+    description: Event start time (ISO 8601, e.g. 2026-04-20T14:00+08:00). Required when --event-summary is set.
+  - name: --event-summary
+    shorthand: null
+    type: string
+    description: Calendar event title. Setting this enables calendar invitation mode.
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --from
+    shorthand: null
+    type: string
+    description: Optional. Sender email address for the From header. When using an alias (send_as) address, set this to the
+      alias and use --mailbox for the owning mailbox. If omitted, the mailbox's primary address is used.
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +draft-create
+  - name: --inline
+    shorthand: null
+    type: string
+    description: 'Optional. Inline images as a JSON array. Each entry: {"cid":"<unique-id>","file_path":"<relative-path>"}.
+      All file_path values must be relative paths. Cannot be used with --plain-text. CID images are embedded via <img src="cid:...">
+      in the HTML body. CID is a unique identifier, e.g. a random hex string like "a1b2c3d4e5f6a7b8c9d0".'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'Optional. Mailbox email address that owns the draft (default: falls back to --from, then me). Use this when
+      the sender (--from) differs from the mailbox, e.g. sending via an alias or send_as address.'
+  - name: --no-signature
+    shorthand: null
+    type: bool
+    description: Skip automatic default signature insertion. Mutually exclusive with --signature-id.
+  - name: --plain-text
+    shorthand: null
+    type: bool
+    description: Force plain-text mode, ignoring HTML auto-detection. Cannot be used with --inline.
+  - name: --priority
+    shorthand: null
+    type: string
+    description: 'Email priority: high, normal, low. If omitted, no priority header is set.'
+  - name: --request-receipt
+    shorthand: null
+    type: bool
+    description: Request a read receipt (Message Disposition Notification, RFC 3798) addressed to the sender. Recipient mail
+      clients may prompt the user, send automatically, or silently ignore — delivery of a receipt is not guaranteed.
+  - name: --show-lint-details
+    shorthand: null
+    type: bool
+    description: 'Include lint metadata (lint_applied[] / original_blocked[]) in the envelope. Default: no lint fields are
+      returned to keep the envelope small.'
+  - name: --subject
+    shorthand: null
+    type: string
+    description: Final draft subject. Pass the full subject you want to appear in the draft. Required unless --template-id
+      supplies a non-empty subject.
+  - name: --template-id
+    shorthand: null
+    type: string
+    description: Optional. Apply a saved template by ID (decimal integer string) before composing. The template's subject/body/to/cc/bcc/attachments
+      are merged with user-supplied flags (user flags win). Requires --as user.
+  - name: --to
+    shorthand: null
+    type: string
+    description: Optional. Full To recipient list. Separate multiple addresses with commas. Display-name format is supported.
+      When omitted, the draft is created without recipients (they can be added later via +draft-edit).
+- name: +draft-edit
+  summary: Use when updating an existing mail draft without sending it. Prefer this shortcut over calling raw drafts.get or
+    drafts.update directly, because it performs draft-safe MIME read/patch/write editing while preserving unchanged structure,
+    attachments, and headers where possible.
+  description: Use when updating an existing mail draft without sending it. Prefer this shortcut over calling raw drafts.get
+    or drafts.update directly, because it performs draft-safe MIME read/patch/write editing while preserving unchanged structure,
+    attachments, and headers where possible.
+  usage: lark-cli mail +draft-edit [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --body
+    shorthand: null
+    type: string
+    description: Full email body for a complete replacement (set_body). Prefer HTML for rich formatting (bold, lists, links);
+      plain text is also supported. Body type is auto-detected. Use --patch-file with set_reply_body when you need to preserve
+      an existing reply/forward quote block; use --body when you want a full body replacement. Mutually exclusive with --body-file.
+      Cannot be combined with --patch-file body ops.
+  - name: --body-file
+    shorthand: null
+    type: string
+    description: Path (relative, within cwd subtree) to a file containing the email body HTML. Mutually exclusive with --body.
+      Size capped at 32 MB. (supports @file)
+  - name: --draft-id
+    shorthand: null
+    type: string
+    description: Target draft ID. Required for real edits. It can be omitted only when using the --print-patch-template flag
+      by itself.
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --from
+    shorthand: null
+    type: string
+    description: 'Mailbox email address containing the draft (default: me). Prefer --mailbox for clarity; --from is kept for
+      backward compatibility.'
+    default: me
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +draft-edit
+  - name: --inspect
+    shorthand: null
+    type: bool
+    description: 'Inspect the draft without modifying it. Returns the draft projection including subject, recipients, body
+      summary, has_quoted_content (whether the draft contains a reply/forward quote block), attachments_summary (with part_id
+      and cid for each attachment), and inline_summary. Run this BEFORE editing body to check has_quoted_content: if true,
+      use set_reply_body in --patch-file to preserve the quote; if false, use set_body.'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'Mailbox email address that owns the draft (default: falls back to --from, then me). Takes priority over
+      --from when both are set.'
+  - name: --patch-file
+    shorthand: null
+    type: string
+    description: Advanced edit entry point for body edits, incremental recipient changes, header edits, attachment changes,
+      or inline-image changes. Use --body/--body-file for quick full-body replacement; use --patch-file with set_body/set_reply_body
+      when you need typed body ops, especially set_reply_body to preserve an existing reply/forward quote block. Run --inspect
+      first to check has_quoted_content, then --print-patch-template for the JSON structure. Relative path only.
+  - name: --print-patch-template
+    shorthand: null
+    type: bool
+    description: Print the JSON template and supported operations for the --patch-file flag. Recommended first step before
+      generating a patch file. No draft read or write is performed.
+  - name: --remove-event
+    shorthand: null
+    type: bool
+    description: Remove the calendar event from the draft.
+  - name: --request-receipt
+    shorthand: null
+    type: bool
+    description: Request a read receipt (Message Disposition Notification, RFC 3798) addressed to the draft's sender. Recipient
+      mail clients may prompt the user, send automatically, or silently ignore — delivery of a receipt is not guaranteed.
+      Adds the Disposition-Notification-To header; existing value is overwritten.
+  - name: --set-bcc
+    shorthand: null
+    type: string
+    description: Replace the entire Bcc recipient list with the addresses provided here. Separate multiple addresses with
+      commas. Display-name format is supported.
+  - name: --set-cc
+    shorthand: null
+    type: string
+    description: Replace the entire Cc recipient list with the addresses provided here. Separate multiple addresses with commas.
+      Display-name format is supported.
+  - name: --set-event-end
+    shorthand: null
+    type: string
+    description: Set calendar event end time (ISO 8601).
+  - name: --set-event-location
+    shorthand: null
+    type: string
+    description: Set calendar event location.
+  - name: --set-event-start
+    shorthand: null
+    type: string
+    description: Set calendar event start time (ISO 8601).
+  - name: --set-event-summary
+    shorthand: null
+    type: string
+    description: Set calendar event title. Must be used together with --set-event-start and --set-event-end.
+  - name: --set-priority
+    shorthand: null
+    type: string
+    description: 'Set email priority: high, normal, low. Setting ''normal'' removes any existing priority header.'
+  - name: --set-subject
+    shorthand: null
+    type: string
+    description: Replace the subject with this final value. Use this for full subject replacement, not for appending a fragment
+      to the existing subject.
+  - name: --set-to
+    shorthand: null
+    type: string
+    description: Replace the entire To recipient list with the addresses provided here. Separate multiple addresses with commas.
+      Display-name format is supported.
+  - name: --show-lint-details
+    shorthand: null
+    type: bool
+    description: 'Include lint metadata (lint_applied[] / original_blocked[]) in the envelope. Default: no lint fields are
+      returned to keep the envelope small.'
+- name: +draft-send
+  summary: Send one or more existing mail drafts sequentially. Calls POST /drafts/:draft_id/send for each input ID, isolates
+    per-draft failures, and aggregates the results. Use after the drafts have already been created (via the Lark client, +draft-create,
+    or the drafts.create API).
+  description: Send one or more existing mail drafts sequentially. Calls POST /drafts/:draft_id/send for each input ID, isolates
+    per-draft failures, and aggregates the results. Use after the drafts have already been created (via the Lark client, +draft-create,
+    or the drafts.create API).
+  usage: lark-cli mail +draft-send [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --draft-id
+    shorthand: null
+    type: strings
+    description: Draft IDs to send; comma-separated or repeat the flag (max 50).
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +draft-send
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'Mailbox email address that owns the drafts (default: me).'
+  - name: --stop-on-error
+    shorthand: null
+    type: bool
+    description: 'Stop at the first recoverable per-draft failure (default: continue and aggregate). Fatal errors (auth, permission,
+      network, mailbox-level quota) always abort immediately regardless of this flag.'
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +forward
+  summary: Forward a message and save as draft (default). Use --confirm-send to send immediately after user confirmation.
+    Original message block included automatically.
+  description: Forward a message and save as draft (default). Use --confirm-send to send immediately after user confirmation.
+    Original message block included automatically.
+  usage: lark-cli mail +forward [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --attach
+    shorthand: null
+    type: string
+    description: Attachment file path(s), comma-separated, appended after original attachments (relative path only)
+  - name: --bcc
+    shorthand: null
+    type: string
+    description: BCC email address(es), comma-separated
+  - name: --body
+    shorthand: null
+    type: string
+    description: Body prepended before the forwarded message. Prefer HTML for rich formatting; plain text is also supported.
+      Body type is auto-detected from the forward body and the original message. Use --plain-text to force plain-text mode.
+      Mutually exclusive with --body-file.
+  - name: --body-file
+    shorthand: null
+    type: string
+    description: Path (relative, within cwd subtree) to a file containing the email body HTML. Mutually exclusive with --body.
+      Size capped at 32 MB. (supports @file)
+  - name: --cc
+    shorthand: null
+    type: string
+    description: CC email address(es), comma-separated
+  - name: --confirm-send
+    shorthand: null
+    type: bool
+    description: Send the forward immediately instead of saving as draft. Only use after the user has explicitly confirmed
+      recipients and content.
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --event-end
+    shorthand: null
+    type: string
+    description: Event end time (ISO 8601). Required when --event-summary is set.
+  - name: --event-location
+    shorthand: null
+    type: string
+    description: Event location (optional).
+  - name: --event-start
+    shorthand: null
+    type: string
+    description: Event start time (ISO 8601, e.g. 2026-04-20T14:00+08:00). Required when --event-summary is set.
+  - name: --event-summary
+    shorthand: null
+    type: string
+    description: Calendar event title. Setting this enables calendar invitation mode.
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --from
+    shorthand: null
+    type: string
+    description: Sender email address for the From header. When using an alias (send_as) address, set this to the alias and
+      use --mailbox for the owning mailbox. Defaults to the mailbox's primary address.
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +forward
+  - name: --inline
+    shorthand: null
+    type: string
+    description: 'Inline images as a JSON array. Each entry: {"cid":"<unique-id>","file_path":"<relative-path>"}. All file_path
+      values must be relative paths. Cannot be used with --plain-text. CID images are embedded via <img src="cid:..."> in
+      the HTML body. CID is a unique identifier, e.g. a random hex string like "a1b2c3d4e5f6a7b8c9d0".'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'Mailbox email address that owns the draft (default: falls back to --from, then me). Use this when the sender
+      (--from) differs from the mailbox, e.g. sending via an alias or send_as address.'
+  - name: --message-id
+    shorthand: null
+    type: string
+    description: Required. Message ID to forward
+  - name: --no-signature
+    shorthand: null
+    type: bool
+    description: Skip automatic default signature insertion. Mutually exclusive with --signature-id.
+  - name: --plain-text
+    shorthand: null
+    type: bool
+    description: Force plain-text mode, ignoring all HTML auto-detection. Cannot be used with --inline.
+  - name: --priority
+    shorthand: null
+    type: string
+    description: 'Email priority: high, normal, low. If omitted, no priority header is set.'
+  - name: --request-receipt
+    shorthand: null
+    type: bool
+    description: Request a read receipt (Message Disposition Notification, RFC 3798) addressed to the sender. Recipient mail
+      clients may prompt the user, send automatically, or silently ignore — delivery of a receipt is not guaranteed.
+  - name: --send-time
+    shorthand: null
+    type: string
+    description: Scheduled send time as a Unix timestamp in seconds. Must be at least 5 minutes in the future. Use with --confirm-send
+      to schedule the email.
+  - name: --show-lint-details
+    shorthand: null
+    type: bool
+    description: 'Include lint metadata (lint_applied[] / original_blocked[]) in the envelope. Default: no lint fields are
+      returned to keep the envelope small.'
+  - name: --subject
+    shorthand: null
+    type: string
+    description: 'Optional. Override the auto-generated Fw: subject. When set, the shortcut uses this value verbatim instead
+      of prefixing the original subject.'
+  - name: --template-id
+    shorthand: null
+    type: string
+    description: Optional. Apply a saved template by ID (decimal integer string) before composing. The template's body/to/cc/bcc/attachments
+      are merged into the forward draft (template values appended to user flags / forward-derived values; no de-duplication).
+  - name: --to
+    shorthand: null
+    type: string
+    description: Recipient email address(es), comma-separated
+- name: +lint-html
+  summary: 'Lint mail HTML body for compatibility / safety / Larksuite-native rules. Returns warnings/errors and (always)
+    auto-fixed cleaned_html. Read-only: no draft, no API call. Use this BEFORE creating a draft to preview what the writing-path
+    lint would change.'
+  description: 'Lint mail HTML body for compatibility / safety / Larksuite-native rules. Returns warnings/errors and (always)
+    auto-fixed cleaned_html. Read-only: no draft, no API call. Use this BEFORE creating a draft to preview what the writing-path
+    lint would change.'
+  usage: lark-cli mail +lint-html [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --body
+    shorthand: null
+    type: string
+    description: HTML body to lint. Mutually exclusive with --body-file; exactly one is required.
+  - name: --body-file
+    shorthand: null
+    type: string
+    description: Path (relative, within cwd subtree) to a file containing HTML to lint. Mutually exclusive with --body; exactly
+      one is required. (supports @file)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +lint-html
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --show-lint-details
+    shorthand: null
+    type: bool
+    description: 'Include lint metadata (lint_applied[] / original_blocked[]) in the envelope. Default: no lint fields are
+      returned to keep the envelope small.'
+- name: +message
+  summary: Use only when reading full content for one email by one message ID. For multiple message IDs, use mail +messages;
+    do not loop mail +message. Returns normalized body content plus attachments metadata, including inline images.
+  description: Use only when reading full content for one email by one message ID. For multiple message IDs, use mail +messages;
+    do not loop mail +message. Returns normalized body content plus attachments metadata, including inline images.
+  usage: lark-cli mail +message [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +message
+  - name: --html
+    shorthand: null
+    type: bool
+    description: Whether to return HTML body (false returns plain text only to save bandwidth)
+    default: 'true'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'email address (default: me)'
+    default: me
+  - name: --message-id
+    shorthand: null
+    type: string
+    description: Required. Single email message ID only. For multiple IDs, use mail +messages --message-ids.
+  - name: --print-output-schema
+    shorthand: null
+    type: bool
+    description: Print output field reference (run this first to learn field names before parsing output)
+- name: +message-modify
+  summary: Modify existing mail messages by adding/removing label IDs or moving them to a folder. Batches message IDs in groups
+    of 20 and keeps output compact.
+  description: Modify existing mail messages by adding/removing label IDs or moving them to a folder. Batches message IDs
+    in groups of 20 and keeps output compact.
+  usage: lark-cli mail +message-modify [flags]
+  risk: write
+  flags:
+  - name: --add-folder
+    shorthand: null
+    type: string
+    description: Folder ID to move messages to. System folders inbox/sent/spam/archive/archived are normalized; TRASH is rejected,
+      use +message-trash.
+  - name: --add-label-ids
+    shorthand: null
+    type: strings
+    description: Label IDs to add. System labels unread/important/other/flagged are normalized to upper case.
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +message-modify
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'Mailbox email address that owns the messages (default: me).'
+  - name: --message-ids
+    shorthand: null
+    type: stringArray
+    description: Message IDs to modify; comma-separated or repeat the flag.
+  - name: --remove-label-ids
+    shorthand: null
+    type: strings
+    description: Label IDs to remove. System labels unread/important/other/flagged are normalized to upper case.
+- name: +message-trash
+  summary: Soft-delete existing mail messages. Batches message IDs in groups of 20 and calls batch_trash sequentially. Requires
+    --yes.
+  description: Soft-delete existing mail messages. Batches message IDs in groups of 20 and calls batch_trash sequentially.
+    Requires --yes.
+  usage: lark-cli mail +message-trash [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +message-trash
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'Mailbox email address that owns the messages (default: me).'
+  - name: --message-ids
+    shorthand: null
+    type: stringArray
+    description: Message IDs to soft-delete; comma-separated or repeat the flag.
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +messages
+  summary: Use when reading full content for multiple emails by message ID. You may pass more than 20 IDs; the CLI handles
+    them in batches of 20 and merges output while preserving request order.
+  description: Use when reading full content for multiple emails by message ID. You may pass more than 20 IDs; the CLI handles
+    them in batches of 20 and merges output while preserving request order.
+  usage: lark-cli mail +messages [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +messages
+  - name: --html
+    shorthand: null
+    type: bool
+    description: Whether to return HTML body (false returns plain text only to save bandwidth)
+    default: 'true'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'email address (default: me)'
+    default: me
+  - name: --message-ids
+    shorthand: null
+    type: string
+    description: 'Required. Comma-separated email message IDs. You may pass more than 20 IDs; the CLI handles them in batches
+      of 20 and merges output. Example: "<id1>,<id2>,<id3>"'
+  - name: --print-output-schema
+    shorthand: null
+    type: bool
+    description: Print output field reference (run this first to learn field names before parsing output)
+- name: +reply
+  summary: 'Reply to a message and save as draft (default). Use --confirm-send to send immediately after user confirmation.
+    Sets Re: subject, In-Reply-To, and References headers automatically.'
+  description: 'Reply to a message and save as draft (default). Use --confirm-send to send immediately after user confirmation.
+    Sets Re: subject, In-Reply-To, and References headers automatically.'
+  usage: lark-cli mail +reply [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --attach
+    shorthand: null
+    type: string
+    description: Attachment file path(s), comma-separated (relative path only)
+  - name: --bcc
+    shorthand: null
+    type: string
+    description: BCC email address(es), comma-separated
+  - name: --body
+    shorthand: null
+    type: string
+    description: Reply body. Prefer HTML for rich formatting; plain text is also supported. Body type is auto-detected from
+      the reply body and the original message. Use --plain-text to force plain-text mode. Mutually exclusive with --body-file.
+      Required unless --template-id supplies a non-empty body.
+  - name: --body-file
+    shorthand: null
+    type: string
+    description: Path (relative, within cwd subtree) to a file containing the email body HTML. Mutually exclusive with --body.
+      Size capped at 32 MB. (supports @file)
+  - name: --cc
+    shorthand: null
+    type: string
+    description: Additional CC email address(es), comma-separated
+  - name: --confirm-send
+    shorthand: null
+    type: bool
+    description: Send the reply immediately instead of saving as draft. Only use after the user has explicitly confirmed recipients
+      and content.
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --event-end
+    shorthand: null
+    type: string
+    description: Event end time (ISO 8601). Required when --event-summary is set.
+  - name: --event-location
+    shorthand: null
+    type: string
+    description: Event location (optional).
+  - name: --event-start
+    shorthand: null
+    type: string
+    description: Event start time (ISO 8601, e.g. 2026-04-20T14:00+08:00). Required when --event-summary is set.
+  - name: --event-summary
+    shorthand: null
+    type: string
+    description: Calendar event title. Setting this enables calendar invitation mode.
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --from
+    shorthand: null
+    type: string
+    description: Sender email address for the From header. When using an alias (send_as) address, set this to the alias and
+      use --mailbox for the owning mailbox. Defaults to the mailbox's primary address.
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +reply
+  - name: --inline
+    shorthand: null
+    type: string
+    description: 'Inline images as a JSON array. Each entry: {"cid":"<unique-id>","file_path":"<relative-path>"}. All file_path
+      values must be relative paths. Cannot be used with --plain-text. CID images are embedded via <img src="cid:..."> in
+      the HTML body. CID is a unique identifier, e.g. a random hex string like "a1b2c3d4e5f6a7b8c9d0".'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'Mailbox email address that owns the draft (default: falls back to --from, then me). Use this when the sender
+      (--from) differs from the mailbox, e.g. sending via an alias or send_as address.'
+  - name: --message-id
+    shorthand: null
+    type: string
+    description: Required. Message ID to reply to
+  - name: --no-signature
+    shorthand: null
+    type: bool
+    description: Skip automatic default signature insertion. Mutually exclusive with --signature-id.
+  - name: --plain-text
+    shorthand: null
+    type: bool
+    description: Force plain-text mode, ignoring all HTML auto-detection. Cannot be used with --inline.
+  - name: --priority
+    shorthand: null
+    type: string
+    description: 'Email priority: high, normal, low. If omitted, no priority header is set.'
+  - name: --request-receipt
+    shorthand: null
+    type: bool
+    description: Request a read receipt (Message Disposition Notification, RFC 3798) addressed to the sender. Recipient mail
+      clients may prompt the user, send automatically, or silently ignore — delivery of a receipt is not guaranteed.
+  - name: --send-time
+    shorthand: null
+    type: string
+    description: Scheduled send time as a Unix timestamp in seconds. Must be at least 5 minutes in the future. Use with --confirm-send
+      to schedule the email.
+  - name: --show-lint-details
+    shorthand: null
+    type: bool
+    description: 'Include lint metadata (lint_applied[] / original_blocked[]) in the envelope. Default: no lint fields are
+      returned to keep the envelope small.'
+  - name: --subject
+    shorthand: null
+    type: string
+    description: 'Optional. Override the auto-generated Re: subject. When set, the shortcut uses this value verbatim instead
+      of prefixing the original subject.'
+  - name: --template-id
+    shorthand: null
+    type: string
+    description: Optional. Apply a saved template by ID (decimal integer string) before composing. The template's body/to/cc/bcc/attachments
+      are appended to the reply-derived values (no de-duplication; see warning in Execute output).
+  - name: --to
+    shorthand: null
+    type: string
+    description: Additional To address(es), comma-separated (appended to original sender's address)
+- name: +reply-all
+  summary: Reply to all recipients and save as draft (default). Use --confirm-send to send immediately after user confirmation.
+    Includes all original To and CC automatically.
+  description: Reply to all recipients and save as draft (default). Use --confirm-send to send immediately after user confirmation.
+    Includes all original To and CC automatically.
+  usage: lark-cli mail +reply-all [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --attach
+    shorthand: null
+    type: string
+    description: Attachment file path(s), comma-separated (relative path only)
+  - name: --bcc
+    shorthand: null
+    type: string
+    description: BCC email address(es), comma-separated
+  - name: --body
+    shorthand: null
+    type: string
+    description: Reply body. Prefer HTML for rich formatting; plain text is also supported. Body type is auto-detected from
+      the reply body and the original message. Use --plain-text to force plain-text mode. Mutually exclusive with --body-file.
+      Required unless --template-id supplies a non-empty body.
+  - name: --body-file
+    shorthand: null
+    type: string
+    description: Path (relative, within cwd subtree) to a file containing the email body HTML. Mutually exclusive with --body.
+      Size capped at 32 MB. (supports @file)
+  - name: --cc
+    shorthand: null
+    type: string
+    description: Additional CC email address(es), comma-separated
+  - name: --confirm-send
+    shorthand: null
+    type: bool
+    description: Send the reply immediately instead of saving as draft. Only use after the user has explicitly confirmed recipients
+      and content.
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --event-end
+    shorthand: null
+    type: string
+    description: Event end time (ISO 8601). Required when --event-summary is set.
+  - name: --event-location
+    shorthand: null
+    type: string
+    description: Event location (optional).
+  - name: --event-start
+    shorthand: null
+    type: string
+    description: Event start time (ISO 8601, e.g. 2026-04-20T14:00+08:00). Required when --event-summary is set.
+  - name: --event-summary
+    shorthand: null
+    type: string
+    description: Calendar event title. Setting this enables calendar invitation mode.
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --from
+    shorthand: null
+    type: string
+    description: Sender email address for the From header. When using an alias (send_as) address, set this to the alias and
+      use --mailbox for the owning mailbox. Defaults to the mailbox's primary address.
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +reply-all
+  - name: --inline
+    shorthand: null
+    type: string
+    description: 'Inline images as a JSON array. Each entry: {"cid":"<unique-id>","file_path":"<relative-path>"}. All file_path
+      values must be relative paths. Cannot be used with --plain-text. CID images are embedded via <img src="cid:..."> in
+      the HTML body. CID is a unique identifier, e.g. a random hex string like "a1b2c3d4e5f6a7b8c9d0".'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'Mailbox email address that owns the draft (default: falls back to --from, then me). Use this when the sender
+      (--from) differs from the mailbox, e.g. sending via an alias or send_as address.'
+  - name: --message-id
+    shorthand: null
+    type: string
+    description: Required. Message ID to reply to all recipients
+  - name: --no-signature
+    shorthand: null
+    type: bool
+    description: Skip automatic default signature insertion. Mutually exclusive with --signature-id.
+  - name: --plain-text
+    shorthand: null
+    type: bool
+    description: Force plain-text mode, ignoring all HTML auto-detection. Cannot be used with --inline.
+  - name: --priority
+    shorthand: null
+    type: string
+    description: 'Email priority: high, normal, low. If omitted, no priority header is set.'
+  - name: --remove
+    shorthand: null
+    type: string
+    description: Address(es) to exclude from the outgoing reply, comma-separated
+  - name: --request-receipt
+    shorthand: null
+    type: bool
+    description: Request a read receipt (Message Disposition Notification, RFC 3798) addressed to the sender. Recipient mail
+      clients may prompt the user, send automatically, or silently ignore — delivery of a receipt is not guaranteed.
+  - name: --send-time
+    shorthand: null
+    type: string
+    description: Scheduled send time as a Unix timestamp in seconds. Must be at least 5 minutes in the future. Use with --confirm-send
+      to schedule the email.
+  - name: --show-lint-details
+    shorthand: null
+    type: bool
+    description: 'Include lint metadata (lint_applied[] / original_blocked[]) in the envelope. Default: no lint fields are
+      returned to keep the envelope small.'
+  - name: --subject
+    shorthand: null
+    type: string
+    description: 'Optional. Override the auto-generated Re: subject. When set, the shortcut uses this value verbatim instead
+      of prefixing the original subject.'
+  - name: --template-id
+    shorthand: null
+    type: string
+    description: Optional. Apply a saved template by ID (decimal integer string) before composing. The template's body/to/cc/bcc/attachments
+      are appended to the reply-derived values (no de-duplication; see warning in Execute output).
+  - name: --to
+    shorthand: null
+    type: string
+    description: Additional To address(es), comma-separated (appended to original recipients)
+- name: +send
+  summary: Compose a new email and save as draft (default). Use --confirm-send to send immediately after user confirmation.
+  description: Compose a new email and save as draft (default). Use --confirm-send to send immediately after user confirmation.
+  usage: lark-cli mail +send [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --attach
+    shorthand: null
+    type: string
+    description: Attachment file path(s), comma-separated (relative path only)
+  - name: --bcc
+    shorthand: null
+    type: string
+    description: BCC email address(es), comma-separated
+  - name: --body
+    shorthand: null
+    type: string
+    description: Email body. Prefer HTML for rich formatting (bold, lists, links); plain text is also supported. Body type
+      is auto-detected. Use --plain-text to force plain-text mode. Mutually exclusive with --body-file. Required unless --template-id
+      supplies a non-empty body.
+  - name: --body-file
+    shorthand: null
+    type: string
+    description: Path (relative, within cwd subtree) to a file containing the email body HTML. Mutually exclusive with --body.
+      Size capped at 32 MB. (supports @file)
+  - name: --cc
+    shorthand: null
+    type: string
+    description: CC email address(es), comma-separated
+  - name: --confirm-send
+    shorthand: null
+    type: bool
+    description: Send the email immediately instead of saving as draft. Only use after the user has explicitly confirmed recipients
+      and content.
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --event-end
+    shorthand: null
+    type: string
+    description: Event end time (ISO 8601). Required when --event-summary is set.
+  - name: --event-location
+    shorthand: null
+    type: string
+    description: Event location (optional).
+  - name: --event-start
+    shorthand: null
+    type: string
+    description: Event start time (ISO 8601, e.g. 2026-04-20T14:00+08:00). Required when --event-summary is set.
+  - name: --event-summary
+    shorthand: null
+    type: string
+    description: Calendar event title. Setting this enables calendar invitation mode.
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --from
+    shorthand: null
+    type: string
+    description: Sender email address for the From header. When using an alias (send_as) address, set this to the alias and
+      use --mailbox for the owning mailbox. Defaults to the mailbox's primary address.
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +send
+  - name: --inline
+    shorthand: null
+    type: string
+    description: 'Inline images as a JSON array. Each entry: {"cid":"<unique-id>","file_path":"<relative-path>"}. All file_path
+      values must be relative paths. Cannot be used with --plain-text. CID images are embedded via <img src="cid:..."> in
+      the HTML body. CID is a unique identifier, e.g. a random hex string like "a1b2c3d4e5f6a7b8c9d0".'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'Mailbox email address that owns the draft (default: falls back to --from, then me). Use this when the sender
+      (--from) differs from the mailbox, e.g. sending via an alias or send_as address.'
+  - name: --no-signature
+    shorthand: null
+    type: bool
+    description: Skip automatic default signature insertion. Mutually exclusive with --signature-id.
+  - name: --plain-text
+    shorthand: null
+    type: bool
+    description: Force plain-text mode, ignoring HTML auto-detection. Cannot be used with --inline.
+  - name: --priority
+    shorthand: null
+    type: string
+    description: 'Email priority: high, normal, low. If omitted, no priority header is set.'
+  - name: --request-receipt
+    shorthand: null
+    type: bool
+    description: Request a read receipt (Message Disposition Notification, RFC 3798) addressed to the sender. Recipient mail
+      clients may prompt the user, send automatically, or silently ignore — delivery of a receipt is not guaranteed.
+  - name: --send-time
+    shorthand: null
+    type: string
+    description: Scheduled send time as a Unix timestamp in seconds. Must be at least 5 minutes in the future. Use with --confirm-send
+      to schedule the email.
+  - name: --show-lint-details
+    shorthand: null
+    type: bool
+    description: 'Include lint metadata (lint_applied[] / original_blocked[]) in the envelope. Default: no lint fields are
+      returned to keep the envelope small.'
+  - name: --subject
+    shorthand: null
+    type: string
+    description: Email subject. Required unless --template-id supplies a non-empty subject.
+  - name: --template-id
+    shorthand: null
+    type: string
+    description: Optional. Apply a saved template by ID (decimal integer string) before composing. The template's subject/body/to/cc/bcc/attachments
+      are merged with user-supplied flags (user flags win). Requires --as user.
+  - name: --to
+    shorthand: null
+    type: string
+    description: Recipient email address(es), comma-separated
+- name: +send-receipt
+  summary: Send a read-receipt reply for an incoming message that requested one (i.e. carries the READ_RECEIPT_REQUEST label).
+    Body is auto-generated (subject / recipient / send time / read time) to match the Lark client's receipt format — callers
+    cannot customize it, matching the industry norm that read-receipt bodies are system-generated templates, not free-form
+    replies. Intended for agent use after the user confirms.
+  description: Send a read-receipt reply for an incoming message that requested one (i.e. carries the READ_RECEIPT_REQUEST
+    label). Body is auto-generated (subject / recipient / send time / read time) to match the Lark client's receipt format
+    — callers cannot customize it, matching the industry norm that read-receipt bodies are system-generated templates, not
+    free-form replies. Intended for agent use after the user confirms.
+  usage: lark-cli mail +send-receipt [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --from
+    shorthand: null
+    type: string
+    description: Sender email address for the From header. Defaults to the mailbox's primary address.
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +send-receipt
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'Mailbox email address that owns the receipt reply (default: me).'
+  - name: --message-id
+    shorthand: null
+    type: string
+    description: Required. Message ID of the incoming mail that requested a read receipt.
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +share-to-chat
+  summary: Share an email or thread as a card to a Lark IM chat.
+  description: Share an email or thread as a card to a Lark IM chat.
+  usage: lark-cli mail +share-to-chat [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +share-to-chat
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'Mailbox email address (default: me)'
+    default: me
+  - name: --message-id
+    shorthand: null
+    type: string
+    description: Message ID to share (mutually exclusive with --thread-id)
+  - name: --receive-id
+    shorthand: null
+    type: string
+    description: Receiver ID. Type determined by --receive-id-type.
+  - name: --receive-id-type
+    shorthand: null
+    type: string
+    description: 'Receiver ID type: chat_id (default), open_id, user_id, union_id, email'
+    default: chat_id
+  - name: --thread-id
+    shorthand: null
+    type: string
+    description: Thread ID to share (mutually exclusive with --message-id)
+- name: +signature
+  summary: List or view email signatures with default usage info.
+  description: List or view email signatures with default usage info.
+  usage: lark-cli mail +signature [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --detail
+    shorthand: null
+    type: string
+    description: Signature ID to view rendered details. Omit to list all signatures.
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --from
+    shorthand: null
+    type: string
+    description: 'Mailbox address (default: me)'
+    default: me
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +signature
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +template-create
+  summary: 'Create a personal mail template. Scans HTML <img src> local paths (reusing draft inline-image detection), uploads
+    inline images and non-inline attachments to Drive, rewrites HTML to cid: references, and POSTs a Template payload to mail.user_mailbox.templates.create.'
+  description: 'Create a personal mail template. Scans HTML <img src> local paths (reusing draft inline-image detection),
+    uploads inline images and non-inline attachments to Drive, rewrites HTML to cid: references, and POSTs a Template payload
+    to mail.user_mailbox.templates.create.'
+  usage: lark-cli mail +template-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --attach
+    shorthand: null
+    type: string
+    description: Optional. Non-inline attachment file path(s), comma-separated (relative path only). Each file is uploaded
+      to Drive; the order follows the flag order exactly (order-sensitive for LARGE/SMALL classification).
+  - name: --bcc
+    shorthand: null
+    type: string
+    description: Optional. Default Bcc recipient list. Separate multiple addresses with commas.
+  - name: --cc
+    shorthand: null
+    type: string
+    description: Optional. Default Cc recipient list. Separate multiple addresses with commas.
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +template-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'Mailbox email address that owns the template (default: me).'
+  - name: --name
+    shorthand: null
+    type: string
+    description: Required. Template name (≤100 chars).
+  - name: --plain-text
+    shorthand: null
+    type: bool
+    description: Mark the template as plain-text mode (is_plain_text_mode=true). Inline images still require HTML content;
+      use only for pure plain-text templates.
+  - name: --subject
+    shorthand: null
+    type: string
+    description: Optional. Default subject saved with the template.
+  - name: --template-content
+    shorthand: null
+    type: string
+    description: 'Template body content. Prefer HTML. Referenced local images (<img src="./file.png">) are auto-uploaded to
+      Drive and rewritten to cid: refs.'
+  - name: --template-content-file
+    shorthand: null
+    type: string
+    description: Optional. Path to a file whose contents become --template-content. Relative path only. Mutually exclusive
+      with --template-content.
+  - name: --to
+    shorthand: null
+    type: string
+    description: Optional. Default To recipient list. Separate multiple addresses with commas. Display-name format is supported.
+- name: +template-update
+  summary: 'Update an existing mail template. Supports --inspect (read-only projection), --print-patch-template (prints a
+    JSON skeleton for --patch-file), and flat flags (--set-subject / --set-name / etc). Internally it GETs the template, applies
+    the patch, rewrites <img> local paths to cid: refs, and PUTs a full-replace update (no optimistic locking: last-write-wins).'
+  description: 'Update an existing mail template. Supports --inspect (read-only projection), --print-patch-template (prints
+    a JSON skeleton for --patch-file), and flat flags (--set-subject / --set-name / etc). Internally it GETs the template,
+    applies the patch, rewrites <img> local paths to cid: refs, and PUTs a full-replace update (no optimistic locking: last-write-wins).'
+  usage: lark-cli mail +template-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --attach
+    shorthand: null
+    type: string
+    description: Additional non-inline attachment file path(s), comma-separated. Each file is uploaded to Drive and appended
+      to the template's attachments[] in the exact flag order.
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +template-update
+  - name: --inspect
+    shorthand: null
+    type: bool
+    description: Inspect the template without modifying it. Returns the current template projection (name/subject/addresses/attachments).
+      No write is performed.
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'Mailbox email address that owns the template (default: me).'
+  - name: --patch-file
+    shorthand: null
+    type: string
+    description: Path to a JSON patch file (relative path only). Shape is the same as --print-patch-template output.
+  - name: --print-patch-template
+    shorthand: null
+    type: bool
+    description: Print a JSON template describing the supported --patch-file structure. No network call is made.
+  - name: --set-bcc
+    shorthand: null
+    type: string
+    description: Replace the Bcc recipient list. Pass --set-bcc="" to clear the list.
+  - name: --set-cc
+    shorthand: null
+    type: string
+    description: Replace the Cc recipient list. Pass --set-cc="" to clear the list.
+  - name: --set-name
+    shorthand: null
+    type: string
+    description: Replace the template name (≤100 chars).
+  - name: --set-plain-text
+    shorthand: null
+    type: bool
+    description: Set is_plain_text_mode=true.
+  - name: --set-subject
+    shorthand: null
+    type: string
+    description: Replace the template subject.
+  - name: --set-template-content
+    shorthand: null
+    type: string
+    description: Replace the template body content. Prefer HTML for rich formatting.
+  - name: --set-template-content-file
+    shorthand: null
+    type: string
+    description: Replace template body content with the contents of a file (relative path only). Mutually exclusive with --set-template-content.
+  - name: --set-to
+    shorthand: null
+    type: string
+    description: Replace the To recipient list. Separate multiple addresses with commas. Pass --set-to="" to clear the list.
+  - name: --template-id
+    shorthand: null
+    type: string
+    description: Template ID to update. Required except when using --print-patch-template by itself.
+- name: +thread
+  summary: Use when querying a full mail conversation/thread by thread ID. Returns all messages in chronological order, including
+    replies and drafts, with body content and attachments metadata, including inline images.
+  description: Use when querying a full mail conversation/thread by thread ID. Returns all messages in chronological order,
+    including replies and drafts, with body content and attachments metadata, including inline images.
+  usage: lark-cli mail +thread [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +thread
+  - name: --html
+    shorthand: null
+    type: bool
+    description: Whether to return HTML body (false returns plain text only to save bandwidth)
+    default: 'true'
+  - name: --include-spam-trash
+    shorthand: null
+    type: bool
+    description: Also return messages from SPAM and TRASH folders (excluded by default)
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'email address (default: me)'
+    default: me
+  - name: --print-output-schema
+    shorthand: null
+    type: bool
+    description: Print output field reference (run this first to learn field names before parsing output)
+  - name: --thread-id
+    shorthand: null
+    type: string
+    description: Required. Email thread ID
+- name: +triage
+  summary: List mail summaries (date/from/subject/message_id). Use --query for full-text search, --filter for exact-match
+    conditions.
+  description: List mail summaries (date/from/subject/message_id). Use --query for full-text search, --filter for exact-match
+    conditions.
+  usage: lark-cli mail +triage [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --filter
+    shorthand: null
+    type: string
+    description: 'exact-match condition filter (JSON). Narrow results by folder, label, sender, recipient, etc. Run --print-filter-schema
+      to see all fields. Example: {"folder":"INBOX","from":["alice@example.com"]}'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: table | json | data (json/data output object with pagination fields) (table|json|data)'
+    default: table
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +triage
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --labels
+    shorthand: null
+    type: bool
+    description: include label IDs in output
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'email address (default: me)'
+    default: me
+  - name: --max
+    shorthand: null
+    type: int
+    description: maximum number of messages to fetch (1-400; auto-paginates internally)
+    default: '20'
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: alias for --max
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token from a previous response to fetch the next page
+  - name: --print-filter-schema
+    shorthand: null
+    type: bool
+    description: print --filter field reference and exit
+  - name: --query
+    shorthand: null
+    type: string
+    description: 'full-text keyword search across from/to/subject/body (max 50 chars). Example: "budget report"'
+- name: +watch
+  summary: Watch for incoming mail events via WebSocket (requires scope mail:event and bot event mail.user_mailbox.event.message_received_v1
+    added). Run with --print-output-schema to see per-format field reference before parsing output.
+  description: Watch for incoming mail events via WebSocket (requires scope mail:event and bot event mail.user_mailbox.event.message_received_v1
+    added). Run with --print-output-schema to see per-format field reference before parsing output.
+  usage: lark-cli mail +watch [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --folder-ids
+    shorthand: null
+    type: string
+    description: 'filter: folder IDs JSON array, e.g. ["INBOX","SENT"]'
+  - name: --folders
+    shorthand: null
+    type: string
+    description: 'filter: folder names JSON array, e.g. ["inbox","news"]'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'json: NDJSON stream with ok/data envelope; data: bare NDJSON stream (json|data)'
+    default: data
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +watch
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --label-ids
+    shorthand: null
+    type: string
+    description: 'filter: label IDs JSON array, e.g. ["FLAGGED","IMPORTANT"]'
+  - name: --labels
+    shorthand: null
+    type: string
+    description: 'filter: label names JSON array, e.g. ["important","team-label"]'
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'email address (default: me)'
+    default: me
+  - name: --msg-format
+    shorthand: null
+    type: string
+    description: 'message payload mode: metadata(headers + meta, for triage/notification) | minimal(IDs and state only, no
+      headers, for tracking read/folder changes) | plain_text_full(all metadata fields + full plain-text body) | event(raw
+      WebSocket event, no API call, for debug) | full(full message including HTML body and attachments)'
+    default: metadata
+  - name: --output-dir
+    shorthand: null
+    type: string
+    description: Write each message as a JSON file (always full payload, regardless of --msg-format)
+  - name: --print-output-schema
+    shorthand: null
+    type: bool
+    description: Print output field reference per --msg-format (run this first to learn field names before parsing output)

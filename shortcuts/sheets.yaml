@@ -1,0 +1,3484 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: sheets
+description: Spreadsheet operations
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +batch-update
+  summary: Execute a batch of write shortcuts as a single atomic request (rolls back on failure by default).
+  description: Execute a batch of write shortcuts as a single atomic request (rolls back on failure by default).
+  usage: lark-cli sheets +batch-update [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --continue-on-error
+    shorthand: null
+    type: bool
+    description: Continue with remaining operations when a sub-operation fails; default false (abort on first failure)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +batch-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --operations
+    shorthand: null
+    type: string
+    description: 'JSON array: [{"shortcut":"+xxx-yyy","input":{...}}, ...]. shortcut uses CLI names; input is that shortcut''s
+      flag set — it includes the per-operation sheet locator (sheet_id or sheet_name) but not the spreadsheet token/url (pass
+      that once at the top level via --url/--spreadsheet-token; +batch-update has no top-level --sheet-id). input keys are
+      the shortcut''s flags flattened into JSON (e.g. "range":"A11:B12"), not another nested layer. For basic flags use lark-cli
+      sheets <shortcut> --help; for composite JSON flags use --print-schema --flag-name <flag>. Do not pass an explicit operation
+      field. Strict transaction by default, pass --continue-on-error for soft batch; no nesting; executed serially. (supports
+      @file, - reads stdin (one flag per call; use @file for others))'
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+  - name: --spreadsheet-token
+    shorthand: null
+    type: string
+    description: Spreadsheet locator (independent from per-operation sheet locator)
+  - name: --url
+    shorthand: null
+    type: string
+    description: Spreadsheet locator (independent from per-operation sheet locator)
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +cells-batch-clear
+  summary: Clear content/formats across many sheet-prefixed ranges in one atomic batch (irreversible).
+  description: Clear content/formats across many sheet-prefixed ranges in one atomic batch (irreversible).
+  usage: lark-cli sheets +cells-batch-clear [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cells-batch-clear
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --scope
+    shorthand: null
+    type: content
+    description: 'Clear scope: content (default, values only) / `formats` (formats only) / `all` (values and formats) (content|formats|all)'
+    default: content
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +cells-batch-set-style
+  summary: Apply one style block to many sheet-prefixed ranges in one atomic batch.
+  description: Apply one style block to many sheet-prefixed ranges in one atomic batch.
+  usage: lark-cli sheets +cells-batch-set-style [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --border-styles
+    shorthand: null
+    type: string
+    description: Border config JSON (same shape as in +cells-set-style) (supports @file, - reads stdin (one flag per call;
+      use @file for others))
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --font-family
+    shorthand: null
+    type: Arial
+    description: Font family name (e.g. Arial, `Microsoft YaHei`)
+  - name: --font-line
+    shorthand: null
+    type: string
+    description: Font line style (none|underline|line-through)
+  - name: --font-size
+    shorthand: null
+    type: float
+    description: Font size in px (e.g. 10, 12, 14)
+  - name: --font-style
+    shorthand: null
+    type: string
+    description: Font style (normal|italic)
+  - name: --font-weight
+    shorthand: null
+    type: string
+    description: Font weight (normal|bold)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cells-batch-set-style
+  - name: --horizontal-alignment
+    shorthand: null
+    type: string
+    description: Horizontal alignment (left|center|right)
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+  - name: --vertical-alignment
+    shorthand: null
+    type: string
+    description: Vertical alignment (top|middle|bottom)
+  - name: --word-wrap
+    shorthand: null
+    type: string
+    description: Word-wrap strategy (overflow|auto-wrap|word-clip)
+- name: +cells-clear
+  summary: Clear cell content, formats, or both within a range (irreversible).
+  description: Clear cell content, formats, or both within a range (irreversible).
+  usage: lark-cli sheets +cells-clear [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cells-clear
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --range
+    shorthand: null
+    type: string
+    description: Range to clear (A1 notation)
+  - name: --scope
+    shorthand: null
+    type: content
+    description: 'Clear scope: content (default, values only) / `formats` (formats only) / `all` (values and formats) (content|formats|all)'
+    default: content
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +cells-get
+  summary: Read one or more cell ranges with values, formulas, and optional styles / comments / data validation.
+  description: Read one or more cell ranges with values, formulas, and optional styles / comments / data validation.
+  usage: lark-cli sheets +cells-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cells-get
+  - name: --include
+    shorthand: null
+    type: strings
+    description: Comma-separated info categories to include (value|formula|style|comment|data_validation)
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --max-chars
+    shorthand: null
+    type: int
+    description: Max output chars per call; default 500000 (safety cap). Large reads are usually better redirected to a file;
+      only lower it (e.g. 25000) when you want results inline without triggering file offload, paging via has_more
+    default: '500000'
+  - name: --skip-hidden
+    shorthand: null
+    type: 'false'
+    description: Skip hidden rows and columns; default false
+- name: +cells-merge
+  summary: Merge cells in a range.
+  description: Merge cells in a range.
+  usage: lark-cli sheets +cells-merge [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cells-merge
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --range
+    shorthand: null
+    type: string
+    description: Range to merge / unmerge (A1 notation)
+- name: +cells-replace
+  summary: Find and replace text in a spreadsheet (case / regex / whole-cell / formula-text controls).
+  description: Find and replace text in a spreadsheet (case / regex / whole-cell / formula-text controls).
+  usage: lark-cli sheets +cells-replace [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --find
+    shorthand: null
+    type: string
+    description: Text to find for replacement
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cells-replace
+  - name: --include-formulas
+    shorthand: null
+    type: bool
+    description: Also replace within formula text
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --match-case
+    shorthand: null
+    type: bool
+    description: Case-sensitive match
+  - name: --match-entire-cell
+    shorthand: null
+    type: bool
+    description: Match the entire cell content
+  - name: --range
+    shorthand: null
+    type: string
+    description: Replace range (A1 notation); whole sheet when omitted
+- name: +cells-search
+  summary: Find cells matching --find in a spreadsheet (case / regex / whole-cell / formula-text controls).
+  description: Find cells matching --find in a spreadsheet (case / regex / whole-cell / formula-text controls).
+  usage: lark-cli sheets +cells-search [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cells-search
+  - name: --include-formulas
+    shorthand: null
+    type: bool
+    description: Also search within formula text
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --match-case
+    shorthand: null
+    type: bool
+    description: Case-sensitive match
+  - name: --match-entire-cell
+    shorthand: null
+    type: bool
+    description: Match the entire cell content
+  - name: --offset
+    shorthand: null
+    type: int
+    description: Skip the first N matches (for pagination); default 0
+  - name: --range
+    shorthand: null
+    type: string
+    description: Search range (A1 notation); whole sheet when omitted
+- name: +cells-set
+  summary: Write values / formulas / styles / comments / data validation / embed-image to a cell range.
+  description: Write values / formulas / styles / comments / data validation / embed-image to a cell range.
+  usage: lark-cli sheets +cells-set [flags]
+  risk: write
+  flags:
+  - name: --allow-overwrite
+    shorthand: null
+    type: bool
+    description: Allow overwriting non-empty cells (default true); set false to error if any target cell is non-empty
+    default: 'true'
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --copy-to-range
+    shorthand: null
+    type: string
+    description: 'Copy-to range (A1 notation): replicate what --cells wrote into --range (values/formulas/styles, per the
+      fields actually passed) to this range; formula refs auto-shift (C2=B2 -> C3=B3). Write a one-row/one-block template
+      then fill a whole column/area. Supports full rows ''3:6'', full columns ''C:E'', to-col-end ''D3:D'', to-row-end ''D3:3'',
+      and comma-separated multiple targets like ''C1:D2,E5:F6''.'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cells-set
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+  - name: --range
+    shorthand: null
+    type: string
+    description: Write range (A1 notation)
+- name: +cells-set-image
+  summary: Embed a local image into a single cell (uploads via drive, then set_cell_range with rich_text embed-image).
+  description: Embed a local image into a single cell (uploads via drive, then set_cell_range with rich_text embed-image).
+  usage: lark-cli sheets +cells-set-image [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cells-set-image
+  - name: --image
+    shorthand: null
+    type: string
+    description: Local image path (PNG / JPEG / JPG / GIF / BMP / JFIF / EXIF / TIFF / BPG / HEIC)
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --range
+    shorthand: null
+    type: A1
+    description: Target cell (A1 notation; must be a single cell, e.g. A1; start and end must be identical)
+- name: +cells-set-style
+  summary: Apply style flags to every cell in a range (values / formulas untouched).
+  description: Apply style flags to every cell in a range (values / formulas untouched).
+  usage: lark-cli sheets +cells-set-style [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --font-family
+    shorthand: null
+    type: Arial
+    description: Font family name (e.g. Arial, `Microsoft YaHei`)
+  - name: --font-line
+    shorthand: null
+    type: string
+    description: Font line style (none|underline|line-through)
+  - name: --font-size
+    shorthand: null
+    type: float
+    description: Font size in px (e.g. 10, 12, 14)
+  - name: --font-style
+    shorthand: null
+    type: string
+    description: Font style (normal|italic)
+  - name: --font-weight
+    shorthand: null
+    type: string
+    description: Font weight (normal|bold)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cells-set-style
+  - name: --horizontal-alignment
+    shorthand: null
+    type: string
+    description: Horizontal alignment (left|center|right)
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+  - name: --vertical-alignment
+    shorthand: null
+    type: string
+    description: Vertical alignment (top|middle|bottom)
+  - name: --word-wrap
+    shorthand: null
+    type: string
+    description: Word-wrap strategy (overflow|auto-wrap|word-clip)
+- name: +cells-unmerge
+  summary: Unmerge cells in a range.
+  description: Unmerge cells in a range.
+  usage: lark-cli sheets +cells-unmerge [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cells-unmerge
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --range
+    shorthand: null
+    type: string
+    description: Range to merge / unmerge (A1 notation)
+- name: +changeset-get
+  summary: Fetch the raw changeset (edit actions) between two versions, to review whether an AI edit fulfilled the request.
+  description: Fetch the raw changeset (edit actions) between two versions, to review whether an AI edit fulfilled the request.
+  usage: lark-cli sheets +changeset-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --end-revision
+    shorthand: null
+    type: int
+    description: End version (CS revision); defaults to the latest revision. Gap (end-start+1) must be <= 20
+    default: '-1'
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +changeset-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --start-revision
+    shorthand: null
+    type: int
+    description: Start version (CS revision); the before baseline for review (must be >= 1)
+- name: +chart-create
+  summary: Create a chart object via the manage_*_object tool.
+  description: Create a chart object via the manage_*_object tool.
+  usage: lark-cli sheets +chart-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +chart-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+  - name: --properties
+    shorthand: null
+    type: position
+    description: 'Full chart config JSON. Top-level keys: position / `offset` / `size` / `snapshot` (no top-level `data`,
+      no extra nested `properties`); chart data config lives under `snapshot.data` (`refs` / `headerMode` / `dim1` / `dim2`);
+      must include at least one of `snapshot.data.dim1.serie.index` or `dim2.series[].index`, otherwise the server rejects
+      it. Deeply nested — run `--print-schema --flag-name properties` for the full structure. (supports @file, - reads stdin
+      (one flag per call; use @file for others))'
+- name: +chart-delete
+  summary: Delete a chart object (irreversible).
+  description: Delete a chart object (irreversible).
+  usage: lark-cli sheets +chart-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --chart-id
+    shorthand: null
+    type: string
+    description: Target chart reference_id
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +chart-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +chart-list
+  summary: List charts on a sheet, optionally filtered to a single chart_id.
+  description: List charts on a sheet, optionally filtered to a single chart_id.
+  usage: lark-cli sheets +chart-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --chart-id
+    shorthand: null
+    type: string
+    description: Filter to a single chart reference_id
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +chart-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +chart-update
+  summary: Update an existing chart object (read-modify-write; consult --list first).
+  description: Update an existing chart object (read-modify-write; consult --list first).
+  usage: lark-cli sheets +chart-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --chart-id
+    shorthand: null
+    type: string
+    description: Target chart reference_id
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +chart-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+- name: +cols-resize
+  summary: 'Resize columns in pixels (NOT Excel char units): --range + --width <px> for one uniform width, --widths ''{"A":100,"C:E":120}''
+    for per-column widths in one atomic call, or --type standard to reset (--range is column letters like "A:E" or "C"; no
+    auto for cols).'
+  description: 'Resize columns in pixels (NOT Excel char units): --range + --width <px> for one uniform width, --widths ''{"A":100,"C:E":120}''
+    for per-column widths in one atomic call, or --type standard to reset (--range is column letters like "A:E" or "C"; no
+    auto for cols).'
+  usage: lark-cli sheets +cols-resize [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cols-resize
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+  - name: --type
+    shorthand: null
+    type: pixel
+    description: 'Sizing mode: pixel (requires `--width`) / `standard` (reset to default column width). Passing --width alone
+      is the common form; `--type standard` cannot be combined with `--width` (pixel|standard)'
+- name: +cond-format-create
+  summary: Create a cond-format object via the manage_*_object tool.
+  description: Create a cond-format object via the manage_*_object tool.
+  usage: lark-cli sheets +cond-format-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cond-format-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+  - name: --properties
+    shorthand: null
+    type: style
+    description: 'Rule config JSON: style (required, applied on match), `attrs?` (rule-type-dependent params), `has_ref?`.
+      `rule_type` and `ranges` are separate flags (supports @file, - reads stdin (one flag per call; use @file for others))'
+- name: +cond-format-delete
+  summary: Delete a cond-format object (irreversible).
+  description: Delete a cond-format object (irreversible).
+  usage: lark-cli sheets +cond-format-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cond-format-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --rule-id
+    shorthand: null
+    type: string
+    description: Target rule id
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +cond-format-list
+  summary: List conditional format rules on a sheet, optionally filtered to a single rule.
+  description: List conditional format rules on a sheet, optionally filtered to a single rule.
+  usage: lark-cli sheets +cond-format-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cond-format-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --rule-id
+    shorthand: null
+    type: string
+    description: Filter by rule id
+- name: +cond-format-update
+  summary: Update an existing cond-format object (read-modify-write; consult --list first).
+  description: Update an existing cond-format object (read-modify-write; consult --list first).
+  usage: lark-cli sheets +cond-format-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cond-format-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+  - name: --rule-id
+    shorthand: null
+    type: string
+    description: Target rule id
+- name: +csv-get
+  summary: Read a range as CSV (with [row=N] line prefix by default).
+  description: Read a range as CSV (with [row=N] line prefix by default).
+  usage: lark-cli sheets +csv-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +csv-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --max-chars
+    shorthand: null
+    type: int
+    description: Max output chars per call; default 500000 (safety cap). Large reads are usually better redirected to a file;
+      only lower it (e.g. 25000) when you want results inline without triggering file offload, paging via has_more
+    default: '500000'
+  - name: --skip-hidden
+    shorthand: null
+    type: 'false'
+    description: Skip hidden rows and columns; default false
+- name: +csv-put
+  summary: 'Paste RFC-4180 CSV into a sheet at --start-cell (values or formulas: a leading = is evaluated as a formula; no
+    styles / comments; auto-expands sheet if needed).'
+  description: 'Paste RFC-4180 CSV into a sheet at --start-cell (values or formulas: a leading = is evaluated as a formula;
+    no styles / comments; auto-expands sheet if needed).'
+  usage: lark-cli sheets +csv-put [flags]
+  risk: write
+  flags:
+  - name: --allow-overwrite
+    shorthand: null
+    type: bool
+    description: Allow overwriting (default true); set false to error if any target cell is non-empty
+    default: 'true'
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --csv
+    shorthand: null
+    type: string
+    description: RFC 4180 CSV text; values or formulas (a leading = is evaluated as a formula); no styles / comments / images
+      (use +cells-set for those). (supports @file, - reads stdin (one flag per call; use @file for others))
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +csv-put
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --start-cell
+    shorthand: null
+    type: A1
+    description: Top-left A1 anchor (e.g. A1, `B5`; no sheet prefix — use `--sheet-id` / `--sheet-name` to select the sheet);
+      must be a single cell, range notation not accepted; the bottom-right is inferred from CSV row/column counts
+    default: A1
+- name: +dim-delete
+  summary: Delete rows or columns (irreversible).
+  description: Delete rows or columns (irreversible).
+  usage: lark-cli sheets +dim-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dim-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +dim-freeze
+  summary: Freeze the first N rows or columns; --count 0 unfreezes the chosen dimension.
+  description: Freeze the first N rows or columns; --count 0 unfreezes the chosen dimension.
+  usage: lark-cli sheets +dim-freeze [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --count
+    shorthand: null
+    type: int
+    description: Freeze the first N rows/columns; pass 0 to unfreeze
+  - name: --dimension
+    shorthand: null
+    type: string
+    description: Dimension (row or column) (row|column)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dim-freeze
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +dim-group
+  summary: Group rows or columns into an outline (collapsible).
+  description: Group rows or columns into an outline (collapsible).
+  usage: lark-cli sheets +dim-group [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --depth
+    shorthand: null
+    type: int
+    description: Nesting level for grouping; default 1
+    default: '1'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --group-state
+    shorthand: null
+    type: string
+    description: Initial group expand state (expand|fold)
+    default: expand
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dim-group
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +dim-hide
+  summary: Hide rows or columns within a range.
+  description: Hide rows or columns within a range.
+  usage: lark-cli sheets +dim-hide [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dim-hide
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +dim-insert
+  summary: Insert blank rows or columns at a given position.
+  description: Insert blank rows or columns at a given position.
+  usage: lark-cli sheets +dim-insert [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --count
+    shorthand: null
+    type: int
+    description: Number of rows/columns to insert (must be > 0)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dim-insert
+  - name: --inherit-style
+    shorthand: null
+    type: before
+    description: 'Style inheritance for the new row/column: before (from preceding) / `after` (from following) / `none` (default)
+      (before|after|none)'
+    default: none
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --position
+    shorthand: null
+    type: '3'
+    description: Insert position (1-based row number like 3 or column letter like `C`); new rows/columns are inserted *before*
+      this position
+- name: +dim-move
+  summary: Move a contiguous block of rows or columns to a new position (re-numbers neighbors).
+  description: Move a contiguous block of rows or columns to a new position (re-numbers neighbors).
+  usage: lark-cli sheets +dim-move [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dim-move
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --target
+    shorthand: null
+    type: '12'
+    description: Destination position (the moved rows/columns are placed *before* this position); rows use 1-based row number
+      like 12, columns use column letter like `H`. Must match the dimension of --source-range
+- name: +dim-ungroup
+  summary: Remove a row/column outline group.
+  description: Remove a row/column outline group.
+  usage: lark-cli sheets +dim-ungroup [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --depth
+    shorthand: null
+    type: int
+    description: Group nesting level to ungroup; default 1 (1 = outermost, larger = deeper)
+    default: '1'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dim-ungroup
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +dim-unhide
+  summary: Unhide rows or columns within a range.
+  description: Unhide rows or columns within a range.
+  usage: lark-cli sheets +dim-unhide [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dim-unhide
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +dropdown-delete
+  summary: Clear dropdowns from many sheet-prefixed ranges atomically (irreversible).
+  description: Clear dropdowns from many sheet-prefixed ranges atomically (irreversible).
+  usage: lark-cli sheets +dropdown-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dropdown-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +dropdown-get
+  summary: Read the dropdown / data-validation configuration on a range.
+  description: Read the dropdown / data-validation configuration on a range.
+  usage: lark-cli sheets +dropdown-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dropdown-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +dropdown-set
+  summary: Attach a dropdown / data-validation list to every cell in --range.
+  description: Attach a dropdown / data-validation list to every cell in --range.
+  usage: lark-cli sheets +dropdown-set [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dropdown-set
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --multiple
+    shorthand: null
+    type: 'false'
+    description: Enable multi-select; default false
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+- name: +dropdown-update
+  summary: Install or replace one dropdown across many sheet-prefixed ranges atomically.
+  description: Install or replace one dropdown across many sheet-prefixed ranges atomically.
+  usage: lark-cli sheets +dropdown-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dropdown-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --multiple
+    shorthand: null
+    type: bool
+    description: Enable multi-select
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+- name: +filter-create
+  summary: Create a sheet-level filter (one per sheet).
+  description: Create a sheet-level filter (one per sheet).
+  usage: lark-cli sheets +filter-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +filter-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+  - name: --properties
+    shorthand: null
+    type: rules
+    description: 'Filter rule JSON: rules (per-column rule array), `filtered_columns?` (active column index hint). The flag
+      is optional overall — if provided, `rules` must be non-empty; if omitted, an empty filter is created on `--range` (no
+      column conditions). `range` is a separate flag (do not duplicate inside this JSON) (supports @file, - reads stdin (one
+      flag per call; use @file for others))'
+- name: +filter-delete
+  summary: Remove the sheet-level filter (irreversible).
+  description: Remove the sheet-level filter (irreversible).
+  usage: lark-cli sheets +filter-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +filter-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +filter-list
+  summary: List active sheet-level filters across the workbook (or one sheet).
+  description: List active sheet-level filters across the workbook (or one sheet).
+  usage: lark-cli sheets +filter-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +filter-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +filter-update
+  summary: Update the sheet-level filter (overwrite rules + range).
+  description: Update the sheet-level filter (overwrite rules + range).
+  usage: lark-cli sheets +filter-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +filter-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+  - name: --properties
+    shorthand: null
+    type: rules
+    description: 'Filter rule JSON: rules and `filtered_columns?`; update overwrites the entire rule set (pass `rules: []`
+      to clear). `range` is a separate flag (supports @file, - reads stdin (one flag per call; use @file for others))'
+- name: +filter-view-create
+  summary: Create a filter-view object via the manage_*_object tool.
+  description: Create a filter-view object via the manage_*_object tool.
+  usage: lark-cli sheets +filter-view-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +filter-view-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+- name: +filter-view-delete
+  summary: Delete a filter-view object (irreversible).
+  description: Delete a filter-view object (irreversible).
+  usage: lark-cli sheets +filter-view-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +filter-view-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: Target filter-view reference_id
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +filter-view-list
+  summary: List filter views on a sheet, optionally filtered to a single view_id.
+  description: List filter views on a sheet, optionally filtered to a single view_id.
+  usage: lark-cli sheets +filter-view-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +filter-view-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: Filter by filter-view reference_id (returns the matching single view)
+- name: +filter-view-update
+  summary: Update an existing filter-view object (read-modify-write; consult --list first).
+  description: Update an existing filter-view object (read-modify-write; consult --list first).
+  usage: lark-cli sheets +filter-view-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +filter-view-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+  - name: --view-id
+    shorthand: null
+    type: string
+    description: Target filter-view reference_id
+- name: +float-image-create
+  summary: Create a floating image (from a local --image path, or an existing --image-token / --image-uri).
+  description: Create a floating image (from a local --image path, or an existing --image-token / --image-uri).
+  usage: lark-cli sheets +float-image-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +float-image-create
+  - name: --image
+    shorthand: null
+    type: string
+    description: Local image path; the CLI uploads it as a sheet_image and uses the returned file_token (XOR with --image-token
+      / --image-uri)
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --position-col
+    shorthand: null
+    type: A
+    description: Column anchor of the image's top-left corner (column letter, e.g. A / `B`)
+  - name: --position-row
+    shorthand: null
+    type: int
+    description: Row anchor of the image's top-left corner (0-based)
+  - name: --size-height
+    shorthand: null
+    type: int
+    description: Image height in pixels
+  - name: --size-width
+    shorthand: null
+    type: int
+    description: Image width in pixels
+  - name: --z-index
+    shorthand: null
+    type: int
+    description: Image z-index controlling stacking order
+- name: +float-image-delete
+  summary: Delete a float-image object (irreversible).
+  description: Delete a float-image object (irreversible).
+  usage: lark-cli sheets +float-image-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --float-image-id
+    shorthand: null
+    type: string
+    description: Target float image id
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +float-image-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +float-image-list
+  summary: List floating images on a sheet, optionally filtered to a single float_image_id.
+  description: List floating images on a sheet, optionally filtered to a single float_image_id.
+  usage: lark-cli sheets +float-image-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --float-image-id
+    shorthand: null
+    type: string
+    description: Filter by id; lists all float images on the sheet when omitted
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +float-image-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +float-image-update
+  summary: Update an existing floating image (target by --float-image-id; provide the full set of flat flags).
+  description: Update an existing floating image (target by --float-image-id; provide the full set of flat flags).
+  usage: lark-cli sheets +float-image-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --float-image-id
+    shorthand: null
+    type: string
+    description: Target float image id
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +float-image-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --position-col
+    shorthand: null
+    type: A
+    description: Column anchor of the image's top-left corner (column letter, e.g. A / `B`)
+  - name: --position-row
+    shorthand: null
+    type: int
+    description: Row anchor of the image's top-left corner (0-based)
+  - name: --size-height
+    shorthand: null
+    type: int
+    description: Image height in pixels
+  - name: --size-width
+    shorthand: null
+    type: int
+    description: Image width in pixels
+  - name: --z-index
+    shorthand: null
+    type: int
+    description: Image z-index controlling stacking order
+- name: +formula-verify
+  summary: Scan formulas / cell errors and return a recalc.py-shaped status report (success / errors_found / partial).
+  description: Scan formulas / cell errors and return a recalc.py-shaped status report (success / errors_found / partial).
+  usage: lark-cli sheets +formula-verify [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --exit-on-error
+    shorthand: null
+    type: bool
+    description: When status=errors_found, exit non-zero. Useful for CI gate after batch formula writes.
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +formula-verify
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --max-locations
+    shorthand: null
+    type: int
+    description: Max locations / samples per error type; default 20.
+    default: '20'
+  - name: --sheet-id
+    shorthand: null
+    type: strings
+    description: Sheet reference_id(s); repeat or comma-separate to scan multiple sheets. Omit to scan all visible sheets.
+  - name: --sheet-name
+    shorthand: null
+    type: strings
+    description: Sheet name(s); repeat or comma-separate to scan multiple sheets. Omit to scan all visible sheets.
+- name: +history-list
+  summary: List a spreadsheet's edit history versions (history_version_id, create_time, action, all_block_revision).
+  description: List a spreadsheet's edit history versions (history_version_id, create_time, action, all_block_revision).
+  usage: lark-cli sheets +history-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --end-version
+    shorthand: null
+    type: int
+    description: Max version to query (descending pagination). Omit on the first call; pass the previous response's next_end_version
+      on subsequent pages.
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +history-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --spreadsheet-token
+    shorthand: null
+    type: string
+    description: Spreadsheet locator (raw spreadsheet token).
+  - name: --url
+    shorthand: null
+    type: string
+    description: Spreadsheet locator (a /sheets/ or /wiki/ URL).
+- name: +history-revert
+  summary: Revert a spreadsheet to a given history version (asynchronous; poll with +history-revert-status).
+  description: Revert a spreadsheet to a given history version (asynchronous; poll with +history-revert-status).
+  usage: lark-cli sheets +history-revert [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +history-revert
+  - name: --history-version-id
+    shorthand: null
+    type: string
+    description: History version to revert to (from +history-list).
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --spreadsheet-token
+    shorthand: null
+    type: string
+    description: Spreadsheet locator
+  - name: --url
+    shorthand: null
+    type: string
+    description: Spreadsheet locator
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +history-revert-status
+  summary: Poll the status of a history revert (in-progress / success / failure).
+  description: Poll the status of a history revert (in-progress / success / failure).
+  usage: lark-cli sheets +history-revert-status [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +history-revert-status
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --spreadsheet-token
+    shorthand: null
+    type: string
+    description: Spreadsheet locator
+  - name: --transaction-id
+    shorthand: null
+    type: string
+    description: Async revert transaction id (from +history-revert).
+  - name: --url
+    shorthand: null
+    type: string
+    description: Spreadsheet locator
+- name: +pivot-create
+  summary: Create a pivot object via the manage_*_object tool.
+  description: Create a pivot object via the manage_*_object tool.
+  usage: lark-cli sheets +pivot-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +pivot-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+  - name: --properties
+    shorthand: null
+    type: string
+    description: 'JSON: {"rows":[...],"columns":[...],"values":[...],"filters":[...],"show_row_grand_total":true,"show_col_grand_total":true}
+      (data source goes through --source; do not put source here) (supports @file, - reads stdin (one flag per call; use @file
+      for others))'
+  - name: --range
+    shorthand: null
+    type: F1
+    description: Pivot table top-left placement (single A1 value, e.g. F1; create only), maps to `properties.range`; placed
+      at the top-left of the target sub-sheet (a newly created one by default) when omitted. It and `--target-position` both
+      express placement but map to different wire fields — avoid passing conflicting values for both.
+  - name: --target-position
+    shorthand: null
+    type: A1
+    description: Top-left cell within the target sub-sheet (A1 notation, e.g. A1); maps to the top-level `target_position`,
+      default `A1` (not sent when the value is A1). It and `--range` both express placement but map to different wire fields
+      — avoid passing conflicting values for both.
+    default: A1
+- name: +pivot-delete
+  summary: Delete a pivot object (irreversible).
+  description: Delete a pivot object (irreversible).
+  usage: lark-cli sheets +pivot-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +pivot-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --pivot-table-id
+    shorthand: null
+    type: string
+    description: Target pivot table id
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +pivot-list
+  summary: List pivot tables on a sheet, optionally filtered to a single pivot_table_id.
+  description: List pivot tables on a sheet, optionally filtered to a single pivot_table_id.
+  usage: lark-cli sheets +pivot-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +pivot-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --pivot-table-id
+    shorthand: null
+    type: string
+    description: Filter by id
+- name: +pivot-update
+  summary: Update an existing pivot object (read-modify-write; consult --list first).
+  description: Update an existing pivot object (read-modify-write; consult --list first).
+  usage: lark-cli sheets +pivot-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +pivot-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --pivot-table-id
+    shorthand: null
+    type: string
+    description: Target pivot table id
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+- name: +range-copy
+  summary: Copy a range to a new location (--paste-type controls what is copied).
+  description: Copy a range to a new location (--paste-type controls what is copied).
+  usage: lark-cli sheets +range-copy [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +range-copy
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --source-range
+    shorthand: null
+    type: string
+    description: Source A1 range
+  - name: --target-range
+    shorthand: null
+    type: string
+    description: Destination A1 range (anchor cell is enough; size inferred from the source)
+  - name: --target-sheet-id
+    shorthand: null
+    type: string
+    description: Destination sub-sheet id; defaults to the same sheet as the source
+- name: +range-fill
+  summary: Autofill a target range from a source template (copy / linear / growth / date series).
+  description: Autofill a target range from a source template (copy / linear / growth / date series).
+  usage: lark-cli sheets +range-fill [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +range-fill
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --series-type
+    shorthand: null
+    type: string
+    description: Fill series type (auto|linear|growth|date|copy)
+    default: auto
+  - name: --source-range
+    shorthand: null
+    type: string
+    description: Fill template range (seed cells for the series)
+  - name: --target-range
+    shorthand: null
+    type: string
+    description: Destination fill range (A1 notation)
+- name: +range-move
+  summary: Cut a range and paste it at a new location (optionally cross-sheet).
+  description: Cut a range and paste it at a new location (optionally cross-sheet).
+  usage: lark-cli sheets +range-move [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +range-move
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --source-range
+    shorthand: null
+    type: string
+    description: Source A1 range
+  - name: --target-range
+    shorthand: null
+    type: string
+    description: Destination A1 range (anchor cell is enough; size inferred from the source)
+  - name: --target-sheet-id
+    shorthand: null
+    type: string
+    description: Destination sub-sheet id; defaults to the same sheet as the source
+- name: +range-sort
+  summary: Sort rows within a range by one or more columns.
+  description: Sort rows within a range by one or more columns.
+  usage: lark-cli sheets +range-sort [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --has-header
+    shorthand: null
+    type: 'false'
+    description: Treat the first row as a header and exclude from sort; default false
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +range-sort
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+- name: +revision-get
+  summary: Get the spreadsheet's current document revision (version number).
+  description: Get the spreadsheet's current document revision (version number).
+  usage: lark-cli sheets +revision-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +revision-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --spreadsheet-token
+    shorthand: null
+    type: string
+    description: Spreadsheet locator
+  - name: --url
+    shorthand: null
+    type: string
+    description: Spreadsheet locator
+- name: +rows-resize
+  summary: 'Resize rows in pixels: --range + --height <px> for one uniform height, --heights ''{"1":50,"2:20":30,"21":"auto"}''
+    for per-row heights in one atomic call, or --type standard/auto (--range is 1-based A1 like "2:10" or "5").'
+  description: 'Resize rows in pixels: --range + --height <px> for one uniform height, --heights ''{"1":50,"2:20":30,"21":"auto"}''
+    for per-row heights in one atomic call, or --type standard/auto (--range is 1-based A1 like "2:10" or "5").'
+  usage: lark-cli sheets +rows-resize [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +rows-resize
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+  - name: --type
+    shorthand: null
+    type: pixel
+    description: 'Sizing mode: pixel (requires `--height`) / `standard` (reset to default row height) / `auto` (fit content).
+      Passing --height alone is the common form; `--type standard` / `--type auto` cannot be combined with `--height` (pixel|standard|auto)'
+- name: +sheet-copy
+  summary: Duplicate a sub-sheet, optionally renaming and repositioning the copy.
+  description: Duplicate a sub-sheet, optionally renaming and repositioning the copy.
+  usage: lark-cli sheets +sheet-copy [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +sheet-copy
+  - name: --index
+    shorthand: null
+    type: int
+    description: Insert position for the copy (0-based); appended to the end when omitted
+    default: '-1'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --title
+    shorthand: null
+    type: string
+    description: Copy title; auto-generated by the server when omitted
+- name: +sheet-create
+  summary: Create a new sub-sheet with an optional position and initial dimensions.
+  description: Create a new sub-sheet with an optional position and initial dimensions.
+  usage: lark-cli sheets +sheet-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --col-count
+    shorthand: null
+    type: int
+    description: Initial column count (default 20, max 200)
+    default: '20'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +sheet-create
+  - name: --index
+    shorthand: null
+    type: int
+    description: Insert position (0-based); appended to the end when omitted
+    default: '-1'
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --row-count
+    shorthand: null
+    type: int
+    description: Initial row count (default 200, max 50000)
+    default: '200'
+  - name: --title
+    shorthand: null
+    type: string
+    description: New sheet title
+  - name: --type
+    shorthand: null
+    type: string
+    description: 'New sub-sheet type: sheet (spreadsheet); default sheet. (sheet)'
+    default: sheet
+- name: +sheet-delete
+  summary: Delete a sub-sheet (irreversible).
+  description: Delete a sub-sheet (irreversible).
+  usage: lark-cli sheets +sheet-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +sheet-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +sheet-hide
+  summary: Hide a sub-sheet from the tabs bar.
+  description: Hide a sub-sheet from the tabs bar.
+  usage: lark-cli sheets +sheet-hide [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +sheet-hide
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +sheet-hide-gridline
+  summary: Hide gridlines on a sub-sheet.
+  description: Hide gridlines on a sub-sheet.
+  usage: lark-cli sheets +sheet-hide-gridline [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +sheet-hide-gridline
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +sheet-info
+  summary: 'Get a sub-sheet''s layout metadata: row heights, column widths, hidden rows/cols, merges, groups, freeze.'
+  description: 'Get a sub-sheet''s layout metadata: row heights, column widths, hidden rows/cols, merges, groups, freeze.'
+  usage: lark-cli sheets +sheet-info [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +sheet-info
+  - name: --include
+    shorthand: null
+    type: strings
+    description: Comma-separated structure info categories to return (merges|row_heights|col_widths|hidden_rows|hidden_cols|groups|frozen)
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --range
+    shorthand: null
+    type: string
+    description: Limit structure info to this A1 range; whole sheet when omitted
+- name: +sheet-move
+  summary: Move a sub-sheet to a new position.
+  description: Move a sub-sheet to a new position.
+  usage: lark-cli sheets +sheet-move [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +sheet-move
+  - name: --index
+    shorthand: null
+    type: int
+    description: Target position (0-based)
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +sheet-rename
+  summary: Rename a sub-sheet.
+  description: Rename a sub-sheet.
+  usage: lark-cli sheets +sheet-rename [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +sheet-rename
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --title
+    shorthand: null
+    type: string
+    description: New title
+- name: +sheet-set-tab-color
+  summary: Set or clear the tab color of a sub-sheet.
+  description: Set or clear the tab color of a sub-sheet.
+  usage: lark-cli sheets +sheet-set-tab-color [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +sheet-set-tab-color
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +sheet-show-gridline
+  summary: Show gridlines on a sub-sheet.
+  description: Show gridlines on a sub-sheet.
+  usage: lark-cli sheets +sheet-show-gridline [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +sheet-show-gridline
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +sheet-unhide
+  summary: Restore a hidden sub-sheet.
+  description: Restore a hidden sub-sheet.
+  usage: lark-cli sheets +sheet-unhide [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +sheet-unhide
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +sparkline-create
+  summary: Create a sparkline object via the manage_*_object tool.
+  description: Create a sparkline object via the manage_*_object tool.
+  usage: lark-cli sheets +sparkline-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +sparkline-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+- name: +sparkline-delete
+  summary: Delete a sparkline object (irreversible).
+  description: Delete a sparkline object (irreversible).
+  usage: lark-cli sheets +sparkline-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --group-id
+    shorthand: null
+    type: string
+    description: Target group id
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +sparkline-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +sparkline-list
+  summary: List sparkline groups on a sheet, optionally filtered by group_id.
+  description: List sparkline groups on a sheet, optionally filtered by group_id.
+  usage: lark-cli sheets +sparkline-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --group-id
+    shorthand: null
+    type: string
+    description: Filter by group_id
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +sparkline-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +sparkline-update
+  summary: Update an existing sparkline object (read-modify-write; consult --list first).
+  description: Update an existing sparkline object (read-modify-write; consult --list first).
+  usage: lark-cli sheets +sparkline-update [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --group-id
+    shorthand: null
+    type: string
+    description: Target group id
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +sparkline-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+- name: +table-get
+  summary: Read sheets back into the typed table protocol (mirror of +table-put); column types are inferred from number_format
+    so the output feeds straight to +table-put or a DataFrame.
+  description: Read sheets back into the typed table protocol (mirror of +table-put); column types are inferred from number_format
+    so the output feeds straight to +table-put or a DataFrame.
+  usage: lark-cli sheets +table-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +table-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --no-header
+    shorthand: null
+    type: bool
+    description: Treat the first row as data instead of a header (columns get positional names col1, col2, ...)
+  - name: --range
+    shorthand: null
+    type: string
+    description: A1 range to read; omit to read each sheet's full used range (spans internal blank rows/columns, not just
+      the A1 current region)
+  - name: --sheet-id
+    shorthand: null
+    type: string
+    description: Read only this sheet (by id); omit to read all sheets
+  - name: --sheet-name
+    shorthand: null
+    type: string
+    description: Read only this sheet (by name); omit to read all sheets
+- name: +table-put
+  summary: Write a typed table (columns with types + rows) into an existing spreadsheet; numbers and dates stay type-faithful.
+  description: Write a typed table (columns with types + rows) into an existing spreadsheet; numbers and dates stay type-faithful.
+  usage: lark-cli sheets +table-put [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +table-put
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+- name: +workbook-create
+  summary: Create a new spreadsheet, optionally pre-filled with untyped --values or typed --sheets (type-faithful one-step
+    create + write).
+  description: Create a new spreadsheet, optionally pre-filled with untyped --values or typed --sheets (type-faithful one-step
+    create + write).
+  usage: lark-cli sheets +workbook-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --folder-token
+    shorthand: null
+    type: string
+    description: Target folder token; placed at the drive root when omitted
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +workbook-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+  - name: --title
+    shorthand: null
+    type: string
+    description: Spreadsheet title
+- name: +workbook-export
+  summary: Export a spreadsheet to xlsx or a single sheet to csv (async + poll + optional download).
+  description: Export a spreadsheet to xlsx or a single sheet to csv (async + poll + optional download).
+  usage: lark-cli sheets +workbook-export [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-extension
+    shorthand: null
+    type: csv
+    description: Export file format; csv mode requires `--sheet-id` (xlsx|csv)
+    default: xlsx
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +workbook-export
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +workbook-import
+  summary: Import a local xlsx/xls/csv file as a new spreadsheet (async + poll). Reuses the drive import core with type fixed
+    to sheet.
+  description: Import a local xlsx/xls/csv file as a new spreadsheet (async + poll). Reuses the drive import core with type
+    fixed to sheet.
+  usage: lark-cli sheets +workbook-import [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file
+    shorthand: null
+    type: string
+    description: Local file path (.xlsx / .xls / .csv)
+  - name: --folder-token
+    shorthand: null
+    type: string
+    description: Target folder token; imported to the cloud drive root when omitted
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +workbook-import
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: Imported spreadsheet name; defaults to the local file name without its extension
+- name: +workbook-info
+  summary: List sub-sheets of a spreadsheet with metadata (sheet_id, title, dimensions, freeze, hidden).
+  description: List sub-sheets of a spreadsheet with metadata (sheet_id, title, dimensions, freeze, hidden).
+  usage: lark-cli sheets +workbook-info [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +workbook-info
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --spreadsheet-token
+    shorthand: null
+    type: string
+    description: Spreadsheet locator
+  - name: --url
+    shorthand: null
+    type: string
+    description: Spreadsheet locator

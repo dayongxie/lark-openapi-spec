@@ -1,0 +1,315 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: vc
+description: Video conference and meeting note management
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +detail
+  summary: Get meeting details including note_id and minute_token by meeting IDs
+  description: Get meeting details including note_id and minute_token by meeting IDs
+  usage: lark-cli vc +detail [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +detail
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --meeting-ids
+    shorthand: null
+    type: string
+    description: meeting IDs, comma-separated for batch
+- name: +meeting-events
+  summary: List meeting events by meeting ID
+  description: List meeting events by meeting ID
+  usage: lark-cli vc +meeting-events [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --end
+    shorthand: null
+    type: string
+    description: time upper bound (ISO 8601, YYYY-MM-DD, or Unix seconds)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +meeting-events
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --meeting-id
+    shorthand: null
+    type: string
+    description: meeting ID to query
+  - name: --page-all
+    shorthand: null
+    type: bool
+    description: automatically paginate through all available pages
+  - name: --page-size
+    shorthand: null
+    type: string
+    description: page size, 20-100 (default 20)
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: page token for the next page
+  - name: --start
+    shorthand: null
+    type: string
+    description: time lower bound (ISO 8601, YYYY-MM-DD, or Unix seconds)
+- name: +meeting-join
+  summary: Join a meeting by meeting number (bot join)
+  description: Join a meeting by meeting number (bot join)
+  usage: lark-cli vc +meeting-join [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --call-id
+    shorthand: null
+    type: string
+    description: correlation id forwarded from invite event
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +meeting-join
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --meeting-number
+    shorthand: null
+    type: string
+    description: meeting number to join
+  - name: --password
+    shorthand: null
+    type: string
+    description: meeting password (if required)
+- name: +meeting-leave
+  summary: Leave a meeting by meeting ID
+  description: Leave a meeting by meeting ID
+  usage: lark-cli vc +meeting-leave [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +meeting-leave
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --meeting-id
+    shorthand: null
+    type: string
+    description: meeting ID to leave
+- name: +meeting-list-active
+  summary: List active meetings for the current identity or target user
+  description: List active meetings for the current identity or target user
+  usage: lark-cli vc +meeting-list-active [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +meeting-list-active
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --user-id
+    shorthand: null
+    type: string
+    description: target user ID when using bot identity
+- name: +recording
+  summary: Query minute_token from meeting-ids or calendar-event-ids
+  description: Query minute_token from meeting-ids or calendar-event-ids
+  usage: lark-cli vc +recording [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --calendar-event-ids
+    shorthand: null
+    type: string
+    description: calendar event instance IDs, comma-separated for batch
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +recording
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --meeting-ids
+    shorthand: null
+    type: string
+    description: meeting IDs, comma-separated for batch
+- name: +search
+  summary: Search meeting records by keyword, time range, participant, organizer, or meeting room (requires at least one filter)
+  description: Search meeting records by keyword, time range, participant, organizer, or meeting room (requires at least one
+    filter)
+  usage: lark-cli vc +search [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --end
+    shorthand: null
+    type: string
+    description: end time (ISO 8601 or YYYY-MM-DD, e.g. 2026-03-25)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +search
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --organizer-ids
+    shorthand: null
+    type: string
+    description: organizer open_id list, comma-separated
+  - name: --page-size
+    shorthand: null
+    type: string
+    description: page size, 1-30 (default 15)
+    default: '15'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: page token for next page
+  - name: --participant-ids
+    shorthand: null
+    type: string
+    description: participant open_id list, comma-separated
+  - name: --query
+    shorthand: null
+    type: string
+    description: search keyword
+  - name: --room-ids
+    shorthand: null
+    type: string
+    description: room_id list, comma-separated
+  - name: --start
+    shorthand: null
+    type: string
+    description: start time (ISO 8601 or YYYY-MM-DD, e.g. 2026-03-24T00:00+08:00)

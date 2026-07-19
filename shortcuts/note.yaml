@@ -1,0 +1,42 @@
+# Generated from lark-cli help output — DO NOT EDIT BY HAND.
+domain: note
+description: Meeting note detail and unified transcript retrieval
+cli_version: 1.0.72
+extracted_at: '2026-07-19T00:08:23Z'
+note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
+shortcuts:
+- name: +detail
+  summary: Get note detail (display type, document tokens) by note_id
+  description: Get note detail (display type, document tokens) by note_id
+  usage: lark-cli note +detail [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +detail
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --note-id
+    shorthand: null
+    type: string
+    description: note ID
