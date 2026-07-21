@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+8f0c3f32
+  version: 1.0.0+54edd753
   x-lark-project: calendar
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -2201,6 +2201,10 @@ paths:
                   allOf:
                   - $ref: '#/components/schemas/EventCheckIn'
                   description: 日程签到设置，为空则不进行日程签到设置
+                description_rich:
+                  type: string
+                  description: 日程富文本描述
+                  example: desc
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -2651,6 +2655,10 @@ paths:
                                 tentative: 参与人回复待定
                                 decline: 参与人回复拒绝，或表示会议室预约失败
                                 removed: 参与人或会议室已经从日程中被移除
+                            description_rich:
+                              type: string
+                              description: 日程富文本描述
+                              example: desc
                           required:
                           - event_id
                           - start_time
@@ -3251,6 +3259,10 @@ paths:
                               tentative: 参与人回复待定
                               decline: 参与人回复拒绝，或表示会议室预约失败
                               removed: 参与人或会议室已经从日程中被移除
+                          description_rich:
+                            type: string
+                            description: 日程富文本描述
+                            example: desc
                         required:
                         - event_id
                         - start_time
@@ -3556,6 +3568,10 @@ paths:
                   allOf:
                   - $ref: '#/components/schemas/EventCheckIn'
                   description: 日程签到设置，为空则不进行日程签到设置
+                description_rich:
+                  type: string
+                  description: 日程富文本描述
+                  example: desc
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -3909,6 +3925,10 @@ paths:
                                 tentative: 参与人回复待定
                                 decline: 参与人回复拒绝，或表示会议室预约失败
                                 removed: 参与人或会议室已经从日程中被移除
+                            description_rich:
+                              type: string
+                              description: 日程富文本描述
+                              example: desc
                           required:
                           - event_id
                         description: 日程instance列表
@@ -4136,6 +4156,10 @@ paths:
                                   description: 地点坐标经度信息，对于国内的地点，采用GCJ-02标准，海外地点采用WGS84标准
                                   example: '121.49971771240234'
                               description: 日程地点
+                            description_rich:
+                              type: string
+                              description: 日程富文本描述
+                              example: desc
                           required:
                           - event_id
                         description: instances实例
@@ -4674,6 +4698,10 @@ paths:
                                 tentative: 参与人回复待定
                                 decline: 参与人回复拒绝，或表示会议室预约失败
                                 removed: 参与人或会议室已经从日程中被移除
+                            description_rich:
+                              type: string
+                              description: 日程富文本描述
+                              example: desc
                           required:
                           - event_id
                           - start_time
@@ -7431,6 +7459,10 @@ components:
             tentative: 参与人回复待定
             decline: 参与人回复拒绝，或表示会议室预约失败
             removed: 参与人或会议室已经从日程中被移除
+        description_rich:
+          type: string
+          description: 日程富文本描述
+          example: desc
       required:
       - event_id
       - start_time

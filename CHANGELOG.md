@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-07-21）
+
+新增 0 · 移除 0 · 定义变更 14（全量共 1627 个接口）
+
+### 定义变更
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/events`「创建日程」（calendar/v4/calendar.event/create）
+- `GET /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}`「获取日程」（calendar/v4/calendar.event/get）
+- `GET /open-apis/calendar/v4/calendars/{calendar_id}/events/instance_view`「查询日程视图」（calendar/v4/calendar.event/instance_view）
+- `GET /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}/instances`「获取重复日程实例」（calendar/v4/calendar.event/instances）
+- `GET /open-apis/calendar/v4/calendars/{calendar_id}/events`「获取日程列表」（calendar/v4/calendar.event/list）
+- `PATCH /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}`「更新日程」（calendar/v4/calendar.event/patch）
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/events/search`「搜索日程」（calendar/v4/calendar.event/search）
+- `POST /open-apis/corehr/v1/job_datas`「创建任职信息」（corehr/v1/job_data/create）
+- `GET /open-apis/corehr/v1/job_datas/{job_data_id}`「查询单个任职信息」（corehr/v1/job_data/get）
+- `GET /open-apis/corehr/v1/job_datas`「批量查询任职信息」（corehr/v1/job_data/list）
+- `PATCH /open-apis/corehr/v1/job_datas/{job_data_id}`「更新任职信息」（corehr/v1/job_data/patch）
+- `POST /open-apis/corehr/v2/persons`「创建个人信息」（corehr/v2/person/create）
+- `PATCH /open-apis/corehr/v2/persons/{person_id}`「更新个人信息」（corehr/v2/person/patch）
+- `POST /open-apis/spark/v1/directory/user/id_convert`「妙搭和飞书用户 ID 转换」（spark/v1/directory.user/id_convert）
+
 ## Go 源码轨道上线（2026-07-19）
 
 新增第三数据源：lark-cli 快捷命令的 **Go 源码实现**（`shortcuts/` 目录）。这些

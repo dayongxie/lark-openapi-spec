@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+6a43957f
+  version: 1.0.0+47750849
   x-lark-project: corehr
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -6459,6 +6459,10 @@ paths:
                   type: string
                   description: 试用期结束日期
                   example: '2006-01-02'
+                weekly_working_hours:
+                  type: integer
+                  description: 周工作时长
+                  example: '30'
                 direct_manager_id:
                   type: string
                   description: 实线主管
@@ -6486,6 +6490,10 @@ paths:
                         description: 分摊比例
                         example: '100'
                   description: 成本中心分摊信息
+                weekly_working_hours_v2:
+                  type: number
+                  description: 周工作时长 v2（支持两位小数）
+                  example: '37.5'
                 work_shift:
                   type: object
                   properties:
@@ -6522,6 +6530,10 @@ paths:
                   type: string
                   description: 通道 ID
                   example: '6890452208593372671'
+                work_calendar_id:
+                  type: string
+                  description: 工作日历 ID
+                  example: '6969087376740236087'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -6540,6 +6552,7 @@ paths:
       - corehr:employment.pathway:write
       - corehr:job_data.compensation_type:read
       - corehr:job_data.service_company:read
+      - corehr:job_data.work_calendar:read
       - corehr:job_data.work_shift:read
       - corehr:people_cli
       x-lark-error-mappings:
@@ -6961,6 +6974,10 @@ paths:
                                 - 可通过[【获取字段详情】](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)接口查询，查询参数如下：
                                   - object_api_name = "job_data"
                                   - custom_api_name = "job_data_reason"
+                            work_calendar_id:
+                              type: string
+                              description: 工作日历 ID
+                              example: '6969087376740236087'
                           required:
                           - employee_type_id
                           - primary_job_data
@@ -6991,6 +7008,7 @@ paths:
       - corehr:job_data.compensation_type:read
       - corehr:job_data.job_data_reason:read
       - corehr:job_data.service_company:read
+      - corehr:job_data.work_calendar:read
       - corehr:job_data.work_shift:read
       - corehr:people_cli
       x-lark-error-mappings:
@@ -7377,6 +7395,10 @@ paths:
                               - 可通过[【获取字段详情】](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom_field/get_by_param)接口查询，查询参数如下：
                                 - object_api_name = "job_data"
                                 - custom_api_name = "job_data_reason"
+                          work_calendar_id:
+                            type: string
+                            description: 工作日历 ID
+                            example: '6969087376740236087'
                         required:
                         - employee_type_id
                         - primary_job_data
@@ -7397,6 +7419,7 @@ paths:
       - corehr:job_data.compensation_type:read
       - corehr:job_data.job_data_reason:read
       - corehr:job_data.service_company:read
+      - corehr:job_data.work_calendar:read
       - corehr:job_data.work_shift:read
       - corehr:people_cli
       x-lark-error-mappings:
@@ -7572,6 +7595,10 @@ paths:
                   type: string
                   description: 试用期结束日期
                   example: '2006-01-02'
+                weekly_working_hours:
+                  type: integer
+                  description: 周工作时长
+                  example: '30'
                 direct_manager_id:
                   type: string
                   description: 实线主管
@@ -7599,6 +7626,10 @@ paths:
                         description: 分摊比例
                         example: '100'
                   description: 成本中心分摊信息
+                weekly_working_hours_v2:
+                  type: number
+                  description: 周工作时长 v2（支持两位小数）
+                  example: '37.5'
                 work_shift:
                   type: object
                   properties:
@@ -7631,6 +7662,10 @@ paths:
                   type: string
                   description: 通道 ID
                   example: '6890452208593372671'
+                work_calendar_id:
+                  type: string
+                  description: 工作日历 ID
+                  example: '6969087376740236087'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -7649,6 +7684,7 @@ paths:
       - corehr:employment.pathway:write
       - corehr:job_data.compensation_type:read
       - corehr:job_data.service_company:read
+      - corehr:job_data.work_calendar:read
       - corehr:job_data.work_shift:read
       - corehr:people_cli
       x-lark-error-mappings:
@@ -12069,7 +12105,7 @@ paths:
                           work_experience_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item19'
+                              $ref: '#/components/schemas/Item20'
                             description: 工作履历
                           education_list:
                             type: array
@@ -12084,7 +12120,7 @@ paths:
                           national_id_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item20'
+                              $ref: '#/components/schemas/Item21'
                             description: 证件号码
                           dependent_list:
                             type: array
@@ -12803,7 +12839,7 @@ paths:
                           work_experience_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item19'
+                              $ref: '#/components/schemas/Item20'
                             description: 工作履历
                           education_list:
                             type: array
@@ -12955,7 +12991,7 @@ paths:
                           national_id_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item20'
+                              $ref: '#/components/schemas/Item21'
                             description: 证件号码
                           dependent_list:
                             type: array
@@ -13035,7 +13071,7 @@ paths:
                                 national_id_list:
                                   type: array
                                   items:
-                                    $ref: '#/components/schemas/Item20'
+                                    $ref: '#/components/schemas/Item21'
                                   description: 证件号码
                                 spouses_working_status:
                                   type: object
@@ -13452,7 +13488,7 @@ paths:
                           work_experience_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item19'
+                              $ref: '#/components/schemas/Item20'
                             description: 工作履历
                           education_list:
                             type: array
@@ -13467,7 +13503,7 @@ paths:
                           national_id_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item20'
+                              $ref: '#/components/schemas/Item21'
                             description: 证件号码
                           dependent_list:
                             type: array
@@ -35376,6 +35412,11 @@ paths:
                             type: string
                             description: 国籍 ID，可通过【查询国籍信息】接口查询
                             example: '6862995757234914821'
+                          citizenship_status:
+                            type: array
+                            items:
+                              $ref: '#/components/schemas/Item17'
+                            description: 公民身份
                           race:
                             type: object
                             properties:
@@ -35443,7 +35484,7 @@ paths:
                           email_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item17'
+                              $ref: '#/components/schemas/Item18'
                             description: 邮箱列表
                           work_experience_list:
                             type: array
@@ -35857,6 +35898,11 @@ paths:
                             type: string
                             description: 国籍 ID，可通过【查询国籍信息】接口查询
                             example: '6862995757234914821'
+                          citizenship_status:
+                            type: array
+                            items:
+                              $ref: '#/components/schemas/Item17'
+                            description: 公民身份
                           race:
                             type: object
                             properties:
@@ -35924,7 +35970,7 @@ paths:
                           email_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item17'
+                              $ref: '#/components/schemas/Item18'
                             description: 邮箱列表
                           work_experience_list:
                             type: array
@@ -37507,7 +37553,7 @@ paths:
                     emergency_contact_list:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item21'
+                        $ref: '#/components/schemas/Item22'
                       description: 紧急联系人
                     address_list:
                       type: array
@@ -38530,7 +38576,7 @@ paths:
                     emergency_contact_list:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item21'
+                        $ref: '#/components/schemas/Item22'
                       description: 紧急联系人
                     address_list:
                       type: array
@@ -47399,7 +47445,7 @@ components:
         email_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item17'
+            $ref: '#/components/schemas/Item18'
           description: 邮箱列表
         work_experience_list:
           type: array
@@ -47769,7 +47815,7 @@ components:
         email_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item17'
+            $ref: '#/components/schemas/Item18'
           description: 邮箱列表
         work_experience_list:
           type: array
@@ -48274,6 +48320,20 @@ components:
           type: string
           description: 国籍 ID，可通过【查询国籍信息】接口查询
           example: '6862995757234914821'
+        citizenship_status_list:
+          type: array
+          items:
+            type: object
+            properties:
+              country_region:
+                type: string
+                description: 国家/地区ID
+                example: '7324333990030034476'
+              citizenship_status:
+                type: string
+                description: 公民身份类型
+                example: 公民
+          description: 公民身份列表
         race:
           type: object
           properties:
@@ -50192,7 +50252,7 @@ components:
         work_experience_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item19'
+            $ref: '#/components/schemas/Item20'
           description: 工作履历
         education_list:
           type: array
@@ -50207,7 +50267,7 @@ components:
         national_id_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item20'
+            $ref: '#/components/schemas/Item21'
           description: 证件号码
         dependent_list:
           type: array
@@ -50728,12 +50788,12 @@ components:
         citizenship_statuses:
           type: array
           items:
-            $ref: '#/components/schemas/Item22'
+            $ref: '#/components/schemas/Item17'
           description: 居民身份列表
         emails:
           type: array
           items:
-            $ref: '#/components/schemas/Item17'
+            $ref: '#/components/schemas/Item18'
           description: 邮箱列表
       required:
       - relationship
@@ -50929,12 +50989,12 @@ components:
         citizenship_statuses:
           type: array
           items:
-            $ref: '#/components/schemas/Item22'
+            $ref: '#/components/schemas/Item17'
           description: 居民身份列表
         emails:
           type: array
           items:
-            $ref: '#/components/schemas/Item17'
+            $ref: '#/components/schemas/Item18'
           description: 邮箱列表
       required:
       - relationship
@@ -51126,12 +51186,12 @@ components:
         citizenship_statuses:
           type: array
           items:
-            $ref: '#/components/schemas/Item22'
+            $ref: '#/components/schemas/Item17'
           description: 居民身份列表
         emails:
           type: array
           items:
-            $ref: '#/components/schemas/Item17'
+            $ref: '#/components/schemas/Item18'
           description: 邮箱列表
       required:
       - relationship
@@ -52525,7 +52585,7 @@ components:
         national_id_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item20'
+            $ref: '#/components/schemas/Item21'
           description: 证件号码
         spouses_working_status:
           type: object
@@ -53441,7 +53501,7 @@ components:
         citizenship_statuses:
           type: array
           items:
-            $ref: '#/components/schemas/Item22'
+            $ref: '#/components/schemas/Item17'
           description: 居民身份列表
         emails:
           type: array
@@ -53731,7 +53791,7 @@ components:
         national_id_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item20'
+            $ref: '#/components/schemas/Item21'
           description: 证件号码
         spouses_working_status:
           type: object
@@ -55488,6 +55548,60 @@ components:
       required:
       - country_region_id
       description: 注册地址详细信息
+    Item17:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 公民身份id
+          example: '6891251722631890445'
+        country_region_id:
+          type: string
+          description: 国家/地区id
+          example: '6891251722631890445'
+        active:
+          type: boolean
+          description: 是否启用
+          example: 'true'
+        name:
+          type: array
+          items:
+            type: object
+            properties:
+              lang:
+                type: string
+                description: 语言编码（IETF BCP 47）
+                example: zh-CN
+              value:
+                type: string
+                description: 文本内容
+                example: 中文示例
+            required:
+            - lang
+            - value
+          description: 名称
+        citizenship_status:
+          type: array
+          items:
+            type: object
+            properties:
+              lang:
+                type: string
+                description: 语言编码（IETF BCP 47）
+                example: zh-CN
+              value:
+                type: string
+                description: 文本内容
+                example: 中文示例
+            required:
+            - lang
+            - value
+          description: 公民身份
+        view_order:
+          type: string
+          description: 排序
+          example: '1'
+          format: int64
     Schema7:
       type: object
       properties:
@@ -55497,7 +55611,7 @@ components:
           type: string
         data:
           $ref: '#/components/schemas/Data5'
-    Item17:
+    Item18:
       type: object
       properties:
         email:
@@ -55547,7 +55661,7 @@ components:
         field_variable_values:
           type: array
           items:
-            $ref: '#/components/schemas/Item18'
+            $ref: '#/components/schemas/Item19'
           description: 表单数据
         process_id:
           type: string
@@ -55679,7 +55793,7 @@ components:
           description: 自定义字段
       required:
       - country_region_id
-    Item18:
+    Item19:
       type: object
       properties:
         variable_api_name:
@@ -55718,7 +55832,7 @@ components:
           type: string
         data:
           $ref: '#/components/schemas/Data6'
-    Item19:
+    Item20:
       type: object
       properties:
         company_organization:
@@ -55814,7 +55928,7 @@ components:
             - field_name
             - value
           description: 自定义字段
-    Item20:
+    Item21:
       type: object
       properties:
         national_id_type_id:
@@ -56226,7 +56340,7 @@ components:
       - is_primary
       - is_public
       description: 注册地址
-    Item21:
+    Item22:
       type: object
       properties:
         legal_name:
@@ -56688,6 +56802,15 @@ components:
           description: 文件类型字段值，可通过主数据的文件下载Open API下载
       description: 变量值
       example: aa
+    Schema10:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data9'
     NationalIdType:
       type: object
       properties:
@@ -56796,69 +56919,6 @@ components:
       - validation_rule
       - code
       - identification_type
-    Item22:
-      type: object
-      properties:
-        id:
-          type: string
-          description: 公民身份id
-          example: '6891251722631890445'
-        country_region_id:
-          type: string
-          description: 国家/地区id
-          example: '6891251722631890445'
-        active:
-          type: boolean
-          description: 是否启用
-          example: 'true'
-        name:
-          type: array
-          items:
-            type: object
-            properties:
-              lang:
-                type: string
-                description: 语言编码（IETF BCP 47）
-                example: zh-CN
-              value:
-                type: string
-                description: 文本内容
-                example: 中文示例
-            required:
-            - lang
-            - value
-          description: 名称
-        citizenship_status:
-          type: array
-          items:
-            type: object
-            properties:
-              lang:
-                type: string
-                description: 语言编码（IETF BCP 47）
-                example: zh-CN
-              value:
-                type: string
-                description: 文本内容
-                example: 中文示例
-            required:
-            - lang
-            - value
-          description: 公民身份
-        view_order:
-          type: string
-          description: 排序
-          example: '1'
-          format: int64
-    Schema10:
-      type: object
-      properties:
-        code:
-          type: integer
-        msg:
-          type: string
-        data:
-          $ref: '#/components/schemas/Data9'
     Data8:
       type: object
       properties:
@@ -57321,6 +57381,10 @@ components:
           type: string
           description: 通道 ID
           example: '6890452208593372671'
+        work_calendar_id:
+          type: string
+          description: 工作日历 ID
+          example: '6969087376740236087'
       required:
       - employee_type_id
       - primary_job_data

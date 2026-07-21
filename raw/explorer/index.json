@@ -3847,7 +3847,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "01ff443829f1c91b024af0fb9df655694a31ebf640889c6e8c4cb8f49fedf8c8",
+  "sha256": "d3cf843c839dd9742c1a5bbb2c5aa182d2fcc4003ae31af8f9ce20e924946914",
   "title": "创建日程",
   "version": "v4"
  },
@@ -3871,7 +3871,7 @@
   "httpMethod": "GET",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "3cc75aa38115b92f66a3fc1ebcef99f87f7650e24dedb7b13138ffb3f55d704f",
+  "sha256": "394ac6dbf4a3005d300820b1c39f37e23058d4aa6beda40565242d76e1a7a630",
   "title": "获取日程",
   "version": "v4"
  },
@@ -3883,7 +3883,7 @@
   "httpMethod": "GET",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "7c55ea68059f8118ce3d52c0b31bc42a1a91f979b50ea8bf9607a488e3f85e2e",
+  "sha256": "d2dbc68c6d615f84a54871f3ed6b16aa97daa4576c3d5e0c517249abf716f779",
   "title": "查询日程视图",
   "version": "v4"
  },
@@ -3895,7 +3895,7 @@
   "httpMethod": "GET",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "a88b0b0ff9996bc75d27ddeec3ae14d4f38f3860bd585d373783e8f5127745f8",
+  "sha256": "7861068b43a3b28edf811bb209177170f0fd0d53b7f62d742e5354e8dea5c8ee",
   "title": "获取重复日程实例",
   "version": "v4"
  },
@@ -3907,7 +3907,7 @@
   "httpMethod": "GET",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "24f2a535da03bf2eb80bbbc2295ea5c43717dd543aca0a9dfbab9e2224dd3b6f",
+  "sha256": "31199fb3e234429dcec4b2316c4250eed623ba9ff0c1bbf4e9d6da0b8db86d46",
   "title": "获取日程列表",
   "version": "v4"
  },
@@ -3919,7 +3919,7 @@
   "httpMethod": "PATCH",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "3fca441524e5466cbc26031fb5909ad9893f5e6e7948b688a3b9e305f3b96efd",
+  "sha256": "8bbf6c059d0450c1448c3f11212e87bd7638b13ca9336f9214051b859ed09a6d",
   "title": "更新日程",
   "version": "v4"
  },
@@ -3943,7 +3943,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "98b619038aa0322b22e045e4a255c42f1de21520f66895f9148fbe8fb06142e3",
+  "sha256": "5888c9204ed5af81dcfa89f42558ed90f651491e808c1f5ea0671954f0c42cca",
   "title": "搜索日程",
   "version": "v4"
  },
@@ -6019,7 +6019,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "job_data",
-  "sha256": "a75c241cce8f97f55be765f3c554dd020ca20b8af1da136a7d3fad9ae0d58e3c",
+  "sha256": "4da59a28c178137c3d1af9480d0f7841ff6f330080ab7bf7cd5bc3ae8a354f1a",
   "title": "创建任职信息",
   "version": "v1"
  },
@@ -6043,7 +6043,7 @@
   "httpMethod": "GET",
   "project": "corehr",
   "resource": "job_data",
-  "sha256": "52c8de31ade4450d55e3254a6fe6bd7c3d50ad5a8e60f0b12de9d7989588ccd1",
+  "sha256": "af7272da863288faa1e045869021ae5c1f6fc9572062b848f0b5087a24ea7237",
   "title": "查询单个任职信息",
   "version": "v1"
  },
@@ -6055,7 +6055,7 @@
   "httpMethod": "GET",
   "project": "corehr",
   "resource": "job_data",
-  "sha256": "fe0c5e7c50878e9c18a6de932b5a4e705edccaa6d858a3c487fc52f9e2f94cbd",
+  "sha256": "a5c8489c404991bf54aed5feabd8bfbe4ef68a4b93ea62d92358a4d9e4687044",
   "title": "批量查询任职信息",
   "version": "v1"
  },
@@ -6067,7 +6067,7 @@
   "httpMethod": "PATCH",
   "project": "corehr",
   "resource": "job_data",
-  "sha256": "55dadc22d0b1034fa7b675cbf5df0431531cc533cf664cdadecc270afa412ec6",
+  "sha256": "c4bcf2527c1f42e983e8d1d2eb1c75f9c15d34233f2a3ff7b335550dfc9ea6c9",
   "title": "更新任职信息",
   "version": "v1"
  },
@@ -8059,7 +8059,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "person",
-  "sha256": "5619995a328fb66cc33698a4a2f2afbdc9f6ffe43e2e75cd2d45ae063b6567a3",
+  "sha256": "2914ccd682ddc48af96d9e425833ad2ecf988c888e5480dd8ad50c1dfd555645",
   "title": "创建个人信息",
   "version": "v2"
  },
@@ -8071,7 +8071,7 @@
   "httpMethod": "PATCH",
   "project": "corehr",
   "resource": "person",
-  "sha256": "ebcfa28122452567649e3afe68cfa71dbc9b827541e76ef7bbcf9dfd45d70514",
+  "sha256": "071224ea7bfeaa03642526330e0955257575f8ad325f945a21abcbc4805a03ea",
   "title": "更新个人信息",
   "version": "v2"
  },
@@ -17419,7 +17419,7 @@
   "httpMethod": "POST",
   "project": "spark",
   "resource": "directory.user",
-  "sha256": "e822ea49be84f0c6398c19426f4f52b9915dd518fb635d475dcaec6c74ed3dba",
+  "sha256": "4da1ebda78390e5e42f03df9ef532b06298b21ac1b221641f318beca04e1951e",
   "title": "妙搭和飞书用户 ID 转换",
   "version": "v1"
  },

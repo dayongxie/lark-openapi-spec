@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: docs
 description: Document and content operations
-cli_version: 1.0.72
-extracted_at: '2026-07-19T00:08:23Z'
+cli_version: 1.0.73
+extracted_at: '2026-07-21T04:33:51Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +create
@@ -65,8 +65,10 @@ shortcuts:
   - name: --reference-map
     shorthand: null
     type: reference_map
-    description: 结构化 reference_map JSON object；必须与 `--content` 一起使用。普通写入优先把结构写在正文里；`--reference-map` 主要用于保留或回放已有 `document.reference_map`。支持直接
-      JSON、`@reference-map.json`（相对路径）或 `-` 从 stdin 读取。 (supports @file, - reads stdin (one flag per call; use @file for others))
+    description: Structured reference_map JSON object; must be used with `--content`. Prefer embedding structure directly
+      in the document body for ordinary writes; use `--reference-map` primarily to preserve or replay an existing `document.reference_map`.
+      Accepts inline JSON, `@reference-map.json` (relative path), or `-` to read from stdin. (supports @file, - reads stdin
+      (one flag per call; use @file for others))
   - name: --title
     shorthand: null
     type: string
@@ -139,7 +141,7 @@ shortcuts:
     shorthand: null
     type: string
     description: keyword scope query; supports case-insensitive substring/regex fallback and '|' OR branches, e.g. foo|bar
-      or bug|缺陷
+      or bug|error
   - name: --lang
     shorthand: null
     type: string
@@ -752,8 +754,10 @@ shortcuts:
   - name: --reference-map
     shorthand: null
     type: reference_map
-    description: 结构化 reference_map JSON object；必须与 `--content` 一起使用。普通写入优先把结构写在正文里；`--reference-map` 主要用于保留或回放已有 `document.reference_map`。支持直接
-      JSON、`@reference-map.json`（相对路径）或 `-` 从 stdin 读取。 (supports @file, - reads stdin (one flag per call; use @file for others))
+    description: Structured reference_map JSON object; must be used with `--content`. Prefer embedding structure directly
+      in the document body for ordinary writes; use `--reference-map` primarily to preserve or replay an existing `document.reference_map`.
+      Accepts inline JSON, `@reference-map.json` (relative path), or `-` to read from stdin. (supports @file, - reads stdin
+      (one flag per call; use @file for others))
   - name: --revision-id
     shorthand: null
     type: int
