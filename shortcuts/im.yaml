@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: im
 description: Message and group chat management
-cli_version: 1.0.73
-extracted_at: '2026-07-21T04:33:51Z'
+cli_version: 1.0.74
+extracted_at: '2026-07-22T04:35:56Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +chat-create
@@ -813,11 +813,11 @@ shortcuts:
   - name: --page-all
     shorthand: null
     type: bool
-    description: automatically paginate through all pages
+    description: automatically paginate, capped by --page-limit
   - name: --page-limit
     shorthand: null
     type: int
-    description: max pages when auto-pagination is enabled (default 20, max 1000)
+    description: max pages with --page-all (default 20; configurable range 1-1000)
     default: '20'
   - name: --page-size
     shorthand: null

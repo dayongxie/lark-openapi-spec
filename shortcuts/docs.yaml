@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: docs
 description: Document and content operations
-cli_version: 1.0.73
-extracted_at: '2026-07-21T04:33:51Z'
+cli_version: 1.0.74
+extracted_at: '2026-07-22T04:35:56Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +create

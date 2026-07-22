@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+47750849
+  version: 1.0.0+c4aed4ab
   x-lark-project: corehr
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -22130,6 +22130,7 @@ paths:
       x-lark-scopes:
       - corehr:cost_center:read
       - corehr:people_cli
+      - corehr:cost_center:tree
       x-lark-field-scopes:
       - contact:user.employee_id:readonly
       x-lark-error-mappings:
@@ -24195,6 +24196,7 @@ paths:
       x-lark-scopes:
       - corehr:department.organize:read
       - corehr:people_cli
+      - corehr:department:parents
       x-lark-error-mappings:
       - code: 1160102
         httpCode: 400
@@ -24922,6 +24924,7 @@ paths:
       - corehr:department:read
       - corehr:department:write
       - corehr:people_cli
+      - corehr:department:search
       x-lark-field-scopes:
       - contact:user.employee_id:readonly
       - corehr:department.cost_center_id:read
@@ -25045,6 +25048,7 @@ paths:
       x-lark-scopes:
       - corehr:department.organize:read
       - corehr:people_cli
+      - corehr:department:tree
       x-lark-error-mappings:
       - code: 1160102
         httpCode: 400
@@ -45857,6 +45861,20 @@ paths:
         description: 飞书开放平台官方文档
         url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/workforce_plan/list
       parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: 查询数量
+        example: '1'
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: 跳过数量
+        example: '1'
       - name: get_all_plan
         in: query
         required: false

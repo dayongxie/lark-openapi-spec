@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: base
 description: Table, field, record, view, dashboard, workflow, form, role & permission management
-cli_version: 1.0.73
-extracted_at: '2026-07-21T04:33:51Z'
+cli_version: 1.0.74
+extracted_at: '2026-07-22T04:35:56Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +advperm-disable
@@ -1861,8 +1861,8 @@ shortcuts:
     type: string
     description: table ID (must start with tbl if ID) or name
 - name: +record-batch-update
-  summary: Batch update records
-  description: Batch update records
+  summary: Batch update records with record-specific fields
+  description: Batch update records with record-specific fields
   usage: lark-cli base +record-batch-update [flags]
   risk: write
   flags:
@@ -1894,8 +1894,7 @@ shortcuts:
   - name: --json
     shorthand: null
     type: string
-    description: batch update JSON object, e.g. {"record_id_list":["rec_xxx"],"patch":{"Status":"Done"}}; same patch applies
-      to all records
+    description: batch update JSON object; update_records maps each record ID to its field map, e.g. {"update_records":{"recA":{"Status":["Done"]},"recB":{"Score":20}}}
   - name: --table-id
     shorthand: null
     type: string

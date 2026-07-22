@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-07-22）
+
+新增 0 · 移除 0 · 定义变更 7（全量共 1627 个接口）
+
+### 定义变更
+- `POST /open-apis/corehr/v2/cost_centers/tree`「查询指定生效日期的成本中心架构树」（corehr/v2/cost_center/tree）
+- `POST /open-apis/corehr/v2/departments/parents`「获取父部门信息」（corehr/v2/department/parents）
+- `POST /open-apis/corehr/v2/departments/search`「搜索部门信息」（corehr/v2/department/search）
+- `POST /open-apis/corehr/v2/departments/tree`「查询指定生效日期的部门架构树」（corehr/v2/department/tree）
+- `GET /open-apis/corehr/v2/workforce_plans`「查询编制规划方案」（corehr/v2/workforce_plan/list）
+- `POST /open-apis/spark/v1/apps`「创建妙搭应用」（spark/v1/app/create）
+- `POST /open-apis/spark/v1/directory/user/id_convert`「妙搭和飞书用户 ID 转换」（spark/v1/directory.user/id_convert）
+
 ## explorer 全量轨道（2026-07-21）
 
 新增 0 · 移除 0 · 定义变更 14（全量共 1627 个接口）

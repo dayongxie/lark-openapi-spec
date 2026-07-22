@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: slides
 description: Create and manage presentations, read content, and add or remove slides
-cli_version: 1.0.73
-extracted_at: '2026-07-21T04:33:51Z'
+cli_version: 1.0.74
+extracted_at: '2026-07-22T04:35:56Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +create
@@ -45,6 +45,128 @@ shortcuts:
     shorthand: null
     type: string
     description: presentation title
+- name: +history-list
+  summary: List Slides presentation history versions
+  description: List Slides presentation history versions
+  usage: lark-cli slides +history-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +history-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: history entries to return, range 1-20
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token from the previous page's page_token
+  - name: --presentation
+    shorthand: null
+    type: string
+    description: xml_presentation_id, slides URL, or wiki URL that resolves to slides
+- name: +history-revert
+  summary: Revert a Slides presentation to a historical version
+  description: Revert a Slides presentation to a historical version
+  usage: lark-cli slides +history-revert [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +history-revert
+  - name: --history-version-id
+    shorthand: null
+    type: string
+    description: history_version_id from slides +history-list to revert to
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --presentation
+    shorthand: null
+    type: string
+    description: xml_presentation_id, slides URL, or wiki URL that resolves to slides
+- name: +history-revert-status
+  summary: Get Slides history revert task status
+  description: Get Slides history revert task status
+  usage: lark-cli slides +history-revert-status [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +history-revert-status
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --presentation
+    shorthand: null
+    type: string
+    description: xml_presentation_id, slides URL, or wiki URL that resolves to slides
+  - name: --task-id
+    shorthand: null
+    type: string
+    description: task_id returned by slides +history-revert
 - name: +media-upload
   summary: Upload a local image to a slides presentation and return the file_token (use as <img src=...>)
   description: Upload a local image to a slides presentation and return the file_token (use as <img src=...>)

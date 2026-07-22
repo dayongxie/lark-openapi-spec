@@ -7135,7 +7135,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "cost_center",
-  "sha256": "40c2d38cb06ffe6d00315cbe0afd19344397e4e519973ff3a66bc0758dab372e",
+  "sha256": "f1c97c90fc190c7b029aa1cd50089d24a89855943ede34954ef3e5e8effd20ff",
   "title": "查询指定生效日期的成本中心架构树",
   "version": "v2"
  },
@@ -7303,7 +7303,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "department",
-  "sha256": "053ab396de9aea0c06fab94bdfb704cd931031bd201307cebc20db345f9a73da",
+  "sha256": "a28136888f73779f0f35e25b00830effd28647223888122f4eb84b4c84198df9",
   "title": "获取父部门信息",
   "version": "v2"
  },
@@ -7375,7 +7375,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "department",
-  "sha256": "ce07b7e4415e94bfa5a38f462f88bc8066b2eed071c5b3ea1334b35c4f1ea10e",
+  "sha256": "91408916be502b49d66ce4fbc1da2ca7570c68b18b85d637cfb70e2c0c5899e4",
   "title": "搜索部门信息",
   "version": "v2"
  },
@@ -7387,7 +7387,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "department",
-  "sha256": "ba3cb83fbaf2a02acfa4fd58b85a9759bc84723109f9ba009df791152d1d8a57",
+  "sha256": "85a7d65ad1c3d8a22d5cd0532adcc8cbd27c8d7d8e02e509ddf419f7e952f148",
   "title": "查询指定生效日期的部门架构树",
   "version": "v2"
  },
@@ -8623,7 +8623,7 @@
   "httpMethod": "GET",
   "project": "corehr",
   "resource": "workforce_plan",
-  "sha256": "6c037ffb76a82f907bfc88fb68346c858fe867f2c2005a75b05783a8d26cf27a",
+  "sha256": "e5adc9e314ec7d930c62cefa9d6022c0bd73e283440efda48fb5e16114eab0ba",
   "title": "查询编制规划方案",
   "version": "v2"
  },
@@ -17323,7 +17323,7 @@
   "httpMethod": "POST",
   "project": "spark",
   "resource": "app",
-  "sha256": "3e021488665be0436aa34635e15b9eb2b252ab345936c518d444132816d9a33a",
+  "sha256": "9607a9221ba6001607b7b49552f1d3b500d3c160211af5dac9fca5b455f7bae1",
   "title": "创建妙搭应用",
   "version": "v1"
  },
@@ -17419,7 +17419,7 @@
   "httpMethod": "POST",
   "project": "spark",
   "resource": "directory.user",
-  "sha256": "4da1ebda78390e5e42f03df9ef532b06298b21ac1b221641f318beca04e1951e",
+  "sha256": "245ba2c307380a73378876966e942bd3674e753377f88689ec758d83dd400a38",
   "title": "妙搭和飞书用户 ID 转换",
   "version": "v1"
  },

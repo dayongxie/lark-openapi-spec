@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+b70775c0
+  version: 1.0.0+7b45caf1
   x-lark-project: spark
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -2057,7 +2057,7 @@ paths:
                     '11': 妙搭用户 ID 转飞书开放平台 Union ID
                     '20': 飞书开放平台 Open ID 转妙搭用户 ID
                     '21': 飞书开放平台 Union ID 转妙搭用户 ID
-                    '40': 妙搭用户 ID 转飞书开放平台 Lark ID
+                    '40': 妙搭用户 ID 转飞书用户 ID
                 ids:
                   type: array
                   items:
