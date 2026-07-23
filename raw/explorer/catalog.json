@@ -150,7 +150,7 @@
       },
       "id": "6995779366223724548",
       "name": "自建应用获取 tenant_access_token",
-      "orderMark": "10",
+      "orderMark": "9",
       "parentId": "7182025466500890652",
       "type": 1
      },
@@ -174,7 +174,7 @@
       },
       "id": "6995779366223822852",
       "name": "自建应用获取 app_access_token",
-      "orderMark": "9",
+      "orderMark": "8",
       "parentId": "7182025466500890652",
       "type": 1
      },

@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: im
 description: Message and group chat management
-cli_version: 1.0.74
-extracted_at: '2026-07-22T04:35:56Z'
+cli_version: 1.0.76
+extracted_at: '2026-07-23T04:35:11Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +chat-create

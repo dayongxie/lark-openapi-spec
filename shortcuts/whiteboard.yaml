@@ -1,14 +1,14 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: whiteboard
 description: Create and edit boards
-cli_version: 1.0.74
-extracted_at: '2026-07-22T04:35:56Z'
+cli_version: 1.0.76
+extracted_at: '2026-07-23T04:35:11Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
-- name: +query
-  summary: Query a existing whiteboard, export it as preview image or raw nodes structure.
-  description: Query a existing whiteboard, export it as preview image or raw nodes structure.
-  usage: lark-cli whiteboard +query [flags]
+- name: +export
+  summary: Export an existing whiteboard as preview image, SVG, source code or raw nodes structure.
+  description: Export an existing whiteboard as preview image, SVG, source code or raw nodes structure.
+  usage: lark-cli whiteboard +export [flags]
   risk: read
   flags:
   - name: --as
@@ -27,7 +27,7 @@ shortcuts:
   - name: --help
     shorthand: -h
     type: bool
-    description: help for +query
+    description: help for +export
   - name: --jq
     shorthand: -q
     type: string
@@ -39,12 +39,12 @@ shortcuts:
   - name: --output
     shorthand: null
     type: string
-    description: output directory. It is required when output as image. If not specified when --output_as svg/code/raw, it
-      will output directly.
-  - name: --output_as
+    description: output path. It is required when --output-type preview. If not specified when --output-type svg/source/raw,
+      it will output directly.
+  - name: --output-type
     shorthand: null
     type: string
-    description: 'output whiteboard as: image | svg | code | raw.'
+    description: 'output whiteboard as: preview | svg | source | raw. (preview|svg|source|raw)'
   - name: --overwrite
     shorthand: null
     type: bool

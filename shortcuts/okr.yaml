@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: okr
 description: Lark OKR objectives, key results, alignments, indicators, progresses
-cli_version: 1.0.74
-extracted_at: '2026-07-22T04:35:56Z'
+cli_version: 1.0.76
+extracted_at: '2026-07-23T04:35:11Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +batch-create
@@ -15,6 +15,10 @@ shortcuts:
     shorthand: null
     type: string
     description: 'identity type: user | bot'
+  - name: --category-id
+    shorthand: null
+    type: string
+    description: default objective category ID for objectives that do not set category_id
   - name: --cycle-id
     shorthand: null
     type: string
@@ -45,6 +49,73 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: 'user ID type: open_id | union_id | user_id'
+    default: open_id
+- name: +create
+  summary: Create a single OKR objective or key result
+  description: Create a single OKR objective or key result
+  usage: lark-cli okr +create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --category-id
+    shorthand: null
+    type: string
+    description: objective category ID; use only when classification is requested or the tenant requires categories
+  - name: --content
+    shorthand: null
+    type: string
+    description: 'content: semi-plain JSON {"text":"...","mention":["..."]} (simple) or ContentBlock JSON (richtext) (supports
+      @file, - reads stdin (one flag per call; use @file for others))'
+  - name: --cycle-id
+    shorthand: null
+    type: string
+    description: OKR cycle ID (required for level=objective)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --level
+    shorthand: null
+    type: string
+    description: 'create level: objective | key-result (objective|key-result)'
+  - name: --notes
+    shorthand: null
+    type: string
+    description: 'objective notes: semi-plain JSON {"text":"...","mention":["..."]} (simple) or ContentBlock JSON (richtext)
+      (supports @file, - reads stdin (one flag per call; use @file for others))'
+  - name: --objective-id
+    shorthand: null
+    type: string
+    description: objective ID (required for level=key-result)
+  - name: --style
+    shorthand: null
+    type: string
+    description: 'input style for content: simple (semi-plain text JSON) | richtext (ContentBlock JSON) (simple|richtext)'
+    default: simple
   - name: --user-id-type
     shorthand: null
     type: string
@@ -121,10 +192,20 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size, range 1-100
+    default: '100'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token from previous response
   - name: --time-range
     shorthand: null
     type: string
-    description: specify time range. Use Format as YYYY-MM--YYYY-MM. leave empty to fetch all user cycles.
+    description: 'local post-filter applied after the requested page is fetched. Format: YYYY-MM--YYYY-MM. Leave empty to
+      keep the page unfiltered.'
   - name: --user-id
     shorthand: null
     type: string
@@ -435,6 +516,15 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size, range 1-100
+    default: '100'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token from previous response
   - name: --target-id
     shorthand: null
     type: string
