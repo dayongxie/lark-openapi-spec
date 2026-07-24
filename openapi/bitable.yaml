@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+01b63d2f
+  version: 1.0.0+cbabfdb7
   x-lark-project: bitable
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -1957,6 +1957,7 @@ paths:
                   - CreatedUser
                   - ModifiedUser
                   - AutoNumber
+                  - Signature
                   x-enum-descriptions:
                     Text: 多行文本
                     Email: 邮箱地址
@@ -1983,6 +1984,7 @@ paths:
                     CreatedUser: 创建人
                     ModifiedUser: 修改人
                     AutoNumber: 自动编号
+                    Signature: 签字
                   example: Progress
                 is_hidden:
                   type: boolean
@@ -2951,6 +2953,7 @@ paths:
                   - CreatedUser
                   - ModifiedUser
                   - AutoNumber
+                  - Signature
                   x-enum-descriptions:
                     Text: 多行文本
                     Email: 邮箱地址
@@ -2977,6 +2980,7 @@ paths:
                     CreatedUser: 创建人
                     ModifiedUser: 修改人
                     AutoNumber: 自动编号
+                    Signature: 签字
                   example: Progress
                 is_hidden:
                   type: boolean
@@ -10925,6 +10929,7 @@ components:
           - CreatedUser
           - ModifiedUser
           - AutoNumber
+          - Signature
           x-enum-descriptions:
             Text: 多行文本
             Email: 邮箱地址
@@ -10951,6 +10956,7 @@ components:
             CreatedUser: 创建人
             ModifiedUser: 修改人
             AutoNumber: 自动编号
+            Signature: 签字
           example: Progress
         is_hidden:
           type: boolean

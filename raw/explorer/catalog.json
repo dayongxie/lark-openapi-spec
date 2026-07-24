@@ -134,30 +134,6 @@
       "Score": 0,
       "apiSummary": {
        "apiIdentity": {
-        "apiName": "tenant_access_token_internal",
-        "project": "auth",
-        "resource": "auth",
-        "version": "v3"
-       },
-       "apiKind": 1,
-       "apiPath": "/open-apis/auth/v3/tenant_access_token/internal",
-       "debuggable": true,
-       "fullPath": "/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token_internal",
-       "httpMethod": "POST",
-       "supportAppTypes": [
-        "custom"
-       ]
-      },
-      "id": "6995779366223724548",
-      "name": "自建应用获取 tenant_access_token",
-      "orderMark": "9",
-      "parentId": "7182025466500890652",
-      "type": 1
-     },
-     {
-      "Score": 0,
-      "apiSummary": {
-       "apiIdentity": {
         "apiName": "app_access_token_internal",
         "project": "auth",
         "resource": "auth",
@@ -174,7 +150,31 @@
       },
       "id": "6995779366223822852",
       "name": "自建应用获取 app_access_token",
-      "orderMark": "8",
+      "orderMark": "6",
+      "parentId": "7182025466500890652",
+      "type": 1
+     },
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "tenant_access_token_internal",
+        "project": "auth",
+        "resource": "auth",
+        "version": "v3"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/auth/v3/tenant_access_token/internal",
+       "debuggable": true,
+       "fullPath": "/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token_internal",
+       "httpMethod": "POST",
+       "supportAppTypes": [
+        "custom"
+       ]
+      },
+      "id": "6995779366223724548",
+      "name": "自建应用获取 tenant_access_token",
+      "orderMark": "5",
       "parentId": "7182025466500890652",
       "type": 1
      },

@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-07-24）
+
+新增 0 · 移除 0 · 定义变更 2（全量共 1627 个接口）
+
+### 定义变更
+- `POST /open-apis/bitable/v1/apps/{app_token}/tables/{table_id}/fields`「新增字段」（bitable/v1/app.table.field/create）
+- `PUT /open-apis/bitable/v1/apps/{app_token}/tables/{table_id}/fields/{field_id}`「更新字段」（bitable/v1/app.table.field/update）
+
 ## explorer 全量轨道（2026-07-22）
 
 新增 0 · 移除 0 · 定义变更 7（全量共 1627 个接口）

@@ -3163,7 +3163,7 @@
   "httpMethod": "POST",
   "project": "bitable",
   "resource": "app.table.field",
-  "sha256": "6fd457d292f0fed2b532fa85edb8330a969779e2458dc4e7d6fa09ced591f9a1",
+  "sha256": "a20e90c27a9f741acb511d60ebf2c56812eaec095feb9edf75a5d4b442d1451b",
   "title": "新增字段",
   "version": "v1"
  },
@@ -3199,7 +3199,7 @@
   "httpMethod": "PUT",
   "project": "bitable",
   "resource": "app.table.field",
-  "sha256": "886f07c6b8e8d96c11e1eefd5976722c3c314c2d757a9529fcace26cff3046f8",
+  "sha256": "7117b0e6866339f60f54af1d789ae90257d976733e77b39426205345a6d70288",
   "title": "更新字段",
   "version": "v1"
  },
