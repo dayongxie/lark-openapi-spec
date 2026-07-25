@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: task
 description: Task, task list, and subtask management
-cli_version: 1.0.76
-extracted_at: '2026-07-23T04:35:11Z'
+cli_version: 1.0.77
+extracted_at: '2026-07-25T04:29:58Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +assign
@@ -127,7 +127,7 @@ shortcuts:
   - name: --task-id
     shorthand: null
     type: string
-    description: task id
+    description: task GUID or task applink URL
 - name: +create
   summary: create a task
   description: create a task
@@ -787,7 +787,7 @@ shortcuts:
   - name: --task-id
     shorthand: null
     type: string
-    description: task id (comma-separated for multiple)
+    description: task GUID or task applink URL (comma-separated for multiple)
 - name: +upload-attachment
   summary: upload a local file as an attachment to a task
   description: upload a local file as an attachment to a task

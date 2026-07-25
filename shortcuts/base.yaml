@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: base
 description: Table, field, record, view, dashboard, workflow, form, role & permission management
-cli_version: 1.0.76
-extracted_at: '2026-07-23T04:35:11Z'
+cli_version: 1.0.77
+extracted_at: '2026-07-25T04:29:58Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +advperm-disable
@@ -1734,7 +1734,7 @@ shortcuts:
   summary: Submit a form (fill and submit form data)
   description: Submit a form (fill and submit form data)
   usage: lark-cli base +form-submit [flags]
-  risk: write
+  risk: high-risk-write
   flags:
   - name: --as
     shorthand: null
@@ -1769,6 +1769,10 @@ shortcuts:
     shorthand: null
     type: string
     description: Form share token (required), extracted from the form share link
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
 - name: +form-update
   summary: Update a form in a Base table
   description: Update a form in a Base table

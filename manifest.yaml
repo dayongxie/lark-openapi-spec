@@ -100,7 +100,7 @@ services:
   file: openapi-curated/wiki.yaml
 go_track:
   source: lark-cli Go source (shortcuts/ dir, heuristic extraction)
-  cli_version: 1.0.76
+  cli_version: 1.0.77
   stats:
     services: 18
     operations: 229
