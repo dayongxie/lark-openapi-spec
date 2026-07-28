@@ -15947,6 +15947,18 @@
   "title": "识别图片中的文字",
   "version": "v1"
  },
+ "passport/v1/password/update": {
+  "apiName": "update",
+  "apiPath": "/open-apis/passport/v1/password",
+  "category": "认证及授权 / 认证因子管理 / 登录密码管理",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/passport-v1/password/update",
+  "httpMethod": "PUT",
+  "project": "passport",
+  "resource": "password",
+  "sha256": "7da0f8b4a700a08855ff45be17a4b694178c237d6735037b7f27ebffcbd2dd0b",
+  "title": "重置登录密码",
+  "version": "v1"
+ },
  "passport/v1/session/logout": {
   "apiName": "logout",
   "apiPath": "/open-apis/passport/v1/sessions/logout",

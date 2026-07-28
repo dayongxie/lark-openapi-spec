@@ -132,6 +132,50 @@
     "children": [
      {
       "Score": 0,
+      "children": [
+       {
+        "Score": 0,
+        "apiSummary": {
+         "apiIdentity": {
+          "apiName": "update",
+          "project": "passport",
+          "resource": "password",
+          "version": "v1"
+         },
+         "apiKind": 1,
+         "apiPath": "/open-apis/passport/v1/password",
+         "debuggable": true,
+         "fullPath": "/uAjLw4CM/ukTMukTMukTM/passport-v1/password/update",
+         "httpMethod": "PUT",
+         "supportAppTypes": [
+          "custom"
+         ]
+        },
+        "id": "7537665430859382787",
+        "name": "重置登录密码",
+        "orderMark": "1754639219651",
+        "parentId": "7535828428889931780",
+        "type": 1
+       }
+      ],
+      "id": "7535828428889931780",
+      "name": "登录密码管理",
+      "orderMark": "1754983118281",
+      "parentId": "7537361450332192770",
+      "type": 2
+     }
+    ],
+    "id": "7537361450332192770",
+    "name": "认证因子管理",
+    "orderMark": "4",
+    "parentId": "7179079873313406980",
+    "type": 2
+   },
+   {
+    "Score": 0,
+    "children": [
+     {
+      "Score": 0,
       "apiSummary": {
        "apiIdentity": {
         "apiName": "app_access_token_internal",

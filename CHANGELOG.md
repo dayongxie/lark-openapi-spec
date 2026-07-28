@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-07-28）
+
+新增 1 · 移除 0 · 定义变更 0（全量共 1628 个接口）
+
+### 新增接口
+- `PUT /open-apis/passport/v1/password`「重置登录密码」（passport/v1/password/update）
+
 ## explorer 全量轨道（2026-07-24）
 
 新增 0 · 移除 0 · 定义变更 2（全量共 1627 个接口）

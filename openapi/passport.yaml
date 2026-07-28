@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+aa7765c7
+  version: 1.0.0+6ec7236b
   x-lark-project: passport
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -19,8 +19,99 @@ servers:
 - url: https://open.larksuite.com
   description: Lark（国际版）
 tags:
+- name: password
 - name: session
 paths:
+  /open-apis/passport/v1/password:
+    put:
+      operationId: passport_password_update
+      summary: 重置登录密码
+      tags:
+      - password
+      description: 重置用户密码
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/passport-v1/password/update
+      parameters:
+      - name: user_id_type
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - open_id
+          - user_id
+          - union_id
+          x-enum-descriptions:
+            open_id: 用户 ID 类型open_id
+            user_id: 用户 ID 类型user_id
+            union_id: 用户 ID 类型union_id
+          x-lark-id-types:
+            open_id: user
+            union_id: user
+            user_id: user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: 待修改密码的用户ID
+                  example: abcd1234
+                password:
+                  type: string
+                  description: 需要重置的密码参数，不少于8个字符，字母、数字和符号，至少三选二
+                  example: 1234abcd
+                require_reset:
+                  type: boolean
+                  description: 用户登录时重新设置密码
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+      x-lark-access-tokens:
+      - tenant
+      x-lark-scopes:
+      - passport:password:full
+      x-lark-field-scopes:
+      - contact:user.employee_id:readonly
+      x-lark-error-mappings:
+      - code: 1082003
+        httpCode: 400
+        msg: reach reset password num limit
+      - code: 1088002
+        httpCode: 400
+        msg: password format is not valid
+      - code: 1089004
+        httpCode: 400
+        msg: identity status is abnormal
+      - code: 1084005
+        httpCode: 400
+        msg: param is invalid
+      x-lark-rate-limit:
+        tier: 7
+      x-lark-id-transform:
+      - fromTo:
+          from: x_user_id
+          idType: ''
+          idTypeKey: user_id_type
+          idTypeSection: 2
+          to: lark_id
+        key: $.user_id
+        section: 0
   /open-apis/passport/v1/sessions/logout:
     post:
       operationId: passport_session_logout
