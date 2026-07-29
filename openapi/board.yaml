@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+85c07004
+  version: 1.0.0+6c890ce3
   x-lark-project: board
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -88,37 +88,52 @@ paths:
       x-lark-error-mappings:
       - code: 2890001
         httpCode: 400
-        msg: invalid format
+        msg: ''
       - code: 2890002
         httpCode: 400
-        msg: invalid arg
+        msg: ''
       - code: 2890003
         httpCode: 400
-        msg: record missing
+        msg: ''
       - code: 2890004
         httpCode: 401
-        msg: auth failed
+        msg: Please re-login your account and retry later.
       - code: 2890005
         httpCode: 403
-        msg: forbidden
+        msg: ''
       - code: 2890006
         httpCode: 429
-        msg: too many request
+        msg: You have sent too many request for now, please try again later.
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2890007
+        httpCode: 500
+        msg: A server internal error occured.  Please try again later.
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2891001
+        httpCode: 500
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2891001
+        httpCode: 500
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2890007
+        httpCode: 500
+        msg: This whiteboard is not ready yet.  Please try again later.
+      - code: 2890002
+        httpCode: 400
+        msg: ''
       x-lark-rate-limit:
         tier: 8
   /open-apis/board/v1/whiteboards/{whiteboard_id}/nodes:
@@ -556,37 +571,52 @@ paths:
       x-lark-error-mappings:
       - code: 2890001
         httpCode: 400
-        msg: invalid format
+        msg: ''
       - code: 2890002
         httpCode: 400
-        msg: invalid arg
+        msg: ''
       - code: 2890003
         httpCode: 400
-        msg: record missing
+        msg: ''
       - code: 2890004
         httpCode: 401
-        msg: auth failed
+        msg: Please re-login your account and retry later.
       - code: 2890005
         httpCode: 403
-        msg: forbidden
+        msg: ''
       - code: 2890006
         httpCode: 429
-        msg: too many request
+        msg: You have sent too many request for now, please try again later.
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2890007
+        httpCode: 500
+        msg: A server internal error occured.  Please try again later.
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2891001
+        httpCode: 500
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2891001
+        httpCode: 500
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2890007
+        httpCode: 500
+        msg: This whiteboard is not ready yet.  Please try again later.
+      - code: 2890002
+        httpCode: 400
+        msg: ''
       x-lark-rate-limit:
         tier: 9
       x-lark-id-transform:
@@ -1122,37 +1152,52 @@ paths:
       x-lark-error-mappings:
       - code: 2890001
         httpCode: 400
-        msg: invalid format
+        msg: ''
       - code: 2890002
         httpCode: 400
-        msg: invalid arg
+        msg: ''
       - code: 2890003
         httpCode: 400
-        msg: record missing
+        msg: ''
       - code: 2890004
         httpCode: 401
-        msg: auth failed
+        msg: Please re-login your account and retry later.
       - code: 2890005
         httpCode: 403
-        msg: forbidden
+        msg: ''
       - code: 2890006
         httpCode: 429
-        msg: too many request
+        msg: You have sent too many request for now, please try again later.
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2890007
+        httpCode: 500
+        msg: A server internal error occured.  Please try again later.
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2891001
+        httpCode: 500
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2891001
+        httpCode: 500
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2890007
+        httpCode: 500
+        msg: This whiteboard is not ready yet.  Please try again later.
+      - code: 2890002
+        httpCode: 400
+        msg: ''
       x-lark-rate-limit:
         tier: 7
   /open-apis/board/v1/whiteboards/{whiteboard_id}/nodes/plantuml:
@@ -1285,39 +1330,51 @@ paths:
       x-lark-error-mappings:
       - code: 2890001
         httpCode: 400
-        msg: invalid format
+        msg: ''
       - code: 2890002
         httpCode: 400
-        msg: invalid arg
+        msg: ''
       - code: 2890003
         httpCode: 400
-        msg: record missing
+        msg: ''
       - code: 2890004
         httpCode: 401
-        msg: auth failed
+        msg: Please re-login your account and retry later.
       - code: 2890005
         httpCode: 403
-        msg: forbidden
+        msg: ''
       - code: 2890006
         httpCode: 429
-        msg: too many request
+        msg: You have sent too many request for now, please try again later.
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2890007
+        httpCode: 500
+        msg: A server internal error occured.  Please try again later.
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2891001
+        httpCode: 500
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2890007
+        httpCode: 500
+        msg: This whiteboard is not ready yet.  Please try again later.
+      - code: 2890002
+        httpCode: 400
         msg: ''
       x-lark-rate-limit:
         tier: 9
@@ -1355,37 +1412,52 @@ paths:
       x-lark-error-mappings:
       - code: 2890001
         httpCode: 400
-        msg: invalid format
+        msg: ''
       - code: 2890002
         httpCode: 400
-        msg: invalid arg
+        msg: ''
       - code: 2890003
         httpCode: 400
-        msg: record missing
+        msg: ''
       - code: 2890004
         httpCode: 401
-        msg: auth failed
+        msg: Please re-login your account and retry later.
       - code: 2890005
         httpCode: 403
-        msg: forbidden
+        msg: ''
       - code: 2890006
         httpCode: 429
-        msg: too many request
+        msg: You have sent too many request for now, please try again later.
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2890007
+        httpCode: 500
+        msg: A server internal error occured.  Please try again later.
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2891001
+        httpCode: 500
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2891001
+        httpCode: 500
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2890007
+        httpCode: 500
+        msg: This whiteboard is not ready yet.  Please try again later.
+      - code: 2890002
+        httpCode: 400
+        msg: ''
       x-lark-rate-limit:
         tier: 9
       x-lark-file-download: true
@@ -1450,37 +1522,52 @@ paths:
       x-lark-error-mappings:
       - code: 2890001
         httpCode: 400
-        msg: invalid format
+        msg: ''
       - code: 2890002
         httpCode: 400
-        msg: invalid arg
+        msg: ''
       - code: 2890003
         httpCode: 400
-        msg: record missing
+        msg: ''
       - code: 2890004
         httpCode: 401
-        msg: auth failed
+        msg: Please re-login your account and retry later.
       - code: 2890005
         httpCode: 403
-        msg: forbidden
+        msg: ''
       - code: 2890006
         httpCode: 429
-        msg: too many request
+        msg: You have sent too many request for now, please try again later.
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2890007
+        httpCode: 500
+        msg: A server internal error occured.  Please try again later.
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2891001
+        httpCode: 500
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2891001
+        httpCode: 500
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2890007
+        httpCode: 500
+        msg: This whiteboard is not ready yet.  Please try again later.
+      - code: 2890002
+        httpCode: 400
+        msg: ''
       x-lark-rate-limit:
         tier: 2
   /open-apis/board/v1/whiteboards/{whiteboard_id}/update_theme:
@@ -1533,37 +1620,52 @@ paths:
       x-lark-error-mappings:
       - code: 2890001
         httpCode: 400
-        msg: invalid format
+        msg: ''
       - code: 2890002
         httpCode: 400
-        msg: invalid arg
+        msg: ''
       - code: 2890003
         httpCode: 400
-        msg: record missing
+        msg: ''
       - code: 2890004
         httpCode: 401
-        msg: auth failed
+        msg: Please re-login your account and retry later.
       - code: 2890005
         httpCode: 403
-        msg: forbidden
+        msg: ''
       - code: 2890006
         httpCode: 429
-        msg: too many request
+        msg: You have sent too many request for now, please try again later.
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2890007
+        httpCode: 500
+        msg: A server internal error occured.  Please try again later.
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
       - code: 2891001
         httpCode: 500
-        msg: server internal error
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2891001
+        httpCode: 500
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2891001
+        httpCode: 500
+        msg: A server internal error occured. Please contact oncall for support
+      - code: 2890007
+        httpCode: 500
+        msg: This whiteboard is not ready yet.  Please try again later.
+      - code: 2890002
+        httpCode: 400
+        msg: ''
       x-lark-rate-limit:
         tier: 3
 components:

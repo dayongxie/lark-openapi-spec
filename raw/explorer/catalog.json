@@ -13662,7 +13662,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app-table/get_table_list",
        "httpMethod": "GET",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7620858064161934543",
@@ -13686,7 +13687,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app-table/get_table_detail",
        "httpMethod": "GET",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7620858064161869007",
@@ -13710,7 +13712,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app-table/get_table_record_list",
        "httpMethod": "GET",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7620858064161885391",
@@ -14059,7 +14062,8 @@
      "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app/sql_commands",
      "httpMethod": "POST",
      "supportAppTypes": [
-      "custom"
+      "custom",
+      "isv"
      ]
     },
     "id": "7620858064161852623",
@@ -14086,7 +14090,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app/upload_html_code_and_release",
        "httpMethod": "POST",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7642228089434852533",
@@ -14110,7 +14115,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app/update_app_visibility",
        "httpMethod": "PUT",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7642228089434868917",
@@ -14134,7 +14140,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app/get_app_visibility",
        "httpMethod": "GET",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7642228089434885301",
@@ -14158,7 +14165,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app/list",
        "httpMethod": "GET",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7642228089434901685",
@@ -14182,7 +14190,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app/icon",
        "httpMethod": "POST",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7642228089434918069",
@@ -14206,7 +14215,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app/patch",
        "httpMethod": "PATCH",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7642228089434934453",
@@ -14230,7 +14240,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app/create",
        "httpMethod": "POST",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7642228089434950837",

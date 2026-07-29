@@ -3607,7 +3607,7 @@
   "httpMethod": "DELETE",
   "project": "board",
   "resource": "whiteboard.node",
-  "sha256": "cf1e506f841a48204afd691fdc1f5082f88c68fb75e60d8b9fd7c71efdb79a1b",
+  "sha256": "81a7cebaa124fdc733a2acfb425a14b4f70299301f3a4e79a4b4092ad42810cd",
   "title": "批量删除节点",
   "version": "v1"
  },
@@ -3619,7 +3619,7 @@
   "httpMethod": "POST",
   "project": "board",
   "resource": "whiteboard.node",
-  "sha256": "e0136cc735d5b5de025f78c732418bc189554dfa8e7a98526e8654e2e796ead1",
+  "sha256": "5a3edeae91c889995d97b87ded417240f62299f0724e6d77398c21d700dc35d6",
   "title": "创建节点",
   "version": "v1"
  },
@@ -3631,7 +3631,7 @@
   "httpMethod": "POST",
   "project": "board",
   "resource": "whiteboard.node",
-  "sha256": "b0829104a6de1d25da9141c12517ee792bead5505e818cf9b68e1df3dfc48941",
+  "sha256": "da3d1a3dca8370a929b093fc00f6d0e880e177702f50c2d1125486a6f6939389",
   "title": "解析画板语法",
   "version": "v1"
  },
@@ -3643,7 +3643,7 @@
   "httpMethod": "GET",
   "project": "board",
   "resource": "whiteboard.node",
-  "sha256": "c4bb883aef040d611e12a69a1641b4a4a5772cd7704a4daeef973ba7d2f40108",
+  "sha256": "3c0830cbbba5676b88e8492451bdc9582fdc22161180aa26fc736a0958686f3c",
   "title": "获取所有节点",
   "version": "v1"
  },
@@ -3655,7 +3655,7 @@
   "httpMethod": "GET",
   "project": "board",
   "resource": "whiteboard",
-  "sha256": "89722d4dc8926b3c6f64507ebe0a3c4c619619b51586fbc005717acccc2a5178",
+  "sha256": "58d18ddd880c9597ee198dd91b5bbab82255c733dc47e7a9f718f3d318de3b6a",
   "title": "获取画板缩略图片",
   "version": "v1"
  },
@@ -3667,7 +3667,7 @@
   "httpMethod": "GET",
   "project": "board",
   "resource": "whiteboard",
-  "sha256": "6d60cf25518ad473085a2902bb2191014f047347502e6cc74a9337b4577e70d3",
+  "sha256": "cb3846d3edbb924a59fb2ae00ee316e2508a295d8d084aa3dd46034cca848a5b",
   "title": "获取画板主题",
   "version": "v1"
  },
@@ -3679,7 +3679,7 @@
   "httpMethod": "POST",
   "project": "board",
   "resource": "whiteboard",
-  "sha256": "c47c58ed16aaf10e4176d3ce863bda6415dbd06f699fbde2e09ee4c8dd067e2c",
+  "sha256": "5062e38dae341c925c8d76df314f496fbf8d47f5ca38a7e18eaca29cd8bbbab2",
   "title": "更新画板主题",
   "version": "v1"
  },
@@ -9931,7 +9931,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "4747ca2f9b79caab4d9d005dc3a77a1d1358da53f51c7a568f4e5d4ea1812232",
+  "sha256": "94a37878fa67a5c91a7563ae323e35445b386bcfceba0e2a4c835755379a4fe7",
   "title": "判断用户云文档权限",
   "version": "v1"
  },
@@ -9943,7 +9943,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "51de950b7fe515d51e9f5df9b87c9e43a306bc09ea37d0b0b1c636ed45aa0db1",
+  "sha256": "9122fdcebe05b1cdb363529287261c554120a630e8374d8ae63be7c0d7470d1e",
   "title": "批量增加协作者权限",
   "version": "v1"
  },
@@ -9955,7 +9955,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "639748e1d49c1766946abc2bca650de732992e66082a9fd0ef387c6b6825b770",
+  "sha256": "e101a0f04ab7525e47a56ef75617f8fabb89222566452b734056eb930eebe1d6",
   "title": "增加协作者权限",
   "version": "v1"
  },
@@ -9967,7 +9967,7 @@
   "httpMethod": "DELETE",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "66df63cd3c02e9327e9d7a7d456f3cd7bf246bfe889c8299e7eaadc3e79aa178",
+  "sha256": "3263a496baef774f813090e93eeebb2d02cb01992abb487b923f1517472165af",
   "title": "移除云文档协作者权限",
   "version": "v1"
  },
@@ -9979,7 +9979,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "f83eb1de168214b78ceb218a7ef9531c723720d2c54baf9e5136e2bb779da90f",
+  "sha256": "9aebfda0a8f1fb09ae9a00123fea38eac7df5b85d176943428fd3513845b7167",
   "title": "获取云文档协作者",
   "version": "v1"
  },
@@ -9991,7 +9991,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "1baeb8e107b66235fddfee2c07a2a2e3a1954517ade794b2c6aabc76167678b0",
+  "sha256": "df25e4c1b8e75e8d6d7279b68a622a4033fec38d00bea0e41b3d1943a91b7dd4",
   "title": "转移云文档所有者",
   "version": "v1"
  },
@@ -10003,7 +10003,7 @@
   "httpMethod": "PUT",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "a34477b6a83bba68cc410eeae2405feb0dcab1fff3abab96a54f1dd180cc681e",
+  "sha256": "3fc23a0931e5abc3d2a1004fd824e8fe75cdbaffcf719f25bcda82f09c3e8d23",
   "title": "更新协作者权限",
   "version": "v1"
  },
@@ -10135,7 +10135,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "permission.public",
-  "sha256": "9347f7ec6b6b7c8f89c92aa9386456f96fd209b6b3dd4881520bd852762720b7",
+  "sha256": "b28f9db6f381d27eb80dff46431b0e78667bc1e321a8d42396d350fdfe2a2378",
   "title": "获取云文档权限设置",
   "version": "v2"
  },
@@ -10147,7 +10147,7 @@
   "httpMethod": "PATCH",
   "project": "drive",
   "resource": "permission.public",
-  "sha256": "3303178ab4147ca37bd6af3fd406334f52240811df32ce7c9cef33f2e5f31c88",
+  "sha256": "b1378f7a071760dd6aaba05eeca82077916384d419d46277191a69f21a0c749f",
   "title": "更新云文档权限设置",
   "version": "v2"
  },

@@ -1,5 +1,27 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-07-29）
+
+新增 0 · 移除 0 · 定义变更 16（全量共 1628 个接口）
+
+### 定义变更
+- `DELETE /open-apis/board/v1/whiteboards/{whiteboard_id}/nodes/batch_delete`「批量删除节点」（board/v1/whiteboard.node/batch_delete）
+- `POST /open-apis/board/v1/whiteboards/{whiteboard_id}/nodes`「创建节点」（board/v1/whiteboard.node/create）
+- `POST /open-apis/board/v1/whiteboards/{whiteboard_id}/nodes/plantuml`「解析画板语法」（board/v1/whiteboard.node/create_plantuml）
+- `GET /open-apis/board/v1/whiteboards/{whiteboard_id}/nodes`「获取所有节点」（board/v1/whiteboard.node/list）
+- `GET /open-apis/board/v1/whiteboards/{whiteboard_id}/download_as_image`「获取画板缩略图片」（board/v1/whiteboard/download_as_image）
+- `GET /open-apis/board/v1/whiteboards/{whiteboard_id}/theme`「获取画板主题」（board/v1/whiteboard/theme）
+- `POST /open-apis/board/v1/whiteboards/{whiteboard_id}/update_theme`「更新画板主题」（board/v1/whiteboard/update_theme）
+- `GET /open-apis/drive/v1/permissions/{token}/members/auth`「判断用户云文档权限」（drive/v1/permission.member/auth）
+- `POST /open-apis/drive/v1/permissions/{token}/members/batch_create`「批量增加协作者权限」（drive/v1/permission.member/batch_create）
+- `POST /open-apis/drive/v1/permissions/{token}/members`「增加协作者权限」（drive/v1/permission.member/create）
+- `DELETE /open-apis/drive/v1/permissions/{token}/members/{member_id}`「移除云文档协作者权限」（drive/v1/permission.member/delete）
+- `GET /open-apis/drive/v1/permissions/{token}/members`「获取云文档协作者」（drive/v1/permission.member/list）
+- `POST /open-apis/drive/v1/permissions/{token}/members/transfer_owner`「转移云文档所有者」（drive/v1/permission.member/transfer_owner）
+- `PUT /open-apis/drive/v1/permissions/{token}/members/{member_id}`「更新协作者权限」（drive/v1/permission.member/update）
+- `GET /open-apis/drive/v2/permissions/{token}/public`「获取云文档权限设置」（drive/v2/permission.public/get）
+- `PATCH /open-apis/drive/v2/permissions/{token}/public`「更新云文档权限设置」（drive/v2/permission.public/patch）
+
 ## explorer 全量轨道（2026-07-28）
 
 新增 1 · 移除 0 · 定义变更 0（全量共 1628 个接口）

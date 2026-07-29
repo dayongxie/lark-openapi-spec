@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+1dbfade4
+  version: 1.0.0+6baec139
   x-lark-project: drive
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -2287,7 +2287,7 @@ paths:
                       items:
                         type: array
                         items:
-                          $ref: '#/components/schemas/Data2'
+                          $ref: '#/components/schemas/Data3'
                         description: 版本文档列表
                       page_token:
                         type: string
@@ -5998,6 +5998,7 @@ paths:
           - mindnote
           - minutes
           - slides
+          - apps
           x-enum-descriptions:
             doc: 文档
             sheet: 电子表格
@@ -6008,6 +6009,7 @@ paths:
             mindnote: 思维笔记
             minutes: 妙记
             slides: 幻灯片
+            apps: 妙搭应用
         description: 文件类型，需要与文件的 token 相匹配
         example: doc
       - name: action
@@ -6121,6 +6123,7 @@ paths:
           - mindnote
           - minutes
           - slides
+          - apps
           x-enum-descriptions:
             doc: 文档
             sheet: 电子表格
@@ -6132,6 +6135,7 @@ paths:
             mindnote: 思维笔记
             minutes: 妙记
             slides: 幻灯片
+            apps: 妙搭应用
         description: 文件的类型
         example: doc
       - name: need_notification
@@ -6219,6 +6223,7 @@ paths:
           - mindnote
           - minutes
           - slides
+          - apps
           x-enum-descriptions:
             doc: 文档
             sheet: 电子表格
@@ -6230,6 +6235,7 @@ paths:
             mindnote: 思维笔记
             minutes: 妙记
             slides: 幻灯片
+            apps: 妙搭应用
         description: 文件类型，需要与文件的 token 相匹配
         example: doc
       - name: need_notification
@@ -6393,6 +6399,7 @@ paths:
           - minutes
           - slides
           - folder
+          - apps
           x-enum-descriptions:
             doc: 文档
             sheet: 电子表格
@@ -6404,6 +6411,7 @@ paths:
             minutes: 妙记
             slides: 幻灯片
             folder: 文件夹
+            apps: 妙搭应用
         description: 文件类型，需要与文件的 token 相匹配
         example: doc
       - name: fields
@@ -6530,6 +6538,7 @@ paths:
           - mindnote
           - minutes
           - slides
+          - apps
           x-enum-descriptions:
             doc: 文档
             sheet: 电子表格
@@ -6541,6 +6550,7 @@ paths:
             mindnote: 思维笔记
             minutes: 妙记
             slides: 幻灯片
+            apps: 妙搭应用
         description: 文件类型，放于query参数中，如：`?type=doc`
         example: doc
       - name: member_type
@@ -6709,6 +6719,7 @@ paths:
           - mindnote
           - minutes
           - slides
+          - apps
           x-enum-descriptions:
             doc: 文档
             sheet: 电子表格
@@ -6719,6 +6730,7 @@ paths:
             mindnote: 思维笔记
             minutes: 妙记
             slides: 幻灯片
+            apps: 妙搭应用
         description: 文件类型，放于query参数中，如：`?type=doc`
         example: doc
       requestBody:
@@ -6871,6 +6883,7 @@ paths:
           - minutes
           - slides
           - folder
+          - apps
           x-enum-descriptions:
             doc: 文档
             sheet: 电子表格
@@ -6882,6 +6895,7 @@ paths:
             minutes: 妙记
             slides: 幻灯片
             folder: 文件夹
+            apps: 妙搭应用
         description: 文件类型，需要与文件的 token 相匹配
         example: doc
       - name: need_notification
@@ -7934,6 +7948,8 @@ paths:
           - mindnote
           - minutes
           - slides
+          - folder
+          - apps
           x-enum-descriptions:
             doc: 旧版文档
             sheet: 电子表格
@@ -7944,6 +7960,8 @@ paths:
             mindnote: 思维笔记
             minutes: 妙记
             slides: 幻灯片
+            folder: 文件夹
+            apps: 妙搭应用
         description: 文件类型，需要与文件的 token 相匹配
         example: doc
       responses:
@@ -8018,6 +8036,7 @@ paths:
           - mindnote
           - minutes
           - slides
+          - apps
           x-enum-descriptions:
             doc: 旧版文档
             sheet: 电子表格
@@ -8028,6 +8047,7 @@ paths:
             mindnote: 思维笔记
             minutes: 妙记
             slides: 幻灯片
+            apps: 妙搭应用
         description: 文件类型，需要与文件的 token 相匹配
         example: doc
       requestBody:
@@ -8125,6 +8145,18 @@ paths:
                     anyone_can_edit: 拥有可编辑权限的用户
                     only_full_access: 拥有可管理权限（包括我）的协作者
                   example: anyone_can_view
+                perm_type:
+                  type: object
+                  properties:
+                    external_access_entity:
+                      type: string
+                      description: 对外开放范围
+                      example: container
+                    link_share_entity:
+                      type: string
+                      description: 链接分享范围
+                      example: single_page
+                  description: 权限生效范围
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -8166,6 +8198,9 @@ paths:
       - code: 1066002
         httpCode: 500
         msg: Concurrency error, please retry
+      - code: 1063014
+        httpCode: 400
+        msg: Single-page permission property conflicts with container permission
       x-lark-rate-limit:
         tier: 3
 components:
@@ -8445,88 +8480,14 @@ components:
         msg:
           type: string
         data:
-          $ref: '#/components/schemas/Data3'
+          $ref: '#/components/schemas/Data2'
     Data2:
-      type: object
-      properties:
-        name:
-          type: string
-          description: 版本文档标题，最大长度 1024 个Unicode 码点。通常情况下，一个英文或中文字符对应一个码点，但是某些特殊符号可能会对应多个码点。例如，家庭组合「👨‍👩‍👧」这个表情符号对应5个码点。
-          example: 文档标题
-        version:
-          type: string
-          description: 版本文档版本号
-          example: version1
-        parent_token:
-          type: string
-          description: 源文档token
-          example: doxcnMycg4ryxQofSeoKkJuXYOb
-        owner_id:
-          type: string
-          description: 版本文档所有者id
-          example: '694699009591869450'
-        creator_id:
-          type: string
-          description: 版本文档创建者id
-          example: '694699009591869451'
-        create_time:
-          type: string
-          description: 版本文档创建时间
-          example: '1660708537'
-          format: int64
-        update_time:
-          type: string
-          description: 版本文档更新时间
-          example: '1660708537'
-          format: int64
-        status:
-          type: string
-          description: 版本文档状态
-          enum:
-          - '0'
-          - '1'
-          - '2'
-          x-enum-descriptions:
-            '0': 正常状态
-            '1': 删除状态
-            '2': 回收站状态
-          example: 0，1，2
-          format: int64
-        obj_type:
-          type: string
-          description: 版本文档类型
-          enum:
-          - docx
-          - sheet
-          x-enum-descriptions:
-            docx: 新版文档
-            sheet: 电子表格
-          example: docx
-        parent_type:
-          type: string
-          description: 源文档类型
-          enum:
-          - docx
-          - sheet
-          x-enum-descriptions:
-            docx: 新版文档
-            sheet: 电子表格
-          example: docx
-    Data3:
       type: object
       properties:
         permission_public:
           allOf:
           - $ref: '#/components/schemas/PermissionPublic'
           description: 返回的文档公共设置
-    Data4:
-      type: object
-      properties:
-        members:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item3'
-          description: 协作者列表
     PermissionPublic:
       type: object
       properties:
@@ -8622,7 +8583,93 @@ components:
           type: boolean
           description: 节点是否已加锁，加锁之后不再继承父级页面的权限
           example: 'false'
+        perm_type:
+          type: object
+          properties:
+            external_access_entity:
+              type: string
+              description: 对外开放范围
+              example: container
+            link_share_entity:
+              type: string
+              description: 链接分享范围
+              example: single_page
+          description: 权限生效范围
       description: 返回的文档公共设置
+    Data3:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 版本文档标题，最大长度 1024 个Unicode 码点。通常情况下，一个英文或中文字符对应一个码点，但是某些特殊符号可能会对应多个码点。例如，家庭组合「👨‍👩‍👧」这个表情符号对应5个码点。
+          example: 文档标题
+        version:
+          type: string
+          description: 版本文档版本号
+          example: version1
+        parent_token:
+          type: string
+          description: 源文档token
+          example: doxcnMycg4ryxQofSeoKkJuXYOb
+        owner_id:
+          type: string
+          description: 版本文档所有者id
+          example: '694699009591869450'
+        creator_id:
+          type: string
+          description: 版本文档创建者id
+          example: '694699009591869451'
+        create_time:
+          type: string
+          description: 版本文档创建时间
+          example: '1660708537'
+          format: int64
+        update_time:
+          type: string
+          description: 版本文档更新时间
+          example: '1660708537'
+          format: int64
+        status:
+          type: string
+          description: 版本文档状态
+          enum:
+          - '0'
+          - '1'
+          - '2'
+          x-enum-descriptions:
+            '0': 正常状态
+            '1': 删除状态
+            '2': 回收站状态
+          example: 0，1，2
+          format: int64
+        obj_type:
+          type: string
+          description: 版本文档类型
+          enum:
+          - docx
+          - sheet
+          x-enum-descriptions:
+            docx: 新版文档
+            sheet: 电子表格
+          example: docx
+        parent_type:
+          type: string
+          description: 源文档类型
+          enum:
+          - docx
+          - sheet
+          x-enum-descriptions:
+            docx: 新版文档
+            sheet: 电子表格
+          example: docx
+    Data4:
+      type: object
+      properties:
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item3'
+          description: 协作者列表
     Schema3:
       type: object
       properties:
@@ -8792,7 +8839,7 @@ components:
         msg:
           type: string
         data:
-          $ref: '#/components/schemas/Data2'
+          $ref: '#/components/schemas/Data3'
     Data6:
       type: object
       properties:
