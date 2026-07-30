@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-07-30）
+
+新增 0 · 移除 0 · 定义变更 4（全量共 1628 个接口）
+
+### 定义变更
+- `POST /open-apis/corehr/v2/departments/batch_get`「批量查询部门」（corehr/v2/department/batch_get）
+- `POST /open-apis/corehr/v2/departments/query_multi_timeline`「批量查询部门版本信息」（corehr/v2/department/query_multi_timeline）
+- `POST /open-apis/corehr/v2/departments/query_timeline`「查询指定生效日期的部门基本信息」（corehr/v2/department/query_timeline）
+- `POST /open-apis/corehr/v2/departments/search`「搜索部门信息」（corehr/v2/department/search）
+
 ## explorer 全量轨道（2026-07-29）
 
 新增 0 · 移除 0 · 定义变更 16（全量共 1628 个接口）

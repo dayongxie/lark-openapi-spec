@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+c4aed4ab
+  version: 1.0.0+ba9f100f
   x-lark-project: corehr
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -23693,6 +23693,7 @@ paths:
       - corehr:department.custom_fields:read
       - corehr:department.manager:read
       - corehr:department.organize:read
+      - corehr:department:search
       - corehr:people_cli
       x-lark-error-mappings:
       - code: 1160102
@@ -24350,6 +24351,7 @@ paths:
       - corehr:department.custom_fields:read
       - corehr:department.manager:read
       - corehr:department.organize:read
+      - corehr:department:search
       - corehr:people_cli
       x-lark-error-mappings:
       - code: 1161204
@@ -24746,6 +24748,7 @@ paths:
       - corehr:department.custom_fields:read
       - corehr:department.manager:read
       - corehr:department.organize:read
+      - corehr:department:search
       - corehr:people_cli
       x-lark-error-mappings:
       - code: 1161204
@@ -24931,6 +24934,7 @@ paths:
       - corehr:department.custom_fields:read
       - corehr:department.manager:read
       - corehr:department.organize:read
+      - corehr:department:search
       - corehr:people_cli
       x-lark-error-mappings:
       - code: 1160102

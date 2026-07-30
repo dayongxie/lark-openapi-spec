@@ -7279,7 +7279,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "department",
-  "sha256": "4a971a0e82e7cb8cb0ef29c52768c0360253ec24917afcfbe3630e11e0d013bd",
+  "sha256": "52a9b6ab29108ffa782968ed67b9a86421cd12260f96c3884a4b77fa6a0ad9ad",
   "title": "批量查询部门",
   "version": "v2"
  },
@@ -7327,7 +7327,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "department",
-  "sha256": "929ea4262cdfc8ec96165291184e2bdabf27ec4bb1ee943f520aba823efb26a9",
+  "sha256": "e90fefa947ed372b828f9c863a3583d945863f37aace1eab2fe3fd629b8a815a",
   "title": "批量查询部门版本信息",
   "version": "v2"
  },
@@ -7363,7 +7363,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "department",
-  "sha256": "374f2c5ee1a51c88041fd4f094634a36b3b1959d8ec23ea348a2ff5846e651d4",
+  "sha256": "d9877f868bb541b9d307a1006fa1c10c89657179d1a0dc4927834856f268ebb3",
   "title": "查询指定生效日期的部门基本信息",
   "version": "v2"
  },
@@ -7375,7 +7375,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "department",
-  "sha256": "91408916be502b49d66ce4fbc1da2ca7570c68b18b85d637cfb70e2c0c5899e4",
+  "sha256": "a1a31306c9917395fbf3b79ca4d2fed0df6502a27a3fb9a79ad29d83cbb6e095",
   "title": "搜索部门信息",
   "version": "v2"
  },
