@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: drive
 description: File, comment, permission, and upload management
-cli_version: 1.0.80
-extracted_at: '2026-07-30T04:23:51Z'
+cli_version: 1.0.81
+extracted_at: '2026-08-01T04:36:39Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +add-comment
@@ -64,9 +64,64 @@ shortcuts:
     type: string
     description: 'document type: doc, docx, file, sheet, slides, bitable, base (required when --doc is a bare token; auto-detected
       for URLs; use bitable as the wire value, base is accepted as a compatibility alias) (doc|docx|file|sheet|slides|bitable|base)'
+- name: +add-reply
+  summary: Add a reply to an existing comment on doc/docx/sheet/file/slides/base(bitable)/apps, with URL parsing and Wiki
+    token unwrapping
+  description: Add a reply to an existing comment on doc/docx/sheet/file/slides/base(bitable)/apps, with URL parsing and Wiki
+    token unwrapping
+  usage: lark-cli drive +add-reply [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --comment-id
+    shorthand: null
+    type: string
+    description: comment ID to reply to (from drive +list-comments)
+  - name: --content
+    shorthand: null
+    type: string
+    description: reply_elements JSON string, same format as drive +add-comment (supports @file, - reads stdin (one flag per
+      call; use @file for others))
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +add-reply
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --token
+    shorthand: null
+    type: string
+    description: document token, Wiki token, or document URL; bare tokens require --type
+  - name: --type
+    shorthand: null
+    type: string
+    description: document type for bare --token; optional for URLs but must match the URL type when provided (doc|docx|sheet|file|slides|bitable|base|apps|wiki)
+  - name: --url
+    shorthand: null
+    type: string
+    description: 'recommended: Lark/Feishu document URL (doc, docx, sheet, file, slides, bitable, base, apps, wiki); Wiki
+      URLs are unwrapped automatically'
 - name: +apply-permission
-  summary: Apply to the document owner for view or edit permission on a doc/sheet/file/wiki/bitable/docx/mindnote/slides
-  description: Apply to the document owner for view or edit permission on a doc/sheet/file/wiki/bitable/docx/mindnote/slides
+  summary: Apply to the owner for view or edit permission on a Drive resource
+  description: Apply to the owner for view or edit permission on a Drive resource
   usage: lark-cli drive +apply-permission [flags]
   risk: write
   flags:
@@ -106,11 +161,69 @@ shortcuts:
   - name: --token
     shorthand: null
     type: string
-    description: target token or document URL (docx/sheets/base/file/wiki/doc/mindnote/slides)
+    description: target token or URL (docx/sheets/base/file/wiki/doc/mindnote/slides/page)
   - name: --type
     shorthand: null
     type: string
-    description: target type; auto-inferred from URL when omitted (doc|sheet|file|wiki|bitable|docx|mindnote|slides)
+    description: target type; auto-inferred from URL when omitted (doc|sheet|file|wiki|bitable|docx|mindnote|slides|apps)
+- name: +batch-query-comments
+  summary: Batch get comments by comment ID for doc/docx/sheet/file/slides/base(bitable)/apps, with URL parsing and Wiki token
+    unwrapping
+  description: Batch get comments by comment ID for doc/docx/sheet/file/slides/base(bitable)/apps, with URL parsing and Wiki
+    token unwrapping
+  usage: lark-cli drive +batch-query-comments [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --comment-ids
+    shorthand: null
+    type: strings
+    description: comment IDs to fetch (comma-separated or repeated flag, max 100)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +batch-query-comments
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --need-reaction
+    shorthand: null
+    type: bool
+    description: include reaction data on comment cards
+  - name: --need-relation
+    shorthand: null
+    type: bool
+    description: include docx comment relation data; ignored for non-docx targets
+  - name: --token
+    shorthand: null
+    type: string
+    description: document token, Wiki token, or document URL; bare tokens require --type
+  - name: --type
+    shorthand: null
+    type: string
+    description: document type for bare --token; optional for URLs but must match the URL type when provided (doc|docx|sheet|file|slides|bitable|base|apps|wiki)
+  - name: --url
+    shorthand: null
+    type: string
+    description: 'recommended: Lark/Feishu document URL (doc, docx, sheet, file, slides, bitable, base, apps, wiki); Wiki
+      URLs are unwrapped automatically'
 - name: +cover
   summary: List or download stable cover presets for a Drive file
   description: List or download stable cover presets for a Drive file
@@ -288,6 +401,63 @@ shortcuts:
     shorthand: null
     type: string
     description: file type (file, docx, bitable, doc, sheet, mindnote, folder, shortcut, slides)
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +delete-reply
+  summary: Delete a reply of a comment on doc/docx/sheet/file/slides/base(bitable)/apps, with URL parsing and Wiki token unwrapping
+  description: Delete a reply of a comment on doc/docx/sheet/file/slides/base(bitable)/apps, with URL parsing and Wiki token
+    unwrapping
+  usage: lark-cli drive +delete-reply [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --comment-id
+    shorthand: null
+    type: string
+    description: comment ID the reply belongs to (from drive +list-comments)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +delete-reply
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --reply-id
+    shorthand: null
+    type: string
+    description: reply ID to delete (from drive +list-comments items[].reply_list.replies[].reply_id)
+  - name: --token
+    shorthand: null
+    type: string
+    description: document token, Wiki token, or document URL; bare tokens require --type
+  - name: --type
+    shorthand: null
+    type: string
+    description: document type for bare --token; optional for URLs but must match the URL type when provided (doc|docx|sheet|file|slides|bitable|base|apps|wiki)
+  - name: --url
+    shorthand: null
+    type: string
+    description: 'recommended: Lark/Feishu document URL (doc, docx, sheet, file, slides, bitable, base, apps, wiki); Wiki
+      URLs are unwrapped automatically'
   - name: --yes
     shorthand: null
     type: bool
@@ -615,9 +785,71 @@ shortcuts:
     type: string
     description: 'recommended: Lark/Feishu document URL (doc/docx/sheet/file/slides/base/bitable/apps/wiki); apps Miaoda URLs
       use /page/<token>; Wiki URLs are unwrapped automatically'
+- name: +list-replies
+  summary: List replies of a comment on doc/docx/sheet/file/slides/base(bitable)/apps, with URL parsing and Wiki token unwrapping
+  description: List replies of a comment on doc/docx/sheet/file/slides/base(bitable)/apps, with URL parsing and Wiki token
+    unwrapping
+  usage: lark-cli drive +list-replies [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --comment-id
+    shorthand: null
+    type: string
+    description: comment ID whose replies to list (from drive +list-comments)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +list-replies
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --need-reaction
+    shorthand: null
+    type: bool
+    description: include reaction data on replies
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size, 1-100
+    default: '50'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token from previous response
+  - name: --token
+    shorthand: null
+    type: string
+    description: document token, Wiki token, or document URL; bare tokens require --type
+  - name: --type
+    shorthand: null
+    type: string
+    description: document type for bare --token; optional for URLs but must match the URL type when provided (doc|docx|sheet|file|slides|bitable|base|apps|wiki)
+  - name: --url
+    shorthand: null
+    type: string
+    description: 'recommended: Lark/Feishu document URL (doc, docx, sheet, file, slides, bitable, base, apps, wiki); Wiki
+      URLs are unwrapped automatically'
 - name: +member-add
-  summary: Add a collaborator/member permission to a Drive document, file, folder, or wiki node
-  description: Add a collaborator/member permission to a Drive document, file, folder, or wiki node
+  summary: Add a collaborator/member permission to a Drive resource
+  description: Add a collaborator/member permission to a Drive resource
   usage: lark-cli drive +member-add [flags]
   risk: high-risk-write
   flags:
@@ -683,8 +915,8 @@ shortcuts:
     type: bool
     description: confirm high-risk operation
 - name: +member-list
-  summary: List collaborator/member permissions on a Drive document, file, folder, or wiki node
-  description: List collaborator/member permissions on a Drive document, file, folder, or wiki node
+  summary: List collaborator/member permissions on a Drive resource
+  description: List collaborator/member permissions on a Drive resource
   usage: lark-cli drive +member-list [flags]
   risk: read
   flags:
@@ -724,7 +956,7 @@ shortcuts:
   - name: --token
     shorthand: null
     type: string
-    description: target URL or bare token (doc/sheet/file/wiki/bitable/docx/mindnote/minutes/slides/folder)
+    description: target URL or bare token (doc/sheet/file/wiki/bitable/docx/mindnote/minutes/slides/folder/apps)
   - name: --type
     shorthand: null
     type: string
@@ -806,14 +1038,14 @@ shortcuts:
   - name: --token
     shorthand: null
     type: string
-    description: target URL or bare token (doc/sheet/file/wiki/bitable/docx/mindnote/minutes/slides/folder)
+    description: target URL or bare token (doc/sheet/file/wiki/bitable/docx/mindnote/minutes/slides/folder/apps)
   - name: --type
     shorthand: null
     type: string
-    description: target type; auto-inferred from URL, required for bare tokens (doc|sheet|file|wiki|bitable|docx|mindnote|minutes|slides|folder)
+    description: target type; auto-inferred from URL, required for bare tokens (doc|sheet|file|wiki|bitable|docx|mindnote|minutes|slides|folder|apps)
 - name: +preview
-  summary: List or download available preview artifacts for a Drive file
-  description: List or download available preview artifacts for a Drive file
+  summary: View or download Drive file content, or list and fetch available preview artifacts
+  description: View or download Drive file content, or list and fetch available preview artifacts
   usage: lark-cli drive +preview [flags]
   risk: read
   flags:
@@ -862,7 +1094,7 @@ shortcuts:
   - name: --type
     shorthand: null
     type: string
-    description: 'preview type to download: pdf | html | text | image | source'
+    description: 'preview type to download: pdf | html | text | image | source_file'
   - name: --version
     shorthand: null
     type: string
@@ -987,6 +1219,164 @@ shortcuts:
     shorthand: null
     type: bool
     description: confirm --delete-remote before deleting Drive files
+- name: +react-reply
+  summary: Add or remove an emoji reaction on a comment reply for doc/docx/sheet/file/slides/base(bitable)/apps, with URL
+    parsing and Wiki token unwrapping
+  description: Add or remove an emoji reaction on a comment reply for doc/docx/sheet/file/slides/base(bitable)/apps, with
+    URL parsing and Wiki token unwrapping
+  usage: lark-cli drive +react-reply [flags]
+  risk: write
+  flags:
+  - name: --action
+    shorthand: null
+    type: string
+    description: add attaches the reaction; delete removes the current identity's reaction (add|delete)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --emoji
+    shorthand: null
+    type: string
+    description: reaction_type value, case-sensitive, e.g. THUMBSUP, HEART, DONE, OK
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +react-reply
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --reply-id
+    shorthand: null
+    type: string
+    description: reply ID to react to (from drive +list-replies); the root reply carries the comment body
+  - name: --token
+    shorthand: null
+    type: string
+    description: document token, Wiki token, or document URL; bare tokens require --type
+  - name: --type
+    shorthand: null
+    type: string
+    description: document type for bare --token; optional for URLs but must match the URL type when provided (doc|docx|sheet|file|slides|bitable|base|apps|wiki)
+  - name: --url
+    shorthand: null
+    type: string
+    description: 'recommended: Lark/Feishu document URL (doc, docx, sheet, file, slides, bitable, base, apps, wiki); Wiki
+      URLs are unwrapped automatically'
+- name: +resolve-comment
+  summary: Resolve (mark solved) a comment on doc/docx/sheet/file/slides/base(bitable)/apps, with URL parsing and Wiki token
+    unwrapping
+  description: Resolve (mark solved) a comment on doc/docx/sheet/file/slides/base(bitable)/apps, with URL parsing and Wiki
+    token unwrapping
+  usage: lark-cli drive +resolve-comment [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --comment-id
+    shorthand: null
+    type: string
+    description: comment ID to resolve (from drive +list-comments)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +resolve-comment
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --token
+    shorthand: null
+    type: string
+    description: document token, Wiki token, or document URL; bare tokens require --type
+  - name: --type
+    shorthand: null
+    type: string
+    description: document type for bare --token; optional for URLs but must match the URL type when provided (doc|docx|sheet|file|slides|bitable|base|apps|wiki)
+  - name: --url
+    shorthand: null
+    type: string
+    description: 'recommended: Lark/Feishu document URL (doc, docx, sheet, file, slides, bitable, base, apps, wiki); Wiki
+      URLs are unwrapped automatically'
+- name: +restore-comment
+  summary: Restore (reopen) a solved comment on doc/docx/sheet/file/slides/base(bitable)/apps, with URL parsing and Wiki token
+    unwrapping
+  description: Restore (reopen) a solved comment on doc/docx/sheet/file/slides/base(bitable)/apps, with URL parsing and Wiki
+    token unwrapping
+  usage: lark-cli drive +restore-comment [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --comment-id
+    shorthand: null
+    type: string
+    description: comment ID to restore (from drive +list-comments)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +restore-comment
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --token
+    shorthand: null
+    type: string
+    description: document token, Wiki token, or document URL; bare tokens require --type
+  - name: --type
+    shorthand: null
+    type: string
+    description: document type for bare --token; optional for URLs but must match the URL type when provided (doc|docx|sheet|file|slides|bitable|base|apps|wiki)
+  - name: --url
+    shorthand: null
+    type: string
+    description: 'recommended: Lark/Feishu document URL (doc, docx, sheet, file, slides, bitable, base, apps, wiki); Wiki
+      URLs are unwrapped automatically'
 - name: +search
   summary: 'Search Lark docs, Wiki, and spreadsheet files with flat filters (Search v2: doc_wiki/search)'
   description: 'Search Lark docs, Wiki, and spreadsheet files with flat filters (Search v2: doc_wiki/search)'
@@ -1344,6 +1734,65 @@ shortcuts:
     shorthand: null
     type: string
     description: async task ticket (for import/export tasks)
+- name: +update-reply
+  summary: Update the content of a comment reply on doc/docx/sheet/file/slides/base(bitable)/apps, with URL parsing and Wiki
+    token unwrapping
+  description: Update the content of a comment reply on doc/docx/sheet/file/slides/base(bitable)/apps, with URL parsing and
+    Wiki token unwrapping
+  usage: lark-cli drive +update-reply [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --comment-id
+    shorthand: null
+    type: string
+    description: comment ID that owns the reply (from drive +list-comments)
+  - name: --content
+    shorthand: null
+    type: string
+    description: reply_elements JSON string, same format as drive +add-comment (supports @file, - reads stdin (one flag per
+      call; use @file for others))
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +update-reply
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --reply-id
+    shorthand: null
+    type: string
+    description: reply ID to update (from drive +list-replies)
+  - name: --token
+    shorthand: null
+    type: string
+    description: document token, Wiki token, or document URL; bare tokens require --type
+  - name: --type
+    shorthand: null
+    type: string
+    description: document type for bare --token; optional for URLs but must match the URL type when provided (doc|docx|sheet|file|slides|bitable|base|apps|wiki)
+  - name: --url
+    shorthand: null
+    type: string
+    description: 'recommended: Lark/Feishu document URL (doc, docx, sheet, file, slides, bitable, base, apps, wiki); Wiki
+      URLs are unwrapped automatically'
 - name: +upload
   summary: Upload a local file to Drive
   description: Upload a local file to Drive

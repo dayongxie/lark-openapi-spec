@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: contact
 description: Contacts operations
-cli_version: 1.0.80
-extracted_at: '2026-07-30T04:23:51Z'
+cli_version: 1.0.81
+extracted_at: '2026-08-01T04:36:39Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +get-user
@@ -45,6 +45,59 @@ shortcuts:
     type: string
     description: 'user ID type: open_id | union_id | user_id'
     default: open_id
+- name: +search-bot
+  summary: Search bots (apps) by keyword — across the tenant, or inside specific chats (requires --as user)
+  description: Search bots (apps) by keyword — across the tenant, or inside specific chats (requires --as user)
+  usage: lark-cli contact +search-bot [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --chat-ids
+    shorthand: null
+    type: string
+    description: search within specific chats (CSV of chat_id; ≤ 100)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --has-chatted
+    shorthand: null
+    type: bool
+    description: narrow a keyword search to bots you've chatted with (omit to disable; =false rejected)
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +search-bot
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: rows per request, 1-30
+    default: '20'
+  - name: --queries
+    shorthand: null
+    type: string
+    description: comma-separated keywords searched in parallel; output is a flat bots[] with matched_query plus a queries[]
+      sidecar
+  - name: --query
+    shorthand: null
+    type: string
+    description: search keyword (≤ 50 characters); required unless --queries is given
 - name: +search-user
   summary: Search Lark/Feishu users by keyword, open_id list, or filter (requires --as user)
   description: Search Lark/Feishu users by keyword, open_id list, or filter (requires --as user)

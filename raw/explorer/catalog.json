@@ -11793,7 +11793,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/events",
        "httpMethod": "GET",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7657481714696588519",
@@ -11817,7 +11818,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/user_active_meeting",
        "httpMethod": "GET",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7657481714696604903",
@@ -12242,7 +12244,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/subscription",
        "httpMethod": "POST",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7644841241633967051",
@@ -12266,7 +12269,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/unsubscription",
        "httpMethod": "POST",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7644841241633983435",

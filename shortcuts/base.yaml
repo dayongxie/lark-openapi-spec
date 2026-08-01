@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: base
 description: Table, field, record, view, dashboard, workflow, form, role & permission management
-cli_version: 1.0.80
-extracted_at: '2026-07-30T04:23:51Z'
+cli_version: 1.0.81
+extracted_at: '2026-08-01T04:36:39Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +advperm-disable
@@ -1581,8 +1581,9 @@ shortcuts:
     type: string
     description: 'questions JSON array, max 10 items. Each item requires "title"(field title) and "type"(text/number/select/datetime/user/attachment/location).
       Optional fields: "description"(plain text or markdown link like [text](https://example.com)),"required","option_display_mode"(0=dropdown/1=vertical/2=horizontal,select
-      only),"multiple"(bool,select/user),"options"([{"name":"opt","hue":"Blue"}],select only),"style"({"type":"plain/phone/url/email/barcode/rating","precision":2,"format":"yyyy/MM/dd","icon":"star","min":1,"max":5}).
-      E.g. ''[{"type":"text","title":"Your name","required":true}]'''
+      only),"multiple"(bool,select/user),"options"([{"name":"opt","hue":"Blue"}],select only),"style"({"type":"plain/phone/url/email/barcode/rating","precision":2,"format":"yyyy/MM/dd","icon":"star","min":1,"max":5}),"visible_rule"(display
+      condition; same shape as view filter {"logic":"and","conditions":[["前序题目","==","是"]]}, field references another question''s
+      title/id, empty/absent = always shown). E.g. ''[{"type":"text","title":"Your name","required":true}]'''
   - name: --table-id
     shorthand: null
     type: string
@@ -1723,9 +1724,11 @@ shortcuts:
   - name: --questions
     shorthand: null
     type: string
-    description: 'questions JSON array, max 10 items, each item must include "id". Supported fields: "id"(required),"title","description"(plain
-      text or markdown link like [text](https://example.com)),"required","option_display_mode"(0=dropdown,1=vertical,2=horizontal,select
-      only). E.g. ''[{"id":"q_001","title":"Updated?","required":true}]'''
+    description: 'questions JSON array, max 10 items, each item must include "id". Update uses full question overwrite semantics:
+      omitted/empty fields are written as defaults/empty, so run +form-questions-list first and include existing values you
+      want to keep. Supported fields: "id"(required),"title","description"(plain text or markdown link like [text](https://example.com)),"required","option_display_mode"(0=dropdown,1=vertical,2=horizontal,select
+      only),"visible_rule"(display condition; same shape as view filter {"logic":"and","conditions":[["前序题目","==","是"]]},
+      field references another question''s title/id; pass null or omit to clear). E.g. ''[{"id":"q_001","title":"Updated?","required":true}]'''
   - name: --table-id
     shorthand: null
     type: string
