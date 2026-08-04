@@ -1,10 +1,60 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: slides
 description: Create and manage presentations, read content, and add or remove slides
-cli_version: 1.0.81
-extracted_at: '2026-08-01T04:36:39Z'
+cli_version: 1.0.82
+extracted_at: '2026-08-04T04:32:18Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
+- name: +add-slide
+  summary: Add one page to an existing presentation (<img src="@./local.png"> placeholders are auto-uploaded and replaced
+    with file_token)
+  description: Add one page to an existing presentation (<img src="@./local.png"> placeholders are auto-uploaded and replaced
+    with file_token)
+  usage: lark-cli slides +add-slide [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --before-slide-id
+    shorthand: null
+    type: string
+    description: 'insert before this slide_id (default: append after the last page)'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +add-slide
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --presentation
+    shorthand: null
+    type: string
+    description: xml_presentation_id, slides URL, or wiki URL that resolves to slides
+  - name: --revision-id
+    shorthand: null
+    type: int
+    description: presentation revision (-1 = latest; pass a specific number for optimistic locking)
+    default: '-1'
+  - name: --slide
+    shorthand: null
+    type: string
+    description: one complete <slide> XML document (supports @file, - reads stdin (one flag per call; use @file for others))
 - name: +create
   summary: Create a Lark Slides presentation
   description: Create a Lark Slides presentation
@@ -40,11 +90,56 @@ shortcuts:
     shorthand: null
     type: string
     description: slide content JSON array (each element is a <slide> XML string, max 10; for more pages, create first then
-      add via xml_presentation.slide.create). <img src="@./local.png"> placeholders are auto-uploaded and replaced with file_token.
+      add them one at a time with slides +add-slide). <img src="@./local.png"> placeholders are auto-uploaded and replaced
+      with file_token.
   - name: --title
     shorthand: null
     type: string
     description: presentation title
+- name: +delete-slide
+  summary: Delete one page from a presentation by slide_id
+  description: Delete one page from a presentation by slide_id
+  usage: lark-cli slides +delete-slide [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +delete-slide
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --presentation
+    shorthand: null
+    type: string
+    description: xml_presentation_id, slides URL, or wiki URL that resolves to slides
+  - name: --revision-id
+    shorthand: null
+    type: int
+    description: presentation revision (-1 = latest; pass a specific number for optimistic locking)
+    default: '-1'
+  - name: --slide-id
+    shorthand: null
+    type: string
+    description: slide page identifier (slide_id) to delete
 - name: +history-list
   summary: List Slides presentation history versions
   description: List Slides presentation history versions

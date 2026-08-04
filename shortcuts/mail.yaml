@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: mail
 description: Email, draft, folder, and contacts management
-cli_version: 1.0.81
-extracted_at: '2026-08-01T04:36:39Z'
+cli_version: 1.0.82
+extracted_at: '2026-08-04T04:32:18Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +decline-receipt
@@ -1554,8 +1554,16 @@ shortcuts:
   - name: --filter
     shorthand: null
     type: string
-    description: 'exact-match condition filter (JSON). Narrow results by folder, label, sender, recipient, etc. Run --print-filter-schema
-      to see all fields. Example: {"folder":"INBOX","from":["alice@example.com"]}'
+    description: 'exact-match condition filter (JSON or key=value). Narrow results by folder, label, sender, recipient, unread
+      status, etc. Run --print-filter-schema to see all fields. Example: {"folder":"INBOX","from":["alice@example.com"]}'
+  - name: --folder
+    shorthand: null
+    type: string
+    description: folder name or system folder ID filter
+  - name: --folder-id
+    shorthand: null
+    type: string
+    description: explicit folder ID filter
   - name: --format
     shorthand: null
     type: string
@@ -1565,6 +1573,10 @@ shortcuts:
     shorthand: -h
     type: bool
     description: help for +triage
+  - name: --is-unread
+    shorthand: null
+    type: bool
+    description: filter unread messages
   - name: --jq
     shorthand: -q
     type: string
@@ -1587,10 +1599,6 @@ shortcuts:
     type: int
     description: maximum number of messages to fetch (1-400; auto-paginates internally)
     default: '20'
-  - name: --page-size
-    shorthand: null
-    type: int
-    description: alias for --max
   - name: --page-token
     shorthand: null
     type: string
