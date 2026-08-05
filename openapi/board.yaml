@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+6c890ce3
+  version: 1.0.0+236b7033
   x-lark-project: board
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -559,6 +559,11 @@ paths:
                         type: string
                         description: 操作的唯一标识，更新请求中使用此值表示幂等的进行此次更新
                         example: fe599b60-450f-46ff-b2ef-9f6675625b97
+                      previous_revision:
+                        type: string
+                        description: 本次更新写入前的画板版本号
+                        example: '10'
+                        format: int64
                     required:
                     - ids
       x-lark-access-tokens:

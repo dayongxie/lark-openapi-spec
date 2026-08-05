@@ -1,5 +1,20 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-08-05）
+
+新增 0 · 移除 0 · 定义变更 9（全量共 1628 个接口）
+
+### 定义变更
+- `GET /open-apis/approval/v4/tasks`「查询审批任务列表」（approval/v4/task/list）
+- `POST /open-apis/board/v1/whiteboards/{whiteboard_id}/nodes`「创建节点」（board/v1/whiteboard.node/create）
+- `POST /open-apis/compensation/v1/lump_sum_payment/batch_create`「批量创建一次性支付记录」（compensation/v1/lump_sum_payment/batch_create）
+- `POST /open-apis/compensation/v1/lump_sum_payment/batch_remove`「批量删除一次性支付记录」（compensation/v1/lump_sum_payment/batch_remove）
+- `POST /open-apis/compensation/v1/lump_sum_payment/batch_update`「批量更正一次性支付记录」（compensation/v1/lump_sum_payment/batch_update）
+- `POST /open-apis/compensation/v1/lump_sum_payment/query`「查询一次性支付授予记录」（compensation/v1/lump_sum_payment/query）
+- `POST /open-apis/compensation/v1/lump_sum_payment/query_detail`「查询一次性支付授予明细」（compensation/v1/lump_sum_payment/query_detail）
+- `GET /open-apis/minutes/v1/minutes/{minute_token}/artifacts`「获取妙记AI产物」（minutes/v1/minute/artifacts）
+- `POST /open-apis/minutes/v1/minutes/search`「搜索妙记」（minutes/v1/minute/search）
+
 ## explorer 全量轨道（2026-07-30）
 
 新增 0 · 移除 0 · 定义变更 4（全量共 1628 个接口）

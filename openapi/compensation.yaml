@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+646a7c0b
+  version: 1.0.0+9058bfd4
   x-lark-project: compensation
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -1250,11 +1250,15 @@ paths:
                               type: string
                               description: 一次性支付明细所属期结束日期
                               example: '2024-08-01'
-                            is_not_issued_due_to_offboardings:
+                            is_not_issued_due_to_offboarding:
                               type: integer
                               description: 是否因离职不发放 0, // 空，未填写或不适用     Yes   = 1, // 是，因离职停发     No    = 2, // 否，非离职停发
                               default: 0
                               example: '0'
+                            issuance_index:
+                              type: integer
+                              description: 发放次序
+                              example: '1'
                           required:
                           - issuance_amount
                           - issuance_status
@@ -1468,7 +1472,7 @@ paths:
                               type: string
                               description: 一次性支付明细所属期结束日期
                               example: '2024-08-01'
-                            is_not_issued_due_to_offboardings:
+                            is_not_issued_due_to_offboarding:
                               type: integer
                               description: 是否因离职不发放 0, // 空，未填写或不适用     Yes   = 1, // 是，因离职停发     No    = 2, // 否，非离职停发
                               default: 0
@@ -3435,7 +3439,7 @@ components:
         item_detail:
           type: array
           items:
-            $ref: '#/components/schemas/Item3'
+            $ref: '#/components/schemas/Item4'
           description: 参保信息
         remark:
           type: object
@@ -3607,60 +3611,9 @@ components:
         operate_results:
           type: array
           items:
-            $ref: '#/components/schemas/Item4'
+            $ref: '#/components/schemas/Item3'
           description: 每条记录的操作结果。对于创建成功的记录，会返回创建后的一次性支付记录id
     Item3:
-      type: object
-      properties:
-        item_id:
-          type: string
-          description: 险种ID，详细信息可通过社保险种接口查询
-          example: '123456'
-        item_name:
-          type: object
-          properties:
-            zh_cn:
-              type: string
-              description: 中文名称
-              example: 中文名称
-            en_us:
-              type: string
-              description: 英文名称
-              example: english_name
-          description: 险种名
-        item_setting_of_person:
-          allOf:
-          - $ref: '#/components/schemas/CompanySetting'
-          description: 险种缴纳配置
-        item_setting_of_company:
-          allOf:
-          - $ref: '#/components/schemas/CompanySetting'
-          description: 险种缴纳配置
-        payment_frequency:
-          type: string
-          description: 缴纳频率
-          enum:
-          - annually
-          - monthly
-          - quarterly
-          x-enum-descriptions:
-            annually: 每年
-            monthly: 每月
-            quarterly: 每季度
-          example: '8.00'
-        payment_months:
-          type: array
-          items:
-            type: integer
-          description: 缴纳月份
-      required:
-      - item_id
-      - item_name
-      - item_setting_of_person
-      - item_setting_of_company
-      - payment_frequency
-      - payment_months
-    Item4:
       type: object
       properties:
         id:
@@ -3749,6 +3702,71 @@ components:
           type: string
           description: 操作结果描述
           example: uqniue id conflict
+        detail_results:
+          type: array
+          items:
+            type: object
+            properties:
+              detail_id:
+                type: string
+                description: 明细ID
+                example: '7395133551102200923'
+              issuance_index:
+                type: integer
+                description: 发放次序
+                example: '1'
+          description: 操作的明细结果
+    Item4:
+      type: object
+      properties:
+        item_id:
+          type: string
+          description: 险种ID，详细信息可通过社保险种接口查询
+          example: '123456'
+        item_name:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文名称
+              example: 中文名称
+            en_us:
+              type: string
+              description: 英文名称
+              example: english_name
+          description: 险种名
+        item_setting_of_person:
+          allOf:
+          - $ref: '#/components/schemas/CompanySetting'
+          description: 险种缴纳配置
+        item_setting_of_company:
+          allOf:
+          - $ref: '#/components/schemas/CompanySetting'
+          description: 险种缴纳配置
+        payment_frequency:
+          type: string
+          description: 缴纳频率
+          enum:
+          - annually
+          - monthly
+          - quarterly
+          x-enum-descriptions:
+            annually: 每年
+            monthly: 每月
+            quarterly: 每季度
+          example: '8.00'
+        payment_months:
+          type: array
+          items:
+            type: integer
+          description: 缴纳月份
+      required:
+      - item_id
+      - item_name
+      - item_setting_of_person
+      - item_setting_of_company
+      - payment_frequency
+      - payment_months
     Item5:
       type: object
       properties:
@@ -3950,7 +3968,7 @@ components:
           type: string
           description: 一次性支付明细所属期结束日期
           example: '2024-08-01'
-        is_not_issued_due_to_offboardings:
+        is_not_issued_due_to_offboarding:
           type: integer
           description: 是否因离职不发放 0, // 空，未填写或不适用     Yes   = 1, // 是，因离职停发     No    = 2, // 否，非离职停发
           default: 0

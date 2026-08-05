@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: slides
 description: Create and manage presentations, read content, and add or remove slides
-cli_version: 1.0.82
-extracted_at: '2026-08-04T04:32:18Z'
+cli_version: 1.0.83
+extracted_at: '2026-08-05T04:30:50Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +add-slide
@@ -302,9 +302,10 @@ shortcuts:
     type: string
     description: xml_presentation_id, slides URL, or wiki URL that resolves to slides
 - name: +replace-pages
-  summary: Batch rebuild pages inside an existing Slides presentation (create before old page, then delete old page; not atomic)
-  description: Batch rebuild pages inside an existing Slides presentation (create before old page, then delete old page; not
-    atomic)
+  summary: 'Deprecated — use +update-slide once per page (in place: keeps slide_id and page order; elements written back with
+    their original ids keep them). This rebuild changes slide_id and every element id; not atomic'
+  description: 'Deprecated — use +update-slide once per page (in place: keeps slide_id and page order; elements written back
+    with their original ids keep them). This rebuild changes slide_id and every element id; not atomic'
   usage: lark-cli slides +replace-pages [flags]
   risk: write
   flags:
@@ -384,8 +385,9 @@ shortcuts:
   - name: --parts
     shorthand: null
     type: string
-    description: 'JSON array of replace parts (each: {action: block_replace|block_insert, ...}); max 200 (supports @file,
-      - reads stdin (one flag per call; use @file for others))'
+    description: JSON array of replace parts; each needs action plus block_id + replacement (block_replace) or insertion [+
+      insert_before_block_id] (block_insert); any other key is rejected; max 200 (supports @file, - reads stdin (one flag
+      per call; use @file for others))
   - name: --presentation
     shorthand: null
     type: string
@@ -456,10 +458,66 @@ shortcuts:
     shorthand: null
     type: strings
     description: slide page identifier (repeat or comma-separated for multiple slides; max 10 pages per request)
+    default: '[]'
   - name: --slide-number
     shorthand: null
     type: ints
     description: slide page number (repeat for multiple slides; max 10 pages per request)
+    default: '[]'
+- name: +update-slide
+  summary: Apply a full <slide> XML to an existing slide, replacing the page in one request (keeps slide_id and page order)
+  description: Apply a full <slide> XML to an existing slide, replacing the page in one request (keeps slide_id and page order)
+  usage: lark-cli slides +update-slide [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --content
+    shorthand: null
+    type: string
+    description: the page's full target XML, one <slide> root; elements omitted here are removed from the page (supports @file,
+      - reads stdin (one flag per call; use @file for others))
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +update-slide
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --presentation
+    shorthand: null
+    type: string
+    description: xml_presentation_id, slides URL, or wiki URL that resolves to slides
+  - name: --revision-id
+    shorthand: null
+    type: int
+    description: revision to apply against; -1 (default) means latest. Pinning an older revision rebuilds the page from that
+      snapshot and discards newer edits to it
+    default: '-1'
+  - name: --slide-id
+    shorthand: null
+    type: string
+    description: slide page identifier (slide_id) of the page to replace
+  - name: --tid
+    shorthand: null
+    type: string
+    description: transaction id for concurrent-edit locking (usually empty)
 - name: +xml-get
   summary: Fetch presentation XML or one slide XML
   description: Fetch presentation XML or one slide XML

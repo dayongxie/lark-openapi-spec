@@ -2107,7 +2107,7 @@
   "httpMethod": "GET",
   "project": "approval",
   "resource": "task",
-  "sha256": "7b5690665ed2b11dca6d1e6634d7c73e76133a84a3885248c5f62f9eda03b9db",
+  "sha256": "f1219751760790fd21b052b1adddd68cb222d60c33fa8a4b824fe397491350e3",
   "title": "查询审批任务列表",
   "version": "v4"
  },
@@ -3619,7 +3619,7 @@
   "httpMethod": "POST",
   "project": "board",
   "resource": "whiteboard.node",
-  "sha256": "5a3edeae91c889995d97b87ded417240f62299f0724e6d77398c21d700dc35d6",
+  "sha256": "c6a45b1641ccb8e70305c2d0355b49d70346159f7315b786af2eb7ab32a57559",
   "title": "创建节点",
   "version": "v1"
  },
@@ -4423,7 +4423,7 @@
   "httpMethod": "POST",
   "project": "compensation",
   "resource": "lump_sum_payment",
-  "sha256": "4c0c0cd8a8479cb8a8de88b3f0442c282b0a8baea8182cc9719bdbef245f5237",
+  "sha256": "bd54e6bb800805c1537a52de30371796aaef2c30209c49c144308d71e343d2f1",
   "title": "批量创建一次性支付记录",
   "version": "v1"
  },
@@ -4435,7 +4435,7 @@
   "httpMethod": "POST",
   "project": "compensation",
   "resource": "lump_sum_payment",
-  "sha256": "ff0c6552dc467f2251e21f1754a87d72f5478dddee2c392d6dc155b07f06d258",
+  "sha256": "8ca389099dcf77af24e8d4b70072ce168f4e90eb41d9f77423c387019ed30b01",
   "title": "批量删除一次性支付记录",
   "version": "v1"
  },
@@ -4447,7 +4447,7 @@
   "httpMethod": "POST",
   "project": "compensation",
   "resource": "lump_sum_payment",
-  "sha256": "fd0ae40860c729bcf20e0c581e1a4834b753d113b4af55b2e58d02f19cad291e",
+  "sha256": "fa872767958ba51413872f5077d0c90c23b81423fa84235a0805e98d11d21bcb",
   "title": "批量更正一次性支付记录",
   "version": "v1"
  },
@@ -4459,7 +4459,7 @@
   "httpMethod": "POST",
   "project": "compensation",
   "resource": "lump_sum_payment",
-  "sha256": "bc80c8a49f4844c70862440cef9c5fd591305093f430c4ddd13d6962d0eeca6b",
+  "sha256": "1ddd86261c6a8252574395f2ce1058361546392556652c1718f73b10770e41aa",
   "title": "查询一次性支付授予记录",
   "version": "v1"
  },
@@ -4471,7 +4471,7 @@
   "httpMethod": "POST",
   "project": "compensation",
   "resource": "lump_sum_payment",
-  "sha256": "8a647c703720c0767b97af9c902c3f1a911fb0330cd09ceaf52b6d99ba2351bd",
+  "sha256": "f71a15088ffa0abf60d5b41f6917a5331ff07b05a5206176302953086b16d90a",
   "title": "查询一次性支付授予明细",
   "version": "v1"
  },
@@ -15427,7 +15427,7 @@
   "httpMethod": "GET",
   "project": "minutes",
   "resource": "minute",
-  "sha256": "1c68caac0cb9e885564ac2440cbe678ac3788a2f5cc221f41c44331669f66240",
+  "sha256": "ad636698582457d2b4cdca22ad6e9034a3eb66a28e7a70e831b3f5b02b723cfa",
   "title": "获取妙记AI产物",
   "version": "v1"
  },
@@ -15451,7 +15451,7 @@
   "httpMethod": "POST",
   "project": "minutes",
   "resource": "minute",
-  "sha256": "5615ebfa3701e587e1d4cec0190c3837e4c37769a3426a97e70080e35db769b3",
+  "sha256": "34028e4c192057fda09672ea22af53d4b08b058576caf2d0a174212689bface5",
   "title": "搜索妙记",
   "version": "v1"
  },
