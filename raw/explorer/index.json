@@ -3847,7 +3847,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "d3cf843c839dd9742c1a5bbb2c5aa182d2fcc4003ae31af8f9ce20e924946914",
+  "sha256": "58781cb8d83cc91d703bd8b800de67b812c1e953e05063db603cf92de399ae47",
   "title": "创建日程",
   "version": "v4"
  },
@@ -3871,7 +3871,7 @@
   "httpMethod": "GET",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "394ac6dbf4a3005d300820b1c39f37e23058d4aa6beda40565242d76e1a7a630",
+  "sha256": "41b09e100643bca134fa300e99ea3e7d967791c1355f7ce88b89d308c98e3eae",
   "title": "获取日程",
   "version": "v4"
  },
@@ -3919,7 +3919,7 @@
   "httpMethod": "PATCH",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "8bbf6c059d0450c1448c3f11212e87bd7638b13ca9336f9214051b859ed09a6d",
+  "sha256": "3663d7a0a6b15e3f0ace757f5f6ddb6dfba4fe0b0437fd5c9b89a6a503792fb6",
   "title": "更新日程",
   "version": "v4"
  },
@@ -6259,7 +6259,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "leave",
-  "sha256": "fb92c362879ebd8c227f23bb8ef53854ff3330a169595a89c6feb18b96d5dcc5",
+  "sha256": "21a9e82ba359f520d1dd43d3aeb48eee9f47e889b809a3da801822a313e6addf",
   "title": "获取工作日历日期详情",
   "version": "v1"
  },
@@ -13627,7 +13627,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "message",
-  "sha256": "fa7bf927ac13999c4e0d2fc68fce407b7f5046fc2de69d65ff11407cf1e121a3",
+  "sha256": "7b3f0a70c5afabd25677b4cbc97742d87e178eeb62ad4188c67fffca8f19fb21",
   "title": "搜索消息",
   "version": "v1"
  },
@@ -18547,7 +18547,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "bot",
-  "sha256": "be224447468af795a9763c97112f53df2c1fbe4a428c761bdeaf4fd0e869508b",
+  "sha256": "93a7fe568b4d225596d18ab0d56e36b2dadd7cc951faa5a6ed48be116fc480d5",
   "title": "获取会议事件列表",
   "version": "v1"
  },
@@ -18811,7 +18811,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "note",
-  "sha256": "1085b9cbfbb943eb46f482b2d75746d3375ee0266fd1296fcadbc9351d92d2b5",
+  "sha256": "8b8e106cc5c5ea232c374a84dac69b2a06f5af09babd3c2dea869862251c789f",
   "title": "获取纪要详情",
   "version": "v1"
  },
@@ -19387,7 +19387,7 @@
   "httpMethod": "GET",
   "project": "wiki",
   "resource": "space.node",
-  "sha256": "13b00c18c9f16f33fdbfe08030ff4145afa3df46ecdfe75b761e568c9d672f50",
+  "sha256": "0e92b49ed73475d53d44a84086ea201f8256796e5dbed94dbb44f2a656c2f36c",
   "title": "获取知识空间子节点列表",
   "version": "v2"
  },

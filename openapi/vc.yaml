@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+671bbbf1
+  version: 1.0.0+bca19ffc
   x-lark-project: vc
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -664,6 +664,101 @@ paths:
                                         description: 妙享结束时间（毫秒级时间戳）
                                         example: '1712349200000'
                                   description: 妙享结束内容（activity_event_type = magic_share_ended 时填充）
+                                document_context_changed_items:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      operator:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: 用户 ID
+                                            example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
+                                          user_type:
+                                            type: integer
+                                            description: 用户类型
+                                            example: '1'
+                                          user_role:
+                                            type: integer
+                                            description: 用户角色
+                                            example: '1'
+                                          user_name:
+                                            type: string
+                                            description: 用户名称
+                                            example: 张三
+                                        description: 触发文档上下文变化的操作人，无法识别时不返回
+                                      share_id:
+                                        type: string
+                                        description: 共享会话 ID
+                                        example: '7359880116'
+                                      share_doc:
+                                        type: object
+                                        properties:
+                                          url:
+                                            type: string
+                                            description: 文档 URL
+                                            example: https://example.feishu.cn/docx/xxx
+                                          title:
+                                            type: string
+                                            description: 文档标题
+                                            example: 会议讨论稿
+                                        description: 当前共享文档信息
+                                      time:
+                                        type: string
+                                        description: 事件发生时间，十进制毫秒级时间戳字符串
+                                        example: '1717171234567'
+                                      comment_focus:
+                                        type: object
+                                        properties:
+                                          comment_id:
+                                            type: string
+                                            description: 评论 ID
+                                            example: '7380000000000000000'
+                                          focused:
+                                            type: boolean
+                                            description: 是否聚焦该评论，true 表示聚焦，false 表示取消聚焦
+                                            example: 'true'
+                                        description: 评论聚焦变化，仅评论聚焦或取消聚焦时返回
+                                      section_location:
+                                        type: object
+                                        properties:
+                                          title:
+                                            type: string
+                                            description: 当前章节标题
+                                            example: 项目进展
+                                          level:
+                                            type: integer
+                                            description: 当前章节层级
+                                            example: '1'
+                                          parent_titles:
+                                            type: array
+                                            items:
+                                              type: string
+                                            description: 父级章节标题列表
+                                        description: 章节位置变化，仅章节定位变化时返回
+                                      element_preview:
+                                        type: object
+                                        properties:
+                                          action:
+                                            type: string
+                                            description: 元素预览动作
+                                            example: open
+                                          element_type:
+                                            type: string
+                                            description: 预览元素类型
+                                            example: image
+                                          element_token:
+                                            type: string
+                                            description: 预览元素 Token
+                                            example: element_xxx
+                                          block_id:
+                                            type: string
+                                            description: 元素所在的文档 Block ID
+                                            example: block_xxx
+                                        description: 元素预览变化，仅图片或白板预览变化时返回
+                                  description: 文档上下文变化内容（activity_event_type = document_context_changed 时返回），单条记录包含评论聚焦、章节定位或元素预览中的一种变化
                               description: 事件负载，包含与事件类型对应的业务数据，采用 JSON 格式序列化后的字符串
                         description: 会议事件列表，包含会议生命周期内的所有关键操作记录。
       x-lark-access-tokens:
@@ -3402,6 +3497,7 @@ paths:
                         description: 纪要信息
       x-lark-access-tokens:
       - user
+      - tenant
       x-lark-scopes:
       - vc:note:read
       x-lark-field-scopes:

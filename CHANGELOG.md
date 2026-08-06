@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-08-06）
+
+新增 0 · 移除 0 · 定义变更 8（全量共 1628 个接口）
+
+### 定义变更
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/events`「创建日程」（calendar/v4/calendar.event/create）
+- `GET /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}`「获取日程」（calendar/v4/calendar.event/get）
+- `PATCH /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}`「更新日程」（calendar/v4/calendar.event/patch）
+- `POST /open-apis/corehr/v1/leaves/work_calendar_date`「获取工作日历日期详情」（corehr/v1/leave/work_calendar_date）
+- `POST /open-apis/im/v1/messages/search`「搜索消息」（im/v1/message/search）
+- `GET /open-apis/vc/v1/bots/events`「获取会议事件列表」（vc/v1/bot/events）
+- `GET /open-apis/vc/v1/notes/{note_id}`「获取纪要详情」（vc/v1/note/get）
+- `GET /open-apis/wiki/v2/spaces/{space_id}/nodes`「获取知识空间子节点列表」（wiki/v2/space.node/list）
+
 ## explorer 全量轨道（2026-08-05）
 
 新增 0 · 移除 0 · 定义变更 9（全量共 1628 个接口）

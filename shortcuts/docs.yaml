@@ -1,18 +1,13 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: docs
 description: Document and content operations
-cli_version: 1.0.83
-extracted_at: '2026-08-05T04:30:50Z'
+cli_version: 1.0.84
+extracted_at: '2026-08-06T04:32:35Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +create
   summary: Create a Lark document
-  description: 'Create a Lark document Start here (required for AI agents): lark-cli skills read lark-doc references/lark-doc-create.md
-    AI agents MUST read the matching embedded skill before choosing flags or running docs commands. Do not skip this step,
-    and do not infer workflows from --help alone. MUST NOT grep/open local SKILL.md files to discover this guidance; use lark-cli
-    skills read lark-doc references/lark-doc-create.md so content stays version-matched with this CLI. Skills ship with the
-    CLI and include docs workflows, selector/block-id usage, XML/Markdown formats, and copy-paste examples. skills read lark-doc                Docs
-    workflow guide skills read lark-doc <path>         Read a referenced docs skill file'
+  description: Create a Lark document
   usage: lark-cli docs +create [flags]
   risk: write
   flags:
@@ -23,11 +18,8 @@ shortcuts:
   - name: --content
     shorthand: null
     type: string
-    description: document body; XML by default or Markdown when --doc-format markdown. AI agents MUST read lark-cli skills
-      read lark-doc references/lark-doc-xml.md before writing any --content payload; when using --doc-format markdown, also
-      read lark-cli skills read lark-doc references/lark-doc-md.md. Follow the latest rules there, and MUST NOT grep/open
-      local SKILL.md files to discover this guidance; use --help for the latest command flags (supports @file, - reads stdin
-      (one flag per call; use @file for others))
+    description: document body; XML by default or Markdown when --doc-format markdown. (supports @file, - reads stdin (one
+      flag per call; use @file for others))
   - name: --doc-format
     shorthand: null
     type: string
@@ -76,12 +68,7 @@ shortcuts:
       later content titles
 - name: +fetch
   summary: Fetch Lark document content
-  description: 'Fetch Lark document content Start here (required for AI agents): lark-cli skills read lark-doc references/lark-doc-fetch.md
-    AI agents MUST read the matching embedded skill before choosing flags or running docs commands. Do not skip this step,
-    and do not infer workflows from --help alone. MUST NOT grep/open local SKILL.md files to discover this guidance; use lark-cli
-    skills read lark-doc references/lark-doc-fetch.md so content stays version-matched with this CLI. Skills ship with the
-    CLI and include docs workflows, selector/block-id usage, XML/Markdown formats, and copy-paste examples. skills read lark-doc                Docs
-    workflow guide skills read lark-doc <path>         Read a referenced docs skill file'
+  description: Fetch Lark document content
   usage: lark-cli docs +fetch [flags]
   risk: read
   flags:
@@ -168,12 +155,7 @@ shortcuts:
     description: range/section anchor block id; required for section and optional start for range
 - name: +history-list
   summary: List Lark document history versions
-  description: 'List Lark document history versions Start here (required for AI agents): lark-cli skills read lark-doc references/lark-doc-history.md
-    AI agents MUST read the matching embedded skill before choosing flags or running docs commands. Do not skip this step,
-    and do not infer workflows from --help alone. MUST NOT grep/open local SKILL.md files to discover this guidance; use lark-cli
-    skills read lark-doc references/lark-doc-history.md so content stays version-matched with this CLI. Skills ship with the
-    CLI and include docs workflows, selector/block-id usage, XML/Markdown formats, and copy-paste examples. skills read lark-doc                Docs
-    workflow guide skills read lark-doc <path>         Read a referenced docs skill file'
+  description: List Lark document history versions
   usage: lark-cli docs +history-list [flags]
   risk: read
   flags:
@@ -217,13 +199,7 @@ shortcuts:
     description: pagination token from the previous page's page_token
 - name: +history-revert
   summary: Revert a Lark document to a historical version
-  description: 'Revert a Lark document to a historical version Start here (required for AI agents): lark-cli skills read lark-doc
-    references/lark-doc-history.md AI agents MUST read the matching embedded skill before choosing flags or running docs commands.
-    Do not skip this step, and do not infer workflows from --help alone. MUST NOT grep/open local SKILL.md files to discover
-    this guidance; use lark-cli skills read lark-doc references/lark-doc-history.md so content stays version-matched with
-    this CLI. Skills ship with the CLI and include docs workflows, selector/block-id usage, XML/Markdown formats, and copy-paste
-    examples. skills read lark-doc                Docs workflow guide skills read lark-doc <path>         Read a referenced
-    docs skill file'
+  description: Revert a Lark document to a historical version
   usage: lark-cli docs +history-revert [flags]
   risk: write
   flags:
@@ -686,12 +662,7 @@ shortcuts:
     description: search keyword
 - name: +update
   summary: Update a Lark document
-  description: 'Update a Lark document Start here (required for AI agents): lark-cli skills read lark-doc references/lark-doc-update.md
-    AI agents MUST read the matching embedded skill before choosing flags or running docs commands. Do not skip this step,
-    and do not infer workflows from --help alone. MUST NOT grep/open local SKILL.md files to discover this guidance; use lark-cli
-    skills read lark-doc references/lark-doc-update.md so content stays version-matched with this CLI. Skills ship with the
-    CLI and include docs workflows, selector/block-id usage, XML/Markdown formats, and copy-paste examples. skills read lark-doc                Docs
-    workflow guide skills read lark-doc <path>         Read a referenced docs skill file'
+  description: Update a Lark document
   usage: lark-cli docs +update [flags]
   risk: write
   flags:
@@ -712,10 +683,7 @@ shortcuts:
     shorthand: null
     type: string
     description: replacement or inserted content; XML by default or Markdown when --doc-format markdown; empty with str_replace
-      deletes match. AI agents MUST read lark-cli skills read lark-doc references/lark-doc-xml.md before writing any --content
-      payload; when using --doc-format markdown, also read lark-cli skills read lark-doc references/lark-doc-md.md. Follow
-      the latest rules there, and MUST NOT grep/open local SKILL.md files to discover this guidance; use --help for the latest
-      command flags (supports @file, - reads stdin (one flag per call; use @file for others))
+      deletes match. (supports @file, - reads stdin (one flag per call; use @file for others))
   - name: --doc
     shorthand: null
     type: string

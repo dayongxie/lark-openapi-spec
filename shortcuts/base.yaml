@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: base
 description: Table, field, record, view, dashboard, workflow, form, role & permission management
-cli_version: 1.0.83
-extracted_at: '2026-08-05T04:30:50Z'
+cli_version: 1.0.84
+extracted_at: '2026-08-06T04:32:35Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +advperm-disable
@@ -2581,6 +2581,102 @@ shortcuts:
     shorthand: null
     type: bool
     description: confirm high-risk operation
+- name: +table-copy
+  summary: Copy a table by ID or name; structure only by default
+  description: Copy a table by ID or name; structure only by default
+  usage: lark-cli base +table-copy [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +table-copy
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: target table name
+  - name: --range
+    shorthand: null
+    type: string
+    description: copy range; defaults to schema, use all only to include records (schema|all)
+    default: schema
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --timeout
+    shorthand: null
+    type: duration
+    description: maximum time to wait for an asynchronous copy task (max 30m)
+    default: 5m0s
+  - name: --wait
+    shorthand: null
+    type: bool
+    description: wait for an all-range copy task to finish
+- name: +table-copy-status
+  summary: Get one table copy task status
+  description: Get one table copy task status
+  usage: lark-cli base +table-copy-status [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +table-copy-status
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --task-id
+    shorthand: null
+    type: string
+    description: opaque table copy task ID
 - name: +table-create
   summary: Create a table and optional fields/views
   description: Create a table and optional fields/views

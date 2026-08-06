@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: slides
 description: Create and manage presentations, read content, and add or remove slides
-cli_version: 1.0.83
-extracted_at: '2026-08-05T04:30:50Z'
+cli_version: 1.0.84
+extracted_at: '2026-08-06T04:32:35Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +add-slide
@@ -441,6 +441,10 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+  - name: --output
+    shorthand: null
+    type: string
+    description: preferred relative output path for a single screenshot (extension optional; .png, .jpg, or .jpeg)
   - name: --output-dir
     shorthand: null
     type: string
