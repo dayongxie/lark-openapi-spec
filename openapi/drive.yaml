@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+6baec139
+  version: 1.0.0+b137fdae
   x-lark-project: drive
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -6089,7 +6089,7 @@ paths:
         httpCode: 500
         msg: Concurrency error, please retry
       x-lark-rate-limit:
-        tier: 3
+        tier: 7
   /open-apis/drive/v1/permissions/{token}/members/batch_create:
     post:
       operationId: drive_permission_member_batch_create

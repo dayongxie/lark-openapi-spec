@@ -9931,7 +9931,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "94a37878fa67a5c91a7563ae323e35445b386bcfceba0e2a4c835755379a4fe7",
+  "sha256": "41a0995a0b5ccdddf2879096a866233dc018058c75a9d58ffbce0a1698400a74",
   "title": "判断用户云文档权限",
   "version": "v1"
  },
