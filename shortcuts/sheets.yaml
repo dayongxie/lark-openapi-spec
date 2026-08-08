@@ -1,13 +1,15 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: sheets
 description: Spreadsheet operations
-cli_version: 1.0.84
-extracted_at: '2026-08-06T04:32:35Z'
+cli_version: 1.0.85
+extracted_at: '2026-08-08T03:02:37Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +batch-update
-  summary: Execute a batch of write shortcuts as a single atomic request (rolls back on failure by default).
-  description: Execute a batch of write shortcuts as a single atomic request (rolls back on failure by default).
+  summary: Execute a batch of write shortcuts in one request; fail-fast on the first failing sub-op (already-applied sub-ops
+    are NOT rolled back).
+  description: Execute a batch of write shortcuts in one request; fail-fast on the first failing sub-op (already-applied sub-ops
+    are NOT rolled back).
   usage: lark-cli sheets +batch-update [flags]
   risk: high-risk-write
   flags:
@@ -52,8 +54,10 @@ shortcuts:
       that once at the top level via --url/--spreadsheet-token; +batch-update has no top-level --sheet-id). input keys are
       the shortcut''s flags flattened into JSON (e.g. "range":"A11:B12"), not another nested layer. For basic flags use lark-cli
       sheets <shortcut> --help; for composite JSON flags use --print-schema --flag-name <flag>. Do not pass an explicit operation
-      field. Strict transaction by default, pass --continue-on-error for soft batch; no nesting; executed serially. (supports
-      @file, - reads stdin (one flag per call; use @file for others))'
+      field. Fail-fast by default: the first failure aborts the remaining operations and already-applied sub-operations are
+      NOT rolled back (on "N succeeded, M failed" resend only the failed tail, not the whole batch); pass --continue-on-error
+      to keep going past failures; no nesting; executed serially. (supports @file, - reads stdin (one flag per call; use @file
+      for others))'
   - name: --print-schema
     shorthand: null
     type: bool
@@ -71,8 +75,8 @@ shortcuts:
     type: bool
     description: confirm high-risk operation
 - name: +cells-batch-clear
-  summary: Clear content/formats across many sheet-prefixed ranges in one atomic batch (irreversible).
-  description: Clear content/formats across many sheet-prefixed ranges in one atomic batch (irreversible).
+  summary: Clear content/formats across many sheet-prefixed ranges in one batch request (irreversible; fail-fast, no rollback).
+  description: Clear content/formats across many sheet-prefixed ranges in one batch request (irreversible; fail-fast, no rollback).
   usage: lark-cli sheets +cells-batch-clear [flags]
   risk: high-risk-write
   flags:
@@ -111,8 +115,8 @@ shortcuts:
     type: bool
     description: confirm high-risk operation
 - name: +cells-batch-set-style
-  summary: Apply one style block to many sheet-prefixed ranges in one atomic batch.
-  description: Apply one style block to many sheet-prefixed ranges in one atomic batch.
+  summary: Apply one style block to many sheet-prefixed ranges in one batch request (fail-fast, no rollback).
+  description: Apply one style block to many sheet-prefixed ranges in one batch request (fail-fast, no rollback).
   usage: lark-cli sheets +cells-batch-set-style [flags]
   risk: write
   flags:
@@ -120,11 +124,6 @@ shortcuts:
     shorthand: null
     type: string
     description: 'identity type: user | bot'
-  - name: --border-styles
-    shorthand: null
-    type: string
-    description: Border config JSON (same shape as in +cells-set-style) (supports @file, - reads stdin (one flag per call;
-      use @file for others))
   - name: --dry-run
     shorthand: null
     type: bool
@@ -255,8 +254,10 @@ shortcuts:
     description: help for +cells-get
   - name: --include
     shorthand: null
-    type: strings
-    description: Comma-separated info categories to include (value|formula|style|comment|data_validation)
+    type: truncation
+    description: Comma-separated info categories to include. truncation additionally estimates whether each cell's content
+      is clipped (by row height / col width / font size / wrap) and returns `isRowTruncated` / `isColTruncated` (extra compute;
+      enable only for layout checks or before adjusting row heights / column widths) (value|formula|style|comment|data_validation|truncation)
   - name: --jq
     shorthand: -q
     type: string
@@ -268,8 +269,11 @@ shortcuts:
   - name: --max-chars
     shorthand: null
     type: int
-    description: Max output chars per call; default 500000 (safety cap). Large reads are usually better redirected to a file;
-      only lower it (e.g. 25000) when you want results inline without triggering file offload, paging via has_more
+    description: Max output chars per call; default 500000 (safety cap). For a full untruncated read, use --output-path to
+      dump to a file (the cap auto-raises to a bounded 20M chars — the read path is not streaming, this cap is the memory
+      guard; pass an explicit --max-chars for more); only lower it (e.g. 25000) when you want results inline without a file,
+      paging via has_more. Passing 0 means "no cap of my own" and resolves to the same ceiling as leaving the flag alone (500000,
+      or the offload limit with --output-path) — never down to the tool's smaller omitted-value fallback.
     default: '500000'
   - name: --skip-hidden
     shorthand: null
@@ -463,10 +467,6 @@ shortcuts:
     shorthand: null
     type: bool
     description: print JSON Schema for a composite flag instead of executing
-  - name: --range
-    shorthand: null
-    type: string
-    description: Write range (A1 notation)
 - name: +cells-set-image
   summary: Embed a local image into a single cell (uploads via drive, then set_cell_range with rich_text embed-image).
   description: Embed a local image into a single cell (uploads via drive, then set_cell_range with rich_text embed-image).
@@ -687,6 +687,11 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+  - name: --print-example
+    shorthand: null
+    type: string
+    description: 'Print a minimal ready-to-edit --properties template for a chart type (area|bar|column|combo|line|pie|radar|scatter)
+      and exit. Purely local: no locator flags, no network; an unknown type lists the available ones'
   - name: --print-schema
     shorthand: null
     type: bool
@@ -818,11 +823,11 @@ shortcuts:
     description: print JSON Schema for a composite flag instead of executing
 - name: +cols-resize
   summary: 'Resize columns in pixels (NOT Excel char units): --range + --width <px> for one uniform width, --widths ''{"A":100,"C:E":120}''
-    for per-column widths in one atomic call, or --type standard to reset (--range is column letters like "A:E" or "C"; no
-    auto for cols).'
+    for per-column widths in one batch request, or --type standard to reset (--range is column letters like "A:E" or "C";
+    no auto for cols).'
   description: 'Resize columns in pixels (NOT Excel char units): --range + --width <px> for one uniform width, --widths ''{"A":100,"C:E":120}''
-    for per-column widths in one atomic call, or --type standard to reset (--range is column letters like "A:E" or "C"; no
-    auto for cols).'
+    for per-column widths in one batch request, or --type standard to reset (--range is column letters like "A:E" or "C";
+    no auto for cols).'
   usage: lark-cli sheets +cols-resize [flags]
   risk: write
   flags:
@@ -1059,8 +1064,11 @@ shortcuts:
   - name: --max-chars
     shorthand: null
     type: int
-    description: Max output chars per call; default 500000 (safety cap). Large reads are usually better redirected to a file;
-      only lower it (e.g. 25000) when you want results inline without triggering file offload, paging via has_more
+    description: Max output chars per call; default 500000 (safety cap). For a full untruncated read, use --output-path to
+      dump to a file (the cap auto-raises to a bounded 20M chars — the read path is not streaming, this cap is the memory
+      guard; pass an explicit --max-chars for more); only lower it (e.g. 25000) when you want results inline without a file,
+      paging via has_more. Passing 0 means "no cap of my own" and resolves to the same ceiling as leaving the flag alone (500000,
+      or the offload limit with --output-path) — never down to the tool's smaller omitted-value fallback.
     default: '500000'
   - name: --skip-hidden
     shorthand: null
@@ -1151,8 +1159,9 @@ shortcuts:
     type: bool
     description: confirm high-risk operation
 - name: +dim-freeze
-  summary: Freeze the first N rows or columns; --count 0 unfreezes the chosen dimension.
-  description: Freeze the first N rows or columns; --count 0 unfreezes the chosen dimension.
+  summary: Freeze the first N rows and/or columns; this sets the whole freeze state, so an axis you do not name ends up unfrozen.
+  description: Freeze the first N rows and/or columns; this sets the whole freeze state, so an axis you do not name ends up
+    unfrozen.
   usage: lark-cli sheets +dim-freeze [flags]
   risk: write
   flags:
@@ -1160,14 +1169,11 @@ shortcuts:
     shorthand: null
     type: string
     description: 'identity type: user | bot'
-  - name: --count
+  - name: --cols
     shorthand: null
     type: int
-    description: Freeze the first N rows/columns; pass 0 to unfreeze
-  - name: --dimension
-    shorthand: null
-    type: string
-    description: Dimension (row or column) (row|column)
+    description: Freeze the first N columns; together with --rows this states the COMPLETE freeze state — an omitted axis
+      is left unfrozen (0 means no frozen columns)
   - name: --dry-run
     shorthand: null
     type: bool
@@ -1189,6 +1195,11 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+  - name: --rows
+    shorthand: null
+    type: int
+    description: Freeze the first N rows; together with --cols this states the COMPLETE freeze state — an omitted axis is
+      left unfrozen (0 means no frozen rows)
 - name: +dim-group
   summary: Group rows or columns into an outline (collapsible).
   description: Group rows or columns into an outline (collapsible).
@@ -1291,9 +1302,10 @@ shortcuts:
   - name: --inherit-style
     shorthand: null
     type: before
-    description: 'Style inheritance for the new row/column: before (from preceding) / `after` (from following) / `none` (default)
-      (before|after|none)'
-    default: none
+    description: 'Style inheritance for the new row/column: before (from the preceding row/column) / `after` (from the following
+      row/column). Omit the flag to inherit the following row/column (same as `after`) — the backend cannot leave a new row/column
+      unstyled; for a truly blank row/column, clear formats afterwards with +cells-clear --scope formats. Insertion always
+      lands before `--position`; this only selects which side''s style is copied. (before|after)'
   - name: --jq
     shorthand: -q
     type: string
@@ -1411,8 +1423,8 @@ shortcuts:
     type: bool
     description: shorthand for --format json
 - name: +dropdown-delete
-  summary: Clear dropdowns from many sheet-prefixed ranges atomically (irreversible).
-  description: Clear dropdowns from many sheet-prefixed ranges atomically (irreversible).
+  summary: Clear dropdowns from many sheet-prefixed ranges in one batch request (irreversible; fail-fast, no rollback).
+  description: Clear dropdowns from many sheet-prefixed ranges in one batch request (irreversible; fail-fast, no rollback).
   usage: lark-cli sheets +dropdown-delete [flags]
   risk: high-risk-write
   flags:
@@ -1520,8 +1532,8 @@ shortcuts:
     type: bool
     description: print JSON Schema for a composite flag instead of executing
 - name: +dropdown-update
-  summary: Install or replace one dropdown across many sheet-prefixed ranges atomically.
-  description: Install or replace one dropdown across many sheet-prefixed ranges atomically.
+  summary: Install or replace one dropdown across many sheet-prefixed ranges in one batch request (fail-fast, no rollback).
+  description: Install or replace one dropdown across many sheet-prefixed ranges in one batch request (fail-fast, no rollback).
   usage: lark-cli sheets +dropdown-update [flags]
   risk: write
   flags:
@@ -2060,11 +2072,20 @@ shortcuts:
     type: int
     description: Image z-index controlling stacking order
 - name: +formula-verify
-  summary: Scan formulas / cell errors and return a recalc.py-shaped status report (success / errors_found / partial).
+  summary: Scan formulas / cell errors and return a recalc.py-shaped status report (success / errors_found / partial). Use
+    --ai-only to poll AI-formula compute status only.
   description: Scan formulas / cell errors and return a recalc.py-shaped status report (success / errors_found / partial).
+    Use --ai-only to poll AI-formula compute status only.
   usage: lark-cli sheets +formula-verify [flags]
   risk: read
   flags:
+  - name: --ai-only
+    shorthand: null
+    type: bool
+    description: 'Only verify AI formulas (=AI(prompt, [range])), skipping the 7 Excel-error scan of ordinary formulas. AI
+      formulas compute asynchronously: use this flag with --range as the first post-write sample check, not cells-get polling;
+      if the sample has no explicit failed/unsupported state, delivery may proceed with pending formulas while telling the
+      user that computation continues in the background.'
   - name: --as
     shorthand: null
     type: string
@@ -2630,9 +2651,9 @@ shortcuts:
     description: Spreadsheet locator
 - name: +rows-resize
   summary: 'Resize rows in pixels: --range + --height <px> for one uniform height, --heights ''{"1":50,"2:20":30,"21":"auto"}''
-    for per-row heights in one atomic call, or --type standard/auto (--range is 1-based A1 like "2:10" or "5").'
+    for per-row heights in one batch request, or --type standard/auto (--range is 1-based A1 like "2:10" or "5").'
   description: 'Resize rows in pixels: --range + --height <px> for one uniform height, --heights ''{"1":50,"2:20":30,"21":"auto"}''
-    for per-row heights in one atomic call, or --type standard/auto (--range is 1-based A1 like "2:10" or "5").'
+    for per-row heights in one batch request, or --type standard/auto (--range is 1-based A1 like "2:10" or "5").'
   usage: lark-cli sheets +rows-resize [flags]
   risk: write
   flags:
@@ -3224,6 +3245,51 @@ shortcuts:
     shorthand: null
     type: bool
     description: print JSON Schema for a composite flag instead of executing
+- name: +styles-put
+  summary: Apply one declarative visual spec (styles/merges/row-col sizes/freeze) to existing sheets in one batch request
+    (fail-fast, no rollback).
+  description: Apply one declarative visual spec (styles/merges/row-col sizes/freeze) to existing sheets in one batch request
+    (fail-fast, no rollback).
+  usage: lark-cli sheets +styles-put [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --flag-name
+    shorthand: null
+    type: string
+    description: flag whose schema to print (omit to list introspectable flags); used with --print-schema
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +styles-put
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --print-schema
+    shorthand: null
+    type: bool
+    description: print JSON Schema for a composite flag instead of executing
+  - name: --url
+    shorthand: null
+    type: string
+    description: Spreadsheet locator (target sheets are named inside --styles items)
 - name: +table-get
   summary: Read sheets back into the typed table protocol (mirror of +table-put); column types are inferred from number_format
     so the output feeds straight to +table-put or a DataFrame.
@@ -3257,6 +3323,14 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+  - name: --max-chars
+    shorthand: null
+    type: int
+    description: Max output chars per call; default 500000 (safety cap). The underlying tool truncates at ~50000 even when
+      unset, so this is sent explicitly to raise it; for a full untruncated read use --output-path (cap auto-raises to a bounded
+      20M chars; explicit --max-chars overrides). Passing 0 means "no cap of my own" and resolves to the same ceiling as leaving
+      the flag alone (500000, or the offload limit with --output-path) — never down to the tool's smaller omitted-value fallback.
+    default: '500000'
   - name: --no-header
     shorthand: null
     type: bool

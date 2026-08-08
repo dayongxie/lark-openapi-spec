@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: docs
 description: Document and content operations
-cli_version: 1.0.84
-extracted_at: '2026-08-06T04:32:35Z'
+cli_version: 1.0.85
+extracted_at: '2026-08-08T03:02:37Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +create
@@ -612,6 +612,56 @@ shortcuts:
     shorthand: null
     type: string
     description: HTTPS image URL to download and upload
+- name: +script
+  summary: Initialize a document draft workspace, or parse, preflight, and profile documents
+  description: Initialize a document draft workspace, or parse, preflight, and profile documents
+  usage: lark-cli docs +script [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --command
+    shorthand: null
+    type: string
+    description: local document operation (init-draft|parse)
+  - name: --content
+    shorthand: null
+    type: string
+    description: local XML content for parse; use @relative-file or - for stdin; mutually exclusive with --doc (supports @file,
+      - reads stdin (one flag per call; use @file for others))
+  - name: --doc
+    shorthand: null
+    type: string
+    description: online document URL or token for --command parse; mutually exclusive with --content
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +script
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --presentation-decision
+    shorthand: null
+    type: string
+    description: Presentation Decision JSON required by init-draft and saved as the draft profile baseline; genre_contract
+      and adapter accept a short name, "none", or null; accepts inline JSON (recommended for init-draft), @relative-file,
+      or - for stdin (supports @file, - reads stdin (one flag per call; use @file for others))
 - name: +search
   summary: 'Search Lark docs, Wiki, and spreadsheet files (Search v2: doc_wiki/search)'
   description: 'Search Lark docs, Wiki, and spreadsheet files (Search v2: doc_wiki/search)'
@@ -673,11 +723,13 @@ shortcuts:
   - name: --block-id
     shorthand: null
     type: string
-    description: target block ID(s) for block operations (comma-separated for batch delete); -1 means document end where supported
+    description: 'target block ID(s) for block operations (comma-separated for batch delete); sentinel values are passed through
+      to the service: -1 means document end where supported, 0 means document start where supported'
   - name: --command
     shorthand: null
     type: string
-    description: 'operation; requirements: str_replace(--pattern), block_delete(--block-id, comma-separated for batch), block_insert_after/block_replace(--block-id,--content),
+    description: 'operation; str_replace does not support resource replacement; prefer block_replace when multiple blocks
+      are involved; requirements: str_replace(--pattern), block_delete(--block-id, comma-separated for batch), block_insert_after/block_replace(--block-id,--content),
       block_copy_insert_after/block_move_after(--block-id,--src-block-ids), overwrite/append(--content) (str_replace|block_delete|block_insert_after|block_copy_insert_after|block_replace|block_move_after|overwrite|append)'
   - name: --content
     shorthand: null
@@ -718,7 +770,8 @@ shortcuts:
   - name: --pattern
     shorthand: null
     type: string
-    description: str_replace match pattern; XML mode is inline text, Markdown mode can match multiline text
+    description: simple inline text matched by str_replace; use block_replace for paragraphs, multiline content, or multiple
+      blocks
   - name: --reference-map
     shorthand: null
     type: reference_map

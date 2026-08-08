@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: im
 description: Message and group chat management
-cli_version: 1.0.84
-extracted_at: '2026-08-06T04:32:35Z'
+cli_version: 1.0.85
+extracted_at: '2026-08-08T03:02:37Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +chat-create
@@ -1003,17 +1003,17 @@ shortcuts:
     description: video cover image key (img_xxx), URL, or cwd-relative local path (absolute paths and .. are rejected); required
       when using --video
 - name: +messages-search
-  summary: Search messages across chats (supports keyword, sender, time range filters) with user identity; user-only; filters
+  summary: Search messages across chats (supports keyword, sender, time range filters) with user or bot identity; filters
     by chat/sender/attachment/time, enriches results via mget and chats batch_query
-  description: Search messages across chats (supports keyword, sender, time range filters) with user identity; user-only;
-    filters by chat/sender/attachment/time, enriches results via mget and chats batch_query
+  description: Search messages across chats (supports keyword, sender, time range filters) with user or bot identity; filters
+    by chat/sender/attachment/time, enriches results via mget and chats batch_query
   usage: lark-cli im +messages-search [flags]
   risk: read
   flags:
   - name: --as
     shorthand: null
     type: string
-    description: 'identity type: user'
+    description: 'identity type: user | bot'
   - name: --at-chatter-ids
     shorthand: null
     type: string

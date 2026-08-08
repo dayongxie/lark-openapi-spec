@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: drive
 description: File, comment, permission, and upload management
-cli_version: 1.0.84
-extracted_at: '2026-08-06T04:32:35Z'
+cli_version: 1.0.85
+extracted_at: '2026-08-08T03:02:37Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +add-comment
@@ -224,6 +224,62 @@ shortcuts:
     type: string
     description: 'recommended: Lark/Feishu document URL (doc, docx, sheet, file, slides, bitable, base, apps, wiki); Wiki
       URLs are unwrapped automatically'
+- name: +copy
+  summary: Copy a Drive resource into a target folder; wiki token/URL sources are unwrapped automatically
+  description: Copy a Drive resource into a target folder; wiki token/URL sources are unwrapped automatically
+  usage: lark-cli drive +copy [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --extra
+    shorthand: null
+    type: stringArray
+    description: repeatable key=value pair forwarded verbatim as a custom copy parameter, e.g. --extra target_type=docx to
+      convert a legacy doc into a docx copy
+  - name: --folder-token
+    shorthand: null
+    type: string
+    description: target folder token, folder URL, or the constant my_space to copy into the caller's My Space root folder
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +copy
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: name for the copied file, up to 256 bytes
+  - name: --token
+    shorthand: null
+    type: string
+    description: document token or document URL; bare tokens require --type
+  - name: --type
+    shorthand: null
+    type: string
+    description: document type for bare --token; optional for URLs but must match the URL type when provided (doc|docx|sheet|file|mindnote|slides|bitable|base|wiki)
+  - name: --url
+    shorthand: null
+    type: string
+    description: 'recommended: Lark/Feishu document URL, including wiki URLs'
 - name: +cover
   summary: List or download stable cover presets for a Drive file
   description: List or download stable cover presets for a Drive file
@@ -1793,6 +1849,59 @@ shortcuts:
     type: string
     description: 'recommended: Lark/Feishu document URL (doc, docx, sheet, file, slides, bitable, base, apps, wiki); Wiki
       URLs are unwrapped automatically'
+- name: +update-title
+  summary: Rename a Drive file, folder, online document (docx/sheet/base/slides), or wiki node
+  description: Rename a Drive file, folder, online document (docx/sheet/base/slides), or wiki node
+  usage: lark-cli drive +update-title [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +update-title
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --on-extension-mismatch
+    shorthand: null
+    type: string
+    description: '--type file only: keep appends the current extension when the title has none and rejects a different extension;
+      allow submits the title verbatim without reading the current title (keep|allow)'
+    default: keep
+  - name: --title
+    shorthand: null
+    type: string
+    description: new title to set; must not be empty
+  - name: --token
+    shorthand: null
+    type: string
+    description: target token or URL; bare tokens require --type
+  - name: --type
+    shorthand: null
+    type: string
+    description: target type for bare --token; optional for URLs but must match the URL type when provided (docx|sheet|bitable|base|slides|file|folder|wiki|apps|doc|mindnote)
+  - name: --url
+    shorthand: null
+    type: string
+    description: 'recommended: Lark/Feishu URL of the target (docx/sheets/base/slides/file/folder/wiki)'
 - name: +upload
   summary: Upload a local file to Drive
   description: Upload a local file to Drive

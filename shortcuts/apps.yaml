@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: apps
 description: Develop, deploy HTML, web pages and applications
-cli_version: 1.0.84
-extracted_at: '2026-08-06T04:32:35Z'
+cli_version: 1.0.85
+extracted_at: '2026-08-08T03:02:37Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +access-scope-get
@@ -713,7 +713,7 @@ shortcuts:
   - name: --app-type
     shorthand: null
     type: string
-    description: app type (html|full_stack)
+    description: app type (html|frontend|full_stack)
   - name: --as
     shorthand: null
     type: string
@@ -2219,7 +2219,7 @@ shortcuts:
   - name: --app-type
     shorthand: null
     type: string
-    description: app type filter (html or full_stack) (html|full_stack)
+    description: app type filter (html, frontend or full_stack) (html|frontend|full_stack)
   - name: --as
     shorthand: null
     type: string
@@ -2399,6 +2399,292 @@ shortcuts:
     shorthand: null
     type: string
     description: end user ID filter
+- name: +member-add
+  summary: Add an application collaborator
+  description: Add an application collaborator
+  usage: lark-cli apps +member-add [flags]
+  risk: high-risk-write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app ID (app_...)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +member-add
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --member-id
+    shorthand: null
+    type: string
+    description: one external user, chat, or department ID
+  - name: --member-type
+    shorthand: null
+    type: string
+    description: collaborator ID type (openid|openchat|opendepartmentid)
+  - name: --need-notification
+    shorthand: null
+    type: bool
+    description: notify the collaborator
+  - name: --perm
+    shorthand: null
+    type: string
+    description: collaborator permission (view|edit|full_access)
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +member-list
+  summary: List application collaborators
+  description: List application collaborators
+  usage: lark-cli apps +member-list [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app ID (app_...)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +member-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --member-type
+    shorthand: null
+    type: string
+    description: filter collaborator type (user|department|chat)
+  - name: --role
+    shorthand: null
+    type: string
+    description: filter permission (view|edit|full_access)
+- name: +member-remove
+  summary: Remove an application collaborator
+  description: Remove an application collaborator
+  usage: lark-cli apps +member-remove [flags]
+  risk: high-risk-write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app ID (app_...)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +member-remove
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --member-id
+    shorthand: null
+    type: string
+    description: one external user, chat, or department ID
+  - name: --member-type
+    shorthand: null
+    type: string
+    description: collaborator ID type (openid|openchat|opendepartmentid)
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +member-settings-get
+  summary: Get application collaborator settings
+  description: Get application collaborator settings
+  usage: lark-cli apps +member-settings-get [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app ID (app_...)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +member-settings-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +member-settings-set
+  summary: Update application collaborator settings
+  description: Update application collaborator settings
+  usage: lark-cli apps +member-settings-set [flags]
+  risk: high-risk-write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app ID (app_...)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --comment-by
+    shorthand: null
+    type: string
+    description: who can comment (viewer|editor)
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --external-access
+    shorthand: null
+    type: string
+    description: external sharing (enabled|disabled)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +member-settings-set
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --link-share
+    shorthand: null
+    type: string
+    description: link sharing (closed|tenant-readable|tenant-editable|anyone-readable)
+  - name: --manage-collaborators-by
+    shorthand: null
+    type: string
+    description: who can manage collaborators (anyone|same-tenant|full-access)
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +member-update
+  summary: Update an application collaborator
+  description: Update an application collaborator
+  usage: lark-cli apps +member-update [flags]
+  risk: high-risk-write
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app ID (app_...)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +member-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --member-id
+    shorthand: null
+    type: string
+    description: one external user, chat, or department ID
+  - name: --member-type
+    shorthand: null
+    type: string
+    description: collaborator ID type (openid|openchat|opendepartmentid)
+  - name: --perm
+    shorthand: null
+    type: string
+    description: collaborator permission (view|edit|full_access)
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
 - name: +metric-list
   summary: List online app request, latency, CPU, and memory metrics
   description: List online app request, latency, CPU, and memory metrics

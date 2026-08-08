@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: base
 description: Table, field, record, view, dashboard, workflow, form, role & permission management
-cli_version: 1.0.84
-extracted_at: '2026-08-06T04:32:35Z'
+cli_version: 1.0.85
+extracted_at: '2026-08-08T03:02:37Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +advperm-disable
@@ -1042,8 +1042,8 @@ shortcuts:
     type: bool
     description: shorthand for --format json
 - name: +field-create
-  summary: Create a field
-  description: Create a field
+  summary: Create one or more fields
+  description: Create one or more fields
   usage: lark-cli base +field-create [flags]
   risk: write
   flags:
@@ -1075,7 +1075,7 @@ shortcuts:
   - name: --json
     shorthand: null
     type: string
-    description: field property JSON object
+    description: field property JSON object or non-empty array of field objects; supports @file
   - name: --table-id
     shorthand: null
     type: string

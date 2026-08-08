@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: slides
 description: Create and manage presentations, read content, and add or remove slides
-cli_version: 1.0.84
-extracted_at: '2026-08-06T04:32:35Z'
+cli_version: 1.0.85
+extracted_at: '2026-08-08T03:02:37Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +add-slide
@@ -86,12 +86,18 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+  - name: --slide
+    shorthand: null
+    type: stringArray
+    description: one complete <slide> XML document, or @path to read one from a file; repeat once per page (max 10) and the
+      CLI assembles the array for you, so no JSON escaping is needed. <img src="@./local.png"> placeholders are handled as
+      with --slides. Mutually exclusive with --slides.
   - name: --slides
     shorthand: null
     type: string
     description: slide content JSON array (each element is a <slide> XML string, max 10; for more pages, create first then
       add them one at a time with slides +add-slide). <img src="@./local.png"> placeholders are auto-uploaded and replaced
-      with file_token.
+      with file_token. (supports @file, - reads stdin (one flag per call; use @file for others))
   - name: --title
     shorthand: null
     type: string
