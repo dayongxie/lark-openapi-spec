@@ -5923,7 +5923,7 @@
   "httpMethod": "PATCH",
   "project": "corehr",
   "resource": "employment",
-  "sha256": "19aaa14aadb1393cce0ca71b82655938d261bd6ccb3900a6f4397dfacf3b7522",
+  "sha256": "68042e502c23c416cbf9b5d2ff1f857985a5642292f1929712c6e3b14aa1701e",
   "title": "更新雇佣信息",
   "version": "v1"
  },
@@ -8203,7 +8203,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "7b403eed091170ba51c8a4f4b3f6c24c2b849c7b93abb0ecd072050e2c4f5549",
+  "sha256": "19a8f811fb7579acb8516c7045675f2e4c5587d19496184d50f1ca78d719a08f",
   "title": "查询待入职信息",
   "version": "v2"
  },
@@ -8227,7 +8227,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "e142ed01448faa81511a30c76d12e4d87f6253b680000bfd7a412a9e6dddb4c7",
+  "sha256": "9d8b26a57e93f7d31bee4c330e055683fea5c193cb180b67ffafea7437a342d0",
   "title": "搜索待入职信息",
   "version": "v2"
  },
@@ -9679,7 +9679,7 @@
   "httpMethod": "DELETE",
   "project": "drive",
   "resource": "file",
-  "sha256": "29df35869b64193097c3a3845b533e6a2f921da2cfad9814d2fa3f8118bba00d",
+  "sha256": "7eb75bb86087ce4371fb7158af5e6611810b10bfc98f7509cc271079def9c48b",
   "title": "删除文件或文件夹",
   "version": "v1"
  },
@@ -9703,7 +9703,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "file",
-  "sha256": "dcef93180b16e438a2d2b5b09fed165c426a382df224a26e830b49e3c698d6ed",
+  "sha256": "977198df72a87aec45e485b5de677d7aa278162c0144fe5247298821e6315203",
   "title": "下载文件",
   "version": "v1"
  },
@@ -9859,7 +9859,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "media",
-  "sha256": "e35ac88854e5d6a6fd09f14df6c3821588ea2d32291e0b43f2d9f128bac075ae",
+  "sha256": "81df1ea1a43be60b86801946c54d91aec3207b920026607f921fb01912020a0a",
   "title": "下载素材",
   "version": "v1"
  },
@@ -13603,7 +13603,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "message",
-  "sha256": "f0d76e9197d47c2c93d4583470f81929938d45fa98631254cc44a9e86090215e",
+  "sha256": "b04bf2e7fea3410f5d21a06ae2db27b3794a796c9217e5c6023766204b0eb367",
   "title": "消息发送者查询消息已读状态",
   "version": "v1"
  },
@@ -14875,7 +14875,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.mail_contact",
-  "sha256": "16a6586a9abc185e05b6796de31302aa636518ac96be72dee84d080d23ae29f6",
+  "sha256": "55e95eff7961688e036ec1b18281257a639962a6309f2ad29a7de8b39b7078ca",
   "title": "列出邮箱联系人",
   "version": "v1"
  },
@@ -19387,7 +19387,7 @@
   "httpMethod": "GET",
   "project": "wiki",
   "resource": "space.node",
-  "sha256": "0e92b49ed73475d53d44a84086ea201f8256796e5dbed94dbb44f2a656c2f36c",
+  "sha256": "8ee3d26fb90267900785990f67e91ff200fe75457cca72978235479f6a348463",
   "title": "获取知识空间子节点列表",
   "version": "v2"
  },

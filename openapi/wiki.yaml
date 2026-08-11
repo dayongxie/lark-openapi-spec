@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+336c0741
+  version: 1.0.0+59f4f14c
   x-lark-project: wiki
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -741,7 +741,7 @@ paths:
         httpCode: 400
         msg: internal server error
       x-lark-rate-limit:
-        tier: 4
+        tier: 8
       x-lark-pagination: true
   /open-apis/wiki/v2/spaces/{space_id}/nodes/{node_token}/move:
     post:

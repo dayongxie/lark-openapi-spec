@@ -1,5 +1,20 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-08-11）
+
+新增 0 · 移除 0 · 定义变更 9（全量共 1628 个接口）
+
+### 定义变更
+- `PATCH /open-apis/corehr/v1/employments/{employment_id}`「更新雇佣信息」（corehr/v1/employment/patch）
+- `POST /open-apis/corehr/v2/pre_hires/query`「查询待入职信息」（corehr/v2/pre_hire/query）
+- `POST /open-apis/corehr/v2/pre_hires/search`「搜索待入职信息」（corehr/v2/pre_hire/search）
+- `DELETE /open-apis/drive/v1/files/{file_token}`「删除文件或文件夹」（drive/v1/file/delete）
+- `GET /open-apis/drive/v1/files/{file_token}/download`「下载文件」（drive/v1/file/download）
+- `GET /open-apis/drive/v1/medias/{file_token}/download`「下载素材」（drive/v1/media/download）
+- `GET /open-apis/im/v1/messages/{message_id}/read_users`「消息发送者查询消息已读状态」（im/v1/message/read_users）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/mail_contacts`「列出邮箱联系人」（mail/v1/user_mailbox.mail_contact/list）
+- `GET /open-apis/wiki/v2/spaces/{space_id}/nodes`「获取知识空间子节点列表」（wiki/v2/space.node/list）
+
 ## explorer 全量轨道（2026-08-07）
 
 新增 0 · 移除 0 · 定义变更 1（全量共 1628 个接口）

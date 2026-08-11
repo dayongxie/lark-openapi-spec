@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+7ff826a8
+  version: 1.0.0+57b4ca83
   x-lark-project: corehr
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -4774,6 +4774,16 @@ paths:
                   type: string
                   description: 员工编号
                   example: '1000000'
+                recruitment_type:
+                  type: object
+                  properties:
+                    enum_name:
+                      type: string
+                      description: 枚举值
+                      example: phone_type
+                  required:
+                  - enum_name
+                  description: 招聘类型
                 employment_type:
                   type: object
                   properties:
@@ -4910,6 +4920,33 @@ paths:
                             type: string
                             description: 离职日期
                             example: '2021-01-01'
+                          recruitment_type:
+                            type: object
+                            properties:
+                              enum_name:
+                                type: string
+                                description: 枚举值
+                                example: phone_type
+                              display:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    lang:
+                                      type: string
+                                      description: 语言
+                                      example: zh-CN
+                                    value:
+                                      type: string
+                                      description: 内容
+                                      example: 刘梓新
+                                  required:
+                                  - lang
+                                  - value
+                                description: 枚举多语展示
+                            required:
+                            - enum_name
+                            description: 招聘类型
                           employment_type:
                             type: object
                             properties:
@@ -39637,6 +39674,10 @@ paths:
                                         items:
                                           type: string
                                         description: 当前操作人雇佣 ID 列表
+                                      rejection_reason:
+                                        type: string
+                                        description: 审批拒绝时的拒绝原因
+                                        example: 不符合要求，审批拒绝
                                   description: 入职任务列表
                                 onboarding_address:
                                   allOf:
@@ -40288,6 +40329,10 @@ paths:
                                         type: string
                                         description: 任务code
                                         example: task_11
+                                      rejection_reason:
+                                        type: string
+                                        description: 审批拒绝时的拒绝原因
+                                        example: 不符合要求，审批拒绝
                                   description: 入职任务列表
                                 onboarding_address:
                                   allOf:

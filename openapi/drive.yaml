@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+b137fdae
+  version: 1.0.0+13e5f511
   x-lark-project: drive
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -3279,7 +3279,7 @@ paths:
         httpCode: 401
         msg: auth failed.
       - code: 1061007
-        httpCode: 404
+        httpCode: 200
         msg: file has been delete.
       - code: 1062501
         httpCode: 403
@@ -3306,7 +3306,7 @@ paths:
         httpCode: 401
         msg: auth failed.
       - code: 1061007
-        httpCode: 404
+        httpCode: 200
         msg: file has been delete.
       - code: 1061045
         httpCode: 400
@@ -3478,7 +3478,7 @@ paths:
       - drive:file
       - drive:file:download
       x-lark-rate-limit:
-        tier: 0
+        tier: 8
       x-lark-file-download: true
   /open-apis/drive/v1/files/{file_token}/get_subscribe:
     get:
@@ -5013,7 +5013,7 @@ paths:
       - docs:document.media:download
       - mail:user_mailbox.message:modify
       x-lark-rate-limit:
-        tier: 0
+        tier: 8
       x-lark-file-download: true
   /open-apis/drive/v1/medias/upload_all:
     post:

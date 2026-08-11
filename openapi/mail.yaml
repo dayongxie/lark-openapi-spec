@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+9c6e2d41
+  version: 1.0.0+4c3dcea7
   x-lark-project: mail
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -5343,6 +5343,10 @@ paths:
                         type: boolean
                         description: 是否还有更多项
                         example: 'true'
+                      hint:
+                        type: string
+                        description: 提示信息
+                        example: xxx
       x-lark-access-tokens:
       - tenant
       - user
