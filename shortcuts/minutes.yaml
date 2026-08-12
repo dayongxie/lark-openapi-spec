@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: minutes
 description: Minutes content and metadata retrieval
-cli_version: 1.0.85
-extracted_at: '2026-08-08T03:02:37Z'
+cli_version: 1.0.86
+extracted_at: '2026-08-12T03:31:25Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +detail
@@ -14,7 +14,7 @@ shortcuts:
   - name: --as
     shorthand: null
     type: string
-    description: 'identity type: user'
+    description: 'identity type: user | bot'
   - name: --chapter
     shorthand: null
     type: bool

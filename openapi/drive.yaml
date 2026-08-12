@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+13e5f511
+  version: 1.0.0+d18923ac
   x-lark-project: drive
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -4261,7 +4261,7 @@ paths:
         httpCode: 400
         msg: parent node out of sibling num.
       x-lark-rate-limit:
-        tier: 0
+        tier: 8
       x-lark-file-upload: true
   /open-apis/drive/v1/files/upload_finish:
     post:
@@ -5245,7 +5245,7 @@ paths:
         httpCode: 400
         msg: user quota exceeded.
       x-lark-rate-limit:
-        tier: 0
+        tier: 8
       x-lark-file-upload: true
   /open-apis/drive/v1/medias/upload_finish:
     post:
@@ -6089,7 +6089,7 @@ paths:
         httpCode: 500
         msg: Concurrency error, please retry
       x-lark-rate-limit:
-        tier: 7
+        tier: 8
   /open-apis/drive/v1/permissions/{token}/members/batch_create:
     post:
       operationId: drive_permission_member_batch_create
@@ -6189,7 +6189,7 @@ paths:
         httpCode: 500
         msg: Internal error
       x-lark-rate-limit:
-        tier: 3
+        tier: 6
   /open-apis/drive/v1/permissions/{token}/members:
     post:
       operationId: drive_permission_member_create
@@ -6366,7 +6366,7 @@ paths:
         httpCode: 500
         msg: Concurrency error, please retry
       x-lark-rate-limit:
-        tier: 3
+        tier: 6
     get:
       operationId: drive_permission_member_list
       summary: 获取云文档协作者

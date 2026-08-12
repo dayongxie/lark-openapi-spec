@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-08-12）
+
+新增 0 · 移除 0 · 定义变更 5（全量共 1628 个接口）
+
+### 定义变更
+- `POST /open-apis/drive/v1/files/upload_all`「上传文件」（drive/v1/file/upload_all）
+- `POST /open-apis/drive/v1/medias/upload_all`「上传素材」（drive/v1/media/upload_all）
+- `GET /open-apis/drive/v1/permissions/{token}/members/auth`「判断用户云文档权限」（drive/v1/permission.member/auth）
+- `POST /open-apis/drive/v1/permissions/{token}/members/batch_create`「批量增加协作者权限」（drive/v1/permission.member/batch_create）
+- `POST /open-apis/drive/v1/permissions/{token}/members`「增加协作者权限」（drive/v1/permission.member/create）
+
 ## explorer 全量轨道（2026-08-11）
 
 新增 0 · 移除 0 · 定义变更 9（全量共 1628 个接口）

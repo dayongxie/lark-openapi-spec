@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: base
 description: Table, field, record, view, dashboard, workflow, form, role & permission management
-cli_version: 1.0.85
-extracted_at: '2026-08-08T03:02:37Z'
+cli_version: 1.0.86
+extracted_at: '2026-08-12T03:31:25Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +advperm-disable
@@ -2678,8 +2678,8 @@ shortcuts:
     type: string
     description: opaque table copy task ID
 - name: +table-create
-  summary: Create a table and optional fields/views
-  description: Create a table and optional fields/views
+  summary: Create a table with an explicit field schema, plus optional views
+  description: Create a table with an explicit field schema, plus optional views
   usage: lark-cli base +table-create [flags]
   risk: write
   flags:
@@ -2698,7 +2698,7 @@ shortcuts:
   - name: --fields
     shorthand: null
     type: string
-    description: field JSON array for create, e.g. [{"name":"Title","type":"text"},{"name":"Status","type":"select","options":[{"name":"Todo"},{"name":"Done"}]}]
+    description: field JSON array defining the table schema; must hold at least one field, e.g. [{"name":"Title","type":"text"},{"name":"Status","type":"select","multiple":false,"options":[{"name":"Todo"},{"name":"Done"}]}]
   - name: --format
     shorthand: null
     type: string

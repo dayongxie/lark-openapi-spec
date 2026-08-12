@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: slides
 description: Create and manage presentations, read content, and add or remove slides
-cli_version: 1.0.85
-extracted_at: '2026-08-08T03:02:37Z'
+cli_version: 1.0.86
+extracted_at: '2026-08-12T03:31:25Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +add-slide
@@ -391,9 +391,8 @@ shortcuts:
   - name: --parts
     shorthand: null
     type: string
-    description: JSON array of replace parts; each needs action plus block_id + replacement (block_replace) or insertion [+
-      insert_before_block_id] (block_insert); any other key is rejected; max 200 (supports @file, - reads stdin (one flag
-      per call; use @file for others))
+    description: JSON array of replace parts; accepts replace/insert action aliases, target_id for block_id, and block/content/shape/element
+      for the action's XML payload; max 200 (supports @file, - reads stdin (one flag per call; use @file for others))
   - name: --presentation
     shorthand: null
     type: string

@@ -9775,7 +9775,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file",
-  "sha256": "ac34e90fde111f8e9fcea901df8f65d034abb04bf451a457ce1e0b1eaa756e37",
+  "sha256": "3324293b79bbfbe9f2d81e521abd8c8939f2f067ad15c356bfd5a9500660061b",
   "title": "上传文件",
   "version": "v1"
  },
@@ -9871,7 +9871,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "media",
-  "sha256": "271a71b16989b241ca694e21892ed76740bb94ca1e7263b3842c6f557d2db896",
+  "sha256": "7efc13ebe01d14125424339e076a9a43606587bf85659988c22cb55e278e8cfc",
   "title": "上传素材",
   "version": "v1"
  },
@@ -9931,7 +9931,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "41a0995a0b5ccdddf2879096a866233dc018058c75a9d58ffbce0a1698400a74",
+  "sha256": "963cbb8aa86866b8b4cd4e90e8fa3d9f175e0aa85068b5ff5d890502ed4df8ee",
   "title": "判断用户云文档权限",
   "version": "v1"
  },
@@ -9943,7 +9943,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "9122fdcebe05b1cdb363529287261c554120a630e8374d8ae63be7c0d7470d1e",
+  "sha256": "217ac55b2cac7407b4ffcc118cbb39d80221335d0df7d82e1233fcf48b16541a",
   "title": "批量增加协作者权限",
   "version": "v1"
  },
@@ -9955,7 +9955,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "e101a0f04ab7525e47a56ef75617f8fabb89222566452b734056eb930eebe1d6",
+  "sha256": "f75f8cc3ca635b135e37a43c38e78198974fc735a74c305188f4cfad96ff820a",
   "title": "增加协作者权限",
   "version": "v1"
  },
