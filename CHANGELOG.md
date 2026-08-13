@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-08-13）
+
+新增 0 · 移除 0 · 定义变更 1（全量共 1628 个接口）
+
+### 定义变更
+- `GET /open-apis/wiki/v2/spaces/get_node`「获取知识空间节点信息」（wiki/v2/space/get_node）
+
 ## explorer 全量轨道（2026-08-12）
 
 新增 0 · 移除 0 · 定义变更 5（全量共 1628 个接口）

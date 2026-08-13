@@ -19471,7 +19471,7 @@
   "httpMethod": "GET",
   "project": "wiki",
   "resource": "space",
-  "sha256": "aca98344d4fc706ed1ac741490c71e59e932e4fcd24c2229a5b1d10b61fd8e67",
+  "sha256": "2812eece22b448250d6f3dcb11e6874da43d8be909772ffc061855d0edad308c",
   "title": "获取知识空间节点信息",
   "version": "v2"
  },
