@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: base
 description: Table, field, record, view, dashboard, workflow, form, role & permission management
-cli_version: 1.0.86
-extracted_at: '2026-08-12T03:31:25Z'
+cli_version: 1.0.87
+extracted_at: '2026-08-14T03:31:42Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +advperm-disable
@@ -79,6 +79,541 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+- name: +app-block-create
+  summary: Create a block on a BaseApp page
+  description: Create a block on a BaseApp page
+  usage: lark-cli base +app-block-create [flags]
+  risk: write
+  flags:
+  - name: --app-token
+    shorthand: null
+    type: string
+    description: BaseApp token
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --data-config
+    shorthand: null
+    type: string
+    description: data_config JSON object; read lark-base-app-block-data-config.md for the SSOT
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +app-block-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: block name
+  - name: --no-validate
+    shorthand: null
+    type: bool
+    description: skip local data_config validation and normalization; send data_config as-is
+  - name: --page-id
+    shorthand: null
+    type: string
+    description: BaseApp page ID
+  - name: --sub-type
+    shorthand: null
+    type: string
+    description: 'list subtype: standard|grouped|collapsible|card|detail; defaults to standard (standard|grouped|collapsible|card|detail)'
+  - name: --type
+    shorthand: null
+    type: string
+    description: 'block type: chart(column|bar|line|pie|ring|area|combo|scatter|funnel|wordCloud|radar|statistics) | text
+      | list. Read lark-base-app-block-data-config.md before creating. (column|bar|line|pie|ring|scatter|funnel|wordCloud|area|combo|radar|statistics|text|list)'
+- name: +app-block-get
+  summary: Get a BaseApp page block by ID
+  description: Get a BaseApp page block by ID
+  usage: lark-cli base +app-block-get [flags]
+  risk: read
+  flags:
+  - name: --app-token
+    shorthand: null
+    type: string
+    description: BaseApp token
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --block-id
+    shorthand: null
+    type: string
+    description: BaseApp page block ID
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +app-block-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-id
+    shorthand: null
+    type: string
+    description: BaseApp page ID
+- name: +app-block-get-data
+  summary: Get computed data for a BaseApp page chart block
+  description: Get computed data for a BaseApp page chart block
+  usage: lark-cli base +app-block-get-data [flags]
+  risk: read
+  flags:
+  - name: --app-token
+    shorthand: null
+    type: string
+    description: BaseApp token
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --block-id
+    shorthand: null
+    type: string
+    description: chart_token (cht… prefix) returned by +app-block-create, +app-block-list, or +app-block-get
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +app-block-get-data
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +app-block-list
+  summary: List blocks on a BaseApp page
+  description: List blocks on a BaseApp page
+  usage: lark-cli base +app-block-list [flags]
+  risk: read
+  flags:
+  - name: --app-token
+    shorthand: null
+    type: string
+    description: BaseApp token
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +app-block-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-id
+    shorthand: null
+    type: string
+    description: BaseApp page ID
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size; must be positive
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token
+- name: +app-block-update
+  summary: Update a block on a BaseApp page
+  description: Update a block on a BaseApp page
+  usage: lark-cli base +app-block-update [flags]
+  risk: write
+  flags:
+  - name: --app-token
+    shorthand: null
+    type: string
+    description: BaseApp token
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --block-id
+    shorthand: null
+    type: string
+    description: BaseApp page block ID
+  - name: --data-config
+    shorthand: null
+    type: string
+    description: data_config JSON object; read lark-base-app-block-data-config.md for the SSOT
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +app-block-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: new block name
+  - name: --no-validate
+    shorthand: null
+    type: bool
+    description: skip local data_config normalization; send data_config as-is
+  - name: --page-id
+    shorthand: null
+    type: string
+    description: BaseApp page ID
+- name: +app-create
+  summary: Create a new BaseApp in a Workspace (not a copy)
+  description: Create a new BaseApp in a Workspace (not a copy)
+  usage: lark-cli base +app-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +app-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: BaseApp name
+  - name: --theme-style
+    shorthand: null
+    type: string
+    description: theme style (default|cloudBlue|fresh|softLight|future|technology)
+  - name: --workspace-token
+    shorthand: null
+    type: string
+    description: workspace token
+- name: +app-get
+  summary: Get BaseApp info, page summaries, and the referenced Base/Table map
+  description: Get BaseApp info, page summaries, and the referenced Base/Table map
+  usage: lark-cli base +app-get [flags]
+  risk: read
+  flags:
+  - name: --app-token
+    shorthand: null
+    type: string
+    description: BaseApp token
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +app-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +app-page-create
+  summary: Create a page in a BaseApp
+  description: Create a page in a BaseApp
+  usage: lark-cli base +app-page-create [flags]
+  risk: write
+  flags:
+  - name: --app-token
+    shorthand: null
+    type: string
+    description: BaseApp token
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +app-page-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: page name
+- name: +app-page-delete
+  summary: Delete a BaseApp page
+  description: Delete a BaseApp page
+  usage: lark-cli base +app-page-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --app-token
+    shorthand: null
+    type: string
+    description: BaseApp token
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +app-page-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-id
+    shorthand: null
+    type: string
+    description: BaseApp page ID
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +app-page-get
+  summary: Get a BaseApp page by ID
+  description: Get a BaseApp page by ID
+  usage: lark-cli base +app-page-get [flags]
+  risk: read
+  flags:
+  - name: --app-token
+    shorthand: null
+    type: string
+    description: BaseApp token
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +app-page-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-id
+    shorthand: null
+    type: string
+    description: BaseApp page ID
+- name: +app-page-list
+  summary: List pages in a BaseApp
+  description: List pages in a BaseApp
+  usage: lark-cli base +app-page-list [flags]
+  risk: read
+  flags:
+  - name: --app-token
+    shorthand: null
+    type: string
+    description: BaseApp token
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +app-page-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size; must be positive
+    default: '20'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token
+- name: +app-page-update
+  summary: Rename a BaseApp page
+  description: Rename a BaseApp page
+  usage: lark-cli base +app-page-update [flags]
+  risk: write
+  flags:
+  - name: --app-token
+    shorthand: null
+    type: string
+    description: BaseApp token
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +app-page-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: new page name
+  - name: --page-id
+    shorthand: null
+    type: string
+    description: BaseApp page ID
 - name: +base-block-create
   summary: Create a block
   description: Create a block
@@ -307,8 +842,8 @@ shortcuts:
     type: string
     description: new unique block name; must not duplicate another block name in this base
 - name: +base-copy
-  summary: Copy a base resource
-  description: Copy a base resource
+  summary: Copy a Base resource (not a BaseApp)
+  description: Copy a Base resource (not a BaseApp)
   usage: lark-cli base +base-copy [flags]
   risk: write
   flags:
@@ -1982,8 +2517,26 @@ shortcuts:
   - name: --format
     shorthand: null
     type: string
-    description: 'output format: markdown (default) | json (markdown|json)'
+    description: 'output format: markdown (default display) | json raw matrix | ndjson typed artifact (preferred for analysis)
+      (markdown|json|ndjson)'
     default: markdown
+  - name: --output
+    shorthand: null
+    type: string
+    description: 'preferred analysis output: relative .ndjson output path; implies --format ndjson when format is omitted'
+  - name: --minimal-stdout
+    shorthand: null
+    type: bool
+    description: for ndjson, print only artifact paths, record file size, records_count, and has_more
+  - name: --jq-records
+    shorthand: null
+    type: string
+    description: required instead of --jq to process ndjson records with the built-in jq engine; runs once against the exported
+      records array and leaves artifact files unchanged
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: replace an existing ndjson artifact and its manifest
   - name: --dry-run
     shorthand: null
     type: bool
@@ -2091,13 +2644,31 @@ shortcuts:
   - name: --limit
     shorthand: null
     type: int
-    description: pagination size, range 1-200
+    description: maximum records to return; range 1-200, or 1-2000 for ndjson; omitted limit uses 2000 for ndjson
     default: '100'
   - name: --format
     shorthand: null
     type: string
-    description: 'output format: markdown (default) | json (markdown|json)'
+    description: 'output format: markdown (default display) | json raw matrix | ndjson typed artifact (preferred for analysis)
+      (markdown|json|ndjson)'
     default: markdown
+  - name: --output
+    shorthand: null
+    type: string
+    description: 'preferred analysis output: relative .ndjson output path; implies --format ndjson when format is omitted'
+  - name: --minimal-stdout
+    shorthand: null
+    type: bool
+    description: for ndjson, print only artifact paths, record file size, records_count, and has_more
+  - name: --jq-records
+    shorthand: null
+    type: string
+    description: required instead of --jq to process ndjson records with the built-in jq engine; runs once against the exported
+      records array and leaves artifact files unchanged
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: replace an existing ndjson artifact and its manifest
   - name: --dry-run
     shorthand: null
     type: bool
@@ -2225,13 +2796,30 @@ shortcuts:
   - name: --limit
     shorthand: null
     type: int
-    description: pagination size, range 1-200
-    default: '10'
+    description: maximum records to return; range 1-200, or 1-2000 for ndjson; omitted limit uses 10 inline or 2000 for ndjson
   - name: --format
     shorthand: null
     type: string
-    description: 'output format: markdown (default) | json (markdown|json)'
+    description: 'output format: markdown (default display) | json raw matrix | ndjson typed artifact (preferred for analysis)
+      (markdown|json|ndjson)'
     default: markdown
+  - name: --output
+    shorthand: null
+    type: string
+    description: 'preferred analysis output: relative .ndjson output path; implies --format ndjson when format is omitted'
+  - name: --minimal-stdout
+    shorthand: null
+    type: bool
+    description: for ndjson, print only artifact paths, record file size, records_count, and has_more
+  - name: --jq-records
+    shorthand: null
+    type: string
+    description: required instead of --jq to process ndjson records with the built-in jq engine; runs once against the exported
+      records array and leaves artifact files unchanged
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: replace an existing ndjson artifact and its manifest
   - name: --dry-run
     shorthand: null
     type: bool
@@ -2929,8 +3517,8 @@ shortcuts:
     type: string
     description: Base title keyword to search via Drive (30 characters or fewer)
 - name: +url-resolve
-  summary: Resolve a Base-related URL into Base coordinates
-  description: Resolve a Base-related URL into Base coordinates
+  summary: Resolve a Base or BaseApp URL into usable coordinates
+  description: Resolve a Base or BaseApp URL into usable coordinates
   usage: lark-cli base +url-resolve [flags]
   risk: read
   flags:
@@ -2962,7 +3550,7 @@ shortcuts:
   - name: --url
     shorthand: null
     type: string
-    description: Base/Wiki/record-share URL to resolve
+    description: Base/BaseApp/Wiki/record-share URL to resolve
 - name: +view-create
   summary: Create one or more views
   description: Create one or more views
@@ -3945,3 +4533,125 @@ shortcuts:
     shorthand: null
     type: string
     description: workflow ID (wkf... prefix)
+- name: +workspace-create
+  summary: Create a workspace
+  description: Create a workspace
+  usage: lark-cli base +workspace-create [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +workspace-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name
+    shorthand: null
+    type: string
+    description: workspace name
+- name: +workspace-entity-list
+  summary: List bases and BaseApps in a workspace
+  description: List bases and BaseApps in a workspace
+  usage: lark-cli base +workspace-entity-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +workspace-entity-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size, range 1-100
+    default: '100'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: pagination token
+  - name: --type
+    shorthand: null
+    type: string
+    description: 'filter by entity type: base|baseapp; omit to list both (base|baseapp)'
+  - name: --workspace-token
+    shorthand: null
+    type: string
+    description: workspace token
+- name: +workspace-move-in
+  summary: Move an existing Base or BaseApp into a workspace
+  description: Move an existing Base or BaseApp into a workspace
+  usage: lark-cli base +workspace-move-in [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --entity-token
+    shorthand: null
+    type: string
+    description: base_token or app_token to move into the workspace
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +workspace-move-in
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --workspace-token
+    shorthand: null
+    type: string
+    description: workspace token

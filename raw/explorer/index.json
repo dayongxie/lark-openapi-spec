@@ -9871,7 +9871,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "media",
-  "sha256": "7efc13ebe01d14125424339e076a9a43606587bf85659988c22cb55e278e8cfc",
+  "sha256": "bc47a62ce89ee4d7a69a3554dfe615b80aa43b495992a2acb447cc0937e9435e",
   "title": "上传素材",
   "version": "v1"
  },
@@ -9907,7 +9907,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "media",
-  "sha256": "bc2233175c29c8e363400a9431e68cd25c825c9950af85d3c31af8914b61842c",
+  "sha256": "3730721aac49b3e9919c0fe25e0f0fd20a4192a890c1a1f21ad3b0621cf6e405",
   "title": "分片上传素材-预上传",
   "version": "v1"
  },

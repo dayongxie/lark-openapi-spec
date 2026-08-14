@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-08-14）
+
+新增 0 · 移除 0 · 定义变更 2（全量共 1628 个接口）
+
+### 定义变更
+- `POST /open-apis/drive/v1/medias/upload_all`「上传素材」（drive/v1/media/upload_all）
+- `POST /open-apis/drive/v1/medias/upload_prepare`「分片上传素材-预上传」（drive/v1/media/upload_prepare）
+
 ## explorer 全量轨道（2026-08-13）
 
 新增 0 · 移除 0 · 定义变更 1（全量共 1628 个接口）

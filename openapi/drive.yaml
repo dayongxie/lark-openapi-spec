@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+d18923ac
+  version: 1.0.0+fb1ccfb2
   x-lark-project: drive
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -5061,6 +5061,10 @@ paths:
                   - bitable_tmp_point
                   - office_sheet_file
                   - office_slide_file
+                  - docx_ai_edit_temp
+                  - vc_recording
+                  - office_docx_file
+                  - mm_meeting_audio
                   x-enum-descriptions:
                     doc_image: docs图片
                     docx_image: docx图片
@@ -5085,6 +5089,10 @@ paths:
                     bitable_tmp_point: 表单临时上传提交附件
                     office_sheet_file: 豆包表格文件本地打开AI编辑
                     office_slide_file: 豆包pptx文件本地打开AI编辑
+                    docx_ai_edit_temp: ccm docx业务支持lark-cli,用于上传图片获取下载链接
+                    vc_recording: 妙记壁纸功能
+                    office_docx_file: 豆包docx文件本地打开AI编辑需求
+                    mm_meeting_audio: 妙记面试会议支持录制音频
                 parent_node:
                   type: string
                   description: 上传点的token。
@@ -5622,6 +5630,10 @@ paths:
                   - bitable_tmp_point
                   - office_sheet_file
                   - office_slide_file
+                  - docx_ai_edit_temp
+                  - vc_recording
+                  - office_docx_file
+                  - mm_meeting_audio
                   x-enum-descriptions:
                     doc_image: docs图片
                     docx_image: docx图片
@@ -5646,6 +5658,10 @@ paths:
                     bitable_tmp_point: 表单临时上传提交附件
                     office_sheet_file: 豆包表格文件本地打开AI编辑
                     office_slide_file: 豆包pptx文件本地打开AI编辑
+                    docx_ai_edit_temp: ccm docx业务支持lark-cli,用于上传图片获取下载链接
+                    vc_recording: 妙记壁纸功能
+                    office_docx_file: 豆包docx文件本地打开AI编辑需求
+                    mm_meeting_audio: 妙记面试会议支持录制音频
                   example: ccm_import_open
                 size:
                   type: integer
