@@ -11782,6 +11782,78 @@
       "Score": 0,
       "apiSummary": {
        "apiIdentity": {
+        "apiName": "message",
+        "project": "vc",
+        "resource": "bot",
+        "version": "v1"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/vc/v1/bots/message",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/message",
+       "httpMethod": "POST",
+       "supportAppTypes": [
+        "custom"
+       ]
+      },
+      "id": "7672664994766982391",
+      "name": "发送会中消息",
+      "orderMark": "1786073648993",
+      "parentId": "7657161684985711802",
+      "type": 1
+     },
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "leave",
+        "project": "vc",
+        "resource": "bot",
+        "version": "v1"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/vc/v1/bots/leave",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/leave",
+       "httpMethod": "POST",
+       "supportAppTypes": [
+        "custom"
+       ]
+      },
+      "id": "7672664994766998775",
+      "name": "离开会议",
+      "orderMark": "1786073406564",
+      "parentId": "7657161684985711802",
+      "type": 1
+     },
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "join",
+        "project": "vc",
+        "resource": "bot",
+        "version": "v1"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/vc/v1/bots/join",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/join",
+       "httpMethod": "POST",
+       "supportAppTypes": [
+        "custom"
+       ]
+      },
+      "id": "7672664994767015159",
+      "name": "加入会议",
+      "orderMark": "1786073380850",
+      "parentId": "7657161684985711802",
+      "type": 1
+     },
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
         "apiName": "events",
         "project": "vc",
         "resource": "bot",

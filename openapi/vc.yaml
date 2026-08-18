@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+bca19ffc
+  version: 1.0.0+7f49e5b6
   x-lark-project: vc
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -785,6 +785,340 @@ paths:
       x-lark-rate-limit:
         tier: 3
       x-lark-pagination: true
+  /open-apis/vc/v1/bots/join:
+    post:
+      operationId: vc_bot_join
+      summary: 加入会议
+      tags:
+      - bot
+      description: 机器人入会
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/join
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                join_type:
+                  type: integer
+                  description: |-
+                    机器人入会方式类型。取值说明：
+                    - 1：通过会议号入会
+                  example: '1'
+                join_identify:
+                  type: object
+                  properties:
+                    meeting_no:
+                      type: string
+                      description: 会议号，用于定位需加入的目标会议。可通过会议创建接口或会议列表查询接口获取。
+                      example: MTG202405201030001
+                  description: |-
+                    入会标识信息，需与join_type对应：
+                    - 当join_type=1时，需传入meeting_no字段
+                    - 当join_type=2时，需传入meeting_id字段
+                password:
+                  type: string
+                  description: 会议密码。仅当目标会议设置了入会密码时必填，用于验证机器人的入会权限。可通过会议创建接口或会议详情查询接口获取。
+                  example: MtG@2024
+                call_id:
+                  type: string
+                  description: 邀请-入会链路的关联标识，由 server 端生成。Agent 收到后必须在调用「机器人入会」接口时原样回传，用于服务端关联 invite/enter 埋点。
+                  example: 7c9e6679-7425-40de-944b-e07fc1f90ae7
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      meeting:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            description: 会议唯一标识ID，系统自动生成，全局唯一。可通过会议创建接口或会议列表查询接口获取
+                            example: mtg_1698745200_8a9b7c6d
+                          meeting_no:
+                            type: string
+                            description: 会议号，用于用户快速加入会议，支持数字或字母组合格式。可在会议创建时指定或由系统自动生成
+                            example: '87654321'
+                          start_time:
+                            type: string
+                            description: 会议开始时间，格式为YYYY-MM-DD HH:mm:ss，时区为UTC+8
+                            example: '2023-10-31 14:30:00'
+                          topic:
+                            type: string
+                            description: 会议主题，用于标识会议内容，支持中英文及特殊字符，长度不超过128个字符
+                            example: Q4季度产品规划评审会
+                        description: 机器人加入的会议详情信息，包含会议唯一标识、会议号、开始时间及会议主题等核心数据
+                        example: '{"id":"mtg_1716187200_9c8d7e6f","meeting_no":"98765432","start_time":"2024-05-20 14:00:00","topic":"AI产品技术研讨会"}'
+                      join_user:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            description: 用户ID
+                            example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
+                          user_type:
+                            type: integer
+                            description: 用户类型
+                            enum:
+                            - 1
+                            - 2
+                            - 3
+                            - 4
+                            - 5
+                            - 6
+                            - 7
+                            x-enum-descriptions:
+                              '1': lark用户
+                              '2': rooms用户
+                              '3': 文档用户
+                              '4': neo单品用户
+                              '5': neo单品游客用户
+                              '6': pstn用户
+                              '7': sip用户
+                            example: '1'
+                        description: 成功入会的机器人用户信息，包含用户唯一标识及用户类型
+                        example: '{"id":"ou_8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a","user_type":1}'
+      x-lark-access-tokens:
+      - user
+      - tenant
+      x-lark-scopes:
+      - vc:meeting.bot.join:write
+      x-lark-error-mappings:
+      - code: 121001
+        httpCode: 500
+        msg: internal service error
+      - code: 121002
+        httpCode: 400
+        msg: param is invalid
+      - code: 121003
+        httpCode: 403
+        msg: no permission
+      - code: 121004
+        httpCode: 400
+        msg: meeting status unexpected
+      - code: 121005
+        httpCode: 400
+        msg: meeting not exist
+      - code: 121006
+        httpCode: 400
+        msg: participant count reach limit
+      - code: 121007
+        httpCode: 400
+        msg: callee is busy
+      - code: 121008
+        httpCode: 400
+        msg: meeting locked
+      - code: 121009
+        httpCode: 400
+        msg: need password
+      - code: 121010
+        httpCode: 400
+        msg: wrong password
+      - code: 121011
+        httpCode: 400
+        msg: password try exceed limit
+      - code: 121012
+        httpCode: 429
+        msg: too many failed attempts
+      - code: 121013
+        httpCode: 403
+        msg: no permission to join
+      - code: 121014
+        httpCode: 400
+        msg: meeting not started
+      - code: 121015
+        httpCode: 403
+        msg: lark security forbidden
+      - code: 121016
+        httpCode: 403
+        msg: switch for allowing agents to join meetings is disabled
+      - code: 121017
+        httpCode: 403
+        msg: user is not in the meeting
+      - code: 121018
+        httpCode: 403
+        msg: bot is not in the meeting
+      x-lark-rate-limit:
+        tier: 6
+  /open-apis/vc/v1/bots/leave:
+    post:
+      operationId: vc_bot_leave
+      summary: 离开会议
+      tags:
+      - bot
+      description: 机器人入离会
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/leave
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meeting_id:
+                  type: string
+                  description: 会议唯一标识，用于指定机器人需要退出的目标会议。可通过创建会议接口或会议列表查询接口获取。
+                  example: mtg_202405201430_001
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      leave_user:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            description: 用户ID
+                            example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
+                          user_type:
+                            type: integer
+                            description: 用户类型
+                            enum:
+                            - 1
+                            - 2
+                            - 3
+                            - 4
+                            - 5
+                            - 6
+                            - 7
+                            x-enum-descriptions:
+                              '1': lark用户
+                              '2': rooms用户
+                              '3': 文档用户
+                              '4': neo单品用户
+                              '5': neo单品游客用户
+                              '6': pstn用户
+                              '7': sip用户
+                            example: '1'
+                        description: 离开用户信息
+      x-lark-access-tokens:
+      - user
+      - tenant
+      x-lark-scopes:
+      - vc:meeting.bot.join:write
+      x-lark-error-mappings:
+      - code: 121101
+        httpCode: 500
+        msg: internal service error
+      - code: 121102
+        httpCode: 400
+        msg: param is invalid
+      - code: 121103
+        httpCode: 403
+        msg: no permission
+      - code: 121104
+        httpCode: 400
+        msg: meeting status unexpected
+      - code: 121105
+        httpCode: 400
+        msg: meeting not exist
+      - code: 121106
+        httpCode: 400
+        msg: meeting locked
+      - code: 121107
+        httpCode: 400
+        msg: participant status unexpected
+      - code: 121108
+        httpCode: 403
+        msg: switch for allowing agents to join meetings is disabled
+      - code: 121109
+        httpCode: 403
+        msg: user is not in the meeting
+      - code: 121110
+        httpCode: 403
+        msg: bot is not in the meeting
+      x-lark-rate-limit:
+        tier: 6
+  /open-apis/vc/v1/bots/message:
+    post:
+      operationId: vc_bot_message
+      summary: 发送会中消息
+      tags:
+      - bot
+      description: 发送会中文本消息或反馈表情。应用身份调用时要求应用机器人在会中，用户身份调用时要求当前用户在会中。
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/message
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meeting_id:
+                  type: string
+                  description: 会议唯一标识，必须传入长数字 meeting_id，不是 9 位会议号。
+                  example: '7628568141510692381'
+                msg_type:
+                  type: string
+                  description: 消息类型。可选值：text、reaction。text 表示会中文本消息，reaction 表示会中反馈表情。
+                  example: text
+                content:
+                  type: string
+                  description: 消息内容。当 msg_type=text 时表示文本内容；当 msg_type=reaction 时表示反馈表情 key。
+                  example: 请大家看一下这个问题
+                uuid:
+                  type: string
+                  description: 幂等去重 ID，对应底层 Cid。不传时服务端自动生成并在响应中返回。
+                  example: 7f3b7fd2-1b64-4f5d-9e8b-2f2d8d3b0c11
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      uuid:
+                        type: string
+                        description: 本次实际使用的幂等去重 ID。若请求未传 uuid，则返回服务端生成的 uuid。
+                        example: a1b2c3d4-5678-90ef-ghij-klmnopqrstuv
+      x-lark-access-tokens:
+      - user
+      - tenant
+      x-lark-scopes:
+      - vc:meeting.message:write
+      x-lark-error-mappings:
+      - code: 120001
+        httpCode: 400
+        msg: param is invalid
+      x-lark-rate-limit:
+        tier: 3
   /open-apis/vc/v1/bots/user_active_meeting:
     get:
       operationId: vc_bot_user_active_meeting

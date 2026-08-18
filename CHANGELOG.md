@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-08-18）
+
+新增 3 · 移除 0 · 定义变更 0（全量共 1631 个接口）
+
+### 新增接口
+- `POST /open-apis/vc/v1/bots/join`「加入会议」（vc/v1/bot/join）
+- `POST /open-apis/vc/v1/bots/leave`「离开会议」（vc/v1/bot/leave）
+- `POST /open-apis/vc/v1/bots/message`「发送会中消息」（vc/v1/bot/message）
+
 ## explorer 全量轨道（2026-08-14）
 
 新增 0 · 移除 0 · 定义变更 2（全量共 1628 个接口）

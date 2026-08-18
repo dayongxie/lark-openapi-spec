@@ -18551,6 +18551,42 @@
   "title": "获取会议事件列表",
   "version": "v1"
  },
+ "vc/v1/bot/join": {
+  "apiName": "join",
+  "apiPath": "/open-apis/vc/v1/bots/join",
+  "category": "视频会议 / 智能体",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/join",
+  "httpMethod": "POST",
+  "project": "vc",
+  "resource": "bot",
+  "sha256": "1b5d55aa6200090b1d9a900126f5fcd2638f9cf363316dd05b2cbcfd5be2f11c",
+  "title": "加入会议",
+  "version": "v1"
+ },
+ "vc/v1/bot/leave": {
+  "apiName": "leave",
+  "apiPath": "/open-apis/vc/v1/bots/leave",
+  "category": "视频会议 / 智能体",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/leave",
+  "httpMethod": "POST",
+  "project": "vc",
+  "resource": "bot",
+  "sha256": "9b978d0cf0a28fbf0201a2b62002fde716419df1c91d07f118804f02a7be98a7",
+  "title": "离开会议",
+  "version": "v1"
+ },
+ "vc/v1/bot/message": {
+  "apiName": "message",
+  "apiPath": "/open-apis/vc/v1/bots/message",
+  "category": "视频会议 / 智能体",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/message",
+  "httpMethod": "POST",
+  "project": "vc",
+  "resource": "bot",
+  "sha256": "8bfbb5d5f2437a3bf110353faf75a0b75c88d64c9073af9c986150110344c5e1",
+  "title": "发送会中消息",
+  "version": "v1"
+ },
  "vc/v1/bot/user_active_meeting": {
   "apiName": "user_active_meeting",
   "apiPath": "/open-apis/vc/v1/bots/user_active_meeting",
