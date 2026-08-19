@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+57b4ca83
+  version: 1.0.0+cb74623e
   x-lark-project: corehr
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -4798,6 +4798,14 @@ paths:
                   type: string
                   description: 人员信息，引用Person的ID
                   example: '6919733936050406926'
+                whether_to_pay_social_security_elsewhere:
+                  type: boolean
+                  description: 是否异地缴纳社保
+                  example: 'true'
+                whether_returnee:
+                  type: boolean
+                  description: 是否为回流人员
+                  example: 'true'
                 primary_employment:
                   type: boolean
                   description: 是否是主雇佣信息
@@ -4990,6 +4998,14 @@ paths:
                             type: string
                             description: 试用期结束日期
                             example: '2022-01-01'
+                          whether_to_pay_social_security_elsewhere:
+                            type: boolean
+                            description: 是否异地缴纳社保
+                            example: 'true'
+                          whether_returnee:
+                            type: boolean
+                            description: 是否为回流人员
+                            example: 'true'
                           primary_employment:
                             type: boolean
                             description: 是否是主雇佣信息

@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: base
 description: Table, field, record, view, dashboard, workflow, form, role & permission management
-cli_version: 1.0.87
-extracted_at: '2026-08-14T03:31:42Z'
+cli_version: 1.0.88
+extracted_at: '2026-08-19T02:33:48Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +advperm-disable
@@ -1042,7 +1042,7 @@ shortcuts:
   - name: --data-config
     shorthand: null
     type: string
-    description: data_config JSON object; read dashboard-block-data-config.md for the SSOT
+    description: data_config JSON object; read lark-base-dashboard-block-config.md for the SSOT
   - name: --dry-run
     shorthand: null
     type: bool
@@ -1076,7 +1076,7 @@ shortcuts:
     shorthand: null
     type: string
     description: 'block type: column(柱状图)|bar(条形图)|line(折线图)|pie(饼图)|ring(环形图)|area(面积图)|combo(组合图)|scatter(散点图)|funnel(漏斗图)|wordCloud(词云)|radar(雷达图)|statistics(指标卡)|text(文本).
-      Read dashboard-block-data-config.md before creating.'
+      Read lark-base-dashboard-block-config.md before creating.'
   - name: --user-id-type
     shorthand: null
     type: string
@@ -1287,7 +1287,7 @@ shortcuts:
   - name: --data-config
     shorthand: null
     type: string
-    description: data_config JSON object; read dashboard-block-data-config.md for the SSOT
+    description: data_config JSON object; read lark-base-dashboard-block-config.md for the SSOT
   - name: --dry-run
     shorthand: null
     type: bool
@@ -1558,7 +1558,8 @@ shortcuts:
   - name: --dsl
     shorthand: null
     type: string
-    description: query JSON DSL; read lark-base-data-query-guide.md first, then lark-base-data-query.md for the full DSL SSOT
+    description: query JSON DSL; first follow lark-base-record-query-and-analysis-sop.md, then read lark-base-data-query.md
+      only if that SOP selects +data-query
   - name: --format
     shorthand: null
     type: string
@@ -2397,7 +2398,7 @@ shortcuts:
     shorthand: null
     type: string
     description: batch create JSON object; create_records contains one field map per record, e.g. {"create_records":[{"Name":"Task
-      A","Status":"Todo"},{"Name":"Task B","Score":20}]}
+      A","Status":["Todo"]},{"Name":"Task B","Score":20}]}
   - name: --table-id
     shorthand: null
     type: string
@@ -2510,6 +2511,7 @@ shortcuts:
     shorthand: null
     type: stringArray
     description: field ID or name to project; repeat to keep only needed columns
+    default: '[]'
   - name: --json
     shorthand: null
     type: string
@@ -2517,22 +2519,14 @@ shortcuts:
   - name: --format
     shorthand: null
     type: string
-    description: 'output format: markdown (default display) | json raw matrix | ndjson typed artifact (preferred for analysis)
-      (markdown|json|ndjson)'
+    description: 'output format: markdown (default display) | json raw matrix (current inline behavior may be deprecated and
+      replaced by ndjson-like artifact output) | ndjson artifact (records file plus manifest summary and column schema/stats;
+      preferred with file I/O for analysis) (markdown|json|ndjson)'
     default: markdown
   - name: --output
     shorthand: null
     type: string
     description: 'preferred analysis output: relative .ndjson output path; implies --format ndjson when format is omitted'
-  - name: --minimal-stdout
-    shorthand: null
-    type: bool
-    description: for ndjson, print only artifact paths, record file size, records_count, and has_more
-  - name: --jq-records
-    shorthand: null
-    type: string
-    description: required instead of --jq to process ndjson records with the built-in jq engine; runs once against the exported
-      records array and leaves artifact files unchanged
   - name: --overwrite
     shorthand: null
     type: bool
@@ -2623,6 +2617,7 @@ shortcuts:
     shorthand: null
     type: stringArray
     description: field ID or name to include; repeat to project only needed fields
+    default: '[]'
   - name: --view-id
     shorthand: null
     type: string
@@ -2649,22 +2644,14 @@ shortcuts:
   - name: --format
     shorthand: null
     type: string
-    description: 'output format: markdown (default display) | json raw matrix | ndjson typed artifact (preferred for analysis)
-      (markdown|json|ndjson)'
+    description: 'output format: markdown (default display) | json raw matrix (current inline behavior may be deprecated and
+      replaced by ndjson-like artifact output) | ndjson artifact (records file plus manifest summary and column schema/stats;
+      preferred with file I/O for analysis) (markdown|json|ndjson)'
     default: markdown
   - name: --output
     shorthand: null
     type: string
     description: 'preferred analysis output: relative .ndjson output path; implies --format ndjson when format is omitted'
-  - name: --minimal-stdout
-    shorthand: null
-    type: bool
-    description: for ndjson, print only artifact paths, record file size, records_count, and has_more
-  - name: --jq-records
-    shorthand: null
-    type: string
-    description: required instead of --jq to process ndjson records with the built-in jq engine; runs once against the exported
-      records array and leaves artifact files unchanged
   - name: --overwrite
     shorthand: null
     type: bool
@@ -2775,6 +2762,7 @@ shortcuts:
     shorthand: null
     type: stringArray
     description: field ID or name to include; repeat to project only needed fields
+    default: '[]'
   - name: --view-id
     shorthand: null
     type: string
@@ -2800,22 +2788,14 @@ shortcuts:
   - name: --format
     shorthand: null
     type: string
-    description: 'output format: markdown (default display) | json raw matrix | ndjson typed artifact (preferred for analysis)
-      (markdown|json|ndjson)'
+    description: 'output format: markdown (default display) | json raw matrix (current inline behavior may be deprecated and
+      replaced by ndjson-like artifact output) | ndjson artifact (records file plus manifest summary and column schema/stats;
+      preferred with file I/O for analysis) (markdown|json|ndjson)'
     default: markdown
   - name: --output
     shorthand: null
     type: string
     description: 'preferred analysis output: relative .ndjson output path; implies --format ndjson when format is omitted'
-  - name: --minimal-stdout
-    shorthand: null
-    type: bool
-    description: for ndjson, print only artifact paths, record file size, records_count, and has_more
-  - name: --jq-records
-    shorthand: null
-    type: string
-    description: required instead of --jq to process ndjson records with the built-in jq engine; runs once against the exported
-      records array and leaves artifact files unchanged
   - name: --overwrite
     shorthand: null
     type: bool
@@ -2965,7 +2945,7 @@ shortcuts:
   - name: --json
     shorthand: null
     type: string
-    description: record field map JSON object, e.g. {"Name":"Alice","Status":"Todo"}; do not wrap in fields
+    description: record field map JSON object, e.g. {"Name":"Alice","Status":["Todo"]}; do not wrap in fields
   - name: --record-id
     shorthand: null
     type: string
@@ -3008,7 +2988,8 @@ shortcuts:
   - name: --json
     shorthand: null
     type: string
-    description: role config JSON; read lark-base-role-guide.md and role-config.md before constructing permissions
+    description: role config JSON; read lark-base-advanced-permission-and-role.md and lark-base-role-config.md before constructing
+      permissions
 - name: +role-delete
   summary: Delete a custom role (system roles cannot be deleted)
   description: Delete a custom role (system roles cannot be deleted)
@@ -3160,7 +3141,8 @@ shortcuts:
   - name: --json
     shorthand: null
     type: string
-    description: delta role config JSON; read lark-base-role-guide.md and role-config.md before changing permissions
+    description: delta role config JSON; read lark-base-advanced-permission-and-role.md and lark-base-role-config.md before
+      changing permissions
   - name: --role-id
     shorthand: null
     type: string
@@ -4327,8 +4309,7 @@ shortcuts:
   - name: --json
     shorthand: null
     type: string
-    description: workflow body JSON; read lark-base-workflow-guide.md and lark-base-workflow-schema.md before constructing
-      steps
+    description: workflow body JSON; read lark-base-workflow.md and lark-base-workflow-schema.md before constructing steps
 - name: +workflow-disable
   summary: Disable a workflow in a base
   description: Disable a workflow in a base
@@ -4528,7 +4509,7 @@ shortcuts:
   - name: --json
     shorthand: null
     type: string
-    description: workflow body JSON; read lark-base-workflow-guide.md and lark-base-workflow-schema.md before replacing steps
+    description: workflow body JSON; read lark-base-workflow.md and lark-base-workflow-schema.md before replacing steps
   - name: --workflow-id
     shorthand: null
     type: string

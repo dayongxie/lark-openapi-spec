@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-08-19）
+
+新增 0 · 移除 0 · 定义变更 1（全量共 1631 个接口）
+
+### 定义变更
+- `PATCH /open-apis/corehr/v1/employments/{employment_id}`「更新雇佣信息」（corehr/v1/employment/patch）
+
 ## explorer 全量轨道（2026-08-18）
 
 新增 3 · 移除 0 · 定义变更 0（全量共 1631 个接口）

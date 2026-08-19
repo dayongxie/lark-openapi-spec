@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: docs
 description: Document and content operations
-cli_version: 1.0.87
-extracted_at: '2026-08-14T03:31:42Z'
+cli_version: 1.0.88
+extracted_at: '2026-08-19T02:33:48Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +create
@@ -29,11 +29,6 @@ shortcuts:
     shorthand: null
     type: bool
     description: print request without executing
-  - name: --format
-    shorthand: null
-    type: string
-    description: 'output format: json (default) | pretty | table | ndjson | csv'
-    default: json
   - name: --help
     shorthand: -h
     type: bool
@@ -42,10 +37,6 @@ shortcuts:
     shorthand: -q
     type: string
     description: jq expression to filter JSON output
-  - name: --json
-    shorthand: null
-    type: bool
-    description: shorthand for --format json
   - name: --parent-position
     shorthand: null
     type: string
@@ -96,8 +87,8 @@ shortcuts:
   - name: --doc-format
     shorthand: null
     type: string
-    description: output content format; xml keeps DocxXML structure and optional block ids, markdown is plain export, im-markdown
-      downgrades residual DocxXML fragments for IM messages (xml|markdown|im-markdown)
+    description: output content format; xml keeps DocxXML structure and local comment anchors, markdown returns plain content
+      plus the comments sidecar, im-markdown also downgrades residual DocxXML fragments for IM messages (xml|markdown|im-markdown)
     default: xml
   - name: --dry-run
     shorthand: null
@@ -107,11 +98,6 @@ shortcuts:
     shorthand: null
     type: string
     description: range end block id; -1 means through document end
-  - name: --format
-    shorthand: null
-    type: string
-    description: 'output format: json (default) | pretty | table | ndjson | csv'
-    default: json
   - name: --help
     shorthand: -h
     type: bool
@@ -120,10 +106,6 @@ shortcuts:
     shorthand: -q
     type: string
     description: jq expression to filter JSON output
-  - name: --json
-    shorthand: null
-    type: bool
-    description: shorthand for --format json
   - name: --keyword
     shorthand: null
     type: string
@@ -375,8 +357,8 @@ shortcuts:
     description: image display width in pixels (only for --type=image); if --height is omitted it is auto-computed from the
       source image aspect ratio
 - name: +media-preview
-  summary: Preview document media file (auto-detects extension)
-  description: Preview document media file (auto-detects extension)
+  summary: Preview document media or comment image (auto-detects extension)
+  description: Preview document media or comment image (auto-detects extension)
   usage: lark-cli docs +media-preview [flags]
   risk: read
   flags:
@@ -416,7 +398,7 @@ shortcuts:
   - name: --token
     shorthand: null
     type: string
-    description: media file token
+    description: document media token or comment image token
 - name: +media-upload
   summary: Upload media file (image/attachment) to a document block
   description: Upload media file (image/attachment) to a document block
@@ -723,14 +705,15 @@ shortcuts:
   - name: --block-id
     shorthand: null
     type: string
-    description: 'target block ID(s) for block operations (comma-separated for batch delete); sentinel values are passed through
-      to the service: -1 means document end where supported, 0 means document start where supported'
+    description: 'target block ID(s) for block operations (comma-separated for multi-block replace or batch delete); sentinel
+      values are passed through to the service: -1 means document end where supported, 0 means document start where supported'
   - name: --command
     shorthand: null
     type: string
     description: 'operation; str_replace does not support resource replacement; prefer block_replace when multiple blocks
-      are involved; requirements: str_replace(--pattern), block_delete(--block-id, comma-separated for batch), block_insert_after/block_replace(--block-id,--content),
-      block_copy_insert_after/block_move_after(--block-id,--src-block-ids), overwrite/append(--content) (str_replace|block_delete|block_insert_after|block_copy_insert_after|block_replace|block_move_after|overwrite|append)'
+      are involved; requirements: str_replace(--pattern), block_delete(--block-id or --start-block-id/--end-block-id), block_insert_after(--block-id,--content),
+      block_replace(--content plus --block-id or --start-block-id/--end-block-id), block_copy_insert_after/block_move_after(--block-id,--src-block-ids),
+      overwrite/append(--content) (str_replace|block_delete|block_insert_after|block_copy_insert_after|block_replace|block_move_after|overwrite|append)'
   - name: --content
     shorthand: null
     type: string
@@ -750,11 +733,11 @@ shortcuts:
     shorthand: null
     type: bool
     description: print request without executing
-  - name: --format
+  - name: --end-block-id
     shorthand: null
     type: string
-    description: 'output format: json (default) | pretty | table | ndjson | csv'
-    default: json
+    description: inclusive end block ID for a block_replace or block_delete sibling range; requires --start-block-id and cannot
+      be combined with --block-id; -1 means document end
   - name: --help
     shorthand: -h
     type: bool
@@ -763,10 +746,6 @@ shortcuts:
     shorthand: -q
     type: string
     description: jq expression to filter JSON output
-  - name: --json
-    shorthand: null
-    type: bool
-    description: shorthand for --format json
   - name: --pattern
     shorthand: null
     type: string
@@ -788,6 +767,11 @@ shortcuts:
     shorthand: null
     type: string
     description: comma-separated source block ids for block_copy_insert_after and block_move_after
+  - name: --start-block-id
+    shorthand: null
+    type: string
+    description: inclusive start block ID for a block_replace or block_delete sibling range; requires --end-block-id and cannot
+      be combined with --block-id; 0 means document start
 - name: +whiteboard-update
   summary: Update an existing whiteboard in lark document with mermaid, plantuml or whiteboard dsl. refer to lark-whiteboard
     skill for more details.

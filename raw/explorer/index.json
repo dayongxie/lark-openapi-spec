@@ -5923,7 +5923,7 @@
   "httpMethod": "PATCH",
   "project": "corehr",
   "resource": "employment",
-  "sha256": "68042e502c23c416cbf9b5d2ff1f857985a5642292f1929712c6e3b14aa1701e",
+  "sha256": "c49de4b42fb5d7817b633d704623e0fefd7b768c0d86a150ee26f6854a88340b",
   "title": "更新雇佣信息",
   "version": "v1"
  },

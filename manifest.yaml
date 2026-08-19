@@ -100,14 +100,14 @@ services:
   file: openapi-curated/wiki.yaml
 go_track:
   source: lark-cli Go source (shortcuts/ dir, heuristic extraction)
-  cli_version: 1.0.87
+  cli_version: 1.0.88
   stats:
     services: 18
     operations: 247
   directory: openapi-go/
 full_track:
   source: https://open.feishu.cn/api_explorer/v1 (official API Explorer)
-  generated_at: '2026-08-18T02:23:33Z'
+  generated_at: '2026-08-19T02:33:33Z'
   stats:
     projects: 55
     operations: 1631
