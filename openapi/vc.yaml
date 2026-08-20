@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+7f49e5b6
+  version: 1.0.0+98fd2673
   x-lark-project: vc
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -430,7 +430,7 @@ paths:
                                 activity_event_type:
                                   type: string
                                   description: 会中活动子类型；取值 participant_joined / participant_left / transcript_received / chat_received
-                                    / magic_share_started / magic_share_ended
+                                    / magic_share_started / magic_share_ended / document_context_changed / countdown_changed
                                   example: participant_joined
                                 participant_joined_items:
                                   type: array
@@ -759,6 +759,66 @@ paths:
                                             example: block_xxx
                                         description: 元素预览变化，仅图片或白板预览变化时返回
                                   description: 文档上下文变化内容（activity_event_type = document_context_changed 时返回），单条记录包含评论聚焦、章节定位或元素预览中的一种变化
+                                countdown_items:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      action:
+                                        type: string
+                                        description: 倒计时动作；取值 SET / PROLONG / END_IN_ADVANCE / CLOSE / ENDED / REMIND
+                                        example: SET
+                                      operator:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: string
+                                            description: 用户 ID
+                                            example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
+                                          user_type:
+                                            type: integer
+                                            description: 用户类型
+                                            example: '1'
+                                          user_role:
+                                            type: integer
+                                            description: 用户角色
+                                            example: '1'
+                                          user_name:
+                                            type: string
+                                            description: 用户名称
+                                            example: 张三
+                                        description: 操作倒计时的用户；action 为 ENDED / REMIND 时为空
+                                      end_time:
+                                        type: string
+                                        description: 倒计时结束时间（毫秒级时间戳）
+                                        example: '1712349200000'
+                                      event_time:
+                                        type: string
+                                        description: 倒计时事件发生时间（毫秒级时间戳）
+                                        example: '1712348900000'
+                                      need_play_audio_at_end:
+                                        type: boolean
+                                        description: 倒计时结束时是否播放提示音
+                                        example: 'true'
+                                      reminders_before_end_in_second:
+                                        type: array
+                                        items:
+                                          type: integer
+                                        description: 倒计时结束前提醒时间列表，单位为秒
+                                        example: '[60, 300]'
+                                      seq_id:
+                                        type: string
+                                        description: 倒计时序列 ID
+                                        example: '12345'
+                                      countdown_set_time:
+                                        type: string
+                                        description: 倒计时设置时间（毫秒级时间戳）
+                                        example: '1712348600000'
+                                      remain_minutes:
+                                        type: integer
+                                        description: 距离倒计时结束的剩余分钟数；仅 action 为 REMIND 时填充
+                                        example: '5'
+                                  description: 倒计时状态变化内容（activity_event_type = countdown_changed 时填充）
                               description: 事件负载，包含与事件类型对应的业务数据，采用 JSON 格式序列化后的字符串
                         description: 会议事件列表，包含会议生命周期内的所有关键操作记录。
       x-lark-access-tokens:
@@ -818,7 +878,6 @@ paths:
                   description: |-
                     入会标识信息，需与join_type对应：
                     - 当join_type=1时，需传入meeting_no字段
-                    - 当join_type=2时，需传入meeting_id字段
                 password:
                   type: string
                   description: 会议密码。仅当目标会议设置了入会密码时必填，用于验证机器人的入会权限。可通过会议创建接口或会议详情查询接口获取。
@@ -827,6 +886,15 @@ paths:
                   type: string
                   description: 邀请-入会链路的关联标识，由 server 端生成。Agent 收到后必须在调用「机器人入会」接口时原样回传，用于服务端关联 invite/enter 埋点。
                   example: 7c9e6679-7425-40de-944b-e07fc1f90ae7
+                action:
+                  type: integer
+                  description: 机器人入会动作。不传或传 1 表示仅加入已存在会议；传 2 表示发起并加入日程会议。仅支持日程 VC 会议，非日程会议不支持发起。
+                  enum:
+                  - 1
+                  - 2
+                  x-enum-descriptions:
+                    '1': 仅加入已存在会议
+                    '2': 发起并加入日程会议；会议已存在时加入同一会议
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -2940,6 +3008,7 @@ paths:
                     - has_more
       x-lark-access-tokens:
       - user
+      - tenant
       x-lark-scopes:
       - vc:meeting.search:read
       x-lark-error-mappings:

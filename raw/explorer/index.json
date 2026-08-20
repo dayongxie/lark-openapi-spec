@@ -18547,7 +18547,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "bot",
-  "sha256": "93a7fe568b4d225596d18ab0d56e36b2dadd7cc951faa5a6ed48be116fc480d5",
+  "sha256": "1fb6950fd3f12c4388cad46868eb5d2cb3bd4cebba10ea7b636166509daab3dc",
   "title": "获取会议事件列表",
   "version": "v1"
  },
@@ -18559,7 +18559,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "bot",
-  "sha256": "1b5d55aa6200090b1d9a900126f5fcd2638f9cf363316dd05b2cbcfd5be2f11c",
+  "sha256": "9e68aef7e2161f55e95463f36088d771b0e3e8b02ad40cc53cf27f86335149a8",
   "title": "加入会议",
   "version": "v1"
  },
@@ -18787,7 +18787,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "95f1e5d7ec62285e805aba2271cfd978f4fe89f5fff892fa8ba5d3195b779e75",
+  "sha256": "de41cbef7a0b6e916e86e935fbf85e20dc3a54ce371ce8d31aaa643077d8f995",
   "title": "搜索会议记录",
   "version": "v1"
  },
