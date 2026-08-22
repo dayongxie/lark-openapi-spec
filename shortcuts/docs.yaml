@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: docs
 description: Document and content operations
-cli_version: 1.0.88
-extracted_at: '2026-08-19T02:33:48Z'
+cli_version: 1.0.89
+extracted_at: '2026-08-22T02:24:09Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +create
@@ -272,10 +272,8 @@ shortcuts:
     description: 'resource type: media (default) | whiteboard'
     default: media
 - name: +media-insert
-  summary: Insert a local image or file into a Lark document (4-step orchestration + auto-rollback); appends to end by default,
-    or inserts relative to a text selection with --selection-with-ellipsis
-  description: Insert a local image or file into a Lark document (4-step orchestration + auto-rollback); appends to end by
-    default, or inserts relative to a text selection with --selection-with-ellipsis
+  summary: Insert a local image or file at the end of a Lark document (4-step orchestration + auto-rollback)
+  description: Insert a local image or file at the end of a Lark document (4-step orchestration + auto-rollback)
   usage: lark-cli docs +media-insert [flags]
   risk: write
   flags:
@@ -287,10 +285,6 @@ shortcuts:
     shorthand: null
     type: string
     description: 'identity type: user | bot'
-  - name: --before
-    shorthand: null
-    type: bool
-    description: insert before the matched block instead of after (requires --selection-with-ellipsis)
   - name: --caption
     shorthand: null
     type: string
@@ -339,13 +333,6 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
-  - name: --selection-with-ellipsis
-    shorthand: null
-    type: string
-    description: plain text (or 'start...end' to disambiguate) matching the target block's content. Media is inserted at the
-      top-level ancestor of the matched block — i.e., when the selection is inside a callout, table cell, or nested list,
-      media lands outside that container, not inside it. Pass 'start...end' (a unique prefix and suffix separated by '...')
-      when the plain text appears in more than one block
   - name: --type
     shorthand: null
     type: string

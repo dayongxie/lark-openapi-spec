@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: im
 description: Message and group chat management
-cli_version: 1.0.88
-extracted_at: '2026-08-19T02:33:48Z'
+cli_version: 1.0.89
+extracted_at: '2026-08-22T02:24:09Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +chat-create
@@ -870,6 +870,71 @@ shortcuts:
     shorthand: null
     type: string
     description: starting pagination cursor
+- name: +message-read-users
+  summary: List users who have read one message; the caller must still be in the chat; supports user and bot identities with
+    optional automatic pagination
+  description: List users who have read one message; the caller must still be in the chat; supports user and bot identities
+    with optional automatic pagination
+  usage: lark-cli im +message-read-users [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +message-read-users
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --message-id
+    shorthand: null
+    type: string
+    description: message ID (om_xxx)
+  - name: --page-all
+    shorthand: null
+    type: bool
+    description: continue from --page-token (if set) until exhaustion or --page-limit
+  - name: --page-delay
+    shorthand: null
+    type: int
+    description: delay in milliseconds between pages with --page-all (0-60000; 0 disables throttling)
+    default: '200'
+  - name: --page-limit
+    shorthand: null
+    type: int
+    description: maximum pages fetched by --page-all (1-1000)
+    default: '10'
+  - name: --page-size
+    shorthand: null
+    type: int
+    description: page size (1-100)
+    default: '100'
+  - name: --page-token
+    shorthand: null
+    type: string
+    description: starting pagination cursor
+  - name: --user-id-type
+    shorthand: null
+    type: string
+    description: user ID type returned in each item (open_id|union_id|user_id)
+    default: open_id
 - name: +messages-mget
   summary: Batch get messages by IDs; user/bot; fetches up to 50 om_ message IDs, formats sender names, expands thread replies
   description: Batch get messages by IDs; user/bot; fetches up to 50 om_ message IDs, formats sender names, expands thread
@@ -915,6 +980,42 @@ shortcuts:
     shorthand: null
     type: bool
     description: 'skip auto-fetching reactions for each message (default: enrichment enabled)'
+- name: +messages-read-status
+  summary: Batch query whether the current user has read up to 50 messages; returns readable items and invalid message IDs
+  description: Batch query whether the current user has read up to 50 messages; returns readable items and invalid message
+    IDs
+  usage: lark-cli im +messages-read-status [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +messages-read-status
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --message-ids
+    shorthand: null
+    type: string
+    description: message IDs, comma-separated (1-50 om_xxx IDs)
 - name: +messages-reply
   summary: Reply to a message (supports thread replies); user/bot; supports text/markdown/post/media replies, reply-in-thread,
     idempotency key

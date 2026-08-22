@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: base
 description: Table, field, record, view, dashboard, workflow, form, role & permission management
-cli_version: 1.0.88
-extracted_at: '2026-08-19T02:33:48Z'
+cli_version: 1.0.89
+extracted_at: '2026-08-22T02:24:09Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +advperm-disable
@@ -978,6 +978,139 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+- name: +button-rule-bind
+  summary: Bind a button field to a workflow
+  description: Bind a button field to a workflow
+  usage: lark-cli base +button-rule-bind [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --field-id
+    shorthand: null
+    type: string
+    description: field ID or name
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +button-rule-bind
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --workflow-id
+    shorthand: null
+    type: string
+    description: public workflow ID returned by +workflow-create or +workflow-list (wkf prefix)
+- name: +button-rule-get
+  summary: Get the target bound to a button field
+  description: Get the target bound to a button field
+  usage: lark-cli base +button-rule-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --field-id
+    shorthand: null
+    type: string
+    description: field ID or name
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +button-rule-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+- name: +button-rule-unbind
+  summary: Remove the workflow binding from a button field
+  description: Remove the workflow binding from a button field
+  usage: lark-cli base +button-rule-unbind [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --field-id
+    shorthand: null
+    type: string
+    description: field ID or name
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +button-rule-unbind
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
 - name: +dashboard-arrange
   summary: Auto-arrange dashboard blocks layout (server-side smart layout)
   description: Auto-arrange dashboard blocks layout (server-side smart layout)
@@ -1071,7 +1204,16 @@ shortcuts:
   - name: --no-validate
     shorthand: null
     type: bool
-    description: skip local data_config validation and normalization; send data_config as-is
+    description: 'skip local SEMANTIC validation: data_config checks + normalization, and the --position x/y/w/h completeness
+      check. JSON syntax is still parsed (a malformed value never silently vanishes from the preview). Sends data_config and
+      position as-is'
+  - name: --position
+    shorthand: null
+    type: string
+    description: optional. component position+size in 12-col grid, JSON {"x","y","w","h"}; all four keys required and numeric
+      (position is submitted whole, so a partial object cannot express a complete placement). Advisory bounds x/y>=0, 1<=w<=12
+      and x+w<=12, h>=1 — coordinate VALUES are not validated locally and pass through as given; the server auto-arranges
+      out-of-range or overlapping positions. Omit for server auto-layout
   - name: --type
     shorthand: null
     type: string
@@ -1316,7 +1458,16 @@ shortcuts:
   - name: --no-validate
     shorthand: null
     type: bool
-    description: skip local data_config validation and normalization; send data_config as-is
+    description: 'skip local SEMANTIC validation: data_config checks + normalization, and the --position x/y/w/h completeness
+      check. JSON syntax is still parsed (a malformed value never silently vanishes from the preview). Sends data_config and
+      position as-is'
+  - name: --position
+    shorthand: null
+    type: string
+    description: optional. component position+size in 12-col grid, JSON {"x","y","w","h"}; all four keys required and numeric
+      (position is submitted whole, so a partial object cannot express a complete placement). Advisory bounds x/y>=0, 1<=w<=12
+      and x+w<=12, h>=1 — coordinate VALUES are not validated locally and pass through as given; the server auto-arranges
+      out-of-range or overlapping positions. Omit to leave layout unchanged
   - name: --user-id-type
     shorthand: null
     type: string
@@ -1490,6 +1641,100 @@ shortcuts:
     shorthand: null
     type: string
     description: pagination token
+- name: +dashboard-share-get
+  summary: Get dashboard share status and settings
+  description: Get dashboard share status and settings
+  usage: lark-cli base +dashboard-share-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dashboard-id
+    shorthand: null
+    type: string
+    description: dashboard ID
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dashboard-share-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +dashboard-share-update
+  summary: Update dashboard share status and settings
+  description: Update dashboard share status and settings
+  usage: lark-cli base +dashboard-share-update [flags]
+  risk: write
+  flags:
+  - name: --access-scope
+    shorthand: null
+    type: string
+    description: share access scope (invite|tenant|anyone)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dashboard-id
+    shorthand: null
+    type: string
+    description: dashboard ID
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --enable-auto-analysis
+    shorthand: null
+    type: bool
+    description: enable intelligent analysis on the shared dashboard
+  - name: --enabled
+    shorthand: null
+    type: bool
+    description: enable or disable dashboard sharing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +dashboard-share-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --show-source
+    shorthand: null
+    type: bool
+    description: show the entry back to the source Base
 - name: +dashboard-update
   summary: Update a dashboard
   description: Update a dashboard
@@ -2115,11 +2360,13 @@ shortcuts:
   - name: --questions
     shorthand: null
     type: string
-    description: 'questions JSON array, max 10 items. Each item requires "title"(field title) and "type"(text/number/select/datetime/user/attachment/location).
-      Optional fields: "description"(plain text or markdown link like [text](https://example.com)),"required","option_display_mode"(0=dropdown/1=vertical/2=horizontal,select
-      only),"multiple"(bool,select/user),"options"([{"name":"opt","hue":"Blue"}],select only),"style"({"type":"plain/phone/url/email/barcode/rating","precision":2,"format":"yyyy/MM/dd","icon":"star","min":1,"max":5}),"visible_rule"(display
+    description: 'questions JSON array, max 10 items. Supports two shapes: create a new field question with "title"(field
+      title) and "type"(text/number/select/datetime/user/attachment/location), or add an existing field as a question with
+      "use_existing_field":true and "field_id"(field ID/name). Optional form fields: "description"(plain text or markdown
+      link like [text](https://example.com)),"required","option_display_mode"(0=dropdown/1=vertical/2=horizontal,select only),"visible_rule"(display
       condition; same shape as view filter {"logic":"and","conditions":[["前序题目","==","是"]]}, field references another question''s
-      title/id, empty/absent = always shown). E.g. ''[{"type":"text","title":"Your name","required":true}]'''
+      title/id, empty/absent = always shown). New field questions also support "multiple","options","style". E.g. ''[{"type":"text","title":"Your
+      name","required":true}]'' or ''[{"use_existing_field":true,"field_id":"fldEmail","title":"Email"}]'''
   - name: --table-id
     shorthand: null
     type: string
@@ -2163,10 +2410,17 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+  - name: --keep-field
+    shorthand: null
+    type: bool
+    description: Only remove/hide the questions from the form; keep the underlying fields and existing record data so they
+      can be added back later with +form-questions-create using use_existing_field=true and field_id. Default false deletes
+      fields and data.
   - name: --question-ids
     shorthand: null
     type: string
-    description: JSON array of question IDs to delete, max 10 items, e.g. '["q_001","q_002"]'
+    description: JSON array of question IDs (field IDs) to remove from the form, max 10 items. Default behavior also deletes
+      the underlying fields and their record data; add --keep-field to preserve fields. E.g. '["q_001","q_002"]'
   - name: --table-id
     shorthand: null
     type: string
@@ -2265,6 +2519,108 @@ shortcuts:
       want to keep. Supported fields: "id"(required),"title","description"(plain text or markdown link like [text](https://example.com)),"required","option_display_mode"(0=dropdown,1=vertical,2=horizontal,select
       only),"visible_rule"(display condition; same shape as view filter {"logic":"and","conditions":[["前序题目","==","是"]]},
       field references another question''s title/id; pass null or omit to clear). E.g. ''[{"id":"q_001","title":"Updated?","required":true}]'''
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID
+- name: +form-share-get
+  summary: Get form share status and settings
+  description: Get form share status and settings
+  usage: lark-cli base +form-share-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --form-id
+    shorthand: null
+    type: string
+    description: form ID
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +form-share-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID
+- name: +form-share-update
+  summary: Update form share status and settings
+  description: Update form share status and settings
+  usage: lark-cli base +form-share-update [flags]
+  risk: write
+  flags:
+  - name: --access-scope
+    shorthand: null
+    type: string
+    description: share access scope (invite|tenant|anyone)
+  - name: --allow-anonymous
+    shorthand: null
+    type: bool
+    description: anonymize the submitter identity
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --enabled
+    shorthand: null
+    type: bool
+    description: enable or disable form sharing
+  - name: --form-id
+    shorthand: null
+    type: string
+    description: form ID
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +form-share-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --require-login
+    shorthand: null
+    type: bool
+    description: require submitters to sign in before submitting
   - name: --table-id
     shorthand: null
     type: string
@@ -3463,6 +3819,125 @@ shortcuts:
     shorthand: null
     type: string
     description: table ID (must start with tbl if ID) or name
+- name: +template-categories
+  summary: List Base template center categories
+  description: List Base template center categories
+  usage: lark-cli base +template-categories [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +template-categories
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+- name: +template-list
+  summary: List Base templates by category
+  description: List Base templates by category
+  usage: lark-cli base +template-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --category-key
+    shorthand: null
+    type: string
+    description: template category key; omit to list the recommended category
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +template-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --limit
+    shorthand: null
+    type: int
+    description: pagination size, range 1-100
+    default: '10'
+  - name: --offset
+    shorthand: null
+    type: string
+    description: pagination cursor from the previous response
+- name: +template-search
+  summary: Search Base templates by keyword
+  description: Search Base templates by keyword
+  usage: lark-cli base +template-search [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +template-search
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --keyword
+    shorthand: null
+    type: string
+    description: template keyword; empty search is not supported
+  - name: --limit
+    shorthand: null
+    type: int
+    description: pagination size, range 1-100
+    default: '10'
+  - name: --offset
+    shorthand: null
+    type: string
+    description: pagination cursor from the previous response
 - name: +title-resolve
   summary: Resolve a Base title or keyword through Drive search
   description: Resolve a Base title or keyword through Drive search
