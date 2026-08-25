@@ -7471,7 +7471,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "employee",
-  "sha256": "293071ecd5c9466b9ffe8ea995434fffb1aef8e145653582505725cbea9ce83c",
+  "sha256": "03eac81274727d559af57c07de341b92ca4efa10b6bf28cb55a7d16c8dfb32aa",
   "title": "批量查询员工信息",
   "version": "v2"
  },
@@ -7495,7 +7495,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "employee",
-  "sha256": "a38db190c6083cf138f36f1995f2ad58b74ab220b75c8b80d1a637cee990491a",
+  "sha256": "e1d9c5bfda8d94145b7703652192c859724603cc1e3f739527fa28bae552233b",
   "title": "搜索员工信息",
   "version": "v2"
  },
@@ -8059,7 +8059,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "person",
-  "sha256": "2914ccd682ddc48af96d9e425833ad2ecf988c888e5480dd8ad50c1dfd555645",
+  "sha256": "f98d8d1ee920e74cd63f5809a2df3e4e1e086519d20ff91b236b1f0d75746a79",
   "title": "创建个人信息",
   "version": "v2"
  },
@@ -8071,7 +8071,7 @@
   "httpMethod": "PATCH",
   "project": "corehr",
   "resource": "person",
-  "sha256": "071224ea7bfeaa03642526330e0955257575f8ad325f945a21abcbc4805a03ea",
+  "sha256": "c6622f435d2e4ce76e5b35765cb1dc59f838fa74c5888ad3c8f5fd231245aa23",
   "title": "更新个人信息",
   "version": "v2"
  },
@@ -8203,7 +8203,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "19a8f811fb7579acb8516c7045675f2e4c5587d19496184d50f1ca78d719a08f",
+  "sha256": "d2bd030e15da8de13fc022581bceb4b5a085ce613f474280a84505d656c3aa7f",
   "title": "查询待入职信息",
   "version": "v2"
  },
@@ -8227,7 +8227,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "9d8b26a57e93f7d31bee4c330e055683fea5c193cb180b67ffafea7437a342d0",
+  "sha256": "025e40f4a26576eecc8378414107b2858a48fbf1eb938410178f0a5d13b28f86",
   "title": "搜索待入职信息",
   "version": "v2"
  },
@@ -13507,7 +13507,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "message",
-  "sha256": "31e4ce85a914942aa95b6281c6f5c46aa867024412911a209d58d7476def0cac",
+  "sha256": "841cef17e72ff834fd871274611b156c27613b2ab3aecb8da945eed28799e183",
   "title": "发送消息",
   "version": "v1"
  },
@@ -13531,7 +13531,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "message",
-  "sha256": "b758ce7d7329e5a271371eba51d272e54766a7cdf4ae044a3b0d3b57cdaa6d4e",
+  "sha256": "acd682c59f07a46a28984f66729f677182979bcc50acb93e8c641110a1af9997",
   "title": "转发消息",
   "version": "v1"
  },
@@ -13543,7 +13543,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "message",
-  "sha256": "7499f567c8558b1a9417ba7556d7743d990aa5c19c1685f565fc1ce6e50c4af3",
+  "sha256": "319809396408db2b5c93ae6ca0351e960a87e2318fa469c05b112ed112b5db52",
   "title": "获取指定消息的内容",
   "version": "v1"
  },
@@ -13555,7 +13555,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "message",
-  "sha256": "3cdb84981384e53e03486a36944449e99c76cd550b30c0831c272b5b94070df3",
+  "sha256": "d6ab0c5d8e6f067b8a758a34c439ec66a00000657f43166d8dda73810da6950e",
   "title": "获取会话历史消息",
   "version": "v1"
  },
@@ -13567,7 +13567,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "message",
-  "sha256": "b42130510e9aa8bacf6e968ae0a77b803e9f339eb364534c7df12e6bd26f778e",
+  "sha256": "3812981790cc2d512b3ca8f61fff9bb5703df9e8dbce97437db05b92062e7dad",
   "title": "合并转发消息",
   "version": "v1"
  },
@@ -13615,7 +13615,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "message",
-  "sha256": "a6d176a24769d940cdf905f281e9f9dbba90ac73b7f0532c683e0cabe158a7ae",
+  "sha256": "948e5c5634feb41cd10534c6d4ac376b0da704dcae20fbebeae7a1cbbcf302d9",
   "title": "回复消息",
   "version": "v1"
  },
@@ -13639,7 +13639,7 @@
   "httpMethod": "PUT",
   "project": "im",
   "resource": "message",
-  "sha256": "5f98497906ae834ffd1ced1cf755926655c693f853c82c2cdffd5ab0477b19de",
+  "sha256": "e129ba8f3802bd2977cf5e0acb5a533e10608b5143836f9adebdae612cb6cb37",
   "title": "编辑消息",
   "version": "v1"
  },
@@ -13723,7 +13723,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "thread",
-  "sha256": "54d118e493d9c1a99d014dc332c220042b2629c326d48a8e2f6320038539823f",
+  "sha256": "b9c1cb83b00fc16f25849a6631f5bec3a2f4539087898485d16dcfc1f7ec3335",
   "title": "转发话题",
   "version": "v1"
  },

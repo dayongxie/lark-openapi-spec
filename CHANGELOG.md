@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-08-25）
+
+新增 0 · 移除 0 · 定义变更 14（全量共 1631 个接口）
+
+### 定义变更
+- `POST /open-apis/corehr/v2/employees/batch_get`「批量查询员工信息」（corehr/v2/employee/batch_get）
+- `POST /open-apis/corehr/v2/employees/search`「搜索员工信息」（corehr/v2/employee/search）
+- `POST /open-apis/corehr/v2/persons`「创建个人信息」（corehr/v2/person/create）
+- `PATCH /open-apis/corehr/v2/persons/{person_id}`「更新个人信息」（corehr/v2/person/patch）
+- `POST /open-apis/corehr/v2/pre_hires/query`「查询待入职信息」（corehr/v2/pre_hire/query）
+- `POST /open-apis/corehr/v2/pre_hires/search`「搜索待入职信息」（corehr/v2/pre_hire/search）
+- `POST /open-apis/im/v1/messages`「发送消息」（im/v1/message/create）
+- `POST /open-apis/im/v1/messages/{message_id}/forward`「转发消息」（im/v1/message/forward）
+- `GET /open-apis/im/v1/messages/{message_id}`「获取指定消息的内容」（im/v1/message/get）
+- `GET /open-apis/im/v1/messages`「获取会话历史消息」（im/v1/message/list）
+- `POST /open-apis/im/v1/messages/merge_forward`「合并转发消息」（im/v1/message/merge_forward）
+- `POST /open-apis/im/v1/messages/{message_id}/reply`「回复消息」（im/v1/message/reply）
+- `PUT /open-apis/im/v1/messages/{message_id}`「编辑消息」（im/v1/message/update）
+- `POST /open-apis/im/v1/threads/{thread_id}/forward`「转发话题」（im/v1/thread/forward）
+
 ## explorer 全量轨道（2026-08-20）
 
 新增 0 · 移除 0 · 定义变更 3（全量共 1631 个接口）

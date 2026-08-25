@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+ab623c4e
+  version: 1.0.0+e28c9b0b
   x-lark-project: im
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -9601,6 +9601,31 @@ components:
           description: 话题回复消息在话题回复里面的位置信息，仅话题回复生效
           example: '1'
           format: int64
+        sync_to_chat_info:
+          type: object
+          properties:
+            type:
+              type: integer
+              description: 同步群消息对应的类型，分话题回复消息和同步的群消息
+              enum:
+              - 1
+              - 2
+              x-enum-descriptions:
+                '1': 话题回复消息
+                '2': 同步对应群消息
+              default: 1
+            thread_id:
+              type: string
+              description: 话题回复消息对应的根话题
+              example: omt_d4be107c616a
+            related_message_id:
+              type: string
+              description: 关联的消息id
+              example: om_d4be107c616aed9c1da8ed8068570a9f
+          required:
+          - type
+          - related_message_id
+          description: 话题回复的时候，选择了同步发送到群时相关的信息
     Schema:
       type: object
       properties:
