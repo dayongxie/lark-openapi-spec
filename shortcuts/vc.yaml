@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: vc
 description: Video conference and meeting note management
-cli_version: 1.0.89
-extracted_at: '2026-08-22T02:24:09Z'
+cli_version: 1.0.90
+extracted_at: '2026-08-26T02:41:27Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +detail
@@ -40,6 +40,97 @@ shortcuts:
     shorthand: null
     type: string
     description: meeting IDs, comma-separated for batch
+- name: +meeting-countdown
+  summary: Operate an in-meeting countdown
+  description: Operate an in-meeting countdown
+  usage: lark-cli vc +meeting-countdown [flags]
+  risk: write
+  flags:
+  - name: --action
+    shorthand: null
+    type: string
+    description: 'countdown action: set, prolong, end_in_advance, or close_window (set|prolong|end_in_advance|close_window)'
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --duration
+    shorthand: null
+    type: int
+    description: countdown duration in minutes; required for set and prolong
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +meeting-countdown
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --meeting-id
+    shorthand: null
+    type: string
+    description: meeting ID to operate
+  - name: --need-play-audio-at-end
+    shorthand: null
+    type: bool
+    description: play audio when a set countdown ends
+  - name: --reminder-before-end
+    shorthand: null
+    type: int
+    description: single reminder offset in minutes before countdown end
+- name: +meeting-end
+  summary: End a meeting as the host app bot
+  description: End a meeting as the host app bot
+  usage: lark-cli vc +meeting-end [flags]
+  risk: high-risk-write (requires explicit user confirmation to execute; the agent must NOT add --yes on its own — only pass
+    --yes after the user has confirmed)
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +meeting-end
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --meeting-id
+    shorthand: null
+    type: string
+    description: meeting ID to end
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
 - name: +meeting-events
   summary: List meeting events by meeting ID
   description: List meeting events by meeting ID
@@ -96,12 +187,60 @@ shortcuts:
     shorthand: null
     type: string
     description: time lower bound (ISO 8601, YYYY-MM-DD, or Unix seconds)
+- name: +meeting-invite
+  summary: Invite selected or all eligible users as the app bot
+  description: Invite selected or all eligible users as the app bot
+  usage: lark-cli vc +meeting-invite [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +meeting-invite
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --meeting-id
+    shorthand: null
+    type: string
+    description: meeting ID
+  - name: --open-ids
+    shorthand: null
+    type: strings
+    description: user open_ids for SELECTED (maximum 200)
+  - name: --type
+    shorthand: null
+    type: string
+    description: invite type (ALL_SUGGESTED|SELECTED)
 - name: +meeting-join
   summary: Join a meeting by meeting number (bot join)
   description: Join a meeting by meeting number (bot join)
   usage: lark-cli vc +meeting-join [flags]
   risk: write
   flags:
+  - name: --action
+    shorthand: null
+    type: string
+    description: 'meeting action (default: join; start initiates a Calendar meeting) (join|start)'
+    default: join
   - name: --as
     shorthand: null
     type: string
@@ -209,6 +348,49 @@ shortcuts:
     shorthand: null
     type: string
     description: target user ID when using bot identity
+- name: +meeting-screenshot
+  summary: Capture a video meeting screenshot
+  description: Capture a video meeting screenshot
+  usage: lark-cli vc +meeting-screenshot [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +meeting-screenshot
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --meeting-id
+    shorthand: null
+    type: string
+    description: long numeric meeting ID (not the 9-digit meeting number)
+  - name: --output
+    shorthand: null
+    type: string
+    description: JPEG output path relative to the current working directory; parent directories are created
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: replace the output file if it already exists
 - name: +recording
   summary: Query minute_token from meeting-ids or calendar-event-ids
   description: Query minute_token from meeting-ids or calendar-event-ids

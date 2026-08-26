@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-08-26）
+
+新增 2 · 移除 0 · 定义变更 10（全量共 1633 个接口）
+
+### 新增接口
+- `POST /open-apis/minutes/v1/minutes/{minute_token}/clip`「创建妙记片段」（minutes/v1/minute/clip）
+- `POST /open-apis/minutes/v1/minutes/upload`「云空间文件生成妙记」（minutes/v1/minute/upload）
+
+### 定义变更
+- `POST /open-apis/approval/v4/instances/add_cc`「抄送审批实例（用户级）」（approval/v4/instance/add_cc）
+- `GET /open-apis/approval/v4/instances/detail`「获取单个审批实例详情（用户级）」（approval/v4/instance/detail）
+- `GET /open-apis/approval/v4/instances/initiated`「查询用户的已发起审批列表」（approval/v4/instance/initiated）
+- `POST /open-apis/approval/v4/tasks/add_sign`「审批任务加签（用户级）」（approval/v4/task/add_sign）
+- `POST /open-apis/approval/v4/tasks/forward`「转交审批任务（用户级）」（approval/v4/task/forward）
+- `GET /open-apis/approval/v4/tasks`「查询审批任务列表」（approval/v4/task/list）
+- `POST /open-apis/hire/v1/background_check_orders/batch_query`「查询背调信息列表」（hire/v1/background_check_order/batch_query）
+- `GET /open-apis/hire/v1/background_check_orders`「获取背调信息列表」（hire/v1/background_check_order/list）
+- `POST /open-apis/hire/v1/eco_background_checks/update_progress`「更新背调订单进度」（hire/v1/eco_background_check/update_progress）
+- `POST /open-apis/hire/v1/eco_background_checks/update_result`「回传背调订单的最终结果」（hire/v1/eco_background_check/update_result）
+
 ## explorer 全量轨道（2026-08-25）
 
 新增 0 · 移除 0 · 定义变更 14（全量共 1631 个接口）

@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+689141d9
+  version: 1.0.0+d92eba04
   x-lark-project: minutes
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -388,6 +388,98 @@ paths:
       - code: 2091005
         httpCode: 403
         msg: permission deny
+      x-lark-rate-limit:
+        tier: 6
+  /open-apis/minutes/v1/minutes/{minute_token}/clip:
+    post:
+      operationId: minutes_minute_clip
+      summary: 创建妙记片段
+      tags:
+      - minute
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute/clip
+      parameters:
+      - name: minute_token
+        in: path
+        required: true
+        schema:
+          type: string
+        description: 妙记唯一标识
+        example: mt_123456789abcdef0123456789abcdef0
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                time_ranges:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      start_time:
+                        type: string
+                        description: 起始时间（iso8601，精确到秒）
+                        example: '2026-03-21T16:15:30+08:00'
+                      end_time:
+                        type: string
+                        description: 截止时间（iso8601，精确到秒）
+                        example: '2026-03-21T16:15:30+08:00'
+                  description: 片段时间区间
+                title:
+                  type: string
+                  description: 片段标题
+                  example: 片段标题
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      minute_url:
+                        type: string
+                        description: 妙记链接
+                        example: https://sample.feishu.cn/minutes/obcnq3b9jl72l83w4f14xxxx
+      x-lark-access-tokens:
+      - user
+      x-lark-scopes:
+      - minutes:minutes.clip:write
+      x-lark-error-mappings:
+      - code: 2091001
+        httpCode: 400
+        msg: param is invalid
+      - code: 2091002
+        httpCode: 404
+        msg: resource not found
+      - code: 2091003
+        httpCode: 400
+        msg: minute not ready, try later
+      - code: 2091004
+        httpCode: 400
+        msg: resource deleted
+      - code: 2091005
+        httpCode: 403
+        msg: permission deny
+      - code: 2091006
+        httpCode: 500
+        msg: service internal error
+      - code: 2091007
+        httpCode: 400
+        msg: storage quota not enough
+      - code: 2091103
+        httpCode: 403
+        msg: review status not allow
       x-lark-rate-limit:
         tier: 6
   /open-apis/minutes/v1/minutes/{minute_token}:
@@ -815,5 +907,78 @@ paths:
         msg: service internal error
       x-lark-rate-limit:
         tier: 4
+  /open-apis/minutes/v1/minutes/upload:
+    post:
+      operationId: minutes_minute_upload
+      summary: 云空间文件生成妙记
+      tags:
+      - minute
+      description: 导入云空间文件到妙记
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute/upload
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                file_token:
+                  type: string
+                  description: 音视频文件fileToken
+                  example: <file_token>
+                  x-lark-id-types:
+                    file_token: ccm_file
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      minute_url:
+                        type: string
+                        description: 妙记链接
+                        example: <minute_url>
+      x-lark-access-tokens:
+      - user
+      x-lark-scopes:
+      - minutes:minutes.upload:write
+      x-lark-error-mappings:
+      - code: 2091001
+        httpCode: 400
+        msg: param is invalid
+      - code: 2091006
+        httpCode: 500
+        msg: service internal error
+      - code: 2091007
+        httpCode: 403
+        msg: file token permission deny
+      - code: 2091008
+        httpCode: 400
+        msg: asr/ai quota not enough
+      - code: 2091009
+        httpCode: 403
+        msg: no upload privilege
+      - code: 2091010
+        httpCode: 429
+        msg: upload too frequently
+      - code: 2091011
+        httpCode: 400
+        msg: storage quota not enough
+      - code: 2091012
+        httpCode: 403
+        msg: no cloud doc privilege
+      x-lark-rate-limit:
+        tier: 6
 components:
   schemas: {}

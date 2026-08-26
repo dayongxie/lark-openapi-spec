@@ -13584,6 +13584,54 @@
       "Score": 0,
       "apiSummary": {
        "apiIdentity": {
+        "apiName": "clip",
+        "project": "minutes",
+        "resource": "minute",
+        "version": "v1"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/minutes/v1/minutes/:minute_token/clip",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute/clip",
+       "httpMethod": "POST",
+       "supportAppTypes": [
+        "custom"
+       ]
+      },
+      "id": "7676147106222902224",
+      "name": "创建妙记片段",
+      "orderMark": "1787111407522",
+      "parentId": "7179079873313898500",
+      "type": 1
+     },
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "upload",
+        "project": "minutes",
+        "resource": "minute",
+        "version": "v1"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/minutes/v1/minutes/upload",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute/upload",
+       "httpMethod": "POST",
+       "supportAppTypes": [
+        "custom"
+       ]
+      },
+      "id": "7673720420097412036",
+      "name": "云空间文件生成妙记",
+      "orderMark": "1786611300827",
+      "parentId": "7179079873313898500",
+      "type": 1
+     },
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
         "apiName": "search",
         "project": "minutes",
         "resource": "minute",

@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: mail
 description: Email, draft, folder, and contacts management
-cli_version: 1.0.89
-extracted_at: '2026-08-22T02:24:09Z'
+cli_version: 1.0.90
+extracted_at: '2026-08-26T02:41:27Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +decline-receipt
@@ -62,13 +62,14 @@ shortcuts:
     description: 'identity type: user'
   - name: --attach
     shorthand: null
-    type: string
-    description: Optional. Regular attachment file paths (relative path only). Separate multiple paths with commas. Each path
-      must point to a readable local file.
+    type: stringArray
+    description: Optional. Regular attachment file path, relative path only. Repeat --attach once per file; quote each value.
+      Each path must point to a readable local file.
   - name: --bcc
     shorthand: null
-    type: string
-    description: Optional. Full Bcc recipient list. Separate multiple addresses with commas. Display-name format is supported.
+    type: stringArray
+    description: Optional. Bcc recipient email address. Repeat --bcc once per recipient; quote each value. Display-name format
+      is supported.
   - name: --body
     shorthand: null
     type: string
@@ -82,8 +83,9 @@ shortcuts:
       Size capped at 32 MB. (supports @file)
   - name: --cc
     shorthand: null
-    type: string
-    description: Optional. Full Cc recipient list. Separate multiple addresses with commas. Display-name format is supported.
+    type: stringArray
+    description: Optional. Cc recipient email address. Repeat --cc once per recipient; quote each value. Display-name format
+      is supported.
   - name: --dry-run
     shorthand: null
     type: bool
@@ -120,10 +122,10 @@ shortcuts:
     description: help for +draft-create
   - name: --inline
     shorthand: null
-    type: string
-    description: 'Optional. Inline images as a JSON array. Each entry: {"cid":"<unique-id>","file_path":"<relative-path>"}.
-      All file_path values must be relative paths. Cannot be used with --plain-text. CID images are embedded via <img src="cid:...">
-      in the HTML body. CID is a unique identifier, e.g. a random hex string like "a1b2c3d4e5f6a7b8c9d0".'
+    type: stringArray
+    description: 'Optional. Inline image as one JSON object. Repeat --inline once per image; quote each value. Example value:
+      ''{"cid":"<unique-id>","file_path":"<relative-path>"}''. file_path must be relative. Reference it from HTML as <img
+      src="cid:<unique-id>">. CID must be unique, e.g. a random hex string. Cannot be used with --plain-text.'
   - name: --jq
     shorthand: -q
     type: string
@@ -171,9 +173,9 @@ shortcuts:
       are merged with user-supplied flags (user flags win). Requires --as user.
   - name: --to
     shorthand: null
-    type: string
-    description: Optional. Full To recipient list. Separate multiple addresses with commas. Display-name format is supported.
-      When omitted, the draft is created without recipients (they can be added later via +draft-edit).
+    type: stringArray
+    description: Optional. To recipient email address. Repeat --to once per recipient; quote each value. Display-name format
+      is supported. When omitted, the draft is created without recipients (they can be added later via +draft-edit).
 - name: +draft-edit
   summary: Use when updating an existing mail draft without sending it. Prefer this shortcut over calling raw drafts.get or
     drafts.update directly, because it performs draft-safe MIME read/patch/write editing while preserving unchanged structure,
@@ -377,12 +379,13 @@ shortcuts:
     description: 'identity type: user'
   - name: --attach
     shorthand: null
-    type: string
-    description: Attachment file path(s), comma-separated, appended after original attachments (relative path only)
+    type: stringArray
+    description: Attachment file path, appended after original attachments (relative path only). Repeat --attach once per
+      file; quote each value.
   - name: --bcc
     shorthand: null
-    type: string
-    description: BCC email address(es), comma-separated
+    type: stringArray
+    description: BCC email address. Repeat --bcc once per recipient; quote each value. Display-name format is supported.
   - name: --body
     shorthand: null
     type: string
@@ -396,8 +399,8 @@ shortcuts:
       Size capped at 32 MB. (supports @file)
   - name: --cc
     shorthand: null
-    type: string
-    description: CC email address(es), comma-separated
+    type: stringArray
+    description: CC email address. Repeat --cc once per recipient; quote each value. Display-name format is supported.
   - name: --confirm-send
     shorthand: null
     type: bool
@@ -439,10 +442,10 @@ shortcuts:
     description: help for +forward
   - name: --inline
     shorthand: null
-    type: string
-    description: 'Inline images as a JSON array. Each entry: {"cid":"<unique-id>","file_path":"<relative-path>"}. All file_path
-      values must be relative paths. Cannot be used with --plain-text. CID images are embedded via <img src="cid:..."> in
-      the HTML body. CID is a unique identifier, e.g. a random hex string like "a1b2c3d4e5f6a7b8c9d0".'
+    type: stringArray
+    description: 'Inline image as one JSON object. Repeat --inline once per image; quote each value. Example value: ''{"cid":"<unique-id>","file_path":"<relative-path>"}''.
+      file_path must be relative. Reference it from HTML as <img src="cid:<unique-id>">. CID must be unique, e.g. a random
+      hex string. Cannot be used with --plain-text.'
   - name: --jq
     shorthand: -q
     type: string
@@ -499,8 +502,8 @@ shortcuts:
       are merged into the forward draft (template values appended to user flags / forward-derived values; no de-duplication).
   - name: --to
     shorthand: null
-    type: string
-    description: Recipient email address(es), comma-separated
+    type: stringArray
+    description: Recipient email address. Repeat --to once per recipient; quote each value. Display-name format is supported.
 - name: +lint-html
   summary: 'Lint mail HTML body for compatibility / safety / Larksuite-native rules. Returns warnings/errors and (always)
     auto-fixed cleaned_html. Read-only: no draft, no API call. Use this BEFORE creating a draft to preview what the writing-path
@@ -766,12 +769,12 @@ shortcuts:
     description: 'identity type: user'
   - name: --attach
     shorthand: null
-    type: string
-    description: Attachment file path(s), comma-separated (relative path only)
+    type: stringArray
+    description: Attachment file path, relative path only. Repeat --attach once per file; quote each value.
   - name: --bcc
     shorthand: null
-    type: string
-    description: BCC email address(es), comma-separated
+    type: stringArray
+    description: BCC email address. Repeat --bcc once per recipient; quote each value.
   - name: --body
     shorthand: null
     type: string
@@ -785,8 +788,8 @@ shortcuts:
       Size capped at 32 MB. (supports @file)
   - name: --cc
     shorthand: null
-    type: string
-    description: Additional CC email address(es), comma-separated
+    type: stringArray
+    description: Additional CC email address. Repeat --cc once per recipient; quote each value.
   - name: --confirm-send
     shorthand: null
     type: bool
@@ -828,10 +831,10 @@ shortcuts:
     description: help for +reply
   - name: --inline
     shorthand: null
-    type: string
-    description: 'Inline images as a JSON array. Each entry: {"cid":"<unique-id>","file_path":"<relative-path>"}. All file_path
-      values must be relative paths. Cannot be used with --plain-text. CID images are embedded via <img src="cid:..."> in
-      the HTML body. CID is a unique identifier, e.g. a random hex string like "a1b2c3d4e5f6a7b8c9d0".'
+    type: stringArray
+    description: 'Inline image as one JSON object. Repeat --inline once per image; quote each value. Example value: ''{"cid":"<unique-id>","file_path":"<relative-path>"}''.
+      file_path must be relative. Reference it from HTML as <img src="cid:<unique-id>">. CID must be unique, e.g. a random
+      hex string. Cannot be used with --plain-text.'
   - name: --jq
     shorthand: -q
     type: string
@@ -888,8 +891,9 @@ shortcuts:
       are appended to the reply-derived values (no de-duplication; see warning in Execute output).
   - name: --to
     shorthand: null
-    type: string
-    description: Additional To address(es), comma-separated (appended to original sender's address)
+    type: stringArray
+    description: Additional To address. Repeat --to once per recipient; quote each value; appended to the original sender's
+      address.
 - name: +reply-all
   summary: Reply to all recipients and save as draft (default). Use --confirm-send to send immediately after user confirmation.
     Includes all original To and CC automatically.
@@ -904,12 +908,12 @@ shortcuts:
     description: 'identity type: user'
   - name: --attach
     shorthand: null
-    type: string
-    description: Attachment file path(s), comma-separated (relative path only)
+    type: stringArray
+    description: Attachment file path, relative path only. Repeat --attach once per file; quote each value.
   - name: --bcc
     shorthand: null
-    type: string
-    description: BCC email address(es), comma-separated
+    type: stringArray
+    description: BCC email address. Repeat --bcc once per recipient; quote each value.
   - name: --body
     shorthand: null
     type: string
@@ -923,8 +927,8 @@ shortcuts:
       Size capped at 32 MB. (supports @file)
   - name: --cc
     shorthand: null
-    type: string
-    description: Additional CC email address(es), comma-separated
+    type: stringArray
+    description: Additional CC email address. Repeat --cc once per recipient; quote each value.
   - name: --confirm-send
     shorthand: null
     type: bool
@@ -966,10 +970,10 @@ shortcuts:
     description: help for +reply-all
   - name: --inline
     shorthand: null
-    type: string
-    description: 'Inline images as a JSON array. Each entry: {"cid":"<unique-id>","file_path":"<relative-path>"}. All file_path
-      values must be relative paths. Cannot be used with --plain-text. CID images are embedded via <img src="cid:..."> in
-      the HTML body. CID is a unique identifier, e.g. a random hex string like "a1b2c3d4e5f6a7b8c9d0".'
+    type: stringArray
+    description: 'Inline image as one JSON object. Repeat --inline once per image; quote each value. Example value: ''{"cid":"<unique-id>","file_path":"<relative-path>"}''.
+      file_path must be relative. Reference it from HTML as <img src="cid:<unique-id>">. CID must be unique, e.g. a random
+      hex string. Cannot be used with --plain-text.'
   - name: --jq
     shorthand: -q
     type: string
@@ -1001,8 +1005,8 @@ shortcuts:
     description: 'Email priority: high, normal, low. If omitted, no priority header is set.'
   - name: --remove
     shorthand: null
-    type: string
-    description: Address(es) to exclude from the outgoing reply, comma-separated
+    type: stringArray
+    description: Address to exclude from the outgoing reply. Repeat --remove once per address; quote each value.
   - name: --request-receipt
     shorthand: null
     type: bool
@@ -1030,8 +1034,8 @@ shortcuts:
       are appended to the reply-derived values (no de-duplication; see warning in Execute output).
   - name: --to
     shorthand: null
-    type: string
-    description: Additional To address(es), comma-separated (appended to original recipients)
+    type: stringArray
+    description: Additional To address. Repeat --to once per recipient; quote each value; appended to original recipients.
 - name: +send
   summary: Compose a new email and save as draft (default). Use --confirm-send to send immediately after user confirmation.
   description: Compose a new email and save as draft (default). Use --confirm-send to send immediately after user confirmation.
@@ -1044,12 +1048,12 @@ shortcuts:
     description: 'identity type: user'
   - name: --attach
     shorthand: null
-    type: string
-    description: Attachment file path(s), comma-separated (relative path only)
+    type: stringArray
+    description: Attachment file path, relative path only. Repeat --attach once per file; quote each value.
   - name: --bcc
     shorthand: null
-    type: string
-    description: BCC email address(es), comma-separated
+    type: stringArray
+    description: BCC email address. Repeat --bcc once per recipient; quote each value. Display-name format is supported.
   - name: --body
     shorthand: null
     type: string
@@ -1063,8 +1067,8 @@ shortcuts:
       Size capped at 32 MB. (supports @file)
   - name: --cc
     shorthand: null
-    type: string
-    description: CC email address(es), comma-separated
+    type: stringArray
+    description: CC email address. Repeat --cc once per recipient; quote each value. Display-name format is supported.
   - name: --confirm-send
     shorthand: null
     type: bool
@@ -1106,10 +1110,10 @@ shortcuts:
     description: help for +send
   - name: --inline
     shorthand: null
-    type: string
-    description: 'Inline images as a JSON array. Each entry: {"cid":"<unique-id>","file_path":"<relative-path>"}. All file_path
-      values must be relative paths. Cannot be used with --plain-text. CID images are embedded via <img src="cid:..."> in
-      the HTML body. CID is a unique identifier, e.g. a random hex string like "a1b2c3d4e5f6a7b8c9d0".'
+    type: stringArray
+    description: 'Inline image as one JSON object. Repeat --inline once per image; quote each value. Example value: ''{"cid":"<unique-id>","file_path":"<relative-path>"}''.
+      file_path must be relative. Reference it from HTML as <img src="cid:<unique-id>">. CID must be unique, e.g. a random
+      hex string. Cannot be used with --plain-text.'
   - name: --jq
     shorthand: -q
     type: string
@@ -1161,8 +1165,8 @@ shortcuts:
       are merged with user-supplied flags (user flags win). Requires --as user.
   - name: --to
     shorthand: null
-    type: string
-    description: Recipient email address(es), comma-separated
+    type: stringArray
+    description: Recipient email address. Repeat --to once per recipient; quote each value. Display-name format is supported.
 - name: +send-receipt
   summary: Send a read-receipt reply for an incoming message that requested one (i.e. carries the READ_RECEIPT_REQUEST label).
     Body is auto-generated (subject / recipient / send time / read time) to match the Lark client's receipt format — callers
@@ -1324,17 +1328,17 @@ shortcuts:
     description: 'identity type: user | bot'
   - name: --attach
     shorthand: null
-    type: string
-    description: Optional. Non-inline attachment file path(s), comma-separated (relative path only). Each file is uploaded
-      to Drive; the order follows the flag order exactly (order-sensitive for LARGE/SMALL classification).
+    type: stringArray
+    description: Optional. Non-inline attachment file path, relative path only. Repeat --attach once per file; order is preserved
+      for LARGE/SMALL classification.
   - name: --bcc
     shorthand: null
-    type: string
-    description: Optional. Default Bcc recipient list. Separate multiple addresses with commas.
+    type: stringArray
+    description: Optional. Default Bcc recipient email address. Repeat --bcc once per recipient; quote each value.
   - name: --cc
     shorthand: null
-    type: string
-    description: Optional. Default Cc recipient list. Separate multiple addresses with commas.
+    type: stringArray
+    description: Optional. Default Cc recipient email address. Repeat --cc once per recipient; quote each value.
   - name: --dry-run
     shorthand: null
     type: bool
@@ -1348,6 +1352,12 @@ shortcuts:
     shorthand: -h
     type: bool
     description: help for +template-create
+  - name: --inline
+    shorthand: null
+    type: stringArray
+    description: 'Optional. Inline image as one JSON object. Repeat --inline once per image; quote each value. Example value:
+      ''{"cid":"<unique-id>","file_path":"<relative-path>"}''. file_path must be relative. Reference it from HTML as <img
+      src="cid:<unique-id>">. CID must be unique, e.g. a random hex string.'
   - name: --jq
     shorthand: -q
     type: string
@@ -1367,8 +1377,8 @@ shortcuts:
   - name: --plain-text
     shorthand: null
     type: bool
-    description: Mark the template as plain-text mode (is_plain_text_mode=true). Inline images still require HTML content;
-      use only for pure plain-text templates.
+    description: Mark the template as plain-text mode (is_plain_text_mode=true). Cannot be used with --inline; use only for
+      pure plain-text templates.
   - name: --subject
     shorthand: null
     type: string
@@ -1385,8 +1395,9 @@ shortcuts:
       with --template-content.
   - name: --to
     shorthand: null
-    type: string
-    description: Optional. Default To recipient list. Separate multiple addresses with commas. Display-name format is supported.
+    type: stringArray
+    description: Optional. Default To recipient email address. Repeat --to once per recipient; quote each value. Display-name
+      format is supported.
 - name: +template-update
   summary: 'Update an existing mail template. Supports --inspect (read-only projection), --print-patch-template (prints a
     JSON skeleton for --patch-file), and flat flags (--set-subject / --set-name / etc). Internally it GETs the template, applies
@@ -1403,9 +1414,9 @@ shortcuts:
     description: 'identity type: user | bot'
   - name: --attach
     shorthand: null
-    type: string
-    description: Additional non-inline attachment file path(s), comma-separated. Each file is uploaded to Drive and appended
-      to the template's attachments[] in the exact flag order.
+    type: stringArray
+    description: Additional non-inline attachment file path. Repeat --attach once per file; each file is uploaded to Drive
+      and appended in flag order.
   - name: --dry-run
     shorthand: null
     type: bool
@@ -1419,6 +1430,12 @@ shortcuts:
     shorthand: -h
     type: bool
     description: help for +template-update
+  - name: --inline
+    shorthand: null
+    type: stringArray
+    description: 'Additional inline image as one JSON object. Repeat --inline once per image; quote each value. Example value:
+      ''{"cid":"<unique-id>","file_path":"<relative-path>"}''. file_path must be relative. Reference it from HTML as <img
+      src="cid:<unique-id>">. CID must be unique, e.g. a random hex string.'
   - name: --inspect
     shorthand: null
     type: bool

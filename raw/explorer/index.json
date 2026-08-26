@@ -1867,7 +1867,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "instance",
-  "sha256": "46e50e412959b73f497448f37680a32cc2115ef4a5108b6fa40158180d3ec6ff",
+  "sha256": "a47d8b6dbf4b903196fedad5d822834f5165850872917e753524a25065f1da47",
   "title": "抄送审批实例（用户级）",
   "version": "v4"
  },
@@ -1927,7 +1927,7 @@
   "httpMethod": "GET",
   "project": "approval",
   "resource": "instance",
-  "sha256": "d28875dcbc07acb0e99f37d2fe3db6d9198b0177d6d342d1c4013059d01b2be9",
+  "sha256": "b2f0b483f8c624bc88af3c6ccccf696c833d4b662af313e69d7703e5821daf1b",
   "title": "获取单个审批实例详情（用户级）",
   "version": "v4"
  },
@@ -1951,7 +1951,7 @@
   "httpMethod": "GET",
   "project": "approval",
   "resource": "instance",
-  "sha256": "1dfe3f8a0db788b32898a0c1d8c0993a23c110fcaa650c06ab96ae4aa18cce0d",
+  "sha256": "5ad116f26d4ffce454c093acdb30edc600fbfba00e1761cb96bad874fd0f7ac0",
   "title": "查询用户的已发起审批列表",
   "version": "v4"
  },
@@ -2071,7 +2071,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "task",
-  "sha256": "8f085845269131e77dd9f072c5c5020491f31611e8afe57e66adc22ca4c93604",
+  "sha256": "198ea3ff605094b3162a2f04bff2948b79800948cbe6b5ca4f6b8ac44049918c",
   "title": "审批任务加签（用户级）",
   "version": "v4"
  },
@@ -2095,7 +2095,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "task",
-  "sha256": "ac27f618e21e831e6cf983a8f3a4a5153d981f150521f06e2aa5bbd71c3fb534",
+  "sha256": "8b0650e06a45013299cb7b9e1c8af4919d685a17823ee2d1dfc70b57e14fa079",
   "title": "转交审批任务（用户级）",
   "version": "v4"
  },
@@ -2107,7 +2107,7 @@
   "httpMethod": "GET",
   "project": "approval",
   "resource": "task",
-  "sha256": "f1219751760790fd21b052b1adddd68cb222d60c33fa8a4b824fe397491350e3",
+  "sha256": "ca5afe3b4b6769a001a309c6359903ccaa7fe3617be8c1d2b3b8446d320eae2b",
   "title": "查询审批任务列表",
   "version": "v4"
  },
@@ -11071,7 +11071,7 @@
   "httpMethod": "POST",
   "project": "hire",
   "resource": "background_check_order",
-  "sha256": "d2aa895ec2d139e758fecf3f4bf6fccef1c9a825e3f389f45afffdfe3f39ca53",
+  "sha256": "8df06da0398820906e9561e884801e635d19a5f9bd1c43915c6dd5aaf0314c81",
   "title": "查询背调信息列表",
   "version": "v1"
  },
@@ -11083,7 +11083,7 @@
   "httpMethod": "GET",
   "project": "hire",
   "resource": "background_check_order",
-  "sha256": "c051e96cb738fea5352de8e1da9805b1de1a2510489eaa23d254bac17ca74c82",
+  "sha256": "2a307eaac19158a799d6267e08232da42a5722c65bcac8767ff572a377123452",
   "title": "获取背调信息列表",
   "version": "v1"
  },
@@ -11155,7 +11155,7 @@
   "httpMethod": "POST",
   "project": "hire",
   "resource": "eco_background_check",
-  "sha256": "4211ea92acb9183f49a36d4ccad48e0551eb6eb217e1d22c06e05cae3934266d",
+  "sha256": "dd1fd2cf0062fed1a669c2e32324e34cd3ca0f4487ecd10a0b86c97e92cfd9ba",
   "title": "更新背调订单进度",
   "version": "v1"
  },
@@ -11167,7 +11167,7 @@
   "httpMethod": "POST",
   "project": "hire",
   "resource": "eco_background_check",
-  "sha256": "fdfd7a66f0ec15c161e11837cd2ce6b0086bdb438dd14c279d9b8001de9628d6",
+  "sha256": "4fd53e4a86b8d052e7f9217bbfb659019eb9230fe5829000979d6c28bfdd2ea0",
   "title": "回传背调订单的最终结果",
   "version": "v1"
  },
@@ -15431,6 +15431,18 @@
   "title": "获取妙记AI产物",
   "version": "v1"
  },
+ "minutes/v1/minute/clip": {
+  "apiName": "clip",
+  "apiPath": "/open-apis/minutes/v1/minutes/:minute_token/clip",
+  "category": "妙记 / 妙记信息",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute/clip",
+  "httpMethod": "POST",
+  "project": "minutes",
+  "resource": "minute",
+  "sha256": "f4475f9cd1d158769bddd985220305852813c9beb59856e73c51bb6f940fc54e",
+  "title": "创建妙记片段",
+  "version": "v1"
+ },
  "minutes/v1/minute/get": {
   "apiName": "get",
   "apiPath": "/open-apis/minutes/v1/minutes/:minute_token",
@@ -15477,6 +15489,18 @@
   "resource": "minute",
   "sha256": "63fa9ad0716d40dd82872eba46c78528373d6675d6d711978147c3c727897cdd",
   "title": "取消订阅妙记变更事件",
+  "version": "v1"
+ },
+ "minutes/v1/minute/upload": {
+  "apiName": "upload",
+  "apiPath": "/open-apis/minutes/v1/minutes/upload",
+  "category": "妙记 / 妙记信息",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute/upload",
+  "httpMethod": "POST",
+  "project": "minutes",
+  "resource": "minute",
+  "sha256": "35ab20ad18619cd3a109be74e3b7b2c5ba36ef6e93d5c4170b2e1abe1daeb2bf",
+  "title": "云空间文件生成妙记",
   "version": "v1"
  },
  "moments/v1/post/get": {

@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: calendar
 description: Calendar, event, and attendee management
-cli_version: 1.0.89
-extracted_at: '2026-08-22T02:24:09Z'
+cli_version: 1.0.90
+extracted_at: '2026-08-26T02:41:27Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +agenda
@@ -461,6 +461,63 @@ shortcuts:
     shorthand: null
     type: string
     description: current time zone
+- name: +transfer
+  summary: Transfer the organizer role of a calendar event to another user or bot
+  description: Transfer the organizer role of a calendar event to another user or bot
+  usage: lark-cli calendar +transfer [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --calendar-id
+    shorthand: null
+    type: string
+    description: 'calendar ID the event lives on (default: primary)'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --event-id
+    shorthand: null
+    type: string
+    description: event ID to transfer (uid_originalTime)
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +transfer
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --remove-original-organizer
+    shorthand: null
+    type: bool
+    description: remove the original organizer instead of keeping them as an attendee; the server forces this on a shared
+      calendar, where original_organizer_removed is omitted from the result
+  - name: --to-user-id
+    shorthand: null
+    type: string
+    description: receiver open_id (ou_...); becomes the new organizer. May be a user or a bot
+  - name: --transfer-series
+    shorthand: null
+    type: bool
+    description: confirm transferring the entire recurring series; required for recurring events because a single occurrence
+      cannot be transferred
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
 - name: +update
   summary: Update a calendar event and incrementally add or remove attendees
   description: Update a calendar event and incrementally add or remove attendees

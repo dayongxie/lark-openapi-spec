@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: slides
 description: Create and manage presentations, read content, and add or remove slides
-cli_version: 1.0.89
-extracted_at: '2026-08-22T02:24:09Z'
+cli_version: 1.0.90
+extracted_at: '2026-08-26T02:41:27Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +add-slide
@@ -268,6 +268,50 @@ shortcuts:
     shorthand: null
     type: string
     description: task_id returned by slides +history-revert
+- name: +media-download
+  summary: Download a Slides media file_token to a local image file
+  description: Download a Slides media file_token to a local image file
+  usage: lark-cli slides +media-download [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-token
+    shorthand: null
+    type: string
+    description: Slides media file_token
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +media-download
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --output
+    shorthand: null
+    type: string
+    description: preferred relative output path for one image (extension optional; .png, .jpg, or .jpeg)
+  - name: --output-dir
+    shorthand: null
+    type: string
+    description: relative directory for saved media
+    default: .lark-slides/media
 - name: +media-upload
   summary: Upload a local image to a slides presentation and return the file_token (use as <img src=...>)
   description: Upload a local image to a slides presentation and return the file_token (use as <img src=...>)
@@ -308,10 +352,10 @@ shortcuts:
     type: string
     description: xml_presentation_id, slides URL, or wiki URL that resolves to slides
 - name: +replace-pages
-  summary: 'Deprecated — use +update-slide once per page (in place: keeps slide_id and page order; elements written back with
-    their original ids keep them). This rebuild changes slide_id and every element id; not atomic'
-  description: 'Deprecated — use +update-slide once per page (in place: keeps slide_id and page order; elements written back
-    with their original ids keep them). This rebuild changes slide_id and every element id; not atomic'
+  summary: 'Rebuild multiple pages in a presentation: create each new page before old page, then delete old page (not atomic;
+    changes slide_id and element ids)'
+  description: 'Rebuild multiple pages in a presentation: create each new page before old page, then delete old page (not
+    atomic; changes slide_id and element ids)'
   usage: lark-cli slides +replace-pages [flags]
   risk: write
   flags:

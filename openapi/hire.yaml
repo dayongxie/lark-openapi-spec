@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+daa46de5
+  version: 1.0.0+d69f93a4
   x-lark-project: hire
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -5024,6 +5024,11 @@ paths:
                     - report_name
                     - report_url
                   description: 报告列表
+                information_disclosure:
+                  type: array
+                  items:
+                    type: string
+                  description: 信息披露文本列表，数组顺序为展示顺序
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -5120,6 +5125,11 @@ paths:
                     - report_name
                     - report_url
                   description: 报告列表
+                information_disclosure:
+                  type: array
+                  items:
+                    type: string
+                  description: 信息披露文本列表，数组顺序为展示顺序
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -13510,7 +13520,7 @@ paths:
                             customized_data_list:
                               type: array
                               items:
-                                $ref: '#/components/schemas/Item8'
+                                $ref: '#/components/schemas/Item9'
                               description: 自定义字段
                             address_list:
                               type: array
@@ -20056,7 +20066,7 @@ paths:
                           customized_data_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item8'
+                              $ref: '#/components/schemas/Item9'
                             description: 自定义字段
                           job_function:
                             type: object
@@ -20492,7 +20502,7 @@ paths:
                             customized_data_list:
                               type: array
                               items:
-                                $ref: '#/components/schemas/Item8'
+                                $ref: '#/components/schemas/Item9'
                               description: 自定义字段
                             job_function:
                               type: object
@@ -27428,7 +27438,7 @@ paths:
                             customized_data_list:
                               type: array
                               items:
-                                $ref: '#/components/schemas/Item8'
+                                $ref: '#/components/schemas/Item9'
                               description: 自定义字段
                             address_list:
                               type: array
@@ -29927,7 +29937,7 @@ components:
         customized_data_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item8'
+            $ref: '#/components/schemas/Item9'
           description: 自定义字段
         job_function:
           type: object
@@ -31239,67 +31249,9 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/Item9'
+            $ref: '#/components/schemas/Item8'
           description: 背调信息列表
-    Schema2:
-      type: object
-      properties:
-        code:
-          type: integer
-        msg:
-          type: string
-        data:
-          $ref: '#/components/schemas/Data2'
     Item8:
-      type: object
-      properties:
-        object_id:
-          type: string
-          description: 自定义字段 ID
-          example: xxxx
-        name:
-          type: object
-          properties:
-            zh_cn:
-              type: string
-              description: 中文
-              example: 测试
-            en_us:
-              type: string
-              description: 英文
-              example: test
-          description: 字段名称
-        object_type:
-          type: integer
-          description: 字段类型
-          enum:
-          - 1
-          - 2
-          - 3
-          - 4
-          - 5
-          - 6
-          - 7
-          - 8
-          - 9
-          - 10
-          x-enum-descriptions:
-            '1': 单行文本
-            '2': 多行文本
-            '3': 单选
-            '4': 多选
-            '5': 日期
-            '6': 月份选择
-            '7': 年份选择
-            '8': 时间段
-            '9': 数字
-            '10': 默认字段
-          example: '1'
-        value:
-          allOf:
-          - $ref: '#/components/schemas/Value2'
-          description: 自定义字段值
-    Item9:
       type: object
       properties:
         order_id:
@@ -31518,6 +31470,76 @@ components:
           type: string
           description: 备注
           example: 候选人很优秀
+        expected_entry_time:
+          type: integer
+          description: 预计入职时间，Unix 毫秒时间戳
+          example: '1767225600000'
+        attachment_resume_id:
+          type: string
+          description: 附件简历 ID
+          example: '6985833807195212076'
+        office_location_code:
+          type: string
+          description: 入职后办公地区 code，可为 Country、State 或 City
+          example: CN_1
+    Schema2:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data2'
+    Item9:
+      type: object
+      properties:
+        object_id:
+          type: string
+          description: 自定义字段 ID
+          example: xxxx
+        name:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文
+              example: 测试
+            en_us:
+              type: string
+              description: 英文
+              example: test
+          description: 字段名称
+        object_type:
+          type: integer
+          description: 字段类型
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+          - 10
+          x-enum-descriptions:
+            '1': 单行文本
+            '2': 多行文本
+            '3': 单选
+            '4': 多选
+            '5': 日期
+            '6': 月份选择
+            '7': 年份选择
+            '8': 时间段
+            '9': 数字
+            '10': 默认字段
+          example: '1'
+        value:
+          allOf:
+          - $ref: '#/components/schemas/Value2'
+          description: 自定义字段值
     Data2:
       type: object
       properties:

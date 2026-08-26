@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+e8ba8d68
+  version: 1.0.0+5e3cc792
   x-lark-project: approval
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -2727,10 +2727,12 @@ paths:
           - user_id
           - union_id
           - open_id
+          - user_key
           x-enum-descriptions:
             user_id: 以user_id来识别用户
             union_id: 以union_id来识别用户
             open_id: 以open_id来识别用户
+            user_key: 以user_key来识别用户
           x-lark-id-types:
             open_id: user
             union_id: user
@@ -3496,10 +3498,12 @@ paths:
           - user_id
           - union_id
           - open_id
+          - user_key
           x-enum-descriptions:
             user_id: 以user_id来识别用户
             union_id: 以union_id来识别用户
             open_id: 以open_id来识别用户
+            user_key: 以user_key来识别用户
           x-lark-id-types:
             open_id: user
             union_id: user
@@ -4417,6 +4421,12 @@ paths:
           format: int64
         description: 按发起时间查询单据，时间范围的结束区间时间戳，精确到秒
         example: '1783528081'
+      - name: keyword
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 搜索关键词
       - name: user_id_type
         in: query
         required: false
@@ -4426,10 +4436,12 @@ paths:
           - user_id
           - union_id
           - open_id
+          - user_key
           x-enum-descriptions:
             user_id: 以user_id来识别用户
             union_id: 以union_id来识别用户
             open_id: 以open_id来识别用户
+            user_key: 以user_key来识别用户
           x-lark-id-types:
             open_id: user
             union_id: user
@@ -5555,10 +5567,12 @@ paths:
           - user_id
           - union_id
           - open_id
+          - user_key
           x-enum-descriptions:
             user_id: 以user_id来识别用户
             union_id: 以union_id来识别用户
             open_id: 以open_id来识别用户
+            user_key: 以user_key来识别用户
           x-lark-id-types:
             open_id: user
             union_id: user
@@ -5784,10 +5798,12 @@ paths:
           - user_id
           - union_id
           - open_id
+          - user_key
           x-enum-descriptions:
             user_id: 以user_id来识别用户
             union_id: 以union_id来识别用户
             open_id: 以open_id来识别用户
+            user_key: 以user_key来识别用户
           x-lark-id-types:
             open_id: user
             union_id: user
@@ -5947,6 +5963,12 @@ paths:
           format: int64
         description: 按时间查询任务，时间范围的结束区间时间戳，精确到秒
         example: '1783528081'
+      - name: keyword
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 搜索关键词
       - name: user_id_type
         in: query
         required: false
@@ -5956,10 +5978,12 @@ paths:
           - user_id
           - union_id
           - open_id
+          - user_key
           x-enum-descriptions:
             user_id: 以user_id来识别用户
             union_id: 以union_id来识别用户
             open_id: 以open_id来识别用户
+            user_key: 以user_key来识别用户
           x-lark-id-types:
             open_id: user
             union_id: user
