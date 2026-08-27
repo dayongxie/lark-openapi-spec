@@ -1703,6 +1703,18 @@
   "title": "查看指定审批定义",
   "version": "v4"
  },
+ "approval/v4/approval/search_launchable": {
+  "apiName": "search_launchable",
+  "apiPath": "/open-apis/approval/v4/approvals/search_launchable",
+  "category": "审批 / 原生审批定义",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/search_launchable",
+  "httpMethod": "POST",
+  "project": "approval",
+  "resource": "approval",
+  "sha256": "319ebc962fe2eb1ca2038714cf2d28e2d1eaa5018db4b7dab7c0e5cff24a31de",
+  "title": "搜索可发起的审批定义",
+  "version": "v4"
+ },
  "approval/v4/approval/subscribe": {
   "apiName": "subscribe",
   "apiPath": "/open-apis/approval/v4/approvals/:approval_code/subscribe",
@@ -1867,7 +1879,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "instance",
-  "sha256": "a47d8b6dbf4b903196fedad5d822834f5165850872917e753524a25065f1da47",
+  "sha256": "46e50e412959b73f497448f37680a32cc2115ef4a5108b6fa40158180d3ec6ff",
   "title": "抄送审批实例（用户级）",
   "version": "v4"
  },
@@ -1927,7 +1939,7 @@
   "httpMethod": "GET",
   "project": "approval",
   "resource": "instance",
-  "sha256": "b2f0b483f8c624bc88af3c6ccccf696c833d4b662af313e69d7703e5821daf1b",
+  "sha256": "d28875dcbc07acb0e99f37d2fe3db6d9198b0177d6d342d1c4013059d01b2be9",
   "title": "获取单个审批实例详情（用户级）",
   "version": "v4"
  },
@@ -1951,7 +1963,7 @@
   "httpMethod": "GET",
   "project": "approval",
   "resource": "instance",
-  "sha256": "5ad116f26d4ffce454c093acdb30edc600fbfba00e1761cb96bad874fd0f7ac0",
+  "sha256": "79a97bd4e4889416d80f884a85983dad46823fa14e29a6d900d4f68c1949559f",
   "title": "查询用户的已发起审批列表",
   "version": "v4"
  },
@@ -2071,7 +2083,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "task",
-  "sha256": "198ea3ff605094b3162a2f04bff2948b79800948cbe6b5ca4f6b8ac44049918c",
+  "sha256": "8f085845269131e77dd9f072c5c5020491f31611e8afe57e66adc22ca4c93604",
   "title": "审批任务加签（用户级）",
   "version": "v4"
  },
@@ -2095,7 +2107,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "task",
-  "sha256": "8b0650e06a45013299cb7b9e1c8af4919d685a17823ee2d1dfc70b57e14fa079",
+  "sha256": "ac27f618e21e831e6cf983a8f3a4a5153d981f150521f06e2aa5bbd71c3fb534",
   "title": "转交审批任务（用户级）",
   "version": "v4"
  },
@@ -2107,7 +2119,7 @@
   "httpMethod": "GET",
   "project": "approval",
   "resource": "task",
-  "sha256": "ca5afe3b4b6769a001a309c6359903ccaa7fe3617be8c1d2b3b8446d320eae2b",
+  "sha256": "02686d8d152492904bee2f5685bf8a6d9a0c3ed467d483782b179f4a74e8c45f",
   "title": "查询审批任务列表",
   "version": "v4"
  },

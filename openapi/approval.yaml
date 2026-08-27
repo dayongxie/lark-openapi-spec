@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+5e3cc792
+  version: 1.0.0+9aed7761
   x-lark-project: approval
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -732,6 +732,100 @@ paths:
           to: lark_id
         key: user_id
         section: 2
+  /open-apis/approval/v4/approvals/search_launchable:
+    post:
+      operationId: approval_approval_search_launchable
+      summary: 搜索可发起的审批定义
+      tags:
+      - approval
+      description: 搜索当前用户可发起的审批定义。
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/search_launchable
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                keyword:
+                  type: string
+                  description: 关键词
+                  example: 请假
+                locale:
+                  type: string
+                  description: 语言类型
+                  example: 'zh-CN: 中文 en-US: 英文 ja-JP: 日文'
+                page_size:
+                  type: integer
+                  description: 分页大小
+                  default: 20
+                  example: '20'
+                page_token:
+                  type: string
+                  description: 分页标记，第一次请求不填，表示从头开始遍历；分页查询结果还有更多项时会同时返回新的 page_token，下次遍历可采用该 page_token 获取查询结果
+                  example: ASDJHA1323_sda1JSASDFD
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      approvals:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            approval_code:
+                              type: string
+                              description: 审批定义编码
+                              example: 7C468A54-8745-2245-9675-08B7C63E7A85
+                            approval_name:
+                              type: string
+                              description: 审批定义名称
+                              example: 请假
+                            description:
+                              type: string
+                              description: 审批定义描述
+                              example: 请假审批
+                            is_external:
+                              type: boolean
+                              description: 是否三方定义。false 表示原生审批定义，true 表示三方审批定义。
+                            create_link:
+                              type: string
+                              description: 提单链接，可用于发起审批。
+                              example: https://www.example.com
+                        description: 可发起审批定义列表。
+                      page_token:
+                        type: string
+                        description: 分页标记
+                      has_more:
+                        type: string
+                        x-lark-original-type: bool
+                        description: 还有更多数据
+      x-lark-access-tokens:
+      - user
+      x-lark-scopes:
+      - approval:approval:read
+      x-lark-error-mappings:
+      - code: 1390001
+        httpCode: 400
+        msg: ''
+      - code: 1395001
+        httpCode: 400
+        msg: ''
+      x-lark-rate-limit:
+        tier: 4
   /open-apis/approval/v4/approvals/{approval_code}/subscribe:
     post:
       operationId: approval_approval_subscribe
@@ -2727,12 +2821,10 @@ paths:
           - user_id
           - union_id
           - open_id
-          - user_key
           x-enum-descriptions:
             user_id: 以user_id来识别用户
             union_id: 以union_id来识别用户
             open_id: 以open_id来识别用户
-            user_key: 以user_key来识别用户
           x-lark-id-types:
             open_id: user
             union_id: user
@@ -3498,12 +3590,10 @@ paths:
           - user_id
           - union_id
           - open_id
-          - user_key
           x-enum-descriptions:
             user_id: 以user_id来识别用户
             union_id: 以union_id来识别用户
             open_id: 以open_id来识别用户
-            user_key: 以user_key来识别用户
           x-lark-id-types:
             open_id: user
             union_id: user
@@ -4436,12 +4526,10 @@ paths:
           - user_id
           - union_id
           - open_id
-          - user_key
           x-enum-descriptions:
             user_id: 以user_id来识别用户
             union_id: 以union_id来识别用户
             open_id: 以open_id来识别用户
-            user_key: 以user_key来识别用户
           x-lark-id-types:
             open_id: user
             union_id: user
@@ -5567,12 +5655,10 @@ paths:
           - user_id
           - union_id
           - open_id
-          - user_key
           x-enum-descriptions:
             user_id: 以user_id来识别用户
             union_id: 以union_id来识别用户
             open_id: 以open_id来识别用户
-            user_key: 以user_key来识别用户
           x-lark-id-types:
             open_id: user
             union_id: user
@@ -5798,12 +5884,10 @@ paths:
           - user_id
           - union_id
           - open_id
-          - user_key
           x-enum-descriptions:
             user_id: 以user_id来识别用户
             union_id: 以union_id来识别用户
             open_id: 以open_id来识别用户
-            user_key: 以user_key来识别用户
           x-lark-id-types:
             open_id: user
             union_id: user
@@ -5978,12 +6062,10 @@ paths:
           - user_id
           - union_id
           - open_id
-          - user_key
           x-enum-descriptions:
             user_id: 以user_id来识别用户
             union_id: 以union_id来识别用户
             open_id: 以open_id来识别用户
-            user_key: 以user_key来识别用户
           x-lark-id-types:
             open_id: user
             union_id: user

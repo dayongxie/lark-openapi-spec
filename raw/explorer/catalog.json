@@ -16454,7 +16454,7 @@
       },
       "id": "7114621541589712899",
       "name": "创建审批定义",
-      "orderMark": "4",
+      "orderMark": "5",
       "parentId": "7091811941928927235",
       "type": 1
      },
@@ -16479,6 +16479,31 @@
       },
       "id": "7114621541589860355",
       "name": "查看指定审批定义",
+      "orderMark": "4",
+      "parentId": "7091811941928927235",
+      "type": 1
+     },
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "search_launchable",
+        "project": "approval",
+        "resource": "approval",
+        "version": "v4"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/approval/v4/approvals/search_launchable",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval/search_launchable",
+       "httpMethod": "POST",
+       "supportAppTypes": [
+        "custom",
+        "isv"
+       ]
+      },
+      "id": "7678280659161042125",
+      "name": "搜索可发起的审批定义",
       "orderMark": "3",
       "parentId": "7091811941928927235",
       "type": 1
