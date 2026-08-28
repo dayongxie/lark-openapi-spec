@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+98fd2673
+  version: 1.0.0+f1397e90
   x-lark-project: vc
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -629,6 +629,11 @@ paths:
                                         type: string
                                         description: 妙享开始时间（毫秒级时间戳）
                                         example: '1712345678000'
+                                      start_reason:
+                                        type: string
+                                        description: 共享开始原因。share_started 表示真实共享开始；share_detected 表示开启 Agent 入会能力时发现已有共享。字段缺失按
+                                          share_started 处理。
+                                        example: share_started
                                   description: 妙享开始内容（activity_event_type = magic_share_started 时填充）
                                 magic_share_ended_items:
                                   type: array

@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: docs
 description: Document and content operations
-cli_version: 1.0.90
-extracted_at: '2026-08-26T02:41:27Z'
+cli_version: 1.0.91
+extracted_at: '2026-08-28T12:48:28Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +create
@@ -630,7 +630,8 @@ shortcuts:
     type: string
     description: Presentation Decision JSON required by init-draft and saved as the draft profile baseline; genre_contract
       and adapter accept a short name, "none", or null; accepts inline JSON (recommended for init-draft), @relative-file,
-      or - for stdin (supports @file, - reads stdin (one flag per call; use @file for others))
+      or - for stdin; direct inline input also recovers an intact outer single-quote pair or unambiguous schema fields and
+      scalar values dequoted by Windows PowerShell 5.x (supports @file, - reads stdin (one flag per call; use @file for others))
 - name: +search
   summary: 'Search Lark docs, Wiki, and spreadsheet files (Search v2: doc_wiki/search)'
   description: 'Search Lark docs, Wiki, and spreadsheet files (Search v2: doc_wiki/search)'

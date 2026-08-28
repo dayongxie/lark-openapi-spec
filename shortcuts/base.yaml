@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: base
 description: Table, field, record, view, dashboard, workflow, form, role & permission management
-cli_version: 1.0.90
-extracted_at: '2026-08-26T02:41:27Z'
+cli_version: 1.0.91
+extracted_at: '2026-08-28T12:48:28Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +advperm-disable
@@ -1904,6 +1904,96 @@ shortcuts:
     shorthand: null
     type: bool
     description: confirm high-risk operation
+- name: +field-extension-get
+  summary: Get a field extension configuration
+  description: Get a field extension configuration
+  usage: lark-cli base +field-extension-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --field-id
+    shorthand: null
+    type: string
+    description: field ID or name
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +field-extension-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+- name: +field-extension-update
+  summary: Install, update, or clear a field extension
+  description: Install, update, or clear a field extension
+  usage: lark-cli base +field-extension-update [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --field-id
+    shorthand: null
+    type: string
+    description: field ID or name
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +field-extension-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: string
+    description: field extension JSON object; use {} to clear the extension
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
 - name: +field-get
   summary: Get a field by ID or name
   description: Get a field by ID or name
@@ -2841,6 +2931,63 @@ shortcuts:
     shorthand: null
     type: bool
     description: confirm high-risk operation
+- name: +record-download-attachment
+  summary: Download Base record attachments by record-id, optionally filtering by file-token
+  description: Download Base record attachments by record-id, optionally filtering by file-token
+  usage: lark-cli base +record-download-attachment [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --base-token
+    shorthand: null
+    type: string
+    description: base token
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --file-token
+    shorthand: null
+    type: stringArray
+    description: attachment file_token returned by Base; repeat to download selected files; omit to download all attachments
+      in the record
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +record-download-attachment
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --output
+    shorthand: null
+    type: string
+    description: local save path; with exactly one file token this may be a file path; with multiple or omitted file tokens
+      this must be an existing directory
+  - name: --overwrite
+    shorthand: null
+    type: bool
+    description: overwrite existing output file
+  - name: --record-id
+    shorthand: null
+    type: string
+    description: record ID
+  - name: --table-id
+    shorthand: null
+    type: string
+    description: table ID (must start with tbl if ID) or name
 - name: +record-get
   summary: Get one or more records by ID
   description: Get one or more records by ID
@@ -3203,10 +3350,11 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
-  - name: --record-ids
+  - name: --record-id
     shorthand: null
     type: strings
-    description: record IDs to generate share links for (comma-separated or repeatable, max 100)
+    description: record ID to generate a share link for (comma-separated or repeatable, max 100)
+    default: '[]'
   - name: --table-id
     shorthand: null
     type: string

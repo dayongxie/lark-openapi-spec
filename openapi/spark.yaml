@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+7b45caf1
+  version: 1.0.0+1eb6a4bb
   x-lark-project: spark
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -1520,7 +1520,7 @@ paths:
       summary: 批量获取妙搭应用
       tags:
       - app
-      description: 列出当前用户的妙搭应用
+      description: 使用租户身份则获取当前租户下所有应用信息，使用用户身份则获取当前用户有权限查看的妙搭应用列表，支持按应用类型、归属范围筛选，以及通过关键词模糊匹配应用名称或描述，常用于应用管理页的列表渲染或批量应用数据同步场景。
       externalDocs:
         description: 飞书开放平台官方文档
         url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/app/list
@@ -1610,6 +1610,7 @@ paths:
                         example: 'true'
       x-lark-access-tokens:
       - user
+      - tenant
       x-lark-scopes:
       - spark:app:read
       x-lark-error-mappings:
@@ -2151,6 +2152,30 @@ components:
           type: string
           description: 应用对应的文档 token
           example: wfjgyiyN2Fk17H8cgfFanWe
+        status:
+          type: string
+          description: 应用启用状态：启用(enabled) / 停用(disabled)
+          example: enabled
+        owner_id:
+          type: string
+          description: 应用所有者 UserID
+          example: '7615135553960283664'
+        creator_id:
+          type: string
+          description: 应用创建者 UserID
+          example: '7615135553960283664'
+        admin_ids:
+          type: array
+          items:
+            type: string
+          description: 应用管理员 UserID 列表
+          example: '["7615135553960283664"]'
+        developer_ids:
+          type: array
+          items:
+            type: string
+          description: 应用开发者 UserID 列表
+          example: '["7615135553960283664"]'
       description: 妙搭应用
       example: app_7d2f8a4b1c9e6035
     Schema:

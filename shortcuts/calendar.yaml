@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: calendar
 description: Calendar, event, and attendee management
-cli_version: 1.0.90
-extracted_at: '2026-08-26T02:41:27Z'
+cli_version: 1.0.91
+extracted_at: '2026-08-28T12:48:28Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +agenda
@@ -189,6 +189,41 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+- name: +join-event
+  summary: Join a calendar event via a share token (from a share link/QR code or a im share/RSVP card)
+  description: Join a calendar event via a share token (from a share link/QR code or a im share/RSVP card)
+  usage: lark-cli calendar +join-event [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +join-event
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --token
+    shorthand: null
+    type: string
+    description: share token from a share link/QR code or an IM share/RSVP card
 - name: +meeting
   summary: Get meeting info for calendar events (meeting_id, meeting_note)
   description: Get meeting info for calendar events (meeting_id, meeting_note)

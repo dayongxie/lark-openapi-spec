@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+207e1a41
+  version: 1.0.0+e326c724
   x-lark-project: okr
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -2620,9 +2620,24 @@ paths:
       x-lark-field-scopes:
       - contact:user.employee_id:readonly
       x-lark-error-mappings:
-      - code: 1000001
+      - code: 1009999
+        httpCode: 500
+        msg: internal server error
+      - code: 1009998
+        httpCode: 500
+        msg: system exception
+      - code: 1001001
         httpCode: 400
-        msg: param is invalid
+        msg: invalid parameters
+      - code: 1001002
+        httpCode: 400
+        msg: no permission
+      - code: 1001003
+        httpCode: 400
+        msg: user no found
+      - code: 1001004
+        httpCode: 400
+        msg: okr data not found
       x-lark-rate-limit:
         tier: 3
       x-lark-pagination: true

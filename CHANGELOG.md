@@ -1,5 +1,23 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-08-28）
+
+新增 0 · 移除 0 · 定义变更 12（全量共 1634 个接口）
+
+### 定义变更
+- `POST /open-apis/corehr/v2/pre_hires`「直接创建待入职」（corehr/v2/pre_hire/create）
+- `PATCH /open-apis/corehr/v2/pre_hires/{pre_hire_id}`「更新待入职信息」（corehr/v2/pre_hire/patch）
+- `POST /open-apis/corehr/v2/pre_hires/query`「查询待入职信息」（corehr/v2/pre_hire/query）
+- `POST /open-apis/corehr/v2/pre_hires/search`「搜索待入职信息」（corehr/v2/pre_hire/search）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/threads`「列出邮件会话」（mail/v1/user_mailbox.thread/list）
+- `GET /open-apis/okr/v2/key_results/{key_result_id}/progresses`「获取关键结果下的进展记录」（okr/v2/okr.key_result.progress/list）
+- `POST /open-apis/spark/v1/apps`「创建妙搭应用」（spark/v1/app/create）
+- `GET /open-apis/spark/v1/apps`「批量获取妙搭应用」（spark/v1/app/list）
+- `PATCH /open-apis/spark/v1/apps/{app_id}`「更新妙搭应用信息」（spark/v1/app/patch）
+- `POST /open-apis/task/v2/tasks/search`「搜索任务」（task/v2/task/search）
+- `POST /open-apis/task/v2/tasklists/search`「搜索清单」（task/v2/tasklist/search）
+- `GET /open-apis/vc/v1/bots/events`「获取会议事件列表」（vc/v1/bot/events）
+
 ## explorer 全量轨道（2026-08-27）
 
 新增 1 · 移除 0 · 定义变更 6（全量共 1634 个接口）

@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+c67ac7fc
+  version: 1.0.0+88a3f80c
   x-lark-project: corehr
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -546,7 +546,7 @@ paths:
                                 grantor_rule_list:
                                   type: array
                                   items:
-                                    $ref: '#/components/schemas/Item47'
+                                    $ref: '#/components/schemas/Item48'
                                   description: 设置数据权限，如果该值为null，则使用指定管理对象列表
                                 update_time:
                                   type: string
@@ -727,7 +727,7 @@ paths:
                                   grantor_rule_list:
                                     type: array
                                     items:
-                                      $ref: '#/components/schemas/Item47'
+                                      $ref: '#/components/schemas/Item48'
                                     description: 设置数据权限，如果该值为null，则使用指定管理对象列表
                                   update_time:
                                     type: string
@@ -4280,7 +4280,7 @@ paths:
                 work_email_list:
                   type: array
                   items:
-                    $ref: '#/components/schemas/Item66'
+                    $ref: '#/components/schemas/Item67'
                   description: 工作邮箱列表
                 reason_for_offboarding:
                   type: object
@@ -4483,7 +4483,7 @@ paths:
                           work_email_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item40'
+                              $ref: '#/components/schemas/Item39'
                             description: 工作邮箱列表
                           email_address:
                             type: string
@@ -4834,7 +4834,7 @@ paths:
                 work_email_list:
                   type: array
                   items:
-                    $ref: '#/components/schemas/Item66'
+                    $ref: '#/components/schemas/Item67'
                   description: 工作邮箱列表
                 reason_for_offboarding:
                   type: object
@@ -5062,7 +5062,7 @@ paths:
                           work_email_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item40'
+                              $ref: '#/components/schemas/Item39'
                             description: 工作邮箱列表
                           email_address:
                             type: string
@@ -12025,7 +12025,7 @@ paths:
                           name_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item16'
+                              $ref: '#/components/schemas/Item13'
                             description: 姓名
                           gender:
                             type: object
@@ -12159,7 +12159,7 @@ paths:
                           work_experience_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item20'
+                              $ref: '#/components/schemas/Item17'
                             description: 工作履历
                           education_list:
                             type: array
@@ -12169,17 +12169,17 @@ paths:
                           bank_account_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item37'
+                              $ref: '#/components/schemas/Item36'
                             description: 银行账号
                           national_id_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item21'
+                              $ref: '#/components/schemas/Item18'
                             description: 证件号码
                           dependent_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item7'
+                              $ref: '#/components/schemas/Item6'
                             description: 亲属
                           emergency_contact_list:
                             type: array
@@ -12347,7 +12347,7 @@ paths:
                           personal_profile:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item57'
+                              $ref: '#/components/schemas/Item58'
                             description: 个人资料
                         required:
                         - name_list
@@ -12784,7 +12784,7 @@ paths:
                           name_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item16'
+                              $ref: '#/components/schemas/Item13'
                             description: 姓名
                           gender:
                             type: object
@@ -12888,12 +12888,12 @@ paths:
                           email_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item40'
+                              $ref: '#/components/schemas/Item39'
                             description: 邮件
                           work_experience_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item20'
+                              $ref: '#/components/schemas/Item17'
                             description: 工作履历
                           education_list:
                             type: array
@@ -13045,7 +13045,7 @@ paths:
                           national_id_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item21'
+                              $ref: '#/components/schemas/Item18'
                             description: 证件号码
                           dependent_list:
                             type: array
@@ -13125,7 +13125,7 @@ paths:
                                 national_id_list:
                                   type: array
                                   items:
-                                    $ref: '#/components/schemas/Item21'
+                                    $ref: '#/components/schemas/Item18'
                                   description: 证件号码
                                 spouses_working_status:
                                   type: object
@@ -13327,7 +13327,7 @@ paths:
                           personal_profile:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item57'
+                              $ref: '#/components/schemas/Item58'
                             description: 个人资料
                         required:
                         - name_list
@@ -13408,7 +13408,7 @@ paths:
                           name_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item16'
+                              $ref: '#/components/schemas/Item13'
                             description: 姓名
                           gender:
                             type: object
@@ -13542,7 +13542,7 @@ paths:
                           work_experience_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item20'
+                              $ref: '#/components/schemas/Item17'
                             description: 工作履历
                           education_list:
                             type: array
@@ -13552,17 +13552,17 @@ paths:
                           bank_account_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item37'
+                              $ref: '#/components/schemas/Item36'
                             description: 银行账号
                           national_id_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item21'
+                              $ref: '#/components/schemas/Item18'
                             description: 证件号码
                           dependent_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item7'
+                              $ref: '#/components/schemas/Item6'
                             description: 亲属
                           emergency_contact_list:
                             type: array
@@ -13678,7 +13678,7 @@ paths:
                           personal_profile:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item57'
+                              $ref: '#/components/schemas/Item58'
                             description: 个人资料
                         required:
                         - name_list
@@ -14130,7 +14130,7 @@ paths:
                             work_email_list:
                               type: array
                               items:
-                                $ref: '#/components/schemas/Item40'
+                                $ref: '#/components/schemas/Item39'
                               description: 工作邮箱
                             department_id:
                               type: string
@@ -16156,7 +16156,7 @@ paths:
                                 custom_fields:
                                   type: array
                                   items:
-                                    $ref: '#/components/schemas/Item54'
+                                    $ref: '#/components/schemas/Item55'
                                   description: 自定义字段
                                 orgrole_infos:
                                   type: array
@@ -16170,12 +16170,12 @@ paths:
                                       origin_orgroles:
                                         type: array
                                         items:
-                                          $ref: '#/components/schemas/Item59'
+                                          $ref: '#/components/schemas/Item60'
                                         description: 原组织角色
                                       target_orgroles:
                                         type: array
                                         items:
-                                          $ref: '#/components/schemas/Item59'
+                                          $ref: '#/components/schemas/Item60'
                                         description: 新组织角色
                                     required:
                                     - role_id
@@ -17486,7 +17486,7 @@ paths:
                             approval_nodes:
                               type: array
                               items:
-                                $ref: '#/components/schemas/Item50'
+                                $ref: '#/components/schemas/Item51'
                               description: 审批节点信息
                         description: 人员异动记录信息列表
       x-lark-access-tokens:
@@ -17856,7 +17856,7 @@ paths:
                                 custom_fields:
                                   type: array
                                   items:
-                                    $ref: '#/components/schemas/Item54'
+                                    $ref: '#/components/schemas/Item55'
                                   description: 自定义字段
                               description: 调整详细信息
                         description: 岗位调整记录信息列表
@@ -22394,7 +22394,7 @@ paths:
                 match_rule_groups:
                   type: array
                   items:
-                    $ref: '#/components/schemas/Item56'
+                    $ref: '#/components/schemas/Item57'
                   description: 匹配规则组 ，组间并集
                 custom_fields:
                   type: array
@@ -22946,7 +22946,7 @@ paths:
                             match_rule_groups:
                               type: array
                               items:
-                                $ref: '#/components/schemas/Item56'
+                                $ref: '#/components/schemas/Item57'
                               description: 匹配规则组，组间并集
                             active:
                               type: boolean
@@ -23105,7 +23105,7 @@ paths:
                 match_rule_groups:
                   type: array
                   items:
-                    $ref: '#/components/schemas/Item56'
+                    $ref: '#/components/schemas/Item57'
                   description: 匹配规则组，组间并集
       responses:
         '200':
@@ -23734,7 +23734,7 @@ paths:
                       items:
                         type: array
                         items:
-                          $ref: '#/components/schemas/Item23'
+                          $ref: '#/components/schemas/Item21'
                         description: 查询的部门信息
       x-lark-access-tokens:
       - tenant
@@ -24958,7 +24958,7 @@ paths:
                       items:
                         type: array
                         items:
-                          $ref: '#/components/schemas/Item23'
+                          $ref: '#/components/schemas/Item21'
                         description: 查询的部门信息
                       page_token:
                         type: string
@@ -25641,7 +25641,7 @@ paths:
                       custom_org_list:
                         type: array
                         items:
-                          $ref: '#/components/schemas/Item60'
+                          $ref: '#/components/schemas/Item61'
                         description: 自定义组织列表
       x-lark-access-tokens:
       - tenant
@@ -25743,7 +25743,7 @@ paths:
                       custom_org:
                         type: array
                         items:
-                          $ref: '#/components/schemas/Item60'
+                          $ref: '#/components/schemas/Item61'
                         description: 详情
                       user_id:
                         type: string
@@ -26305,7 +26305,7 @@ paths:
                     nationals:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item52'
+                        $ref: '#/components/schemas/Item53'
                       description: 证件
                     resident_taxes:
                       type: array
@@ -26468,7 +26468,7 @@ paths:
                           national_ids:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item52'
+                              $ref: '#/components/schemas/Item53'
                             description: 国家证件列表
                           nationality_v2:
                             type: string
@@ -26619,7 +26619,7 @@ paths:
                     national_v2s:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item52'
+                        $ref: '#/components/schemas/Item53'
                       description: 证件
                   description: 个人信息
                 employment_info:
@@ -32079,7 +32079,7 @@ paths:
                       approval_nodes:
                         type: array
                         items:
-                          $ref: '#/components/schemas/Item50'
+                          $ref: '#/components/schemas/Item51'
                         description: 审批节点信息
       x-lark-access-tokens:
       - tenant
@@ -32514,7 +32514,7 @@ paths:
                             approval_nodes:
                               type: array
                               items:
-                                $ref: '#/components/schemas/Item50'
+                                $ref: '#/components/schemas/Item51'
                               description: 审批节点信息
                         description: 员工异动列表
                       has_more:
@@ -35477,7 +35477,7 @@ paths:
                           citizenship_status:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item17'
+                              $ref: '#/components/schemas/Item14'
                             description: 公民身份
                           race:
                             type: object
@@ -35546,12 +35546,12 @@ paths:
                           email_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item18'
+                              $ref: '#/components/schemas/Item20'
                             description: 邮箱列表
                           work_experience_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item14'
+                              $ref: '#/components/schemas/Item11'
                             description: 工作经历列表
                           education_list:
                             type: array
@@ -35561,12 +35561,12 @@ paths:
                           bank_account_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item31'
+                              $ref: '#/components/schemas/Item30'
                             description: 银行账户
                           national_id_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item6'
+                              $ref: '#/components/schemas/Item7'
                             description: 证件
                           dependent_list:
                             type: array
@@ -35609,7 +35609,7 @@ paths:
                           personal_profile:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item36'
+                              $ref: '#/components/schemas/Item35'
                             description: 个人资料附件
                           native_region:
                             type: string
@@ -35690,7 +35690,7 @@ paths:
                           resident_taxes:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item30'
+                              $ref: '#/components/schemas/Item29'
                             description: 居民身份信息
                             example: '6863326262618752123'
                           first_entry_time:
@@ -35713,22 +35713,22 @@ paths:
                           national_id_v2s:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item6'
+                              $ref: '#/components/schemas/Item7'
                             description: 国家证件列表
                           visas:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item12'
+                              $ref: '#/components/schemas/Item22'
                             description: Visa 列表
                           passports:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item13'
+                              $ref: '#/components/schemas/Item23'
                             description: Passport 列表
                           person_for_countries:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item11'
+                              $ref: '#/components/schemas/Item15'
                             description: 多国个人信息列表
                           preferred_name_v2:
                             allOf:
@@ -35963,7 +35963,7 @@ paths:
                           citizenship_status:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item17'
+                              $ref: '#/components/schemas/Item14'
                             description: 公民身份
                           race:
                             type: object
@@ -36032,12 +36032,12 @@ paths:
                           email_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item18'
+                              $ref: '#/components/schemas/Item20'
                             description: 邮箱列表
                           work_experience_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item14'
+                              $ref: '#/components/schemas/Item11'
                             description: 工作经历列表
                           education_list:
                             type: array
@@ -36047,12 +36047,12 @@ paths:
                           bank_account_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item31'
+                              $ref: '#/components/schemas/Item30'
                             description: 银行账户
                           national_id_list:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item6'
+                              $ref: '#/components/schemas/Item7'
                             description: 证件
                           dependent_list:
                             type: array
@@ -36095,7 +36095,7 @@ paths:
                           personal_profile:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item36'
+                              $ref: '#/components/schemas/Item35'
                             description: 个人资料附件
                           native_region:
                             type: string
@@ -36176,7 +36176,7 @@ paths:
                           resident_taxes:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item30'
+                              $ref: '#/components/schemas/Item29'
                             description: 居民身份信息
                             example: '6863326262618752123'
                           first_entry_time:
@@ -36195,22 +36195,22 @@ paths:
                           national_id_v2s:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item6'
+                              $ref: '#/components/schemas/Item7'
                             description: 国家证件列表
                           visas:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item12'
+                              $ref: '#/components/schemas/Item22'
                             description: Visa 列表
                           passports:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item13'
+                              $ref: '#/components/schemas/Item23'
                             description: Passport 列表
                           person_for_countries:
                             type: array
                             items:
-                              $ref: '#/components/schemas/Item11'
+                              $ref: '#/components/schemas/Item15'
                             description: 多国个人信息列表
                           preferred_name_v2:
                             allOf:
@@ -37546,7 +37546,7 @@ paths:
                     resident_tax_list:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item32'
+                        $ref: '#/components/schemas/Item31'
                       description: 纳税身份信息
                     born_country_region:
                       type: string
@@ -37575,7 +37575,7 @@ paths:
                     dependent_list:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item8'
+                        $ref: '#/components/schemas/Item10'
                       description: 家庭成员
                     religion:
                       type: string
@@ -37584,12 +37584,12 @@ paths:
                     bank_account_list:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item63'
+                        $ref: '#/components/schemas/Item64'
                       description: 银行账号
                     national_id_list:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item28'
+                        $ref: '#/components/schemas/Item44'
                       description: 证件账号
                     personal_profile_list:
                       type: array
@@ -37615,7 +37615,7 @@ paths:
                     emergency_contact_list:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item22'
+                        $ref: '#/components/schemas/Item19'
                       description: 紧急联系人
                     address_list:
                       type: array
@@ -37667,35 +37667,6 @@ paths:
                     political_affiliation:
                       type: string
                       description: 政治面貌
-                    legal_names:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/Name5'
-                      description: 法定姓名列表
-                    person_for_countries:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/Item73'
-                      description: 多国个人信息
-                    passports:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/Item13'
-                      description: 护照列表
-                    visas:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/Item12'
-                      description: 签证列表
-                    national_id_v2s:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/Item28'
-                      description: 国家证件v2
-                    preferred_name_v2:
-                      allOf:
-                      - $ref: '#/components/schemas/Name5'
-                      description: 常用姓名v2
                     mother_name:
                       type: string
                       description: 母亲姓名
@@ -37939,7 +37910,7 @@ paths:
                     seniority_adjust_information_list:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item65'
+                        $ref: '#/components/schemas/Item66'
                       description: 司龄调整信息
                     notice_period_probation_voluntary:
                       type: object
@@ -38064,12 +38035,12 @@ paths:
                 education_info:
                   type: array
                   items:
-                    $ref: '#/components/schemas/Item69'
+                    $ref: '#/components/schemas/Item70'
                   description: 教育经历
                 work_experience:
                   type: array
                   items:
-                    $ref: '#/components/schemas/Item68'
+                    $ref: '#/components/schemas/Item69'
                   description: 工作经历
                 ats_application_id:
                   type: string
@@ -38569,7 +38540,7 @@ paths:
                     resident_tax_list:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item32'
+                        $ref: '#/components/schemas/Item31'
                       description: 纳税身份信息,该值是一个list，会全量更新
                     born_country_region:
                       type: string
@@ -38598,7 +38569,7 @@ paths:
                     dependent_list:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item8'
+                        $ref: '#/components/schemas/Item10'
                       description: 家庭成员
                     religion:
                       type: string
@@ -38607,12 +38578,12 @@ paths:
                     bank_account_list:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item63'
+                        $ref: '#/components/schemas/Item64'
                       description: 银行账号
                     national_id_list:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item28'
+                        $ref: '#/components/schemas/Item44'
                       description: 证件账号
                     personal_profile_list:
                       type: array
@@ -38638,7 +38609,7 @@ paths:
                     emergency_contact_list:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item22'
+                        $ref: '#/components/schemas/Item19'
                       description: 紧急联系人
                     address_list:
                       type: array
@@ -38708,45 +38679,16 @@ paths:
                     work_experience:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item68'
+                        $ref: '#/components/schemas/Item69'
                       description: 工作履历
                     education_info:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item69'
+                        $ref: '#/components/schemas/Item70'
                       description: 教育经历
                     political_affiliation:
                       type: string
                       description: 政治面貌
-                    legal_names:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/Name5'
-                      description: 法定姓名列表
-                    person_for_countries:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/Item73'
-                      description: 多国个人信息
-                    passports:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/Item13'
-                      description: 护照列表
-                    visas:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/Item12'
-                      description: 签证列表
-                    national_id_v2s:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/Item28'
-                      description: 国家证件列表
-                    preferred_name_v2:
-                      allOf:
-                      - $ref: '#/components/schemas/Name5'
-                      description: 常用姓名v2
                     mother_name:
                       type: string
                       description: 母亲姓名
@@ -38993,7 +38935,7 @@ paths:
                     seniority_adjust_information_list:
                       type: array
                       items:
-                        $ref: '#/components/schemas/Item65'
+                        $ref: '#/components/schemas/Item66'
                       description: 司龄调整信息
                     notice_period_probation_voluntary:
                       type: object
@@ -39578,8 +39520,346 @@ paths:
                           type: object
                           properties:
                             person_info:
-                              allOf:
-                              - $ref: '#/components/schemas/PersonInfo'
+                              type: object
+                              properties:
+                                person_id:
+                                  type: string
+                                  description: 个人信息 ID
+                                  example: '6919733936050406926'
+                                phone_number:
+                                  type: string
+                                  description: 个人电话
+                                  example: '13649211111'
+                                legal_name:
+                                  type: string
+                                  description: 法定姓名
+                                  example: 张三
+                                preferred_name:
+                                  type: string
+                                  description: 常用名
+                                  example: 刘梓新(Henry)
+                                preferred_local_full_name:
+                                  type: string
+                                  description: 常用本地全名
+                                  example: 刘梓新
+                                preferred_english_full_name:
+                                  type: string
+                                  description: 常用英文全名
+                                  example: Henry
+                                name_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Name'
+                                  description: 姓名列表
+                                gender:
+                                  type: object
+                                  properties:
+                                    enum_name:
+                                      type: string
+                                      description: 枚举值
+                                      example: phone_type
+                                    display:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          lang:
+                                            type: string
+                                            description: 语言编码（IETF BCP 47）
+                                            example: zh-CN
+                                          value:
+                                            type: string
+                                            description: 文本内容
+                                            example: 中文示例
+                                        required:
+                                        - lang
+                                        - value
+                                      description: 枚举多语展示
+                                  required:
+                                  - enum_name
+                                  description: -| 性别，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - custom_api_name：gender - object_api_name：person
+                                date_of_birth:
+                                  type: string
+                                  description: 出生日期
+                                  example: '2020-01-01'
+                                nationality_id_v2:
+                                  type: string
+                                  description: 国籍 ID，可通过【查询国籍信息】接口查询
+                                  example: '6862995757234914821'
+                                race:
+                                  type: object
+                                  properties:
+                                    enum_name:
+                                      type: string
+                                      description: 枚举值
+                                      example: phone_type
+                                    display:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          lang:
+                                            type: string
+                                            description: 语言编码（IETF BCP 47）
+                                            example: zh-CN
+                                          value:
+                                            type: string
+                                            description: 文本内容
+                                            example: 中文示例
+                                        required:
+                                        - lang
+                                        - value
+                                      description: 枚举多语展示
+                                  required:
+                                  - enum_name
+                                  description: -| 民族 / 种族，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - custom_api_name：ethnicity_race -
+                                    object_api_name：person
+                                marital_status:
+                                  type: object
+                                  properties:
+                                    enum_name:
+                                      type: string
+                                      description: 枚举值
+                                      example: phone_type
+                                    display:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          lang:
+                                            type: string
+                                            description: 语言编码（IETF BCP 47）
+                                            example: zh-CN
+                                          value:
+                                            type: string
+                                            description: 文本内容
+                                            example: 中文示例
+                                        required:
+                                        - lang
+                                        - value
+                                      description: 枚举多语展示
+                                  required:
+                                  - enum_name
+                                  description: -| 婚姻状况，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - custom_api_name：marital_status - object_api_name：person
+                                phone_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Phone'
+                                  description: 电话列表，只有当满足下面所有条件时，电话在个人信息页才可见
+                                address_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Address2'
+                                  description: 地址列表
+                                email_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item20'
+                                  description: 邮箱列表
+                                work_experience_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item11'
+                                  description: 工作经历列表
+                                education_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/HighestLevelOfEducation'
+                                  description: 教育经历列表
+                                bank_account_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item33'
+                                  description: 银行账户
+                                national_id_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item45'
+                                  description: 证件
+                                dependent_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item5'
+                                  description: 家庭成员列表
+                                emergency_contact_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item2'
+                                  description: 紧急联系人列表
+                                date_entered_workforce:
+                                  type: string
+                                  description: 参加工作日期
+                                  example: '2020-10-01'
+                                working_years:
+                                  type: integer
+                                  description: 工龄
+                                  example: '2'
+                                profile_image_id:
+                                  type: string
+                                  description: 头像资源的 ID
+                                  example: dfysuc8x76dsfsw
+                                email_address:
+                                  type: string
+                                  description: 邮箱地址
+                                  example: test@163.com
+                                age:
+                                  type: integer
+                                  description: 年龄
+                                  example: '22'
+                                highest_level_of_education:
+                                  allOf:
+                                  - $ref: '#/components/schemas/HighestLevelOfEducation'
+                                  description: 最高学历教育经历
+                                highest_degree_of_education:
+                                  allOf:
+                                  - $ref: '#/components/schemas/HighestLevelOfEducation'
+                                  description: 最高学位教育经历
+                                personal_profile:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item35'
+                                  description: 个人资料附件
+                                talent_id:
+                                  type: string
+                                  description: 人才 ID
+                                  example: '6863326262618752123'
+                                custom_fields:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/OriginValue'
+                                  description: 自定义字段
+                                national_id_number:
+                                  type: string
+                                  description: 居民身份证件号码
+                                  example: '11010000000000'
+                                family_address:
+                                  type: string
+                                  description: 家庭地址
+                                  example: '6863326262618752123'
+                                person_info_chns:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item54'
+                                  description: 个人附加信息
+                                  example: '6863326262618752123'
+                                born_country_region:
+                                  type: string
+                                  description: 出生国家/地区
+                                  example: 中国
+                                is_disabled:
+                                  type: boolean
+                                  description: 是否残疾
+                                  example: 'true'
+                                disable_card_number:
+                                  type: string
+                                  description: 残疾证号
+                                  example: '1110000'
+                                is_martyr_family:
+                                  type: boolean
+                                  description: 是否烈属
+                                  example: 'true'
+                                martyr_card_number:
+                                  type: string
+                                  description: 烈属证号
+                                  example: '1110000'
+                                is_old_alone:
+                                  type: boolean
+                                  description: 是否孤老
+                                  example: 'true'
+                                resident_taxes:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item29'
+                                  description: 居民身份信息
+                                  example: '6863326262618752123'
+                                religion:
+                                  type: object
+                                  properties:
+                                    enum_name:
+                                      type: string
+                                      description: 枚举值
+                                      example: phone_type
+                                    display:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          lang:
+                                            type: string
+                                            description: 语言编码（IETF BCP 47）
+                                            example: zh-CN
+                                          value:
+                                            type: string
+                                            description: 文本内容
+                                            example: 中文示例
+                                        required:
+                                        - lang
+                                        - value
+                                      description: 枚举多语展示
+                                  required:
+                                  - enum_name
+                                  description: -| 宗教信仰，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - object_api_name：person - custom_api_name：religion
+                                working_years_v2:
+                                  type: number
+                                  description: 工龄 浮点类型
+                                  example: '2.1'
+                                created_at:
+                                  type: string
+                                  description: 个人信息 创建时间
+                                  example: '2022-01-02'
+                                updated_at:
+                                  type: string
+                                  description: 个人信息 更新时间
+                                  example: '2022-01-02'
+                                created_by:
+                                  type: string
+                                  description: 个人信息 创建人
+                                  example: '69928404442626824'
+                                updated_by:
+                                  type: string
+                                  description: 个人信息 更新人
+                                  example: '69928404442626824'
+                                bank_account_number:
+                                  type: string
+                                  description: 银行卡号
+                                  example: '69928404442626824'
+                                passport_number:
+                                  type: string
+                                  description: 护照号码
+                                  example: '6919733936050406926'
+                                former_employer:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      lang:
+                                        type: string
+                                        description: 语言编码（IETF BCP 47）
+                                        example: zh-CN
+                                      value:
+                                        type: string
+                                        description: 文本内容
+                                        example: 中文示例
+                                    required:
+                                    - lang
+                                    - value
+                                  description: 上家公司
+                                mother_name:
+                                  type: string
+                                  description: 母亲姓名
+                                  example: example
+                                city_of_birth:
+                                  type: string
+                                  description: 出生城市
+                                  example: example
+                                region_of_birth:
+                                  type: string
+                                  description: 出生省份
+                                  example: example
+                                tax_info_mys:
+                                  allOf:
+                                  - $ref: '#/components/schemas/TaxInfoMy'
+                                  description: 马来税务信息
                               description: 个人信息
                             employment_info:
                               allOf:
@@ -39845,31 +40125,22 @@ paths:
       - corehr:person.is_old_alone:write
       - corehr:person.legal_name:read
       - corehr:person.legal_name:write
-      - corehr:person.legal_name_v2:read
-      - corehr:person.legal_name_v2:write
       - corehr:person.marital_status:read
       - corehr:person.marital_status:write
       - corehr:person.martyr_family:read
       - corehr:person.martyr_family:write
       - corehr:person.national_id:read
       - corehr:person.national_id:write
-      - corehr:person.national_id_v2:read
-      - corehr:person.national_id_v2:write
       - corehr:person.nationality:read
       - corehr:person.nationality:write
       - corehr:person.native_region:read
       - corehr:person.native_region:write
-      - corehr:person.passport:read
-      - corehr:person.passport:write
       - corehr:person.passport_number:read
-      - corehr:person.person_for_country:read
-      - corehr:person.person_for_country:write
       - corehr:person.personal_profile:read
       - corehr:person.personal_profile:write
       - corehr:person.phone:read
       - corehr:person.phone:write
       - corehr:person.political_affiliation:read
-      - corehr:person.preferred_name_v2:read
       - corehr:person.race:read
       - corehr:person.religion:read
       - corehr:person.religion:write
@@ -39877,8 +40148,6 @@ paths:
       - corehr:person.resident_tax:write
       - corehr:person.resident_tax_custom_field:read
       - corehr:person.resident_tax_custom_field:write
-      - corehr:person.visa:read
-      - corehr:person.visa:write
       - corehr:person.work_experience:read
       - corehr:person.work_experience:write
       - corehr:pre_hire.abnormal_reason_field:read
@@ -40238,8 +40507,346 @@ paths:
                           type: object
                           properties:
                             person_info:
-                              allOf:
-                              - $ref: '#/components/schemas/PersonInfo'
+                              type: object
+                              properties:
+                                person_id:
+                                  type: string
+                                  description: 个人信息 ID
+                                  example: '6919733936050406926'
+                                phone_number:
+                                  type: string
+                                  description: 个人电话
+                                  example: '13649211111'
+                                legal_name:
+                                  type: string
+                                  description: 法定姓名
+                                  example: 张三
+                                preferred_name:
+                                  type: string
+                                  description: 常用名
+                                  example: 刘梓新(Henry)
+                                preferred_local_full_name:
+                                  type: string
+                                  description: 常用本地全名
+                                  example: 刘梓新
+                                preferred_english_full_name:
+                                  type: string
+                                  description: 常用英文全名
+                                  example: Henry
+                                name_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Name'
+                                  description: 姓名列表
+                                gender:
+                                  type: object
+                                  properties:
+                                    enum_name:
+                                      type: string
+                                      description: 枚举值
+                                      example: phone_type
+                                    display:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          lang:
+                                            type: string
+                                            description: 语言编码（IETF BCP 47）
+                                            example: zh-CN
+                                          value:
+                                            type: string
+                                            description: 文本内容
+                                            example: 中文示例
+                                        required:
+                                        - lang
+                                        - value
+                                      description: 枚举多语展示
+                                  required:
+                                  - enum_name
+                                  description: -| 性别，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - custom_api_name：gender - object_api_name：person
+                                date_of_birth:
+                                  type: string
+                                  description: 出生日期
+                                  example: '2020-01-01'
+                                nationality_id_v2:
+                                  type: string
+                                  description: 国籍 ID，可通过【查询国籍信息】接口查询
+                                  example: '6862995757234914821'
+                                race:
+                                  type: object
+                                  properties:
+                                    enum_name:
+                                      type: string
+                                      description: 枚举值
+                                      example: phone_type
+                                    display:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          lang:
+                                            type: string
+                                            description: 语言编码（IETF BCP 47）
+                                            example: zh-CN
+                                          value:
+                                            type: string
+                                            description: 文本内容
+                                            example: 中文示例
+                                        required:
+                                        - lang
+                                        - value
+                                      description: 枚举多语展示
+                                  required:
+                                  - enum_name
+                                  description: -| 民族 / 种族，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - custom_api_name：ethnicity_race -
+                                    object_api_name：person
+                                marital_status:
+                                  type: object
+                                  properties:
+                                    enum_name:
+                                      type: string
+                                      description: 枚举值
+                                      example: phone_type
+                                    display:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          lang:
+                                            type: string
+                                            description: 语言编码（IETF BCP 47）
+                                            example: zh-CN
+                                          value:
+                                            type: string
+                                            description: 文本内容
+                                            example: 中文示例
+                                        required:
+                                        - lang
+                                        - value
+                                      description: 枚举多语展示
+                                  required:
+                                  - enum_name
+                                  description: -| 婚姻状况，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - custom_api_name：marital_status - object_api_name：person
+                                phone_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Phone'
+                                  description: 电话列表，只有当满足下面所有条件时，电话在个人信息页才可见
+                                address_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Address2'
+                                  description: 地址列表
+                                email_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item20'
+                                  description: 邮箱列表
+                                work_experience_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item11'
+                                  description: 工作经历列表
+                                education_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/HighestLevelOfEducation'
+                                  description: 教育经历列表
+                                bank_account_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item33'
+                                  description: 银行账户
+                                national_id_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item7'
+                                  description: 证件
+                                dependent_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item5'
+                                  description: 家庭成员列表
+                                emergency_contact_list:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item2'
+                                  description: 紧急联系人列表
+                                date_entered_workforce:
+                                  type: string
+                                  description: 参加工作日期
+                                  example: '2020-10-01'
+                                working_years:
+                                  type: integer
+                                  description: 工龄
+                                  example: '2'
+                                profile_image_id:
+                                  type: string
+                                  description: 头像资源的 ID
+                                  example: dfysuc8x76dsfsw
+                                email_address:
+                                  type: string
+                                  description: 邮箱地址
+                                  example: test@163.com
+                                age:
+                                  type: integer
+                                  description: 年龄
+                                  example: '22'
+                                highest_level_of_education:
+                                  allOf:
+                                  - $ref: '#/components/schemas/HighestLevelOfEducation'
+                                  description: 最高学历教育经历
+                                highest_degree_of_education:
+                                  allOf:
+                                  - $ref: '#/components/schemas/HighestLevelOfEducation'
+                                  description: 最高学位教育经历
+                                personal_profile:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item35'
+                                  description: 个人资料附件
+                                talent_id:
+                                  type: string
+                                  description: 人才 ID
+                                  example: '6863326262618752123'
+                                custom_fields:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/OriginValue'
+                                  description: 自定义字段
+                                national_id_number:
+                                  type: string
+                                  description: 居民身份证件号码
+                                  example: '11010000000000'
+                                family_address:
+                                  type: string
+                                  description: 家庭地址
+                                  example: '6863326262618752123'
+                                person_info_chns:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item54'
+                                  description: 个人附加信息
+                                  example: '6863326262618752123'
+                                born_country_region:
+                                  type: string
+                                  description: 出生国家/地区
+                                  example: 中国
+                                is_disabled:
+                                  type: boolean
+                                  description: 是否残疾
+                                  example: 'true'
+                                disable_card_number:
+                                  type: string
+                                  description: 残疾证号
+                                  example: '1110000'
+                                is_martyr_family:
+                                  type: boolean
+                                  description: 是否烈属
+                                  example: 'true'
+                                martyr_card_number:
+                                  type: string
+                                  description: 烈属证号
+                                  example: '1110000'
+                                is_old_alone:
+                                  type: boolean
+                                  description: 是否孤老
+                                  example: 'true'
+                                resident_taxes:
+                                  type: array
+                                  items:
+                                    $ref: '#/components/schemas/Item29'
+                                  description: 居民身份信息
+                                  example: '6863326262618752123'
+                                religion:
+                                  type: object
+                                  properties:
+                                    enum_name:
+                                      type: string
+                                      description: 枚举值
+                                      example: phone_type
+                                    display:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          lang:
+                                            type: string
+                                            description: 语言编码（IETF BCP 47）
+                                            example: zh-CN
+                                          value:
+                                            type: string
+                                            description: 文本内容
+                                            example: 中文示例
+                                        required:
+                                        - lang
+                                        - value
+                                      description: 枚举多语展示
+                                  required:
+                                  - enum_name
+                                  description: -| 宗教信仰，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - object_api_name：person - custom_api_name：religion
+                                working_years_v2:
+                                  type: number
+                                  description: 工龄 浮点类型
+                                  example: '2.1'
+                                created_at:
+                                  type: string
+                                  description: 个人信息 创建时间
+                                  example: '2022-01-02'
+                                updated_at:
+                                  type: string
+                                  description: 个人信息 更新时间
+                                  example: '2022-01-02'
+                                created_by:
+                                  type: string
+                                  description: 个人信息 创建人
+                                  example: '69928404442626824'
+                                updated_by:
+                                  type: string
+                                  description: 个人信息 更新人
+                                  example: '69928404442626824'
+                                bank_account_number:
+                                  type: string
+                                  description: 银行卡号
+                                  example: '69928404442626824'
+                                passport_number:
+                                  type: string
+                                  description: 护照号码
+                                  example: '6919733936050406926'
+                                former_employer:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      lang:
+                                        type: string
+                                        description: 语言编码（IETF BCP 47）
+                                        example: zh-CN
+                                      value:
+                                        type: string
+                                        description: 文本内容
+                                        example: 中文示例
+                                    required:
+                                    - lang
+                                    - value
+                                  description: 上家公司
+                                mother_name:
+                                  type: string
+                                  description: 母亲姓名
+                                  example: example
+                                city_of_birth:
+                                  type: string
+                                  description: 出生城市
+                                  example: example
+                                region_of_birth:
+                                  type: string
+                                  description: 出生省份
+                                  example: example
+                                tax_info_mys:
+                                  allOf:
+                                  - $ref: '#/components/schemas/TaxInfoMy'
+                                  description: 马来税务信息
                               description: 个人信息
                             employment_info:
                               allOf:
@@ -40502,31 +41109,22 @@ paths:
       - corehr:person.is_old_alone:write
       - corehr:person.legal_name:read
       - corehr:person.legal_name:write
-      - corehr:person.legal_name_v2:read
-      - corehr:person.legal_name_v2:write
       - corehr:person.marital_status:read
       - corehr:person.marital_status:write
       - corehr:person.martyr_family:read
       - corehr:person.martyr_family:write
       - corehr:person.national_id:read
       - corehr:person.national_id:write
-      - corehr:person.national_id_v2:read
-      - corehr:person.national_id_v2:write
       - corehr:person.nationality:read
       - corehr:person.nationality:write
       - corehr:person.native_region:read
       - corehr:person.native_region:write
-      - corehr:person.passport:read
-      - corehr:person.passport:write
       - corehr:person.passport_number:read
-      - corehr:person.person_for_country:read
-      - corehr:person.person_for_country:write
       - corehr:person.personal_profile:read
       - corehr:person.personal_profile:write
       - corehr:person.phone:read
       - corehr:person.phone:write
       - corehr:person.political_affiliation:read
-      - corehr:person.preferred_name_v2:read
       - corehr:person.race:read
       - corehr:person.religion:read
       - corehr:person.religion:write
@@ -40534,8 +41132,6 @@ paths:
       - corehr:person.resident_tax:write
       - corehr:person.resident_tax_custom_field:read
       - corehr:person.resident_tax_custom_field:write
-      - corehr:person.visa:read
-      - corehr:person.visa:write
       - corehr:person.work_experience:read
       - corehr:person.work_experience:write
       - corehr:pre_hire.abnormal_reason_field:read
@@ -42445,7 +43041,7 @@ paths:
                 field_values_v2:
                   type: array
                   items:
-                    $ref: '#/components/schemas/Item15'
+                    $ref: '#/components/schemas/Item12'
                   description: 表单数据
       responses:
         '200':
@@ -42876,7 +43472,7 @@ paths:
                       field_values:
                         type: array
                         items:
-                          $ref: '#/components/schemas/Item15'
+                          $ref: '#/components/schemas/Item12'
                         description: 流程参数模板
                       error_info:
                         type: string
@@ -44086,7 +44682,7 @@ paths:
                 flow_data:
                   type: array
                   items:
-                    $ref: '#/components/schemas/Item15'
+                    $ref: '#/components/schemas/Item12'
                   description: 业务数据
       responses:
         '200':
@@ -44576,7 +45172,7 @@ paths:
                       signature_files:
                         type: array
                         items:
-                          $ref: '#/components/schemas/Item38'
+                          $ref: '#/components/schemas/Item37'
                         description: 返回的流程关联的电子签文件列表
                       batch_sign_url:
                         type: string
@@ -45080,7 +45676,7 @@ paths:
                                 signatory_labels:
                                   type: array
                                   items:
-                                    $ref: '#/components/schemas/Item61'
+                                    $ref: '#/components/schemas/Item62'
                                   description: 模版签署人标签
                                 active:
                                   type: boolean
@@ -45875,7 +46471,7 @@ paths:
                             signatory_labels:
                               type: array
                               items:
-                                $ref: '#/components/schemas/Item61'
+                                $ref: '#/components/schemas/Item62'
                               description: 模版签署人标签
                             template_code:
                               type: string
@@ -47003,7 +47599,7 @@ components:
         work_email_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item71'
+            $ref: '#/components/schemas/Item72'
           description: 工作邮箱列表，只有当邮箱满足下面所有条件时，才在个人信息页面可见
         cost_center_list:
           type: array
@@ -47056,7 +47652,7 @@ components:
           example: '7164286667866966659'
         person_info:
           allOf:
-          - $ref: '#/components/schemas/PersonInfo2'
+          - $ref: '#/components/schemas/PersonInfo'
           description: 基本个人信息
         custom_fields:
           type: array
@@ -47280,7 +47876,7 @@ components:
         seniority_adjust_information_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item48'
+            $ref: '#/components/schemas/Item49'
           description: 司龄调整信息
         employment_direct_bps:
           type: object
@@ -47529,382 +48125,12 @@ components:
         email_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item18'
+            $ref: '#/components/schemas/Item20'
           description: 邮箱列表
         work_experience_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item14'
-          description: 工作经历列表
-        education_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/HighestLevelOfEducation'
-          description: 教育经历列表
-        bank_account_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item34'
-          description: 银行账户
-        national_id_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item6'
-          description: 证件
-        dependent_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item5'
-          description: 家庭成员列表
-        emergency_contact_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item2'
-          description: 紧急联系人列表
-        date_entered_workforce:
-          type: string
-          description: 参加工作日期
-          example: '2020-10-01'
-        working_years:
-          type: integer
-          description: 工龄
-          example: '2'
-        profile_image_id:
-          type: string
-          description: 头像资源的 ID
-          example: dfysuc8x76dsfsw
-        email_address:
-          type: string
-          description: 邮箱地址
-          example: test@163.com
-        age:
-          type: integer
-          description: 年龄
-          example: '22'
-        highest_level_of_education:
-          allOf:
-          - $ref: '#/components/schemas/HighestLevelOfEducation'
-          description: 最高学历教育经历
-        highest_degree_of_education:
-          allOf:
-          - $ref: '#/components/schemas/HighestLevelOfEducation'
-          description: 最高学位教育经历
-        personal_profile:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item36'
-          description: 个人资料附件
-        talent_id:
-          type: string
-          description: 人才 ID
-          example: '6863326262618752123'
-        custom_fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/OriginValue'
-          description: 自定义字段
-        national_id_number:
-          type: string
-          description: 居民身份证件号码
-          example: '11010000000000'
-        family_address:
-          type: string
-          description: 家庭地址
-          example: '6863326262618752123'
-        person_info_chns:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item53'
-          description: 个人附加信息
-          example: '6863326262618752123'
-        born_country_region:
-          type: string
-          description: 出生国家/地区
-          example: 中国
-        is_disabled:
-          type: boolean
-          description: 是否残疾
-          example: 'true'
-        disable_card_number:
-          type: string
-          description: 残疾证号
-          example: '1110000'
-        is_martyr_family:
-          type: boolean
-          description: 是否烈属
-          example: 'true'
-        martyr_card_number:
-          type: string
-          description: 烈属证号
-          example: '1110000'
-        is_old_alone:
-          type: boolean
-          description: 是否孤老
-          example: 'true'
-        resident_taxes:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item30'
-          description: 居民身份信息
-          example: '6863326262618752123'
-        religion:
-          type: object
-          properties:
-            enum_name:
-              type: string
-              description: 枚举值
-              example: phone_type
-            display:
-              type: array
-              items:
-                type: object
-                properties:
-                  lang:
-                    type: string
-                    description: 语言编码（IETF BCP 47）
-                    example: zh-CN
-                  value:
-                    type: string
-                    description: 文本内容
-                    example: 中文示例
-                required:
-                - lang
-                - value
-              description: 枚举多语展示
-          required:
-          - enum_name
-          description: -| 宗教信仰，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - object_api_name：person - custom_api_name：religion
-        working_years_v2:
-          type: number
-          description: 工龄 浮点类型
-          example: '2.1'
-        created_at:
-          type: string
-          description: 个人信息 创建时间
-          example: '2022-01-02'
-        updated_at:
-          type: string
-          description: 个人信息 更新时间
-          example: '2022-01-02'
-        created_by:
-          type: string
-          description: 个人信息 创建人
-          example: '69928404442626824'
-        updated_by:
-          type: string
-          description: 个人信息 更新人
-          example: '69928404442626824'
-        bank_account_number:
-          type: string
-          description: 银行卡号
-          example: '69928404442626824'
-        passport_number:
-          type: string
-          description: 护照号码
-          example: '6919733936050406926'
-        former_employer:
-          type: array
-          items:
-            type: object
-            properties:
-              lang:
-                type: string
-                description: 语言编码（IETF BCP 47）
-                example: zh-CN
-              value:
-                type: string
-                description: 文本内容
-                example: 中文示例
-            required:
-            - lang
-            - value
-          description: 上家公司
-        legal_name_v2s:
-          type: array
-          items:
-            $ref: '#/components/schemas/Name'
-          description: 全部法定姓名
-        national_id_v2s:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item6'
-          description: 国家证件列表
-        visas:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item12'
-          description: Visa 列表
-        passports:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item13'
-          description: Passport 列表
-        person_for_countries:
           type: array
           items:
             $ref: '#/components/schemas/Item11'
-          description: 多国个人信息列表
-        preferred_name_v2:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          description: 常用姓名v2
-        mother_name:
-          type: string
-          description: 母亲姓名
-          example: example
-        city_of_birth:
-          type: string
-          description: 出生城市
-          example: example
-        region_of_birth:
-          type: string
-          description: 出生省份
-          example: example
-        tax_info_mys:
-          allOf:
-          - $ref: '#/components/schemas/TaxInfoMy'
-          description: 马来税务信息
-      description: 个人信息
-    PersonInfo2:
-      type: object
-      properties:
-        person_id:
-          type: string
-          description: 个人信息 ID
-          example: '6919733936050406926'
-        phone_number:
-          type: string
-          description: 个人电话
-          example: '13649211111'
-        legal_name:
-          type: string
-          description: 法定姓名
-          example: 张三
-        preferred_name:
-          type: string
-          description: 常用名
-          example: 刘梓新(Henry)
-        preferred_local_full_name:
-          type: string
-          description: 常用本地全名
-          example: 刘梓新
-        preferred_english_full_name:
-          type: string
-          description: 常用英文全名
-          example: Henry
-        name_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/Name'
-          description: 姓名列表
-        gender:
-          type: object
-          properties:
-            enum_name:
-              type: string
-              description: 枚举值
-              example: phone_type
-            display:
-              type: array
-              items:
-                type: object
-                properties:
-                  lang:
-                    type: string
-                    description: 语言编码（IETF BCP 47）
-                    example: zh-CN
-                  value:
-                    type: string
-                    description: 文本内容
-                    example: 中文示例
-                required:
-                - lang
-                - value
-              description: 枚举多语展示
-          required:
-          - enum_name
-          description: -| 性别，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - custom_api_name：gender - object_api_name：person
-        date_of_birth:
-          type: string
-          description: 出生日期
-          example: '2020-01-01'
-        nationality_id_v2:
-          type: string
-          description: 国籍 ID，可通过【查询国籍信息】接口查询
-          example: '6862995757234914821'
-        race:
-          type: object
-          properties:
-            enum_name:
-              type: string
-              description: 枚举值
-              example: phone_type
-            display:
-              type: array
-              items:
-                type: object
-                properties:
-                  lang:
-                    type: string
-                    description: 语言编码（IETF BCP 47）
-                    example: zh-CN
-                  value:
-                    type: string
-                    description: 文本内容
-                    example: 中文示例
-                required:
-                - lang
-                - value
-              description: 枚举多语展示
-          required:
-          - enum_name
-          description: -| 民族 / 种族，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - custom_api_name：ethnicity_race - object_api_name：person
-        marital_status:
-          type: object
-          properties:
-            enum_name:
-              type: string
-              description: 枚举值
-              example: phone_type
-            display:
-              type: array
-              items:
-                type: object
-                properties:
-                  lang:
-                    type: string
-                    description: 语言编码（IETF BCP 47）
-                    example: zh-CN
-                  value:
-                    type: string
-                    description: 文本内容
-                    example: 中文示例
-                required:
-                - lang
-                - value
-              description: 枚举多语展示
-          required:
-          - enum_name
-          description: -| 婚姻状况，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - custom_api_name：marital_status - object_api_name：person
-        phone_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/Phone'
-          description: 电话列表，只有当满足下面所有条件时，电话在个人信息页才可见
-        address_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/Address2'
-          description: 地址列表
-        email_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item18'
-          description: 邮箱列表
-        work_experience_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item14'
           description: 工作经历列表
         education_list:
           type: array
@@ -47914,12 +48140,12 @@ components:
         bank_account_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item29'
+            $ref: '#/components/schemas/Item28'
           description: 银行账户
         national_id_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item6'
+            $ref: '#/components/schemas/Item7'
           description: 证件
         dependent_list:
           type: array
@@ -47962,7 +48188,7 @@ components:
         personal_profile:
           type: array
           items:
-            $ref: '#/components/schemas/Item36'
+            $ref: '#/components/schemas/Item35'
           description: 个人资料附件
         native_region:
           type: string
@@ -48072,7 +48298,7 @@ components:
         resident_taxes:
           type: array
           items:
-            $ref: '#/components/schemas/Item30'
+            $ref: '#/components/schemas/Item29'
           description: 居民身份信息
           example: '6863326262618752123'
         first_entry_time:
@@ -48122,22 +48348,22 @@ components:
         national_id_v2s:
           type: array
           items:
-            $ref: '#/components/schemas/Item6'
+            $ref: '#/components/schemas/Item7'
           description: 国家证件列表
         visas:
           type: array
           items:
-            $ref: '#/components/schemas/Item12'
+            $ref: '#/components/schemas/Item22'
           description: Visa 列表
         passports:
           type: array
           items:
-            $ref: '#/components/schemas/Item13'
+            $ref: '#/components/schemas/Item23'
           description: Passport 列表
         person_for_countries:
           type: array
           items:
-            $ref: '#/components/schemas/Item11'
+            $ref: '#/components/schemas/Item15'
           description: 多国个人信息列表
         preferred_name_v2:
           allOf:
@@ -48463,7 +48689,7 @@ components:
         address_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item35'
+            $ref: '#/components/schemas/Item34'
           description: 地址列表
         email_list:
           type: array
@@ -48498,17 +48724,17 @@ components:
         work_experience_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item46'
+            $ref: '#/components/schemas/Item47'
           description: 工作经历列表
         education_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item44'
+            $ref: '#/components/schemas/Item43'
           description: 教育经历列表
         bank_account_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item45'
+            $ref: '#/components/schemas/Item46'
           description: 银行账户
         national_id_list:
           type: array
@@ -48518,7 +48744,7 @@ components:
         dependent_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item9'
+            $ref: '#/components/schemas/Item8'
           description: 家庭成员列表
         emergency_contact_list:
           type: array
@@ -48637,7 +48863,7 @@ components:
         resident_taxes:
           type: array
           items:
-            $ref: '#/components/schemas/Item70'
+            $ref: '#/components/schemas/Item71'
           description: 居民身份信息
           example: '6863326262618752123'
         first_entry_time:
@@ -48661,17 +48887,17 @@ components:
         visas:
           type: array
           items:
-            $ref: '#/components/schemas/Item12'
+            $ref: '#/components/schemas/Item22'
           description: Visa 列表
         passports:
           type: array
           items:
-            $ref: '#/components/schemas/Item13'
+            $ref: '#/components/schemas/Item23'
           description: Passport 列表
         person_for_countries:
           type: array
           items:
-            $ref: '#/components/schemas/Item58'
+            $ref: '#/components/schemas/Item59'
           description: 多国个人信息列表
         preferred_name_v2:
           allOf:
@@ -50297,12 +50523,12 @@ components:
         phone_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item55'
+            $ref: '#/components/schemas/Item56'
           description: 电话
         address_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item42'
+            $ref: '#/components/schemas/Item41'
           description: 地址
         email_list:
           type: array
@@ -50336,27 +50562,27 @@ components:
         work_experience_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item20'
+            $ref: '#/components/schemas/Item17'
           description: 工作履历
         education_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item43'
+            $ref: '#/components/schemas/Item42'
           description: 教育经历
         bank_account_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item51'
+            $ref: '#/components/schemas/Item52'
           description: 银行账号
         national_id_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item21'
+            $ref: '#/components/schemas/Item18'
           description: 证件号码
         dependent_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item10'
+            $ref: '#/components/schemas/Item9'
           description: 亲属
         emergency_contact_list:
           type: array
@@ -50752,7 +50978,7 @@ components:
         national_id_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item6'
+            $ref: '#/components/schemas/Item7'
           description: 证件号码
         spouses_working_status:
           type: object
@@ -50862,22 +51088,22 @@ components:
         visas:
           type: array
           items:
-            $ref: '#/components/schemas/Item12'
+            $ref: '#/components/schemas/Item22'
           description: Visa 列表
         passports:
           type: array
           items:
-            $ref: '#/components/schemas/Item13'
+            $ref: '#/components/schemas/Item23'
           description: Passport 列表
         citizenship_statuses:
           type: array
           items:
-            $ref: '#/components/schemas/Item17'
+            $ref: '#/components/schemas/Item14'
           description: 居民身份列表
         emails:
           type: array
           items:
-            $ref: '#/components/schemas/Item18'
+            $ref: '#/components/schemas/Item20'
           description: 邮箱列表
       required:
       - relationship
@@ -50953,7 +51179,7 @@ components:
         national_id_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item6'
+            $ref: '#/components/schemas/Item7'
           description: 证件号码
         spouses_working_status:
           type: object
@@ -51063,219 +51289,22 @@ components:
         visas:
           type: array
           items:
-            $ref: '#/components/schemas/Item12'
+            $ref: '#/components/schemas/Item22'
           description: Visa 列表
         passports:
           type: array
           items:
-            $ref: '#/components/schemas/Item13'
+            $ref: '#/components/schemas/Item23'
           description: Passport 列表
         citizenship_statuses:
           type: array
           items:
-            $ref: '#/components/schemas/Item17'
+            $ref: '#/components/schemas/Item14'
           description: 居民身份列表
         emails:
           type: array
           items:
-            $ref: '#/components/schemas/Item18'
-          description: 邮箱列表
-      required:
-      - relationship
-    Item5:
-      type: object
-      properties:
-        name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          description: 姓名
-        relationship:
-          type: object
-          properties:
-            enum_name:
-              type: string
-              description: 枚举值
-              example: phone_type
-            display:
-              type: array
-              items:
-                type: object
-                properties:
-                  lang:
-                    type: string
-                    description: 语言编码（IETF BCP 47）
-                    example: zh-CN
-                  value:
-                    type: string
-                    description: 文本内容
-                    example: 中文示例
-                required:
-                - lang
-                - value
-              description: 枚举多语展示
-          required:
-          - enum_name
-          description: 关系
-        gender:
-          type: object
-          properties:
-            enum_name:
-              type: string
-              description: 枚举值
-              example: phone_type
-            display:
-              type: array
-              items:
-                type: object
-                properties:
-                  lang:
-                    type: string
-                    description: 语言编码（IETF BCP 47）
-                    example: zh-CN
-                  value:
-                    type: string
-                    description: 文本内容
-                    example: 中文示例
-                required:
-                - lang
-                - value
-              description: 枚举多语展示
-          required:
-          - enum_name
-          description: 性别
-        date_of_birth:
-          type: string
-          description: 生日
-          example: '2020-01-01'
-        national_id_list:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item6'
-          description: 证件号码
-        spouses_working_status:
-          type: object
-          properties:
-            enum_name:
-              type: string
-              description: 枚举值
-              example: phone_type
-            display:
-              type: array
-              items:
-                type: object
-                properties:
-                  lang:
-                    type: string
-                    description: 语言编码（IETF BCP 47）
-                    example: zh-CN
-                  value:
-                    type: string
-                    description: 文本内容
-                    example: 中文示例
-                required:
-                - lang
-                - value
-              description: 枚举多语展示
-          required:
-          - enum_name
-          description: 配偶工作状态
-        is_this_person_covered_by_health_insurance:
-          type: boolean
-          description: 包含家属医疗保险
-          example: 'true'
-        is_this_person_allowed_for_tax_deduction:
-          type: boolean
-          description: 允许家属抵扣税款
-          example: 'false'
-        custom_fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/OriginValue'
-          description: 自定义字段
-        dependent_name:
-          type: string
-          description: 家庭成员姓名
-          example: 张三
-        employer:
-          type: string
-          description: 工作单位
-          example: 海淀区交警大队
-        job:
-          type: string
-          description: 岗位
-          example: 保安
-        phone:
-          allOf:
-          - $ref: '#/components/schemas/Phone'
-          description: 电话
-        address:
-          allOf:
-          - $ref: '#/components/schemas/Address'
-          description: 联系地址
-        birth_certificate_of_child:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: string
-                description: 上传文件ID
-                example: 150018109586e8ea745e47ae8feb3722dbe1d03a181336393633393133303431393831343930373235150200
-              name:
-                type: string
-                description: 文件名
-                example: document.txt
-          description: 出生证明
-        reason:
-          type: object
-          properties:
-            enum_name:
-              type: string
-              description: 枚举值
-              example: phone_type
-            display:
-              type: array
-              items:
-                type: object
-                properties:
-                  lang:
-                    type: string
-                    description: 语言编码（IETF BCP 47）
-                    example: zh-CN
-                  value:
-                    type: string
-                    description: 文本内容
-                    example: 中文示例
-                required:
-                - lang
-                - value
-              description: 枚举多语展示
-          required:
-          - enum_name
-          description: 变更原因
-        modify_date:
-          type: string
-          description: 变更日期
-          example: '2020-01-01'
-        visas:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item12'
-          description: Visa 列表
-        passports:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item13'
-          description: Passport 列表
-        citizenship_statuses:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item17'
-          description: 居民身份列表
-        emails:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item18'
+            $ref: '#/components/schemas/Item20'
           description: 邮箱列表
       required:
       - relationship
@@ -51629,7 +51658,7 @@ components:
         seniority_adjust_information_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item49'
+            $ref: '#/components/schemas/Item50'
           description: 司龄调整信息
         notice_period_positive_voluntary:
           allOf:
@@ -51888,6 +51917,188 @@ components:
           description: 自定义字段
       required:
       - school
+    Item5:
+      type: object
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          description: 姓名
+        relationship:
+          type: object
+          properties:
+            enum_name:
+              type: string
+              description: 枚举值
+              example: phone_type
+            display:
+              type: array
+              items:
+                type: object
+                properties:
+                  lang:
+                    type: string
+                    description: 语言编码（IETF BCP 47）
+                    example: zh-CN
+                  value:
+                    type: string
+                    description: 文本内容
+                    example: 中文示例
+                required:
+                - lang
+                - value
+              description: 枚举多语展示
+          required:
+          - enum_name
+          description: 关系
+        gender:
+          type: object
+          properties:
+            enum_name:
+              type: string
+              description: 枚举值
+              example: phone_type
+            display:
+              type: array
+              items:
+                type: object
+                properties:
+                  lang:
+                    type: string
+                    description: 语言编码（IETF BCP 47）
+                    example: zh-CN
+                  value:
+                    type: string
+                    description: 文本内容
+                    example: 中文示例
+                required:
+                - lang
+                - value
+              description: 枚举多语展示
+          required:
+          - enum_name
+          description: 性别
+        date_of_birth:
+          type: string
+          description: 生日
+          example: '2020-01-01'
+        national_id_list:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item45'
+          description: 证件号码
+        spouses_working_status:
+          type: object
+          properties:
+            enum_name:
+              type: string
+              description: 枚举值
+              example: phone_type
+            display:
+              type: array
+              items:
+                type: object
+                properties:
+                  lang:
+                    type: string
+                    description: 语言编码（IETF BCP 47）
+                    example: zh-CN
+                  value:
+                    type: string
+                    description: 文本内容
+                    example: 中文示例
+                required:
+                - lang
+                - value
+              description: 枚举多语展示
+          required:
+          - enum_name
+          description: 配偶工作状态
+        is_this_person_covered_by_health_insurance:
+          type: boolean
+          description: 包含家属医疗保险
+          example: 'true'
+        is_this_person_allowed_for_tax_deduction:
+          type: boolean
+          description: 允许家属抵扣税款
+          example: 'false'
+        custom_fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/OriginValue'
+          description: 自定义字段
+        dependent_name:
+          type: string
+          description: 家庭成员姓名
+          example: 张三
+        employer:
+          type: string
+          description: 工作单位
+          example: 海淀区交警大队
+        job:
+          type: string
+          description: 岗位
+          example: 保安
+        phone:
+          allOf:
+          - $ref: '#/components/schemas/Phone'
+          description: 电话
+        address:
+          allOf:
+          - $ref: '#/components/schemas/Address'
+          description: 联系地址
+        birth_certificate_of_child:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 上传文件ID
+                example: 150018109586e8ea745e47ae8feb3722dbe1d03a181336393633393133303431393831343930373235150200
+              name:
+                type: string
+                description: 文件名
+                example: document.txt
+          description: 出生证明
+        reason:
+          type: object
+          properties:
+            enum_name:
+              type: string
+              description: 枚举值
+              example: phone_type
+            display:
+              type: array
+              items:
+                type: object
+                properties:
+                  lang:
+                    type: string
+                    description: 语言编码（IETF BCP 47）
+                    example: zh-CN
+                  value:
+                    type: string
+                    description: 文本内容
+                    example: 中文示例
+                required:
+                - lang
+                - value
+              description: 枚举多语展示
+          required:
+          - enum_name
+          description: 变更原因
+        modify_date:
+          type: string
+          description: 变更日期
+          example: '2020-01-01'
+        citizenship_statuses:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item14'
+          description: 居民身份列表
+      required:
+      - relationship
     Company:
       type: object
       properties:
@@ -52107,53 +52318,6 @@ components:
           description: 办公地址详细信息
       required:
       - hiberarchy_common
-    Item6:
-      type: object
-      properties:
-        national_id_type_id:
-          type: string
-          description: 国家证件类型
-          example: '6863330041896371725'
-        national_id_number:
-          type: string
-          description: 证件号码
-          example: '1231131333'
-        issue_date:
-          type: string
-          description: 证件签发日期
-          example: '2020-04-01'
-        expiration_date:
-          type: string
-          description: 证件到期日期
-          example: '2020-05-21'
-        country_region_id:
-          type: string
-          description: 国家 / 地区
-          example: '6862995757234914824'
-        issued_by:
-          type: string
-          description: 证件签发机构
-          example: 北京市公安局
-        custom_fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/OriginValue'
-          description: 自定义字段
-        wk_id:
-          type: string
-          description: ID
-          example: '7475686493613920050'
-        series:
-          type: string
-          description: 序列号
-          example: A123456
-        effective_for_a_long_time:
-          type: boolean
-          description: 是否长期有效
-      required:
-      - national_id_type_id
-      - national_id_number
-      - country_region_id
     Name2:
       type: object
       properties:
@@ -52597,7 +52761,7 @@ components:
           description: 办公地址详细信息
       required:
       - hiberarchy_common
-    Item7:
+    Item6:
       type: object
       properties:
         name:
@@ -52669,7 +52833,7 @@ components:
         national_id_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item21'
+            $ref: '#/components/schemas/Item18'
           description: 证件号码
         spouses_working_status:
           type: object
@@ -53161,148 +53325,53 @@ components:
       - is_primary
       - is_public
       description: 纳税地址
-    Item8:
+    Item7:
       type: object
       properties:
-        relationship:
+        national_id_type_id:
           type: string
-          description: 关系
-          example: parent
-        gender:
+          description: 国家证件类型
+          example: '6863330041896371725'
+        national_id_number:
           type: string
-          description: 性别
-          example: male
-        date_of_birth:
-          type: string
-          description: 生日
-          example: '2020-01-01'
-        national_ids:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item28'
           description: 证件号码
-        spouses_working_status:
+          example: '1231131333'
+        issue_date:
           type: string
-          description: 配偶工作状态
-          example: working
-        is_this_person_covered_by_health_insurance:
-          type: boolean
-          description: 包含家属医疗保险
-          example: 'true'
-        is_this_person_allowed_for_tax_deduction:
-          type: boolean
-          description: 允许家属抵扣税款
-          example: 'false'
-        dependent_name:
+          description: 证件签发日期
+          example: '2020-04-01'
+        expiration_date:
           type: string
-          description: 家庭成员姓名
-          example: 王冰
-        employer:
+          description: 证件到期日期
+          example: '2020-05-21'
+        country_region_id:
           type: string
-          description: 工作单位
-          example: 海淀区交警大队
-        job:
+          description: 国家 / 地区
+          example: '6862995757234914824'
+        issued_by:
           type: string
-          description: 岗位
-          example: 保安
-        phone:
-          allOf:
-          - $ref: '#/components/schemas/Phone3'
-          description: 电话
-        address:
-          allOf:
-          - $ref: '#/components/schemas/Address3'
-          description: 联系地址
+          description: 证件签发机构
+          example: 北京市公安局
         custom_fields:
           type: array
           items:
-            type: object
-            properties:
-              field_name:
-                type: string
-                description: 字段名
-                example: name
-              value:
-                type: string
-                description: 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(123, 123.23, true, [\"id1\",\"id2\], 2006-01-02 15:04:05])
-                example: Sandy
-            required:
-            - field_name
-            - value
+            $ref: '#/components/schemas/OriginValue'
           description: 自定义字段
-        reason:
-          type: string
-          description: 变更原因
-          example: other
-        modify_date:
-          type: string
-          description: 变更日期
-          example: '2020-01-01'
-        visas:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item12'
-          description: Visa 列表
-        passports:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item13'
-          description: Passport 列表
-        citizenship_statuses:
-          type: array
-          items:
-            type: object
-            properties:
-              country_region:
-                type: string
-                description: 国家/地区ID
-                example: '7324333990030034476'
-              citizenship_status:
-                type: string
-                description: 公民身份类型
-                example: 公民
-          description: 居民身份列表
-        id:
+        wk_id:
           type: string
           description: ID
-          example: '7582932711154337324'
-        nationality_v2:
+          example: '7475686493613920050'
+        series:
           type: string
-          description: 国籍ID
-          example: '6862995757234914826'
-        name:
-          allOf:
-          - $ref: '#/components/schemas/Name5'
-          description: 法定姓名
-        emails:
-          type: array
-          items:
-            type: object
-            properties:
-              email:
-                type: string
-                description: 邮箱地址
-                example: 1234567@bytedance.com
-              is_primary:
-                type: boolean
-                description: 是否为主要邮箱,若有多个邮箱，只能有一个邮箱的「is_primary」为true
-                example: 'true'
-              is_public:
-                type: boolean
-                description: 是否为公开邮箱
-                example: 'true'
-              email_usage:
-                type: string
-                description: 邮箱用途，枚举值可通过文档【飞书人事枚举常量】邮箱用途（email_usage）枚举定义获得
-                example: work
-            required:
-            - email
-            - is_primary
-            - is_public
-            - email_usage
-          description: email 列表
+          description: 序列号
+          example: A123456
+        effective_for_a_long_time:
+          type: boolean
+          description: 是否长期有效
       required:
-      - relationship
+      - national_id_type_id
+      - national_id_number
+      - country_region_id
     Name3:
       type: object
       properties:
@@ -53441,7 +53510,7 @@ components:
       required:
       - country_region_id
       - name_type
-    Item9:
+    Item8:
       type: object
       properties:
         relationship:
@@ -53575,17 +53644,17 @@ components:
         visas:
           type: array
           items:
-            $ref: '#/components/schemas/Item12'
+            $ref: '#/components/schemas/Item22'
           description: Visa 列表
         passports:
           type: array
           items:
-            $ref: '#/components/schemas/Item13'
+            $ref: '#/components/schemas/Item23'
           description: Passport 列表
         citizenship_statuses:
           type: array
           items:
-            $ref: '#/components/schemas/Item17'
+            $ref: '#/components/schemas/Item14'
           description: 居民身份列表
         emails:
           type: array
@@ -53837,7 +53906,7 @@ components:
       required:
       - hiberarchy_common
       - effective_time
-    Item10:
+    Item9:
       type: object
       properties:
         name:
@@ -53875,7 +53944,7 @@ components:
         national_id_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item21'
+            $ref: '#/components/schemas/Item18'
           description: 证件号码
         spouses_working_status:
           type: object
@@ -54107,6 +54176,111 @@ components:
           description: 自定义字段
       required:
       - country_region_id
+    Item10:
+      type: object
+      properties:
+        relationship:
+          type: string
+          description: 关系
+          example: parent
+        gender:
+          type: string
+          description: 性别
+          example: male
+        date_of_birth:
+          type: string
+          description: 生日
+          example: '2020-01-01'
+        national_ids:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item44'
+          description: 证件号码
+        spouses_working_status:
+          type: string
+          description: 配偶工作状态
+          example: working
+        is_this_person_covered_by_health_insurance:
+          type: boolean
+          description: 包含家属医疗保险
+          example: 'true'
+        is_this_person_allowed_for_tax_deduction:
+          type: boolean
+          description: 允许家属抵扣税款
+          example: 'false'
+        dependent_name:
+          type: string
+          description: 家庭成员姓名
+          example: 王冰
+        employer:
+          type: string
+          description: 工作单位
+          example: 海淀区交警大队
+        job:
+          type: string
+          description: 岗位
+          example: 保安
+        phone:
+          allOf:
+          - $ref: '#/components/schemas/Phone3'
+          description: 电话
+        address:
+          allOf:
+          - $ref: '#/components/schemas/Address3'
+          description: 联系地址
+        custom_fields:
+          type: array
+          items:
+            type: object
+            properties:
+              field_name:
+                type: string
+                description: 字段名
+                example: name
+              value:
+                type: string
+                description: 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(123, 123.23, true, [\"id1\",\"id2\], 2006-01-02 15:04:05])
+                example: Sandy
+            required:
+            - field_name
+            - value
+          description: 自定义字段
+        reason:
+          type: string
+          description: 变更原因
+          example: other
+        modify_date:
+          type: string
+          description: 变更日期
+          example: '2020-01-01'
+        citizenship_statuses:
+          type: array
+          items:
+            type: object
+            properties:
+              country_region:
+                type: string
+                description: 国家/地区ID
+                example: '7324333990030034476'
+              citizenship_status:
+                type: string
+                description: 公民身份类型
+                example: 公民
+          description: 居民身份列表
+        id:
+          type: string
+          description: ID
+          example: '7582932711154337324'
+        nationality_v2:
+          type: string
+          description: 国籍ID
+          example: '6862995757234914826'
+        name:
+          allOf:
+          - $ref: '#/components/schemas/Name5'
+          description: 法定姓名
+      required:
+      - relationship
     Contract:
       type: object
       properties:
@@ -54545,131 +54719,6 @@ components:
       properties:
         location:
           $ref: '#/components/schemas/Location'
-    Item11:
-      type: object
-      properties:
-        wk_id:
-          type: string
-          description: ID
-          example: '7631172813931613916'
-        country_region_id:
-          type: string
-          description: 国家 / 地区
-          example: '6862995757234914824'
-        gender:
-          type: object
-          properties:
-            enum_name:
-              type: string
-              description: 枚举值
-              example: phone_type
-            display:
-              type: array
-              items:
-                type: object
-                properties:
-                  lang:
-                    type: string
-                    description: 语言编码（IETF BCP 47）
-                    example: zh-CN
-                  value:
-                    type: string
-                    description: 文本内容
-                    example: 中文示例
-                required:
-                - lang
-                - value
-              description: 枚举多语展示
-          required:
-          - enum_name
-          description: -| 性别，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - custom_api_name：gender - object_api_name：person
-        religion:
-          type: object
-          properties:
-            enum_name:
-              type: string
-              description: 枚举值
-              example: phone_type
-            display:
-              type: array
-              items:
-                type: object
-                properties:
-                  lang:
-                    type: string
-                    description: 语言编码（IETF BCP 47）
-                    example: zh-CN
-                  value:
-                    type: string
-                    description: 文本内容
-                    example: 中文示例
-                required:
-                - lang
-                - value
-              description: 枚举多语展示
-          required:
-          - enum_name
-          description: -| 宗教信仰，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - object_api_name：person - custom_api_name：religion
-        marital_status:
-          type: object
-          properties:
-            enum_name:
-              type: string
-              description: 枚举值
-              example: phone_type
-            display:
-              type: array
-              items:
-                type: object
-                properties:
-                  lang:
-                    type: string
-                    description: 语言编码（IETF BCP 47）
-                    example: zh-CN
-                  value:
-                    type: string
-                    description: 文本内容
-                    example: 中文示例
-                required:
-                - lang
-                - value
-              description: 枚举多语展示
-          required:
-          - enum_name
-          description: -| 婚姻状况，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - custom_api_name：marital_status - object_api_name：person
-        ethnicity_race:
-          type: object
-          properties:
-            enum_name:
-              type: string
-              description: 枚举值
-              example: phone_type
-            display:
-              type: array
-              items:
-                type: object
-                properties:
-                  lang:
-                    type: string
-                    description: 语言编码（IETF BCP 47）
-                    example: zh-CN
-                  value:
-                    type: string
-                    description: 文本内容
-                    example: 中文示例
-                required:
-                - lang
-                - value
-              description: 枚举多语展示
-          required:
-          - enum_name
-          description: -| 民族 / 种族，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - custom_api_name：ethnicity_race - object_api_name：person
-        marital_status_date:
-          type: string
-          description: 婚姻状况生效日期
-          example: '2020-10-01'
-      required:
-      - country_region_id
     HiberarchyCommon:
       type: object
       properties:
@@ -54775,76 +54824,6 @@ components:
       - name
       - active
       description: 层级关系，内层字段见实体
-    Item12:
-      type: object
-      properties:
-        wk_id:
-          type: string
-          description: ID
-          example: '7624287918708785155'
-        country_region_id:
-          type: string
-          description: 国家 / 地区
-          example: '6862995757234914824'
-        national_id_type_id:
-          type: string
-          description: Visa 类型
-          example: '6863330041896371725'
-        visa_number:
-          type: string
-          description: Visa 号码
-          example: '1231131333'
-        issued_date:
-          type: string
-          description: Visa 签发日期
-          example: '2020-04-01'
-        expiration_date:
-          type: string
-          description: Visa 到期日期
-          example: '2020-05-21'
-        issued_by:
-          type: string
-          description: Visa 签发机构
-          example: 北京市公安局
-      required:
-      - country_region_id
-      - national_id_type_id
-      - visa_number
-    Item13:
-      type: object
-      properties:
-        wk_id:
-          type: string
-          description: ID
-          example: '7631172813931613916'
-        country_region_id:
-          type: string
-          description: 国家 / 地区
-          example: '6862995757234914824'
-        national_id_type_id:
-          type: string
-          description: Passport 类型
-          example: '6863330041896371725'
-        passport_number:
-          type: string
-          description: Passport 号码
-          example: '1231131333'
-        issued_date:
-          type: string
-          description: Passport 签发日期
-          example: '2020-04-01'
-        expiration_date:
-          type: string
-          description: Passport 到期日期
-          example: '2020-05-21'
-        issued_by:
-          type: string
-          description: Passport 签发机构
-          example: 北京市公安局
-      required:
-      - country_region_id
-      - national_id_type_id
-      - passport_number
     Schema5:
       type: object
       properties:
@@ -54854,7 +54833,7 @@ components:
           type: string
         data:
           $ref: '#/components/schemas/Data3'
-    Item14:
+    Item11:
       type: object
       properties:
         company_organization:
@@ -54938,7 +54917,7 @@ components:
           items:
             $ref: '#/components/schemas/OriginValue'
           description: 自定义字段
-    Item15:
+    Item12:
       type: object
       properties:
         variable_api_name:
@@ -54952,104 +54931,13 @@ components:
         sub_values:
           type: array
           items:
-            $ref: '#/components/schemas/Item33'
+            $ref: '#/components/schemas/Item32'
           description: 在list_values和record_values中引用的变量
     Data3:
       type: object
       properties:
         department:
           $ref: '#/components/schemas/Department'
-    Name5:
-      type: object
-      properties:
-        full_name:
-          type: string
-          description: 全名
-          example: 李一一
-        first_name:
-          type: string
-          description: 名
-          example: 一
-        middle_name:
-          type: string
-          description: 中间名
-          example: 一
-        name_primary:
-          type: string
-          description: 姓
-          example: 李
-        local_first_name:
-          type: string
-          description: 名 - 本地文字
-          example: 一
-        local_middle_name:
-          type: string
-          description: 本地中间名
-          example: 一
-        local_primary:
-          type: string
-          description: 姓 - 本地文字
-          example: 李
-        custom_local_name:
-          type: string
-          description: 自定义姓名（本地文字）
-          example: 李一一
-        custom_western_name:
-          type: string
-          description: 自定义姓名（西方文字）
-          example: YiyiLi
-        country_region:
-          type: string
-          description: 国家/地区
-          example: '6862995757234914824'
-        name_type:
-          type: string
-          description: 姓名类型，枚举值
-          example: legal_name，preferred_name，additional_name
-        additional_name:
-          type: string
-          description: 别名
-          example: 别名
-        wk_id:
-          type: string
-          description: ID
-          example: '7475686493613920050'
-        hereditary:
-          type: string
-          description: 姓氏称谓
-          example: 王
-        secondary:
-          type: string
-          description: 第二姓氏
-          example: 王
-        social:
-          type: string
-          description: 尊称,枚举值。可选项可以通过【获取字段详情】接口查询，查询参数如下： - object_api_name = "person_name" - custom_api_name = "social"
-          example: ii
-        tertiary:
-          type: string
-          description: 婚后姓氏
-          example: 王
-        title:
-          type: string
-          description: 头衔, 枚举值。可选项可以通过【获取字段详情】接口查询，查询参数如下： - object_api_name = "person_name" - custom_api_name = "title"
-          example: mr
-        local_secondary:
-          type: string
-          description: 第二姓氏 - 本地文字
-          example: 王
-        local_first_name_2:
-          type: string
-          description: 名 - 第二本地文字
-          example: 五
-        local_primary_2:
-          type: string
-          description: 姓 - 第二本地文字
-          example: 王
-      required:
-      - country_region
-      - name_type
-      description: 法定姓名
     Schema6:
       type: object
       properties:
@@ -55160,7 +55048,7 @@ components:
                 example: '6863326263210149383'
           description: record类型字段值
       description: 变量值
-    Item16:
+    Item13:
       type: object
       properties:
         local_primary:
@@ -55632,7 +55520,7 @@ components:
       required:
       - country_region_id
       description: 注册地址详细信息
-    Item17:
+    Item14:
       type: object
       properties:
         id:
@@ -55695,50 +55583,6 @@ components:
           type: string
         data:
           $ref: '#/components/schemas/Data5'
-    Item18:
-      type: object
-      properties:
-        email:
-          type: string
-          description: 邮箱地址
-          example: 1234567@bytedance.com
-        is_primary:
-          type: boolean
-          description: 是否为主要邮箱
-          example: 'true'
-        is_public:
-          type: boolean
-          description: 是否为公开邮箱
-          example: 'true'
-        email_usage:
-          type: object
-          properties:
-            enum_name:
-              type: string
-              description: 枚举值
-              example: phone_type
-            display:
-              type: array
-              items:
-                type: object
-                properties:
-                  lang:
-                    type: string
-                    description: 语言编码（IETF BCP 47）
-                    example: zh-CN
-                  value:
-                    type: string
-                    description: 文本内容
-                    example: 中文示例
-                required:
-                - lang
-                - value
-              description: 枚举多语展示
-          required:
-          - enum_name
-          description: 邮箱用途，枚举值可通过文档【飞书人事枚举常量】邮箱用途（email_usage）枚举定义获得
-      required:
-      - email
     TaxInfoMy:
       type: object
       properties:
@@ -55810,7 +55654,7 @@ components:
         field_variable_values:
           type: array
           items:
-            $ref: '#/components/schemas/Item19'
+            $ref: '#/components/schemas/Item16'
           description: 表单数据
         process_id:
           type: string
@@ -55942,7 +55786,132 @@ components:
           description: 自定义字段
       required:
       - country_region_id
-    Item19:
+    Item15:
+      type: object
+      properties:
+        wk_id:
+          type: string
+          description: ID
+          example: '7631172813931613916'
+        country_region_id:
+          type: string
+          description: 国家 / 地区
+          example: '6862995757234914824'
+        gender:
+          type: object
+          properties:
+            enum_name:
+              type: string
+              description: 枚举值
+              example: phone_type
+            display:
+              type: array
+              items:
+                type: object
+                properties:
+                  lang:
+                    type: string
+                    description: 语言编码（IETF BCP 47）
+                    example: zh-CN
+                  value:
+                    type: string
+                    description: 文本内容
+                    example: 中文示例
+                required:
+                - lang
+                - value
+              description: 枚举多语展示
+          required:
+          - enum_name
+          description: -| 性别，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - custom_api_name：gender - object_api_name：person
+        religion:
+          type: object
+          properties:
+            enum_name:
+              type: string
+              description: 枚举值
+              example: phone_type
+            display:
+              type: array
+              items:
+                type: object
+                properties:
+                  lang:
+                    type: string
+                    description: 语言编码（IETF BCP 47）
+                    example: zh-CN
+                  value:
+                    type: string
+                    description: 文本内容
+                    example: 中文示例
+                required:
+                - lang
+                - value
+              description: 枚举多语展示
+          required:
+          - enum_name
+          description: -| 宗教信仰，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - object_api_name：person - custom_api_name：religion
+        marital_status:
+          type: object
+          properties:
+            enum_name:
+              type: string
+              description: 枚举值
+              example: phone_type
+            display:
+              type: array
+              items:
+                type: object
+                properties:
+                  lang:
+                    type: string
+                    description: 语言编码（IETF BCP 47）
+                    example: zh-CN
+                  value:
+                    type: string
+                    description: 文本内容
+                    example: 中文示例
+                required:
+                - lang
+                - value
+              description: 枚举多语展示
+          required:
+          - enum_name
+          description: -| 婚姻状况，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - custom_api_name：marital_status - object_api_name：person
+        ethnicity_race:
+          type: object
+          properties:
+            enum_name:
+              type: string
+              description: 枚举值
+              example: phone_type
+            display:
+              type: array
+              items:
+                type: object
+                properties:
+                  lang:
+                    type: string
+                    description: 语言编码（IETF BCP 47）
+                    example: zh-CN
+                  value:
+                    type: string
+                    description: 文本内容
+                    example: 中文示例
+                required:
+                - lang
+                - value
+              description: 枚举多语展示
+          required:
+          - enum_name
+          description: -| 民族 / 种族，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - custom_api_name：ethnicity_race - object_api_name：person
+        marital_status_date:
+          type: string
+          description: 婚姻状况生效日期
+          example: '2020-10-01'
+      required:
+      - country_region_id
+    Item16:
       type: object
       properties:
         variable_api_name:
@@ -55970,7 +55939,7 @@ components:
         sub_values:
           type: array
           items:
-            $ref: '#/components/schemas/Item41'
+            $ref: '#/components/schemas/Item40'
           description: 在list_values和record_values中引用的变量
     Schema8:
       type: object
@@ -55981,7 +55950,7 @@ components:
           type: string
         data:
           $ref: '#/components/schemas/Data6'
-    Item20:
+    Item17:
       type: object
       properties:
         company_organization:
@@ -56077,7 +56046,7 @@ components:
             - field_name
             - value
           description: 自定义字段
-    Item21:
+    Item18:
       type: object
       properties:
         national_id_type_id:
@@ -56441,7 +56410,7 @@ components:
       - is_primary
       - is_public
       description: 注册地址
-    Item22:
+    Item19:
       type: object
       properties:
         legal_name:
@@ -56793,6 +56762,50 @@ components:
           description: 是否享有派驻津贴
           example: 'true'
       description: 外派信息
+    Item20:
+      type: object
+      properties:
+        email:
+          type: string
+          description: 邮箱地址
+          example: 1234567@bytedance.com
+        is_primary:
+          type: boolean
+          description: 是否为主要邮箱
+          example: 'true'
+        is_public:
+          type: boolean
+          description: 是否为公开邮箱
+          example: 'true'
+        email_usage:
+          type: object
+          properties:
+            enum_name:
+              type: string
+              description: 枚举值
+              example: phone_type
+            display:
+              type: array
+              items:
+                type: object
+                properties:
+                  lang:
+                    type: string
+                    description: 语言编码（IETF BCP 47）
+                    example: zh-CN
+                  value:
+                    type: string
+                    description: 文本内容
+                    example: 中文示例
+                required:
+                - lang
+                - value
+              description: 枚举多语展示
+          required:
+          - enum_name
+          description: 邮箱用途，枚举值可通过文档【飞书人事枚举常量】邮箱用途（email_usage）枚举定义获得
+      required:
+      - email
     Value2:
       type: object
       properties:
@@ -57092,7 +57105,7 @@ components:
       - object_api_name
       - type
       description: 自定义字段详情
-    Item23:
+    Item21:
       type: object
       properties:
         id:
@@ -57282,6 +57295,76 @@ components:
       properties:
         job_data:
           $ref: '#/components/schemas/JobData'
+    Item22:
+      type: object
+      properties:
+        wk_id:
+          type: string
+          description: ID
+          example: '7624287918708785155'
+        country_region_id:
+          type: string
+          description: 国家 / 地区
+          example: '6862995757234914824'
+        national_id_type_id:
+          type: string
+          description: Visa 类型
+          example: '6863330041896371725'
+        visa_number:
+          type: string
+          description: Visa 号码
+          example: '1231131333'
+        issued_date:
+          type: string
+          description: Visa 签发日期
+          example: '2020-04-01'
+        expiration_date:
+          type: string
+          description: Visa 到期日期
+          example: '2020-05-21'
+        issued_by:
+          type: string
+          description: Visa 签发机构
+          example: 北京市公安局
+      required:
+      - country_region_id
+      - national_id_type_id
+      - visa_number
+    Item23:
+      type: object
+      properties:
+        wk_id:
+          type: string
+          description: ID
+          example: '7631172813931613916'
+        country_region_id:
+          type: string
+          description: 国家 / 地区
+          example: '6862995757234914824'
+        national_id_type_id:
+          type: string
+          description: Passport 类型
+          example: '6863330041896371725'
+        passport_number:
+          type: string
+          description: Passport 号码
+          example: '1231131333'
+        issued_date:
+          type: string
+          description: Passport 签发日期
+          example: '2020-04-01'
+        expiration_date:
+          type: string
+          description: Passport 到期日期
+          example: '2020-05-21'
+        issued_by:
+          type: string
+          description: Passport 签发机构
+          example: 北京市公安局
+      required:
+      - country_region_id
+      - national_id_type_id
+      - passport_number
     JobData:
       type: object
       properties:
@@ -58193,65 +58276,6 @@ components:
             - custom_api_name
             - value
           description: 自定义字段
-    Item28:
-      type: object
-      properties:
-        country_region_id:
-          type: string
-          description: 国家 / 地区
-          example: '6862995757234914824'
-        national_id_type_id:
-          type: string
-          description: 国家证件类型
-          example: '6863330041896371725'
-        national_id_number:
-          type: string
-          description: 证件号码
-          example: '1231131333'
-        issue_date:
-          type: string
-          description: 证件签发日期
-          example: '2020-04-01'
-        expiration_date:
-          type: string
-          description: 证件到期日期
-          example: '2020-05-21'
-        issued_by:
-          type: string
-          description: 证件签发机构
-          example: 北京市公安局
-        custom_fields:
-          type: array
-          items:
-            type: object
-            properties:
-              field_name:
-                type: string
-                description: 字段名
-                example: name
-              value:
-                type: string
-                description: 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(123, 123.23, true, [\"id1\",\"id2\], 2006-01-02 15:04:05])
-                example: Sandy
-            required:
-            - field_name
-            - value
-          description: 自定义字段
-        wk_id:
-          type: string
-          description: ID
-          example: '7475686493613920050'
-        series:
-          type: string
-          description: 序列号
-          example: A123456
-        effective_for_a_long_time:
-          type: boolean
-          description: 是否长期有效
-      required:
-      - country_region_id
-      - national_id_type_id
-      - national_id_number
     JobLevel:
       type: object
       properties:
@@ -58340,7 +58364,7 @@ components:
       - level_order
       - name
       - active
-    Item29:
+    Item28:
       type: object
       properties:
         bank_name:
@@ -58483,7 +58507,7 @@ components:
       required:
       - bank_account_number
       - account_holder
-    Item30:
+    Item29:
       type: object
       properties:
         year_resident_tax:
@@ -58541,7 +58565,7 @@ components:
           description: 自定义字段
       required:
       - year_resident_tax
-    Item31:
+    Item30:
       type: object
       properties:
         bank_name:
@@ -58680,7 +58704,7 @@ components:
       required:
       - bank_account_number
       - account_holder
-    Item32:
+    Item31:
       type: object
       properties:
         tax_country_region:
@@ -58725,7 +58749,7 @@ components:
       properties:
         national_id_type:
           $ref: '#/components/schemas/NationalIdType'
-    Item33:
+    Item32:
       type: object
       properties:
         key:
@@ -58736,7 +58760,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/Value'
           description: 变量值
-    Item34:
+    Item33:
       type: object
       properties:
         bank_name:
@@ -59003,7 +59027,7 @@ components:
       properties:
         job_family:
           $ref: '#/components/schemas/JobFamily'
-    Item35:
+    Item34:
       type: object
       properties:
         address_id:
@@ -59154,6 +59178,97 @@ components:
       properties:
         job_level:
           $ref: '#/components/schemas/JobLevel'
+    Name5:
+      type: object
+      properties:
+        full_name:
+          type: string
+          description: 全名
+          example: 李一一
+        first_name:
+          type: string
+          description: 名
+          example: 一
+        middle_name:
+          type: string
+          description: 中间名
+          example: 一
+        name_primary:
+          type: string
+          description: 姓
+          example: 李
+        local_first_name:
+          type: string
+          description: 名 - 本地文字
+          example: 一
+        local_middle_name:
+          type: string
+          description: 本地中间名
+          example: 一
+        local_primary:
+          type: string
+          description: 姓 - 本地文字
+          example: 李
+        custom_local_name:
+          type: string
+          description: 自定义姓名（本地文字）
+          example: 李一一
+        custom_western_name:
+          type: string
+          description: 自定义姓名（西方文字）
+          example: YiyiLi
+        country_region:
+          type: string
+          description: 国家/地区
+          example: '6862995757234914824'
+        name_type:
+          type: string
+          description: 姓名类型，枚举值
+          example: legal_name，preferred_name，additional_name
+        additional_name:
+          type: string
+          description: 别名
+          example: 别名
+        wk_id:
+          type: string
+          description: ID
+          example: '7475686493613920050'
+        hereditary:
+          type: string
+          description: 姓氏称谓
+          example: 王
+        secondary:
+          type: string
+          description: 第二姓氏
+          example: 王
+        social:
+          type: string
+          description: 尊称,枚举值。可选项可以通过【获取字段详情】接口查询，查询参数如下： - object_api_name = "person_name" - custom_api_name = "social"
+          example: ii
+        tertiary:
+          type: string
+          description: 婚后姓氏
+          example: 王
+        title:
+          type: string
+          description: 头衔, 枚举值。可选项可以通过【获取字段详情】接口查询，查询参数如下： - object_api_name = "person_name" - custom_api_name = "title"
+          example: mr
+        local_secondary:
+          type: string
+          description: 第二姓氏 - 本地文字
+          example: 王
+        local_first_name_2:
+          type: string
+          description: 名 - 第二本地文字
+          example: 五
+        local_primary_2:
+          type: string
+          description: 姓 - 第二本地文字
+          example: 王
+      required:
+      - country_region
+      - name_type
+      description: 法定姓名
     Schema15:
       type: object
       properties:
@@ -59163,7 +59278,7 @@ components:
           type: string
         data:
           $ref: '#/components/schemas/Data14'
-    Item36:
+    Item35:
       type: object
       properties:
         personal_profile_type:
@@ -59207,7 +59322,7 @@ components:
                 description: 文件名
                 example: document.txt
           description: 上传文件列表
-    Item37:
+    Item36:
       type: object
       properties:
         bank_name:
@@ -59398,7 +59513,7 @@ components:
           type: string
         data:
           $ref: '#/components/schemas/Data15'
-    Item38:
+    Item37:
       type: object
       properties:
         signature_file_id:
@@ -59592,7 +59707,7 @@ components:
           - value
           description: 名称
       description: 转正后通知期（主动离职）
-    Item39:
+    Item38:
       type: object
       properties:
         dimensions:
@@ -59654,7 +59769,7 @@ components:
           description: 多周期编制规划信息
       required:
       - dimensions
-    Item40:
+    Item39:
       type: object
       properties:
         email:
@@ -60196,7 +60311,7 @@ components:
         is_prefer_manual_encoding:
           type: boolean
           description: 是否优先使用手动编码。设置为 true 时，即使开启了自动编码功能，系统也会优先采用请求中传入的手动编码值；仅当未传入手动编码时，才回退至自动编码。设置为 false 或未传入时，遵循系统默认的编码策略。
-    Item41:
+    Item40:
       type: object
       properties:
         key:
@@ -60379,7 +60494,7 @@ components:
       - name
       - default_employee_type
       - active
-    Item42:
+    Item41:
       type: object
       properties:
         country_region_id:
@@ -60607,7 +60722,7 @@ components:
       - type
       - active
       description: 公司基本信息
-    Item43:
+    Item42:
       type: object
       properties:
         school:
@@ -60719,7 +60834,7 @@ components:
           description: 自定义字段
       required:
       - school
-    Item44:
+    Item43:
       type: object
       properties:
         school:
@@ -61017,6 +61132,98 @@ components:
         is_prefer_manual_encoding:
           type: boolean
           description: 是否优先使用手动编码。设置为 true 时，即使开启了自动编码功能，系统也会优先采用请求中传入的手动编码值；仅当未传入手动编码时，才回退至自动编码。设置为 false 或未传入时，遵循系统默认的编码策略。
+    Item44:
+      type: object
+      properties:
+        country_region_id:
+          type: string
+          description: 国家 / 地区
+          example: '6862995757234914824'
+        national_id_type_id:
+          type: string
+          description: 国家证件类型
+          example: '6863330041896371725'
+        national_id_number:
+          type: string
+          description: 证件号码
+          example: '1231131333'
+        issue_date:
+          type: string
+          description: 证件签发日期
+          example: '2020-04-01'
+        expiration_date:
+          type: string
+          description: 证件到期日期
+          example: '2020-05-21'
+        issued_by:
+          type: string
+          description: 证件签发机构
+          example: 北京市公安局
+        custom_fields:
+          type: array
+          items:
+            type: object
+            properties:
+              field_name:
+                type: string
+                description: 字段名
+                example: name
+              value:
+                type: string
+                description: 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(123, 123.23, true, [\"id1\",\"id2\], 2006-01-02 15:04:05])
+                example: Sandy
+            required:
+            - field_name
+            - value
+          description: 自定义字段
+        wk_id:
+          type: string
+          description: ID
+          example: '7475686493613920050'
+      required:
+      - country_region_id
+      - national_id_type_id
+      - national_id_number
+    Item45:
+      type: object
+      properties:
+        national_id_type_id:
+          type: string
+          description: 国家证件类型
+          example: '6863330041896371725'
+        national_id_number:
+          type: string
+          description: 证件号码
+          example: '1231131333'
+        issue_date:
+          type: string
+          description: 证件签发日期
+          example: '2020-04-01'
+        expiration_date:
+          type: string
+          description: 证件到期日期
+          example: '2020-05-21'
+        country_region_id:
+          type: string
+          description: 国家 / 地区
+          example: '6862995757234914824'
+        issued_by:
+          type: string
+          description: 证件签发机构
+          example: 北京市公安局
+        custom_fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/OriginValue'
+          description: 自定义字段
+        wk_id:
+          type: string
+          description: ID
+          example: '7475686493613920050'
+      required:
+      - national_id_type_id
+      - national_id_number
+      - country_region_id
     Schema21:
       type: object
       properties:
@@ -61035,7 +61242,7 @@ components:
           type: string
         data:
           $ref: '#/components/schemas/Data18'
-    Item45:
+    Item46:
       type: object
       properties:
         bank_name:
@@ -61140,7 +61347,7 @@ components:
       properties:
         working_hours_type:
           $ref: '#/components/schemas/WorkingHoursType'
-    Item46:
+    Item47:
       type: object
       properties:
         company_organization:
@@ -61242,7 +61449,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/Item38'
+            $ref: '#/components/schemas/Item37'
           description: 电子签文件信息
         page_token:
           type: string
@@ -61316,7 +61523,7 @@ components:
       properties:
         employee_type:
           $ref: '#/components/schemas/EmployeeType'
-    Item47:
+    Item48:
       type: object
       properties:
         rule_dimension:
@@ -61653,7 +61860,7 @@ components:
       - active
       - effective_time
       description: 序列
-    Item48:
+    Item49:
       type: object
       properties:
         seniority_adjustment_type:
@@ -62086,7 +62293,7 @@ components:
           description: 姓
           example: 王
       description: 法定姓名
-    Item49:
+    Item50:
       type: object
       properties:
         seniority_adjustment:
@@ -62145,7 +62352,7 @@ components:
           items:
             $ref: '#/components/schemas/OriginValue'
           description: 自定义字段
-    Item50:
+    Item51:
       type: object
       properties:
         name:
@@ -62356,7 +62563,7 @@ components:
             - field_name
             - value
           description: 自定义字段
-    Item51:
+    Item52:
       type: object
       properties:
         bank_name:
@@ -62536,7 +62743,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/Item39'
+            $ref: '#/components/schemas/Item38'
           description: 集中填报的一些填报行
     CommonInfo:
       type: object
@@ -62576,7 +62783,7 @@ components:
       - source
       - apiname
       description: 电子签模版公共字段信息
-    Item52:
+    Item53:
       type: object
       properties:
         country_region:
@@ -62824,7 +63031,7 @@ components:
         items:
           type: array
           items:
-            $ref: '#/components/schemas/Item39'
+            $ref: '#/components/schemas/Item38'
           description: 编制规划的多个明细行
     Currency:
       type: object
@@ -62873,7 +63080,7 @@ components:
             '1': 生效
             '0': 失效
           example: '1'
-    Item53:
+    Item54:
       type: object
       properties:
         native_region:
@@ -62940,7 +63147,7 @@ components:
             required:
             - enum_name
           description: 政治面貌，枚举值可查询【获取字段详情】接口获取，按如下参数查询即可： - custom_api_name：political_affiliation - object_api_name：person_info_chn
-    Item54:
+    Item55:
       type: object
       properties:
         origin_value:
@@ -62951,7 +63158,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/OriginValue'
           description: 调整后
-    Item55:
+    Item56:
       type: object
       properties:
         international_area_code:
@@ -63021,20 +63228,20 @@ components:
         conditions:
           type: array
           items:
-            $ref: '#/components/schemas/Item64'
+            $ref: '#/components/schemas/Item65'
           description: 规则
         logic_expression:
           type: string
           description: 表达式
           example: 1 and 2
       description: 规则
-    Item56:
+    Item57:
       type: object
       properties:
         match_rules:
           type: array
           items:
-            $ref: '#/components/schemas/Item62'
+            $ref: '#/components/schemas/Item63'
           description: 匹配规则组，组内取交集
     Subdivision:
       type: object
@@ -63158,7 +63365,7 @@ components:
         is_prefer_manual_encoding:
           type: boolean
           description: 是否优先使用手动编码。设置为 true 时，即使开启了自动编码功能，系统也会优先采用请求中传入的手动编码值；仅当未传入手动编码时，才回退至自动编码。设置为 false 或未传入时，遵循系统默认的编码策略。
-    Item57:
+    Item58:
       type: object
       properties:
         personal_profile_type:
@@ -63198,7 +63405,7 @@ components:
                 description: 上传文件ID
                 example: 150018109586e8ea745e47ae8feb3722dbe1d03a181336393633393133303431393831343930373235150200
           description: 上传文件列表
-    Item58:
+    Item59:
       type: object
       properties:
         wk_id:
@@ -63255,7 +63462,7 @@ components:
           example: '2020-10-01'
       required:
       - country_region_id
-    Item59:
+    Item60:
       type: object
       properties:
         grantee_id:
@@ -63265,7 +63472,7 @@ components:
         management_scopes:
           type: array
           items:
-            $ref: '#/components/schemas/Item67'
+            $ref: '#/components/schemas/Item68'
           description: 管理范围，交叉角色时有值
       required:
       - grantee_id
@@ -63379,7 +63586,7 @@ components:
             - field_name
             - value
           description: 自定义字段
-    Item60:
+    Item61:
       type: object
       properties:
         custom_org_list:
@@ -63433,7 +63640,7 @@ components:
           type: string
           description: 用户id
           example: '7352797725202581036'
-    Item61:
+    Item62:
       type: object
       properties:
         template_signatory_type:
@@ -63594,7 +63801,7 @@ components:
       - name
       - active
       description: 层级关系，内层字段见实体
-    Item62:
+    Item63:
       type: object
       properties:
         left_value:
@@ -63629,7 +63836,7 @@ components:
       required:
       - left_value
       - operator
-    Item63:
+    Item64:
       type: object
       properties:
         bank_name:
@@ -63681,7 +63888,7 @@ components:
       required:
       - bank_account_number
       - account_holder
-    Item64:
+    Item65:
       type: object
       properties:
         left:
@@ -63900,7 +64107,7 @@ components:
           description: tax_relief_5
           example: '1.1'
       description: 马来税务信息
-    Item65:
+    Item66:
       type: object
       properties:
         seniority_adjustment:
@@ -63966,14 +64173,14 @@ components:
         enum_field_option_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item72'
+            $ref: '#/components/schemas/Item73'
           description: 枚举选项信息
         is_multiple:
           type: boolean
           description: 是否为多选
           example: 'false'
       description: 枚举配置信息
-    Item66:
+    Item67:
       type: object
       properties:
         email:
@@ -64017,7 +64224,7 @@ components:
           description: 自定义字段
       required:
       - email
-    Item67:
+    Item68:
       type: object
       properties:
         org_id:
@@ -64061,7 +64268,7 @@ components:
       required:
       - org_id
       - org_type
-    Item68:
+    Item69:
       type: object
       properties:
         company_name:
@@ -64114,7 +64321,7 @@ components:
           type: string
         data:
           $ref: '#/components/schemas/Data21'
-    Item69:
+    Item70:
       type: object
       properties:
         school_name:
@@ -64240,7 +64447,7 @@ components:
             - lang
             - value
           description: 描述
-    Item70:
+    Item71:
       type: object
       properties:
         year_resident_tax:
@@ -64476,7 +64683,7 @@ components:
             - option_api_name
             - name
           description: 枚举全部选项列表
-    Item71:
+    Item72:
       type: object
       properties:
         email:
@@ -64512,7 +64719,7 @@ components:
           description: 邮箱用途，枚举值可通过文档【飞书人事枚举常量】邮箱用途（email_usage）枚举定义获得
       required:
       - email
-    Item72:
+    Item73:
       type: object
       properties:
         api_name:
@@ -64580,39 +64787,6 @@ components:
             - value
           description: 自定义字段
       description: 原工作信息
-    Item73:
-      type: object
-      properties:
-        wk_id:
-          type: string
-          description: ID
-          example: '7631172813931613916'
-        country_region_id:
-          type: string
-          description: 国家 / 地区
-          example: '6862995757234914824'
-        gender:
-          type: string
-          description: 性别，枚举值 。可选项可通过【获取字段详情】接口查询，查询参数如下： object_api_name = "person" custom_api_name = "gender"
-          example: female
-        religion:
-          type: string
-          description: 宗教信仰，枚举值。枚举值可查询【获取字段详情】接口查询，查询参数如下： - object_api_name："person" custom_api_name = "religion"
-          example: other
-        marital_status:
-          type: string
-          description: 婚姻状况，枚举值。 可选项可通过【获取字段详情】接口查询，查询参数如下： object_api_name = "person" custom_api_name = "marital_status"
-          example: married
-        ethnicity_race:
-          type: string
-          description: 民族 / 种族，枚举值。 可选项可通过【获取字段详情】接口查询，查询参数如下： object_api_name = "person" custom_api_name = "ethnicity_race"
-          example: han
-        marital_status_date:
-          type: string
-          description: 婚姻状况生效日期
-          example: '2020-10-01'
-      required:
-      - country_region_id
     EnumValue:
       type: object
       properties:

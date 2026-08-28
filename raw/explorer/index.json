@@ -8179,7 +8179,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "05b2eca7de30e1b3ec7efcb0dde5c365b4bee490f0424f36b3ddcaea1e8e5283",
+  "sha256": "07f32f631c3c489dfc4ff8ec875594eb7e9ecaa77f62165ac0af755a91852cd5",
   "title": "直接创建待入职",
   "version": "v2"
  },
@@ -8203,7 +8203,7 @@
   "httpMethod": "PATCH",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "eeb59b96ef3370920a9779ae9bebba718fee43a3f4f2eca970c1c30f4a209f33",
+  "sha256": "eb2ade9e20671f8dadc4cc75fe05775775a191516651da113a39ef8bfd69caec",
   "title": "更新待入职信息",
   "version": "v2"
  },
@@ -8215,7 +8215,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "d2bd030e15da8de13fc022581bceb4b5a085ce613f474280a84505d656c3aa7f",
+  "sha256": "391edb4382fc9205fbb9f7a0c698821ca8a7a59db7a86fbf763986c3ca7af2c0",
   "title": "查询待入职信息",
   "version": "v2"
  },
@@ -8239,7 +8239,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "025e40f4a26576eecc8378414107b2858a48fbf1eb938410178f0a5d13b28f86",
+  "sha256": "54b5063264a06e9a5cfa86a820881a7056510cbee2dba9b89bbd35c9017ee15c",
   "title": "搜索待入职信息",
   "version": "v2"
  },
@@ -15271,7 +15271,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.thread",
-  "sha256": "12ebf2e1eea2c1f47e309dabd2c4192856f5a47ca03c4f612f687fc4a8c4ea8a",
+  "sha256": "bf3c8417c77f050c844f0b4a11fbb4cf27c7f9f41df2fef46e9fa709040a3d64",
   "title": "列出邮件会话",
   "version": "v1"
  },
@@ -15799,7 +15799,7 @@
   "httpMethod": "GET",
   "project": "okr",
   "resource": "okr.key_result.progress",
-  "sha256": "24ef1652dd9fabf341d090a4198cfa9869a39a61a95c1294dc9166616f026578",
+  "sha256": "348dd511c29782e890bfc0c1cc94b28f3b8b2597cd185e0827ff654e947f6b0f",
   "title": "获取关键结果下的进展记录",
   "version": "v2"
  },
@@ -17371,7 +17371,7 @@
   "httpMethod": "POST",
   "project": "spark",
   "resource": "app",
-  "sha256": "9607a9221ba6001607b7b49552f1d3b500d3c160211af5dac9fca5b455f7bae1",
+  "sha256": "0b21ee02caff61aadcaf2aa2998fb33b22f76273fa188d77efe86c0d79d5b006",
   "title": "创建妙搭应用",
   "version": "v1"
  },
@@ -17407,7 +17407,7 @@
   "httpMethod": "GET",
   "project": "spark",
   "resource": "app",
-  "sha256": "02b1843f76917e32c8f8b18d741fcb9d61eabb4ac957bc97b908c5ef9ed349ca",
+  "sha256": "f6988650ffdd3a9e75b53fc7c76b4d16e1f8fe9ae47695f106953aeb879a562c",
   "title": "批量获取妙搭应用",
   "version": "v1"
  },
@@ -17419,7 +17419,7 @@
   "httpMethod": "PATCH",
   "project": "spark",
   "resource": "app",
-  "sha256": "21d317737a67f63fe7cb40c68b4181755753bf3d3b15a38939af7599f4187e74",
+  "sha256": "28bf95935c805b9d2b5230272964ca708175668b4ef492123b876d74838ce487",
   "title": "更新妙搭应用信息",
   "version": "v1"
  },
@@ -18235,7 +18235,7 @@
   "httpMethod": "POST",
   "project": "task",
   "resource": "task",
-  "sha256": "1db941a21b141d7620a0154912c6f21c26ef2b0dce1ef9910ce8c881eb387728",
+  "sha256": "bee08849ce0ea2583755bb9f2e8702d8d34494798911f34a22b9f917de771a15",
   "title": "搜索任务",
   "version": "v2"
  },
@@ -18439,7 +18439,7 @@
   "httpMethod": "POST",
   "project": "task",
   "resource": "tasklist",
-  "sha256": "c1d09338788ff1286b81a8776c1f24725249392341b244f85eb6eb31fa436f06",
+  "sha256": "17a5495d28d740dc674cf8bfc7dbabe9217384c7dc5d215b53cff885fba5d51f",
   "title": "搜索清单",
   "version": "v2"
  },
@@ -18583,7 +18583,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "bot",
-  "sha256": "1fb6950fd3f12c4388cad46868eb5d2cb3bd4cebba10ea7b636166509daab3dc",
+  "sha256": "64262d8185bbdcb1c4e4e5ccbd60a0a85e9752691d2579722ec9920d803745ca",
   "title": "获取会议事件列表",
   "version": "v1"
  },

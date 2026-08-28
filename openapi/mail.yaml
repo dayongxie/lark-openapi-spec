@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+4c3dcea7
+  version: 1.0.0+7d867a31
   x-lark-project: mail
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -8256,7 +8256,7 @@ paths:
         required: false
         schema:
           type: string
-        description: 文件夹 id，支持INBOX、SENT、SPAM、ARCHIVED、SCHEDULED、TRASH、DRAFT以及自定义文件夹ID
+        description: 文件夹 id，支持INBOX、SENT、SPAM、ARCHIVED、SCHEDULED、TRASH、DRAFT以及自定义文件夹ID。与 label_id 必须且只能传一个；两个都不传或两个都传都会报错
         example: INBOX 或者用户文件夹 id
       - name: only_unread
         in: query
@@ -8270,7 +8270,7 @@ paths:
         required: false
         schema:
           type: string
-        description: 标签id，支持IMPORTANT、OTHER、FLAGGED以及自定义标签ID
+        description: 标签id，支持IMPORTANT、OTHER、FLAGGED以及自定义标签ID。与 folder_id 必须且只能传一个；两个都不传或两个都传都会报错
         example: FLAGGED
       responses:
         '200':
