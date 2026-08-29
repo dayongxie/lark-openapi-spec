@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: sheets
 description: Spreadsheet operations
-cli_version: 1.0.91
-extracted_at: '2026-08-28T12:48:28Z'
+cli_version: 1.0.92
+extracted_at: '2026-08-29T07:54:50Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +batch-chart-create
@@ -349,7 +349,7 @@ shortcuts:
     type: truncation
     description: Comma-separated info categories to include. truncation additionally estimates whether each cell's content
       is clipped (by row height / col width / font size / wrap) and returns `isRowTruncated` / `isColTruncated` (extra compute;
-      enable only for layout checks or before adjusting row heights / column widths) (value|formula|style|comment|data_validation|truncation)
+      enable only for layout checks or before adjusting row heights / column widths) (value|formula|style|comment|data_validation|conditional_format|truncation)
   - name: --jq
     shorthand: -q
     type: string
@@ -1456,6 +1456,42 @@ shortcuts:
     shorthand: null
     type: string
     description: Filter by rule id
+- name: +cond-format-result-get
+  summary: Read conditional format results as range coordinates and cell_styles only.
+  description: Read conditional format results as range coordinates and cell_styles only.
+  usage: lark-cli sheets +cond-format-result-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +cond-format-result-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --max-chars
+    shorthand: null
+    type: int
+    description: Max output chars per call; default 500000 (safety cap)
+    default: '500000'
 - name: +cond-format-update
   summary: Update an existing cond-format object (read-modify-write; consult --list first).
   description: Update an existing cond-format object (read-modify-write; consult --list first).

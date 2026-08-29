@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: im
 description: Message and group chat management
-cli_version: 1.0.91
-extracted_at: '2026-08-28T12:48:28Z'
+cli_version: 1.0.92
+extracted_at: '2026-08-29T07:54:50Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +chat-create
@@ -935,6 +935,70 @@ shortcuts:
     type: string
     description: user ID type returned in each item (open_id|union_id|user_id)
     default: open_id
+- name: +messages-edit
+  summary: Edit a sent text or rich-text message, optionally updating its attachment zone; bot only (the edit API does not
+    accept user tokens)
+  description: Edit a sent text or rich-text message, optionally updating its attachment zone; bot only (the edit API does
+    not accept user tokens)
+  usage: lark-cli im +messages-edit [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: bot'
+  - name: --clear-attachments
+    shorthand: null
+    type: bool
+    description: clear the post message attachment zone (sets files:[]); cannot be used with --set-attachments
+  - name: --content
+    shorthand: null
+    type: string
+    description: (one of --content/--text/--markdown/--set-attachments required) message content JSON
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +messages-edit
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --markdown
+    shorthand: null
+    type: string
+    description: markdown text (auto-wrapped as post format with style optimization; image URLs auto-resolved)
+  - name: --message-id
+    shorthand: null
+    type: string
+    description: message ID (om_xxx)
+  - name: --msg-type
+    shorthand: null
+    type: string
+    description: message type for --content JSON; when using --markdown/--text the effective type is inferred automatically
+      (text|post)
+    default: text
+  - name: --set-attachments
+    shorthand: null
+    type: strings
+    description: file/folder key (file_xxx), repeatable; sets the post message's attachment zone (requires --markdown or --msg-type
+      post)
+  - name: --text
+    shorthand: null
+    type: string
+    description: plain text message (auto-wrapped as JSON)
 - name: +messages-mget
   summary: Batch get messages by IDs; user/bot; fetches up to 50 om_ message IDs, formats sender names, expands thread replies
   description: Batch get messages by IDs; user/bot; fetches up to 50 om_ message IDs, formats sender names, expands thread
@@ -1028,6 +1092,11 @@ shortcuts:
     shorthand: null
     type: string
     description: 'identity type: bot | user'
+  - name: --attachment
+    shorthand: null
+    type: strings
+    description: file/folder key (file_xxx), repeatable; attaches to the post message's attachment zone (requires --markdown
+      or --msg-type post)
   - name: --audio
     shorthand: null
     type: string
@@ -1214,6 +1283,11 @@ shortcuts:
     shorthand: null
     type: string
     description: 'identity type: bot | user'
+  - name: --attachment
+    shorthand: null
+    type: strings
+    description: file/folder key (file_xxx), repeatable; attaches to the post message's attachment zone (requires --markdown
+      or --msg-type post)
   - name: --audio
     shorthand: null
     type: string
