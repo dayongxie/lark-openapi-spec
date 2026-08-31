@@ -107,7 +107,7 @@ go_track:
   directory: openapi-go/
 full_track:
   source: https://open.feishu.cn/api_explorer/v1 (official API Explorer)
-  generated_at: '2026-08-28T12:48:14Z'
+  generated_at: '2026-08-31T07:03:57Z'
   stats:
     projects: 55
     operations: 1634

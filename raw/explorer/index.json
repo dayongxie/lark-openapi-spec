@@ -18775,7 +18775,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "47f490c7707ba1b2baab225da1452571a9ed63ce5e06d1ba2e71b433bbcc8c3c",
+  "sha256": "7bd76c6b2eabe907ed8547cce04869feba93dbf1f363028ec070c53450344892",
   "title": "获取会议详情",
   "version": "v1"
  },
@@ -18811,7 +18811,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "36f75c5b0e29025adf19a8ea1375374c4a87e4165b61bda7cec37c7f3f417c06",
+  "sha256": "f96d3944eb024787971eac7d574431c136350024d8d6d6f2f741a2fb282153fe",
   "title": "获取与会议号关联的会议列表",
   "version": "v1"
  },
@@ -19003,7 +19003,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "reserve",
-  "sha256": "aefc154cf0e3dfb78fc3fc47d850beee96cedbc2dbfb3645201cfcac5edb7662",
+  "sha256": "82b0ed088cf25738e88e3ec02e4deeee416871f06dca0f8beaea11a12c4079be",
   "title": "获取活跃会议",
   "version": "v1"
  },

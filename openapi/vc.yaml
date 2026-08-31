@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+f1397e90
+  version: 1.0.0+1349c20d
   x-lark-project: vc
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -2863,6 +2863,10 @@ paths:
                               description: 纪要ID
                               example: '6943848821689040898'
                               format: int64
+                            app_link:
+                              type: string
+                              description: 会议详情页链接
+                              example: https://applink.feishu.cn/client/vctab/open?source=chat&action=detail&meetingId=1000000000000001
                         description: 会议简要信息列表
       x-lark-access-tokens:
       - user
@@ -8657,6 +8661,10 @@ components:
           description: 纪要ID
           example: '6943848821689040898'
           format: int64
+        app_link:
+          type: string
+          description: 会议详情页链接
+          example: https://applink.feishu.cn/client/vctab/open?source=chat&action=detail&meetingId=1000000000000001
     MeetingSetting:
       type: object
       properties:
