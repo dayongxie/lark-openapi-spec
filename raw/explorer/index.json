@@ -8239,7 +8239,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "54b5063264a06e9a5cfa86a820881a7056510cbee2dba9b89bbd35c9017ee15c",
+  "sha256": "5def3ef8662021fbe3f2780a361117e26713a9c4a7de1f2122dfc7d8a08bcd2a",
   "title": "搜索待入职信息",
   "version": "v2"
  },
@@ -17183,6 +17183,30 @@
   "title": "修改电子表格属性",
   "version": "v3"
  },
+ "spark/v1/app.available_scope/open_api_get_miaoda_available_scope": {
+  "apiName": "open_api_get_miaoda_available_scope",
+  "apiPath": "/open-apis/spark/v1/available_scope",
+  "category": "飞书妙搭 / 企业管理后台",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app-available_scope/open_api_get_miaoda_available_scope",
+  "httpMethod": "GET",
+  "project": "spark",
+  "resource": "app.available_scope",
+  "sha256": "2fafe9b29e191cbeb984ecc94cb034e96d5159c3545a8e3f68b5422dcf4717d0",
+  "title": "获取妙搭产品使用权限",
+  "version": "v1"
+ },
+ "spark/v1/app.available_scope/open_api_update_miaoda_available_scope": {
+  "apiName": "open_api_update_miaoda_available_scope",
+  "apiPath": "/open-apis/spark/v1/available_scope",
+  "category": "飞书妙搭 / 企业管理后台",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app-available_scope/open_api_update_miaoda_available_scope",
+  "httpMethod": "PUT",
+  "project": "spark",
+  "resource": "app.available_scope",
+  "sha256": "2329779c9c6455b4e5b533566196036eb828afdf644ee700261e3a32c2143df3",
+  "title": "修改妙搭产品使用权限",
+  "version": "v1"
+ },
  "spark/v1/app.enum/get_enum_detail": {
   "apiName": "get_enum_detail",
   "apiPath": "/open-apis/spark/v1/apps/:app_id/enums/:enum_name",
@@ -17411,6 +17435,30 @@
   "title": "批量获取妙搭应用",
   "version": "v1"
  },
+ "spark/v1/app/open_api_analytics_overview": {
+  "apiName": "open_api_analytics_overview",
+  "apiPath": "/open-apis/spark/v1/apps/:app_id/analytics/overview",
+  "category": "飞书妙搭 / 妙搭应用",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app/open_api_analytics_overview",
+  "httpMethod": "GET",
+  "project": "spark",
+  "resource": "app",
+  "sha256": "c520f76c01bbb0bfb7a6a9e6868aeccc8f87ed09d9e1e83593c4aa53c578d5ef",
+  "title": "获取妙搭应用运营数据总览",
+  "version": "v1"
+ },
+ "spark/v1/app/open_api_credit_usage": {
+  "apiName": "open_api_credit_usage",
+  "apiPath": "/open-apis/spark/v1/apps/:app_id/credit_usage",
+  "category": "飞书妙搭 / 妙搭应用",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app/open_api_credit_usage",
+  "httpMethod": "GET",
+  "project": "spark",
+  "resource": "app",
+  "sha256": "5ef1e23b5cc44609c9e1d1d96d78c3ed9b9267efcef812110a42f66e92b8fd85",
+  "title": "获取妙搭应用消耗 AI 额度",
+  "version": "v1"
+ },
  "spark/v1/app/patch": {
   "apiName": "patch",
   "apiPath": "/open-apis/spark/v1/apps/:app_id",
@@ -17421,6 +17469,18 @@
   "resource": "app",
   "sha256": "28bf95935c805b9d2b5230272964ca708175668b4ef492123b876d74838ce487",
   "title": "更新妙搭应用信息",
+  "version": "v1"
+ },
+ "spark/v1/app/query_analytics_data": {
+  "apiName": "query_analytics_data",
+  "apiPath": "/open-apis/spark/v1/apps/:app_id/query_analytics_data",
+  "category": "飞书妙搭 / 妙搭应用",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app/query_analytics_data",
+  "httpMethod": "POST",
+  "project": "spark",
+  "resource": "app",
+  "sha256": "735c3f0ff09113007ef32b18c72aaad8a174e1e3e7c4e56f28d5190446b310ad",
+  "title": "获取妙搭应用运营数据趋势",
   "version": "v1"
  },
  "spark/v1/app/sql_commands": {

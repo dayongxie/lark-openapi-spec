@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-01）
+
+新增 5 · 移除 0 · 定义变更 1（全量共 1639 个接口）
+
+### 新增接口
+- `GET /open-apis/spark/v1/available_scope`「获取妙搭产品使用权限」（spark/v1/app.available_scope/open_api_get_miaoda_available_scope）
+- `PUT /open-apis/spark/v1/available_scope`「修改妙搭产品使用权限」（spark/v1/app.available_scope/open_api_update_miaoda_available_scope）
+- `GET /open-apis/spark/v1/apps/{app_id}/analytics/overview`「获取妙搭应用运营数据总览」（spark/v1/app/open_api_analytics_overview）
+- `GET /open-apis/spark/v1/apps/{app_id}/credit_usage`「获取妙搭应用消耗 AI 额度」（spark/v1/app/open_api_credit_usage）
+- `POST /open-apis/spark/v1/apps/{app_id}/query_analytics_data`「获取妙搭应用运营数据趋势」（spark/v1/app/query_analytics_data）
+
+### 定义变更
+- `POST /open-apis/corehr/v2/pre_hires/search`「搜索待入职信息」（corehr/v2/pre_hire/search）
+
 ## explorer 全量轨道（2026-08-31）
 
 新增 0 · 移除 0 · 定义变更 3（全量共 1634 个接口）

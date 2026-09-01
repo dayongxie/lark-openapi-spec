@@ -14373,6 +14373,81 @@
       "orderMark": "4",
       "parentId": "7620414549658258654",
       "type": 1
+     },
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "open_api_credit_usage",
+        "project": "spark",
+        "resource": "app",
+        "version": "v1"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/spark/v1/apps/:app_id/credit_usage",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app/open_api_credit_usage",
+       "httpMethod": "GET",
+       "supportAppTypes": [
+        "custom",
+        "isv"
+       ]
+      },
+      "id": "7679858182357978054",
+      "name": "获取妙搭应用消耗 AI 额度",
+      "orderMark": "3",
+      "parentId": "7620414549658258654",
+      "type": 1
+     },
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "open_api_analytics_overview",
+        "project": "spark",
+        "resource": "app",
+        "version": "v1"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/spark/v1/apps/:app_id/analytics/overview",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app/open_api_analytics_overview",
+       "httpMethod": "GET",
+       "supportAppTypes": [
+        "custom",
+        "isv"
+       ]
+      },
+      "id": "7679858182357994438",
+      "name": "获取妙搭应用运营数据总览",
+      "orderMark": "2",
+      "parentId": "7620414549658258654",
+      "type": 1
+     },
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "query_analytics_data",
+        "project": "spark",
+        "resource": "app",
+        "version": "v1"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/spark/v1/apps/:app_id/query_analytics_data",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app/query_analytics_data",
+       "httpMethod": "POST",
+       "supportAppTypes": [
+        "custom",
+        "isv"
+       ]
+      },
+      "id": "7679858182358010822",
+      "name": "获取妙搭应用运营数据趋势",
+      "orderMark": "1",
+      "parentId": "7620414549658258654",
+      "type": 1
      }
     ],
     "id": "7620414549658258654",
@@ -14413,6 +14488,64 @@
     "id": "7612851658495298741",
     "name": "通讯录",
     "orderMark": "2",
+    "parentId": "7613807342706412765",
+    "type": 2
+   },
+   {
+    "Score": 0,
+    "children": [
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "open_api_get_miaoda_available_scope",
+        "project": "spark",
+        "resource": "app.available_scope",
+        "version": "v1"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/spark/v1/available_scope",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app-available_scope/open_api_get_miaoda_available_scope",
+       "httpMethod": "GET",
+       "supportAppTypes": [
+        "custom"
+       ]
+      },
+      "id": "7679858182358027206",
+      "name": "获取妙搭产品使用权限",
+      "orderMark": "2",
+      "parentId": "7678631047525682364",
+      "type": 1
+     },
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "open_api_update_miaoda_available_scope",
+        "project": "spark",
+        "resource": "app.available_scope",
+        "version": "v1"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/spark/v1/available_scope",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app-available_scope/open_api_update_miaoda_available_scope",
+       "httpMethod": "PUT",
+       "supportAppTypes": [
+        "custom"
+       ]
+      },
+      "id": "7679858182358043590",
+      "name": "修改妙搭产品使用权限",
+      "orderMark": "1",
+      "parentId": "7678631047525682364",
+      "type": 1
+     }
+    ],
+    "id": "7678631047525682364",
+    "name": "企业管理后台",
+    "orderMark": "1",
     "parentId": "7613807342706412765",
     "type": 2
    }

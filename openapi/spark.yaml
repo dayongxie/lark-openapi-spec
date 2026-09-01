@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+1eb6a4bb
+  version: 1.0.0+a682c59d
   x-lark-project: spark
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -19,6 +19,7 @@ servers:
 - url: https://open.larksuite.com
   description: Lark（国际版）
 tags:
+- name: app.available_scope
 - name: app.enum
 - name: app.storage
 - name: app.table
@@ -26,6 +27,141 @@ tags:
 - name: app
 - name: directory.user
 paths:
+  /open-apis/spark/v1/available_scope:
+    get:
+      operationId: spark_app_available_scope_open_api_get_miaoda_available_scope
+      summary: 获取妙搭产品使用权限
+      tags:
+      - app.available_scope
+      description: 获取妙搭产品的使用权限范围，支持判断当前企业或用户对妙搭产品的访问权限类型，常用于妙搭产品的功能权限校验场景。
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/app-available_scope/open_api_get_miaoda_available_scope
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      available_scope:
+                        type: string
+                        description: 使用权限范围类型
+                        enum:
+                        - ALLOW_ALL
+                        - DENY_ALL
+                        - ALLOW_PART
+                        - DENY_PART
+                        x-enum-descriptions:
+                          ALLOW_ALL: 全部允许
+                          DENY_ALL: 全部拒绝
+                          ALLOW_PART: 部分允许（仅 department_ids / user_ids 中指定的范围）
+                          DENY_PART: 部分拒绝（仅 department_ids / user_ids 中指定的范围）
+                        example: ALLOW_PART
+                      department_ids:
+                        type: array
+                        items:
+                          type: string
+                        description: 部门 ID 列表（仅 ALLOW_PART / DENY_PART 时有效）
+                      user_ids:
+                        type: array
+                        items:
+                          type: string
+                        description: 用户 ID 列表（仅 ALLOW_PART / DENY_PART 时有效）
+      x-lark-access-tokens:
+      - user
+      x-lark-scopes:
+      - spark:admin:read
+      x-lark-error-mappings:
+      - code: 3340001
+        httpCode: 400
+        msg: Invalid request parameter
+      - code: 3340002
+        httpCode: 403
+        msg: No permission to access tenant-level configuration
+      - code: 3340500
+        httpCode: 500
+        msg: Internal server error
+      x-lark-rate-limit:
+        tier: 8
+    put:
+      operationId: spark_app_available_scope_open_api_update_miaoda_available_scope
+      summary: 修改妙搭产品使用权限
+      tags:
+      - app.available_scope
+      description: 修改妙搭产品的使用权限范围，支持设置全部允许、全部拒绝，或基于指定部门、用户的部分允许/部分拒绝规则，用于管控妙搭产品的使用权限。
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/app-available_scope/open_api_update_miaoda_available_scope
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                available_scope:
+                  type: string
+                  description: 使用权限范围类型
+                  enum:
+                  - ALLOW_ALL
+                  - DENY_ALL
+                  - ALLOW_PART
+                  - DENY_PART
+                  x-enum-descriptions:
+                    ALLOW_ALL: 全部允许
+                    DENY_ALL: 全部拒绝
+                    ALLOW_PART: 部分允许（仅 department_ids / user_ids 中指定的范围）
+                    DENY_PART: 部分拒绝（仅 department_ids / user_ids 中指定的范围）
+                  example: ALLOW_PART
+                department_ids:
+                  type: array
+                  items:
+                    type: string
+                  description: 部门 ID 列表（仅 ALLOW_PART / DENY_PART 时生效）
+                user_ids:
+                  type: array
+                  items:
+                    type: string
+                  description: 用户 ID 列表（仅 ALLOW_PART / DENY_PART 时生效）
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+      x-lark-access-tokens:
+      - user
+      x-lark-scopes:
+      - spark:admin:write
+      x-lark-error-mappings:
+      - code: 3340001
+        httpCode: 400
+        msg: Invalid request parameter
+      - code: 3340003
+        httpCode: 403
+        msg: No permission to modify Miaoda available scope
+      - code: 3340500
+        httpCode: 500
+        msg: Internal server error
+      x-lark-rate-limit:
+        tier: 8
   /open-apis/spark/v1/apps/{app_id}/enums/{enum_name}:
     get:
       operationId: spark_app_enum_get_enum_detail
@@ -1839,6 +1975,251 @@ paths:
       x-lark-rate-limit:
         tier: 8
       x-lark-file-upload: true
+  /open-apis/spark/v1/apps/{app_id}/analytics/overview:
+    get:
+      operationId: spark_app_open_api_analytics_overview
+      summary: 获取妙搭应用运营数据总览
+      tags:
+      - app
+      description: 获取指定妙搭应用的运营数据总览，包含活跃用户数、新增用户数、页面访问数三类核心指标的当期值、上一等长区间值、环比绝对差值及环比率，用于快速掌握应用在指定时间区间内的运营表现。
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/app/open_api_analytics_overview
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: 应用 ID
+        example: cli_60d2f8a4b2c3d
+      - name: start_time
+        in: query
+        required: true
+        schema:
+          type: string
+        description: 运营分析区间起始时间戳，单位：秒（Unix 时间戳）
+        example: '1690000000'
+      - name: end_time
+        in: query
+        required: true
+        schema:
+          type: string
+        description: 运营分析区间结束时间戳，单位：秒（Unix 时间戳）。须满足 end_time >= start_time
+        example: '1690086400'
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      active_users:
+                        type: object
+                        properties:
+                          value:
+                            type: string
+                            description: 本区间指标值
+                            example: '12500'
+                          prev_value:
+                            type: string
+                            description: 上一等长区间的指标值（环比基准）
+                            example: '15000'
+                          diff:
+                            type: string
+                            description: 环比绝对变化 = value - prev_value
+                            example: '-2500'
+                          ratio:
+                            type: number
+                            description: 环比变化率（小数，如 -0.714 表示下降 71.4%）；prev_value 为 0 时为 0
+                            example: '-0.1667'
+                        required:
+                        - value
+                        - prev_value
+                        - diff
+                        - ratio
+                        description: 单个运营指标对象（含本区间值、上一等长区间值与环比）。
+                        example: '{"current":1200,"previous":1000,"delta":200,"rate":0.2}'
+                      signups:
+                        type: object
+                        properties:
+                          value:
+                            type: string
+                            description: 本区间指标值
+                            example: '12500'
+                          prev_value:
+                            type: string
+                            description: 上一等长区间的指标值（环比基准）
+                            example: '15000'
+                          diff:
+                            type: string
+                            description: 环比绝对变化 = value - prev_value
+                            example: '-2500'
+                          ratio:
+                            type: number
+                            description: 环比变化率（小数，如 -0.714 表示下降 71.4%）；prev_value 为 0 时为 0
+                            example: '-0.1667'
+                        required:
+                        - value
+                        - prev_value
+                        - diff
+                        - ratio
+                        description: 单个运营指标对象（含本区间值、上一等长区间值与环比）。
+                        example: '{"current":350,"previous":300,"delta":50,"rate":0.1667}'
+                      page_views:
+                        type: object
+                        properties:
+                          value:
+                            type: string
+                            description: 本区间指标值
+                            example: '12500'
+                          prev_value:
+                            type: string
+                            description: 上一等长区间的指标值（环比基准）
+                            example: '15000'
+                          diff:
+                            type: string
+                            description: 环比绝对变化 = value - prev_value
+                            example: '-2500'
+                          ratio:
+                            type: number
+                            description: 环比变化率（小数，如 -0.714 表示下降 71.4%）；prev_value 为 0 时为 0
+                            example: '-0.1667'
+                        required:
+                        - value
+                        - prev_value
+                        - diff
+                        - ratio
+                        description: 单个运营指标对象（含本区间值、上一等长区间值与环比）。
+                        example: '{"current":8500,"previous":7800,"delta":700,"rate":0.0897}'
+      x-lark-access-tokens:
+      - user
+      - tenant
+      x-lark-scopes:
+      - spark:app:read
+      x-lark-error-mappings:
+      - code: 3340001
+        httpCode: 400
+        msg: Invalid request parameter
+      - code: 3340004
+        httpCode: 404
+        msg: App not found
+      - code: 3340500
+        httpCode: 500
+        msg: Internal server error
+      x-lark-rate-limit:
+        tier: 8
+  /open-apis/spark/v1/apps/{app_id}/credit_usage:
+    get:
+      operationId: spark_app_open_api_credit_usage
+      summary: 获取妙搭应用消耗 AI 额度
+      tags:
+      - app
+      description: 功能介绍获取妙搭应用在指定时间范围内的 AI 额度消耗数据，包含区间累计总额度、企业额度、个人额度消耗，以及按天拆分的明细数据，支持用于应用额度使用情况的统计与分析。
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/app/open_api_credit_usage
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: 应用 ID
+        example: 67890abcdef1234567890
+      - name: start_time
+        in: query
+        required: true
+        schema:
+          type: string
+        description: 时间范围起始时间戳，单位：秒（Unix 时间戳）
+        example: '1717286400'
+      - name: end_time
+        in: query
+        required: true
+        schema:
+          type: string
+        description: 时间范围结束时间戳，单位：秒（Unix 时间戳）。须满足 end_time >= start_time
+        example: '1717372800'
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      total:
+                        type: number
+                        description: 区间内 by day 数据点的总额度消耗总和
+                        example: '1250.5'
+                      points:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            timestamp:
+                              type: string
+                              description: 数据点所在自然日的起始时间戳（该自然日 0 点），单位：秒
+                              example: '1690848000'
+                            credit_usage:
+                              type: number
+                              description: 当日 AI 消耗量（总额度，含企业 + 个人）
+                              example: '1250.5'
+                            credit_usage_enterprise:
+                              type: number
+                              description: 当日企业额度消耗
+                              example: '820.3'
+                            credit_usage_personal:
+                              type: number
+                              description: 当日个人额度消耗
+                              example: '430.2'
+                          required:
+                          - timestamp
+                          - credit_usage
+                          - credit_usage_enterprise
+                          - credit_usage_personal
+                        description: 按天的 AI 消耗量数据点列表，按 timestamp 升序
+                      total_enterprise:
+                        type: number
+                        description: 区间内 by day 数据点的企业额度消耗总和
+                        example: '980.2'
+                      total_personal:
+                        type: number
+                        description: 区间内 by day 数据点的个人额度消耗总和
+                        example: '270.3'
+      x-lark-access-tokens:
+      - user
+      - tenant
+      x-lark-scopes:
+      - spark:app:read
+      x-lark-error-mappings:
+      - code: 3340001
+        httpCode: 400
+        msg: Invalid request parameter
+      - code: 3340004
+        httpCode: 404
+        msg: App not found
+      - code: 3340500
+        httpCode: 500
+        msg: Internal server error
+      x-lark-rate-limit:
+        tier: 8
   /open-apis/spark/v1/apps/{app_id}:
     patch:
       operationId: spark_app_patch
@@ -1891,6 +2272,177 @@ paths:
       - code: 3340001
         httpCode: 400
         msg: param is invalid
+      x-lark-rate-limit:
+        tier: 8
+  /open-apis/spark/v1/apps/{app_id}/query_analytics_data:
+    post:
+      operationId: spark_app_query_analytics_data
+      summary: 获取妙搭应用运营数据趋势
+      tags:
+      - app
+      description: 批量查询运营数据
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/app/query_analytics_data
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: 应用ID
+        example: app_4jbp6bx8fwjgm
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                metric_types:
+                  type: array
+                  items:
+                    type: string
+                    enum:
+                    - TOTAL_USER
+                    - ACTIVE_USER
+                    - NEW_USER
+                    - PAGE_VIEW
+                    - API_REQUEST
+                    x-enum-descriptions:
+                      TOTAL_USER: 累计用户数
+                      ACTIVE_USER: 活跃用户数
+                      NEW_USER: 新增用户数
+                      PAGE_VIEW: 页面访问数
+                      API_REQUEST: API 请求数
+                  description: '指标名列表\n@example: TOTAL_USER、ACTIVE_USER、NEW_USER、PAGE_VIEW、API_REQUEST'
+                start_timestamp_ns:
+                  type: string
+                  description: 时间范围\n起始时间戳，单位：纳秒
+                  example: '1782132931498000000'
+                end_timestamp_ns:
+                  type: string
+                  description: 结束时间戳，单位：纳秒
+                  example: '1782132931498000000'
+                time_aggregation_unit:
+                  type: string
+                  description: '时间聚合单元\n@example: HOUR、DAY、WEEK、MONTH'
+                  enum:
+                  - DAY
+                  - WEEK
+                  - MONTH
+                  x-enum-descriptions:
+                    DAY: 天
+                    WEEK: 周
+                    MONTH: 月
+                filter:
+                  type: object
+                  properties:
+                    page:
+                      type: string
+                      description: 页面路径
+                      example: /home
+                    device_types:
+                      type: array
+                      items:
+                        type: string
+                      description: 终端类型
+                  description: '其他过滤条件，key: 匹配字段名称（所有指标共享）'
+                need_pack_lack_point:
+                  type: boolean
+                  description: 是否需要补点：true 时对缺失的时间点补 0；false 时只返回原始数据点
+                group_by:
+                  type: string
+                  description: 按字段聚合，当前只支持 device_ytpe
+                  example: device_type
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      series:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            metric_type:
+                              type: string
+                              description: 指标类型
+                              enum:
+                              - TOTAL_USER
+                              - ACTIVE_USER
+                              - NEW_USER
+                              - PAGE_VIEW
+                              - API_REQUEST
+                              x-enum-descriptions:
+                                TOTAL_USER: 累计用户数
+                                ACTIVE_USER: 活跃用户数
+                                NEW_USER: 新增用户数
+                                PAGE_VIEW: 页面访问数
+                                API_REQUEST: API 请求数
+                            points:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  timestamp_ns:
+                                    type: string
+                                    description: 数据点的时间戳，单位：纳秒
+                                    example: '1782132931498000000'
+                                  value:
+                                    type: number
+                                    description: 数据点的值
+                                    example: '1'
+                                  dimensions:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        key:
+                                          type: string
+                                          description: key
+                                          example: foo
+                                        value:
+                                          type: string
+                                          description: value
+                                          example: bar
+                                      required:
+                                      - key
+                                      - value
+                                    description: 数据点的维度
+                                required:
+                                - timestamp_ns
+                                - value
+                                - dimensions
+                              description: 数据点
+                          required:
+                          - metric_type
+                        description: 序列
+      x-lark-access-tokens:
+      - user
+      - tenant
+      x-lark-scopes:
+      - spark:app:read
+      x-lark-error-mappings:
+      - code: 3340001
+        httpCode: 400
+        msg: param is invalid
+      - code: 3340004
+        httpCode: 404
+        msg: App not found
+      - code: 3340500
+        httpCode: 500
+        msg: Internal server error
       x-lark-rate-limit:
         tier: 8
   /open-apis/spark/v1/apps/{app_id}/sql_commands:
