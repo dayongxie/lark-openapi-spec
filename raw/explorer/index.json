@@ -8179,7 +8179,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "07f32f631c3c489dfc4ff8ec875594eb7e9ecaa77f62165ac0af755a91852cd5",
+  "sha256": "0cfad52feab3dc8660317c78b4cd78968abbec0c99c2b91972fcac0b01a7d58e",
   "title": "直接创建待入职",
   "version": "v2"
  },
@@ -8203,7 +8203,7 @@
   "httpMethod": "PATCH",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "eb2ade9e20671f8dadc4cc75fe05775775a191516651da113a39ef8bfd69caec",
+  "sha256": "94213e4fe9b11fb56d209bfd83ca2f8bec1dded35e987cb933508dfdf774d07a",
   "title": "更新待入职信息",
   "version": "v2"
  },
@@ -8215,7 +8215,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "391edb4382fc9205fbb9f7a0c698821ca8a7a59db7a86fbf763986c3ca7af2c0",
+  "sha256": "856ae260fc50e8cf53a9d9fc634c52f9edad021026e1570a253f2880858094e2",
   "title": "查询待入职信息",
   "version": "v2"
  },
@@ -8239,7 +8239,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "5def3ef8662021fbe3f2780a361117e26713a9c4a7de1f2122dfc7d8a08bcd2a",
+  "sha256": "ff187b74615989f0085de9a50bd65fba280e42ad8e741273531eaf664843c0bf",
   "title": "搜索待入职信息",
   "version": "v2"
  },

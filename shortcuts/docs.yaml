@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: docs
 description: Document and content operations
-cli_version: 1.0.92
-extracted_at: '2026-08-29T07:54:50Z'
+cli_version: 1.0.93
+extracted_at: '2026-09-02T05:51:24Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +create
@@ -432,7 +432,8 @@ shortcuts:
   - name: --parent-type
     shorthand: null
     type: string
-    description: 'parent type: docx_image | docx_file | whiteboard | mindnote_image'
+    description: 'parent type: docx_image | docx_file | whiteboard | mindnote_image (local Office Word tokens automatically
+      use office_docx_file)'
 - name: +resource-delete
   summary: Delete a document resource (type=cover is idempotent when empty)
   description: Delete a document resource (type=cover is idempotent when empty)

@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+38dcd880
+  version: 1.0.0+f7d99b0d
   x-lark-project: corehr
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -37667,22 +37667,6 @@ paths:
                     political_affiliation:
                       type: string
                       description: 政治面貌
-                    mother_name:
-                      type: string
-                      description: 母亲姓名
-                      example: example
-                    city_of_birth:
-                      type: string
-                      description: 出生城市
-                      example: example
-                    region_of_birth:
-                      type: string
-                      description: 出生省份
-                      example: example
-                    tax_info_mys:
-                      allOf:
-                      - $ref: '#/components/schemas/TaxInfoMy2'
-                      description: 马来税务信息
                   description: 个人信息
                 offer_info:
                   type: object
@@ -38689,22 +38673,6 @@ paths:
                     political_affiliation:
                       type: string
                       description: 政治面貌
-                    mother_name:
-                      type: string
-                      description: 母亲姓名
-                      example: example
-                    city_of_birth:
-                      type: string
-                      description: 出生城市
-                      example: example
-                    region_of_birth:
-                      type: string
-                      description: 出生省份
-                      example: example
-                    tax_info_mys:
-                      allOf:
-                      - $ref: '#/components/schemas/TaxInfoMy2'
-                      description: 马来税务信息
                   description: 更新个人（person）信息
                 offer_info_update:
                   type: object
@@ -48034,22 +48002,6 @@ components:
             - lang
             - value
           description: 上家公司
-        mother_name:
-          type: string
-          description: 母亲姓名
-          example: example
-        city_of_birth:
-          type: string
-          description: 出生城市
-          example: example
-        region_of_birth:
-          type: string
-          description: 出生省份
-          example: example
-        tax_info_mys:
-          allOf:
-          - $ref: '#/components/schemas/TaxInfoMy'
-          description: 马来税务信息
       description: 个人信息
     Name:
       type: object
@@ -55248,71 +55200,6 @@ components:
           type: string
         data:
           $ref: '#/components/schemas/Data5'
-    TaxInfoMy:
-      type: object
-      properties:
-        epf_ee_tp3:
-          type: string
-          description: epf_ee_tp3
-          example: '1.1'
-        fresh_graduate:
-          type: boolean
-          description: fresh_graduate
-          example: 'true'
-        monthly_gross:
-          type: string
-          description: monthly_gross
-          example: '1.1'
-        mtd:
-          type: string
-          description: mtd
-          example: '1.1'
-        previous_income_in_the_current_year:
-          type: boolean
-          description: previous_income_in_the_current_year
-          example: 'true'
-        socso:
-          type: string
-          description: socso
-          example: '1.1'
-        tax_relief_1:
-          type: string
-          description: tax_relief_1
-          example: '1.1'
-        tax_relief_2:
-          type: string
-          description: tax_relief_2
-          example: '1.1'
-        tax_relief_3:
-          type: string
-          description: tax_relief_3
-          example: '1.1'
-        tax_relief_4:
-          type: string
-          description: tax_relief_4
-          example: '1.1'
-        tax_relief_5:
-          type: string
-          description: tax_relief_5
-          example: '1.1'
-        custom_fields:
-          type: array
-          items:
-            type: object
-            properties:
-              field_name:
-                type: string
-                description: 字段名
-                example: name
-              value:
-                type: string
-                description: 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(123, 123.23, true, [\"id1\",\"id2\], 2006-01-02 15:04:05])
-                example: Sandy
-            required:
-            - field_name
-            - value
-          description: 自定义字段
-      description: 马来税务信息
     Data5:
       type: object
       properties:
@@ -57447,6 +57334,71 @@ components:
       - department_id
       - employment_id
       - start_date
+    TaxInfoMy:
+      type: object
+      properties:
+        epf_ee_tp3:
+          type: string
+          description: epf_ee_tp3
+          example: '1.1'
+        fresh_graduate:
+          type: boolean
+          description: fresh_graduate
+          example: 'true'
+        monthly_gross:
+          type: string
+          description: monthly_gross
+          example: '1.1'
+        mtd:
+          type: string
+          description: mtd
+          example: '1.1'
+        previous_income_in_the_current_year:
+          type: boolean
+          description: previous_income_in_the_current_year
+          example: 'true'
+        socso:
+          type: string
+          description: socso
+          example: '1.1'
+        tax_relief_1:
+          type: string
+          description: tax_relief_1
+          example: '1.1'
+        tax_relief_2:
+          type: string
+          description: tax_relief_2
+          example: '1.1'
+        tax_relief_3:
+          type: string
+          description: tax_relief_3
+          example: '1.1'
+        tax_relief_4:
+          type: string
+          description: tax_relief_4
+          example: '1.1'
+        tax_relief_5:
+          type: string
+          description: tax_relief_5
+          example: '1.1'
+        custom_fields:
+          type: array
+          items:
+            type: object
+            properties:
+              field_name:
+                type: string
+                description: 字段名
+                example: name
+              value:
+                type: string
+                description: 字段值，是json转义后的字符串，根据元数据定义不同，字段格式不同(123, 123.23, true, [\"id1\",\"id2\], 2006-01-02 15:04:05])
+                example: Sandy
+            required:
+            - field_name
+            - value
+          description: 自定义字段
+      description: 马来税务信息
     Address6:
       type: object
       properties:
@@ -63724,54 +63676,6 @@ components:
             $ref: '#/components/schemas/OriginValue'
           description: 自定义字段
       description: 原工作信息
-    TaxInfoMy2:
-      type: object
-      properties:
-        epf_ee_tp3:
-          type: string
-          description: epf_ee_tp3
-          example: '1.1'
-        fresh_graduate:
-          type: boolean
-          description: fresh_graduate
-          example: 'true'
-        monthly_gross:
-          type: string
-          description: monthly_gross
-          example: '1.1'
-        mtd:
-          type: string
-          description: mtd
-          example: '1.1'
-        previous_income_in_the_current_year:
-          type: boolean
-          description: previous_income_in_the_current_year
-          example: 'true'
-        socso:
-          type: string
-          description: socso
-          example: '1.1'
-        tax_relief_1:
-          type: string
-          description: tax_relief_1
-          example: '1.1'
-        tax_relief_2:
-          type: string
-          description: tax_relief_2
-          example: '1.1'
-        tax_relief_3:
-          type: string
-          description: tax_relief_3
-          example: '1.1'
-        tax_relief_4:
-          type: string
-          description: tax_relief_4
-          example: '1.1'
-        tax_relief_5:
-          type: string
-          description: tax_relief_5
-          example: '1.1'
-      description: 马来税务信息
     Item66:
       type: object
       properties:

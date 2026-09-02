@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: sheets
 description: Spreadsheet operations
-cli_version: 1.0.92
-extracted_at: '2026-08-29T07:54:50Z'
+cli_version: 1.0.93
+extracted_at: '2026-09-02T05:51:24Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +batch-chart-create
@@ -138,18 +138,18 @@ shortcuts:
   - name: --operations
     shorthand: null
     type: string
-    description: 'JSON array: [{"shortcut":"+xxx-yyy","input":{...}}, ...]. shortcut uses CLI names; input is that shortcut''s
-      flag set — it includes the per-operation sheet locator (sheet_id or sheet_name) but not the spreadsheet token/url (pass
-      that once at the top level via --url/--spreadsheet-token; +batch-update has no top-level --sheet-id). input keys are
-      the shortcut''s flags flattened into JSON (e.g. "range":"A11:B12"), not another nested layer. For basic flags use lark-cli
-      sheets <shortcut> --help; for composite JSON flags use --print-schema --flag-name <flag>. Do not pass an explicit operation
-      field. Fail-fast by default: the first failure aborts the remaining operations. Whether earlier sub-operations persisted
-      is NOT uniform: pure cell/structure writes are only buffered and are dropped on failure (effective rollback), while
-      chart/pivot-type sub-operations flush the buffered writes to disk before creating the object and cannot be rolled back.
-      After a failure, assume neither full-rollback nor full-persist — check results, read back the current state (dims /
-      target cells / object lists) to determine what actually applied, then resend only the unapplied part. Pass --continue-on-error
-      to keep going past failures with successes preserved; no nesting; executed serially. (supports @file, - reads stdin
-      (one flag per call; use @file for others))'
+    description: '(required) JSON array: [{"shortcut":"+xxx-yyy","input":{...}}, ...]. shortcut uses CLI names; input is that
+      shortcut''s flag set — it includes the per-operation sheet locator (sheet_id or sheet_name) but not the spreadsheet
+      token/url (pass that once at the top level via --url/--spreadsheet-token; +batch-update has no top-level --sheet-id).
+      input keys are the shortcut''s flags flattened into JSON (e.g. "range":"A11:B12"), not another nested layer. For basic
+      flags use lark-cli sheets <shortcut> --help; for composite JSON flags use --print-schema --flag-name <flag>. Do not
+      pass an explicit operation field. Fail-fast by default: the first failure aborts the remaining operations. Whether earlier
+      sub-operations persisted is NOT uniform: pure cell/structure writes are only buffered and are dropped on failure (effective
+      rollback), while chart/pivot-type sub-operations flush the buffered writes to disk before creating the object and cannot
+      be rolled back. After a failure, assume neither full-rollback nor full-persist — check results, read back the current
+      state (dims / target cells / object lists) to determine what actually applied, then resend only the unapplied part.
+      Pass --continue-on-error to keep going past failures with successes preserved; no nesting; executed serially. (supports
+      @file, - reads stdin (one flag per call; use @file for others))'
   - name: --print-schema
     shorthand: null
     type: bool
@@ -311,7 +311,7 @@ shortcuts:
   - name: --range
     shorthand: null
     type: string
-    description: Range to clear (A1 notation)
+    description: (required) Range to clear (A1 notation)
   - name: --scope
     shorthand: null
     type: content
@@ -405,7 +405,7 @@ shortcuts:
   - name: --range
     shorthand: null
     type: string
-    description: Range to merge / unmerge (A1 notation)
+    description: (required) Range to merge / unmerge (A1 notation)
 - name: +cells-replace
   summary: Find and replace text in a spreadsheet (case / regex / whole-cell / formula-text controls).
   description: Find and replace text in a spreadsheet (case / regex / whole-cell / formula-text controls).
@@ -423,7 +423,7 @@ shortcuts:
   - name: --find
     shorthand: null
     type: string
-    description: Text to find for replacement
+    description: (required) Text to find for replacement
   - name: --format
     shorthand: null
     type: string
@@ -585,7 +585,7 @@ shortcuts:
   - name: --image
     shorthand: null
     type: string
-    description: Local image path (PNG / JPEG / JPG / GIF / BMP / JFIF / EXIF / TIFF / BPG / HEIC)
+    description: (required) Local image path (PNG / JPEG / JPG / GIF / BMP / JFIF / EXIF / TIFF / BPG / HEIC)
   - name: --jq
     shorthand: -q
     type: string
@@ -597,7 +597,7 @@ shortcuts:
   - name: --range
     shorthand: null
     type: A1
-    description: Target cell (A1 notation; must be a single cell, e.g. A1; start and end must be identical)
+    description: (required) Target cell (A1 notation; must be a single cell, e.g. A1; start and end must be identical)
 - name: +cells-set-style
   summary: Apply style flags to every cell in a range (values / formulas untouched).
   description: Apply style flags to every cell in a range (values / formulas untouched).
@@ -703,7 +703,7 @@ shortcuts:
   - name: --range
     shorthand: null
     type: string
-    description: Range to merge / unmerge (A1 notation)
+    description: (required) Range to merge / unmerge (A1 notation)
 - name: +changeset-get
   summary: Fetch the raw changeset (edit actions) between two versions, to review whether an AI edit fulfilled the request.
   description: Fetch the raw changeset (edit actions) between two versions, to review whether an AI edit fulfilled the request.
@@ -743,7 +743,7 @@ shortcuts:
   - name: --start-revision
     shorthand: null
     type: int
-    description: Start version (CS revision); the before baseline for review (must be >= 1)
+    description: (required) Start version (CS revision); the before baseline for review (must be >= 1)
 - name: +chart-config-update
   summary: Update common chart titles, axes, legend, labels, stacking, smoothing, or chart-level colors without sending a
     full snapshot.
@@ -759,7 +759,7 @@ shortcuts:
   - name: --chart-id
     shorthand: null
     type: string
-    description: Target chart reference_id
+    description: (required) Target chart reference_id
   - name: --color-palette
     shorthand: null
     type: string
@@ -908,11 +908,11 @@ shortcuts:
   - name: --properties
     shorthand: null
     type: position
-    description: 'Full chart config JSON. Top-level keys: position / `offset` / `size` / `snapshot` (no top-level `data`,
-      no extra nested `properties`); chart data config lives under `snapshot.data` (`refs` / `headerMode` / `dim1` / `dim2`);
-      must include at least one of `snapshot.data.dim1.serie.index` or `dim2.series[].index`, otherwise the server rejects
-      it. Deeply nested — run `--print-schema --flag-name properties` for the full structure. (supports @file, - reads stdin
-      (one flag per call; use @file for others))'
+    description: '(required) Full chart config JSON. Top-level keys: position / `offset` / `size` / `snapshot` (no top-level
+      `data`, no extra nested `properties`); chart data config lives under `snapshot.data` (`refs` / `headerMode` / `dim1`
+      / `dim2`); must include at least one of `snapshot.data.dim1.serie.index` or `dim2.series[].index`, otherwise the server
+      rejects it. Deeply nested — run `--print-schema --flag-name properties` for the full structure. (supports @file, - reads
+      stdin (one flag per call; use @file for others))'
 - name: +chart-create-basic
   summary: Create a basic chart from a chart type and data range; the server builds and validates the full snapshot.
   description: Create a basic chart from a chart type and data range; the server builds and validates the full snapshot.
@@ -930,7 +930,7 @@ shortcuts:
   - name: --chart-type
     shorthand: null
     type: string
-    description: Chart type (column|bar|line|area|pie|scatter|combo|radar|bubble|waterfall|pareto)
+    description: (required) Chart type (column|bar|line|area|pie|scatter|combo|radar|bubble|waterfall|pareto)
   - name: --color-palette
     shorthand: null
     type: string
@@ -958,8 +958,8 @@ shortcuts:
   - name: --data-range
     shorthand: null
     type: string
-    description: Data range; include headers unless --header-range is set, in which case pass data only; accepts comma-separated
-      ranges across one or more sheets
+    description: (required) Data range; include headers unless --header-range is set, in which case pass data only; accepts
+      comma-separated ranges across one or more sheets
   - name: --dim1-index
     shorthand: null
     type: int
@@ -1103,7 +1103,7 @@ shortcuts:
   - name: --chart-id
     shorthand: null
     type: string
-    description: Target chart reference_id
+    description: (required) Target chart reference_id
   - name: --data-direction
     shorthand: null
     type: string
@@ -1111,8 +1111,8 @@ shortcuts:
   - name: --data-range
     shorthand: null
     type: string
-    description: New data range; include headers unless --header-range is set or the chart already uses detached headers;
-      accepts comma-separated ranges across one or more sheets
+    description: (required) New data range; include headers unless --header-range is set or the chart already uses detached
+      headers; accepts comma-separated ranges across one or more sheets
   - name: --dim1-index
     shorthand: null
     type: int
@@ -1181,7 +1181,7 @@ shortcuts:
   - name: --chart-id
     shorthand: null
     type: string
-    description: Target chart reference_id
+    description: (required) Target chart reference_id
   - name: --dry-run
     shorthand: null
     type: bool
@@ -1255,7 +1255,7 @@ shortcuts:
   - name: --chart-id
     shorthand: null
     type: string
-    description: Target chart reference_id
+    description: (required) Target chart reference_id
   - name: --dry-run
     shorthand: null
     type: bool
@@ -1288,8 +1288,8 @@ shortcuts:
   - name: --properties
     shorthand: null
     type: string
-    description: Chart config patch JSON; send changed fields only by default; omitted fields are preserved, objects merge
-      recursively, and arrays replace as a whole (supports @file, - reads stdin (one flag per call; use @file for others))
+    description: (required) Chart config patch JSON; send changed fields only by default; omitted fields are preserved, objects
+      merge recursively, and arrays replace as a whole (supports @file, - reads stdin (one flag per call; use @file for others))
 - name: +cols-resize
   summary: 'Resize columns in pixels (NOT Excel char units): --range + --width <px> for one uniform width, --widths ''{"A":100,"C:E":120}''
     for per-column widths in one batch request, or --type standard to reset (--range is column letters like "A:E" or "C";
@@ -1380,8 +1380,9 @@ shortcuts:
   - name: --properties
     shorthand: null
     type: style
-    description: 'Rule config JSON: style (required, applied on match), `attrs?` (rule-type-dependent params), `has_ref?`.
-      `rule_type` and `ranges` are separate flags (supports @file, - reads stdin (one flag per call; use @file for others))'
+    description: '(required) Rule config JSON: style (required, applied on match), `attrs?` (rule-type-dependent params),
+      `has_ref?`. `rule_type` and `ranges` are separate flags (supports @file, - reads stdin (one flag per call; use @file
+      for others))'
 - name: +cond-format-delete
   summary: Delete a cond-format object (irreversible).
   description: Delete a cond-format object (irreversible).
@@ -1416,7 +1417,7 @@ shortcuts:
   - name: --rule-id
     shorthand: null
     type: string
-    description: Target rule id
+    description: (required) Target rule id
   - name: --yes
     shorthand: null
     type: bool
@@ -1534,7 +1535,7 @@ shortcuts:
   - name: --rule-id
     shorthand: null
     type: string
-    description: Target rule id
+    description: (required) Target rule id
 - name: +csv-get
   summary: Read a range as CSV (with [row=N] line prefix by default).
   description: Read a range as CSV (with [row=N] line prefix by default).
@@ -1599,8 +1600,8 @@ shortcuts:
   - name: --csv
     shorthand: null
     type: string
-    description: RFC 4180 CSV text; values or formulas (a leading = is evaluated as a formula); no styles / comments / images
-      (use +cells-set for those). (supports @file, - reads stdin (one flag per call; use @file for others))
+    description: (required) RFC 4180 CSV text; values or formulas (a leading = is evaluated as a formula); no styles / comments
+      / images (use +cells-set for those). (supports @file, - reads stdin (one flag per call; use @file for others))
   - name: --dry-run
     shorthand: null
     type: bool
@@ -1790,7 +1791,7 @@ shortcuts:
   - name: --count
     shorthand: null
     type: int
-    description: Number of rows/columns to insert (must be > 0)
+    description: (required) Number of rows/columns to insert (must be > 0)
   - name: --dry-run
     shorthand: null
     type: bool
@@ -1822,8 +1823,8 @@ shortcuts:
   - name: --position
     shorthand: null
     type: '3'
-    description: Insert position (1-based row number like 3 or column letter like `C`); new rows/columns are inserted *before*
-      this position
+    description: (required) Insert position (1-based row number like 3 or column letter like `C`); new rows/columns are inserted
+      *before* this position
 - name: +dim-move
   summary: Move a contiguous block of rows or columns to a new position (re-numbers neighbors).
   description: Move a contiguous block of rows or columns to a new position (re-numbers neighbors).
@@ -1858,8 +1859,8 @@ shortcuts:
   - name: --target
     shorthand: null
     type: '12'
-    description: Destination position (the moved rows/columns are placed *before* this position); rows use 1-based row number
-      like 12, columns use column letter like `H`. Must match the dimension of --source-range
+    description: (required) Destination position (the moved rows/columns are placed *before* this position); rows use 1-based
+      row number like 12, columns use column letter like `H`. Must match the dimension of --source-range
 - name: +dim-ungroup
   summary: Remove a row/column outline group.
   description: Remove a row/column outline group.
@@ -2031,7 +2032,8 @@ shortcuts:
   - name: --multiple
     shorthand: null
     type: 'false'
-    description: Enable multi-select; default false
+    description: Enable multi-select; default false. This flag only configures validation and does not write selected values.
+      When writing selections with `+cells-set`, pass a `multiple_values` array, not a comma-joined `value`
   - name: --print-schema
     shorthand: null
     type: bool
@@ -2071,10 +2073,6 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
-  - name: --multiple
-    shorthand: null
-    type: bool
-    description: Enable multi-select
   - name: --print-schema
     shorthand: null
     type: bool
@@ -2233,8 +2231,8 @@ shortcuts:
   - name: --properties
     shorthand: null
     type: rules
-    description: 'Filter rule JSON: rules and `filtered_columns?`; update overwrites the entire rule set (pass `rules: []`
-      to clear). `range` is a separate flag (supports @file, - reads stdin (one flag per call; use @file for others))'
+    description: '(required) Filter rule JSON: rules and `filtered_columns?`; update overwrites the entire rule set (pass
+      `rules: []` to clear). `range` is a separate flag (supports @file, - reads stdin (one flag per call; use @file for others))'
 - name: +filter-view-create
   summary: Create a filter-view object via the manage_*_object tool.
   description: Create a filter-view object via the manage_*_object tool.
@@ -2308,7 +2306,7 @@ shortcuts:
   - name: --view-id
     shorthand: null
     type: string
-    description: Target filter-view reference_id
+    description: (required) Target filter-view reference_id
   - name: --yes
     shorthand: null
     type: bool
@@ -2390,7 +2388,7 @@ shortcuts:
   - name: --view-id
     shorthand: null
     type: string
-    description: Target filter-view reference_id
+    description: (required) Target filter-view reference_id
 - name: +float-image-create
   summary: Create a floating image (from a local --image path, or an existing --image-token / --image-uri).
   description: Create a floating image (from a local --image path, or an existing --image-token / --image-uri).
@@ -2430,19 +2428,19 @@ shortcuts:
   - name: --position-col
     shorthand: null
     type: A
-    description: Column anchor of the image's top-left corner (column letter, e.g. A / `B`)
+    description: (required) Column anchor of the image's top-left corner (column letter, e.g. A / `B`)
   - name: --position-row
     shorthand: null
     type: int
-    description: Row anchor of the image's top-left corner (0-based)
+    description: (required) Row anchor of the image's top-left corner (0-based)
   - name: --size-height
     shorthand: null
     type: int
-    description: Image height in pixels
+    description: (required) Image height in pixels
   - name: --size-width
     shorthand: null
     type: int
-    description: Image width in pixels
+    description: (required) Image width in pixels
   - name: --z-index
     shorthand: null
     type: int
@@ -2464,7 +2462,7 @@ shortcuts:
   - name: --float-image-id
     shorthand: null
     type: string
-    description: Target float image id
+    description: (required) Target float image id
   - name: --format
     shorthand: null
     type: string
@@ -2538,7 +2536,7 @@ shortcuts:
   - name: --float-image-id
     shorthand: null
     type: string
-    description: Target float image id
+    description: (required) Target float image id
   - name: --format
     shorthand: null
     type: string
@@ -2559,19 +2557,19 @@ shortcuts:
   - name: --position-col
     shorthand: null
     type: A
-    description: Column anchor of the image's top-left corner (column letter, e.g. A / `B`)
+    description: (required) Column anchor of the image's top-left corner (column letter, e.g. A / `B`)
   - name: --position-row
     shorthand: null
     type: int
-    description: Row anchor of the image's top-left corner (0-based)
+    description: (required) Row anchor of the image's top-left corner (0-based)
   - name: --size-height
     shorthand: null
     type: int
-    description: Image height in pixels
+    description: (required) Image height in pixels
   - name: --size-width
     shorthand: null
     type: int
-    description: Image width in pixels
+    description: (required) Image width in pixels
   - name: --z-index
     shorthand: null
     type: int
@@ -2703,7 +2701,7 @@ shortcuts:
   - name: --history-version-id
     shorthand: null
     type: string
-    description: History version to revert to (from +history-list).
+    description: (required) History version to revert to (from +history-list).
   - name: --jq
     shorthand: -q
     type: string
@@ -2762,7 +2760,7 @@ shortcuts:
   - name: --transaction-id
     shorthand: null
     type: string
-    description: Async revert transaction id (from +history-revert).
+    description: (required) Async revert transaction id (from +history-revert).
   - name: --url
     shorthand: null
     type: string
@@ -2809,7 +2807,7 @@ shortcuts:
   - name: --properties
     shorthand: null
     type: string
-    description: 'JSON: {"rows":[...],"columns":[...],"values":[...],"filters":[...],"show_row_grand_total":true,"show_col_grand_total":true}
+    description: '(required) JSON: {"rows":[...],"columns":[...],"values":[...],"filters":[...],"show_row_grand_total":true,"show_col_grand_total":true}
       (data source goes through --source; do not put source here) (supports @file, - reads stdin (one flag per call; use @file
       for others))'
   - name: --range
@@ -2859,7 +2857,7 @@ shortcuts:
   - name: --pivot-table-id
     shorthand: null
     type: string
-    description: Target pivot table id
+    description: (required) Target pivot table id
   - name: --yes
     shorthand: null
     type: bool
@@ -2937,7 +2935,7 @@ shortcuts:
   - name: --pivot-table-id
     shorthand: null
     type: string
-    description: Target pivot table id
+    description: (required) Target pivot table id
   - name: --print-schema
     shorthand: null
     type: bool
@@ -2976,11 +2974,11 @@ shortcuts:
   - name: --source-range
     shorthand: null
     type: string
-    description: Source A1 range
+    description: (required) Source A1 range
   - name: --target-range
     shorthand: null
     type: string
-    description: Destination A1 range (anchor cell is enough; size inferred from the source)
+    description: (required) Destination A1 range (anchor cell is enough; size inferred from the source)
   - name: --target-sheet-id
     shorthand: null
     type: string
@@ -3024,11 +3022,11 @@ shortcuts:
   - name: --source-range
     shorthand: null
     type: string
-    description: Fill template range (seed cells for the series)
+    description: (required) Fill template range (seed cells for the series)
   - name: --target-range
     shorthand: null
     type: string
-    description: Destination fill range (A1 notation)
+    description: (required) Destination fill range (A1 notation)
 - name: +range-move
   summary: Cut a range and paste it at a new location (optionally cross-sheet).
   description: Cut a range and paste it at a new location (optionally cross-sheet).
@@ -3063,11 +3061,11 @@ shortcuts:
   - name: --source-range
     shorthand: null
     type: string
-    description: Source A1 range
+    description: (required) Source A1 range
   - name: --target-range
     shorthand: null
     type: string
-    description: Destination A1 range (anchor cell is enough; size inferred from the source)
+    description: (required) Destination A1 range (anchor cell is enough; size inferred from the source)
   - name: --target-sheet-id
     shorthand: null
     type: string
@@ -3289,7 +3287,7 @@ shortcuts:
   - name: --title
     shorthand: null
     type: string
-    description: New sheet title
+    description: (required) New sheet title
   - name: --type
     shorthand: null
     type: string
@@ -3457,7 +3455,7 @@ shortcuts:
   - name: --index
     shorthand: null
     type: int
-    description: Target position (0-based)
+    description: (required) Target position (0-based)
   - name: --jq
     shorthand: -q
     type: string
@@ -3500,7 +3498,7 @@ shortcuts:
   - name: --title
     shorthand: null
     type: string
-    description: New title
+    description: (required) New title
 - name: +sheet-set-tab-color
   summary: Set or clear the tab color of a sub-sheet.
   description: Set or clear the tab color of a sub-sheet.
@@ -3655,7 +3653,7 @@ shortcuts:
   - name: --group-id
     shorthand: null
     type: string
-    description: Target group id
+    description: (required) Target group id
   - name: --help
     shorthand: -h
     type: bool
@@ -3733,7 +3731,7 @@ shortcuts:
   - name: --group-id
     shorthand: null
     type: string
-    description: Target group id
+    description: (required) Target group id
   - name: --help
     shorthand: -h
     type: bool
@@ -3940,7 +3938,7 @@ shortcuts:
   - name: --title
     shorthand: null
     type: string
-    description: Spreadsheet title
+    description: (required) Spreadsheet title
 - name: +workbook-export
   summary: Export a spreadsheet to xlsx or a single sheet to csv (async + poll + optional download).
   description: Export a spreadsheet to xlsx or a single sheet to csv (async + poll + optional download).
@@ -3996,7 +3994,7 @@ shortcuts:
   - name: --file
     shorthand: null
     type: string
-    description: Local file path (.xlsx / .xls / .csv)
+    description: (required) Local file path (.xlsx / .xls / .csv)
   - name: --folder-token
     shorthand: null
     type: string

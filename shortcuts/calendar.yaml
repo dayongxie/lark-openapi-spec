@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: calendar
 description: Calendar, event, and attendee management
-cli_version: 1.0.92
-extracted_at: '2026-08-29T07:54:50Z'
+cli_version: 1.0.93
+extracted_at: '2026-09-02T05:51:24Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +agenda
@@ -107,9 +107,66 @@ shortcuts:
     shorthand: null
     type: string
     description: event title
+- name: +delete
+  summary: Delete a calendar event; requires --apply-to for recurring events and exceptions
+  description: Delete a calendar event; requires --apply-to for recurring events and exceptions
+  usage: lark-cli calendar +delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --apply-to
+    shorthand: null
+    type: string
+    description: 'recurring scope: single (this occurrence / exception only) | all (whole series and every exception) | this-and-following
+      (truncate the series at this instance and drop every exception on/after it). Required on recurring events; ignored on
+      non-recurring events. (single|all|this-and-following)'
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --calendar-id
+    shorthand: null
+    type: string
+    description: 'calendar ID (default: primary)'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --event-id
+    shorthand: null
+    type: string
+    description: event ID to delete
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --notify
+    shorthand: null
+    type: bool
+    description: send delete notification to attendees for the master event; exception cleanup silently uses need_notification=false
+      so participants are not spammed
+    default: 'true'
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
 - name: +freebusy
-  summary: Query user free/busy and RSVP status
-  description: Query user free/busy and RSVP status
+  summary: Query free/busy for one or more users. Merges overlapping busy intervals and supports per-user free / common-free
+    views for multi-user scheduling.
+  description: Query free/busy for one or more users. Merges overlapping busy intervals and supports per-user free / common-free
+    views for multi-user scheduling.
   usage: lark-cli calendar +freebusy [flags]
   risk: read
   flags:
@@ -142,14 +199,25 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+  - name: --min-duration
+    shorthand: null
+    type: string
+    description: minimum length for free/common_free candidates (Go duration, e.g. 30m, 1h); ignored for busy / raw_busy
   - name: --start
     shorthand: null
     type: string
     description: 'start time (ISO 8601, default: today)'
-  - name: --user-id
+  - name: --type
     shorthand: null
     type: string
-    description: 'target user open_id (ou_ prefix, default: current user)'
+    description: 'output view: busy (default, per-user merged busy) | raw_busy (per-user upstream events with rsvp_status)
+      | free (per-user free windows) | common_free (all-users common free) (busy|raw_busy|free|common_free)'
+    default: busy
+  - name: --user-id
+    shorthand: null
+    type: strings
+    description: 'target user open_id(s); repeatable or comma-separated; default: current user; bot identity must provide
+      at least one'
 - name: +get
   summary: Get a single calendar event detail by calendar-id and event-id
   description: Get a single calendar event detail by calendar-id and event-id
@@ -563,6 +631,12 @@ shortcuts:
     shorthand: null
     type: string
     description: attendee IDs to add, comma-separated (supports user ou_, chat oc_, room omm_)
+  - name: --apply-to
+    shorthand: null
+    type: string
+    description: 'recurring scope: single (this occurrence / exception only) | all (whole series and every exception) | this-and-following
+      (truncate the series at this instance and create a new series carrying the requested edits). Required on recurring events;
+      ignored on non-recurring events. (single|all|this-and-following)'
   - name: --as
     shorthand: null
     type: string
