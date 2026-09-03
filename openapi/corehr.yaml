@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+f7d99b0d
+  version: 1.0.0+caa68f82
   x-lark-project: corehr
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -25899,6 +25899,8 @@ paths:
       - corehr:employment.position:write
       - corehr:employment.seniority_adjust_information:read
       - corehr:employment.seniority_adjust_information:write
+      - corehr:employment.whether_returnee:read
+      - corehr:employment.whether_to_pay_social_security_elsewhere:read
       - corehr:job.job_level:read
       - corehr:job_data.compensation_type:read
       - corehr:job_data.service_company:read
@@ -27651,6 +27653,8 @@ paths:
       - corehr:employment.position:write
       - corehr:employment.seniority_adjust_information:read
       - corehr:employment.seniority_adjust_information:write
+      - corehr:employment.whether_returnee:read
+      - corehr:employment.whether_to_pay_social_security_elsewhere:read
       - corehr:job.job_level:read
       - corehr:job_data.compensation_type:read
       - corehr:job_data.service_company:read
@@ -47278,6 +47282,14 @@ components:
         is_dotted_leader:
           type: boolean
           description: 是否虚线上级
+          example: 'true'
+        whether_returnee:
+          type: boolean
+          description: 是否回流
+          example: 'true'
+        whether_to_pay_social_security_elsewhere:
+          type: boolean
+          description: 是否异地缴纳社保
           example: 'true'
       required:
       - effective_date

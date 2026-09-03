@@ -11798,7 +11798,31 @@
       },
       "id": "7672664994766982391",
       "name": "发送会中消息",
-      "orderMark": "1786073648993",
+      "orderMark": "6",
+      "parentId": "7657161684985711802",
+      "type": 1
+     },
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "countdown",
+        "project": "vc",
+        "resource": "bot",
+        "version": "v1"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/vc/v1/bots/countdown",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/countdown",
+       "httpMethod": "POST",
+       "supportAppTypes": [
+        "custom"
+       ]
+      },
+      "id": "7680486345160821966",
+      "name": "会中倒计时",
+      "orderMark": "5",
       "parentId": "7657161684985711802",
       "type": 1
      },
@@ -11822,7 +11846,7 @@
       },
       "id": "7672664994766998775",
       "name": "离开会议",
-      "orderMark": "1786073406564",
+      "orderMark": "4",
       "parentId": "7657161684985711802",
       "type": 1
      },
@@ -11846,7 +11870,7 @@
       },
       "id": "7672664994767015159",
       "name": "加入会议",
-      "orderMark": "1786073380850",
+      "orderMark": "3",
       "parentId": "7657161684985711802",
       "type": 1
      },
@@ -11871,7 +11895,7 @@
       },
       "id": "7657481714696588519",
       "name": "获取会议事件列表",
-      "orderMark": "1782981783138",
+      "orderMark": "2",
       "parentId": "7657161684985711802",
       "type": 1
      },
@@ -11896,7 +11920,7 @@
       },
       "id": "7657481714696604903",
       "name": "获取用户活跃会议列表",
-      "orderMark": "1782980581519",
+      "orderMark": "1",
       "parentId": "7657161684985711802",
       "type": 1
      }
@@ -25507,6 +25531,64 @@
     "id": "7320139857333043201",
     "name": "应用管理员",
     "orderMark": "7",
+    "parentId": "6953505452630671363",
+    "type": 2
+   },
+   {
+    "Score": 0,
+    "children": [
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiKind": 0,
+       "apiPath": "",
+       "debuggable": false,
+       "fullPath": "/ukTMukTMukTM/uATNwUjLwUDM14CM1ATN",
+       "httpMethod": "",
+       "supportAppTypes": []
+      },
+      "id": "6907569742384087042",
+      "name": "查询用户是否在应用开通范围",
+      "orderMark": "1608293272854",
+      "parentId": "6907567266540896258",
+      "type": 1
+     },
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiKind": 0,
+       "apiPath": "",
+       "debuggable": false,
+       "fullPath": "/ukTMukTMukTM/uETNwUjLxUDM14SM1ATN",
+       "httpMethod": "",
+       "supportAppTypes": []
+      },
+      "id": "6907569742384988162",
+      "name": "查询租户购买的付费方案",
+      "orderMark": "1608293272853",
+      "parentId": "6907567266540896258",
+      "type": 1
+     },
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiKind": 0,
+       "apiPath": "",
+       "debuggable": false,
+       "fullPath": "/ukTMukTMukTM/uITNwUjLyUDM14iM1ATN",
+       "httpMethod": "",
+       "supportAppTypes": []
+      },
+      "id": "6907569742384037890",
+      "name": "查询订单详情",
+      "orderMark": "1608293272852",
+      "parentId": "6907567266540896258",
+      "type": 1
+     }
+    ],
+    "id": "6907567266540896258",
+    "name": "应用商店",
+    "orderMark": "6",
     "parentId": "6953505452630671363",
     "type": 2
    },

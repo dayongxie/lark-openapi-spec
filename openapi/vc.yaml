@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+1349c20d
+  version: 1.0.0+5c433ea6
   x-lark-project: vc
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -275,6 +275,99 @@ paths:
       x-lark-rate-limit:
         tier: 3
       x-lark-pagination: true
+  /open-apis/vc/v1/bots/countdown:
+    post:
+      operationId: vc_bot_countdown
+      summary: 会中倒计时
+      tags:
+      - bot
+      description: 操作会中倒计时。支持设置、延长、提前结束和关闭会中倒计时窗口。应用身份调用时要求应用机器人在会中，用户身份调用时要求当前用户在会中。
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/countdown
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                meeting_id:
+                  type: string
+                  description: 会议唯一标识，必须传入长数字 meeting_id，不是 9 位会议号。
+                  example: '7628568141510692381'
+                action:
+                  type: string
+                  description: 倒计时操作类型。可选值：set、prolong、end_in_advance、close_window。set 表示设置倒计时，prolong 表示延长倒计时，end_in_advance
+                    表示提前结束，close_window 表示关闭会中倒计时窗口。
+                  example: set
+                duration:
+                  type: string
+                  description: 倒计时时长，单位为分钟。action 为 set 或 prolong 时必填；set 时超过 24 小时会报错，prolong 时超过 24 小时会按 24 小时处理。
+                  example: '10'
+                need_play_audio_at_end:
+                  type: boolean
+                  description: 倒计时结束时是否播放提示音。仅 action=set 时生效。
+                  example: 'true'
+                reminder_before_end:
+                  type: string
+                  description: 倒计时结束前的提醒时间，单位为分钟。仅 action=set 时生效；只支持设置一次提醒，且必须大于 0 并小于 duration。
+                  example: '1'
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+      x-lark-access-tokens:
+      - user
+      - tenant
+      x-lark-scopes:
+      - vc:meeting.interaction:write
+      x-lark-error-mappings:
+      - code: 121001
+        httpCode: 500
+        msg: internal service error
+      - code: 121002
+        httpCode: 400
+        msg: param is invalid
+      - code: 121003
+        httpCode: 403
+        msg: no permission
+      - code: 121004
+        httpCode: 403
+        msg: user is not in the meeting
+      - code: 121005
+        httpCode: 403
+        msg: bot is not in the meeting
+      - code: 121006
+        httpCode: 400
+        msg: meeting status unexpected
+      - code: 121007
+        httpCode: 400
+        msg: meeting not exist
+      - code: 121008
+        httpCode: 403
+        msg: lark security forbidden
+      - code: 121009
+        httpCode: 400
+        msg: countdown has been triggered
+      - code: 121010
+        httpCode: 400
+        msg: no countdown to operate
+      - code: 121011
+        httpCode: 400
+        msg: countdown is in use
+      x-lark-rate-limit:
+        tier: 3
   /open-apis/vc/v1/bots/events:
     get:
       operationId: vc_bot_events

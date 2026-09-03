@@ -7483,7 +7483,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "employee",
-  "sha256": "03eac81274727d559af57c07de341b92ca4efa10b6bf28cb55a7d16c8dfb32aa",
+  "sha256": "964ebdb44f816c69fa52e4c1022793d8f3eb9be0b71b805ae0ae81972598a748",
   "title": "批量查询员工信息",
   "version": "v2"
  },
@@ -7507,7 +7507,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "employee",
-  "sha256": "e1d9c5bfda8d94145b7703652192c859724603cc1e3f739527fa28bae552233b",
+  "sha256": "3d2f39ca64254382a9bcfcda4a02641112fd0e7186b0084074b2d4ae647e281e",
   "title": "搜索员工信息",
   "version": "v2"
  },
@@ -18633,6 +18633,18 @@
   "resource": "alert",
   "sha256": "1c3cd81137d409b42d2e51d4411b0164cb7c04bbca817ade6b70dc62c805fba5",
   "title": "获取告警记录",
+  "version": "v1"
+ },
+ "vc/v1/bot/countdown": {
+  "apiName": "countdown",
+  "apiPath": "/open-apis/vc/v1/bots/countdown",
+  "category": "视频会议 / 智能体",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/countdown",
+  "httpMethod": "POST",
+  "project": "vc",
+  "resource": "bot",
+  "sha256": "563d09b1bbc2daf39a84354d84ffb3170efc87f994d663ab3715420c125f6570",
+  "title": "会中倒计时",
   "version": "v1"
  },
  "vc/v1/bot/events": {

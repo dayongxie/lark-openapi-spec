@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-03）
+
+新增 1 · 移除 0 · 定义变更 2（全量共 1640 个接口）
+
+### 新增接口
+- `POST /open-apis/vc/v1/bots/countdown`「会中倒计时」（vc/v1/bot/countdown）
+
+### 定义变更
+- `POST /open-apis/corehr/v2/employees/batch_get`「批量查询员工信息」（corehr/v2/employee/batch_get）
+- `POST /open-apis/corehr/v2/employees/search`「搜索员工信息」（corehr/v2/employee/search）
+
 ## explorer 全量轨道（2026-09-02）
 
 新增 0 · 移除 0 · 定义变更 4（全量共 1639 个接口）
