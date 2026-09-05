@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+5c433ea6
+  version: 1.0.0+ff40c44a
   x-lark-project: vc
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -933,7 +933,9 @@ paths:
         msg: param is invalid
       - code: 120002
         httpCode: 403
-        msg: switch for allowing agents to join meetings is disabled
+        msg: 'This user is temporarily unable to retrieve meeting events. Ask the meeting host to enable "AI Summary" and
+          try again. If it is already enabled, confirm that "Allow agents to join meetings" is enabled in the current meeting''s
+          "Security" settings. See: https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/events'
       - code: 120003
         httpCode: 403
         msg: user is not in the meeting
@@ -1111,7 +1113,9 @@ paths:
         msg: lark security forbidden
       - code: 121016
         httpCode: 403
-        msg: switch for allowing agents to join meetings is disabled
+        msg: 'This agent is temporarily unable to join the meeting. Ask the meeting host to enable "AI Summary" and try again.
+          If it is already enabled, confirm that "Allow agents to join meetings" is enabled in the current meeting''s "Security"
+          settings. See: https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/join'
       - code: 121017
         httpCode: 403
         msg: user is not in the meeting
@@ -1213,7 +1217,9 @@ paths:
         msg: participant status unexpected
       - code: 121108
         httpCode: 403
-        msg: switch for allowing agents to join meetings is disabled
+        msg: 'This agent is temporarily unable to leave this meeting. Ask the meeting host to enable "AI Summary" and try
+          again. If it is already enabled, confirm that "Allow agents to join meetings" is enabled in the current meeting''s
+          "Security" settings. See: https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/leave'
       - code: 121109
         httpCode: 403
         msg: user is not in the meeting
@@ -1384,7 +1390,9 @@ paths:
         msg: no permission
       - code: 121009
         httpCode: 403
-        msg: switch for allowing agents to join meetings is disabled
+        msg: 'This user is temporarily unable to retrieve the user''s active meetings. Ask the meeting host to enable "AI
+          Summary" first, then confirm that "Allow agents to join meetings" is enabled in the meeting''s "Security" settings.
+          See: https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/user_active_meeting'
       - code: 121010
         httpCode: 403
         msg: user is not in the meeting

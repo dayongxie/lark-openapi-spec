@@ -1,5 +1,53 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-05）
+
+新增 0 · 移除 0 · 定义变更 42（全量共 1640 个接口）
+
+### 定义变更
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/acls`「创建访问控制」（calendar/v4/calendar.acl/create）
+- `DELETE /open-apis/calendar/v4/calendars/{calendar_id}/acls/{acl_id}`「删除访问控制」（calendar/v4/calendar.acl/delete）
+- `GET /open-apis/calendar/v4/calendars/{calendar_id}/acls`「获取访问控制列表」（calendar/v4/calendar.acl/list）
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/acls/subscription`「订阅日历访问控制变更事件」（calendar/v4/calendar.acl/subscription）
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/acls/unsubscription`「取消订阅日历访问控制变更事件」（calendar/v4/calendar.acl/unsubscription）
+- `GET /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}/attendees/{attendee_id}/chat_members`「获取日程参与群成员列表」（calendar/v4/calendar.event.attendee.chat_member/list）
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}/attendees/batch_delete`「删除日程参与人」（calendar/v4/calendar.event.attendee/batch_delete）
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}/attendees`「添加日程参与人」（calendar/v4/calendar.event.attendee/create）
+- `GET /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}/attendees`「获取日程参与人列表」（calendar/v4/calendar.event.attendee/list）
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}/meeting_chat`「创建会议群」（calendar/v4/calendar.event.meeting_chat/create）
+- `DELETE /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}/meeting_chat`「解绑会议群」（calendar/v4/calendar.event.meeting_chat/delete）
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}/meeting_minute`「创建会议纪要」（calendar/v4/calendar.event.meeting_minute/create）
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/events`「创建日程」（calendar/v4/calendar.event/create）
+- `DELETE /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}`「删除日程」（calendar/v4/calendar.event/delete）
+- `GET /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}`「获取日程」（calendar/v4/calendar.event/get）
+- `GET /open-apis/calendar/v4/calendars/{calendar_id}/events/instance_view`「查询日程视图」（calendar/v4/calendar.event/instance_view）
+- `GET /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}/instances`「获取重复日程实例」（calendar/v4/calendar.event/instances）
+- `GET /open-apis/calendar/v4/calendars/{calendar_id}/events`「获取日程列表」（calendar/v4/calendar.event/list）
+- `PATCH /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}`「更新日程」（calendar/v4/calendar.event/patch）
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}/reply`「回复日程」（calendar/v4/calendar.event/reply）
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/events/search`「搜索日程」（calendar/v4/calendar.event/search）
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/events/subscription`「订阅日程变更事件」（calendar/v4/calendar.event/subscription）
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/events/unsubscription`「取消订阅日程变更事件」（calendar/v4/calendar.event/unsubscription）
+- `POST /open-apis/calendar/v4/calendars`「创建共享日历」（calendar/v4/calendar/create）
+- `DELETE /open-apis/calendar/v4/calendars/{calendar_id}`「删除共享日历」（calendar/v4/calendar/delete）
+- `GET /open-apis/calendar/v4/calendars/{calendar_id}`「查询日历信息」（calendar/v4/calendar/get）
+- `GET /open-apis/calendar/v4/calendars`「查询日历列表」（calendar/v4/calendar/list）
+- `POST /open-apis/calendar/v4/calendars/mget`「批量查询日历信息」（calendar/v4/calendar/mget）
+- `PATCH /open-apis/calendar/v4/calendars/{calendar_id}`「更新日历信息」（calendar/v4/calendar/patch）
+- `POST /open-apis/calendar/v4/calendars/primary`「查询主日历信息」（calendar/v4/calendar/primary）
+- `POST /open-apis/calendar/v4/calendars/primarys`「批量获取主日历信息」（calendar/v4/calendar/primarys）
+- `POST /open-apis/calendar/v4/calendars/search`「搜索日历」（calendar/v4/calendar/search）
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/subscribe`「订阅日历」（calendar/v4/calendar/subscribe）
+- `POST /open-apis/calendar/v4/calendars/subscription`「订阅日历变更事件」（calendar/v4/calendar/subscription）
+- `POST /open-apis/calendar/v4/calendars/{calendar_id}/unsubscribe`「取消订阅日历」（calendar/v4/calendar/unsubscribe）
+- `POST /open-apis/calendar/v4/calendars/unsubscription`「取消订阅日历变更事件」（calendar/v4/calendar/unsubscription）
+- `POST /open-apis/calendar/v4/freebusy/batch`「批量查询主日历日程忙闲信息」（calendar/v4/freebusy/batch）
+- `POST /open-apis/calendar/v4/freebusy/list`「查询主日历日程忙闲信息」（calendar/v4/freebusy/list）
+- `GET /open-apis/vc/v1/bots/events`「获取会议事件列表」（vc/v1/bot/events）
+- `POST /open-apis/vc/v1/bots/join`「加入会议」（vc/v1/bot/join）
+- `POST /open-apis/vc/v1/bots/leave`「离开会议」（vc/v1/bot/leave）
+- `GET /open-apis/vc/v1/bots/user_active_meeting`「获取用户活跃会议列表」（vc/v1/bot/user_active_meeting）
+
 ## explorer 全量轨道（2026-09-03）
 
 新增 1 · 移除 0 · 定义变更 2（全量共 1640 个接口）

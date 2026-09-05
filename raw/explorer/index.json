@@ -3715,7 +3715,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar.acl",
-  "sha256": "92558525347e4ec31e29534dda15610141489ef6adf3c4a25adead56ef420d99",
+  "sha256": "69fe4d26e2317e7ef6aa4de5e80f4e8d5c123964a2cd2a69c01df589bad0084a",
   "title": "创建访问控制",
   "version": "v4"
  },
@@ -3727,7 +3727,7 @@
   "httpMethod": "DELETE",
   "project": "calendar",
   "resource": "calendar.acl",
-  "sha256": "5af8faa4a860f594b81b8d19e6d1d428f9b7bf8724f079db0f91b4bfb06a66a0",
+  "sha256": "0705b9fc4a09c84b5c0aec6eeb2538bdb65e451a9e553a764c4da196cf0f2d69",
   "title": "删除访问控制",
   "version": "v4"
  },
@@ -3739,7 +3739,7 @@
   "httpMethod": "GET",
   "project": "calendar",
   "resource": "calendar.acl",
-  "sha256": "f76d3a0d3997874d7ab248b12d37bb5427fb9cd31fc263c4c9d3a07fda9c277d",
+  "sha256": "c5a4b9687113360f9cd6c1d099db35d5986a6c7c6eda05c077c8afeb555925b7",
   "title": "获取访问控制列表",
   "version": "v4"
  },
@@ -3751,7 +3751,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar.acl",
-  "sha256": "062a221a4a2ed8d8928a3159afff8c3aacc235083f640d3c059651eeda14494d",
+  "sha256": "781081a28a6f5549a4d1de975b78046463195a952d31fed4346f2f3c60a8ac83",
   "title": "订阅日历访问控制变更事件",
   "version": "v4"
  },
@@ -3763,7 +3763,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar.acl",
-  "sha256": "e2f21ed078a14dd1196dbc5957ed092a8afe5b1392860772d1cac98b32b940a1",
+  "sha256": "a751091ec0ce4add1b3855adf19e0959ea40636efb04d94219d9c0eb90675fbb",
   "title": "取消订阅日历访问控制变更事件",
   "version": "v4"
  },
@@ -3775,7 +3775,7 @@
   "httpMethod": "GET",
   "project": "calendar",
   "resource": "calendar.event.attendee.chat_member",
-  "sha256": "e8d75d2e36cde4426dc9ad696761d5bfb040fc774400fd31af2dc137decc432f",
+  "sha256": "f769e2d42eafc05e3426b76a38681d24d8108e9934e3211d28b78732a9ee2e15",
   "title": "获取日程参与群成员列表",
   "version": "v4"
  },
@@ -3787,7 +3787,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar.event.attendee",
-  "sha256": "5524e2337e144d2a1f53de1e6c1b4e77252aa1c37e3726c3119fb5b85f42af1b",
+  "sha256": "8a570c51cf7079e1d3f113aae21c4667a2cdfc8ce4c3dcb04b46f107d384a0f1",
   "title": "删除日程参与人",
   "version": "v4"
  },
@@ -3799,7 +3799,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar.event.attendee",
-  "sha256": "9d62b416efdeb4a52259c0fe5265aad6dbbab22ac0163b4594261bd5ac51d137",
+  "sha256": "1bd2732a5d6d79ef04a441f88f7504ad3721f76a5a6fb14006d5e7b9d8d4deb9",
   "title": "添加日程参与人",
   "version": "v4"
  },
@@ -3811,7 +3811,7 @@
   "httpMethod": "GET",
   "project": "calendar",
   "resource": "calendar.event.attendee",
-  "sha256": "3d3c2550d2c76d7a7b798aa2a32c868a7ac1873ef899685b048ae9dce2beca2e",
+  "sha256": "c593b22dc83bb50bd3c6983f24bd9865cada054e6a764648165508e9550cc995",
   "title": "获取日程参与人列表",
   "version": "v4"
  },
@@ -3823,7 +3823,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar.event.meeting_chat",
-  "sha256": "8cacf81c7d4faeface3d0c36ccf4801c39f7afce85ae0aff848ed9e8aed7ef81",
+  "sha256": "4b82cd0bd768c24215d5183d9ae4e387d96ca3bdc6f0faa3ff18f7835278590d",
   "title": "创建会议群",
   "version": "v4"
  },
@@ -3835,7 +3835,7 @@
   "httpMethod": "DELETE",
   "project": "calendar",
   "resource": "calendar.event.meeting_chat",
-  "sha256": "1e77cba9c9c701feab80e6092cff5ce99ad83c9161a658b44b028ea8846bc8ba",
+  "sha256": "f8f2a9e21c04364819c61994aefbb879ff6c0979d30f045e1f2afe64b2da35e6",
   "title": "解绑会议群",
   "version": "v4"
  },
@@ -3847,7 +3847,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar.event.meeting_minute",
-  "sha256": "2459424a9a3e1b2247120475b73d72e9267ec700efcdab1f13e79df031945f23",
+  "sha256": "a6a30e807cffeca3e4d714e8f6bdbd61393f11b3b217563e9ee23f51e821afcb",
   "title": "创建会议纪要",
   "version": "v4"
  },
@@ -3859,7 +3859,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "58781cb8d83cc91d703bd8b800de67b812c1e953e05063db603cf92de399ae47",
+  "sha256": "4ddb959854136237d2eebd0b5cc9eb390cd4fd4512f2a995d69f54abd2019f9a",
   "title": "创建日程",
   "version": "v4"
  },
@@ -3871,7 +3871,7 @@
   "httpMethod": "DELETE",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "8e8b6de3c1925df666cd6e32e104c0172b03e136066e5353a0fcb7e82df60e53",
+  "sha256": "c269df05c4e23297a2e150bc0c31e33873ea77676ca286140275477e96e64ccf",
   "title": "删除日程",
   "version": "v4"
  },
@@ -3883,7 +3883,7 @@
   "httpMethod": "GET",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "41b09e100643bca134fa300e99ea3e7d967791c1355f7ce88b89d308c98e3eae",
+  "sha256": "c69f342df84c7c86c9321abd6a6d683fed262037ef48b0848a884cbef64ca0ee",
   "title": "获取日程",
   "version": "v4"
  },
@@ -3895,7 +3895,7 @@
   "httpMethod": "GET",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "d2dbc68c6d615f84a54871f3ed6b16aa97daa4576c3d5e0c517249abf716f779",
+  "sha256": "b40da2f286fe5926be48fa5dca0aa7cd3ff5ac62998df31cac21cb6babe0caa3",
   "title": "查询日程视图",
   "version": "v4"
  },
@@ -3907,7 +3907,7 @@
   "httpMethod": "GET",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "7861068b43a3b28edf811bb209177170f0fd0d53b7f62d742e5354e8dea5c8ee",
+  "sha256": "8c042c5167e6521f1f0d2495bfcc783aa171e17e7deebafbe9b183afd5a9d1c3",
   "title": "获取重复日程实例",
   "version": "v4"
  },
@@ -3919,7 +3919,7 @@
   "httpMethod": "GET",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "31199fb3e234429dcec4b2316c4250eed623ba9ff0c1bbf4e9d6da0b8db86d46",
+  "sha256": "e1a9156003dea01ecb2903f4e9602b01559c8899b4a44f8939e96176c17593e5",
   "title": "获取日程列表",
   "version": "v4"
  },
@@ -3931,7 +3931,7 @@
   "httpMethod": "PATCH",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "3663d7a0a6b15e3f0ace757f5f6ddb6dfba4fe0b0437fd5c9b89a6a503792fb6",
+  "sha256": "39bafc760fc62c3ab746feb43353122b3a44bd55201a66a40533a6e0dcea24b6",
   "title": "更新日程",
   "version": "v4"
  },
@@ -3943,7 +3943,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "8fe4e0afc755017c41f6646c35841e3e867356befb3bf60b32ace153ce9af662",
+  "sha256": "5147222c3fe8f9d1fe2e761497e05cdee82be23fa452ef95430f1481dbf98a61",
   "title": "回复日程",
   "version": "v4"
  },
@@ -3955,7 +3955,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "5888c9204ed5af81dcfa89f42558ed90f651491e808c1f5ea0671954f0c42cca",
+  "sha256": "402c93ce91d70aa3cff5976369045a768079d0c0be80c89dc11bdecc25862455",
   "title": "搜索日程",
   "version": "v4"
  },
@@ -3967,7 +3967,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "3c34f7397e02836175fd762bf8e4461cf6d063e8240bdc3a0ba18db86eb5dd81",
+  "sha256": "2935fb7f24b225d7f11690cfdb9bb3685a5a2c8b960defea0caef407670bfce9",
   "title": "订阅日程变更事件",
   "version": "v4"
  },
@@ -3979,7 +3979,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "daddbf5f2842ac6e09a9c16afb0411bf9b7d2dde3c42a2eb579fab21c4db6c29",
+  "sha256": "74c01205b5147927de670c9e89e40fd60da9973378bdf2f7a8b3edeace8358d5",
   "title": "取消订阅日程变更事件",
   "version": "v4"
  },
@@ -3991,7 +3991,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar",
-  "sha256": "abf31581b4097c0f6e0cfb38ee92351c14f68755d713941a288a94f226b4b431",
+  "sha256": "9b87142ed515df855a9e479b13efa3989490038e21649bbcba47cd337f27dbe6",
   "title": "创建共享日历",
   "version": "v4"
  },
@@ -4003,7 +4003,7 @@
   "httpMethod": "DELETE",
   "project": "calendar",
   "resource": "calendar",
-  "sha256": "c0259c1ccc936cb8ad8ef42206606793b7fe1ea70e3961086bf3718246eab76f",
+  "sha256": "2a18c42cfffc756a3253ffd94ee0fbb60b0a12655439f0c3328944a5979a12cc",
   "title": "删除共享日历",
   "version": "v4"
  },
@@ -4015,7 +4015,7 @@
   "httpMethod": "GET",
   "project": "calendar",
   "resource": "calendar",
-  "sha256": "4d8ba2863d4883700c18e18c99aec5548f266fae92b846593519a73777bd85af",
+  "sha256": "40e9f01d732a6c58a4bd0acda315e12016f057df6c9009f0006e8ca8885cd35b",
   "title": "查询日历信息",
   "version": "v4"
  },
@@ -4027,7 +4027,7 @@
   "httpMethod": "GET",
   "project": "calendar",
   "resource": "calendar",
-  "sha256": "512ce843036228f516020b2c025ab3db84059e7f1b918bee962818859b958f1e",
+  "sha256": "788d9c2a05b7ff2cbbdea12675fe7e79445991c428710c1af0266b428d68359f",
   "title": "查询日历列表",
   "version": "v4"
  },
@@ -4039,7 +4039,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar",
-  "sha256": "4ce45b6cd5bb6497363b6a65e147b3b9c81994ac43127d411e9633c410b41671",
+  "sha256": "b33db0747965020abac3d67487552ab3883c3439f4834b0f58d80815517c807c",
   "title": "批量查询日历信息",
   "version": "v4"
  },
@@ -4051,7 +4051,7 @@
   "httpMethod": "PATCH",
   "project": "calendar",
   "resource": "calendar",
-  "sha256": "50b2adb345fb8cbfe3e4f5ac907a17bd396fc9280d7d183416d0390b40dd7476",
+  "sha256": "98fea7eabda0560d0014972126533f98fa71d19e75ccafe80f96f76d77f46bb8",
   "title": "更新日历信息",
   "version": "v4"
  },
@@ -4063,7 +4063,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar",
-  "sha256": "0347ca09158f09a970dd96eef03f4781f40190912d8b66f9132e3b429886224e",
+  "sha256": "c94b41d7db82ad7506f4f45e10198d81d559cf832537be3a23b4c741c6996c0e",
   "title": "查询主日历信息",
   "version": "v4"
  },
@@ -4075,7 +4075,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar",
-  "sha256": "80a88cb32fabc5dd46f31cffa2a3d660a2613e87ace6abfa1e536c29d60cac38",
+  "sha256": "ef916910a6a699003945363570d0d15d7346559024e212549c95e161eba3a658",
   "title": "批量获取主日历信息",
   "version": "v4"
  },
@@ -4087,7 +4087,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar",
-  "sha256": "3ac8ac2bed243f9f86c9dcd65805b4774331b34711be64ea3df3ac80f8119c1e",
+  "sha256": "ac48bc68181c5113508697fe0d3a0327cf86deb83f11a10c89584b2072107925",
   "title": "搜索日历",
   "version": "v4"
  },
@@ -4099,7 +4099,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar",
-  "sha256": "752f7a7ca311ec6c6562e9e360c286e699ee551ab30c4aeb0abd32846178c322",
+  "sha256": "e47e199dd94edb83e75ea7bd1376c23e1af38b3ffaf398ed0793a4e9e77321c7",
   "title": "订阅日历",
   "version": "v4"
  },
@@ -4111,7 +4111,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar",
-  "sha256": "a7b063bb4e049223a2673027f0fbc6f728f902aba92efdaa7287eb8104748660",
+  "sha256": "1cda42d2b54395083a4ea30015efd262093fb5bd9f5e817c1dedf7bc67f835cd",
   "title": "订阅日历变更事件",
   "version": "v4"
  },
@@ -4123,7 +4123,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar",
-  "sha256": "385ce1a61967171cca904a96e7e69cd5b9a438b022ce6c271123c9a61b6f3a87",
+  "sha256": "072d18763e18230c267ede288b307862df000747323778ed1ee76c85981b7064",
   "title": "取消订阅日历",
   "version": "v4"
  },
@@ -4135,7 +4135,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "calendar",
-  "sha256": "8a5a3e7a318106167630313856bd06c60433fb4525be38bc40dc10945b903dc4",
+  "sha256": "8d5327860acc0a27e0094c973e7f32a561d33f2a2b5c073f8e2d645f939943c5",
   "title": "取消订阅日历变更事件",
   "version": "v4"
  },
@@ -4183,7 +4183,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "freebusy",
-  "sha256": "c5f9948b0e6d7ac4146fd69ad2f0b44298ec16c33c06355ee2d579e1b818449c",
+  "sha256": "0c1927ed77c555017563abe243c1867b5e95f0fe3c613dad22058a922571d307",
   "title": "批量查询主日历日程忙闲信息",
   "version": "v4"
  },
@@ -4195,7 +4195,7 @@
   "httpMethod": "POST",
   "project": "calendar",
   "resource": "freebusy",
-  "sha256": "ee8468ec62c69ca71a7ab342e03d9f32f496d2f96a27b24c1267756b66315965",
+  "sha256": "3500c0ae4bded9b59a1e9e727968f704d873b55a96b99f2966af612e69ae3e4a",
   "title": "查询主日历日程忙闲信息",
   "version": "v4"
  },
@@ -18655,7 +18655,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "bot",
-  "sha256": "64262d8185bbdcb1c4e4e5ccbd60a0a85e9752691d2579722ec9920d803745ca",
+  "sha256": "8a30eeb32f8619c09b333f8c07bd797227c5b41419af79e7a8ecd188730598bd",
   "title": "获取会议事件列表",
   "version": "v1"
  },
@@ -18667,7 +18667,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "bot",
-  "sha256": "9e68aef7e2161f55e95463f36088d771b0e3e8b02ad40cc53cf27f86335149a8",
+  "sha256": "c2ea2378b1bd455ba54ac29a958c2ae7485279eb359bf58b82ab5b77aa3b4b1e",
   "title": "加入会议",
   "version": "v1"
  },
@@ -18679,7 +18679,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "bot",
-  "sha256": "9b978d0cf0a28fbf0201a2b62002fde716419df1c91d07f118804f02a7be98a7",
+  "sha256": "cc681d50cf1f28981f87026c75c45bfe4437da8bb0d3ad80aff34e9f326c16e0",
   "title": "离开会议",
   "version": "v1"
  },
@@ -18703,7 +18703,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "bot",
-  "sha256": "1063c2d0316c03c5cd1e937dfb8d570d68dbe6da4e87c13537ed26ace55d129f",
+  "sha256": "2be08974597ad0084e18c3beebf574c7b9a34f935fbef71e035f99e1716c0286",
   "title": "获取用户活跃会议列表",
   "version": "v1"
  },
