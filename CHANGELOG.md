@@ -1,5 +1,110 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-08）
+
+新增 0 · 移除 0 · 定义变更 99（全量共 1640 个接口）
+
+### 定义变更
+- `GET /open-apis/docs/v1/content`「获取云文档内容」（docs/v1/content/get）
+- `DELETE /open-apis/docx/v1/chats/{chat_id}/announcement/blocks/{block_id}/children/batch_delete`「删除群公告中的块」（docx/v1/chat.announcement.block.children/batch_delete）
+- `POST /open-apis/docx/v1/chats/{chat_id}/announcement/blocks/{block_id}/children`「在群公告中创建块」（docx/v1/chat.announcement.block.children/create）
+- `GET /open-apis/docx/v1/chats/{chat_id}/announcement/blocks/{block_id}/children`「获取所有子块」（docx/v1/chat.announcement.block.children/get）
+- `PATCH /open-apis/docx/v1/chats/{chat_id}/announcement/blocks/batch_update`「批量更新群公告块的内容」（docx/v1/chat.announcement.block/batch_update）
+- `GET /open-apis/docx/v1/chats/{chat_id}/announcement/blocks/{block_id}`「获取群公告块的内容」（docx/v1/chat.announcement.block/get）
+- `GET /open-apis/docx/v1/chats/{chat_id}/announcement/blocks`「获取群公告所有块」（docx/v1/chat.announcement.block/list）
+- `GET /open-apis/docx/v1/chats/{chat_id}/announcement`「获取群公告基本信息」（docx/v1/chat.announcement/get）
+- `DELETE /open-apis/docx/v1/documents/{document_id}/blocks/{block_id}/children/batch_delete`「删除块」（docx/v1/document.block.children/batch_delete）
+- `POST /open-apis/docx/v1/documents/{document_id}/blocks/{block_id}/children`「创建块」（docx/v1/document.block.children/create）
+- `GET /open-apis/docx/v1/documents/{document_id}/blocks/{block_id}/children`「获取所有子块」（docx/v1/document.block.children/get）
+- `POST /open-apis/docx/v1/documents/{document_id}/blocks/{block_id}/descendant`「创建嵌套块」（docx/v1/document.block.descendant/create）
+- `PATCH /open-apis/docx/v1/documents/{document_id}/blocks/batch_update`「批量更新块的内容」（docx/v1/document.block/batch_update）
+- `GET /open-apis/docx/v1/documents/{document_id}/blocks/{block_id}`「获取块的内容」（docx/v1/document.block/get）
+- `GET /open-apis/docx/v1/documents/{document_id}/blocks`「获取文档所有块」（docx/v1/document.block/list）
+- `PATCH /open-apis/docx/v1/documents/{document_id}/blocks/{block_id}`「更新块的内容」（docx/v1/document.block/patch）
+- `POST /open-apis/docx/v1/documents/blocks/convert`「Markdown/HTML 内容转换为文档块」（docx/v1/document/convert）
+- `POST /open-apis/docx/v1/documents`「创建文档」（docx/v1/document/create）
+- `GET /open-apis/docx/v1/documents/{document_id}`「获取文档基本信息」（docx/v1/document/get）
+- `GET /open-apis/docx/v1/documents/{document_id}/raw_content`「获取文档纯文本内容」（docx/v1/document/raw_content）
+- `POST /open-apis/drive/v1/export_tasks`「创建导出任务」（drive/v1/export_task/create）
+- `GET /open-apis/drive/v1/export_tasks/file/{file_token}/download`「下载导出文件」（drive/v1/export_task/download）
+- `GET /open-apis/drive/v1/export_tasks/{ticket}`「查询导出任务结果」（drive/v1/export_task/get）
+- `POST /open-apis/drive/v1/files/{file_token}/comments/{comment_id}/replies`「添加回复」（drive/v1/file.comment.reply/create）
+- `DELETE /open-apis/drive/v1/files/{file_token}/comments/{comment_id}/replies/{reply_id}`「删除回复」（drive/v1/file.comment.reply/delete）
+- `GET /open-apis/drive/v1/files/{file_token}/comments/{comment_id}/replies`「获取回复信息」（drive/v1/file.comment.reply/list）
+- `PUT /open-apis/drive/v1/files/{file_token}/comments/{comment_id}/replies/{reply_id}`「更新回复的内容」（drive/v1/file.comment.reply/update）
+- `POST /open-apis/drive/v1/files/{file_token}/comments/batch_query`「批量获取评论」（drive/v1/file.comment/batch_query）
+- `POST /open-apis/drive/v1/files/{file_token}/comments`「添加全文评论」（drive/v1/file.comment/create）
+- `GET /open-apis/drive/v1/files/{file_token}/comments/{comment_id}`「获取全文评论」（drive/v1/file.comment/get）
+- `GET /open-apis/drive/v1/files/{file_token}/comments`「获取云文档所有评论」（drive/v1/file.comment/list）
+- `PATCH /open-apis/drive/v1/files/{file_token}/comments/{comment_id}`「解决/恢复评论」（drive/v1/file.comment/patch）
+- `GET /open-apis/drive/v1/files/{file_token}/statistics`「获取文件统计信息」（drive/v1/file.statistics/get）
+- `POST /open-apis/drive/v1/files/{file_token}/subscriptions`「创建订阅」（drive/v1/file.subscription/create）
+- `GET /open-apis/drive/v1/files/{file_token}/subscriptions/{subscription_id}`「获取订阅状态」（drive/v1/file.subscription/get）
+- `PATCH /open-apis/drive/v1/files/{file_token}/subscriptions/{subscription_id}`「更新订阅状态」（drive/v1/file.subscription/patch）
+- `POST /open-apis/drive/v1/files/{file_token}/versions`「创建文档版本」（drive/v1/file.version/create）
+- `DELETE /open-apis/drive/v1/files/{file_token}/versions/{version_id}`「删除文档版本」（drive/v1/file.version/delete）
+- `GET /open-apis/drive/v1/files/{file_token}/versions/{version_id}`「获取文档版本信息」（drive/v1/file.version/get）
+- `GET /open-apis/drive/v1/files/{file_token}/versions`「获取文档版本列表」（drive/v1/file.version/list）
+- `GET /open-apis/drive/v1/files/{file_token}/view_records`「获取文件访问记录」（drive/v1/file.view_record/list）
+- `POST /open-apis/drive/v1/files/{file_token}/copy`「复制文件」（drive/v1/file/copy）
+- `POST /open-apis/drive/v1/files/create_folder`「新建文件夹」（drive/v1/file/create_folder）
+- `POST /open-apis/drive/v1/files/create_shortcut`「创建文件快捷方式」（drive/v1/file/create_shortcut）
+- `DELETE /open-apis/drive/v1/files/{file_token}`「删除文件或文件夹」（drive/v1/file/delete）
+- `DELETE /open-apis/drive/v1/files/{file_token}/delete_subscribe`「取消云文档事件订阅」（drive/v1/file/delete_subscribe）
+- `GET /open-apis/drive/v1/files/{file_token}/download`「下载文件」（drive/v1/file/download）
+- `GET /open-apis/drive/v1/files/{file_token}/get_subscribe`「查询云文档事件订阅状态」（drive/v1/file/get_subscribe）
+- `GET /open-apis/drive/v1/files`「获取文件夹中的文件清单」（drive/v1/file/list）
+- `POST /open-apis/drive/v1/files/{file_token}/move`「移动文件或文件夹」（drive/v1/file/move）
+- `POST /open-apis/drive/v1/files/{file_token}/subscribe`「订阅云文档事件」（drive/v1/file/subscribe）
+- `GET /open-apis/drive/v1/files/task_check`「查询异步任务状态」（drive/v1/file/task_check）
+- `POST /open-apis/drive/v1/files/upload_all`「上传文件」（drive/v1/file/upload_all）
+- `POST /open-apis/drive/v1/files/upload_finish`「分片上传文件-完成上传」（drive/v1/file/upload_finish）
+- `POST /open-apis/drive/v1/files/upload_part`「分片上传文件-上传分片」（drive/v1/file/upload_part）
+- `POST /open-apis/drive/v1/files/upload_prepare`「分片上传文件-预上传」（drive/v1/file/upload_prepare）
+- `POST /open-apis/drive/v1/import_tasks`「创建导入任务」（drive/v1/import_task/create）
+- `GET /open-apis/drive/v1/import_tasks/{ticket}`「查询导入任务结果」（drive/v1/import_task/get）
+- `GET /open-apis/drive/v1/medias/batch_get_tmp_download_url`「获取素材临时下载链接」（drive/v1/media/batch_get_tmp_download_url）
+- `GET /open-apis/drive/v1/medias/{file_token}/download`「下载素材」（drive/v1/media/download）
+- `POST /open-apis/drive/v1/medias/upload_all`「上传素材」（drive/v1/media/upload_all）
+- `POST /open-apis/drive/v1/medias/upload_finish`「分片上传素材-完成上传」（drive/v1/media/upload_finish）
+- `POST /open-apis/drive/v1/medias/upload_part`「分片上传素材-上传分片」（drive/v1/media/upload_part）
+- `POST /open-apis/drive/v1/medias/upload_prepare`「分片上传素材-预上传」（drive/v1/media/upload_prepare）
+- `POST /open-apis/drive/v1/metas/batch_query`「获取文件元数据」（drive/v1/meta/batch_query）
+- `GET /open-apis/drive/v1/permissions/{token}/members/auth`「判断用户云文档权限」（drive/v1/permission.member/auth）
+- `POST /open-apis/drive/v1/permissions/{token}/members/batch_create`「批量增加协作者权限」（drive/v1/permission.member/batch_create）
+- `POST /open-apis/drive/v1/permissions/{token}/members`「增加协作者权限」（drive/v1/permission.member/create）
+- `DELETE /open-apis/drive/v1/permissions/{token}/members/{member_id}`「移除云文档协作者权限」（drive/v1/permission.member/delete）
+- `GET /open-apis/drive/v1/permissions/{token}/members`「获取云文档协作者」（drive/v1/permission.member/list）
+- `POST /open-apis/drive/v1/permissions/{token}/members/transfer_owner`「转移云文档所有者」（drive/v1/permission.member/transfer_owner）
+- `PUT /open-apis/drive/v1/permissions/{token}/members/{member_id}`「更新协作者权限」（drive/v1/permission.member/update）
+- `POST /open-apis/drive/v1/permissions/{token}/public/password`「启用云文档密码」（drive/v1/permission.public.password/create）
+- `DELETE /open-apis/drive/v1/permissions/{token}/public/password`「停用云文档密码」（drive/v1/permission.public.password/delete）
+- `PUT /open-apis/drive/v1/permissions/{token}/public/password`「刷新云文档密码」（drive/v1/permission.public.password/update）
+- `GET /open-apis/drive/v1/permissions/{token}/public`「获取云文档权限设置」（drive/v1/permission.public/get）
+- `PATCH /open-apis/drive/v1/permissions/{token}/public`「更新云文档权限设置」（drive/v1/permission.public/patch）
+- `DELETE /open-apis/drive/v1/user/remove_subscription`「取消用户云文档事件订阅」（drive/v1/user/remove_subscription）
+- `POST /open-apis/drive/v1/user/subscription`「订阅用户云文档事件」（drive/v1/user/subscription）
+- `GET /open-apis/drive/v1/user/subscription_status`「查询用户云文档事件订阅状态」（drive/v1/user/subscription_status）
+- `POST /open-apis/drive/v2/files/{file_token}/comments/reaction`「添加/取消表情回应」（drive/v2/comment_reaction/update_reaction）
+- `GET /open-apis/drive/v2/files/{file_token}/likes`「获取云文档的点赞者列表」（drive/v2/file.like/list）
+- `GET /open-apis/drive/v2/permissions/{token}/public`「获取云文档权限设置」（drive/v2/permission.public/get）
+- `PATCH /open-apis/drive/v2/permissions/{token}/public`「更新云文档权限设置」（drive/v2/permission.public/patch）
+- `POST /open-apis/wiki/v2/spaces/{space_id}/members`「添加知识空间成员」（wiki/v2/space.member/create）
+- `DELETE /open-apis/wiki/v2/spaces/{space_id}/members/{member_id}`「删除知识空间成员」（wiki/v2/space.member/delete）
+- `GET /open-apis/wiki/v2/spaces/{space_id}/members`「获取知识空间成员列表」（wiki/v2/space.member/list）
+- `POST /open-apis/wiki/v2/spaces/{space_id}/nodes/{node_token}/copy`「创建知识空间节点副本」（wiki/v2/space.node/copy）
+- `POST /open-apis/wiki/v2/spaces/{space_id}/nodes`「创建知识空间节点」（wiki/v2/space.node/create）
+- `GET /open-apis/wiki/v2/spaces/{space_id}/nodes`「获取知识空间子节点列表」（wiki/v2/space.node/list）
+- `POST /open-apis/wiki/v2/spaces/{space_id}/nodes/{node_token}/move`「移动知识空间节点」（wiki/v2/space.node/move）
+- `POST /open-apis/wiki/v2/spaces/{space_id}/nodes/move_docs_to_wiki`「移动云空间文档至知识空间」（wiki/v2/space.node/move_docs_to_wiki）
+- `POST /open-apis/wiki/v2/spaces/{space_id}/nodes/{node_token}/update_title`「更新知识空间节点标题」（wiki/v2/space.node/update_title）
+- `PUT /open-apis/wiki/v2/spaces/{space_id}/setting`「更新知识空间设置」（wiki/v2/space.setting/update）
+- `POST /open-apis/wiki/v2/spaces`「创建知识空间」（wiki/v2/space/create）
+- `GET /open-apis/wiki/v2/spaces/{space_id}`「获取知识空间信息」（wiki/v2/space/get）
+- `GET /open-apis/wiki/v2/spaces/get_node`「获取知识空间节点信息」（wiki/v2/space/get_node）
+- `GET /open-apis/wiki/v2/spaces`「获取知识空间列表」（wiki/v2/space/list）
+- `GET /open-apis/wiki/v2/tasks/{task_id}`「获取任务结果」（wiki/v2/task/get）
+
 ## explorer 全量轨道（2026-09-05）
 
 新增 0 · 移除 0 · 定义变更 42（全量共 1640 个接口）

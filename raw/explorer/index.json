@@ -8947,7 +8947,7 @@
   "httpMethod": "GET",
   "project": "docs",
   "resource": "content",
-  "sha256": "7c028af415793ce745931752d3b1e59dd31357397d0016d1212566c63685bcc6",
+  "sha256": "cfe6a3ad916cdce053054bb062a4b038a72a5ea568c70cb869bf8ab77da85a17",
   "title": "获取云文档内容",
   "version": "v1"
  },
@@ -9175,7 +9175,7 @@
   "httpMethod": "DELETE",
   "project": "docx",
   "resource": "chat.announcement.block.children",
-  "sha256": "e33d648c618620568c279ecedcf039293d26928b0b135d2471d599d4e6f9f3b9",
+  "sha256": "49b1172924b79088903971177e5f8df5b40430ed6ec6d9b83df015d31581746c",
   "title": "删除群公告中的块",
   "version": "v1"
  },
@@ -9187,7 +9187,7 @@
   "httpMethod": "POST",
   "project": "docx",
   "resource": "chat.announcement.block.children",
-  "sha256": "a98a86932751c7792673773544d736d65f66a0f7835573652317768a00396f15",
+  "sha256": "c6083cc740e16f61b95e6868ea111f55126d80ae6a6f6e2d529b04452f33099f",
   "title": "在群公告中创建块",
   "version": "v1"
  },
@@ -9199,7 +9199,7 @@
   "httpMethod": "GET",
   "project": "docx",
   "resource": "chat.announcement.block.children",
-  "sha256": "bb7c79a7be96509e5371ad671188899e262cd716a289cf23df5925b62c5d8884",
+  "sha256": "96c28e760d13a9fd7cd7415c4db7c1d285aa1fe0ca186b5cb9b2941b0cc09dba",
   "title": "获取所有子块",
   "version": "v1"
  },
@@ -9211,7 +9211,7 @@
   "httpMethod": "PATCH",
   "project": "docx",
   "resource": "chat.announcement.block",
-  "sha256": "bcf5280d42a54f734d149d7ce88e56819af399dce6df8574c3ef7a6694c05156",
+  "sha256": "a19aead5c30f647a65c300fbc69062ab2d8333d08d3906dec84b5804b9f9e490",
   "title": "批量更新群公告块的内容",
   "version": "v1"
  },
@@ -9223,7 +9223,7 @@
   "httpMethod": "GET",
   "project": "docx",
   "resource": "chat.announcement.block",
-  "sha256": "e3760aa56efc9889d1634a0d22757c38f712f1aeb4d051df425ea5d033f5b458",
+  "sha256": "6313938a53c856bcd9f72f1c68b6dedd598cb56d645563b996cd12190e35dd16",
   "title": "获取群公告块的内容",
   "version": "v1"
  },
@@ -9235,7 +9235,7 @@
   "httpMethod": "GET",
   "project": "docx",
   "resource": "chat.announcement.block",
-  "sha256": "c1b4f5d94da0b7abf2110234f5d16e5ca45af12143c5ed8d39a247142be7429f",
+  "sha256": "586f11e450a67fd6b065cb1196556e64a8d4283d2c10e949cb99014591b2870c",
   "title": "获取群公告所有块",
   "version": "v1"
  },
@@ -9247,7 +9247,7 @@
   "httpMethod": "GET",
   "project": "docx",
   "resource": "chat.announcement",
-  "sha256": "2365c066399ecd4167315a9f0cfe17cda430389182fb4e89a3d8709a5636f30d",
+  "sha256": "966bb49d0dc8c4e2934e876a6b69e42912acce3bc04cac9a838f1f165888856c",
   "title": "获取群公告基本信息",
   "version": "v1"
  },
@@ -9259,7 +9259,7 @@
   "httpMethod": "DELETE",
   "project": "docx",
   "resource": "document.block.children",
-  "sha256": "dd00f0012c1deef3dd0b562d6c635d415998787ffe238f2ac7fe688f48c84c04",
+  "sha256": "9bb1aba1449a66a2da758ab3d5ed7891dbdd2a250495171890842c378b322dd9",
   "title": "删除块",
   "version": "v1"
  },
@@ -9271,7 +9271,7 @@
   "httpMethod": "POST",
   "project": "docx",
   "resource": "document.block.children",
-  "sha256": "b6c43879f35c073cc17a636c52487a1b7ad6a0547f636fa239867cfdc48d1ef9",
+  "sha256": "d0aeeecade8b76503a6c8c4877f5dc778c6144cf0b9e93194f37e9e35b51671f",
   "title": "创建块",
   "version": "v1"
  },
@@ -9283,7 +9283,7 @@
   "httpMethod": "GET",
   "project": "docx",
   "resource": "document.block.children",
-  "sha256": "951a3cb8e79f06c9a129c05fea3bded8e21beef897ffbc49f80035b7f298cd77",
+  "sha256": "fe6adeb063b0c47248d16f72f359c8e1921aacbeab1cf549465f8eabae6da053",
   "title": "获取所有子块",
   "version": "v1"
  },
@@ -9295,7 +9295,7 @@
   "httpMethod": "POST",
   "project": "docx",
   "resource": "document.block.descendant",
-  "sha256": "0719e13cf3c6099902ca75e21411e675ced72348ade5047905285a00904bbfbf",
+  "sha256": "fe190e2ea1f8820ab84f7540984a709e0eee84be7540b8bbe50ea2d4a03b657a",
   "title": "创建嵌套块",
   "version": "v1"
  },
@@ -9307,7 +9307,7 @@
   "httpMethod": "PATCH",
   "project": "docx",
   "resource": "document.block",
-  "sha256": "98d30055ac3223ed4a35f2624f6ff6ed7a3eafb76e6dd6e3a31266b0c6cb8c2e",
+  "sha256": "22fe9dd7f19708d51dd523fb8c4d2af825f4b3653b1bfe4ddab8441c87ccc87a",
   "title": "批量更新块的内容",
   "version": "v1"
  },
@@ -9319,7 +9319,7 @@
   "httpMethod": "GET",
   "project": "docx",
   "resource": "document.block",
-  "sha256": "2202565b5b8f9ac2e98e977e66e4efb67ead62adfda50f7fdb1c7086845eb2d7",
+  "sha256": "98d8211d7a2956113ec0393ac88a8357f8f10cb4e6d9ed568824c2a1e3ff5f91",
   "title": "获取块的内容",
   "version": "v1"
  },
@@ -9331,7 +9331,7 @@
   "httpMethod": "GET",
   "project": "docx",
   "resource": "document.block",
-  "sha256": "8db5ab4eca312485972bf9428f6d9fdf1171373398ec922530d9bc3ec0df3bdc",
+  "sha256": "797b8386a6a58b73d4d26c6bc1d49eefe9aeece00b61ebab438716a376ef6a25",
   "title": "获取文档所有块",
   "version": "v1"
  },
@@ -9343,7 +9343,7 @@
   "httpMethod": "PATCH",
   "project": "docx",
   "resource": "document.block",
-  "sha256": "3d6740f1bbf1304589df440a8e628350b0f7e190d99f8087530497120d44463e",
+  "sha256": "09c667c10373b6b052d31aad18b3c1aa04dd0af2882e126277ef4895594c4ea8",
   "title": "更新块的内容",
   "version": "v1"
  },
@@ -9355,7 +9355,7 @@
   "httpMethod": "POST",
   "project": "docx",
   "resource": "document",
-  "sha256": "6ca42ab7d4c4ce54a76e059e9e8a8d257cfd4da4998ffa73db8d9e55a170834b",
+  "sha256": "acf998e86cab5a6351015a4c99c6ab3bf5186defaf68c8c81e4c350e92ea95bb",
   "title": "Markdown/HTML 内容转换为文档块",
   "version": "v1"
  },
@@ -9367,7 +9367,7 @@
   "httpMethod": "POST",
   "project": "docx",
   "resource": "document",
-  "sha256": "1187eb9b6d67788f8acb14f5e0329c0595d6209084c09772a122edd0639fcc47",
+  "sha256": "00840c7d4325bc3634862060a87397dc445157454b65d6f3c00612ebf2166138",
   "title": "创建文档",
   "version": "v1"
  },
@@ -9379,7 +9379,7 @@
   "httpMethod": "GET",
   "project": "docx",
   "resource": "document",
-  "sha256": "d53a54b7bc5272a166905094c373704753f29f70d990e46bc1fca494c1b09a71",
+  "sha256": "59ac81e1613cec1a459be5042cd6a6ed4a1cea7adc2ad71bdca9c238fbdf3b3e",
   "title": "获取文档基本信息",
   "version": "v1"
  },
@@ -9391,7 +9391,7 @@
   "httpMethod": "GET",
   "project": "docx",
   "resource": "document",
-  "sha256": "9de7e41865ede64f88b7d368fd00c1cb70d928ed561012b054efee7be77739ad",
+  "sha256": "c0f8b2f15847d1e1818e75ed7ba40f2e6358abcd2bb0841b1b6dd352f3acab44",
   "title": "获取文档纯文本内容",
   "version": "v1"
  },
@@ -9403,7 +9403,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "export_task",
-  "sha256": "1997d69010f3c11d451a3322ed472bb4e37bf87fdf1dad818a93efb5f49df41b",
+  "sha256": "9131df4ff8a3a5870bde3f27e581bc84f2e78d9d5272f8564acfee0263bf6187",
   "title": "创建导出任务",
   "version": "v1"
  },
@@ -9415,7 +9415,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "export_task",
-  "sha256": "a0cdeb674872b44ba0b5d0c2c58b1edc9cd7788dd913f81c8b0ebfca4f74f97a",
+  "sha256": "0ec2596aedf440a9dbf555fc5f6bda9706538a42ef9c77d3dd5a4ebbc05efb26",
   "title": "下载导出文件",
   "version": "v1"
  },
@@ -9427,7 +9427,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "export_task",
-  "sha256": "e39effab716e5d3725b48b967c8fca52d3325e4244518e4b4013a2fd4e6d9d23",
+  "sha256": "e29f829b83348efc211f298bfc0eb5020031b1f706488ae2bf488fd5bc30b5e0",
   "title": "查询导出任务结果",
   "version": "v1"
  },
@@ -9439,7 +9439,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file.comment.reply",
-  "sha256": "06be076464253a0a7075208f8ea747907402802b6115773730349acea58f4b86",
+  "sha256": "b0a99f760da5f84d1ba630c5c9f09f1b423b1d095283114422b7d47d6de68aaf",
   "title": "添加回复",
   "version": "v1"
  },
@@ -9451,7 +9451,7 @@
   "httpMethod": "DELETE",
   "project": "drive",
   "resource": "file.comment.reply",
-  "sha256": "2e51e3a51162d2e1e5606d560df9531d8e0faaf9eb4643a2a2a89e62379ce6ba",
+  "sha256": "ccf947d048e2c4452ee427040dd6671c05028c5112cff9a2ce67693fe0c98487",
   "title": "删除回复",
   "version": "v1"
  },
@@ -9463,7 +9463,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "file.comment.reply",
-  "sha256": "322202144bf9d60a6f30617cb093c6fa3a96833a67eafcc81a397f465763b1a0",
+  "sha256": "54949c077dd6634783fa3318182b74eef8a4040904d26fe8cb394d5c4cef235d",
   "title": "获取回复信息",
   "version": "v1"
  },
@@ -9475,7 +9475,7 @@
   "httpMethod": "PUT",
   "project": "drive",
   "resource": "file.comment.reply",
-  "sha256": "f091a905d2c88a616125fedba69780d41fb7096b8ef9ac72489aa89ae4cba7b1",
+  "sha256": "618aa7fb92bf73038033149ba159f28e75f9dfad6031aae371c704b9220128ea",
   "title": "更新回复的内容",
   "version": "v1"
  },
@@ -9487,7 +9487,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file.comment",
-  "sha256": "6aadb6c015aa56b75863f29f28a3895807da3f6d7ebd51c4035a6c31e4d776b6",
+  "sha256": "83f7c5af37909ee93be1ef1cb13884d202b225dcd2d32eeecc036350bd3ebe46",
   "title": "批量获取评论",
   "version": "v1"
  },
@@ -9499,7 +9499,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file.comment",
-  "sha256": "0779831856d2297207bb43493139d1bb75ccb708ba582271f43bbb000f6c5c8d",
+  "sha256": "f4d32d2db2b312ee9a3f607cdece62679cd7fbadc7dc678d6a36b4e7ae58c370",
   "title": "添加全文评论",
   "version": "v1"
  },
@@ -9511,7 +9511,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "file.comment",
-  "sha256": "8881c0fc7594d548d6b694f6b4a73a32dd4a7aa2bf164cdd4730858aa61e10be",
+  "sha256": "1be171de517503be3d2ed2eb0730b3da6c62d50505234a3967545eac80592c90",
   "title": "获取全文评论",
   "version": "v1"
  },
@@ -9523,7 +9523,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "file.comment",
-  "sha256": "dfc92640205517539ef222e27e60488314efe301cd42ae1ef4328c4603870677",
+  "sha256": "b1c2dc6775346cdf3ea81c2b0009bb4b5dd6a71be88efae3a99238209fab826a",
   "title": "获取云文档所有评论",
   "version": "v1"
  },
@@ -9535,7 +9535,7 @@
   "httpMethod": "PATCH",
   "project": "drive",
   "resource": "file.comment",
-  "sha256": "fface1844d50d1aaf8864afff768da0b3256e1a10066916026c71081a92f1555",
+  "sha256": "f3b13e888481cdceea5a5ea4e447dd69fc4257e893985065d6ba40b04ae77e86",
   "title": "解决/恢复评论",
   "version": "v1"
  },
@@ -9547,7 +9547,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "file.statistics",
-  "sha256": "3eb6ead3059bb7a88ed2b1c30bfe9882cf66d6b18d01b88142a8df66c8a6c3d3",
+  "sha256": "6816e8e782303198fa0082c9e554d62aa83433be0a457fee9087342508d17212",
   "title": "获取文件统计信息",
   "version": "v1"
  },
@@ -9559,7 +9559,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file.subscription",
-  "sha256": "79e636adf0b5f3aa8bda91cdf39c6995825d037ee5a1b736656947c463c8a654",
+  "sha256": "1bad73dc7413636b38517397a1aaa8ad5e673cd207951d4b2ffb62cfe7f8ee61",
   "title": "创建订阅",
   "version": "v1"
  },
@@ -9571,7 +9571,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "file.subscription",
-  "sha256": "4b5cf0edf691e25c688f0c6af8c0b1285c7d8a3754346c162ae1b408eb2ee8df",
+  "sha256": "0091a48f01b609fa409d31dd62c492638820eb09c9c6722eeec034f47687f98a",
   "title": "获取订阅状态",
   "version": "v1"
  },
@@ -9583,7 +9583,7 @@
   "httpMethod": "PATCH",
   "project": "drive",
   "resource": "file.subscription",
-  "sha256": "fdd30149a6f7d2715587ea839b16feb11fb76ffe662149867adac8fd3a7f4eca",
+  "sha256": "db5eca43de85a0b445aa0e3f35c131a05cd6922637916d2085e071a776bf9733",
   "title": "更新订阅状态",
   "version": "v1"
  },
@@ -9595,7 +9595,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file.version",
-  "sha256": "d2ae8c9ac67037d5fde256336d252ef04a5449d2edb287afdf089a8880c6779a",
+  "sha256": "c6237a1c80af4571e86f65fff8d15b91f85761ee684016a763d982479f8d8748",
   "title": "创建文档版本",
   "version": "v1"
  },
@@ -9607,7 +9607,7 @@
   "httpMethod": "DELETE",
   "project": "drive",
   "resource": "file.version",
-  "sha256": "fe7d9b2fd162ae402463f396bab770a0b45cba6bb0bf4d7767f5a57ae103fadd",
+  "sha256": "8fe6e97086a0dbe144f29288b00c8f573d261ffac73523c49b66ef7b7acef2fd",
   "title": "删除文档版本",
   "version": "v1"
  },
@@ -9619,7 +9619,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "file.version",
-  "sha256": "270984da0e44a187fc5defd29d84cff1be35e0064426dd7f563a3b5bafe9d4ef",
+  "sha256": "fc2a20408eb1b632ca30c4a7fa2ffb7395123b021f3ff9dbae0876af95e335bd",
   "title": "获取文档版本信息",
   "version": "v1"
  },
@@ -9631,7 +9631,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "file.version",
-  "sha256": "925e7f08772a64dcd0b3861bc3acf8b7a3fee81f5f355c1233ca3ecb240cfced",
+  "sha256": "07133c52b1a8a71c1c3a462e35d4a08116360a010c97bc6516c94727857d639b",
   "title": "获取文档版本列表",
   "version": "v1"
  },
@@ -9643,7 +9643,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "file.view_record",
-  "sha256": "b034d7b51a69bb66eb22c52671b94e5f5e1fc968a1df9b030f61ba7a520442eb",
+  "sha256": "eab3b01e8aff900037455d245c4e8dad97ead83d7155116425c8fbf14ffa56de",
   "title": "获取文件访问记录",
   "version": "v1"
  },
@@ -9655,7 +9655,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file",
-  "sha256": "4eaf1d2fd2b2507b0148f8f6c1ccfbb60aa8330d0dc017e59e947bd97d8c092d",
+  "sha256": "fd8216759d219d9d1235f223d48f5d002c60b65f5b5875c5ec6591880c61db32",
   "title": "复制文件",
   "version": "v1"
  },
@@ -9667,7 +9667,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file",
-  "sha256": "b4ef6c922120b014f49fd24005470fd61449ad1c20d4f96bbfa95541255e4bdc",
+  "sha256": "ce835bad4694ad7eccbee8fff17f3e4ae3a0507ca490c846211b589ab52e6317",
   "title": "新建文件夹",
   "version": "v1"
  },
@@ -9679,7 +9679,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file",
-  "sha256": "4bfc4b877eea51470601778a682589b94f4825891965028fd6cee23fb06d48d3",
+  "sha256": "0eaa7a2436f2ac37f2e6c96503636e9806eefba4d7cbbea164f774d5d844e4fc",
   "title": "创建文件快捷方式",
   "version": "v1"
  },
@@ -9691,7 +9691,7 @@
   "httpMethod": "DELETE",
   "project": "drive",
   "resource": "file",
-  "sha256": "7eb75bb86087ce4371fb7158af5e6611810b10bfc98f7509cc271079def9c48b",
+  "sha256": "d9ba44b1ac593a2f47c93995c45523487a6efe06a60b497f9b56894a5f628588",
   "title": "删除文件或文件夹",
   "version": "v1"
  },
@@ -9703,7 +9703,7 @@
   "httpMethod": "DELETE",
   "project": "drive",
   "resource": "file",
-  "sha256": "67946447e7fa7a85aca7195d605f0574e53701349f1e192fa4f20539031fc987",
+  "sha256": "f2599fcc41f68227d49e7dc1fe12a951d13ce4d6bbb7b073c09373788d301bea",
   "title": "取消云文档事件订阅",
   "version": "v1"
  },
@@ -9715,7 +9715,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "file",
-  "sha256": "977198df72a87aec45e485b5de677d7aa278162c0144fe5247298821e6315203",
+  "sha256": "7661709b2a60fe825eff840d07dca4b9af188749f9db1d2244e0ab35f2ef39bf",
   "title": "下载文件",
   "version": "v1"
  },
@@ -9727,7 +9727,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "file",
-  "sha256": "ab1ccda84f6aa946c9e809569d9c7b9491f63531f37d17585405b365fe617e80",
+  "sha256": "009d44320bbf5ed71dadec58c4b3d8f7ccdcde0ad307b82b32f13c08549cde5a",
   "title": "查询云文档事件订阅状态",
   "version": "v1"
  },
@@ -9739,7 +9739,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "file",
-  "sha256": "74582625542e48950ff7910f865e13f7e66dbb8067c015e72b19db4d92209651",
+  "sha256": "b391309a65615dfc82a77cd819160f6abd8b6c056e984fe1a26bca2c4e050ab6",
   "title": "获取文件夹中的文件清单",
   "version": "v1"
  },
@@ -9751,7 +9751,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file",
-  "sha256": "0c2504dd5dfe4709d4ca59b6c272505bfbebc2d0ed7894af451404b61b7cc2e3",
+  "sha256": "761898a45b2f80742aff9fbb3ed837b647e39993e6a7aeb322654e4f7c8d37b1",
   "title": "移动文件或文件夹",
   "version": "v1"
  },
@@ -9763,7 +9763,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file",
-  "sha256": "bd4cf228806c8d4d4254d074cec5a6bb510d41e5208067ccab3fdf9aa6e04512",
+  "sha256": "61d0f563cdafe7ec8a1c6b72279412f2dbc20fb335a3f95b3deaa95561db5ba4",
   "title": "订阅云文档事件",
   "version": "v1"
  },
@@ -9775,7 +9775,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "file",
-  "sha256": "46a257140c4051724f9ca39c699a1be6755a1e5e0da4458194dea3b99d5bc176",
+  "sha256": "8e680dfd987fb1d84661f98aea51b15eeecd690439ad9467101aa0bb9c65a258",
   "title": "查询异步任务状态",
   "version": "v1"
  },
@@ -9787,7 +9787,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file",
-  "sha256": "3324293b79bbfbe9f2d81e521abd8c8939f2f067ad15c356bfd5a9500660061b",
+  "sha256": "c42978304d1afe4cf3833401e97dcbb1e60c66d441493068ae5867f1aa1d6f27",
   "title": "上传文件",
   "version": "v1"
  },
@@ -9799,7 +9799,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file",
-  "sha256": "15d83b18e9fe830a8137f3cec63f2f2c9de16d809badd3314f6b0129c9fbf6ac",
+  "sha256": "2b7d2efa562e6d8f69b3e3920f23821c6570f69b320933992c217d66d79d49ec",
   "title": "分片上传文件-完成上传",
   "version": "v1"
  },
@@ -9811,7 +9811,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file",
-  "sha256": "e56024aa53282b12b26675806029e7b5b0cc663dc2f92b4d5511c6d3f1b7987e",
+  "sha256": "96b64b0602eb16d15c782f52d18b144ab995f76841b4456b614458004cd23fa9",
   "title": "分片上传文件-上传分片",
   "version": "v1"
  },
@@ -9823,7 +9823,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file",
-  "sha256": "c4cc359d0a9e848a24553e8ed7b470080fa0822eed06522cc7f4cb6c41c6efa3",
+  "sha256": "0ad0f33e9a10cc6fd0827bc31b4cafe776585421de620fe07a089d507e98da30",
   "title": "分片上传文件-预上传",
   "version": "v1"
  },
@@ -9835,7 +9835,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "import_task",
-  "sha256": "0efadb0d61abc7b0878cc9870ccbb2f4f3f604563f90d3c18dc7a858743be7c5",
+  "sha256": "42c442330cdd058955a38588aa05ee18d3103923fe68c02b7dcf358805076f57",
   "title": "创建导入任务",
   "version": "v1"
  },
@@ -9847,7 +9847,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "import_task",
-  "sha256": "53c5d148cde5a03f1b99572d141618421140d8afb75c9b3a2b5e92221a5dc600",
+  "sha256": "766adca85cf199601a3dde9e5290d5fdb7db615ae61722682cd7988e77e00bff",
   "title": "查询导入任务结果",
   "version": "v1"
  },
@@ -9859,7 +9859,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "media",
-  "sha256": "cb420ad9b03fd210f90890acdd6b572766af449202d5bcf4c3ae900be810381f",
+  "sha256": "0781186aa43417887c46f560e2b3f87c51365708d5fafb9b64ddd0a933ed8bcf",
   "title": "获取素材临时下载链接",
   "version": "v1"
  },
@@ -9871,7 +9871,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "media",
-  "sha256": "81df1ea1a43be60b86801946c54d91aec3207b920026607f921fb01912020a0a",
+  "sha256": "1b72340647d971285c4ebdc87d6cb7c99e91b5acc7ffcaf7047f8ff2be1a6dc6",
   "title": "下载素材",
   "version": "v1"
  },
@@ -9883,7 +9883,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "media",
-  "sha256": "bc47a62ce89ee4d7a69a3554dfe615b80aa43b495992a2acb447cc0937e9435e",
+  "sha256": "09ce82ee127c329b1e26f373ec9f570bb6779b15af0ffb4a8190cf15fbf72b88",
   "title": "上传素材",
   "version": "v1"
  },
@@ -9895,7 +9895,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "media",
-  "sha256": "e3aa6824f7ed2de4b4fe512cf61ed71b234923a24f7ec442cd71904cf27cbb04",
+  "sha256": "2ad73a46f8e6b14bda1ec2debc1a14a08759f0835b75a382ff64fab7f3b5194a",
   "title": "分片上传素材-完成上传",
   "version": "v1"
  },
@@ -9907,7 +9907,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "media",
-  "sha256": "dcbb3cd017571e9bd4f077fc82c7dc2dee87d7455890b6ebce167b162c7af74c",
+  "sha256": "9a97838455ca77b4782c3c33cef459f90429a1262364571f10c3a9eab13d89d4",
   "title": "分片上传素材-上传分片",
   "version": "v1"
  },
@@ -9919,7 +9919,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "media",
-  "sha256": "3730721aac49b3e9919c0fe25e0f0fd20a4192a890c1a1f21ad3b0621cf6e405",
+  "sha256": "aca9b33b268ce0c7f691e2486ec97e8ba182a89ff5b0331883b921671d9a5f96",
   "title": "分片上传素材-预上传",
   "version": "v1"
  },
@@ -9931,7 +9931,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "meta",
-  "sha256": "c0da1372a154c194077bba9d9035470aaf6b194c8ec0ef766bdf3a8f04c1452b",
+  "sha256": "0b3ed4b44882e8dbba94e7cc2763ddedf1cf64aa251bd2e3dcaf5541a5c0810e",
   "title": "获取文件元数据",
   "version": "v1"
  },
@@ -9943,7 +9943,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "963cbb8aa86866b8b4cd4e90e8fa3d9f175e0aa85068b5ff5d890502ed4df8ee",
+  "sha256": "a5102f9f5e6c8dc07477cbdecdc72c1973949c10be992ec3fa1a3a2949e6e34c",
   "title": "判断用户云文档权限",
   "version": "v1"
  },
@@ -9955,7 +9955,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "217ac55b2cac7407b4ffcc118cbb39d80221335d0df7d82e1233fcf48b16541a",
+  "sha256": "2a0e178879af5d6f91395541395fe00fc7644b05f02d730491a241b6bed427ee",
   "title": "批量增加协作者权限",
   "version": "v1"
  },
@@ -9967,7 +9967,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "f75f8cc3ca635b135e37a43c38e78198974fc735a74c305188f4cfad96ff820a",
+  "sha256": "f100dd354d9999e6e8dfcbc8727e6635731a1755491272bb49de05e421f3cf63",
   "title": "增加协作者权限",
   "version": "v1"
  },
@@ -9979,7 +9979,7 @@
   "httpMethod": "DELETE",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "3263a496baef774f813090e93eeebb2d02cb01992abb487b923f1517472165af",
+  "sha256": "3c3c6b837015e7f097098ae9384af7cbab2b8b09be11077104d32ac658fdbf86",
   "title": "移除云文档协作者权限",
   "version": "v1"
  },
@@ -9991,7 +9991,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "9aebfda0a8f1fb09ae9a00123fea38eac7df5b85d176943428fd3513845b7167",
+  "sha256": "55879841dc91ef8ce890fad37a582b11751bc703906f181fb346da06381d0c1d",
   "title": "获取云文档协作者",
   "version": "v1"
  },
@@ -10003,7 +10003,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "df25e4c1b8e75e8d6d7279b68a622a4033fec38d00bea0e41b3d1943a91b7dd4",
+  "sha256": "1552920f29f4ab6066fe39262ec15cd81fd3a799cf16fca972fa3cc381f19b51",
   "title": "转移云文档所有者",
   "version": "v1"
  },
@@ -10015,7 +10015,7 @@
   "httpMethod": "PUT",
   "project": "drive",
   "resource": "permission.member",
-  "sha256": "3fc23a0931e5abc3d2a1004fd824e8fe75cdbaffcf719f25bcda82f09c3e8d23",
+  "sha256": "643d8272ba4a5e88bfb2c2f84dc93e4f876dc4c299c6e1e104d5e839d7b65b44",
   "title": "更新协作者权限",
   "version": "v1"
  },
@@ -10027,7 +10027,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "permission.public.password",
-  "sha256": "2d4d93cb9a12492238fa44b1a785c5cab6b294518491b54995b2e21ce984c029",
+  "sha256": "dc9de5fa04f90c216558674ac8762fb4b7daeb3bb0fb358a04b8e66b9bbf7d48",
   "title": "启用云文档密码",
   "version": "v1"
  },
@@ -10039,7 +10039,7 @@
   "httpMethod": "DELETE",
   "project": "drive",
   "resource": "permission.public.password",
-  "sha256": "cc5717552f48ffde1e0932d4bd7a94b0912536c891b1748ddff5cc9f91e7ee2f",
+  "sha256": "0817add62e90d41bafe2945fec6981bd70b5d75d8212ae7aa8d3a86d14f0c03f",
   "title": "停用云文档密码",
   "version": "v1"
  },
@@ -10051,7 +10051,7 @@
   "httpMethod": "PUT",
   "project": "drive",
   "resource": "permission.public.password",
-  "sha256": "c25c1aac5584f422b3bc68989f9cc4113cfbc98ad14525ad3e961c37b3b86ee0",
+  "sha256": "f6461c572d2567958025adf507ba16c44d6da3830e910377ce81b70e194e208c",
   "title": "刷新云文档密码",
   "version": "v1"
  },
@@ -10063,7 +10063,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "permission.public",
-  "sha256": "6603e736d1b0334d539e01788ef2ecac99ed5248670abab178f86b57b5c189cb",
+  "sha256": "d02832d57ff0a75da023979880df886b973c8554c456e1d15b390724cdaf1bc6",
   "title": "获取云文档权限设置",
   "version": "v1"
  },
@@ -10075,7 +10075,7 @@
   "httpMethod": "PATCH",
   "project": "drive",
   "resource": "permission.public",
-  "sha256": "4799c4ad80c24e1cd5661eba0042bdfb9eec0aa6b0a2b0deb2b4cf1bec7dd8ea",
+  "sha256": "37bf6275254878d4229fc41e188b04e21ffd42472c76cd40b5a4bf6f7029e588",
   "title": "更新云文档权限设置",
   "version": "v1"
  },
@@ -10087,7 +10087,7 @@
   "httpMethod": "DELETE",
   "project": "drive",
   "resource": "user",
-  "sha256": "1f06af89fde9e8c663e62354270d19eb73b444d6efa72a09addd2c29532f90da",
+  "sha256": "625080b19a151d79b7dfe91b1d4523c21370bfc0f514dd89723431be3da49e21",
   "title": "取消用户云文档事件订阅",
   "version": "v1"
  },
@@ -10099,7 +10099,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "user",
-  "sha256": "8cc5f305826f5bb8b87b3021d8df14f43b4608a52726973eb4c922d6d5b8d25f",
+  "sha256": "9e6105ef4fcad4fc2dc8ef3c52c5073bda63973a4f9870760ccc7fe37b95d459",
   "title": "订阅用户云文档事件",
   "version": "v1"
  },
@@ -10111,7 +10111,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "user",
-  "sha256": "0fe4a594e2ea07e1562b79a9913cfbf8ee85fdae1eed1ee10c58090d367acfa3",
+  "sha256": "b7f1dc4246bbc0826954cd093cd368212a42a5e629ea3e2396b820a5e1ab5f10",
   "title": "查询用户云文档事件订阅状态",
   "version": "v1"
  },
@@ -10123,7 +10123,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "comment_reaction",
-  "sha256": "2d0e0da2065f13e791eb4d29782500939c1313fd9e57798a130da977d912e340",
+  "sha256": "ce5ed9285d696e0cc12585713dd5c15530b8c2c03baaa71c988845ad24cc95fd",
   "title": "添加/取消表情回应",
   "version": "v2"
  },
@@ -10135,7 +10135,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "file.like",
-  "sha256": "59b893b9401b19f3734c63524457c84bcc4409ad05c3b692ad0ae9236f967c17",
+  "sha256": "2900affd84febcfe59d151d3f2d9af9fa6246d93cbb51ee967d055e8e45ebfbd",
   "title": "获取云文档的点赞者列表",
   "version": "v2"
  },
@@ -10147,7 +10147,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "permission.public",
-  "sha256": "b28f9db6f381d27eb80dff46431b0e78667bc1e321a8d42396d350fdfe2a2378",
+  "sha256": "85bb1f46f8dcb4ef889b4bfcdb29e5d8cd3cb0ee805dd02bad0c1a1b302320ac",
   "title": "获取云文档权限设置",
   "version": "v2"
  },
@@ -10159,7 +10159,7 @@
   "httpMethod": "PATCH",
   "project": "drive",
   "resource": "permission.public",
-  "sha256": "b1378f7a071760dd6aaba05eeca82077916384d419d46277191a69f21a0c749f",
+  "sha256": "fe6112b85d448899f5ea72704e2f15d766c1db469e907aedcf5a4fe0c2545438",
   "title": "更新云文档权限设置",
   "version": "v2"
  },
@@ -19471,7 +19471,7 @@
   "httpMethod": "POST",
   "project": "wiki",
   "resource": "space.member",
-  "sha256": "54e21228fa01d3689eed595da8b66bc5c966d879135b9e51b38f3c95575972b2",
+  "sha256": "48979d22837344ee1a81ede5a00055d7f30431788ce820b7a414da32cb739ce7",
   "title": "添加知识空间成员",
   "version": "v2"
  },
@@ -19483,7 +19483,7 @@
   "httpMethod": "DELETE",
   "project": "wiki",
   "resource": "space.member",
-  "sha256": "508002da9c7765440473baf54ac98fb2309f3045bc9b81c184b0840329526c68",
+  "sha256": "827dff2ff8b5e636f6cdf7d264165cc602c0c27c6048e631b3010cefaf0a9e66",
   "title": "删除知识空间成员",
   "version": "v2"
  },
@@ -19495,7 +19495,7 @@
   "httpMethod": "GET",
   "project": "wiki",
   "resource": "space.member",
-  "sha256": "9a8b808d6f5f8fd79c2ca7a9121535381c15b7a3fb3b85a0749beeab825a533f",
+  "sha256": "7f8bcb23cc2e95906ef1f956e7e35b5eb601b387efdaafc4fdc7f6e4eb1f49ae",
   "title": "获取知识空间成员列表",
   "version": "v2"
  },
@@ -19507,7 +19507,7 @@
   "httpMethod": "POST",
   "project": "wiki",
   "resource": "space.node",
-  "sha256": "9e060b73d3520216df49c188bbc96a6f29cdda11c4cc951c6ec92e5d21b4f829",
+  "sha256": "c17c4907c52def5a7fa2e799c7588f552d74f52976eebc1de942c3365aa98ddb",
   "title": "创建知识空间节点副本",
   "version": "v2"
  },
@@ -19519,7 +19519,7 @@
   "httpMethod": "POST",
   "project": "wiki",
   "resource": "space.node",
-  "sha256": "ff6bb812c4df819f5b39e58118459684ba88e7ae9e764be6d4bb0324f35e1754",
+  "sha256": "a89c70a06c24173f93dbcd87e8b1b283852c81547ae5619e9569e0871c740aa4",
   "title": "创建知识空间节点",
   "version": "v2"
  },
@@ -19531,7 +19531,7 @@
   "httpMethod": "GET",
   "project": "wiki",
   "resource": "space.node",
-  "sha256": "8ee3d26fb90267900785990f67e91ff200fe75457cca72978235479f6a348463",
+  "sha256": "34a2db95a4fc8d611543b702805cb5b2793e26c6427164148b14b9eb5581b4e1",
   "title": "获取知识空间子节点列表",
   "version": "v2"
  },
@@ -19543,7 +19543,7 @@
   "httpMethod": "POST",
   "project": "wiki",
   "resource": "space.node",
-  "sha256": "067ab2fc907e9517158b44226ec6dfad0cd3cd85f161f6bf167073691ad81d5b",
+  "sha256": "774ed048fcd7ba7b5dcdc90b90e74e25777dc5cb41e75e32baebf03b3bc948ef",
   "title": "移动知识空间节点",
   "version": "v2"
  },
@@ -19555,7 +19555,7 @@
   "httpMethod": "POST",
   "project": "wiki",
   "resource": "space.node",
-  "sha256": "27d701358bd798e64c54bca469298e4ac118b037d2e79c8574857d1d744ce515",
+  "sha256": "3e14079f5135076eb0cf3718e15f61fdf5977d07bffec808b081e1aa58b9e18c",
   "title": "移动云空间文档至知识空间",
   "version": "v2"
  },
@@ -19567,7 +19567,7 @@
   "httpMethod": "POST",
   "project": "wiki",
   "resource": "space.node",
-  "sha256": "fc2c00685f4a7e9ac6e0a539da575fe6946438d0d2bb027a95db2a73a29e0bcb",
+  "sha256": "b8d0b608eb54f9bc754492e41dabc28b16d2bf3bdcfa1a53f7283ffc54eb8bf6",
   "title": "更新知识空间节点标题",
   "version": "v2"
  },
@@ -19579,7 +19579,7 @@
   "httpMethod": "PUT",
   "project": "wiki",
   "resource": "space.setting",
-  "sha256": "fe04c7f856d034e0a1df2e4283bf809503c6bc504fc6aec99e477d0c5ec6360b",
+  "sha256": "44fdc2d63de01e3763b97e690a1ec00aa74658c142e26377e73c79b420892f49",
   "title": "更新知识空间设置",
   "version": "v2"
  },
@@ -19591,7 +19591,7 @@
   "httpMethod": "POST",
   "project": "wiki",
   "resource": "space",
-  "sha256": "d493fbf4638c899fa5a76df1e2e12634e543b0b54fcb28b74658a378955ed28f",
+  "sha256": "e32749567727fba4ed9fe21fcb3e543af6b2b478f9008c29319133708a4a2610",
   "title": "创建知识空间",
   "version": "v2"
  },
@@ -19603,7 +19603,7 @@
   "httpMethod": "GET",
   "project": "wiki",
   "resource": "space",
-  "sha256": "c4c5d78e8dc5e4309589f0f9a807f0f00badf0b71cefe45865e04c12212647f6",
+  "sha256": "da9014106492f12333beaa5967172b916c1f957d63f506ed6aa39bba9be7f4e5",
   "title": "获取知识空间信息",
   "version": "v2"
  },
@@ -19615,7 +19615,7 @@
   "httpMethod": "GET",
   "project": "wiki",
   "resource": "space",
-  "sha256": "2812eece22b448250d6f3dcb11e6874da43d8be909772ffc061855d0edad308c",
+  "sha256": "57041c81a7ca07a91848c2bdbd0d209292342160c18f30aea3a82468cbb25caf",
   "title": "获取知识空间节点信息",
   "version": "v2"
  },
@@ -19627,7 +19627,7 @@
   "httpMethod": "GET",
   "project": "wiki",
   "resource": "space",
-  "sha256": "f461ecad31031a8d657fe6401845964992bc7b79f0f368a2a920c55f3ff06b18",
+  "sha256": "a85f8379824a0ccdf02f3ea75412e69273da8c75fb250370298eaf7255b09a60",
   "title": "获取知识空间列表",
   "version": "v2"
  },
@@ -19639,7 +19639,7 @@
   "httpMethod": "GET",
   "project": "wiki",
   "resource": "task",
-  "sha256": "278fa31236b3d01a6aabf9d28ffdb062717a51c0f91e7f7c7c09bed2d2fd572f",
+  "sha256": "17dcc08a5fb8fa19cb7e872a2f6f3cc5b2a4599644b8da8c6a52d36f78156f19",
   "title": "获取任务结果",
   "version": "v2"
  },

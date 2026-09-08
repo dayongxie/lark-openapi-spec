@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: vc
 description: Video conference and meeting note management
-cli_version: 1.0.93
-extracted_at: '2026-09-02T05:51:24Z'
+cli_version: 1.0.94
+extracted_at: '2026-09-08T06:00:23Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +detail
@@ -431,16 +431,17 @@ shortcuts:
     type: string
     description: meeting IDs, comma-separated for batch
 - name: +search
-  summary: Search meeting records by keyword, time range, participant, organizer, or meeting room (requires at least one filter)
-  description: Search meeting records by keyword, time range, participant, organizer, or meeting room (requires at least one
-    filter)
+  summary: Search meeting records by keyword, time range, participant, organizer, or meeting room with user or bot identity
+    (requires at least one filter)
+  description: Search meeting records by keyword, time range, participant, organizer, or meeting room with user or bot identity
+    (requires at least one filter)
   usage: lark-cli vc +search [flags]
   risk: read
   flags:
   - name: --as
     shorthand: null
     type: string
-    description: 'identity type: user'
+    description: 'identity type: user | bot'
   - name: --dry-run
     shorthand: null
     type: bool
@@ -469,7 +470,7 @@ shortcuts:
   - name: --organizer-ids
     shorthand: null
     type: string
-    description: organizer open_id list, comma-separated
+    description: 'organizer open_id list, comma-separated (OR: matches meetings organized by any listed user)'
   - name: --page-size
     shorthand: null
     type: string
@@ -482,7 +483,7 @@ shortcuts:
   - name: --participant-ids
     shorthand: null
     type: string
-    description: participant open_id list, comma-separated
+    description: 'participant open_id list, comma-separated (OR: matches meetings any listed user joined; not AND)'
   - name: --query
     shorthand: null
     type: string
@@ -490,7 +491,7 @@ shortcuts:
   - name: --room-ids
     shorthand: null
     type: string
-    description: room_id list, comma-separated
+    description: 'room_id list, comma-separated (OR: matches meetings held in any listed room)'
   - name: --start
     shorthand: null
     type: string

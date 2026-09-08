@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: slides
 description: Create and manage presentations, read content, and add or remove slides
-cli_version: 1.0.93
-extracted_at: '2026-09-02T05:51:24Z'
+cli_version: 1.0.94
+extracted_at: '2026-09-08T06:00:23Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +add-slide
@@ -42,6 +42,11 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+  - name: --no-lint
+    shorthand: null
+    type: bool
+    description: submit the XML without the server-side lint; by default the server lints every page and rejects the write
+      when it fails
   - name: --presentation
     shorthand: null
     type: string
@@ -86,6 +91,11 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+  - name: --no-lint
+    shorthand: null
+    type: bool
+    description: submit the XML without the server-side lint; by default the server lints every page and rejects the write
+      when it fails
   - name: --slide
     shorthand: null
     type: stringArray
@@ -388,6 +398,11 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+  - name: --no-lint
+    shorthand: null
+    type: bool
+    description: submit the XML without the server-side lint; by default the server lints every page and rejects the write
+      when it fails
   - name: --pages
     shorthand: null
     type: string
@@ -432,6 +447,11 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+  - name: --no-lint
+    shorthand: null
+    type: bool
+    description: submit the XML without the server-side lint; by default the server lints every page and rejects the write
+      when it fails
   - name: --parts
     shorthand: null
     type: string
@@ -553,6 +573,11 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
+  - name: --no-lint
+    shorthand: null
+    type: bool
+    description: submit the XML without the server-side lint; by default the server lints every page and rejects the write
+      when it fails
   - name: --presentation
     shorthand: null
     type: string

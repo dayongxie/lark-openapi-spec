@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: mail
 description: Email, draft, folder, and contacts management
-cli_version: 1.0.93
-extracted_at: '2026-09-02T05:51:24Z'
+cli_version: 1.0.94
+extracted_at: '2026-09-08T06:00:23Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +decline-receipt
@@ -1036,6 +1036,438 @@ shortcuts:
     shorthand: null
     type: stringArray
     description: Additional To address. Repeat --to once per recipient; quote each value; appended to original recipients.
+- name: +rule-create
+  summary: Create a mailbox rule from semantic condition/action aliases; use --dry-run to inspect the raw request.
+  description: Create a mailbox rule from semantic condition/action aliases; use --dry-run to inspect the raw request.
+  usage: lark-cli mail +rule-create [flags]
+  risk: high-risk-write
+  flags:
+  - name: --action
+    shorthand: null
+    type: stringArray
+    description: 'Rule action grammar. Repeat flag. Examples: mark_read, move_folder:folder_id=xxx.'
+  - name: --actions
+    shorthand: null
+    type: string
+    description: JSON array/object of actions, or @file containing it.
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --condition
+    shorthand: null
+    type: stringArray
+    description: 'Rule condition grammar. Repeat flag. Examples: subject:contains:Alpha, has_attachment, to_or_cc:contains_self.'
+  - name: --conditions
+    shorthand: null
+    type: string
+    description: JSON array/object of conditions, or @file containing it.
+  - name: --continue-after-match
+    shorthand: null
+    type: bool
+    description: Continue evaluating later rules after this rule matches.
+  - name: --disable
+    shorthand: null
+    type: bool
+    description: Disable the rule.
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --enable
+    shorthand: null
+    type: bool
+    description: Enable the rule.
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +rule-create
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --match
+    shorthand: null
+    type: string
+    description: 'Condition match mode: all or any (default: all). (all|any)'
+    default: all
+  - name: --name
+    shorthand: null
+    type: string
+    description: Required. Rule name.
+  - name: --stop-after-match
+    shorthand: null
+    type: bool
+    description: Stop evaluating later rules after this rule matches.
+  - name: --user-mailbox-id
+    shorthand: null
+    type: string
+    description: 'User mailbox ID or address that owns the rules (default: me).'
+    default: me
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +rule-delete
+  summary: Delete one mailbox rule. Without --yes, the shortcut fetches the target and returns a confirmation summary without
+    deleting.
+  description: Delete one mailbox rule. Without --yes, the shortcut fetches the target and returns a confirmation summary
+    without deleting.
+  usage: lark-cli mail +rule-delete [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +rule-delete
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --rule-id
+    shorthand: null
+    type: string
+    description: Rule ID to delete.
+  - name: --user-mailbox-id
+    shorthand: null
+    type: string
+    description: 'User mailbox ID or address that owns the rules (default: me).'
+    default: me
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
+- name: +rule-disable
+  summary: Disable one mailbox rule while preserving unknown raw conditions/actions.
+  description: Disable one mailbox rule while preserving unknown raw conditions/actions.
+  usage: lark-cli mail +rule-disable [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +rule-disable
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --rule-id
+    shorthand: null
+    type: string
+    description: Rule ID to update.
+  - name: --user-mailbox-id
+    shorthand: null
+    type: string
+    description: 'User mailbox ID or address that owns the rules (default: me).'
+    default: me
+- name: +rule-enable
+  summary: Enable one mailbox rule while preserving unknown raw conditions/actions.
+  description: Enable one mailbox rule while preserving unknown raw conditions/actions.
+  usage: lark-cli mail +rule-enable [flags]
+  risk: write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +rule-enable
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --rule-id
+    shorthand: null
+    type: string
+    description: Rule ID to update.
+  - name: --user-mailbox-id
+    shorthand: null
+    type: string
+    description: 'User mailbox ID or address that owns the rules (default: me).'
+    default: me
+- name: +rule-get
+  summary: Get one mailbox rule by rule_id by scanning the rules collection when no atomic get is exposed.
+  description: Get one mailbox rule by rule_id by scanning the rules collection when no atomic get is exposed.
+  usage: lark-cli mail +rule-get [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +rule-get
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --rule-id
+    shorthand: null
+    type: string
+    description: Rule ID to fetch.
+  - name: --user-mailbox-id
+    shorthand: null
+    type: string
+    description: 'User mailbox ID or address that owns the rules (default: me).'
+    default: me
+- name: +rule-list
+  summary: List mailbox rules with semantic aliases, Chinese descriptions, and unknown raw warnings.
+  description: List mailbox rules with semantic aliases, Chinese descriptions, and unknown raw warnings.
+  usage: lark-cli mail +rule-list [flags]
+  risk: read
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +rule-list
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --name-contains
+    shorthand: null
+    type: string
+    description: Optional local filter on rule name.
+  - name: --user-mailbox-id
+    shorthand: null
+    type: string
+    description: 'User mailbox ID or address that owns the rules (default: me).'
+    default: me
+- name: +rule-reorder
+  summary: Reorder mailbox rules by full rule_id list or by moving one rule before/after/top/bottom.
+  description: Reorder mailbox rules by full rule_id list or by moving one rule before/after/top/bottom.
+  usage: lark-cli mail +rule-reorder [flags]
+  risk: write
+  flags:
+  - name: --after-rule-id
+    shorthand: null
+    type: string
+    description: Place --move-rule-id after this rule.
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --before-rule-id
+    shorthand: null
+    type: string
+    description: Place --move-rule-id before this rule.
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +rule-reorder
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --move-rule-id
+    shorthand: null
+    type: string
+    description: Rule ID to move in the current order.
+  - name: --rule-ids
+    shorthand: null
+    type: strings
+    description: Full target rule ID order. Must contain every current rule exactly once.
+  - name: --to-bottom
+    shorthand: null
+    type: bool
+    description: Move --move-rule-id to the bottom.
+  - name: --to-top
+    shorthand: null
+    type: bool
+    description: Move --move-rule-id to the top.
+  - name: --user-mailbox-id
+    shorthand: null
+    type: string
+    description: 'User mailbox ID or address that owns the rules (default: me).'
+    default: me
+- name: +rule-update
+  summary: Update one mailbox rule by reading the current rule and preserving unspecified fields.
+  description: Update one mailbox rule by reading the current rule and preserving unspecified fields.
+  usage: lark-cli mail +rule-update [flags]
+  risk: high-risk-write
+  flags:
+  - name: --action
+    shorthand: null
+    type: stringArray
+    description: 'Rule action grammar. Repeat flag. Examples: mark_read, move_folder:folder_id=xxx.'
+  - name: --actions
+    shorthand: null
+    type: string
+    description: JSON array/object of actions, or @file containing it.
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --condition
+    shorthand: null
+    type: stringArray
+    description: 'Rule condition grammar. Repeat flag. Examples: subject:contains:Alpha, has_attachment, to_or_cc:contains_self.'
+  - name: --conditions
+    shorthand: null
+    type: string
+    description: JSON array/object of conditions, or @file containing it.
+  - name: --continue-after-match
+    shorthand: null
+    type: bool
+    description: Continue evaluating later rules after this rule matches.
+  - name: --disable
+    shorthand: null
+    type: bool
+    description: Disable the rule.
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --enable
+    shorthand: null
+    type: bool
+    description: Enable the rule.
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +rule-update
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --match
+    shorthand: null
+    type: string
+    description: 'Condition match mode: all or any (default: all). (all|any)'
+    default: all
+  - name: --name
+    shorthand: null
+    type: string
+    description: Optional new rule name.
+  - name: --rule-id
+    shorthand: null
+    type: string
+    description: Rule ID to update.
+  - name: --stop-after-match
+    shorthand: null
+    type: bool
+    description: Stop evaluating later rules after this rule matches.
+  - name: --user-mailbox-id
+    shorthand: null
+    type: string
+    description: 'User mailbox ID or address that owns the rules (default: me).'
+    default: me
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
 - name: +send
   summary: Compose a new email and save as draft (default). Use --confirm-send to send immediately after user confirmation.
   description: Compose a new email and save as draft (default). Use --confirm-send to send immediately after user confirmation.
@@ -1552,6 +1984,106 @@ shortcuts:
     shorthand: null
     type: string
     description: Required. Email thread ID
+- name: +thread-modify
+  summary: Modify existing mail threads by adding/removing label IDs or moving them to a folder. Batches thread IDs in groups
+    of 20 and keeps output compact.
+  description: Modify existing mail threads by adding/removing label IDs or moving them to a folder. Batches thread IDs in
+    groups of 20 and keeps output compact.
+  usage: lark-cli mail +thread-modify [flags]
+  risk: write
+  flags:
+  - name: --add-folder
+    shorthand: null
+    type: string
+    description: Folder ID to move threads to.
+  - name: --add-label-ids
+    shorthand: null
+    type: strings
+    description: Label IDs to add. System labels unread/important/other/flagged are normalized to upper case.
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +thread-modify
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'Mailbox email address that owns the threads (default: me).'
+    default: me
+  - name: --remove-label-ids
+    shorthand: null
+    type: strings
+    description: Label IDs to remove. Cannot overlap with --add-label-ids.
+  - name: --thread-ids
+    shorthand: null
+    type: stringArray
+    description: Thread IDs to modify; comma-separated or repeat the flag.
+- name: +thread-trash
+  summary: Soft-delete existing mail threads. Batches thread IDs in groups of 20 and calls batch_trash sequentially. Requires
+    --yes.
+  description: Soft-delete existing mail threads. Batches thread IDs in groups of 20 and calls batch_trash sequentially. Requires
+    --yes.
+  usage: lark-cli mail +thread-trash [flags]
+  risk: high-risk-write
+  flags:
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user | bot'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +thread-trash
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --mailbox
+    shorthand: null
+    type: string
+    description: 'Mailbox email address that owns the threads (default: me).'
+    default: me
+  - name: --thread-ids
+    shorthand: null
+    type: stringArray
+    description: Thread IDs to soft-delete; comma-separated or repeat the flag.
+  - name: --yes
+    shorthand: null
+    type: bool
+    description: confirm high-risk operation
 - name: +triage
   summary: List mail summaries (date/from/subject/message_id). Use --query for full-text search, --filter for exact-match
     conditions.

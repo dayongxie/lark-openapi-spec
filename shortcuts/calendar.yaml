@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: calendar
 description: Calendar, event, and attendee management
-cli_version: 1.0.93
-extracted_at: '2026-09-02T05:51:24Z'
+cli_version: 1.0.94
+extracted_at: '2026-09-08T06:00:23Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +agenda
@@ -458,7 +458,8 @@ shortcuts:
   - name: --attendee-ids
     shorthand: null
     type: string
-    description: attendee IDs, comma-separated (supports user ou_, chat oc_, room omm_)
+    description: attendee IDs, comma-separated (supports user ou_, chat oc_, room omm_). Same-type IDs are OR/union — e.g.
+      --attendee-ids "ou_A,ou_B" matches events A or B joined, not both.
   - name: --calendar-id
     shorthand: null
     type: string

@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+bf96dffa
+  version: 1.0.0+0aaf4a32
   x-lark-project: wiki
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -219,6 +219,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - wiki:wiki
       - wiki:member:create
@@ -313,6 +314,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - wiki:wiki
       - wiki:wiki:readonly
@@ -420,6 +422,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - wiki:wiki
       - wiki:member:update
@@ -514,6 +517,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - wiki:wiki
       - wiki:node:copy
@@ -543,7 +547,7 @@ paths:
         httpCode: 400
         msg: lock contention, please retry later.
       x-lark-rate-limit:
-        tier: 3
+        tier: 6
   /open-apis/wiki/v2/spaces/{space_id}/nodes:
     post:
       operationId: wiki_space_node_create
@@ -620,6 +624,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - wiki:wiki
       - wiki:node:create
@@ -652,7 +657,7 @@ paths:
         httpCode: 400
         msg: doc type is deprecaed, please use docx.
       x-lark-rate-limit:
-        tier: 3
+        tier: 6
     get:
       operationId: wiki_space_node_list
       summary: 获取知识空间子节点列表
@@ -717,6 +722,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - wiki:wiki
       - wiki:wiki:readonly
@@ -741,7 +747,7 @@ paths:
         httpCode: 400
         msg: internal server error
       x-lark-rate-limit:
-        tier: 8
+        tier: 9
       x-lark-pagination: true
   /open-apis/wiki/v2/spaces/{space_id}/nodes/{node_token}/move:
     post:
@@ -792,6 +798,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - wiki:wiki
       - wiki:wiki:readonly
@@ -906,6 +913,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - wiki:wiki
       - wiki:node:move
@@ -985,6 +993,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - wiki:wiki
       - wiki:node:update
@@ -1079,6 +1088,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - wiki:wiki
       - wiki:setting:write_only
@@ -1149,6 +1159,7 @@ paths:
                 $ref: '#/components/schemas/Schema2'
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - wiki:wiki
       - wiki:space:write_only
@@ -1238,6 +1249,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - wiki:wiki
       - wiki:wiki:readonly
@@ -1327,6 +1339,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - wiki:wiki
       - wiki:wiki:readonly
@@ -1351,7 +1364,7 @@ paths:
         httpCode: 400
         msg: internal err
       x-lark-rate-limit:
-        tier: 3
+        tier: 8
   /open-apis/wiki/v2/spaces/get_node:
     get:
       operationId: wiki_space_get_node
@@ -1405,6 +1418,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - wiki:wiki
       - wiki:wiki:readonly
@@ -1552,6 +1566,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - wiki:wiki
       - wiki:wiki:readonly
@@ -1576,7 +1591,7 @@ paths:
         httpCode: 400
         msg: internal server error
       x-lark-rate-limit:
-        tier: 3
+        tier: 9
 components:
   schemas:
     Node:

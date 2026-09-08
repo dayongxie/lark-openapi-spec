@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+3b002322
+  version: 1.0.0+80a862a5
   x-lark-project: docx
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -109,6 +109,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:chat.announcement:write_only
       x-lark-error-mappings:
@@ -354,6 +355,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:chat.announcement:write_only
       x-lark-field-scopes:
@@ -861,6 +863,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:chat.announcement:read
       x-lark-field-scopes:
@@ -1011,6 +1014,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:chat.announcement:write_only
       x-lark-field-scopes:
@@ -1256,6 +1260,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:chat.announcement:read
       x-lark-field-scopes:
@@ -1387,6 +1392,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:chat.announcement:read
       x-lark-field-scopes:
@@ -1566,6 +1572,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:chat.announcement:read
       x-lark-field-scopes:
@@ -1709,6 +1716,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - docx:document
       - docx:document:write_only
@@ -1913,6 +1921,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - docx:document
       - docx:document:write_only
@@ -2395,6 +2404,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - docx:document
       - docx:document:readonly
@@ -3111,6 +3121,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - docx:document
       - docx:document:write_only
@@ -3588,6 +3599,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - docx:document
       - docx:document:write_only
@@ -3800,6 +3812,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - docx:document
       - docx:document:readonly
@@ -4254,6 +4267,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - docx:document
       - docx:document:write_only
@@ -4473,6 +4487,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - docx:document
       - docx:document:readonly
@@ -4681,6 +4696,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - docx:document.block:convert
       x-lark-field-scopes:
@@ -4728,6 +4744,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - docx:document
       - docx:document:create
@@ -4878,6 +4895,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - docx:document
       - docx:document:readonly
@@ -5044,6 +5062,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - docx:document
       - docx:document:readonly
