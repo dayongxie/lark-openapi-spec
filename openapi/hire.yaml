@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+d69f93a4
+  version: 1.0.0+3a9c2305
   x-lark-project: hire
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -3140,12 +3140,12 @@ paths:
                               comment_info:
                                 type: array
                                 items:
-                                  $ref: '#/components/schemas/Item37'
+                                  $ref: '#/components/schemas/Item38'
                                 description: 猎头评价信息
                               salary_info:
                                 type: array
                                 items:
-                                  $ref: '#/components/schemas/Item37'
+                                  $ref: '#/components/schemas/Item38'
                                 description: 薪酬信息
                             description: 投递猎头推荐信息
                           portal:
@@ -31307,7 +31307,7 @@ components:
         feedback_info_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item39'
+            $ref: '#/components/schemas/Item37'
           description: 背调报告信息列表
         process_info_list:
           type: array
@@ -34739,7 +34739,7 @@ components:
         custom_field_list:
           type: array
           items:
-            $ref: '#/components/schemas/Item38'
+            $ref: '#/components/schemas/Item39'
           description: 自定义字段列表
     Schema13:
       type: object
@@ -35086,6 +35086,48 @@ components:
                       example: 张三
                 description: 子字段列表
           description: 自定义模块
+    Item37:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 背调报告ID
+          example: '6930815272790114324'
+        attachment_url:
+          type: string
+          description: 背调信息附件下载链接
+          example: https://feishucdn.com/staource/v1/2de04c10-5cda-4c50~?image_size=np&cutpe=&quity=&mat=g&stmat=.wp
+        report_preview_url:
+          type: string
+          description: 背调信息附件预览链接
+          example: https://feishucdn.com/preview/file/6930815272790114324/
+        result:
+          type: string
+          description: 背调结果：红灯、黄灯、绿灯
+          example: 红灯
+        report_type:
+          type: integer
+          description: 报告类型
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 阶段性报告
+            '2': 终版报告
+          example: '1'
+        create_time:
+          type: string
+          description: 创建时间
+          example: '1686645425868'
+        report_name:
+          type: string
+          description: 报告名称
+          example: 张三的背调报告
+        information_disclosures:
+          type: array
+          items:
+            type: string
+          description: 信息披露
     WebsiteResumeSource:
       type: object
       properties:
@@ -35178,7 +35220,7 @@ components:
                 description: 子字段列表
           description: 自定义模块
       description: 自我评价
-    Item37:
+    Item38:
       type: object
       properties:
         name:
@@ -35217,7 +35259,7 @@ components:
               description: 英文
               example: test
           description: 描述
-    Item38:
+    Item39:
       type: object
       properties:
         key:
@@ -35256,43 +35298,6 @@ components:
       - key
       - name
       - is_required
-    Item39:
-      type: object
-      properties:
-        id:
-          type: string
-          description: 背调报告ID
-          example: '6930815272790114324'
-        attachment_url:
-          type: string
-          description: 背调信息附件下载链接
-          example: https://feishucdn.com/staource/v1/2de04c10-5cda-4c50~?image_size=np&cutpe=&quity=&mat=g&stmat=.wp
-        report_preview_url:
-          type: string
-          description: 背调信息附件预览链接
-          example: https://feishucdn.com/preview/file/6930815272790114324/
-        result:
-          type: string
-          description: 背调结果：红灯、黄灯、绿灯
-          example: 红灯
-        report_type:
-          type: integer
-          description: 报告类型
-          enum:
-          - 1
-          - 2
-          x-enum-descriptions:
-            '1': 阶段性报告
-            '2': 终版报告
-          example: '1'
-        create_time:
-          type: string
-          description: 创建时间
-          example: '1686645425868'
-        report_name:
-          type: string
-          description: 报告名称
-          example: 张三的背调报告
     Item40:
       type: object
       properties:

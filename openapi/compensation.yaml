@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+9058bfd4
+  version: 1.0.0+119d9df2
   x-lark-project: compensation
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -2445,6 +2445,10 @@ paths:
                         type: string
                         description: 发放国家id（可通过 https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-country_region/search进行查询）
                         example: '6862995745046267400'
+                      actual_suspension_date:
+                        type: string
+                        description: 实际停发日期
+                        example: '2025-03-20'
                     required:
                     - unique_id
                     - user_id
@@ -2618,6 +2622,10 @@ paths:
                         type: string
                         description: 发放国家id（可通过 https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-country_region/search进行查询）
                         example: '6862995745046267400'
+                      actual_suspension_date:
+                        type: string
+                        description: 实际停发日期
+                        example: '2025-03-20'
                     required:
                     - id
                     - each_amount
@@ -2806,6 +2814,20 @@ paths:
                   type: string
                   description: 离职日期小于等于
                   example: '2023-04-01'
+                actual_suspension_date_gte:
+                  type: string
+                  description: 实际停发日期大于等于
+                  example: '2023-04-01'
+                actual_suspension_date_lte:
+                  type: string
+                  description: 实际停发日期小于等于
+                  example: '2023-04-01'
+                issuance_country_region_ids:
+                  type: array
+                  items:
+                    type: string
+                  description: 发放国家id属于（可通过 https://fsopen.bytedance.net/open-apis/corehr/v2/basic_info/country_regions/search
+                    接口查询）
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -2910,6 +2932,14 @@ paths:
                               type: string
                               description: 发放国家id（可通过 https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/basic_info-country_region/search进行查询）
                               example: '6862995745046267400'
+                            actual_suspension_date:
+                              type: string
+                              description: 实际停发日期
+                              example: '2024-01-10'
+                            modify_time:
+                              type: string
+                              description: 更正时间（东八区时间，使用 Asia/Shanghai（UTC+08:00）解析）
+                              example: '2024-01-01 00:00:00'
                         description: 经常性支付授予记录
       x-lark-access-tokens:
       - tenant

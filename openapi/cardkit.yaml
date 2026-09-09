@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+20721a35
+  version: 1.0.0+0b3c32cc
   x-lark-project: cardkit
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -82,6 +82,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - tenant
+      - agent
       x-lark-scopes:
       - cardkit:card:write
       x-lark-rate-limit:
@@ -157,6 +158,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - tenant
+      - agent
       x-lark-scopes:
       - cardkit:card:write
       x-lark-rate-limit:
@@ -218,6 +220,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - tenant
+      - agent
       x-lark-scopes:
       - cardkit:card:write
       x-lark-rate-limit:
@@ -282,6 +285,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - tenant
+      - agent
       x-lark-scopes:
       - cardkit:card:write
       x-lark-rate-limit:
@@ -346,6 +350,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - tenant
+      - agent
       x-lark-scopes:
       - cardkit:card:write
       x-lark-rate-limit:
@@ -407,6 +412,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - tenant
+      - agent
       x-lark-scopes:
       - cardkit:card:write
       x-lark-rate-limit:
@@ -459,6 +465,7 @@ paths:
                     - card_id
       x-lark-access-tokens:
       - tenant
+      - agent
       x-lark-scopes:
       - cardkit:card:write
       x-lark-rate-limit:
@@ -505,6 +512,7 @@ paths:
                         example: '7355403067414003715'
       x-lark-access-tokens:
       - tenant
+      - agent
       x-lark-scopes:
       - cardkit:card:read
       x-lark-rate-limit:
@@ -572,6 +580,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - tenant
+      - agent
       x-lark-scopes:
       - cardkit:card:write
       x-lark-rate-limit:
@@ -645,6 +654,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - tenant
+      - agent
       x-lark-scopes:
       - cardkit:card:write
       x-lark-rate-limit:

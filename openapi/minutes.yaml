@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+d92eba04
+  version: 1.0.0+9a5b3150
   x-lark-project: minutes
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -64,6 +64,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - minutes:minute:download
       - minutes:minutes.media:export
@@ -168,6 +169,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - minutes:minutes
       - minutes:minutes:readonly
@@ -242,6 +244,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - minutes:minute:download
       - minutes:minutes.transcript:export
@@ -370,6 +373,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - minutes:minutes.artifacts:read
       x-lark-error-mappings:
@@ -453,6 +457,7 @@ paths:
                         example: https://sample.feishu.cn/minutes/obcnq3b9jl72l83w4f14xxxx
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - minutes:minutes.clip:write
       x-lark-error-mappings:
@@ -573,6 +578,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - minutes:minutes
       - minutes:minutes:readonly
@@ -746,6 +752,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - minutes:minutes.search:read
       x-lark-field-scopes:
@@ -849,6 +856,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - minutes:minutes.basic:read
       x-lark-error-mappings:
@@ -896,6 +904,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - minutes:minutes.basic:read
       x-lark-error-mappings:
@@ -951,6 +960,7 @@ paths:
                         example: <minute_url>
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - minutes:minutes.upload:write
       x-lark-error-mappings:

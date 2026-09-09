@@ -4243,7 +4243,7 @@
   "httpMethod": "PUT",
   "project": "cardkit",
   "resource": "card.element",
-  "sha256": "6a4f6759618e4f5cdb2b8cdd3c230bce6b3c8643519dd26912c893070793c72e",
+  "sha256": "23a02c93f1ca17ef0ecf782717f6a5cab41a930efbf1172a98d9f4748d3eacb4",
   "title": "流式更新文本",
   "version": "v1"
  },
@@ -4255,7 +4255,7 @@
   "httpMethod": "POST",
   "project": "cardkit",
   "resource": "card.element",
-  "sha256": "24b7c5402c56690e810276ccbf61581fc2c341f484a025e833eba130bcf5a876",
+  "sha256": "126f76e18bffcd94c0c8d215f5e60424cd4c2421f3c582c3f74bf6cc8126b520",
   "title": "新增组件",
   "version": "v1"
  },
@@ -4267,7 +4267,7 @@
   "httpMethod": "DELETE",
   "project": "cardkit",
   "resource": "card.element",
-  "sha256": "ac47dc3503e44cd900dcacc1248cb726cda44def440b10bb5d8fae1afbcee974",
+  "sha256": "68b6675959c7199e3ea35254c415f6270b4ece90d10eca31ba38cc872ef622c5",
   "title": "删除组件",
   "version": "v1"
  },
@@ -4279,7 +4279,7 @@
   "httpMethod": "PATCH",
   "project": "cardkit",
   "resource": "card.element",
-  "sha256": "d8a83b6102300427d5bf79204d495d916d1159addede4c26d80328dba38a6980",
+  "sha256": "77b68bbd0ed73bb09dc04fe902099f97836ebc3d9e13fedf8ef1e9fdb5af73ee",
   "title": "更新组件属性",
   "version": "v1"
  },
@@ -4291,7 +4291,7 @@
   "httpMethod": "PUT",
   "project": "cardkit",
   "resource": "card.element",
-  "sha256": "b0c157c69afe47920788b673627d92f1b0b32925f1f14a8f1235123e6185dd40",
+  "sha256": "e59cdcb3bdfee0c258de7ada9e8bb1120325248ab483752b30f34d91e2186e72",
   "title": "更新组件",
   "version": "v1"
  },
@@ -4303,7 +4303,7 @@
   "httpMethod": "POST",
   "project": "cardkit",
   "resource": "card",
-  "sha256": "1ecafc7b2f233d6bd170e886ba1cc921abe2020f069b9384237aa22fdf15c476",
+  "sha256": "d2b507071445eed4612afbb63a11d44efa03bd41b72a8a7d42b47d003e8f3d56",
   "title": "局部更新卡片实体",
   "version": "v1"
  },
@@ -4315,7 +4315,7 @@
   "httpMethod": "POST",
   "project": "cardkit",
   "resource": "card",
-  "sha256": "4a840067f0e7cfa8af1c700cfc33957516c36cbcb0108ad4aa8b4276fa4c0b83",
+  "sha256": "869a4e1e59e9f00d0a204be3ea438dda0fab0b5fb8a6e4cddaf8416400998ab8",
   "title": "创建卡片实体",
   "version": "v1"
  },
@@ -4327,7 +4327,7 @@
   "httpMethod": "POST",
   "project": "cardkit",
   "resource": "card",
-  "sha256": "3f0ed1ff7cfb2d2104dd34edd55261355b8b3e4e35d3627137a758182ff8e14b",
+  "sha256": "e1649ae91a961d7d8dccee90efff4c571b92b5acdf179d13535e4b483d23717b",
   "title": "转换 ID",
   "version": "v1"
  },
@@ -4339,7 +4339,7 @@
   "httpMethod": "PATCH",
   "project": "cardkit",
   "resource": "card",
-  "sha256": "78f87fbb36507811fbcf9dd798b9cb4c99f87b5f02ee325dfc54a11d88558a28",
+  "sha256": "462d930d715f8e8e488f2a3110e68bd68684eef3cbf5f339c720809e366d7b2c",
   "title": "更新卡片实体配置",
   "version": "v1"
  },
@@ -4351,7 +4351,7 @@
   "httpMethod": "PUT",
   "project": "cardkit",
   "resource": "card",
-  "sha256": "cdfece02345e885095cbca73d289ac4e8014f1c9492e8ba4ab14e711ec9b2215",
+  "sha256": "230c6f409c551c117a01e4ac84cf2099f49e1a18032b1e309aca267a26aa2b1a",
   "title": "全量更新卡片实体",
   "version": "v1"
  },
@@ -4507,7 +4507,7 @@
   "httpMethod": "POST",
   "project": "compensation",
   "resource": "recurring_payment",
-  "sha256": "87fef045dc15c567d6e50d28dbd18ad833f48ffb55aa4964ce7866a36588a54b",
+  "sha256": "684e301f401efced0267d66ae426fcd3e35aca82359d35727605bd8e9a15a79d",
   "title": "批量创建经常性支付记录",
   "version": "v1"
  },
@@ -4531,7 +4531,7 @@
   "httpMethod": "POST",
   "project": "compensation",
   "resource": "recurring_payment",
-  "sha256": "f90f8ae3b41a2dff072bb58f97dc455b1d65ca29a63dcfb7f96c2236f0d96b22",
+  "sha256": "3b472cebb3d3e1b46752e1d7bf3a34381a08ba20925f6fd8ddac878b53c8e373",
   "title": "批量更正经常性支付记录",
   "version": "v1"
  },
@@ -4543,7 +4543,7 @@
   "httpMethod": "POST",
   "project": "compensation",
   "resource": "recurring_payment",
-  "sha256": "9424c4f2c7097a5382d8cc6ca6a3bd1a36f8b2ea86944c9de58390df80127a26",
+  "sha256": "0e812fc0d57416872d3092ff43bae53195bf8faef77f37670ee9cb4a650d9ed1",
   "title": "查询经常性支付记录",
   "version": "v1"
  },
@@ -11083,7 +11083,7 @@
   "httpMethod": "POST",
   "project": "hire",
   "resource": "background_check_order",
-  "sha256": "8df06da0398820906e9561e884801e635d19a5f9bd1c43915c6dd5aaf0314c81",
+  "sha256": "07cb9d4519b9dab51c010d694a397e8ca4ae6fd7b0c15becb5692e66cebc4875",
   "title": "查询背调信息列表",
   "version": "v1"
  },
@@ -11095,7 +11095,7 @@
   "httpMethod": "GET",
   "project": "hire",
   "resource": "background_check_order",
-  "sha256": "2a307eaac19158a799d6267e08232da42a5722c65bcac8767ff572a377123452",
+  "sha256": "b54f7a0dd93a7029aca52ad8e10f2b23548aff113a007faa6b8ce32d1e89b8b0",
   "title": "获取背调信息列表",
   "version": "v1"
  },
@@ -13051,7 +13051,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "chat.announcement",
-  "sha256": "68075c1ac2c589973e1b50a16d8ca83c38aa1d71f412f22054e338c43785312f",
+  "sha256": "1ce9b9e5e1662a8fd209f943cacaa1370e4ed38541d3f39de72e703eb640618d",
   "title": "获取群公告信息",
   "version": "v1"
  },
@@ -13063,7 +13063,7 @@
   "httpMethod": "PATCH",
   "project": "im",
   "resource": "chat.announcement",
-  "sha256": "db07b2be363f9e3a739e6aa4a211bbe472bae5e9a2dfeae3fc03dc7dfc04083c",
+  "sha256": "6a59e04c420e3a0e626058725affa41f2b4f21b53e5533b710d4f2b406c863eb",
   "title": "更新群公告信息",
   "version": "v1"
  },
@@ -13075,7 +13075,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "chat.managers",
-  "sha256": "9b3e9a946ceb0e2294a4ec9d351baa1bc60951492babd6126306066852970c91",
+  "sha256": "18dd325d7e4639bcacf995d1ea8154405cbd5a20dfdd68f8427b5897c10e4ef1",
   "title": "指定群管理员",
   "version": "v1"
  },
@@ -13087,7 +13087,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "chat.managers",
-  "sha256": "c32ff0473543000692ddf80ecb952f3449288d308e4ab91b4efbf773cca8917e",
+  "sha256": "108e9b13437882ece295fda5fb3140df2e6ba11dcb3375b8f9e5d7b6839cda1c",
   "title": "删除群管理员",
   "version": "v1"
  },
@@ -13099,7 +13099,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "chat.members",
-  "sha256": "db6babf32d4a566d1b725f9f1314aee9a6075c7951707885f7c1a2ed14ca28fe",
+  "sha256": "9e5e2480910ffe45bae622332f4d34de19e4a3ad0401a47a07d592505bd6ea08",
   "title": "将用户或机器人拉入群聊",
   "version": "v1"
  },
@@ -13111,7 +13111,7 @@
   "httpMethod": "DELETE",
   "project": "im",
   "resource": "chat.members",
-  "sha256": "7108f8df7af0120247e736f461b5d58053dbc64d9e6ecd818ea8000a4c4bd9f8",
+  "sha256": "9822f0303f90ce0229c0d868e94536c3cec2da9a26e5cc1922eb8ed910615749",
   "title": "将用户或机器人移出群聊",
   "version": "v1"
  },
@@ -13123,7 +13123,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "chat.members",
-  "sha256": "eae77653a8675da32e4b3c83629e54c1f8a3911513b720c98a7fd4be817cb62a",
+  "sha256": "3842d4ed17ea24c7a004fa8c8c557d397a455ab6c3e87551ec1c84d87e2fd62a",
   "title": "获取群成员列表",
   "version": "v1"
  },
@@ -13135,7 +13135,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "chat.members",
-  "sha256": "4591c0dfe3cb2f98633c863409649bee380f0d97f7fb6bdbdeea96925dd40a4f",
+  "sha256": "8b6d35f8e2809536cef8001e7a12fe2a693463f0a83eec434e1a496cf5fa2267",
   "title": "判断用户或机器人是否在群里",
   "version": "v1"
  },
@@ -13147,7 +13147,7 @@
   "httpMethod": "PATCH",
   "project": "im",
   "resource": "chat.members",
-  "sha256": "e0d0a38be87d9b50d2c3730a1bf2ef19f383d32126bfa5266809a3ae03e85d1b",
+  "sha256": "f6a832ee3c9d6d203ba7471fcfaac8049fff3ee3e030be7f020aee732b3085fa",
   "title": "用户或机器人主动加入群聊",
   "version": "v1"
  },
@@ -13219,7 +13219,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "chat.moderation",
-  "sha256": "c5173047a5d83071c45e19c493f267ce9777c7d741234593bbe78a81adf8587e",
+  "sha256": "75bf661892a5179dafe8f3eec278173f8a75247d2b6647c156dbb38584e7cbe2",
   "title": "获取群成员发言权限",
   "version": "v1"
  },
@@ -13231,7 +13231,7 @@
   "httpMethod": "PUT",
   "project": "im",
   "resource": "chat.moderation",
-  "sha256": "f656fb55423882ad442bf849298161b2edfe446adcba9d0d4a9e92434d815eca",
+  "sha256": "b71eec3de999bfb1905187e6482e87a8becb77f41ad3b839f2b2aa65e2dfa02a",
   "title": "更新群发言权限",
   "version": "v1"
  },
@@ -13243,7 +13243,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "chat.tab",
-  "sha256": "2dd59a34cc2638dd49469f9fe55cf2e2338494d71809acc86c4c9bee2ee4bbfd",
+  "sha256": "be0186e357fec74c915c7e15b6c53e420b184e6e89648ef121a0cb79be2aeda4",
   "title": "添加会话标签页",
   "version": "v1"
  },
@@ -13255,7 +13255,7 @@
   "httpMethod": "DELETE",
   "project": "im",
   "resource": "chat.tab",
-  "sha256": "c816ebc12b0a00630a82867b7293e12c4443a2b2090ccc926edc025fd4b35681",
+  "sha256": "367fd5fcff05f9205e79c8ba551a51505af2d71087390f2d6b202cc55606e85f",
   "title": "删除会话标签页",
   "version": "v1"
  },
@@ -13267,7 +13267,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "chat.tab",
-  "sha256": "149183e35733f7acd420d5f9072efda1863f5ac249b4cf1c7392f8c65b3df38e",
+  "sha256": "171fac4ce2500d242cb79d6adeae91160275b69171d171d0119087150df2b214",
   "title": "拉取会话标签页",
   "version": "v1"
  },
@@ -13279,7 +13279,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "chat.tab",
-  "sha256": "0a7e8f2a34b67efc85a9b20502a0819cd5cb0df62fdee361f6cb8286607557e8",
+  "sha256": "24bb09b53fbd636c2277c506e2ea288ba60fbcd4bb3930e7b4fd3437a861b3de",
   "title": "会话标签页排序",
   "version": "v1"
  },
@@ -13291,7 +13291,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "chat.tab",
-  "sha256": "f92d9b623adf92da7ccb88ea3f654e6c788ecd41b497ca5617f886695e0f14a6",
+  "sha256": "cdba86fdddc30805554f6b3a21b7bd2a78f951c846a5704533c83d978f5e03de",
   "title": "更新会话标签页",
   "version": "v1"
  },
@@ -13303,7 +13303,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "chat.top_notice",
-  "sha256": "ac8c5654d5c2ba9212cb1271c1852a5c563110632c74fa3281fc6f23ca18104e",
+  "sha256": "120d1035bef5d34b65c0c24b58f2663be9cb5d2524ea937887664418b1a0ce1f",
   "title": "撤销群置顶",
   "version": "v1"
  },
@@ -13315,7 +13315,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "chat.top_notice",
-  "sha256": "3cbfa128267446f36756d1be486d3e82f84629261968306070025f21c74ee4da",
+  "sha256": "3e867d6d0662f6d840a905484e7482b088449ffd125c8748f3ebe42efb3f339c",
   "title": "更新群置顶",
   "version": "v1"
  },
@@ -13327,7 +13327,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "chat",
-  "sha256": "08c726cb02cdae9a778e4c649fd175b7e690840402a370fd23f1bfdcc3167f78",
+  "sha256": "ac54b5fc69ff27682416a287f9be9440cad157bdf79f9815320210029b572e72",
   "title": "创建群",
   "version": "v1"
  },
@@ -13339,7 +13339,7 @@
   "httpMethod": "DELETE",
   "project": "im",
   "resource": "chat",
-  "sha256": "12f1109986f5291f42757e43b1cd04369b698d26d40b7dd2d1f84307e71b3d50",
+  "sha256": "65e16307913cb01ffcc6089622178b9bd1be7f5684a99993223049f60aaa78f7",
   "title": "解散群",
   "version": "v1"
  },
@@ -13351,7 +13351,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "chat",
-  "sha256": "02e3d4cf605f8e7f0f4fe1fbb66c6887ec9058e6e54aa91ce6633eb7d5e60081",
+  "sha256": "dd3cea476a6edbe38fcc0f8b0bb71b8a7a1230b36b23abafc23766fe387e8f76",
   "title": "获取群信息",
   "version": "v1"
  },
@@ -13363,7 +13363,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "chat",
-  "sha256": "78cee7c4dfc6d3234899384e3646b2dba515686946dc349fcd408d915a7e6263",
+  "sha256": "2d75a3cf48eb48a59719d746b7ab0f0f1822797007f004325d592d6952b733a4",
   "title": "获取群分享链接",
   "version": "v1"
  },
@@ -13375,7 +13375,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "chat",
-  "sha256": "cefa2a1ce48bf23cb69eb80ec7c8c93b9317b102fbdccbeb2d50b83d751f670e",
+  "sha256": "90521a1ebb1f15e4a190f7af4ec1467d98dac909ad22b66388bba70a22ca76a9",
   "title": "获取用户或机器人所在的群列表",
   "version": "v1"
  },
@@ -13387,7 +13387,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "chat",
-  "sha256": "1effddbfb334efca732cd4a9082dfa4e98a196336b97c62e6244118b53c9d503",
+  "sha256": "44943d26653a91a8355369638143218a88086726b422763ec7758cd92b674d66",
   "title": "搜索对用户或机器人可见的群列表",
   "version": "v1"
  },
@@ -13399,7 +13399,7 @@
   "httpMethod": "PUT",
   "project": "im",
   "resource": "chat",
-  "sha256": "da46a90b03066a76b2983e4f18255d2ce63002dafa59e830d66041782d380d5f",
+  "sha256": "41b218a2b94a93184f86e57310d3be7b78d2918c85f4d82558ef0e8c83ff2cb8",
   "title": "更新群信息",
   "version": "v1"
  },
@@ -13411,7 +13411,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "file",
-  "sha256": "c31af2b597919bd1a2b0af91c6af3b33e3e65198f5c487fa4339b8e913de4f17",
+  "sha256": "a36511efbaa2c08d7ca338eab341c95f6d818ac90c024e9860fdfa44642a8794",
   "title": "上传文件",
   "version": "v1"
  },
@@ -13435,7 +13435,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "image",
-  "sha256": "c8b4ff0c53f554e6db5710eb7e253b5cc1f534f17b22e02b1907a4ffc14d4181",
+  "sha256": "eea9fa2b7f781f047fe2ea0fbd87174a5575bc37c4778826ee02c026fdcdbd83",
   "title": "上传图片",
   "version": "v1"
  },
@@ -13459,7 +13459,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "message.reaction",
-  "sha256": "7c68bf2f9d44c23178f8f9d91679392dbb73e2040300211ff1db118d5d540154",
+  "sha256": "c11c93b0e95de1223e6358de649ac122bac74595ac20c39aa03da94838ee9ea6",
   "title": "批量获取消息表情回复",
   "version": "v1"
  },
@@ -13471,7 +13471,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "message.reaction",
-  "sha256": "d50a961ebdc4015e6e7dc87832ede29740aa84940b8159a46e3d81ddd4d2fdbb",
+  "sha256": "818c7803ca8826ad1c90013495fb64423745e15d235f6a057fe5953a495eec9c",
   "title": "添加消息表情回复",
   "version": "v1"
  },
@@ -13483,7 +13483,7 @@
   "httpMethod": "DELETE",
   "project": "im",
   "resource": "message.reaction",
-  "sha256": "860fe7d652330dde2d7a25c7c53abd6e2e44845eeaf6c6a5165c055f0dad30fe",
+  "sha256": "b41ffbed1344d19866f7162e25c62f4adee5c2f8cd34880091a4eeec94dfb3aa",
   "title": "删除消息表情回复",
   "version": "v1"
  },
@@ -13495,7 +13495,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "message.reaction",
-  "sha256": "034b57ac01bbbefbbd0ae08dfaf8117369d879633ddb37d36c19489cdfabcfbc",
+  "sha256": "6f120b43e01b1a339e9345d3f34c1f408f0444ffc5e6b75e189140456a7d7a15",
   "title": "获取消息表情回复",
   "version": "v1"
  },
@@ -13507,7 +13507,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "message.resource",
-  "sha256": "802ff6a82ad409dccaa4d27519dd25a3df1a7c628b9821846b7f7d37646f583b",
+  "sha256": "bf6b11923263cd15a6e3f8ad34d1a06da1ade2ccbbf465a029710e4b25e25f34",
   "title": "获取消息中的资源文件",
   "version": "v1"
  },
@@ -13519,7 +13519,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "message",
-  "sha256": "841cef17e72ff834fd871274611b156c27613b2ab3aecb8da945eed28799e183",
+  "sha256": "58ee10000bef010ee9a61f09da3f985dcfd19df4acc2e884232fb4c1372e843f",
   "title": "发送消息",
   "version": "v1"
  },
@@ -13531,7 +13531,7 @@
   "httpMethod": "DELETE",
   "project": "im",
   "resource": "message",
-  "sha256": "0966e457874c816b7db6784145cdd66c08ccdd2507891566878031096eb119eb",
+  "sha256": "ad8a87a11b02063ca79f24b35da9619694f101a3b12844b87e86c83c86da4631",
   "title": "撤回消息",
   "version": "v1"
  },
@@ -13543,7 +13543,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "message",
-  "sha256": "acd682c59f07a46a28984f66729f677182979bcc50acb93e8c641110a1af9997",
+  "sha256": "84e657440bfefbd4119d7ce9eaac18c9c7c7539a79d8721e340493e81d3131ab",
   "title": "转发消息",
   "version": "v1"
  },
@@ -13555,7 +13555,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "message",
-  "sha256": "319809396408db2b5c93ae6ca0351e960a87e2318fa469c05b112ed112b5db52",
+  "sha256": "1d1bbf5ecda314de336b23405b360e7615afa2c4b38db5f2978f46cf73428c6f",
   "title": "获取指定消息的内容",
   "version": "v1"
  },
@@ -13567,7 +13567,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "message",
-  "sha256": "d6ab0c5d8e6f067b8a758a34c439ec66a00000657f43166d8dda73810da6950e",
+  "sha256": "413af2c6e0ebbba7aa42cdc7d65608f9d8d9dba51045f2cb1f061b2e5833111a",
   "title": "获取会话历史消息",
   "version": "v1"
  },
@@ -13591,7 +13591,7 @@
   "httpMethod": "PATCH",
   "project": "im",
   "resource": "message",
-  "sha256": "81f9b59182f1e19f5a8fc8e6e483b0895cee95a0072097b1386bd087d70f8725",
+  "sha256": "8ff0d0b3b42f8dada219cd3fc534409cbdfcaa52996e660c733e1047183ff714",
   "title": "更新已发送的消息卡片",
   "version": "v1"
  },
@@ -13615,7 +13615,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "message",
-  "sha256": "b04bf2e7fea3410f5d21a06ae2db27b3794a796c9217e5c6023766204b0eb367",
+  "sha256": "682fa168e6f71bdfd2aacc2161f3e64f8d027711730cdbf8d763c103fa8d952c",
   "title": "消息发送者查询消息已读状态",
   "version": "v1"
  },
@@ -13627,7 +13627,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "message",
-  "sha256": "948e5c5634feb41cd10534c6d4ac376b0da704dcae20fbebeae7a1cbbcf302d9",
+  "sha256": "980bf06c1c233436e0df23aef7bffb8edda5fd8e1376272e7ec745f24efab644",
   "title": "回复消息",
   "version": "v1"
  },
@@ -13639,7 +13639,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "message",
-  "sha256": "7b3f0a70c5afabd25677b4cbc97742d87e178eeb62ad4188c67fffca8f19fb21",
+  "sha256": "166f720a9dea0ed2ae2399615255f6b6f1d43df0fa24792bfc36d62f0506b4c4",
   "title": "搜索消息",
   "version": "v1"
  },
@@ -13699,7 +13699,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "pin",
-  "sha256": "e3de8c6e06b4605c25c3b0031e11ab2a4f9ea5548a108cb0b6169285f07bbe06",
+  "sha256": "31a271765efcf4078f1da5e8c5d2fb3c45c32528aec0cd9a69e581bd54c922b7",
   "title": "Pin 消息",
   "version": "v1"
  },
@@ -13711,7 +13711,7 @@
   "httpMethod": "DELETE",
   "project": "im",
   "resource": "pin",
-  "sha256": "2bf60d4c01cc2026da8bedd1d77afa1f758fc603823234d78bc8c6917626bc83",
+  "sha256": "c35af78d1194f4dbf3a7b3d9e20771199359afed5683bb216bdd402b1e324593",
   "title": "移除 Pin 消息",
   "version": "v1"
  },
@@ -13723,7 +13723,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "pin",
-  "sha256": "7f031e0f84019c794ce0b11b77880061aa849d3fc65e05c02d4f03194e8e1375",
+  "sha256": "22415258055f698109cba11c9bc6e6437ec5c90bb4b9d1ce63fdced93f6a2724",
   "title": "获取群内 Pin 消息",
   "version": "v1"
  },
@@ -13735,7 +13735,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "thread",
-  "sha256": "b9c1cb83b00fc16f25849a6631f5bec3a2f4539087898485d16dcfc1f7ec3335",
+  "sha256": "3ee2e01899523ea81b517c8ca5ae18b5b25c04bc937e5b81ac948afd85c0be7a",
   "title": "转发话题",
   "version": "v1"
  },
@@ -15403,7 +15403,7 @@
   "httpMethod": "GET",
   "project": "minutes",
   "resource": "minute.media",
-  "sha256": "7af55a3ee28a92c9d6faff5c925638394d7d47f17e18bddb88ad350a0e468da3",
+  "sha256": "6213a3202a57176a04b1ecdb2b7bc8127b5cbabc80c22706e5b6637bf7792fc8",
   "title": "下载妙记音视频文件",
   "version": "v1"
  },
@@ -15415,7 +15415,7 @@
   "httpMethod": "GET",
   "project": "minutes",
   "resource": "minute.statistics",
-  "sha256": "3379dc724524fa94132e4ca0be738fa30909fc87a6dc53e046fff08a9fa8440a",
+  "sha256": "b6d01a30eaa5a9bc25743ee9dc1e4349c35c63d9b0d679fbfd6b19048c3c8a31",
   "title": "获取妙记统计数据",
   "version": "v1"
  },
@@ -15427,7 +15427,7 @@
   "httpMethod": "GET",
   "project": "minutes",
   "resource": "minute.transcript",
-  "sha256": "d19ecbc8fc85d3215d79344765345d6da6fb76dcb297083eaadb6a9cf10a7ad6",
+  "sha256": "6b4bd4dc10a115a0e6d90e0e9c1c7fbc2774ff0fcf9a8f975e895297bf2c3ba1",
   "title": "导出妙记文字记录",
   "version": "v1"
  },
@@ -15439,7 +15439,7 @@
   "httpMethod": "GET",
   "project": "minutes",
   "resource": "minute",
-  "sha256": "ad636698582457d2b4cdca22ad6e9034a3eb66a28e7a70e831b3f5b02b723cfa",
+  "sha256": "e238e3ea51c7970d99c42efd371352c5e44ac7bcb1ca8be1e0cf7f857e6ebd20",
   "title": "获取妙记AI产物",
   "version": "v1"
  },
@@ -15451,7 +15451,7 @@
   "httpMethod": "POST",
   "project": "minutes",
   "resource": "minute",
-  "sha256": "f4475f9cd1d158769bddd985220305852813c9beb59856e73c51bb6f940fc54e",
+  "sha256": "d0319b163da6021634aae723a1d0889cc43e3100ef1aad4bcf7f650e192c9fb2",
   "title": "创建妙记片段",
   "version": "v1"
  },
@@ -15463,7 +15463,7 @@
   "httpMethod": "GET",
   "project": "minutes",
   "resource": "minute",
-  "sha256": "d2d54e8d04e017da3ee133add4e1846f58c7a527e4ffb3f2c98edc0284685424",
+  "sha256": "ac4d5e36fa7d906e42c4fa0962d079c96d4c6e7905eda136aab6b8c1a9ba6d41",
   "title": "获取妙记信息",
   "version": "v1"
  },
@@ -15475,7 +15475,7 @@
   "httpMethod": "POST",
   "project": "minutes",
   "resource": "minute",
-  "sha256": "34028e4c192057fda09672ea22af53d4b08b058576caf2d0a174212689bface5",
+  "sha256": "ee9c474c5435b51e5da49227f943c09c446ec86074a53a82f2eb35c9719c1c56",
   "title": "搜索妙记",
   "version": "v1"
  },
@@ -15487,7 +15487,7 @@
   "httpMethod": "POST",
   "project": "minutes",
   "resource": "minute",
-  "sha256": "db29f06ca10beaba717cbce02ea6ede5cc8306ca769b8182526790301359a94a",
+  "sha256": "987db07bf6643fe48a719f9d56736b19b2fbbae5f99070413e9e81f92010ef29",
   "title": "订阅妙记变更事件",
   "version": "v1"
  },
@@ -15499,7 +15499,7 @@
   "httpMethod": "POST",
   "project": "minutes",
   "resource": "minute",
-  "sha256": "63fa9ad0716d40dd82872eba46c78528373d6675d6d711978147c3c727897cdd",
+  "sha256": "0854479def0730b7351d8761b7bcb95d218f81e4b82baf40adcf4223fc3784ac",
   "title": "取消订阅妙记变更事件",
   "version": "v1"
  },
@@ -15511,7 +15511,7 @@
   "httpMethod": "POST",
   "project": "minutes",
   "resource": "minute",
-  "sha256": "35ab20ad18619cd3a109be74e3b7b2c5ba36ef6e93d5c4170b2e1abe1daeb2bf",
+  "sha256": "8d1c6cba7c2fa1f902a0563c8aaa749555ade6c90b2818993065c55b983ef0d5",
   "title": "云空间文件生成妙记",
   "version": "v1"
  },
@@ -16639,7 +16639,7 @@
   "httpMethod": "POST",
   "project": "search",
   "resource": "doc_wiki",
-  "sha256": "69fd398bef9e9656124d41413e00385fade26b1757cc13c6e5d229ee5d52abe6",
+  "sha256": "a14a0e41592dc0838b5002116e1009b8235f95cb68267b79c114fe55ce642ba8",
   "title": "搜索文档",
   "version": "v2"
  },
@@ -16867,7 +16867,7 @@
   "httpMethod": "POST",
   "project": "sheets",
   "resource": "spreadsheet.sheet.filter",
-  "sha256": "88403a88b31b51a8c17679eea9a81b47c7dbf87613b914f4221947861cf33270",
+  "sha256": "7ea842404b8b244a2cacd6323178f298a221acd69dab710c3b08891509195fde",
   "title": "创建筛选",
   "version": "v3"
  },
@@ -16879,7 +16879,7 @@
   "httpMethod": "DELETE",
   "project": "sheets",
   "resource": "spreadsheet.sheet.filter",
-  "sha256": "61526ac149315b47be5666b4c6974f8f750de1fe13015b71220db835cb9123e8",
+  "sha256": "49b707b816d5d2106d1041c277ab0dc4b541346848e7a7bfa8b9a8e9462d687b",
   "title": "删除筛选",
   "version": "v3"
  },
@@ -16891,7 +16891,7 @@
   "httpMethod": "GET",
   "project": "sheets",
   "resource": "spreadsheet.sheet.filter",
-  "sha256": "5628e911412b15a863abb43bc319a6d0c4db29488d0ba6c3de9e17bcb216cc69",
+  "sha256": "51da7cb38d7ba4c20539b4f583cecfde3c43bc6750f08be080378599fe63f0e4",
   "title": "获取筛选",
   "version": "v3"
  },
@@ -16903,7 +16903,7 @@
   "httpMethod": "PUT",
   "project": "sheets",
   "resource": "spreadsheet.sheet.filter",
-  "sha256": "bb521389b03bb65f7accc6cf108eef1f10eb4767a4856a0aa43c0a56810ab964",
+  "sha256": "51792e00a5cf56af892ed384c764493e84b0fb44f49bbe436225b59ef8e121fd",
   "title": "更新筛选",
   "version": "v3"
  },
@@ -16915,7 +16915,7 @@
   "httpMethod": "POST",
   "project": "sheets",
   "resource": "spreadsheet.sheet.filter_view.condition",
-  "sha256": "e34b9e57e0a2c116eb91aaedea0e12ceb1bc06a88a5f8160430aca9d61be1e55",
+  "sha256": "be8317167b2f73f86a7596a3ff89831125dbebd7141f4c0e7c46f8d04be5a4eb",
   "title": "创建筛选条件",
   "version": "v3"
  },
@@ -16927,7 +16927,7 @@
   "httpMethod": "DELETE",
   "project": "sheets",
   "resource": "spreadsheet.sheet.filter_view.condition",
-  "sha256": "f04bc3c97a0309d1d51d98d026f2658b35a0cbd23ded1cce3f67436e47d4a0f3",
+  "sha256": "d760816c630e91fa6791aaaf2affb1130994cabd656b2f7a7b7d8d8d0ff9ee51",
   "title": "删除筛选条件",
   "version": "v3"
  },
@@ -16939,7 +16939,7 @@
   "httpMethod": "GET",
   "project": "sheets",
   "resource": "spreadsheet.sheet.filter_view.condition",
-  "sha256": "72d0171fde0a5f5f76797d865c95d10ce75ebca7a3f1d3ab10cb7d8ed5ba12ae",
+  "sha256": "657f2aa769675c502940f2183c31a23c87325e054b5d09ef66365abfa791228d",
   "title": "获取筛选条件",
   "version": "v3"
  },
@@ -16951,7 +16951,7 @@
   "httpMethod": "GET",
   "project": "sheets",
   "resource": "spreadsheet.sheet.filter_view.condition",
-  "sha256": "17d08705d8d1aa7824af09b6174252fee0d813f623cbc009c15a3b513f0c28cc",
+  "sha256": "33046697145a3bffc0a6761ac0f3e44630d8b28add7c8f0538ce5641d95b9aff",
   "title": "查询筛选条件",
   "version": "v3"
  },
@@ -16963,7 +16963,7 @@
   "httpMethod": "PUT",
   "project": "sheets",
   "resource": "spreadsheet.sheet.filter_view.condition",
-  "sha256": "5122d6d2d514075c98b8257ae31775c6bdefb6040dd88df2a6207ed00a0d34f6",
+  "sha256": "c6ffbdb1ec203904048585f8ba1577bd60b1b9da5d08cf05d2aa7c186a01db1b",
   "title": "更新筛选条件",
   "version": "v3"
  },
@@ -16975,7 +16975,7 @@
   "httpMethod": "POST",
   "project": "sheets",
   "resource": "spreadsheet.sheet.filter_view",
-  "sha256": "57ed260411b13c7ef2e9472a5376e242a7bbf6e4fd92052d47076d60a3d2fac1",
+  "sha256": "759493dc53cd5789334bcf3db5f1579da891c533f41d84eb698e885d9dae8aca",
   "title": "创建筛选视图",
   "version": "v3"
  },
@@ -16987,7 +16987,7 @@
   "httpMethod": "DELETE",
   "project": "sheets",
   "resource": "spreadsheet.sheet.filter_view",
-  "sha256": "d1cf01165cbec76ddb9c7f50579b00e97d2075edfbdaca68fc18cf58a3afb138",
+  "sha256": "23e5187ca0a5b55fb352b6c3138e2a8148d20aea5535f158747fe6d048fc1bd1",
   "title": "删除筛选视图",
   "version": "v3"
  },
@@ -16999,7 +16999,7 @@
   "httpMethod": "GET",
   "project": "sheets",
   "resource": "spreadsheet.sheet.filter_view",
-  "sha256": "f23eac61be306135ecb1d3ddf82e8eaebca7285b1f2a0c31dd0a57e857e7fbe7",
+  "sha256": "1c46b852773da60008e337185a22f93692a19506a2f8ff69e3c0a3e82188da5d",
   "title": "获取筛选视图",
   "version": "v3"
  },
@@ -17011,7 +17011,7 @@
   "httpMethod": "PATCH",
   "project": "sheets",
   "resource": "spreadsheet.sheet.filter_view",
-  "sha256": "04d632c00d08a475b59155fa488f176b05a686f95cee23d13b2dcb1266bad9a7",
+  "sha256": "ac7a3f8e8748d51b0285608c70311a2fa75fc495420f124e48672dddec30e86c",
   "title": "更新筛选视图",
   "version": "v3"
  },
@@ -17023,7 +17023,7 @@
   "httpMethod": "GET",
   "project": "sheets",
   "resource": "spreadsheet.sheet.filter_view",
-  "sha256": "4f4dfd48b4192018c7788759a526c3111320f29866f14c2080053a5d540214b4",
+  "sha256": "766151168dff8989d1f5e8ea82af8a99ff698eaaf97119d4b77f7c10342cf907",
   "title": "查询筛选视图",
   "version": "v3"
  },
@@ -17035,7 +17035,7 @@
   "httpMethod": "POST",
   "project": "sheets",
   "resource": "spreadsheet.sheet.float_image",
-  "sha256": "7485783f56e170ca3cddea536a48b6d8a3973607df2b37fee1554331b5f3d915",
+  "sha256": "642f4f4be295798f2513e668e0b09085bda4e6f0b7340cb589d2f7be9836d85e",
   "title": "创建浮动图片",
   "version": "v3"
  },
@@ -17047,7 +17047,7 @@
   "httpMethod": "DELETE",
   "project": "sheets",
   "resource": "spreadsheet.sheet.float_image",
-  "sha256": "d299bfdea21485f76081204fec5b2c4acbfd8621bf6bd4638e56f5e42791948d",
+  "sha256": "aa6c1c9dcb41e58d29fb7e83ee39fc824c264d868844f2dd281b03c5989771f7",
   "title": "删除浮动图片",
   "version": "v3"
  },
@@ -17059,7 +17059,7 @@
   "httpMethod": "GET",
   "project": "sheets",
   "resource": "spreadsheet.sheet.float_image",
-  "sha256": "d28b31a8f479320893db38cdd312016178866d95a42cac488db4189f6b682888",
+  "sha256": "38c0dcc3fda2a1198a612ddc97cb37524fbef142ce2c0d762ee1368b92d09296",
   "title": "获取浮动图片",
   "version": "v3"
  },
@@ -17071,7 +17071,7 @@
   "httpMethod": "PATCH",
   "project": "sheets",
   "resource": "spreadsheet.sheet.float_image",
-  "sha256": "7f8479ad31b00a3845118ac8eb618103a8e089665cb1438dc33bffe81b62e917",
+  "sha256": "1eb07c94d3774bcafcdec261948561076faa3f2b8e19dc550ff90b0b7d1840d4",
   "title": "更新浮动图片",
   "version": "v3"
  },
@@ -17083,7 +17083,7 @@
   "httpMethod": "GET",
   "project": "sheets",
   "resource": "spreadsheet.sheet.float_image",
-  "sha256": "d7c0c3705cd749e60ed5015530e58718c109b0a127a03b1ec1df25ce70d51f0f",
+  "sha256": "06e6d3bfd7616cffb250dd7e3b74556d69eb331742064865b028c6ec39f2e53c",
   "title": "查询浮动图片",
   "version": "v3"
  },
@@ -17095,7 +17095,7 @@
   "httpMethod": "POST",
   "project": "sheets",
   "resource": "spreadsheet.sheet",
-  "sha256": "1bec05fc04f3f8e669dd441d13f1f2bffb0fbb4051991b74e6d30329cf6d6e02",
+  "sha256": "446157547994d405661183c98a12ba5802f1bbf9a6d1adb03fcfa8ea6dda223d",
   "title": "查找单元格",
   "version": "v3"
  },
@@ -17107,7 +17107,7 @@
   "httpMethod": "GET",
   "project": "sheets",
   "resource": "spreadsheet.sheet",
-  "sha256": "f098be393e1bbb0db3c847b4e4267624ded17518a7c1372451d6e321a5c2ce31",
+  "sha256": "94faedcbd602c4fa705ee18929c957c4f262ff4a80cb882251c043c4b2bf37d0",
   "title": "查询工作表",
   "version": "v3"
  },
@@ -17119,7 +17119,7 @@
   "httpMethod": "POST",
   "project": "sheets",
   "resource": "spreadsheet.sheet",
-  "sha256": "a355fbda20f78c839df568ad582cd3fffba167b901e9cbf27c8ea7715174bf25",
+  "sha256": "e7e6f3f958e0f40915a64702a38e900d3936eb8290ca4f1c77dc3d5008977dec",
   "title": "移动行列",
   "version": "v3"
  },
@@ -17131,7 +17131,7 @@
   "httpMethod": "GET",
   "project": "sheets",
   "resource": "spreadsheet.sheet",
-  "sha256": "dfea330fd64932c6fe5fb512cfe2654d4dd7f011b8c035364382dc8b0ea5edc7",
+  "sha256": "fbcbecd1ecde9fc154d17a537b38371a565e090edaaf6f81e23a4fd31df17529",
   "title": "获取工作表",
   "version": "v3"
  },
@@ -17143,7 +17143,7 @@
   "httpMethod": "POST",
   "project": "sheets",
   "resource": "spreadsheet.sheet",
-  "sha256": "8ce0e09c52c119c1fbef641458cb64d5f361065be47b8cdf66eb15ff7f550aed",
+  "sha256": "46fea97aa61d5d04d3ad5238283501271aee3e34a7a2cc038346e43ccc55ddec",
   "title": "替换单元格",
   "version": "v3"
  },
@@ -17155,7 +17155,7 @@
   "httpMethod": "POST",
   "project": "sheets",
   "resource": "spreadsheet",
-  "sha256": "a1051deafd0b9dcf3454f440b3cbef80ae42ff5eefad6669656079e5ff98b51a",
+  "sha256": "dbe30e1895eb7c8224a7e88033c7310d20d5a65b1d50b4b41d2a5aeb992027ae",
   "title": "创建电子表格",
   "version": "v3"
  },
@@ -17167,7 +17167,7 @@
   "httpMethod": "GET",
   "project": "sheets",
   "resource": "spreadsheet",
-  "sha256": "99024e7c49679f334200bdf1c38d863f5fc54db4c8079dbcd40a5467a684e259",
+  "sha256": "d2ebba75d5c9a1913b05ac1d1221eed992ecf805678402e89b5df0e32596ea1c",
   "title": "获取电子表格信息",
   "version": "v3"
  },
@@ -17179,7 +17179,7 @@
   "httpMethod": "PATCH",
   "project": "sheets",
   "resource": "spreadsheet",
-  "sha256": "0af2596d07db05908c11892a701aa51ae46d820f1433c7eaa11f7e0d19563dbb",
+  "sha256": "fc045d88d750f5805f4e140f10d24b3b9e248f738db38bc7171bf35113165d71",
   "title": "修改电子表格属性",
   "version": "v3"
  },
@@ -18643,7 +18643,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "bot",
-  "sha256": "563d09b1bbc2daf39a84354d84ffb3170efc87f994d663ab3715420c125f6570",
+  "sha256": "798f80f8b107a05cfcc0b2d3fbd25053316e1debe2ec9ba5fdaf19401731242c",
   "title": "会中倒计时",
   "version": "v1"
  },
@@ -18655,7 +18655,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "bot",
-  "sha256": "8a30eeb32f8619c09b333f8c07bd797227c5b41419af79e7a8ecd188730598bd",
+  "sha256": "6f6f88e3217098d4dbc8cb59cb9b834e185605491e034f9523322d70a21ebde0",
   "title": "获取会议事件列表",
   "version": "v1"
  },
@@ -18667,7 +18667,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "bot",
-  "sha256": "c2ea2378b1bd455ba54ac29a958c2ae7485279eb359bf58b82ab5b77aa3b4b1e",
+  "sha256": "d5b56aee45a8ae8c3555ea3685cbe98f074a033f69208ec46b81b5c9828d1ac1",
   "title": "加入会议",
   "version": "v1"
  },
@@ -18679,7 +18679,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "bot",
-  "sha256": "cc681d50cf1f28981f87026c75c45bfe4437da8bb0d3ad80aff34e9f326c16e0",
+  "sha256": "17ead8c530a317b496bf03bba7ab761ee9c509ad7d1acf8972cbfa866b17d294",
   "title": "离开会议",
   "version": "v1"
  },
@@ -18691,7 +18691,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "bot",
-  "sha256": "8bfbb5d5f2437a3bf110353faf75a0b75c88d64c9073af9c986150110344c5e1",
+  "sha256": "22d1b175d2209febc0d118a72a61dd1ca9bce33e5f3be2e9de3e2852c765e77b",
   "title": "发送会中消息",
   "version": "v1"
  },
@@ -18703,7 +18703,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "bot",
-  "sha256": "2be08974597ad0084e18c3beebf574c7b9a34f935fbef71e035f99e1716c0286",
+  "sha256": "787cd33b57bf6d74ab70433d67b00be3a5bb8bf899f5aa8b9aa66313f1e3ce2c",
   "title": "获取用户活跃会议列表",
   "version": "v1"
  },
@@ -18715,7 +18715,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "export",
-  "sha256": "fe49ebd7eaced2e7e27a309658e38a012fb1fed8b44c74c542e16e53588ab297",
+  "sha256": "3754b9bd071e43c09bc812d17c553866cb1ba6407429c0783a90406971b5edff",
   "title": "下载导出文件",
   "version": "v1"
  },
@@ -18727,7 +18727,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "export",
-  "sha256": "0397729cfc6e7381b526ddf9b6ddc59d868701db0af46b61a163e3942f435b96",
+  "sha256": "26e681f6d3d7a5e47fdec0ce2d06679fc12c0ce749fcd312ae4e31e040dd67e0",
   "title": "查询导出任务结果",
   "version": "v1"
  },
@@ -18739,7 +18739,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "export",
-  "sha256": "d1725b6b9e6e2609ca675be22dabc4f8fb4457c250ebc3bbf712829b37da97c4",
+  "sha256": "a83dc9af6ba33700e2f4de36293341901b795c6c89928aef9ed39d2ef8902c70",
   "title": "导出会议明细",
   "version": "v1"
  },
@@ -18751,7 +18751,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "export",
-  "sha256": "8a5f88246170d31179bbd5a369605eac82ec05c05d261cf6f7e0a911e25a1f0c",
+  "sha256": "19382a858bca2b23c631d53e29456ee5af4f67cb458f5ecc1602a5804e7a4df4",
   "title": "导出参会人明细",
   "version": "v1"
  },
@@ -18763,7 +18763,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "export",
-  "sha256": "afd0fe79a9ea5ac4b8fbe9b3c6113446e1aa77d488766961d8eab3dcfe3f2650",
+  "sha256": "dfe20c65993591c8a346fb2606c02abc0ef107b6e6686252f748b61397a1f91c",
   "title": "导出参会人会议质量数据",
   "version": "v1"
  },
@@ -18775,7 +18775,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "export",
-  "sha256": "696c5b2107c24c2e5bafd6212e7ee86423646243f70be22472beb4e38ac8bffb",
+  "sha256": "78e6cf5f1087ce952469d1ef2fbb0f2825de2cd896be148d5d4190ebbd9cc2c9",
   "title": "导出会议室预定数据",
   "version": "v1"
  },
@@ -18787,7 +18787,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "meeting.recording",
-  "sha256": "3f6cb314115aca80ecdad1307d8e7e1f91d312b4e36add49ef9429044eed9e8e",
+  "sha256": "efa8759801fd879bf85ce8aba5d3ea77450c1bcf30b51bfcfe94b6a45a207fe6",
   "title": "获取录制文件",
   "version": "v1"
  },
@@ -18799,7 +18799,7 @@
   "httpMethod": "PATCH",
   "project": "vc",
   "resource": "meeting.recording",
-  "sha256": "16ca7cabec22ffc56bb9fec18ae182782ef4a87db1536b0da430fe64a4a4576a",
+  "sha256": "a5aa5f7c007ed75335a54fd6a0ac09f8e6ca8687cd35023dafbb37d3913c018c",
   "title": "授权录制文件",
   "version": "v1"
  },
@@ -18811,7 +18811,7 @@
   "httpMethod": "PATCH",
   "project": "vc",
   "resource": "meeting.recording",
-  "sha256": "5d5e7070889ff530f85a0099bdb8702c4a7241676b44a533be244732e9c79040",
+  "sha256": "3bac69df67e1ae53249a27f440e803cf9184d66c8c0032eb4b49995b7e6a09e8",
   "title": "开始录制",
   "version": "v1"
  },
@@ -18823,7 +18823,7 @@
   "httpMethod": "PATCH",
   "project": "vc",
   "resource": "meeting.recording",
-  "sha256": "92e1225dfbe3f78534fef774d2b8688c876de3d7b33e42503e7812446d90cfae",
+  "sha256": "1a7296007a66b74478ad573395ad917bec044f838a42054375a4e369a3548cb8",
   "title": "停止录制",
   "version": "v1"
  },
@@ -18835,7 +18835,7 @@
   "httpMethod": "PATCH",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "f94d528bbfd0e4e36f24e1ba8d334e214a430ab4338ab0f80cb2da76b209d7f2",
+  "sha256": "cc769ce59c0d3a7ac759f2882b0344099b75b9c5d18fce3716e58fe07ae9c94a",
   "title": "结束会议",
   "version": "v1"
  },
@@ -18847,7 +18847,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "7bd76c6b2eabe907ed8547cce04869feba93dbf1f363028ec070c53450344892",
+  "sha256": "e72dfd170849c244e199464977130ad8cc1c13fdffe8091c925159231ba3d194",
   "title": "获取会议详情",
   "version": "v1"
  },
@@ -18859,7 +18859,7 @@
   "httpMethod": "PATCH",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "c524172d06b88cd8ed4bca53121fe08e5aedb98329f96b5304addd3e20d01412",
+  "sha256": "feddc879c2225b6aa7ce5eec20d165b18915fc0272e32e033d24a9145d97dde7",
   "title": "邀请参会人",
   "version": "v1"
  },
@@ -18883,7 +18883,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "f96d3944eb024787971eac7d574431c136350024d8d6d6f2f741a2fb282153fe",
+  "sha256": "387c3edabb113adbde5021222b386c07e69c24fc0c4a37c05371a26b205b10ee",
   "title": "获取与会议号关联的会议列表",
   "version": "v1"
  },
@@ -18895,7 +18895,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "de41cbef7a0b6e916e86e935fbf85e20dc3a54ce371ce8d31aaa643077d8f995",
+  "sha256": "f074effd6178147d32c2c5fce9fd63f0fc532e3c86c67a6eadcfcf621f2b6d8e",
   "title": "搜索会议记录",
   "version": "v1"
  },
@@ -18907,7 +18907,7 @@
   "httpMethod": "PATCH",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "92daa1940a3c81b81fc713231262c5d61287d8842da7a39cc09f43fd8e96adb8",
+  "sha256": "8047c9985669816e7594c7d9d1f72a0402d7084ffba24901f08444b2ca9a075a",
   "title": "设置主持人",
   "version": "v1"
  },
@@ -18919,7 +18919,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "85f7fb5982897b50b0942e27bba94014763a0ab27f5a9468fc12c4a33cdc0142",
+  "sha256": "471fd68b80006d9250a7e6b77eed09b66e8db059577928fa0d2dc50bfd40976f",
   "title": "订阅会议变更事件",
   "version": "v1"
  },
@@ -18931,7 +18931,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "e348dc70791c0ffc7b3cb6cba43256528ea3fefe153395cba55c33dba257c63c",
+  "sha256": "344bb23499e5e9cbaca31a4cd407d54c807a56dc8ae5a0b73551f0c57b38c62e",
   "title": "取消订阅会议变更事件",
   "version": "v1"
  },
@@ -18943,7 +18943,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "meeting_list",
-  "sha256": "5391c9c8ea1441043da63c04095cd7176a6cfa474771023a6d2044d549b44837",
+  "sha256": "d6312d119f3b24d6763bf458d379343132830dcc81511e92191095c808df768a",
   "title": "查询会议明细",
   "version": "v1"
  },
@@ -18955,7 +18955,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "note",
-  "sha256": "8b8e106cc5c5ea232c374a84dac69b2a06f5af09babd3c2dea869862251c789f",
+  "sha256": "e2b29fa9d49ac428fb450fd1d7e4c9a350eaf2bbaea753e7f6b17b24c02bfadd",
   "title": "获取纪要详情",
   "version": "v1"
  },
@@ -18967,7 +18967,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "note",
-  "sha256": "6a2899b1f6229386063af9bac8037400b110ba83623c0d037e4a1425609d42bb",
+  "sha256": "f448c15bf62d4942884cf805128983e9593d3c2dfa3cc7b947d12953ceafb67a",
   "title": "订阅纪要变更事件",
   "version": "v1"
  },
@@ -18979,7 +18979,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "note",
-  "sha256": "742098b0a0e40f0d5722accf9ee3c71f98643dec4576a3b49bc2fdac26a8ffd0",
+  "sha256": "b92837f7d408856d4b2e171b9c9f69fb94d6dd065b4fc05dcfe32e7298eba4a9",
   "title": "取消订阅纪要变更事件",
   "version": "v1"
  },
@@ -18991,7 +18991,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "participant_list",
-  "sha256": "563bc67082a0b942ec5d16149177f22b39fbf13a4bdac53e1e4e7289eb7693c2",
+  "sha256": "1cc7f494264a5579b15eec6ae5779399c1676fafff3b467557f6d644b8e51329",
   "title": "查询参会人明细",
   "version": "v1"
  },
@@ -19003,7 +19003,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "participant_quality_list",
-  "sha256": "991f484cc110a5f26f06b4e195ac604763cb2337e753dd01e2fe4116f014e0eb",
+  "sha256": "424e20dfd15e48dd536be795a448467305b63e233afebc497991624d81485108",
   "title": "查询参会人会议质量数据",
   "version": "v1"
  },
@@ -19039,7 +19039,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "reserve",
-  "sha256": "16f3ffe0d867c7a4e6f7d86563fe2ec25fdbaf27061b3b559c6a002135349880",
+  "sha256": "b5130b39f4566d6fe0d19980f79bdf799a67171124921b89d7623e700df0e37e",
   "title": "预约会议",
   "version": "v1"
  },
@@ -19051,7 +19051,7 @@
   "httpMethod": "DELETE",
   "project": "vc",
   "resource": "reserve",
-  "sha256": "571c624d7f1c711da23a4b083c1c778e4fa15143eae8c41fab7172a459005dab",
+  "sha256": "ceb93862e2418392d5d67911a3456974d3e847ec4f50a42e6806f413b2563de0",
   "title": "删除预约",
   "version": "v1"
  },
@@ -19063,7 +19063,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "reserve",
-  "sha256": "4221bb9bf91b6af5fabed718909a711bf1831fa1115836903daeee76e60224e2",
+  "sha256": "040f6f90c82762121e79bee2aaab06d303e896aa38e77fe9d6656cb800fd14af",
   "title": "获取预约",
   "version": "v1"
  },
@@ -19075,7 +19075,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "reserve",
-  "sha256": "82b0ed088cf25738e88e3ec02e4deeee416871f06dca0f8beaea11a12c4079be",
+  "sha256": "e146b0d5fb23c7e9c92748bd71e792af24e8d6ef34c53454d9e144362fc0f1dd",
   "title": "获取活跃会议",
   "version": "v1"
  },
@@ -19087,7 +19087,7 @@
   "httpMethod": "PUT",
   "project": "vc",
   "resource": "reserve",
-  "sha256": "6a68f66a6a064a062761d9eec8283ec036e9600b919df1cc5d4909760b57e356",
+  "sha256": "50275c00837b312ef0d75f19b9bfa34dbe55d681da29c68c0c29581094ee5477",
   "title": "更新预约",
   "version": "v1"
  },
@@ -19195,7 +19195,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "resource_reservation_list",
-  "sha256": "e3ce16e525ed7d2a14c63ff56ed39d333c22fd09a570ebac2de031563295e854",
+  "sha256": "f71948754226c327c954c7f3d87611eb459b598bf28c27853d1f57086efb8f75",
   "title": "查询会议室预定数据",
   "version": "v1"
  },
@@ -19279,7 +19279,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "room",
-  "sha256": "245b9171e7cce72f8bf90f92970b66a087cfa6abddde28a10f3515dbc30fa340",
+  "sha256": "2f622a40e9c05fc864602eab30df9eafd8ed9ec1e74241ff568a5fd0e9292597",
   "title": "搜索会议室",
   "version": "v1"
  },

@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+e28c9b0b
+  version: 1.0.0+abf1d741
   x-lark-project: im
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -365,6 +365,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat:readonly
@@ -471,6 +472,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat.announcement:write_only
@@ -608,6 +610,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat.managers:write_only
@@ -749,6 +752,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat.managers:write_only
@@ -912,6 +916,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat.members:write_only
@@ -1074,6 +1079,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat.members:write_only
@@ -1251,6 +1257,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:chat:readonly
       - im:chat
@@ -1342,6 +1349,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:chat:readonly
       - im:chat
@@ -1416,6 +1424,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat.members:write_only
@@ -2101,6 +2110,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:chat:readonly
       - im:chat
@@ -2224,6 +2234,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat:moderation:write_only
@@ -2409,6 +2420,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat.tabs:write_only
@@ -2513,6 +2525,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat.tabs:write_only
@@ -2593,6 +2606,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat:readonly
@@ -2677,6 +2691,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat.tabs:write_only
@@ -2760,6 +2775,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat.tabs:write_only
@@ -2859,6 +2875,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat.top_notice:write_only
@@ -2963,6 +2980,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat.top_notice:write_only
@@ -3375,6 +3393,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat:create
@@ -3539,6 +3558,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:chat:readonly
       - im:chat
@@ -3598,6 +3618,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat:delete
@@ -3856,6 +3877,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:chat:readonly
       - im:chat
@@ -4067,6 +4089,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:chat
       - im:chat:update
@@ -4244,6 +4267,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:chat:readonly
       - im:chat
@@ -4363,6 +4387,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:chat:readonly
       - im:chat
@@ -4459,6 +4484,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:resource:upload
       - im:resource
@@ -4609,6 +4635,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:resource:upload
       - im:resource
@@ -4878,6 +4905,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:message:readonly
       - im:message.reactions:read
@@ -4945,6 +4973,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:message
       - im:message.reactions:write_only
@@ -5106,6 +5135,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:message:readonly
       - im:message.reactions:read
@@ -5188,6 +5218,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:message
       - im:message.reactions:write_only
@@ -5302,6 +5333,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:message.history:readonly
       - im:message:readonly
@@ -5435,6 +5467,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:message:send
       - im:message
@@ -5647,6 +5680,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:message.history:readonly
       - im:message:readonly
@@ -5716,6 +5750,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:message:recall
       - im:message
@@ -5838,6 +5873,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:message:readonly
       - im:message
@@ -5920,6 +5956,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:message:update
       - im:message
@@ -6178,6 +6215,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:message:send_as_bot
       - im:message
@@ -6712,6 +6750,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:message:basic
       - im:message:readonly
@@ -6809,6 +6848,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:message:send
       - im:message
@@ -7190,6 +7230,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - search:message
       x-lark-field-scopes:
@@ -7698,6 +7739,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:message:send_as_bot
       - im:message
@@ -7856,6 +7898,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:message:readonly
       - im:message
@@ -7926,6 +7969,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - im:message:send_as_bot
       - im:message
@@ -8043,6 +8087,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:message:send_as_bot
       - im:message

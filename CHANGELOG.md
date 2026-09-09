@@ -1,5 +1,146 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-09）
+
+新增 0 · 移除 0 · 定义变更 135（全量共 1640 个接口）
+
+### 定义变更
+- `PUT /open-apis/cardkit/v1/cards/{card_id}/elements/{element_id}/content`「流式更新文本」（cardkit/v1/card.element/content）
+- `POST /open-apis/cardkit/v1/cards/{card_id}/elements`「新增组件」（cardkit/v1/card.element/create）
+- `DELETE /open-apis/cardkit/v1/cards/{card_id}/elements/{element_id}`「删除组件」（cardkit/v1/card.element/delete）
+- `PATCH /open-apis/cardkit/v1/cards/{card_id}/elements/{element_id}`「更新组件属性」（cardkit/v1/card.element/patch）
+- `PUT /open-apis/cardkit/v1/cards/{card_id}/elements/{element_id}`「更新组件」（cardkit/v1/card.element/update）
+- `POST /open-apis/cardkit/v1/cards/{card_id}/batch_update`「局部更新卡片实体」（cardkit/v1/card/batch_update）
+- `POST /open-apis/cardkit/v1/cards`「创建卡片实体」（cardkit/v1/card/create）
+- `POST /open-apis/cardkit/v1/cards/id_convert`「转换 ID」（cardkit/v1/card/id_convert）
+- `PATCH /open-apis/cardkit/v1/cards/{card_id}/settings`「更新卡片实体配置」（cardkit/v1/card/settings）
+- `PUT /open-apis/cardkit/v1/cards/{card_id}`「全量更新卡片实体」（cardkit/v1/card/update）
+- `POST /open-apis/compensation/v1/recurring_payment/batch_create`「批量创建经常性支付记录」（compensation/v1/recurring_payment/batch_create）
+- `POST /open-apis/compensation/v1/recurring_payment/batch_update`「批量更正经常性支付记录」（compensation/v1/recurring_payment/batch_update）
+- `POST /open-apis/compensation/v1/recurring_payment/query`「查询经常性支付记录」（compensation/v1/recurring_payment/query）
+- `POST /open-apis/hire/v1/background_check_orders/batch_query`「查询背调信息列表」（hire/v1/background_check_order/batch_query）
+- `GET /open-apis/hire/v1/background_check_orders`「获取背调信息列表」（hire/v1/background_check_order/list）
+- `GET /open-apis/im/v1/chats/{chat_id}/announcement`「获取群公告信息」（im/v1/chat.announcement/get）
+- `PATCH /open-apis/im/v1/chats/{chat_id}/announcement`「更新群公告信息」（im/v1/chat.announcement/patch）
+- `POST /open-apis/im/v1/chats/{chat_id}/managers/add_managers`「指定群管理员」（im/v1/chat.managers/add_managers）
+- `POST /open-apis/im/v1/chats/{chat_id}/managers/delete_managers`「删除群管理员」（im/v1/chat.managers/delete_managers）
+- `POST /open-apis/im/v1/chats/{chat_id}/members`「将用户或机器人拉入群聊」（im/v1/chat.members/create）
+- `DELETE /open-apis/im/v1/chats/{chat_id}/members`「将用户或机器人移出群聊」（im/v1/chat.members/delete）
+- `GET /open-apis/im/v1/chats/{chat_id}/members`「获取群成员列表」（im/v1/chat.members/get）
+- `GET /open-apis/im/v1/chats/{chat_id}/members/is_in_chat`「判断用户或机器人是否在群里」（im/v1/chat.members/is_in_chat）
+- `PATCH /open-apis/im/v1/chats/{chat_id}/members/me_join`「用户或机器人主动加入群聊」（im/v1/chat.members/me_join）
+- `GET /open-apis/im/v1/chats/{chat_id}/moderation`「获取群成员发言权限」（im/v1/chat.moderation/get）
+- `PUT /open-apis/im/v1/chats/{chat_id}/moderation`「更新群发言权限」（im/v1/chat.moderation/update）
+- `POST /open-apis/im/v1/chats/{chat_id}/chat_tabs`「添加会话标签页」（im/v1/chat.tab/create）
+- `DELETE /open-apis/im/v1/chats/{chat_id}/chat_tabs/delete_tabs`「删除会话标签页」（im/v1/chat.tab/delete_tabs）
+- `GET /open-apis/im/v1/chats/{chat_id}/chat_tabs/list_tabs`「拉取会话标签页」（im/v1/chat.tab/list_tabs）
+- `POST /open-apis/im/v1/chats/{chat_id}/chat_tabs/sort_tabs`「会话标签页排序」（im/v1/chat.tab/sort_tabs）
+- `POST /open-apis/im/v1/chats/{chat_id}/chat_tabs/update_tabs`「更新会话标签页」（im/v1/chat.tab/update_tabs）
+- `POST /open-apis/im/v1/chats/{chat_id}/top_notice/delete_top_notice`「撤销群置顶」（im/v1/chat.top_notice/delete_top_notice）
+- `POST /open-apis/im/v1/chats/{chat_id}/top_notice/put_top_notice`「更新群置顶」（im/v1/chat.top_notice/put_top_notice）
+- `POST /open-apis/im/v1/chats`「创建群」（im/v1/chat/create）
+- `DELETE /open-apis/im/v1/chats/{chat_id}`「解散群」（im/v1/chat/delete）
+- `GET /open-apis/im/v1/chats/{chat_id}`「获取群信息」（im/v1/chat/get）
+- `POST /open-apis/im/v1/chats/{chat_id}/link`「获取群分享链接」（im/v1/chat/link）
+- `GET /open-apis/im/v1/chats`「获取用户或机器人所在的群列表」（im/v1/chat/list）
+- `GET /open-apis/im/v1/chats/search`「搜索对用户或机器人可见的群列表」（im/v1/chat/search）
+- `PUT /open-apis/im/v1/chats/{chat_id}`「更新群信息」（im/v1/chat/update）
+- `POST /open-apis/im/v1/files`「上传文件」（im/v1/file/create）
+- `POST /open-apis/im/v1/images`「上传图片」（im/v1/image/create）
+- `POST /open-apis/im/v1/messages/reactions/batch_query`「批量获取消息表情回复」（im/v1/message.reaction/batch_query）
+- `POST /open-apis/im/v1/messages/{message_id}/reactions`「添加消息表情回复」（im/v1/message.reaction/create）
+- `DELETE /open-apis/im/v1/messages/{message_id}/reactions/{reaction_id}`「删除消息表情回复」（im/v1/message.reaction/delete）
+- `GET /open-apis/im/v1/messages/{message_id}/reactions`「获取消息表情回复」（im/v1/message.reaction/list）
+- `GET /open-apis/im/v1/messages/{message_id}/resources/{file_key}`「获取消息中的资源文件」（im/v1/message.resource/get）
+- `POST /open-apis/im/v1/messages`「发送消息」（im/v1/message/create）
+- `DELETE /open-apis/im/v1/messages/{message_id}`「撤回消息」（im/v1/message/delete）
+- `POST /open-apis/im/v1/messages/{message_id}/forward`「转发消息」（im/v1/message/forward）
+- `GET /open-apis/im/v1/messages/{message_id}`「获取指定消息的内容」（im/v1/message/get）
+- `GET /open-apis/im/v1/messages`「获取会话历史消息」（im/v1/message/list）
+- `PATCH /open-apis/im/v1/messages/{message_id}`「更新已发送的消息卡片」（im/v1/message/patch）
+- `GET /open-apis/im/v1/messages/{message_id}/read_users`「消息发送者查询消息已读状态」（im/v1/message/read_users）
+- `POST /open-apis/im/v1/messages/{message_id}/reply`「回复消息」（im/v1/message/reply）
+- `POST /open-apis/im/v1/messages/search`「搜索消息」（im/v1/message/search）
+- `POST /open-apis/im/v1/pins`「Pin 消息」（im/v1/pin/create）
+- `DELETE /open-apis/im/v1/pins/{message_id}`「移除 Pin 消息」（im/v1/pin/delete）
+- `GET /open-apis/im/v1/pins`「获取群内 Pin 消息」（im/v1/pin/list）
+- `POST /open-apis/im/v1/threads/{thread_id}/forward`「转发话题」（im/v1/thread/forward）
+- `GET /open-apis/minutes/v1/minutes/{minute_token}/media`「下载妙记音视频文件」（minutes/v1/minute.media/get）
+- `GET /open-apis/minutes/v1/minutes/{minute_token}/statistics`「获取妙记统计数据」（minutes/v1/minute.statistics/get）
+- `GET /open-apis/minutes/v1/minutes/{minute_token}/transcript`「导出妙记文字记录」（minutes/v1/minute.transcript/get）
+- `GET /open-apis/minutes/v1/minutes/{minute_token}/artifacts`「获取妙记AI产物」（minutes/v1/minute/artifacts）
+- `POST /open-apis/minutes/v1/minutes/{minute_token}/clip`「创建妙记片段」（minutes/v1/minute/clip）
+- `GET /open-apis/minutes/v1/minutes/{minute_token}`「获取妙记信息」（minutes/v1/minute/get）
+- `POST /open-apis/minutes/v1/minutes/search`「搜索妙记」（minutes/v1/minute/search）
+- `POST /open-apis/minutes/v1/minutes/subscription`「订阅妙记变更事件」（minutes/v1/minute/subscription）
+- `POST /open-apis/minutes/v1/minutes/unsubscription`「取消订阅妙记变更事件」（minutes/v1/minute/unsubscription）
+- `POST /open-apis/minutes/v1/minutes/upload`「云空间文件生成妙记」（minutes/v1/minute/upload）
+- `POST /open-apis/search/v2/doc_wiki/search`「搜索文档」（search/v2/doc_wiki/search）
+- `POST /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/filter`「创建筛选」（sheets/v3/spreadsheet.sheet.filter/create）
+- `DELETE /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/filter`「删除筛选」（sheets/v3/spreadsheet.sheet.filter/delete）
+- `GET /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/filter`「获取筛选」（sheets/v3/spreadsheet.sheet.filter/get）
+- `PUT /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/filter`「更新筛选」（sheets/v3/spreadsheet.sheet.filter/update）
+- `POST /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/filter_views/{filter_view_id}/conditions`「创建筛选条件」（sheets/v3/spreadsheet.sheet.filter_view.condition/create）
+- `DELETE /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/filter_views/{filter_view_id}/conditions/{condition_id}`「删除筛选条件」（sheets/v3/spreadsheet.sheet.filter_view.condition/delete）
+- `GET /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/filter_views/{filter_view_id}/conditions/{condition_id}`「获取筛选条件」（sheets/v3/spreadsheet.sheet.filter_view.condition/get）
+- `GET /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/filter_views/{filter_view_id}/conditions/query`「查询筛选条件」（sheets/v3/spreadsheet.sheet.filter_view.condition/query）
+- `PUT /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/filter_views/{filter_view_id}/conditions/{condition_id}`「更新筛选条件」（sheets/v3/spreadsheet.sheet.filter_view.condition/update）
+- `POST /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/filter_views`「创建筛选视图」（sheets/v3/spreadsheet.sheet.filter_view/create）
+- `DELETE /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/filter_views/{filter_view_id}`「删除筛选视图」（sheets/v3/spreadsheet.sheet.filter_view/delete）
+- `GET /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/filter_views/{filter_view_id}`「获取筛选视图」（sheets/v3/spreadsheet.sheet.filter_view/get）
+- `PATCH /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/filter_views/{filter_view_id}`「更新筛选视图」（sheets/v3/spreadsheet.sheet.filter_view/patch）
+- `GET /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/filter_views/query`「查询筛选视图」（sheets/v3/spreadsheet.sheet.filter_view/query）
+- `POST /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/float_images`「创建浮动图片」（sheets/v3/spreadsheet.sheet.float_image/create）
+- `DELETE /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/float_images/{float_image_id}`「删除浮动图片」（sheets/v3/spreadsheet.sheet.float_image/delete）
+- `GET /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/float_images/{float_image_id}`「获取浮动图片」（sheets/v3/spreadsheet.sheet.float_image/get）
+- `PATCH /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/float_images/{float_image_id}`「更新浮动图片」（sheets/v3/spreadsheet.sheet.float_image/patch）
+- `GET /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/float_images/query`「查询浮动图片」（sheets/v3/spreadsheet.sheet.float_image/query）
+- `POST /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/find`「查找单元格」（sheets/v3/spreadsheet.sheet/find）
+- `GET /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}`「查询工作表」（sheets/v3/spreadsheet.sheet/get）
+- `POST /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/move_dimension`「移动行列」（sheets/v3/spreadsheet.sheet/move_dimension）
+- `GET /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/query`「获取工作表」（sheets/v3/spreadsheet.sheet/query）
+- `POST /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}/sheets/{sheet_id}/replace`「替换单元格」（sheets/v3/spreadsheet.sheet/replace）
+- `POST /open-apis/sheets/v3/spreadsheets`「创建电子表格」（sheets/v3/spreadsheet/create）
+- `GET /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}`「获取电子表格信息」（sheets/v3/spreadsheet/get）
+- `PATCH /open-apis/sheets/v3/spreadsheets/{spreadsheet_token}`「修改电子表格属性」（sheets/v3/spreadsheet/patch）
+- `POST /open-apis/vc/v1/bots/countdown`「会中倒计时」（vc/v1/bot/countdown）
+- `GET /open-apis/vc/v1/bots/events`「获取会议事件列表」（vc/v1/bot/events）
+- `POST /open-apis/vc/v1/bots/join`「加入会议」（vc/v1/bot/join）
+- `POST /open-apis/vc/v1/bots/leave`「离开会议」（vc/v1/bot/leave）
+- `POST /open-apis/vc/v1/bots/message`「发送会中消息」（vc/v1/bot/message）
+- `GET /open-apis/vc/v1/bots/user_active_meeting`「获取用户活跃会议列表」（vc/v1/bot/user_active_meeting）
+- `GET /open-apis/vc/v1/exports/download`「下载导出文件」（vc/v1/export/download）
+- `GET /open-apis/vc/v1/exports/{task_id}`「查询导出任务结果」（vc/v1/export/get）
+- `POST /open-apis/vc/v1/exports/meeting_list`「导出会议明细」（vc/v1/export/meeting_list）
+- `POST /open-apis/vc/v1/exports/participant_list`「导出参会人明细」（vc/v1/export/participant_list）
+- `POST /open-apis/vc/v1/exports/participant_quality_list`「导出参会人会议质量数据」（vc/v1/export/participant_quality_list）
+- `POST /open-apis/vc/v1/exports/resource_reservation_list`「导出会议室预定数据」（vc/v1/export/resource_reservation_list）
+- `GET /open-apis/vc/v1/meetings/{meeting_id}/recording`「获取录制文件」（vc/v1/meeting.recording/get）
+- `PATCH /open-apis/vc/v1/meetings/{meeting_id}/recording/set_permission`「授权录制文件」（vc/v1/meeting.recording/set_permission）
+- `PATCH /open-apis/vc/v1/meetings/{meeting_id}/recording/start`「开始录制」（vc/v1/meeting.recording/start）
+- `PATCH /open-apis/vc/v1/meetings/{meeting_id}/recording/stop`「停止录制」（vc/v1/meeting.recording/stop）
+- `PATCH /open-apis/vc/v1/meetings/{meeting_id}/end`「结束会议」（vc/v1/meeting/end）
+- `GET /open-apis/vc/v1/meetings/{meeting_id}`「获取会议详情」（vc/v1/meeting/get）
+- `PATCH /open-apis/vc/v1/meetings/{meeting_id}/invite`「邀请参会人」（vc/v1/meeting/invite）
+- `GET /open-apis/vc/v1/meetings/list_by_no`「获取与会议号关联的会议列表」（vc/v1/meeting/list_by_no）
+- `POST /open-apis/vc/v1/meetings/search`「搜索会议记录」（vc/v1/meeting/search）
+- `PATCH /open-apis/vc/v1/meetings/{meeting_id}/set_host`「设置主持人」（vc/v1/meeting/set_host）
+- `POST /open-apis/vc/v1/meetings/subscription`「订阅会议变更事件」（vc/v1/meeting/subscription）
+- `POST /open-apis/vc/v1/meetings/unsubscription`「取消订阅会议变更事件」（vc/v1/meeting/unsubscription）
+- `GET /open-apis/vc/v1/meeting_list`「查询会议明细」（vc/v1/meeting_list/get）
+- `GET /open-apis/vc/v1/notes/{note_id}`「获取纪要详情」（vc/v1/note/get）
+- `POST /open-apis/vc/v1/notes/subscription`「订阅纪要变更事件」（vc/v1/note/subscription）
+- `POST /open-apis/vc/v1/notes/unsubscription`「取消订阅纪要变更事件」（vc/v1/note/unsubscription）
+- `GET /open-apis/vc/v1/participant_list`「查询参会人明细」（vc/v1/participant_list/get）
+- `GET /open-apis/vc/v1/participant_quality_list`「查询参会人会议质量数据」（vc/v1/participant_quality_list/get）
+- `POST /open-apis/vc/v1/reserves/apply`「预约会议」（vc/v1/reserve/apply）
+- `DELETE /open-apis/vc/v1/reserves/{reserve_id}`「删除预约」（vc/v1/reserve/delete）
+- `GET /open-apis/vc/v1/reserves/{reserve_id}`「获取预约」（vc/v1/reserve/get）
+- `GET /open-apis/vc/v1/reserves/{reserve_id}/get_active_meeting`「获取活跃会议」（vc/v1/reserve/get_active_meeting）
+- `PUT /open-apis/vc/v1/reserves/{reserve_id}`「更新预约」（vc/v1/reserve/update）
+- `GET /open-apis/vc/v1/resource_reservation_list`「查询会议室预定数据」（vc/v1/resource_reservation_list/get）
+- `POST /open-apis/vc/v1/rooms/search`「搜索会议室」（vc/v1/room/search）
+
 ## explorer 全量轨道（2026-09-08）
 
 新增 0 · 移除 0 · 定义变更 99（全量共 1640 个接口）

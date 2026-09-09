@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+ff40c44a
+  version: 1.0.0+01f541c4
   x-lark-project: vc
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -330,6 +330,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:meeting.interaction:write
       x-lark-error-mappings:
@@ -922,6 +923,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:meeting.meetingevent:read
       - vc:meeting.bot.join:write
@@ -933,9 +935,9 @@ paths:
         msg: param is invalid
       - code: 120002
         httpCode: 403
-        msg: 'This user is temporarily unable to retrieve meeting events. Ask the meeting host to enable "AI Summary" and
-          try again. If it is already enabled, confirm that "Allow agents to join meetings" is enabled in the current meeting''s
-          "Security" settings. See: https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/events'
+        msg: This agent is currently unable to join the meeting. Ask the meeting host to enable "AI Summary" and try again.
+          If it is already enabled, verify that "Allow agents to join meetings" is enabled in the current meeting's "Security"
+          settings.
       - code: 120003
         httpCode: 403
         msg: user is not in the meeting
@@ -1063,6 +1065,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:meeting.bot.join:write
       x-lark-error-mappings:
@@ -1113,15 +1116,22 @@ paths:
         msg: lark security forbidden
       - code: 121016
         httpCode: 403
-        msg: 'This agent is temporarily unable to join the meeting. Ask the meeting host to enable "AI Summary" and try again.
-          If it is already enabled, confirm that "Allow agents to join meetings" is enabled in the current meeting''s "Security"
-          settings. See: https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/join'
+        msg: This agent is currently unable to join the meeting. Ask the meeting host to enable "AI Summary" and try again.
+          If it is already enabled, verify that "Allow agents to join meetings" is enabled in the current meeting's "Security"
+          settings.
       - code: 121017
         httpCode: 403
         msg: user is not in the meeting
       - code: 121018
         httpCode: 403
         msg: bot is not in the meeting
+      - code: 121020
+        httpCode: 403
+        msg: AI summary quota is insufficient
+      - code: 121021
+        httpCode: 403
+        msg: You are not permitted to start this scheduled meeting. Ask the organizer to allow participants to start the meeting
+          before the organizer joins, then retry.
       x-lark-rate-limit:
         tier: 6
   /open-apis/vc/v1/bots/leave:
@@ -1191,6 +1201,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:meeting.bot.join:write
       x-lark-error-mappings:
@@ -1217,9 +1228,7 @@ paths:
         msg: participant status unexpected
       - code: 121108
         httpCode: 403
-        msg: 'This agent is temporarily unable to leave this meeting. Ask the meeting host to enable "AI Summary" and try
-          again. If it is already enabled, confirm that "Allow agents to join meetings" is enabled in the current meeting''s
-          "Security" settings. See: https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/leave'
+        msg: switch for allowing agents to join meetings is disabled
       - code: 121109
         httpCode: 403
         msg: user is not in the meeting
@@ -1283,6 +1292,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:meeting.message:write
       x-lark-error-mappings:
@@ -1367,6 +1377,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:meeting.meetingevent:read
       - vc:meeting.bot.join:write
@@ -1440,6 +1451,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - vc:export
       - vc:meeting:export
@@ -1525,6 +1537,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - vc:export
       - vc:meeting:export
@@ -1649,6 +1662,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - vc:export
       - vc:meeting:export
@@ -1772,6 +1786,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - vc:export
       - vc:meeting:export
@@ -1888,6 +1903,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - vc:export
       - vc:meeting:export
@@ -1985,6 +2001,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - vc:export
       - vc:meeting:export
@@ -2051,6 +2068,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:record:readonly
       x-lark-error-mappings:
@@ -2181,6 +2199,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - vc:record
       x-lark-field-scopes:
@@ -2248,6 +2267,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - vc:record
       x-lark-error-mappings:
@@ -2305,6 +2325,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - vc:record
       x-lark-error-mappings:
@@ -2365,6 +2386,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - vc:meeting
       x-lark-error-mappings:
@@ -2484,6 +2506,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:meeting:readonly
       - vc:meeting.meetingevent:read
@@ -2639,6 +2662,7 @@ paths:
                         description: 邀请结果
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - vc:meeting
       - vc:meeting.participant:write
@@ -2968,10 +2992,15 @@ paths:
                               type: string
                               description: 会议详情页链接
                               example: https://applink.feishu.cn/client/vctab/open?source=chat&action=detail&meetingId=1000000000000001
+                            calendar_event_id:
+                              type: string
+                              description: 日程id
+                              example: 4dcb34cd-dbde-4fg7-a7b2-6c8dd3ca559_0
                         description: 会议简要信息列表
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:meeting:readonly
       - vc:meeting.meetingid:read
@@ -3119,6 +3148,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:meeting.search:read
       x-lark-error-mappings:
@@ -3340,6 +3370,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:meeting
       - vc:meeting.participant:write
@@ -3434,6 +3465,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - vc:meeting.meetingevent:read
       x-lark-error-mappings:
@@ -3490,6 +3522,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - vc:meeting.meetingevent:read
       x-lark-error-mappings:
@@ -3811,6 +3844,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - vc:room:readonly
       - vc:rooms.room.detailinfo:read
@@ -4011,6 +4045,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:note:read
       x-lark-field-scopes:
@@ -4069,6 +4104,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - vc:note:read
       x-lark-error-mappings:
@@ -4125,6 +4161,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - vc:note:read
       x-lark-error-mappings:
@@ -4401,6 +4438,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - vc:room:readonly
       - vc:rooms.room.detailinfo:read
@@ -4682,6 +4720,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - vc:room:readonly
       - vc:rooms.room.detailinfo:read
@@ -5124,6 +5163,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:reserve
       x-lark-field-scopes:
@@ -5212,6 +5252,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:reserve
       x-lark-error-mappings:
@@ -5385,6 +5426,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:reserve:readonly
       x-lark-field-scopes:
@@ -5523,6 +5565,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:reserve
       x-lark-field-scopes:
@@ -5637,6 +5680,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:reserve:readonly
       x-lark-field-scopes:
@@ -6686,6 +6730,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - vc:room:readonly
       - vc:rooms.room.detailinfo:read
@@ -7258,6 +7303,7 @@ paths:
                 $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - vc:room
       - vc:room:readonly
@@ -8766,6 +8812,10 @@ components:
           type: string
           description: 会议详情页链接
           example: https://applink.feishu.cn/client/vctab/open?source=chat&action=detail&meetingId=1000000000000001
+        calendar_event_id:
+          type: string
+          description: 日程id
+          example: 4dcb34cd-dbde-4fg7-a7b2-6c8dd3ca559_0
     MeetingSetting:
       type: object
       properties:

@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+529a510d
+  version: 1.0.0+766c66e3
   x-lark-project: sheets
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -97,6 +97,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - drive:drive
@@ -204,6 +205,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - drive:drive
@@ -341,6 +343,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - drive:drive
       - drive:drive:readonly
@@ -447,6 +450,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - drive:drive
@@ -590,6 +594,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - drive:drive
       - sheets:spreadsheet
@@ -709,6 +714,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - drive:drive
@@ -831,6 +837,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - sheets:spreadsheet:readonly
@@ -973,6 +980,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - drive:drive
@@ -1106,6 +1114,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - sheets:spreadsheet:readonly
@@ -1225,6 +1234,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - drive:drive
@@ -1346,6 +1356,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - drive:drive
@@ -1450,6 +1461,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - sheets:spreadsheet:readonly
@@ -1569,6 +1581,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - drive:drive
@@ -1687,6 +1700,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - sheets:spreadsheet:readonly
@@ -1800,6 +1814,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - drive:drive
@@ -1912,6 +1927,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - drive:drive
@@ -1992,6 +2008,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - sheets:spreadsheet:readonly
@@ -2105,6 +2122,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - drive:drive
@@ -2229,6 +2247,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - sheets:spreadsheet:readonly
@@ -2361,6 +2380,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - sheets:spreadsheet:readonly
@@ -2464,6 +2484,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - sheets:spreadsheet:readonly
@@ -2558,6 +2579,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - drive:drive
@@ -2659,6 +2681,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - drive:drive
@@ -2782,6 +2805,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - drive:drive
@@ -2902,6 +2926,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - drive:drive
       - sheets:spreadsheet
@@ -3000,6 +3025,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - sheets:spreadsheet:readonly
@@ -3076,6 +3102,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - sheets:spreadsheet
       - drive:drive
