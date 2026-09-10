@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+f7488fcc
+  version: 1.0.0+f5916d82
   x-lark-project: task
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -2635,8 +2635,9 @@ paths:
                         description: 是否有更多数据
                         example: 'true'
       x-lark-access-tokens:
-      - tenant
       - user
+      - tenant
+      - agent
       x-lark-scopes:
       - task:attachment:read
       - task:attachment:write
@@ -2727,8 +2728,9 @@ paths:
                           $ref: '#/components/schemas/Item'
                         description: 上传的附件列表
       x-lark-access-tokens:
-      - tenant
       - user
+      - tenant
+      - agent
       x-lark-scopes:
       - task:attachment:upload
       - task:attachment:write
@@ -2804,8 +2806,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/Schema7'
       x-lark-access-tokens:
-      - tenant
       - user
+      - tenant
+      - agent
       x-lark-scopes:
       - task:comment:writeonly
       - task:comment:write
@@ -2918,8 +2921,9 @@ paths:
                         description: 是否还有更多数据
                         example: 'true'
       x-lark-access-tokens:
-      - tenant
       - user
+      - tenant
+      - agent
       x-lark-scopes:
       - task:comment:read
       - task:comment:write
@@ -5303,8 +5307,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
-      - tenant
       - user
+      - tenant
+      - agent
       x-lark-scopes:
       - task:task:write
       - task:task:writeonly
@@ -5495,8 +5500,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
-      - tenant
       - user
+      - tenant
+      - agent
       x-lark-scopes:
       - task:task:read
       - task:task:write
@@ -5659,8 +5665,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
-      - tenant
       - user
+      - tenant
+      - agent
       x-lark-scopes:
       - task:task:writeonly
       - task:task:write

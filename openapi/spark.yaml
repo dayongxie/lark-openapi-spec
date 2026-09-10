@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+a682c59d
+  version: 1.0.0+6f0fc560
   x-lark-project: spark
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -1634,6 +1634,10 @@ paths:
                   type: string
                   description: 应用创建来源
                   example: HTML
+                idempotent_key:
+                  type: string
+                  description: 应用创建幂等键
+                  example: a/b/c/index.html
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）

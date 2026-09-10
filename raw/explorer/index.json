@@ -3619,7 +3619,7 @@
   "httpMethod": "DELETE",
   "project": "board",
   "resource": "whiteboard.node",
-  "sha256": "81a7cebaa124fdc733a2acfb425a14b4f70299301f3a4e79a4b4092ad42810cd",
+  "sha256": "b13bde3993b28fb77757dab5d981464a4f29d623b2d0e40d026a0e1406344265",
   "title": "批量删除节点",
   "version": "v1"
  },
@@ -3631,7 +3631,7 @@
   "httpMethod": "POST",
   "project": "board",
   "resource": "whiteboard.node",
-  "sha256": "c6a45b1641ccb8e70305c2d0355b49d70346159f7315b786af2eb7ab32a57559",
+  "sha256": "9e98b4cbd098b10d2bd9e6937c85be2f9dc44b93fd5d086c14cb5ec2e2bd0f49",
   "title": "创建节点",
   "version": "v1"
  },
@@ -3643,7 +3643,7 @@
   "httpMethod": "POST",
   "project": "board",
   "resource": "whiteboard.node",
-  "sha256": "da3d1a3dca8370a929b093fc00f6d0e880e177702f50c2d1125486a6f6939389",
+  "sha256": "41cf3d64a8961acba733fbe38f35f2a91d2878aa638dc04f78b326ae02012840",
   "title": "解析画板语法",
   "version": "v1"
  },
@@ -3655,7 +3655,7 @@
   "httpMethod": "GET",
   "project": "board",
   "resource": "whiteboard.node",
-  "sha256": "3c0830cbbba5676b88e8492451bdc9582fdc22161180aa26fc736a0958686f3c",
+  "sha256": "53ef59454aad50c139a6042525d2be608efe0023c2b3d502480d3228646a751b",
   "title": "获取所有节点",
   "version": "v1"
  },
@@ -3667,7 +3667,7 @@
   "httpMethod": "GET",
   "project": "board",
   "resource": "whiteboard",
-  "sha256": "58d18ddd880c9597ee198dd91b5bbab82255c733dc47e7a9f718f3d318de3b6a",
+  "sha256": "1bd729f6cfa91abfb2639bb6df460388a3151546c8495545ce3762b74906ddac",
   "title": "获取画板缩略图片",
   "version": "v1"
  },
@@ -3679,7 +3679,7 @@
   "httpMethod": "GET",
   "project": "board",
   "resource": "whiteboard",
-  "sha256": "cb3846d3edbb924a59fb2ae00ee316e2508a295d8d084aa3dd46034cca848a5b",
+  "sha256": "3e5ee06fea68b663fe0f08fa7de100047193db8f7824467e04f2ad7263127b43",
   "title": "获取画板主题",
   "version": "v1"
  },
@@ -3691,7 +3691,7 @@
   "httpMethod": "POST",
   "project": "board",
   "resource": "whiteboard",
-  "sha256": "5062e38dae341c925c8d76df314f496fbf8d47f5ca38a7e18eaca29cd8bbbab2",
+  "sha256": "6d7d741e431ad8f5dd149363e8bfe73ffb4d0d856c06efa6fdcd91622b1a9076",
   "title": "更新画板主题",
   "version": "v1"
  },
@@ -9655,7 +9655,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file",
-  "sha256": "fd8216759d219d9d1235f223d48f5d002c60b65f5b5875c5ec6591880c61db32",
+  "sha256": "5f4108894faaa744fc7342c8be0a231b81e5176b39fdeb801b5a74533fc2e117",
   "title": "复制文件",
   "version": "v1"
  },
@@ -14359,7 +14359,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "multi_entity",
-  "sha256": "0c11af2be6ead94badc9820a721eb06d6327ab28be7d2fbac0be9222048a87e9",
+  "sha256": "18eb7c4910096e01f2acef964dbe4c2dc95ed1656d3a6ad128c7a6e7650336fd",
   "title": "多实体搜索",
   "version": "v1"
  },
@@ -14623,7 +14623,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.draft",
-  "sha256": "09cd407155374e274c04ce2fcd38a351e9cac467d6ff02c19e8a5cc46f13551e",
+  "sha256": "8d3e610cbc6f69bda5c16fe666ccef65779f7be3f3d1b6bfc286a89e840dd304",
   "title": "取消定时发送",
   "version": "v1"
  },
@@ -14635,7 +14635,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.draft",
-  "sha256": "d1f2bbcea477f4255477bcee5a1b496869c134dcdff05e0013240698d62da2b0",
+  "sha256": "e160223cc2bd41d8930f9ace3c17a4cd5681d11e94402f3ec5dc851797c101e3",
   "title": "创建草稿",
   "version": "v1"
  },
@@ -14647,7 +14647,7 @@
   "httpMethod": "DELETE",
   "project": "mail",
   "resource": "user_mailbox.draft",
-  "sha256": "1e0d907a9f2421faf649de74ac2164473597d3a6f2386258acfe46761cee681a",
+  "sha256": "eea1f908d40ed7c1169cba4789e8402824576f81e7982c64a6ee7f69ace05ca7",
   "title": "删除草稿",
   "version": "v1"
  },
@@ -14659,7 +14659,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.draft",
-  "sha256": "b4d66d11e3ad0da75c7f6c3eb21fb27f7c286b53a7ffaf4c2545c3ca574c6e99",
+  "sha256": "66d7ef3c766569aa47a723d1755a9904604bb2c87c1a21fb6c55826639351364",
   "title": "获取草稿内容",
   "version": "v1"
  },
@@ -14671,7 +14671,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.draft",
-  "sha256": "44450d2909240054ebd440bfb36b7124d5b6a5445a32ec929aa0d9c473c7b375",
+  "sha256": "d168f5ad9f2b93fb65b347cfb312ea4d95a943f03598d9d916ba8143bbf2a627",
   "title": "列出草稿列表",
   "version": "v1"
  },
@@ -14683,7 +14683,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.draft",
-  "sha256": "f6eaff730c722156b7977e54f209388120aee1dc1ba57bbf8ced27e52aee58c1",
+  "sha256": "e543cb6b8a56246c33e695a3d00b153666684bd4bfe3d8e05457b41570c5f558",
   "title": "发送草稿",
   "version": "v1"
  },
@@ -14695,7 +14695,7 @@
   "httpMethod": "PUT",
   "project": "mail",
   "resource": "user_mailbox.draft",
-  "sha256": "4ffae03608c286705e1afd191ca07408a3c29395beb1c6eb5d0e4563b9664a8c",
+  "sha256": "a74505dcdb3a48a79db6d9d0b31276016cdafd7154c3497e1dfdd7502d1cca6f",
   "title": "更新草稿",
   "version": "v1"
  },
@@ -14743,7 +14743,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.folder",
-  "sha256": "7c8434f764f121f3d21d6ef98fa7ec2098e20d14ad38ca3c75ddab949014dd6f",
+  "sha256": "29146d8c67a8634d3222a1565d40796e7734b75c71557041f5e8dd05428e4ec3",
   "title": "创建邮箱文件夹",
   "version": "v1"
  },
@@ -14755,7 +14755,7 @@
   "httpMethod": "DELETE",
   "project": "mail",
   "resource": "user_mailbox.folder",
-  "sha256": "9b5d80798d4e4ed632d910f93646da5b6153cff836b922a4553bba5697ef40bb",
+  "sha256": "f285d88c9dbea7007d42398b972fb43f649d3fa3f8909ce6b37f0d5d4ee05f4b",
   "title": "删除邮箱文件夹",
   "version": "v1"
  },
@@ -14767,7 +14767,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.folder",
-  "sha256": "1629b7d2ab3f64b7756013b112e02f2373e6d9e6df5f51d087002141ecbfdef7",
+  "sha256": "ecf25ea5de7f28b4043363de18275f8c2bf63b222b72c935c71438627017b367",
   "title": "获取邮箱文件信息",
   "version": "v1"
  },
@@ -14779,7 +14779,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.folder",
-  "sha256": "f620572697fd266ae60365bb10392ec57b8502adfdb89e8a5cbc67386eaefcba",
+  "sha256": "b4fdb701a9c539312bc3e7c374e668a66aa71f4a8754f7e9ea4eca2df9d9eaa3",
   "title": "列出邮箱文件夹",
   "version": "v1"
  },
@@ -14791,7 +14791,7 @@
   "httpMethod": "PATCH",
   "project": "mail",
   "resource": "user_mailbox.folder",
-  "sha256": "84fa3df025561a8144ee5d6914a9b4e2ffb7aa40bd53b5934311dd4197e32c5a",
+  "sha256": "89b541b73d81937f396c329bcf7645b60e2ca8868fe449c566e73d5604e7c484",
   "title": "修改邮箱文件夹",
   "version": "v1"
  },
@@ -14803,7 +14803,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.label",
-  "sha256": "3a9b20da095d8be5fa7653e99d52b7ba59a0beb0e287f3a33e10e165e7d81121",
+  "sha256": "21c26dda4d25ccd7059928398885f92b4156791835157512087a460c05d9d3a3",
   "title": "创建标签",
   "version": "v1"
  },
@@ -14815,7 +14815,7 @@
   "httpMethod": "DELETE",
   "project": "mail",
   "resource": "user_mailbox.label",
-  "sha256": "8232b71b21a84bc2a0a29d6ecd17fa155eb78453411c7e3974a6529e42726402",
+  "sha256": "77af91ee7bc59bc04fb0c6ee594ec9fd97506556daabd1e910740576df1c2ca1",
   "title": "删除标签",
   "version": "v1"
  },
@@ -14827,7 +14827,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.label",
-  "sha256": "899f993ca75ed501fa175045b23252e525ece1415c574ac680629dcfe06fb65e",
+  "sha256": "0cf2bc4b5738ba815e6b270af8201b1bbd746979cfcdda1439c560204d7e197e",
   "title": "获取标签信息",
   "version": "v1"
  },
@@ -14839,7 +14839,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.label",
-  "sha256": "1765709ed99442b96eb4c052e16e82b915064f65bf35217b6c379ddf0d9b5bfc",
+  "sha256": "e77025a9b9a41fef9e5ea089775f9ad410ee6fb1035b9a8d75c83bb956f82596",
   "title": "列出标签",
   "version": "v1"
  },
@@ -14851,7 +14851,7 @@
   "httpMethod": "PATCH",
   "project": "mail",
   "resource": "user_mailbox.label",
-  "sha256": "b52cc01df0ef028d2b7aa5ea9f930e6fbdbcfe2b3625d573c3c453c78a7ee451",
+  "sha256": "ae0b85af208f3e09eb095ad77b53a64e074c7a3eb3b35ba7d86e79d51d3ac2e9",
   "title": "更新标签",
   "version": "v1"
  },
@@ -14863,7 +14863,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.mail_contact",
-  "sha256": "d83ac67a08118d091f5b5a8b3b1bac949e26aeb46bb884b6c32ae16eeffee621",
+  "sha256": "15b5f3c39d52145cf4164ad8c0c82ff574b818d9d807fbcff6622adc89cf1f53",
   "title": "创建邮箱联系人",
   "version": "v1"
  },
@@ -14875,7 +14875,7 @@
   "httpMethod": "DELETE",
   "project": "mail",
   "resource": "user_mailbox.mail_contact",
-  "sha256": "9b3ef23e71b748f9e9a1e33be4ef8e982d1d7e139c0ff605189d4e2b6ddec9ba",
+  "sha256": "abbc54bfa56b979d37a3db77f3a679135be974b5ad79f61c9820c92cfc5f8260",
   "title": "删除邮箱联系人",
   "version": "v1"
  },
@@ -14887,7 +14887,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.mail_contact",
-  "sha256": "55e95eff7961688e036ec1b18281257a639962a6309f2ad29a7de8b39b7078ca",
+  "sha256": "354f49017015a114c57e8b87de657e701a8c5f27330174c6ae35d5b077d017e0",
   "title": "列出邮箱联系人",
   "version": "v1"
  },
@@ -14899,7 +14899,7 @@
   "httpMethod": "PATCH",
   "project": "mail",
   "resource": "user_mailbox.mail_contact",
-  "sha256": "e9e4787623d0189f9fdfeb490d5758557ac638eb4876b44baca9d5935e6d94d0",
+  "sha256": "98c19a4f8eb8e1fd214db7b666b9a415bfa16d831d749b2d970628505a35706f",
   "title": "修改邮箱联系人信息",
   "version": "v1"
  },
@@ -14911,7 +14911,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.message.attachment",
-  "sha256": "a98ed0192ed0a757661600ffe1176a549302f61c923be68d31ed9da365b52df4",
+  "sha256": "caf2b35b628db7cbad5bb76f74e63f7ec8809cfc172c43c178cdd6bd51c924a7",
   "title": "获取附件下载链接",
   "version": "v1"
  },
@@ -14923,7 +14923,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.message",
-  "sha256": "901c57bf38b789108e81c7898a392840f46a17b2d74447835117fa46a41be728",
+  "sha256": "66e7f087294aee23a1a3f64d76fa566f995215bb356c1989e3de48588e47ff05",
   "title": "批量获取邮件详情",
   "version": "v1"
  },
@@ -14935,7 +14935,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.message",
-  "sha256": "be249007b454e5ad068aa76719fd4eb5649842b02e8a6329af66a3f63bb42c0b",
+  "sha256": "36dc2c79d3d4dc2fb099fdd5c9bf527de08d3376a3f9f1d2720b24ebf60a6ec4",
   "title": "批量修改邮件",
   "version": "v1"
  },
@@ -14947,7 +14947,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.message",
-  "sha256": "84aed40aa8e9cd63508b1617a8618f1ae5d5a8491e73de6e9b41f706c99dc211",
+  "sha256": "1e221920c7bce55728e7738883c47d077854e4f97e4ea9eb8d041e65cb46071e",
   "title": "批量删除邮件",
   "version": "v1"
  },
@@ -14959,7 +14959,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.message",
-  "sha256": "abf88075bdbc9371d6047140430fda696af803d0fcfe5cddc026a17ae4542ae4",
+  "sha256": "807436dfa2e97a0872c91e34f7e788f1dd2aa8022beea4f7f1ee57dd461d2445",
   "title": "获取邮件详情",
   "version": "v1"
  },
@@ -14971,7 +14971,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.message",
-  "sha256": "c11db6b78cea6c6df200b88d831f3b35afbe05e330ad8d849fab4efe7126a145",
+  "sha256": "124ace36ba06b5467a18b87b9e8042c770c0d57c19933a4c03b69ec32e329413",
   "title": "获取邮件卡片的邮件列表",
   "version": "v1"
  },
@@ -14983,7 +14983,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.message",
-  "sha256": "34fb1cc802380d79793bf5f030b4449523b5053d62bc321df62f71fcbb9bbd58",
+  "sha256": "1ddfb8e4cb5aba7ebbda3a5bb53b8eaece4b6daadf48276caa0b24f0fd03e9f2",
   "title": "列出邮件",
   "version": "v1"
  },
@@ -14995,7 +14995,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.message",
-  "sha256": "ca81d64ae562dd6c9b1c327be9c84e17964a1818a12d700f44c8392d3d717473",
+  "sha256": "081443b12f00cdb48217c772a0b1859ea7f6dd838f2d546da2df90a09699b1c6",
   "title": "查询会话下邮件信息",
   "version": "v1"
  },
@@ -15007,7 +15007,7 @@
   "httpMethod": "PUT",
   "project": "mail",
   "resource": "user_mailbox.message",
-  "sha256": "1c2834512255342ea787c309ecdd019cd9b1a304ba4e39f7e80eb2936e76745e",
+  "sha256": "e84be83759b30dddc50799389beb096925ffeac918a9e8848b4aead020709a21",
   "title": "修改邮件",
   "version": "v1"
  },
@@ -15019,7 +15019,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.message",
-  "sha256": "4489849fbb3cdd10db62f676cdb91c764b87d301b1fb9502804a1edf0df859aa",
+  "sha256": "44d6ef150e9e7a67a7f40da2f731ac31c21ba1c0d13436154efeca13026f5ba4",
   "title": "发送邮件",
   "version": "v1"
  },
@@ -15031,7 +15031,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.message",
-  "sha256": "5d3692f26959876d67139321ac10f5d9bd9fb0416ff91da564b69a97272dc5f2",
+  "sha256": "c207f7a5a47527705b1fd3b30cd8e6a62724435c53a7e5cdc62713fed1717f5e",
   "title": "查询邮件发送状态",
   "version": "v1"
  },
@@ -15043,7 +15043,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.message",
-  "sha256": "8187fcf5c6af0007f96ba127b112797489deb83bf004f26272ab7f757cd6ae7b",
+  "sha256": "dbe842752dd3fb05a3ad186eb4ac81ee9b2e60c1f92052db2c0bfc86ea321557",
   "title": "删除邮件",
   "version": "v1"
  },
@@ -15055,7 +15055,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.rule",
-  "sha256": "19346475b2003d9b72fa9fe7b11bb7fdc7f796b9f4fb640b1016e4ef14c0f747",
+  "sha256": "b869928815c40c23fec7d60f6d3fd0c2cf2f9863192440bbb7c88ec879be035f",
   "title": "创建收信规则",
   "version": "v1"
  },
@@ -15067,7 +15067,7 @@
   "httpMethod": "DELETE",
   "project": "mail",
   "resource": "user_mailbox.rule",
-  "sha256": "531e1cc513322ca772fe62953a59ee8843e281af0da97e900bf30e76cf6ac186",
+  "sha256": "b0a2a45253c705f7180f58a5e2e18aff8ee41bb1894d727dda76c0c6b85b0e59",
   "title": "删除收信规则",
   "version": "v1"
  },
@@ -15079,7 +15079,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.rule",
-  "sha256": "7d95cc4a6221b85f1d07baa20fcf64ae6c080a73026d8585cadad2e8f54390b6",
+  "sha256": "39b89eb0e20d411e17e8e345559d59de484e90a285b4c61a350fb16c9f106b4a",
   "title": "列出收信规则",
   "version": "v1"
  },
@@ -15091,7 +15091,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.rule",
-  "sha256": "d7dbf338845fd3011a4c99e31750710a2b3f19bfcd8a2d93b22d258e2a8e8a14",
+  "sha256": "42ef1669970bc2215a0bd270813ab2c8abc760d7cbba547b4c80a7fcabcdb1cb",
   "title": "对收信规则进行排序",
   "version": "v1"
  },
@@ -15103,7 +15103,7 @@
   "httpMethod": "PUT",
   "project": "mail",
   "resource": "user_mailbox.rule",
-  "sha256": "bffc77671739d47fcbd2f2140842a33cc4502aeaad28ffbf2e02b139fd4cdb96",
+  "sha256": "f793a78ca2329e51fee0371a466493efa136b886da282504c9c9eb50c204bcf6",
   "title": "更新收信规则",
   "version": "v1"
  },
@@ -15115,7 +15115,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.sent_message",
-  "sha256": "d6938b087c66e624d40c213356b4118d8c523271392071eb6767529aa932707f",
+  "sha256": "9435c344b953a2ec049c784d3ac6a13169b1852341e3243290558fddd967372b",
   "title": "获取邮件撤回进度",
   "version": "v1"
  },
@@ -15127,7 +15127,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.sent_message",
-  "sha256": "1b2131735897489bb3147afe2d8391a354cf57dd332c96d02736e095977b04f6",
+  "sha256": "2fb75a48d1048e711fdb0d09bfca989fa2390f345603898122cc9faf3579e2c8",
   "title": "撤回已发送邮件",
   "version": "v1"
  },
@@ -15139,7 +15139,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.setting",
-  "sha256": "08137b7c856d5a720d06737caf9e55c8f47ead2c06c1c9a038594df0aa1a5a7e",
+  "sha256": "672098ebef34d3a1abb26f091e821036608d6c39d03c2d0e2d7d49bc710c6528",
   "title": "列出邮件签名",
   "version": "v1"
  },
@@ -15151,7 +15151,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.setting",
-  "sha256": "0f43840ab7b8b2037a788c9596c625c3b29895902f11db29cde30dda22400732",
+  "sha256": "c7bfe55d2061141ab665441f42cb1b8367f96fc6079376113570b266964a1555",
   "title": "列出可发信邮箱",
   "version": "v1"
  },
@@ -15163,7 +15163,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.template.attachment",
-  "sha256": "5c4eb0a7bcf0bbf3b1f8d734e5e45f9c3e1d7f8131c5d65bbda46c774de55cb5",
+  "sha256": "214cb589fbe62ea58d327b1235b5c21e77ecf64cc306bfeeb2ba33ec0d060f4a",
   "title": "获取模板附件下载链接",
   "version": "v1"
  },
@@ -15175,7 +15175,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.template",
-  "sha256": "bbed8dcf2bc837d9ed69593c1cd91a5330b30353376d73da8eedd4640469ea81",
+  "sha256": "63a6562ef9002a0001693478ea2d9dbe7e99cc3974962665d32345937137bbd8",
   "title": "创建邮件模板",
   "version": "v1"
  },
@@ -15187,7 +15187,7 @@
   "httpMethod": "DELETE",
   "project": "mail",
   "resource": "user_mailbox.template",
-  "sha256": "21cd015a08185f6f674c03627c890bd4e1daabe2e9176984441dc2ef9699ec32",
+  "sha256": "8304b9f37d86b8998b58fa99ac903c6464aeb136bee92121731123452df77eed",
   "title": "删除邮件模板",
   "version": "v1"
  },
@@ -15199,7 +15199,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.template",
-  "sha256": "9656b289171319aacfa97a7ae3373034bd54082d2e6cef11b8715f71d6afe427",
+  "sha256": "6691405adadaffe019665fccc781254ea41979481524c07a577f7f22dab38ab8",
   "title": "获取邮件模板",
   "version": "v1"
  },
@@ -15211,7 +15211,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.template",
-  "sha256": "763a060a6630beccb513c6f28932af3956fc2f2bff6541221c79c8bfe1c3551e",
+  "sha256": "0bf847fec76eaba3527f98ff19d4623925a812907184e8e91c0ce5e206c6bbd1",
   "title": "列出邮件模板",
   "version": "v1"
  },
@@ -15223,7 +15223,7 @@
   "httpMethod": "PUT",
   "project": "mail",
   "resource": "user_mailbox.template",
-  "sha256": "53f5ce35fa0c1c3b6a31ccb1dc4bc750a8a06a453cb36a65e693dff10be42f1f",
+  "sha256": "a70be2daabd9981fb83cd56acbff832cdbec46dc460adddc247750b775e1cdf7",
   "title": "更新邮件模板",
   "version": "v1"
  },
@@ -15235,7 +15235,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.thread",
-  "sha256": "0d7f67cf27c762ef4b1c755f59677de6ed580cb0efd1d0fe869f7df2d0b3d3c1",
+  "sha256": "362ac57b94e5b87b42cc690ef38d336411086b3220f650fef0e10caf8561eb5a",
   "title": "批量修改邮件会话",
   "version": "v1"
  },
@@ -15247,7 +15247,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.thread",
-  "sha256": "f9d3a3f4038473b282a4ee18c6cb2a246dc6b788d988d4e9f01d3e3a4b6aff00",
+  "sha256": "615145216a82674e9229dea7222905802ac43f1db44f0ba9d101573cdce1a306",
   "title": "批量删除邮件会话",
   "version": "v1"
  },
@@ -15259,7 +15259,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.thread",
-  "sha256": "4a1502041b77290e7d8c34eeb4cb07977eff4c99da90c0ab57476f267fae60bd",
+  "sha256": "5319808879b58094e46bb75e09c9974dc13ef780792ceda079346d64e512119d",
   "title": "获取邮件会话详情",
   "version": "v1"
  },
@@ -15271,7 +15271,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.thread",
-  "sha256": "bf3c8417c77f050c844f0b4a11fbb4cf27c7f9f41df2fef46e9fa709040a3d64",
+  "sha256": "0d70f600b1fb1be97d5bfff071a39ef0d76b1132439671ab3799f64ec1f12953",
   "title": "列出邮件会话",
   "version": "v1"
  },
@@ -15283,7 +15283,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.thread",
-  "sha256": "b62e7f8234fdf051e228f368fecc6ee60f07abf5fac3b1f59fd93622b3f5143f",
+  "sha256": "ac2848539b4a2e4b18c9177e5b3a3465fa4bdd4624662875a48927f9ed560015",
   "title": "修改邮件会话",
   "version": "v1"
  },
@@ -15295,7 +15295,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.thread",
-  "sha256": "6e4681f2bd2b25563f7ef72546e0921c49bc9bbf2f1752dff049a0614ea47d04",
+  "sha256": "385667732b30a5cd803681fa4d16080f1e6a9a6393a59e97fbaa96f4c1cfa41d",
   "title": "删除邮件会话",
   "version": "v1"
  },
@@ -15307,7 +15307,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox",
-  "sha256": "63b77b70b3cc503906c6cd7be9481012549fce903fe9a5cf3c271497cb4eb6d7",
+  "sha256": "6940f81c949f8af970dc649a0ebda6e52d8ae9f15dc4f6057af42a8c397c8146",
   "title": "列出可访问的邮箱",
   "version": "v1"
  },
@@ -15331,7 +15331,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox",
-  "sha256": "43095890dafeba591b353ffc95b3b1c7b5ab804db95ce9c6d23d79bf7848ede7",
+  "sha256": "c683465f0b92d5ce8d597a1b5e266d233b8bf05ebf70f9b4ba6fb2dbdfa02fae",
   "title": "获取用户邮箱信息",
   "version": "v1"
  },
@@ -15343,7 +15343,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox",
-  "sha256": "7228f08a353bcb2496db3a82dcf5b433189eee6cd7d1c495df4b88ed29f4bb87",
+  "sha256": "05bc575bcdf3092624c7bdf57d4fe0eb9769a5ebc69bc8da18579bfc68f4961e",
   "title": "搜索邮件",
   "version": "v1"
  },
@@ -17395,7 +17395,7 @@
   "httpMethod": "POST",
   "project": "spark",
   "resource": "app",
-  "sha256": "0b21ee02caff61aadcaf2aa2998fb33b22f76273fa188d77efe86c0d79d5b006",
+  "sha256": "dc9422110a5981c7600853feb6faefc424a6130f485cde8774ef35e91e64e9f5",
   "title": "创建妙搭应用",
   "version": "v1"
  },
@@ -17863,7 +17863,7 @@
   "httpMethod": "GET",
   "project": "task",
   "resource": "attachment",
-  "sha256": "1ab4d0a60da34aa4566a9bacb524bf21fbfd64cb74cdc908f6581ef8882881b5",
+  "sha256": "6eb48060be48ac5e278bd4df1842b7bbbc3e148ca9396045d89e1b4f50e30e92",
   "title": "列取附件",
   "version": "v2"
  },
@@ -17875,7 +17875,7 @@
   "httpMethod": "POST",
   "project": "task",
   "resource": "attachment",
-  "sha256": "ece71f5e60dc26e083743d642f70fc9d5c6675d94385723a37df2fdc278696a9",
+  "sha256": "9e385134c7bbcff27bd3969906f7207fa2f7cd40ccf2b489d33b2e9176473449",
   "title": "上传附件",
   "version": "v2"
  },
@@ -17887,7 +17887,7 @@
   "httpMethod": "POST",
   "project": "task",
   "resource": "comment",
-  "sha256": "6ff982743d8879006b448d255a4a1f68afc337765c5c98918cc1c65ee8fa6e13",
+  "sha256": "156a48cc17251c9ea71060fdb2f43a7ca1f0225fa628711c0157b4dbee9dc99f",
   "title": "创建评论",
   "version": "v2"
  },
@@ -17923,7 +17923,7 @@
   "httpMethod": "GET",
   "project": "task",
   "resource": "comment",
-  "sha256": "c609b3549b0374ae132ba61e809ac77803aa75a7109213c17650d1265da2fef6",
+  "sha256": "8248378da5134594d6aba3d54a784d4645ac1dfaf35cc45ecdde53ecd71bdc53",
   "title": "获取评论列表",
   "version": "v2"
  },
@@ -18187,7 +18187,7 @@
   "httpMethod": "POST",
   "project": "task",
   "resource": "task",
-  "sha256": "baed353a9043e8165aca1e6398b5c7ec8be803dd3343d1269a08d26267c9bf65",
+  "sha256": "493552f140cd8163edfe308d1e1d9e47e0050cf96985d06747100f71676d20b0",
   "title": "创建任务",
   "version": "v2"
  },
@@ -18211,7 +18211,7 @@
   "httpMethod": "GET",
   "project": "task",
   "resource": "task",
-  "sha256": "57c027f596d0adee3ca589de34322e0faed492d6af8395e19a74a64b3d818f5c",
+  "sha256": "0217934275de465bd592419729577b1e348fb5a413addfa9b8e6ebc7dfbeea2b",
   "title": "获取任务详情",
   "version": "v2"
  },
@@ -18235,7 +18235,7 @@
   "httpMethod": "PATCH",
   "project": "task",
   "resource": "task",
-  "sha256": "5a65ad7e1c1fd7e594527ae760e45b35e23ad88409e089e5697b0308f4508027",
+  "sha256": "95ce47f3f0a5bcb73f983956e20b32bbed81b1ee1c6a7039ab98f6f125f5470f",
   "title": "更新任务",
   "version": "v2"
  },
@@ -18655,7 +18655,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "bot",
-  "sha256": "6f6f88e3217098d4dbc8cb59cb9b834e185605491e034f9523322d70a21ebde0",
+  "sha256": "ed39c3541c3d11591b6137787dc53f25c8b4f92685150496d40ee84a7442c092",
   "title": "获取会议事件列表",
   "version": "v1"
  },

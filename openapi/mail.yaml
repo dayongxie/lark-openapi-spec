@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+7d867a31
+  version: 1.0.0+c4c5bbc1
   x-lark-project: mail
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -2103,6 +2103,7 @@ paths:
                         example: The query is too long and has been truncated to the first 50 characters for search.
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox:readonly
       x-lark-field-scopes:
@@ -3781,6 +3782,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:send
       x-lark-error-mappings:
@@ -3841,6 +3843,7 @@ paths:
                 $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-field-scopes:
@@ -3953,6 +3956,7 @@ paths:
                         example: 'true'
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       x-lark-error-mappings:
@@ -4015,6 +4019,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-error-mappings:
@@ -4106,6 +4111,7 @@ paths:
                         description: 草稿内容
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       x-lark-field-scopes:
@@ -4178,6 +4184,7 @@ paths:
                 $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-field-scopes:
@@ -4311,6 +4318,7 @@ paths:
                         description: 当用户禁用自动化发信时返回此字段；为空表示发信成功
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:send
       x-lark-error-mappings:
@@ -4602,6 +4610,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.folder:write
       x-lark-error-mappings:
@@ -4672,6 +4681,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.folder:write
       - mail:user_mailbox.folder:read
@@ -4733,6 +4743,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.folder:write
       x-lark-error-mappings:
@@ -4784,6 +4795,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.folder:write
       - mail:user_mailbox.folder:read
@@ -4860,6 +4872,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.folder:write
       x-lark-error-mappings:
@@ -4926,6 +4939,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-error-mappings:
@@ -5009,6 +5023,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       - mail:user_mailbox.message:modify
@@ -5069,6 +5084,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-error-mappings:
@@ -5123,6 +5139,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       - mail:user_mailbox.message:readonly
@@ -5197,6 +5214,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-error-mappings:
@@ -5268,6 +5286,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.mail_contact:write
       x-lark-field-scopes:
@@ -5350,6 +5369,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.mail_contact:write
       - mail:user_mailbox.mail_contact:read
@@ -5411,6 +5431,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.mail_contact:write
       x-lark-error-mappings:
@@ -5472,6 +5493,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.mail_contact:write
       x-lark-error-mappings:
@@ -5569,6 +5591,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message.body:read
       x-lark-error-mappings:
@@ -5654,6 +5677,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       x-lark-field-scopes:
@@ -5743,6 +5767,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-error-mappings:
@@ -5813,6 +5838,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-error-mappings:
@@ -5891,6 +5917,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       x-lark-field-scopes:
@@ -6014,6 +6041,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       x-lark-field-scopes:
@@ -6114,6 +6142,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       x-lark-error-mappings:
@@ -6228,6 +6257,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       x-lark-field-scopes:
@@ -6316,6 +6346,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-error-mappings:
@@ -6490,6 +6521,7 @@ paths:
                         example: 14151e97-4743-4a55-a9a3-b5c656b69c05
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:send
       x-lark-error-mappings:
@@ -6656,6 +6688,7 @@ paths:
                         description: 收件人投递状态列表
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       x-lark-error-mappings:
@@ -6718,6 +6751,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-error-mappings:
@@ -6780,6 +6814,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.rule:write
       x-lark-error-mappings:
@@ -6860,6 +6895,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.rule:write
       - mail:user_mailbox.rule:read
@@ -6917,6 +6953,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.rule:write
       x-lark-error-mappings:
@@ -6978,6 +7015,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.rule:write
       x-lark-error-mappings:
@@ -7066,6 +7104,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.rule:write
       x-lark-error-mappings:
@@ -7217,6 +7256,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       x-lark-error-mappings:
@@ -7305,6 +7345,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-error-mappings:
@@ -7444,6 +7485,7 @@ paths:
                         description: 用户邮箱签名使用情况列表
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox:readonly
       x-lark-error-mappings:
@@ -7524,6 +7566,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox:readonly
       - mail:user_mailbox
@@ -7621,6 +7664,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       x-lark-error-mappings:
@@ -7678,6 +7722,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-error-mappings:
@@ -7764,6 +7809,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       - mail:user_mailbox.message:modify
@@ -7821,6 +7867,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-error-mappings:
@@ -7875,6 +7922,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       - mail:user_mailbox.message:modify
@@ -7936,6 +7984,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-error-mappings:
@@ -8029,6 +8078,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-error-mappings:
@@ -8096,6 +8146,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-error-mappings:
@@ -8194,6 +8245,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       x-lark-field-scopes:
@@ -8312,6 +8364,7 @@ paths:
       x-lark-access-tokens:
       - tenant
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       x-lark-error-mappings:
@@ -8411,6 +8464,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-error-mappings:
@@ -8476,6 +8530,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:modify
       x-lark-error-mappings:
@@ -8555,6 +8610,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - mail:user_mailbox
       - mail:user_mailbox:readonly
@@ -8662,6 +8718,7 @@ paths:
                         example: mailbox address not found
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox:readonly
       x-lark-error-mappings:
@@ -8872,6 +8929,7 @@ paths:
                     - has_more
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - mail:user_mailbox.message:readonly
       x-lark-error-mappings:

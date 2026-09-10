@@ -1,5 +1,86 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-10）
+
+新增 0 · 移除 0 · 定义变更 75（全量共 1640 个接口）
+
+### 定义变更
+- `DELETE /open-apis/board/v1/whiteboards/{whiteboard_id}/nodes/batch_delete`「批量删除节点」（board/v1/whiteboard.node/batch_delete）
+- `POST /open-apis/board/v1/whiteboards/{whiteboard_id}/nodes`「创建节点」（board/v1/whiteboard.node/create）
+- `POST /open-apis/board/v1/whiteboards/{whiteboard_id}/nodes/plantuml`「解析画板语法」（board/v1/whiteboard.node/create_plantuml）
+- `GET /open-apis/board/v1/whiteboards/{whiteboard_id}/nodes`「获取所有节点」（board/v1/whiteboard.node/list）
+- `GET /open-apis/board/v1/whiteboards/{whiteboard_id}/download_as_image`「获取画板缩略图片」（board/v1/whiteboard/download_as_image）
+- `GET /open-apis/board/v1/whiteboards/{whiteboard_id}/theme`「获取画板主题」（board/v1/whiteboard/theme）
+- `POST /open-apis/board/v1/whiteboards/{whiteboard_id}/update_theme`「更新画板主题」（board/v1/whiteboard/update_theme）
+- `POST /open-apis/drive/v1/files/{file_token}/copy`「复制文件」（drive/v1/file/copy）
+- `POST /open-apis/mail/v1/multi_entity/search`「多实体搜索」（mail/v1/multi_entity/search）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/messages/{message_id}/cancel_scheduled_send`「取消定时发送」（mail/v1/user_mailbox.draft/cancel_scheduled_send）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/drafts`「创建草稿」（mail/v1/user_mailbox.draft/create）
+- `DELETE /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/drafts/{draft_id}`「删除草稿」（mail/v1/user_mailbox.draft/delete）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/drafts/{draft_id}`「获取草稿内容」（mail/v1/user_mailbox.draft/get）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/drafts`「列出草稿列表」（mail/v1/user_mailbox.draft/list）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/drafts/{draft_id}/send`「发送草稿」（mail/v1/user_mailbox.draft/send）
+- `PUT /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/drafts/{draft_id}`「更新草稿」（mail/v1/user_mailbox.draft/update）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/folders`「创建邮箱文件夹」（mail/v1/user_mailbox.folder/create）
+- `DELETE /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/folders/{folder_id}`「删除邮箱文件夹」（mail/v1/user_mailbox.folder/delete）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/folders/{folder_id}`「获取邮箱文件信息」（mail/v1/user_mailbox.folder/get）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/folders`「列出邮箱文件夹」（mail/v1/user_mailbox.folder/list）
+- `PATCH /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/folders/{folder_id}`「修改邮箱文件夹」（mail/v1/user_mailbox.folder/patch）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/labels`「创建标签」（mail/v1/user_mailbox.label/create）
+- `DELETE /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/labels/{label_id}`「删除标签」（mail/v1/user_mailbox.label/delete）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/labels/{label_id}`「获取标签信息」（mail/v1/user_mailbox.label/get）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/labels`「列出标签」（mail/v1/user_mailbox.label/list）
+- `PATCH /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/labels/{label_id}`「更新标签」（mail/v1/user_mailbox.label/patch）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/mail_contacts`「创建邮箱联系人」（mail/v1/user_mailbox.mail_contact/create）
+- `DELETE /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/mail_contacts/{mail_contact_id}`「删除邮箱联系人」（mail/v1/user_mailbox.mail_contact/delete）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/mail_contacts`「列出邮箱联系人」（mail/v1/user_mailbox.mail_contact/list）
+- `PATCH /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/mail_contacts/{mail_contact_id}`「修改邮箱联系人信息」（mail/v1/user_mailbox.mail_contact/patch）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/messages/{message_id}/attachments/download_url`「获取附件下载链接」（mail/v1/user_mailbox.message.attachment/download_url）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/messages/batch_get`「批量获取邮件详情」（mail/v1/user_mailbox.message/batch_get）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/messages/batch_modify`「批量修改邮件」（mail/v1/user_mailbox.message/batch_modify）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/messages/batch_trash`「批量删除邮件」（mail/v1/user_mailbox.message/batch_trash）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/messages/{message_id}`「获取邮件详情」（mail/v1/user_mailbox.message/get）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/messages/get_by_card`「获取邮件卡片的邮件列表」（mail/v1/user_mailbox.message/get_by_card）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/messages`「列出邮件」（mail/v1/user_mailbox.message/list）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/threads/{thread_id}/messages`「查询会话下邮件信息」（mail/v1/user_mailbox.message/list_thread_message）
+- `PUT /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/messages/{message_id}/modify`「修改邮件」（mail/v1/user_mailbox.message/modify）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/messages/send`「发送邮件」（mail/v1/user_mailbox.message/send）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/messages/{message_id}/send_status`「查询邮件发送状态」（mail/v1/user_mailbox.message/send_status）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/messages/{message_id}/trash`「删除邮件」（mail/v1/user_mailbox.message/trash）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/rules`「创建收信规则」（mail/v1/user_mailbox.rule/create）
+- `DELETE /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/rules/{rule_id}`「删除收信规则」（mail/v1/user_mailbox.rule/delete）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/rules`「列出收信规则」（mail/v1/user_mailbox.rule/list）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/rules/reorder`「对收信规则进行排序」（mail/v1/user_mailbox.rule/reorder）
+- `PUT /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/rules/{rule_id}`「更新收信规则」（mail/v1/user_mailbox.rule/update）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/messages/{message_id}/recall`「获取邮件撤回进度」（mail/v1/user_mailbox.sent_message/get_recall_detail）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/messages/{message_id}/recall`「撤回已发送邮件」（mail/v1/user_mailbox.sent_message/recall）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/settings/signatures`「列出邮件签名」（mail/v1/user_mailbox.setting/get_signatures）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/settings/send_as`「列出可发信邮箱」（mail/v1/user_mailbox.setting/send_as）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/templates/{template_id}/attachments/download_url`「获取模板附件下载链接」（mail/v1/user_mailbox.template.attachment/download_url）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/templates`「创建邮件模板」（mail/v1/user_mailbox.template/create）
+- `DELETE /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/templates/{template_id}`「删除邮件模板」（mail/v1/user_mailbox.template/delete）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/templates/{template_id}`「获取邮件模板」（mail/v1/user_mailbox.template/get）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/templates`「列出邮件模板」（mail/v1/user_mailbox.template/list）
+- `PUT /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/templates/{template_id}`「更新邮件模板」（mail/v1/user_mailbox.template/update）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/threads/batch_modify`「批量修改邮件会话」（mail/v1/user_mailbox.thread/batch_modify）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/threads/batch_trash`「批量删除邮件会话」（mail/v1/user_mailbox.thread/batch_trash）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/threads/{thread_id}`「获取邮件会话详情」（mail/v1/user_mailbox.thread/get）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/threads`「列出邮件会话」（mail/v1/user_mailbox.thread/list）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/threads/{thread_id}/modify`「修改邮件会话」（mail/v1/user_mailbox.thread/modify）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/threads/{thread_id}/trash`「删除邮件会话」（mail/v1/user_mailbox.thread/trash）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/accessible_mailboxes`「列出可访问的邮箱」（mail/v1/user_mailbox/accessible_mailboxes）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/profile`「获取用户邮箱信息」（mail/v1/user_mailbox/profile）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/search`「搜索邮件」（mail/v1/user_mailbox/search）
+- `POST /open-apis/spark/v1/apps`「创建妙搭应用」（spark/v1/app/create）
+- `GET /open-apis/task/v2/attachments`「列取附件」（task/v2/attachment/list）
+- `POST /open-apis/task/v2/attachments/upload`「上传附件」（task/v2/attachment/upload）
+- `POST /open-apis/task/v2/comments`「创建评论」（task/v2/comment/create）
+- `GET /open-apis/task/v2/comments`「获取评论列表」（task/v2/comment/list）
+- `POST /open-apis/task/v2/tasks`「创建任务」（task/v2/task/create）
+- `GET /open-apis/task/v2/tasks/{task_guid}`「获取任务详情」（task/v2/task/get）
+- `PATCH /open-apis/task/v2/tasks/{task_guid}`「更新任务」（task/v2/task/patch）
+- `GET /open-apis/vc/v1/bots/events`「获取会议事件列表」（vc/v1/bot/events）
+
 ## explorer 全量轨道（2026-09-09）
 
 新增 0 · 移除 0 · 定义变更 135（全量共 1640 个接口）
