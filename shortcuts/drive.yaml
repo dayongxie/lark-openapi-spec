@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: drive
 description: File, comment, permission, and upload management
-cli_version: 1.0.94
-extracted_at: '2026-09-08T06:00:23Z'
+cli_version: 1.0.95
+extracted_at: '2026-09-11T06:00:33Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +add-comment
@@ -560,11 +560,11 @@ shortcuts:
   - name: --url
     shorthand: null
     type: string
-    description: Drive file URL, or a wiki node URL that wraps an uploaded file (resolved to the underlying file token)
+    description: Drive file URL or Wiki node URL wrapping an uploaded file
   - name: --wiki-token
     shorthand: null
     type: string
-    description: wiki node token wrapping an uploaded file (resolved to the underlying file token)
+    description: Wiki node token wrapping an uploaded file
 - name: +export
   summary: Export a doc/docx/sheet/bitable/slides or wiki document to a local file with limited polling
   description: Export a doc/docx/sheet/bitable/slides or wiki document to a local file with limited polling
@@ -1217,7 +1217,7 @@ shortcuts:
   - name: --url
     shorthand: null
     type: string
-    description: Drive file URL, or a wiki node URL that wraps an uploaded file (resolved to the underlying file token)
+    description: Drive file URL or Wiki node URL wrapping an uploaded file
   - name: --version
     shorthand: null
     type: string
@@ -1225,7 +1225,7 @@ shortcuts:
   - name: --wiki-token
     shorthand: null
     type: string
-    description: wiki node token wrapping an uploaded file (resolved to the underlying file token)
+    description: Wiki node token wrapping an uploaded file
 - name: +pull
   summary: One-way file-level mirror of a Drive folder onto a local directory (Drive → local)
   description: One-way file-level mirror of a Drive folder onto a local directory (Drive → local)

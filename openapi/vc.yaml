@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+01f541c4
+  version: 1.0.0+6ac9c8d0
   x-lark-project: vc
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -2842,7 +2842,9 @@ paths:
                               example: '1'
                         description: 踢出结果
       x-lark-access-tokens:
+      - user
       - tenant
+      - agent
       x-lark-scopes:
       - vc:meeting
       - vc:meeting.participant:write

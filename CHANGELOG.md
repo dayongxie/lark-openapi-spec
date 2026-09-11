@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-11）
+
+新增 0 · 移除 0 · 定义变更 6（全量共 1640 个接口）
+
+### 定义变更
+- `GET /open-apis/corehr/v2/signature_template_info_with_thumbnails`「获取电子签模板列表」（corehr/v2/signature_template_info_with_thumbnail/list）
+- `GET /open-apis/im/v1/files/{file_key}`「下载文件」（im/v1/file/get）
+- `GET /open-apis/im/v1/images/{image_key}`「下载图片」（im/v1/image/get）
+- `POST /open-apis/im/v1/messages/merge_forward`「合并转发消息」（im/v1/message/merge_forward）
+- `PUT /open-apis/im/v1/messages/{message_id}`「编辑消息」（im/v1/message/update）
+- `POST /open-apis/vc/v1/meetings/{meeting_id}/kickout`「移除参会人」（vc/v1/meeting/kickout）
+
 ## explorer 全量轨道（2026-09-10）
 
 新增 0 · 移除 0 · 定义变更 75（全量共 1640 个接口）

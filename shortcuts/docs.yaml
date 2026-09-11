@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: docs
 description: Document and content operations
-cli_version: 1.0.94
-extracted_at: '2026-09-08T06:00:23Z'
+cli_version: 1.0.95
+extracted_at: '2026-09-11T06:00:33Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +create
@@ -599,7 +599,7 @@ shortcuts:
   - name: --content
     shorthand: null
     type: string
-    description: local XML content for parse; use @relative-file or - for stdin; mutually exclusive with --doc (supports @file,
+    description: local XML content for parse; use @file-path or - for stdin; mutually exclusive with --doc (supports @file,
       - reads stdin (one flag per call; use @file for others))
   - name: --doc
     shorthand: null
@@ -629,10 +629,11 @@ shortcuts:
   - name: --presentation-decision
     shorthand: null
     type: string
-    description: Presentation Decision JSON required by init-draft and saved as the draft profile baseline; genre_contract
-      and adapter accept a short name, "none", or null; accepts inline JSON (recommended for init-draft), @relative-file,
-      or - for stdin; direct inline input also recovers an intact outer single-quote pair or unambiguous schema fields and
-      scalar values dequoted by Windows PowerShell 5.x (supports @file, - reads stdin (one flag per call; use @file for others))
+    description: Presentation Decision JSON required by init-draft and saved as the draft profile baseline; validates word_count
+      and visual_plan.blocks constraints; descriptive fields are optional and may be empty or null; accepts inline JSON (recommended
+      for init-draft), @file-path, or - for stdin; direct inline input also recovers an intact outer single-quote pair or
+      unambiguous schema fields and scalar values dequoted by Windows PowerShell 5.x (supports @file, - reads stdin (one flag
+      per call; use @file for others))
 - name: +search
   summary: 'Search Lark docs, Wiki, and spreadsheet files (Search v2: doc_wiki/search)'
   description: 'Search Lark docs, Wiki, and spreadsheet files (Search v2: doc_wiki/search)'

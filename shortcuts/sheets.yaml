@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: sheets
 description: Spreadsheet operations
-cli_version: 1.0.94
-extracted_at: '2026-09-08T06:00:23Z'
+cli_version: 1.0.95
+extracted_at: '2026-09-11T06:00:33Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +batch-chart-create
@@ -752,6 +752,11 @@ shortcuts:
   usage: lark-cli sheets +chart-config-update [flags]
   risk: write
   flags:
+  - name: --aggregate-categories
+    shorthand: null
+    type: bool
+    description: Whether to aggregate duplicate categories; use --aggregate-categories=false for sparse markers or row-level
+      data points, and omit it to preserve the current setting
   - name: --as
     shorthand: null
     type: string
@@ -800,11 +805,6 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
-  - name: --last-point-label
-    shorthand: null
-    type: bool
-    description: For line, area, radar, and linear combo series only; true shows a value label on the last data point of every
-      series, while false removes those point labels
   - name: --legend-position
     shorthand: null
     type: string
@@ -816,7 +816,7 @@ shortcuts:
   - name: --smooth
     shorthand: null
     type: bool
-    description: Use smooth curves; accepts both --smooth=false and --smooth false
+    description: Use smooth curves; pass --smooth=false to disable explicitly
   - name: --stack
     shorthand: null
     type: string
@@ -852,11 +852,13 @@ shortcuts:
   - name: --y-axis-max
     shorthand: null
     type: float
-    description: Upper display bound for the left Y-axis; must be greater than --y-axis-min
+    description: Upper display bound for the left Y-axis; omit by default and pass together with --y-axis-min only when the
+      user explicitly requests fixed bounds; calculate it from rendered chart semantics, and keep it above the lower bound
   - name: --y-axis-min
     shorthand: null
     type: float
-    description: Lower display bound for the left Y-axis; must be less than --y-axis-max
+    description: Lower display bound for the left Y-axis; omit by default and pass together with --y-axis-max only when the
+      user explicitly requests fixed bounds; do not copy a raw source-column minimum, and keep it below the upper bound
   - name: --y-axis-title
     shorthand: null
     type: string
@@ -919,6 +921,11 @@ shortcuts:
   usage: lark-cli sheets +chart-create-basic [flags]
   risk: write
   flags:
+  - name: --aggregate-categories
+    shorthand: null
+    type: bool
+    description: Whether to aggregate duplicate categories; use --aggregate-categories=false for sparse markers or row-level
+      data points, and omit it to use the chart default
   - name: --anchor-cell
     shorthand: null
     type: string
@@ -948,13 +955,14 @@ shortcuts:
   - name: --data-label-position
     shorthand: null
     type: string
-    description: Pass only when the user explicitly requests a position; it only repositions existing data labels and does
-      not enable labels by itself; omit it for chart-type-aware placement (auto|top|bottom|left|right|center|inside|outside)
+    description: For an ordinary non-stacked column chart with labels, generally pass outside; in other cases, pass only when
+      the user explicitly requests a position; this only repositions existing labels and does not enable them (auto|top|bottom|left|right|center|inside|outside)
   - name: --data-labels
     shorthand: null
     type: string
-    description: Data label content; combine value, category, and percentage in value_category_percentage order for any non-empty
-      combination; series shows series names and none removes labels (none|value|category|percentage|value_category|value_percentage|category_percentage|value_category_percentage|series)
+    description: Data label content; pass value by default for a basic chart and do not omit it solely because there are many
+      data points or series; pass none only when the user explicitly requests hiding all labels; combine value, category,
+      and percentage in value_category_percentage order for any non-empty combination; series shows series names (none|value|category|percentage|value_category|value_percentage|category_percentage|value_category_percentage|series)
   - name: --data-range
     shorthand: null
     type: string
@@ -963,7 +971,8 @@ shortcuts:
   - name: --dim1-index
     shorthand: null
     type: int
-    description: 1-based category/X-axis dimension index within the data range; defaults to 1
+    description: 1-based index of the single supported category/X-axis dimension within the data range; defaults to 1; multiple
+      fields cannot form a multi-level X-axis
   - name: --dry-run
     shorthand: null
     type: bool
@@ -1005,7 +1014,7 @@ shortcuts:
   - name: --legend-position
     shorthand: null
     type: string
-    description: Legend position; hidden removes the legend (top|bottom|left|right|hidden)
+    description: Legend position; use bottom by default for pie charts; hidden removes the legend (top|bottom|left|right|hidden)
   - name: --secondary-y-axis-title
     shorthand: null
     type: string
@@ -1013,13 +1022,13 @@ shortcuts:
   - name: --series-types
     shorthand: null
     type: string
-    description: Combo charts only; comma-separated series types aligned with --dim2-indexes; use column, line, or area and
-      provide one value per selected series
+    description: Combo charts only; comma-separated series types aligned with --dim2-indexes; use column, line, area, or scatter
+      and provide one value per selected series
   - name: --series-y-axes
     shorthand: null
     type: string
-    description: Combo charts only; comma-separated left or right Y-axis assignments aligned with --dim2-indexes; provide
-      one value per selected series
+    description: Combo charts only; compare series units and magnitudes first and place a series that would be flattened on
+      the right axis; pass left or right aligned with --dim2-indexes, one value per selected series
   - name: --size-index
     shorthand: null
     type: int
@@ -1027,7 +1036,7 @@ shortcuts:
   - name: --smooth
     shorthand: null
     type: bool
-    description: Use smooth curves; accepts both --smooth=false and --smooth false
+    description: Use smooth curves; pass --smooth=false to disable explicitly
   - name: --stack
     shorthand: null
     type: string
@@ -1043,7 +1052,8 @@ shortcuts:
   - name: --width
     shorthand: null
     type: int
-    description: Optional chart width; must be paired with --height
+    description: Optional chart width; must be paired with --height; widen pie charts and charts with long category labels
+      to avoid truncation
   - name: --x-axis-label-angle
     shorthand: null
     type: int
@@ -1077,11 +1087,13 @@ shortcuts:
   - name: --y-axis-max
     shorthand: null
     type: float
-    description: Upper display bound for the left Y-axis; must be greater than --y-axis-min
+    description: Upper display bound for the left Y-axis; omit by default and pass together with --y-axis-min only when the
+      user explicitly requests fixed bounds; calculate it from rendered chart semantics, and keep it above the lower bound
   - name: --y-axis-min
     shorthand: null
     type: float
-    description: Lower display bound for the left Y-axis; must be less than --y-axis-max
+    description: Lower display bound for the left Y-axis; omit by default and pass together with --y-axis-max only when the
+      user explicitly requests fixed bounds; do not copy a raw source-column minimum, and keep it below the upper bound
   - name: --y-axis-title
     shorthand: null
     type: string
@@ -1116,7 +1128,8 @@ shortcuts:
   - name: --dim1-index
     shorthand: null
     type: int
-    description: 1-based category/X-axis dimension index within the data range; defaults to the first dimension
+    description: 1-based index of the single supported category/X-axis dimension within the data range; defaults to the first
+      dimension; multiple fields cannot form a multi-level X-axis
   - name: --dim2-indexes
     shorthand: null
     type: string
@@ -3749,10 +3762,10 @@ shortcuts:
     type: bool
     description: print JSON Schema for a composite flag instead of executing
 - name: +styles-put
-  summary: Apply one declarative visual spec (styles/merges/row-col sizes/freeze) to existing sheets in one batch request
-    (fail-fast, no rollback).
-  description: Apply one declarative visual spec (styles/merges/row-col sizes/freeze) to existing sheets in one batch request
-    (fail-fast, no rollback).
+  summary: Apply one declarative visual spec (styles/merges/row-col sizes/freeze) to existing sheets; sent as one batch request,
+    or several when the spec is large (each atomic on its own, no rollback).
+  description: Apply one declarative visual spec (styles/merges/row-col sizes/freeze) to existing sheets; sent as one batch
+    request, or several when the spec is large (each atomic on its own, no rollback).
   usage: lark-cli sheets +styles-put [flags]
   risk: write
   flags:

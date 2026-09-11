@@ -8623,7 +8623,7 @@
   "httpMethod": "GET",
   "project": "corehr",
   "resource": "signature_template_info_with_thumbnail",
-  "sha256": "a6cb27209ba897ccd65f523f9aa1d7395f245f2e6beb4867e1cfd846d13eae06",
+  "sha256": "5c544d509a02c35ca5ede8452653bc3eda87b91b696a171ac61e7c8969ae7b96",
   "title": "获取电子签模板列表",
   "version": "v2"
  },
@@ -13423,7 +13423,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "file",
-  "sha256": "07ead20769b1f7d9f25b41c97131bd58ee1848ab3fefb7c3a2bd2448130d21e9",
+  "sha256": "a58cf6776e0e55a243f2fa4ef2e86a5028383ec47eb0a6e583f2e82384e669d1",
   "title": "下载文件",
   "version": "v1"
  },
@@ -13447,7 +13447,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "image",
-  "sha256": "7746528b4a3ebf3174b4bea7ce541f75716106b26f26638594b88e545cd4583f",
+  "sha256": "7b04757a508f1b277114696f726074fad225746cc1e10005c91c9d13803f1c0a",
   "title": "下载图片",
   "version": "v1"
  },
@@ -13579,7 +13579,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "message",
-  "sha256": "3812981790cc2d512b3ca8f61fff9bb5703df9e8dbce97437db05b92062e7dad",
+  "sha256": "bd74bc56e701c8986a88fdb93aafb8c9c51ae99db26a4eba0af9f036694fdb65",
   "title": "合并转发消息",
   "version": "v1"
  },
@@ -13651,7 +13651,7 @@
   "httpMethod": "PUT",
   "project": "im",
   "resource": "message",
-  "sha256": "e129ba8f3802bd2977cf5e0acb5a533e10608b5143836f9adebdae612cb6cb37",
+  "sha256": "27251b4638b884628b7ff6ed0f4359cec79ce7a61d23b4936be697960efd91b8",
   "title": "编辑消息",
   "version": "v1"
  },
@@ -18871,7 +18871,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "2eb7d8c67c96081fff17adbf041cde0f57e04fdef30f65d2ad028df4f559aa66",
+  "sha256": "5fc5c19f11e90b956b7d0ffe6daf447bb8034a4bd020b047d6485744474155a4",
   "title": "移除参会人",
   "version": "v1"
  },

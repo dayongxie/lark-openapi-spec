@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+caa68f82
+  version: 1.0.0+399a852c
   x-lark-project: corehr
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -45781,6 +45781,33 @@ paths:
                               allOf:
                               - $ref: '#/components/schemas/TemplateRegionInfo'
                               description: 模板适用区域
+                            template_source:
+                              type: object
+                              properties:
+                                enum_name:
+                                  type: string
+                                  description: 枚举值
+                                  example: phone_type
+                                display:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      lang:
+                                        type: string
+                                        description: 语言编码（IETF BCP 47）
+                                        example: zh-CN
+                                      value:
+                                        type: string
+                                        description: 文本内容
+                                        example: 中文示例
+                                    required:
+                                    - lang
+                                    - value
+                                  description: 枚举多语展示
+                              required:
+                              - enum_name
+                              description: 模版来源
                         description: 电子签模板缩略图列表
                       page_token:
                         type: integer

@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: base
 description: Table, field, record, view, dashboard, workflow, form, role & permission management
-cli_version: 1.0.94
-extracted_at: '2026-09-08T06:00:23Z'
+cli_version: 1.0.95
+extracted_at: '2026-09-11T06:00:33Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +advperm-disable
@@ -2038,8 +2038,8 @@ shortcuts:
     type: string
     description: table ID (must start with tbl if ID) or name
 - name: +field-list
-  summary: List fields in a table
-  description: List fields in a table
+  summary: List all fields in a table
+  description: List all fields in a table
   usage: lark-cli base +field-list [flags]
   risk: read
   flags:
@@ -2072,15 +2072,6 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
-  - name: --limit
-    shorthand: null
-    type: int
-    description: pagination size, range 1-200
-    default: '100'
-  - name: --offset
-    shorthand: null
-    type: int
-    description: pagination offset
   - name: --table-id
     shorthand: null
     type: string
@@ -3877,8 +3868,8 @@ shortcuts:
     type: string
     description: table ID (must start with tbl if ID) or name
 - name: +table-list
-  summary: List tables in a base
-  description: List tables in a base
+  summary: List all tables in a base
+  description: List all tables in a base
   usage: lark-cli base +table-list [flags]
   risk: read
   flags:
@@ -3911,15 +3902,6 @@ shortcuts:
     shorthand: null
     type: bool
     description: shorthand for --format json
-  - name: --limit
-    shorthand: null
-    type: int
-    description: pagination size, range 1-100
-    default: '50'
-  - name: --offset
-    shorthand: null
-    type: int
-    description: pagination offset
 - name: +table-update
   summary: Rename a table by ID or name
   description: Rename a table by ID or name
@@ -5202,8 +5184,8 @@ shortcuts:
   - name: --page-size
     shorthand: null
     type: int
-    description: page size, range 1-100
-    default: '100'
+    description: page size, range 1-30
+    default: '30'
   - name: --page-token
     shorthand: null
     type: string

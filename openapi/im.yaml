@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+abf1d741
+  version: 1.0.0+6f4d016e
   x-lark-project: im
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -4545,7 +4545,9 @@ paths:
                 type: object
                 properties: {}
       x-lark-access-tokens:
+      - user
       - tenant
+      - agent
       x-lark-error-mappings:
       - code: 234001
         httpCode: 400
@@ -4702,7 +4704,9 @@ paths:
                 type: object
                 properties: {}
       x-lark-access-tokens:
+      - user
       - tenant
+      - agent
       x-lark-error-mappings:
       - code: 234001
         httpCode: 400
@@ -6055,7 +6059,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
+      - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:message:send_as_bot
       - im:message
@@ -6404,7 +6410,9 @@ paths:
                           type: string
                         description: 无效的消息ID列表
       x-lark-access-tokens:
+      - user
       - tenant
+      - agent
       x-lark-scopes:
       - im:message:send_as_bot
       - im:message

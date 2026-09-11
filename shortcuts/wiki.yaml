@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: wiki
 description: Wiki space and node management
-cli_version: 1.0.94
-extracted_at: '2026-09-08T06:00:23Z'
+cli_version: 1.0.95
+extracted_at: '2026-09-11T06:00:33Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +delete-space
@@ -186,7 +186,7 @@ shortcuts:
   - name: --node-token
     shorthand: null
     type: string
-    description: wiki node token to move inside Wiki
+    description: Wiki node_token or document obj_token to resolve and move inside Wiki
   - name: --obj-token
     shorthand: null
     type: string
@@ -202,7 +202,8 @@ shortcuts:
   - name: --target-parent-token
     shorthand: null
     type: string
-    description: target parent wiki node token; if omitted for docs-to-wiki, the document is moved to the target space root
+    description: target parent Wiki node_token (also accepts document obj_token in node move mode); if omitted for docs-to-wiki,
+      use the target space root
   - name: --target-space-id
     shorthand: null
     type: string
@@ -310,7 +311,7 @@ shortcuts:
   - name: --parent-node-token
     shorthand: null
     type: string
-    description: parent wiki node token; if set, the new node is created under that parent
+    description: parent Wiki node_token or document obj_token; the new node is created under the resolved Wiki node
   - name: --space-id
     shorthand: null
     type: string
@@ -362,11 +363,12 @@ shortcuts:
   - name: --obj-type
     shorthand: null
     type: string
-    description: token kind; no default — pass explicitly when --node-token is a raw token (URL inputs auto-infer) (wiki|doc|docx|sheet|bitable|mindnote|slides|file)
+    description: 'deletion token kind: wiki uses the resolved node_token, other types use obj_token; required for raw input
+      (URL inputs auto-infer) (wiki|doc|docx|sheet|bitable|mindnote|slides|file)'
   - name: --space-id
     shorthand: null
     type: string
-    description: wiki space ID; auto-resolved via get_node when omitted
+    description: wiki space ID; auto-resolved via node_by_token when omitted
   - name: --yes
     shorthand: null
     type: bool
@@ -406,10 +408,6 @@ shortcuts:
     shorthand: null
     type: string
     description: wiki node_token, obj_token, or a Lark URL embedding one of them
-  - name: --obj-type
-    shorthand: null
-    type: string
-    description: obj_type when --node-token is an obj_token; auto-inferred from URL path when omitted (doc|docx|sheet|bitable|mindnote|slides|file)
   - name: --space-id
     shorthand: null
     type: string
