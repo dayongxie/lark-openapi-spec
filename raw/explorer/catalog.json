@@ -11949,7 +11949,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/note/get",
        "httpMethod": "GET",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7621600266278522080",
@@ -11973,7 +11974,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/note/subscription",
        "httpMethod": "POST",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7646314141168291027",
@@ -11997,7 +11999,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/note/unsubscription",
        "httpMethod": "POST",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7646314141168307411",
@@ -12166,7 +12169,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting/search",
        "httpMethod": "POST",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7621540721572694970",
@@ -13691,7 +13695,8 @@
        "fullPath": "/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute/artifacts",
        "httpMethod": "GET",
        "supportAppTypes": [
-        "custom"
+        "custom",
+        "isv"
        ]
       },
       "id": "7621494177948142790",

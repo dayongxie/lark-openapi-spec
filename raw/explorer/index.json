@@ -5299,7 +5299,7 @@
   "httpMethod": "POST",
   "project": "contact",
   "resource": "user",
-  "sha256": "10a7cae9e671cfcc486c42ac81aa3f68104f170fe856f304ee4107cfb1503629",
+  "sha256": "292abfdedcfa82d9f471d2d03468b7f104c2f593394d46d636b84a3b9ddc5452",
   "title": "通过 ID 获取用户姓名",
   "version": "v3"
  },

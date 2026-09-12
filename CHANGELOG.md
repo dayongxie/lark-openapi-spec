@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-12）
+
+新增 0 · 移除 0 · 定义变更 1（全量共 1640 个接口）
+
+### 定义变更
+- `POST /open-apis/contact/v3/users/basic_batch`「通过 ID 获取用户姓名」（contact/v3/user/basic_batch）
+
 ## explorer 全量轨道（2026-09-11）
 
 新增 0 · 移除 0 · 定义变更 6（全量共 1640 个接口）
