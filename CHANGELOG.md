@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-13）
+
+新增 0 · 移除 0 · 定义变更 5（全量共 1640 个接口）
+
+### 定义变更
+- `POST /open-apis/drive/v1/permissions/{token}/public/password`「启用云文档密码」（drive/v1/permission.public.password/create）
+- `DELETE /open-apis/drive/v1/permissions/{token}/public/password`「停用云文档密码」（drive/v1/permission.public.password/delete）
+- `PUT /open-apis/drive/v1/permissions/{token}/public/password`「刷新云文档密码」（drive/v1/permission.public.password/update）
+- `GET /open-apis/drive/v1/permissions/{token}/public`「获取云文档权限设置」（drive/v1/permission.public/get）
+- `PATCH /open-apis/drive/v1/permissions/{token}/public`「更新云文档权限设置」（drive/v1/permission.public/patch）
+
 ## explorer 全量轨道（2026-09-12）
 
 新增 0 · 移除 0 · 定义变更 1（全量共 1640 个接口）

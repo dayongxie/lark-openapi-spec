@@ -10027,7 +10027,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "permission.public.password",
-  "sha256": "dc9de5fa04f90c216558674ac8762fb4b7daeb3bb0fb358a04b8e66b9bbf7d48",
+  "sha256": "d77610d337a82df1d149ca927015288a7ac40885ec34201f96fd030157dd25df",
   "title": "启用云文档密码",
   "version": "v1"
  },
@@ -10039,7 +10039,7 @@
   "httpMethod": "DELETE",
   "project": "drive",
   "resource": "permission.public.password",
-  "sha256": "0817add62e90d41bafe2945fec6981bd70b5d75d8212ae7aa8d3a86d14f0c03f",
+  "sha256": "0a6fbb7a51dfbf063e35139ec974f2dd72e71c3d7b39647e44df7fef5c9e6405",
   "title": "停用云文档密码",
   "version": "v1"
  },
@@ -10051,7 +10051,7 @@
   "httpMethod": "PUT",
   "project": "drive",
   "resource": "permission.public.password",
-  "sha256": "f6461c572d2567958025adf507ba16c44d6da3830e910377ce81b70e194e208c",
+  "sha256": "9a921fb7183dd0d7635e580900c56b4eb117a4f92cc04ee5f0839a8b13adbcdc",
   "title": "刷新云文档密码",
   "version": "v1"
  },
@@ -10063,7 +10063,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "permission.public",
-  "sha256": "d02832d57ff0a75da023979880df886b973c8554c456e1d15b390724cdaf1bc6",
+  "sha256": "209ddcea5923a46e241f67895dd85aa3f180d0702346c11008661452426c308d",
   "title": "获取云文档权限设置",
   "version": "v1"
  },
@@ -10075,7 +10075,7 @@
   "httpMethod": "PATCH",
   "project": "drive",
   "resource": "permission.public",
-  "sha256": "37bf6275254878d4229fc41e188b04e21ffd42472c76cd40b5a4bf6f7029e588",
+  "sha256": "68f10179df75efc80130b000bb729d36d7fa53033cabdfd3184f6b09d56ddc66",
   "title": "更新云文档权限设置",
   "version": "v1"
  },

@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+1b2d8e5b
+  version: 1.0.0+214f9949
   x-lark-project: drive
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -7111,6 +7111,7 @@ paths:
           - mindnote
           - minutes
           - slides
+          - apps
           x-enum-descriptions:
             doc: 文档
             sheet: 电子表格
@@ -7121,6 +7122,7 @@ paths:
             mindnote: 思维笔记
             minutes: 妙计
             slides: 幻灯片
+            apps: 妙搭应用
         description: 文件类型，需要与文件的 token 相匹配
         example: doc
       responses:
@@ -7202,6 +7204,7 @@ paths:
           - mindnote
           - minutes
           - slides
+          - apps
           x-enum-descriptions:
             doc: 文档
             sheet: 电子表格
@@ -7212,6 +7215,7 @@ paths:
             mindnote: 思维笔记
             minutes: 妙计
             slides: 幻灯片
+            apps: 妙搭应用
         description: 文件类型，需要与文件的 token 相匹配
         example: doc
       responses:
@@ -7288,6 +7292,7 @@ paths:
           - mindnote
           - minutes
           - slides
+          - apps
           x-enum-descriptions:
             doc: 文档
             sheet: 电子表格
@@ -7298,6 +7303,7 @@ paths:
             mindnote: 思维笔记
             minutes: 妙计
             slides: 幻灯片
+            apps: 妙搭应用
         description: 文件类型，需要与文件的 token 相匹配
         example: doc
       responses:
@@ -7380,6 +7386,7 @@ paths:
           - mindnote
           - minutes
           - slides
+          - apps
           x-enum-descriptions:
             doc: 文档
             sheet: 电子表格
@@ -7390,6 +7397,7 @@ paths:
             mindnote: 思维笔记
             minutes: 妙记
             slides: 幻灯片
+            apps: 妙搭应用
         description: 文件类型，放于query参数中，如：`?type=doc`
         example: doc
       responses:
@@ -7464,6 +7472,7 @@ paths:
           - mindnote
           - minutes
           - slides
+          - apps
           x-enum-descriptions:
             doc: 文档
             sheet: 电子表格
@@ -7474,6 +7483,7 @@ paths:
             mindnote: 思维笔记
             minutes: 妙记
             slides: 幻灯片
+            apps: 妙搭应用
         description: 文件类型，放于query参数中，如：`?type=doc`
         example: doc
       requestBody:
