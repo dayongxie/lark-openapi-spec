@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-16）
+
+新增 0 · 移除 0 · 定义变更 1（全量共 1640 个接口）
+
+### 定义变更
+- `POST /open-apis/im/v2/chats/search`「搜索群组」（im/v2/chat/search）
+
 ## explorer 全量轨道（2026-09-13）
 
 新增 0 · 移除 0 · 定义变更 5（全量共 1640 个接口）

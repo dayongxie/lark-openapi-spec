@@ -13819,7 +13819,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "chat",
-  "sha256": "28d1e3cf536352e9f28aee6c78a0fcf7265fd717e853db85263b89afc8415292",
+  "sha256": "84aa1149a3833e5c74c3685de5be3e45e62c87b0f681dce2adb438ac601b3dcb",
   "title": "搜索群组",
   "version": "v2"
  },
