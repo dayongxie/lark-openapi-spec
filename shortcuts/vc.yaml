@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: vc
 description: Video conference and meeting note management
-cli_version: 1.0.95
-extracted_at: '2026-09-11T06:00:33Z'
+cli_version: 1.0.96
+extracted_at: '2026-09-17T06:10:15Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +detail
@@ -244,7 +244,7 @@ shortcuts:
   - name: --as
     shorthand: null
     type: string
-    description: 'identity type: user | bot'
+    description: 'identity type: bot'
   - name: --call-id
     shorthand: null
     type: string
@@ -287,7 +287,7 @@ shortcuts:
   - name: --as
     shorthand: null
     type: string
-    description: 'identity type: user | bot'
+    description: 'identity type: bot'
   - name: --dry-run
     shorthand: null
     type: bool

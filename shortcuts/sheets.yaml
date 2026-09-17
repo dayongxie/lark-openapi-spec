@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: sheets
 description: Spreadsheet operations
-cli_version: 1.0.95
-extracted_at: '2026-09-11T06:00:33Z'
+cli_version: 1.0.96
+extracted_at: '2026-09-17T06:10:15Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +batch-chart-create
@@ -2589,9 +2589,9 @@ shortcuts:
     description: Image z-index controlling stacking order
 - name: +formula-verify
   summary: Scan formulas / cell errors and return a recalc.py-shaped status report (success / errors_found / partial). Use
-    --ai-only to poll AI-formula compute status only.
+    --ai-only to read AI-formula compute status only.
   description: Scan formulas / cell errors and return a recalc.py-shaped status report (success / errors_found / partial).
-    Use --ai-only to poll AI-formula compute status only.
+    Use --ai-only to read AI-formula compute status only.
   usage: lark-cli sheets +formula-verify [flags]
   risk: read
   flags:
@@ -2599,9 +2599,11 @@ shortcuts:
     shorthand: null
     type: bool
     description: 'Only verify AI formulas (=AI(prompt, [range])), skipping the 7 Excel-error scan of ordinary formulas. AI
-      formulas compute asynchronously: use this flag with --range as the first post-write sample check, not cells-get polling;
-      if the sample has no explicit failed/unsupported state, delivery may proceed with pending formulas while telling the
-      user that computation continues in the background.'
+      formulas compute asynchronously: after writing, let --range cover the entire written range (this flag is read-only and
+      cheap, so do not sample), and do not poll results with +cells-get; the delivery criterion is ai_formula_failed_count
+      == 0; ai_formula_total is neither narrowed by --range nor a count of the AI formulas just written, so it cannot be compared
+      against an expected count. Once the criterion holds, delivery may proceed with pending formulas while telling the user
+      that computation continues in the background.'
   - name: --as
     shorthand: null
     type: string
@@ -2827,14 +2829,14 @@ shortcuts:
     shorthand: null
     type: F1
     description: Pivot table top-left placement (single A1 value, e.g. F1; create only), maps to `properties.range`; placed
-      at the top-left of the target sub-sheet (a newly created one by default) when omitted. It and `--target-position` both
-      express placement but map to different wire fields — avoid passing conflicting values for both.
+      at the top-left of the target sub-sheet (a newly created one by default) when omitted. It lands on the same wire field
+      as `--target-position`; passing a non-default value for both is rejected — pass only one.
   - name: --target-position
     shorthand: null
     type: A1
-    description: Top-left cell within the target sub-sheet (A1 notation, e.g. A1); maps to the top-level `target_position`,
-      default `A1` (not sent when the value is A1). It and `--range` both express placement but map to different wire fields
-      — avoid passing conflicting values for both.
+    description: Top-left cell within the target sub-sheet (A1 notation, e.g. A1), default `A1` (not sent when the value is
+      A1). It lands on the same wire field as `--range` (`properties.range`) and takes precedence when non-default; passing
+      a non-default value for both is rejected — pass only one.
     default: A1
 - name: +pivot-delete
   summary: Delete a pivot object (irreversible).

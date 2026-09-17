@@ -1,5 +1,28 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-17）
+
+新增 0 · 移除 0 · 定义变更 17（全量共 1640 个接口）
+
+### 定义变更
+- `POST /open-apis/approval/v4/approvals`「创建审批定义」（approval/v4/approval/create）
+- `GET /open-apis/approval/v4/approvals/{approval_code}`「查看指定审批定义」（approval/v4/approval/get）
+- `POST /open-apis/approval/v4/approvals/search_launchable`「搜索可发起的审批定义」（approval/v4/approval/search_launchable）
+- `POST /open-apis/approval/v4/instances/add_cc`「抄送审批实例（用户级）」（approval/v4/instance/add_cc）
+- `GET /open-apis/approval/v4/instances/detail`「获取单个审批实例详情（用户级）」（approval/v4/instance/detail）
+- `GET /open-apis/approval/v4/instances/initiated`「查询用户的已发起审批列表」（approval/v4/instance/initiated）
+- `POST /open-apis/approval/v4/instances/recall`「撤回审批实例（用户级）」（approval/v4/instance/recall）
+- `POST /open-apis/approval/v4/instances/remind`「单据催办」（approval/v4/instance/remind）
+- `POST /open-apis/approval/v4/instances/subscription`「订阅审批实例状态变更事件」（approval/v4/instance/subscription）
+- `DELETE /open-apis/approval/v4/instances/subscription`「退订审批实例状态变更事件」（approval/v4/instance/unsubscription）
+- `POST /open-apis/approval/v4/tasks/add_sign`「审批任务加签（用户级）」（approval/v4/task/add_sign）
+- `POST /open-apis/approval/v4/tasks/forward`「转交审批任务（用户级）」（approval/v4/task/forward）
+- `POST /open-apis/approval/v4/tasks/pass`「同意审批任务（用户级）」（approval/v4/task/pass）
+- `POST /open-apis/approval/v4/tasks/refuse`「拒绝审批任务（用户级）」（approval/v4/task/refuse）
+- `POST /open-apis/approval/v4/tasks/rollback`「退回审批任务（用户级）」（approval/v4/task/rollback）
+- `GET /open-apis/calendar/v4/calendars/{calendar_id}/events/{event_id}`「获取日程」（calendar/v4/calendar.event/get）
+- `POST /open-apis/spark/v1/apps`「创建妙搭应用」（spark/v1/app/create）
+
 ## explorer 全量轨道（2026-09-16）
 
 新增 0 · 移除 0 · 定义变更 1（全量共 1640 个接口）

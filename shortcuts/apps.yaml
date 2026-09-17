@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: apps
 description: Develop, deploy HTML, web pages and applications
-cli_version: 1.0.95
-extracted_at: '2026-09-11T06:00:33Z'
+cli_version: 1.0.96
+extracted_at: '2026-09-17T06:10:15Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +access-scope-get
@@ -2033,6 +2033,50 @@ shortcuts:
     shorthand: null
     type: bool
     description: confirm setting variables in online
+- name: +export
+  summary: Export an app's source code as a zip archive
+  description: Export an app's source code as a zip archive
+  usage: lark-cli apps +export [flags]
+  risk: read
+  flags:
+  - name: --app-id
+    shorthand: null
+    type: string
+    description: Miaoda app id, e.g. app_xxx (exactly one of --app-id / --meta-token)
+  - name: --as
+    shorthand: null
+    type: string
+    description: 'identity type: user'
+  - name: --dry-run
+    shorthand: null
+    type: bool
+    description: print request without executing
+  - name: --format
+    shorthand: null
+    type: string
+    description: 'output format: json (default) | pretty | table | ndjson | csv'
+    default: json
+  - name: --help
+    shorthand: -h
+    type: bool
+    description: help for +export
+  - name: --jq
+    shorthand: -q
+    type: string
+    description: jq expression to filter JSON output
+  - name: --json
+    shorthand: null
+    type: bool
+    description: shorthand for --format json
+  - name: --meta-token
+    shorthand: null
+    type: string
+    description: creative app share token — the LAST path segment of a /page/<token> link, not the full URL (exactly one of
+      --app-id / --meta-token)
+  - name: --output
+    shorthand: null
+    type: string
+    description: 'local output path, must be relative to the current directory (default: <app_id>.zip in cwd)'
 - name: +file-delete
   summary: Delete one or more files by remote path (batch)
   description: Delete one or more files by remote path (batch)

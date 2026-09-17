@@ -1687,7 +1687,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "approval",
-  "sha256": "363df5331d122fb1ac941c3dee600bb962ae5ab79c05d7f159ffa243cb413593",
+  "sha256": "5a45a72e776e9cb920d44cb739d5d7aef5f72ea5fa9d158ed4363fdd7cca6977",
   "title": "创建审批定义",
   "version": "v4"
  },
@@ -1699,7 +1699,7 @@
   "httpMethod": "GET",
   "project": "approval",
   "resource": "approval",
-  "sha256": "b0c400d63d43d8123c3c0df604979230f3ccddf4c1ab6d0555dfc49b51b4fd28",
+  "sha256": "3c3fde68aa5dafa285627413662beb7f75cd8785f060cd41b0d88097c6778aec",
   "title": "查看指定审批定义",
   "version": "v4"
  },
@@ -1711,7 +1711,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "approval",
-  "sha256": "319ebc962fe2eb1ca2038714cf2d28e2d1eaa5018db4b7dab7c0e5cff24a31de",
+  "sha256": "ee552fc6471598eeeae3fc423895fd8494654c51f55fd60b7f2e748795866477",
   "title": "搜索可发起的审批定义",
   "version": "v4"
  },
@@ -1879,7 +1879,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "instance",
-  "sha256": "46e50e412959b73f497448f37680a32cc2115ef4a5108b6fa40158180d3ec6ff",
+  "sha256": "c92246fd4fd7291e0504d762bbb69f85f63c96f7535f2e59e2f200e35e2df075",
   "title": "抄送审批实例（用户级）",
   "version": "v4"
  },
@@ -1939,7 +1939,7 @@
   "httpMethod": "GET",
   "project": "approval",
   "resource": "instance",
-  "sha256": "d28875dcbc07acb0e99f37d2fe3db6d9198b0177d6d342d1c4013059d01b2be9",
+  "sha256": "f7e069c991a8e5fe87d9f1409f0293fba9b90863e4f1303efc8b8af19f44000d",
   "title": "获取单个审批实例详情（用户级）",
   "version": "v4"
  },
@@ -1963,7 +1963,7 @@
   "httpMethod": "GET",
   "project": "approval",
   "resource": "instance",
-  "sha256": "79a97bd4e4889416d80f884a85983dad46823fa14e29a6d900d4f68c1949559f",
+  "sha256": "aea373516653bff2c9e8594b919d70d6df074e664110c767cfa73e01c26f52b8",
   "title": "查询用户的已发起审批列表",
   "version": "v4"
  },
@@ -2011,7 +2011,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "instance",
-  "sha256": "b6e1a08fba3d91cf636ab440eee5c26411de431baed4866f1577a636bde083b2",
+  "sha256": "84bdd76a1812155a2ae6e0728081fcf34b7edf34a15b04cc7b2f20bf2cf56292",
   "title": "撤回审批实例（用户级）",
   "version": "v4"
  },
@@ -2023,7 +2023,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "instance",
-  "sha256": "3e28f57193b977ddd126e2bd1ae4dbf2a4d530efe548ab814dd3d1cb3b1c961c",
+  "sha256": "7873aee9b5651ac9e4d417ac47ecd0ac45778171d41bc31fa214e12ec52af73a",
   "title": "单据催办",
   "version": "v4"
  },
@@ -2059,7 +2059,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "instance",
-  "sha256": "4e4d43354726ba10613dc4d516cd85a1766b4ff66f09a55f837302c1a9c641ab",
+  "sha256": "a87fb43c3da47206f25ba656bd2ae0809d2b063c36447648677a592b892ae00a",
   "title": "订阅审批实例状态变更事件",
   "version": "v4"
  },
@@ -2071,7 +2071,7 @@
   "httpMethod": "DELETE",
   "project": "approval",
   "resource": "instance",
-  "sha256": "7100252ea2fb28cccd2c1ab7279059b56ef281ecaa78e7e9820070d527a61a9d",
+  "sha256": "3ad7c51dc2192b624d7d4a71431525fbc1e4f2536ac7bb5a1a055e5ea23f62de",
   "title": "退订审批实例状态变更事件",
   "version": "v4"
  },
@@ -2083,7 +2083,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "task",
-  "sha256": "8f085845269131e77dd9f072c5c5020491f31611e8afe57e66adc22ca4c93604",
+  "sha256": "b65b4cd33453143e24293dc14bf2069175b733552f64fc10fed20d459c028e35",
   "title": "审批任务加签（用户级）",
   "version": "v4"
  },
@@ -2107,7 +2107,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "task",
-  "sha256": "ac27f618e21e831e6cf983a8f3a4a5153d981f150521f06e2aa5bbd71c3fb534",
+  "sha256": "1ee9ad4e99c55a44a57712a7c136a8ac9e75f30edcb6ceaa74eea1c3aa4668a6",
   "title": "转交审批任务（用户级）",
   "version": "v4"
  },
@@ -2131,7 +2131,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "task",
-  "sha256": "44bd731e726e55fa333574074f6ddc104e4fdec2cf3eca68cdb404c241ebe820",
+  "sha256": "b9b9156520ea701f94a738dc817a24c861fdb382900f71ed7f2bc3a2f758a1a9",
   "title": "同意审批任务（用户级）",
   "version": "v4"
  },
@@ -2155,7 +2155,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "task",
-  "sha256": "eb17ff1f823ee88e3158b54b954efd2e9a1e104f6452f4c19c6c1859885f8ea0",
+  "sha256": "b339aa19e2fe95d23eb49fa3e4871ebfdde9ceac3cf0b7feb8c30cbfd1b12fb7",
   "title": "拒绝审批任务（用户级）",
   "version": "v4"
  },
@@ -2191,7 +2191,7 @@
   "httpMethod": "POST",
   "project": "approval",
   "resource": "task",
-  "sha256": "18199e2f8196a15d736c05c1fcadb2d34b3e24c5e954a2c666b738e067bf2aef",
+  "sha256": "32559f12ba2c51edb3dc31f4f7c4970517dae354785d5f9206a039da13f51ffc",
   "title": "退回审批任务（用户级）",
   "version": "v4"
  },
@@ -3883,7 +3883,7 @@
   "httpMethod": "GET",
   "project": "calendar",
   "resource": "calendar.event",
-  "sha256": "c69f342df84c7c86c9321abd6a6d683fed262037ef48b0848a884cbef64ca0ee",
+  "sha256": "a9ba1d040681d287a2c01b138f43b7b312b72ea80232dcbf440a20f305866481",
   "title": "获取日程",
   "version": "v4"
  },
@@ -17395,7 +17395,7 @@
   "httpMethod": "POST",
   "project": "spark",
   "resource": "app",
-  "sha256": "dc9422110a5981c7600853feb6faefc424a6130f485cde8774ef35e91e64e9f5",
+  "sha256": "999c896047506a3a34f1404a498ed2ed29035500efce373207bf0a3d964ad62b",
   "title": "创建妙搭应用",
   "version": "v1"
  },

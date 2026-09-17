@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+9aed7761
+  version: 1.0.0+9de689c7
   x-lark-project: approval
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -230,6 +230,31 @@ paths:
                           SUPERVISOR: 直属上级审批
                           DEPARTMENT_MANAGER: 直属部门负责人审批
                         example: STARTER
+                      empty_auto_pass:
+                        type: boolean
+                        description: 审批人为空时的处理方式。默认值为 true；true 时自动通过且 empty_assignee_list 必须为空，false 时 empty_assignee_list
+                          必须非空并使用其中配置的兜底审批人。未传时，empty_assignee_list 为空按 true 处理，非空按 false 处理。
+                        default: true
+                      empty_assignee_list:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            type:
+                              type: integer
+                              description: 兜底审批人类型，1 表示审批管理员，2 表示指定人员；同一节点 empty_assignee_list 内的 type 必须一致
+                              example: '1'
+                            user_id:
+                              type: string
+                              description: 兜底审批人用户 ID，根据 user_id_type 填写；type 为 1 或 2 时均必填。传 open_id 时使用 ou_ 开头的 OpenID，OGW
+                                通过 x_user_id 转换为内部用户 ID；type 为 1 时，该用户还必须包含在请求顶层 process_manager_ids 中
+                              example: ou_xxx
+                          required:
+                          - type
+                          - user_id
+                        description: 审批人为空时的兜底审批人列表。仅在 empty_auto_pass=false 时生效，empty_auto_pass=true 时不得同时传；未传 empty_auto_pass
+                          且列表非空时按 false 处理。列表内每项 type 和 user_id 均必填，同一节点内 type 必须一致；type=1 表示审批管理员，user_id 必须包含在顶层 process_manager_ids；type=2
+                          表示指定人员。
                     required:
                     - id
                   description: 审批定义节点，需要将开始节点作为 list 第一个元素，结束节点作为最后一个元素
@@ -644,6 +669,30 @@ paths:
                               type: boolean
                               description: 是否签名
                               example: 'false'
+                            empty_auto_pass:
+                              type: boolean
+                              description: 审批人为空时的处理方式。默认值：true。true 时自动通过，empty_assignee_list 不生效；false 时使用 empty_assignee_list
+                                配置的兜底审批人。未传时，empty_assignee_list 为空按 true 处理，非空按 false 处理。
+                              default: true
+                            empty_assignee_list:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  type:
+                                    type: integer
+                                    description: 兜底审批人类型，1 表示审批管理员，2 表示指定人员；同一节点 empty_assignee_list 内的 type 必须一致
+                                    example: '1'
+                                  user_id:
+                                    type: string
+                                    description: 兜底审批人用户 ID，根据 user_id_type 填写；type 为 1 或 2 时均必填。传 open_id 时使用 ou_ 开头的 OpenID，OGW
+                                      通过 x_user_id 转换为内部用户 ID；type 为 1 时，该用户还必须包含在请求顶层 process_manager_ids 中
+                                    example: ou_xxx
+                                required:
+                                - type
+                                - user_id
+                              description: 审批人为空时的兜底审批人列表，仅在 empty_auto_pass=false 时生效；empty_auto_pass=true 时不生效。未传 empty_auto_pass
+                                且本列表非空时，按 false 处理。type=1 表示审批管理员，type=2 表示指定人员。
                           required:
                           - name
                           - need_approver
@@ -815,6 +864,7 @@ paths:
                         description: 还有更多数据
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - approval:approval:read
       x-lark-error-mappings:
@@ -2866,6 +2916,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - approval:instance:write
       x-lark-field-scopes:
@@ -3946,6 +3997,7 @@ paths:
                     - instance_code
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - approval:instance:read
       x-lark-field-scopes:
@@ -4646,6 +4698,7 @@ paths:
                     - instances
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - approval:instance:read
       x-lark-field-scopes:
@@ -5084,6 +5137,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - approval:instance:write
       x-lark-error-mappings:
@@ -5153,6 +5207,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - approval:instance:write
       x-lark-error-mappings:
@@ -5575,6 +5630,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - approval:instance:read
       x-lark-error-mappings:
@@ -5627,6 +5683,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - approval:instance:read
       x-lark-error-mappings:
@@ -5728,6 +5785,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - approval:task:write
       x-lark-field-scopes:
@@ -5933,6 +5991,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - approval:task:write
       x-lark-field-scopes:
@@ -6306,6 +6365,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - approval:task:write
       x-lark-error-mappings:
@@ -6644,6 +6704,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - approval:task:write
       x-lark-error-mappings:
@@ -6942,6 +7003,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - approval:task:write
       x-lark-error-mappings:
