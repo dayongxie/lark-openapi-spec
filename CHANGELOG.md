@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-18）
+
+新增 0 · 移除 0 · 定义变更 1（全量共 1640 个接口）
+
+### 定义变更
+- `GET /open-apis/vc/v1/meetings/{meeting_id}`「获取会议详情」（vc/v1/meeting/get）
+
 ## explorer 全量轨道（2026-09-17）
 
 新增 0 · 移除 0 · 定义变更 17（全量共 1640 个接口）

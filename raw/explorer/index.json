@@ -18847,7 +18847,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "e72dfd170849c244e199464977130ad8cc1c13fdffe8091c925159231ba3d194",
+  "sha256": "dfa0a68ef6ce015eed1051506091f88f49ad58525d47e5a44955c31d6ee6c6a8",
   "title": "获取会议详情",
   "version": "v1"
  },

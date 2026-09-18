@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+6ac9c8d0
+  version: 1.0.0+309ce798
   x-lark-project: vc
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -2491,7 +2491,150 @@ paths:
                     type: object
                     properties:
                       meeting:
-                        $ref: '#/components/schemas/Meeting'
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            description: 会议ID
+                            example: '6911188411934433028'
+                            format: int64
+                          topic:
+                            type: string
+                            description: 会议主题
+                            example: my meeting
+                          url:
+                            type: string
+                            description: 会议链接
+                            example: https://vc.feishu.cn/j/337736498
+                          meeting_no:
+                            type: string
+                            description: 会议号
+                            example: '123456789'
+                          password:
+                            type: string
+                            description: 会议密码
+                            example: '971024'
+                          create_time:
+                            type: string
+                            description: 会议创建时间（unix时间，单位sec）
+                            example: '1608885566'
+                            format: int64
+                          start_time:
+                            type: string
+                            description: 会议开始时间（unix时间，单位sec）
+                            example: '1608883322'
+                            format: int64
+                          end_time:
+                            type: string
+                            description: 会议结束时间（unix时间，单位sec）
+                            example: '1608888867'
+                            format: int64
+                          host_user:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                description: 用户ID
+                                example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
+                              user_type:
+                                type: integer
+                                description: 用户类型
+                                enum:
+                                - 1
+                                - 2
+                                - 3
+                                - 4
+                                - 5
+                                - 6
+                                - 7
+                                x-enum-descriptions:
+                                  '1': lark用户
+                                  '2': rooms用户
+                                  '3': 文档用户
+                                  '4': neo单品用户
+                                  '5': neo单品游客用户
+                                  '6': pstn用户
+                                  '7': sip用户
+                                example: '1'
+                            description: 主持人
+                          meeting_connect:
+                            type: boolean
+                            description: 该会议是否支持互通
+                            example: 'true'
+                          status:
+                            type: integer
+                            description: 会议状态
+                            enum:
+                            - 1
+                            - 2
+                            - 3
+                            x-enum-descriptions:
+                              '1': 会议呼叫中
+                              '2': 会议进行中
+                              '3': 会议已结束
+                            example: '2'
+                          participant_count:
+                            type: string
+                            description: 峰值参会人数
+                            example: '999'
+                            format: int64
+                          participant_count_accumulated:
+                            type: string
+                            description: 累计参会人数
+                            example: '10'
+                            format: int64
+                          participants:
+                            type: array
+                            items:
+                              $ref: '#/components/schemas/Item3'
+                            description: 参会人列表
+                          ability:
+                            type: object
+                            properties:
+                              use_video:
+                                type: boolean
+                                description: 是否使用视频
+                                example: 'true'
+                              use_audio:
+                                type: boolean
+                                description: 是否使用音频
+                                example: 'true'
+                              use_share_screen:
+                                type: boolean
+                                description: 是否使用共享屏幕
+                                example: 'true'
+                              use_follow_screen:
+                                type: boolean
+                                description: 是否使用妙享（magic share）
+                                example: 'true'
+                              use_recording:
+                                type: boolean
+                                description: 是否使用录制
+                                example: 'true'
+                              use_pstn:
+                                type: boolean
+                                description: 是否使用PSTN
+                                example: 'true'
+                            description: 会中使用的能力
+                          note_id:
+                            type: string
+                            description: 纪要ID
+                            example: '6943848821689040898'
+                            format: int64
+                          app_link:
+                            type: string
+                            description: 会议详情页链接
+                            example: https://applink.feishu.cn/client/vctab/open?source=chat&action=detail&meetingId=1000000000000001
+                          calendar_event_id:
+                            type: string
+                            description: 日程id
+                            example: 4dcb34cd-dbde-4fg7-a7b2-6c8dd3ca559_0
+                          chat_id:
+                            type: string
+                            description: 会议已绑定的聊天 ID（oc_ 格式）。未绑定时不返回；仅查询已存储绑定，不创建聊天、不修改成员、不校验 IM 访问权限，会后仍可查询。
+                            example: oc_xxx
+                            x-lark-id-types:
+                              chat_id: chat
                       related_artifacts:
                         type: object
                         properties:
@@ -5678,7 +5821,144 @@ paths:
                     type: object
                     properties:
                       meeting:
-                        $ref: '#/components/schemas/Meeting'
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            description: 会议ID
+                            example: '6911188411934433028'
+                            format: int64
+                          topic:
+                            type: string
+                            description: 会议主题
+                            example: my meeting
+                          url:
+                            type: string
+                            description: 会议链接
+                            example: https://vc.feishu.cn/j/337736498
+                          meeting_no:
+                            type: string
+                            description: 会议号
+                            example: '123456789'
+                          password:
+                            type: string
+                            description: 会议密码
+                            example: '971024'
+                          create_time:
+                            type: string
+                            description: 会议创建时间（unix时间，单位sec）
+                            example: '1608885566'
+                            format: int64
+                          start_time:
+                            type: string
+                            description: 会议开始时间（unix时间，单位sec）
+                            example: '1608883322'
+                            format: int64
+                          end_time:
+                            type: string
+                            description: 会议结束时间（unix时间，单位sec）
+                            example: '1608888867'
+                            format: int64
+                          host_user:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                description: 用户ID
+                                example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
+                              user_type:
+                                type: integer
+                                description: 用户类型
+                                enum:
+                                - 1
+                                - 2
+                                - 3
+                                - 4
+                                - 5
+                                - 6
+                                - 7
+                                x-enum-descriptions:
+                                  '1': lark用户
+                                  '2': rooms用户
+                                  '3': 文档用户
+                                  '4': neo单品用户
+                                  '5': neo单品游客用户
+                                  '6': pstn用户
+                                  '7': sip用户
+                                example: '1'
+                            description: 主持人
+                          meeting_connect:
+                            type: boolean
+                            description: 该会议是否支持互通
+                            example: 'true'
+                          status:
+                            type: integer
+                            description: 会议状态
+                            enum:
+                            - 1
+                            - 2
+                            - 3
+                            x-enum-descriptions:
+                              '1': 会议呼叫中
+                              '2': 会议进行中
+                              '3': 会议已结束
+                            example: '2'
+                          participant_count:
+                            type: string
+                            description: 峰值参会人数
+                            example: '999'
+                            format: int64
+                          participant_count_accumulated:
+                            type: string
+                            description: 累计参会人数
+                            example: '10'
+                            format: int64
+                          participants:
+                            type: array
+                            items:
+                              $ref: '#/components/schemas/Item3'
+                            description: 参会人列表
+                          ability:
+                            type: object
+                            properties:
+                              use_video:
+                                type: boolean
+                                description: 是否使用视频
+                                example: 'true'
+                              use_audio:
+                                type: boolean
+                                description: 是否使用音频
+                                example: 'true'
+                              use_share_screen:
+                                type: boolean
+                                description: 是否使用共享屏幕
+                                example: 'true'
+                              use_follow_screen:
+                                type: boolean
+                                description: 是否使用妙享（magic share）
+                                example: 'true'
+                              use_recording:
+                                type: boolean
+                                description: 是否使用录制
+                                example: 'true'
+                              use_pstn:
+                                type: boolean
+                                description: 是否使用PSTN
+                                example: 'true'
+                            description: 会中使用的能力
+                          note_id:
+                            type: string
+                            description: 纪要ID
+                            example: '6943848821689040898'
+                            format: int64
+                          app_link:
+                            type: string
+                            description: 会议详情页链接
+                            example: https://applink.feishu.cn/client/vctab/open?source=chat&action=detail&meetingId=1000000000000001
+                          calendar_event_id:
+                            type: string
+                            description: 日程id
+                            example: 4dcb34cd-dbde-4fg7-a7b2-6c8dd3ca559_0
       x-lark-access-tokens:
       - user
       - tenant
@@ -8679,145 +8959,6 @@ components:
       - scope_type
       - scope_id
       description: 当前节点的配置，根据层级顺序从底向上进行合并计算后的结果；如果当前节点某个值已配置，则取该节点的值，否则会从该节点的父层级节点获取，如果父节点依然未配置，则继续向上递归获取；若所有节点均未配置，则该值返回为空
-    Meeting:
-      type: object
-      properties:
-        id:
-          type: string
-          description: 会议ID
-          example: '6911188411934433028'
-          format: int64
-        topic:
-          type: string
-          description: 会议主题
-          example: my meeting
-        url:
-          type: string
-          description: 会议链接
-          example: https://vc.feishu.cn/j/337736498
-        meeting_no:
-          type: string
-          description: 会议号
-          example: '123456789'
-        password:
-          type: string
-          description: 会议密码
-          example: '971024'
-        create_time:
-          type: string
-          description: 会议创建时间（unix时间，单位sec）
-          example: '1608885566'
-          format: int64
-        start_time:
-          type: string
-          description: 会议开始时间（unix时间，单位sec）
-          example: '1608883322'
-          format: int64
-        end_time:
-          type: string
-          description: 会议结束时间（unix时间，单位sec）
-          example: '1608888867'
-          format: int64
-        host_user:
-          type: object
-          properties:
-            id:
-              type: string
-              description: 用户ID
-              example: ou_3ec3f6a28a0d08c45d895276e8e5e19b
-            user_type:
-              type: integer
-              description: 用户类型
-              enum:
-              - 1
-              - 2
-              - 3
-              - 4
-              - 5
-              - 6
-              - 7
-              x-enum-descriptions:
-                '1': lark用户
-                '2': rooms用户
-                '3': 文档用户
-                '4': neo单品用户
-                '5': neo单品游客用户
-                '6': pstn用户
-                '7': sip用户
-              example: '1'
-          description: 主持人
-        meeting_connect:
-          type: boolean
-          description: 该会议是否支持互通
-          example: 'true'
-        status:
-          type: integer
-          description: 会议状态
-          enum:
-          - 1
-          - 2
-          - 3
-          x-enum-descriptions:
-            '1': 会议呼叫中
-            '2': 会议进行中
-            '3': 会议已结束
-          example: '2'
-        participant_count:
-          type: string
-          description: 峰值参会人数
-          example: '999'
-          format: int64
-        participant_count_accumulated:
-          type: string
-          description: 累计参会人数
-          example: '10'
-          format: int64
-        participants:
-          type: array
-          items:
-            $ref: '#/components/schemas/Item3'
-          description: 参会人列表
-        ability:
-          type: object
-          properties:
-            use_video:
-              type: boolean
-              description: 是否使用视频
-              example: 'true'
-            use_audio:
-              type: boolean
-              description: 是否使用音频
-              example: 'true'
-            use_share_screen:
-              type: boolean
-              description: 是否使用共享屏幕
-              example: 'true'
-            use_follow_screen:
-              type: boolean
-              description: 是否使用妙享（magic share）
-              example: 'true'
-            use_recording:
-              type: boolean
-              description: 是否使用录制
-              example: 'true'
-            use_pstn:
-              type: boolean
-              description: 是否使用PSTN
-              example: 'true'
-          description: 会中使用的能力
-        note_id:
-          type: string
-          description: 纪要ID
-          example: '6943848821689040898'
-          format: int64
-        app_link:
-          type: string
-          description: 会议详情页链接
-          example: https://applink.feishu.cn/client/vctab/open?source=chat&action=detail&meetingId=1000000000000001
-        calendar_event_id:
-          type: string
-          description: 日程id
-          example: 4dcb34cd-dbde-4fg7-a7b2-6c8dd3ca559_0
     MeetingSetting:
       type: object
       properties:
