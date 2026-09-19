@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+c490b03e
+  version: 1.0.0+d15ec08d
   x-lark-project: security_and_compliance
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -1448,81 +1448,6 @@ paths:
         msg: The device is not found. Please check the parameter device_record_id and version.
       x-lark-rate-limit:
         tier: 7
-  /open-apis/security_and_compliance/v2/device_records/mine:
-    get:
-      operationId: security_and_compliance_device_record_mine
-      summary: 获取客户端设备认证信息
-      tags:
-      - device_record
-      externalDocs:
-        description: 飞书开放平台官方文档
-        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/security_and_compliance-v2/device_record/mine
-      responses:
-        '200':
-          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      device_record_id:
-                        type: string
-                        description: 设备认证编码
-                        example: '7089353870308032531'
-                        format: int64
-                      device_ownership:
-                        type: integer
-                        description: 设备归属
-                        enum:
-                        - 0
-                        - 1
-                        - 2
-                        x-enum-descriptions:
-                          '0': 未知设备
-                          '1': 个人设备
-                          '2': 企业设备
-                        example: '0'
-                      device_status:
-                        type: integer
-                        description: 可信状态
-                        enum:
-                        - 0
-                        - 1
-                        - 2
-                        x-enum-descriptions:
-                          '0': 未知状态
-                          '1': 信任设备
-                          '2': 非信任设备
-                        example: '0'
-      x-lark-access-tokens:
-      - user
-      x-lark-scopes:
-      - security_and_compliance:device_record:read
-      x-lark-error-mappings:
-      - code: 1780001
-        httpCode: 500
-        msg: Internal server error.
-      - code: 1780101
-        httpCode: 400
-        msg: Request param error.
-      - code: 1780102
-        httpCode: 400
-        msg: The API is in beta testing. Please contact customer support to request beta access.
-      - code: 1785011
-        httpCode: 400
-        msg: The current user identity has not completed device authentication.
-      - code: 1785012
-        httpCode: 400
-        msg: The third-party device integration is not enabled.
-      x-lark-rate-limit:
-        tier: 9
 components:
   schemas:
     DeviceRecord:

@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+6539e964
+  version: 1.0.0+954faa92
   x-lark-project: spark
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -454,7 +454,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Schema2'
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -500,7 +500,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Schema2'
+                $ref: '#/components/schemas/Schema'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -1648,7 +1648,38 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Schema'
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      app:
+                        allOf:
+                        - $ref: '#/components/schemas/App'
+                        description: 妙搭应用
+                        example: app_7d2f8a4b1c9e6035
+                      access_scope_result:
+                        type: object
+                        properties:
+                          applied:
+                            type: boolean
+                            description: 分享范围是否设置成功
+                            example: 'true'
+                          reason_code:
+                            type: string
+                            description: 未设置成功的原因，Applied 为 true 时不返回。\npolicy_denied：组织的分享策略或文档密级不允许；downstream_error：服务异常；unsupported_app_type：当前应用类型不支持
+                            example: downstream_error
+                          message:
+                            type: string
+                            description: 未设置成功时的提示文案，可直接展示给用户；Applied 为 true 时不返回
+                            example: 密级管控限制
+                        required:
+                        - applied
+                        description: 本次创建对分享范围的设置结果。分享范围设置失败不影响应用创建，创建接口仍返回成功。
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -1812,7 +1843,7 @@ paths:
                   msg:
                     type: string
                   data:
-                    $ref: '#/components/schemas/Data2'
+                    $ref: '#/components/schemas/Data'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -1868,7 +1899,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Data2'
+              $ref: '#/components/schemas/Data'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -2271,7 +2302,20 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Schema'
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      app:
+                        allOf:
+                        - $ref: '#/components/schemas/App'
+                        description: 妙搭应用
+                        example: '{"app_id":"app_7d2f8a4b1c9e6035","name":"智能客服助手V2","description":"提供7×24小时智能对话服务，支持多轮交互与工单自动流转","icon_url":"https://example.com/app-icons/customer-service-v2.png","created_at":"2026-05-18T10:00:00Z","updated_at":"2026-06-20T15:45:00Z"}'
       x-lark-access-tokens:
       - user
       x-lark-scopes:
@@ -2738,23 +2782,6 @@ components:
           example: '["7615135553960283664"]'
       description: 妙搭应用
       example: app_7d2f8a4b1c9e6035
-    Schema:
-      type: object
-      properties:
-        code:
-          type: integer
-        msg:
-          type: string
-        data:
-          $ref: '#/components/schemas/Data'
-    Data:
-      type: object
-      properties:
-        app:
-          allOf:
-          - $ref: '#/components/schemas/App'
-          description: 妙搭应用
-          example: app_7d2f8a4b1c9e6035
     Item:
       type: object
       properties:
@@ -2799,7 +2826,7 @@ components:
       - is_array
       - is_allow_null
       - default_value
-    Data2:
+    Data:
       type: object
       properties:
         scope:
@@ -2839,7 +2866,7 @@ components:
           type: boolean
           description: 控制访问应用是否需要用户登录
           example: 'true'
-    Schema2:
+    Schema:
       type: object
       properties:
         code:

@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-19）
+
+新增 0 · 移除 1 · 定义变更 1（全量共 1639 个接口）
+
+### 移除接口
+- `GET /open-apis/security_and_compliance/v2/device_records/mine`「获取客户端设备认证信息」（security_and_compliance/v2/device_record/mine）
+
+### 定义变更
+- `POST /open-apis/spark/v1/apps`「创建妙搭应用」（spark/v1/app/create）
+
 ## explorer 全量轨道（2026-09-18）
 
 新增 0 · 移除 0 · 定义变更 1（全量共 1640 个接口）

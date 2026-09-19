@@ -16835,18 +16835,6 @@
   "title": "查询设备信息",
   "version": "v2"
  },
- "security_and_compliance/v2/device_record/mine": {
-  "apiName": "mine",
-  "apiPath": "/open-apis/security_and_compliance/v2/device_records/mine",
-  "category": "安全合规 / 设备管理 V2 / 设备",
-  "docPath": "/uAjLw4CM/ukTMukTMukTM/security_and_compliance-v2/device_record/mine",
-  "httpMethod": "GET",
-  "project": "security_and_compliance",
-  "resource": "device_record",
-  "sha256": "f898c74a3c4bac54a6cf872fba3315ac178cabe161ab0add5b420db7b9342d64",
-  "title": "获取客户端设备认证信息",
-  "version": "v2"
- },
  "security_and_compliance/v2/device_record/update": {
   "apiName": "update",
   "apiPath": "/open-apis/security_and_compliance/v2/device_records/:device_record_id",
@@ -17395,7 +17383,7 @@
   "httpMethod": "POST",
   "project": "spark",
   "resource": "app",
-  "sha256": "999c896047506a3a34f1404a498ed2ed29035500efce373207bf0a3d964ad62b",
+  "sha256": "8696561372dbed68eb72aa06359b68f18d487f031728c19e149e62fdadc599c5",
   "title": "创建妙搭应用",
   "version": "v1"
  },

@@ -42827,31 +42827,6 @@
         "Score": 0,
         "apiSummary": {
          "apiIdentity": {
-          "apiName": "mine",
-          "project": "security_and_compliance",
-          "resource": "device_record",
-          "version": "v2"
-         },
-         "apiKind": 1,
-         "apiPath": "/open-apis/security_and_compliance/v2/device_records/mine",
-         "debuggable": true,
-         "fullPath": "/uAjLw4CM/ukTMukTMukTM/security_and_compliance-v2/device_record/mine",
-         "httpMethod": "GET",
-         "supportAppTypes": [
-          "custom",
-          "isv"
-         ]
-        },
-        "id": "7563551656446263298",
-        "name": "获取客户端设备认证信息",
-        "orderMark": "1760964761812",
-        "parentId": "7428476651170643971",
-        "type": 1
-       },
-       {
-        "Score": 0,
-        "apiSummary": {
-         "apiIdentity": {
           "apiName": "create",
           "project": "security_and_compliance",
           "resource": "device_record",
