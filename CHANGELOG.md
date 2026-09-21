@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-21）
+
+新增 0 · 移除 0 · 定义变更 5（全量共 1639 个接口）
+
+### 定义变更
+- `GET /open-apis/minutes/v1/minutes/{minute_token}/transcript`「导出妙记文字记录」（minutes/v1/minute.transcript/get）
+- `GET /open-apis/minutes/v1/minutes/{minute_token}/artifacts`「获取妙记AI产物」（minutes/v1/minute/artifacts）
+- `POST /open-apis/minutes/v1/minutes/{minute_token}/clip`「创建妙记片段」（minutes/v1/minute/clip）
+- `GET /open-apis/minutes/v1/minutes/{minute_token}`「获取妙记信息」（minutes/v1/minute/get）
+- `GET /open-apis/vc/v1/meetings/{meeting_id}`「获取会议详情」（vc/v1/meeting/get）
+
 ## explorer 全量轨道（2026-09-19）
 
 新增 0 · 移除 1 · 定义变更 1（全量共 1639 个接口）

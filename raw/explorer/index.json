@@ -15427,7 +15427,7 @@
   "httpMethod": "GET",
   "project": "minutes",
   "resource": "minute.transcript",
-  "sha256": "6b4bd4dc10a115a0e6d90e0e9c1c7fbc2774ff0fcf9a8f975e895297bf2c3ba1",
+  "sha256": "29da6c598f2c066bbd9af61a203e0967122141792fa4bfa037be4a055ef9404e",
   "title": "导出妙记文字记录",
   "version": "v1"
  },
@@ -15439,7 +15439,7 @@
   "httpMethod": "GET",
   "project": "minutes",
   "resource": "minute",
-  "sha256": "e238e3ea51c7970d99c42efd371352c5e44ac7bcb1ca8be1e0cf7f857e6ebd20",
+  "sha256": "b93e027c2b2bd8b1b7f0e446d041704097d70d5e79e54c6f99124c6053ae8aca",
   "title": "获取妙记AI产物",
   "version": "v1"
  },
@@ -15451,7 +15451,7 @@
   "httpMethod": "POST",
   "project": "minutes",
   "resource": "minute",
-  "sha256": "d0319b163da6021634aae723a1d0889cc43e3100ef1aad4bcf7f650e192c9fb2",
+  "sha256": "21c6bd1b0f4e626398435f10b6b69601c3b3f4608241bfec0eb66ba53dbe6b17",
   "title": "创建妙记片段",
   "version": "v1"
  },
@@ -15463,7 +15463,7 @@
   "httpMethod": "GET",
   "project": "minutes",
   "resource": "minute",
-  "sha256": "ac4d5e36fa7d906e42c4fa0962d079c96d4c6e7905eda136aab6b8c1a9ba6d41",
+  "sha256": "d54bed38931db322a7e8eca3141953c58b0c85205ec12aed9118766fe60bdea4",
   "title": "获取妙记信息",
   "version": "v1"
  },
@@ -18835,7 +18835,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "dfa0a68ef6ce015eed1051506091f88f49ad58525d47e5a44955c31d6ee6c6a8",
+  "sha256": "0d126bfef1e36367997d9e610df100c84a523d6fc1daa5da30d9632b020895dc",
   "title": "获取会议详情",
   "version": "v1"
  },

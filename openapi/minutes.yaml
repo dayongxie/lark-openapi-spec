@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+9a5b3150
+  version: 1.0.0+ea50847a
   x-lark-project: minutes
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -267,6 +267,9 @@ paths:
       - code: 2091006
         httpCode: 500
         msg: service internal error
+      - code: 2091008
+        httpCode: 400
+        msg: asr/ai quota not enough
       x-lark-rate-limit:
         tier: 6
       x-lark-file-download: true
@@ -288,6 +291,13 @@ paths:
           type: string
         description: 妙记的唯一标识
         example: obcnq3b9jl72l83w4f149w9c
+      - name: need_artifact_status
+        in: query
+        required: false
+        schema:
+          type: boolean
+        description: 是否返回产物状态。为 true 时，返回 artifact_status 字段
+        example: 'true'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -370,6 +380,90 @@ paths:
                         type: string
                         description: 妙记逐字稿
                         example: <string>
+                      artifact_status:
+                        type: object
+                        properties:
+                          summary:
+                            type: object
+                            properties:
+                              status:
+                                type: string
+                                description: 产物生成状态
+                                enum:
+                                - completed
+                                - generating
+                                - skipped
+                                x-enum-descriptions:
+                                  completed: 产物已生成
+                                  generating: 产物生成中
+                                  skipped: 产物已跳过
+                                example: completed
+                            description: 妙记总结的产物状态
+                          minute_chapters:
+                            type: object
+                            properties:
+                              status:
+                                type: string
+                                description: 产物生成状态
+                                enum:
+                                - completed
+                                - generating
+                                - skipped
+                                x-enum-descriptions:
+                                  completed: 产物已生成
+                                  generating: 产物生成中
+                                  skipped: 产物已跳过
+                                example: completed
+                            description: 妙记章节的产物状态
+                          minute_todos:
+                            type: object
+                            properties:
+                              status:
+                                type: string
+                                description: 产物生成状态
+                                enum:
+                                - completed
+                                - generating
+                                - skipped
+                                x-enum-descriptions:
+                                  completed: 产物已生成
+                                  generating: 产物生成中
+                                  skipped: 产物已跳过
+                                example: completed
+                            description: 妙记待办的产物状态
+                          keywords:
+                            type: object
+                            properties:
+                              status:
+                                type: string
+                                description: 产物生成状态
+                                enum:
+                                - completed
+                                - generating
+                                - skipped
+                                x-enum-descriptions:
+                                  completed: 产物已生成
+                                  generating: 产物生成中
+                                  skipped: 产物已跳过
+                                example: completed
+                            description: 妙记推荐关键词的产物状态
+                          transcript:
+                            type: object
+                            properties:
+                              status:
+                                type: string
+                                description: 产物生成状态
+                                enum:
+                                - completed
+                                - generating
+                                - skipped
+                                x-enum-descriptions:
+                                  completed: 产物已生成
+                                  generating: 产物生成中
+                                  skipped: 产物已跳过
+                                example: completed
+                            description: 妙记逐字稿的产物状态
+                        description: 产物状态。仅当请求参数 need_artifact_status=true 时返回
       x-lark-access-tokens:
       - user
       - tenant
@@ -479,6 +573,9 @@ paths:
       - code: 2091006
         httpCode: 500
         msg: service internal error
+      - code: 2091008
+        httpCode: 400
+        msg: asr/ai quota not enough
       - code: 2091007
         httpCode: 400
         msg: storage quota not enough
@@ -574,6 +671,27 @@ paths:
                             description: 纪要ID
                             example: '7616590025794260496'
                             format: int64
+                          generated_source:
+                            type: object
+                            properties:
+                              source_type:
+                                type: string
+                                description: 来源类型
+                                example: meeting
+                              source_entity_id:
+                                type: string
+                                description: 来源实体id，如果是会议的话，就是meeting id
+                                example: '6911188411934433028'
+                            description: 生产类型
+                          status:
+                            type: integer
+                            description: 妙记状态
+                            enum:
+                            - 0
+                            - 1
+                            x-enum-descriptions:
+                              '0': 正常状态
+                              '1': 因额度不足部分产物待解锁
                         description: 妙记基本信息
       x-lark-access-tokens:
       - tenant
