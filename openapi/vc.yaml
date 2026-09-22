@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+ab4e5d00
+  version: 1.0.0+3d5c0615
   x-lark-project: vc
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -3301,31 +3301,31 @@ paths:
       - vc:meeting.search:read
       x-lark-error-mappings:
       - code: 121001
-        httpCode: 500
+        httpCode: 400
         msg: invalid param
       - code: 121002
         httpCode: 500
         msg: network error
       - code: 121011
-        httpCode: 500
+        httpCode: 400
         msg: query is too long
       - code: 121012
-        httpCode: 500
+        httpCode: 400
         msg: invalid filter
       - code: 121020
-        httpCode: 500
+        httpCode: 400
         msg: page_token is invalid or expired
       - code: 121021
-        httpCode: 500
+        httpCode: 400
         msg: page_size exceeds maximum allowed value
       - code: 121022
-        httpCode: 500
+        httpCode: 400
         msg: pagination limit reached
       - code: 121030
-        httpCode: 500
+        httpCode: 401
         msg: user identity not found
       - code: 121031
-        httpCode: 500
+        httpCode: 401
         msg: failed to initialize request context
       - code: 121040
         httpCode: 500
@@ -3334,7 +3334,7 @@ paths:
         httpCode: 500
         msg: failed to process search result
       - code: 122601
-        httpCode: 500
+        httpCode: 400
         msg: meeting time format is invalid
       - code: 122602
         httpCode: 500
@@ -3343,7 +3343,7 @@ paths:
         httpCode: 500
         msg: failed to convert meeting search result
       - code: 122604
-        httpCode: 500
+        httpCode: 400
         msg: invalid meeting room ID format
       x-lark-rate-limit:
         tier: 3

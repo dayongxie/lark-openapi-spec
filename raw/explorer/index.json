@@ -8179,7 +8179,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "0cfad52feab3dc8660317c78b4cd78968abbec0c99c2b91972fcac0b01a7d58e",
+  "sha256": "10fedb2c69a7f59e2223483c30d8ffd61895ebf6d0e03775f86c06f8693cf92c",
   "title": "直接创建待入职",
   "version": "v2"
  },
@@ -8203,7 +8203,7 @@
   "httpMethod": "PATCH",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "94213e4fe9b11fb56d209bfd83ca2f8bec1dded35e987cb933508dfdf774d07a",
+  "sha256": "3dc56f0504a785c048d0aeee38ce58f64906935d2ed21ad305ee84b38ef3a798",
   "title": "更新待入职信息",
   "version": "v2"
  },
@@ -8215,7 +8215,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "856ae260fc50e8cf53a9d9fc634c52f9edad021026e1570a253f2880858094e2",
+  "sha256": "742f13ec75020d178e16a436f4567694577383d67fb21ea9ce0cce1ffc2964ed",
   "title": "查询待入职信息",
   "version": "v2"
  },
@@ -8239,7 +8239,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "pre_hire",
-  "sha256": "ff187b74615989f0085de9a50bd65fba280e42ad8e741273531eaf664843c0bf",
+  "sha256": "7050fd0a8ec353a55f49b09ea5c2fd2e8c390f39db2ee75be8ffd5bba7039ea9",
   "title": "搜索待入职信息",
   "version": "v2"
  },
@@ -16639,7 +16639,7 @@
   "httpMethod": "POST",
   "project": "search",
   "resource": "doc_wiki",
-  "sha256": "a14a0e41592dc0838b5002116e1009b8235f95cb68267b79c114fe55ce642ba8",
+  "sha256": "211573130516f8d34c791e69ed4431e1addce4d48833a040d3ac131880f35f85",
   "title": "搜索文档",
   "version": "v2"
  },
@@ -18883,7 +18883,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "f074effd6178147d32c2c5fce9fd63f0fc532e3c86c67a6eadcfcf621f2b6d8e",
+  "sha256": "74a502a159c3a6fa7e3d7ee2723a514de44ff69fb1c3623f13f391d1d12922b8",
   "title": "搜索会议记录",
   "version": "v1"
  },

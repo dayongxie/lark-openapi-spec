@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-22）
+
+新增 0 · 移除 0 · 定义变更 6（全量共 1639 个接口）
+
+### 定义变更
+- `POST /open-apis/corehr/v2/pre_hires`「直接创建待入职」（corehr/v2/pre_hire/create）
+- `PATCH /open-apis/corehr/v2/pre_hires/{pre_hire_id}`「更新待入职信息」（corehr/v2/pre_hire/patch）
+- `POST /open-apis/corehr/v2/pre_hires/query`「查询待入职信息」（corehr/v2/pre_hire/query）
+- `POST /open-apis/corehr/v2/pre_hires/search`「搜索待入职信息」（corehr/v2/pre_hire/search）
+- `POST /open-apis/search/v2/doc_wiki/search`「搜索文档」（search/v2/doc_wiki/search）
+- `POST /open-apis/vc/v1/meetings/search`「搜索会议记录」（vc/v1/meeting/search）
+
 ## explorer 全量轨道（2026-09-21）
 
 新增 0 · 移除 0 · 定义变更 5（全量共 1639 个接口）
