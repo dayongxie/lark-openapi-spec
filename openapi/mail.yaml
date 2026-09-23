@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+c4c5bbc1
+  version: 1.0.0+523a5054
   x-lark-project: mail
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -6496,6 +6496,14 @@ paths:
                       description: 名称
                       example: Mike
                   description: EML中发件人信息
+                headers:
+                  type: object
+                  properties:
+                    message_id:
+                      type: string
+                      description: EML Message-ID header
+                      example: <custom-message-id@example.com>
+                  description: EML中邮件头信息
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -7562,6 +7570,10 @@ paths:
                               type: string
                               description: 邮箱名称
                               example: Mike
+                            is_selectable_in_lark_mail_client:
+                              type: boolean
+                              description: 是否可在 Lark 邮箱客户端写信时选作发件地址。该字段仅表示客户端配置状态，不影响 API 发信；本接口返回的所有地址均可通过 API 发信
+                              example: 'true'
                         description: 可发信地址。包括主地址、别名地址、邮件组。
       x-lark-access-tokens:
       - user
@@ -8606,6 +8618,10 @@ paths:
                                 USER_ALIAS: 用户别名
                                 PUBLIC_MAILBOX_ALIAS: 公共邮箱别名
                               example: USER_PRIMARY
+                            is_selectable_in_lark_mail_client:
+                              type: boolean
+                              description: 是否可在 Lark 邮箱客户端写信时选作发件地址。该字段仅表示客户端配置状态，不影响 API 发信；本接口返回的所有地址均可通过 API 发信
+                              example: 'true'
                         description: 用户可访问的所有邮箱信息，包含主邮箱和公共邮箱
       x-lark-access-tokens:
       - user
@@ -8842,6 +8858,11 @@ paths:
                       description: |-
                         邮件接收时间范围筛选，只返回在所选时间范围内的邮件。
                         限制：一次搜索请求的时间范围不要超过1年。
+                    include_app_link:
+                      type: boolean
+                      description: 返回体中是否包含AppLink
+                      default: false
+                      example: 'true'
                   description: |-
                     用于对搜索结果进行精细化筛选，支持按发件人、收件人、文件夹、时间范围等多维度组合过滤，缩小查询范围，提升搜索精准度。
                     **示例值：** {"from":["user@example.com"],"is_unread":true}
@@ -8906,6 +8927,10 @@ paths:
                                   required:
                                   - mail_address
                                   description: 邮件发件人
+                                app_link:
+                                  type: string
+                                  description: 邮件链接
+                                  example: https://applink.xxx
                               description: 邮件元信息
                           required:
                           - id

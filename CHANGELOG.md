@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-23）
+
+新增 0 · 移除 0 · 定义变更 6（全量共 1639 个接口）
+
+### 定义变更
+- `POST /open-apis/corehr/v2/departments/search`「搜索部门信息」（corehr/v2/department/search）
+- `GET /open-apis/drive/v1/files/{file_token}/comments`「获取云文档所有评论」（drive/v1/file.comment/list）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/messages/send`「发送邮件」（mail/v1/user_mailbox.message/send）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/settings/send_as`「列出可发信邮箱」（mail/v1/user_mailbox.setting/send_as）
+- `GET /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/accessible_mailboxes`「列出可访问的邮箱」（mail/v1/user_mailbox/accessible_mailboxes）
+- `POST /open-apis/mail/v1/user_mailboxes/{user_mailbox_id}/search`「搜索邮件」（mail/v1/user_mailbox/search）
+
 ## explorer 全量轨道（2026-09-22）
 
 新增 0 · 移除 0 · 定义变更 6（全量共 1639 个接口）

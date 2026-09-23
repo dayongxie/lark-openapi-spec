@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+214f9949
+  version: 1.0.0+d6629019
   x-lark-project: drive
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -1382,6 +1382,18 @@ paths:
         schema:
           type: boolean
         description: 是否需要评论关系
+      - name: order
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - comment_id_asc
+          - comment_id_desc
+          x-enum-descriptions:
+            comment_id_asc: 按评论 ID 升序
+            comment_id_desc: 按评论 ID 降序，优先返回最新评论
+        description: 评论排序方式；缺省为 comment_id_asc
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）

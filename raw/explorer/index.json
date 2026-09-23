@@ -7387,7 +7387,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "department",
-  "sha256": "a1a31306c9917395fbf3b79ca4d2fed0df6502a27a3fb9a79ad29d83cbb6e095",
+  "sha256": "9ef11e863e3e8408fa542a80d411e1ae07b99f4eb485ea35e0acf9415ca52acd",
   "title": "搜索部门信息",
   "version": "v2"
  },
@@ -9523,7 +9523,7 @@
   "httpMethod": "GET",
   "project": "drive",
   "resource": "file.comment",
-  "sha256": "b1c2dc6775346cdf3ea81c2b0009bb4b5dd6a71be88efae3a99238209fab826a",
+  "sha256": "41d9f5a323c5e03d9338290b83ea943c5abe8762d1882bdea9d2849604b1807b",
   "title": "获取云文档所有评论",
   "version": "v1"
  },
@@ -15019,7 +15019,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox.message",
-  "sha256": "44d6ef150e9e7a67a7f40da2f731ac31c21ba1c0d13436154efeca13026f5ba4",
+  "sha256": "8b3f225443ba322784c9337c0d5710c5e1fc38fa54df9e7ef4f19252a0affe4f",
   "title": "发送邮件",
   "version": "v1"
  },
@@ -15151,7 +15151,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox.setting",
-  "sha256": "c7bfe55d2061141ab665441f42cb1b8367f96fc6079376113570b266964a1555",
+  "sha256": "d0c09a9c8acc8e01fd3319eb54fa964d6a04fb5a7c25ca052c41bc6f3cd54fb4",
   "title": "列出可发信邮箱",
   "version": "v1"
  },
@@ -15307,7 +15307,7 @@
   "httpMethod": "GET",
   "project": "mail",
   "resource": "user_mailbox",
-  "sha256": "6940f81c949f8af970dc649a0ebda6e52d8ae9f15dc4f6057af42a8c397c8146",
+  "sha256": "177e70aec50a398f81916e19cbf187d203f4a5d7e21b9a7c39a5da5ad7728396",
   "title": "列出可访问的邮箱",
   "version": "v1"
  },
@@ -15343,7 +15343,7 @@
   "httpMethod": "POST",
   "project": "mail",
   "resource": "user_mailbox",
-  "sha256": "05bc575bcdf3092624c7bdf57d4fe0eb9769a5ebc69bc8da18579bfc68f4961e",
+  "sha256": "c325594646399b83cc485d5358755dd3c1f09cafd8bc69fb248cd255e8c82e79",
   "title": "搜索邮件",
   "version": "v1"
  },
