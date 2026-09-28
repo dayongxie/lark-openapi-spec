@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-09-28）
+
+新增 0 · 移除 0 · 定义变更 1（全量共 1639 个接口）
+
+### 定义变更
+- `POST /open-apis/approval/v4/approvals`「创建审批定义」（approval/v4/approval/create）
+
 ## explorer 全量轨道（2026-09-23）
 
 新增 0 · 移除 0 · 定义变更 6（全量共 1639 个接口）
