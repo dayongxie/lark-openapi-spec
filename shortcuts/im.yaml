@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: im
 description: Message and group chat management
-cli_version: 1.0.96
-extracted_at: '2026-09-17T06:10:15Z'
+cli_version: 1.0.97
+extracted_at: '2026-09-29T06:55:39Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +chat-create
@@ -958,7 +958,8 @@ shortcuts:
   - name: --content
     shorthand: null
     type: string
-    description: (one of --content/--text/--markdown/--set-attachments required) message content JSON
+    description: (one of --content/--text/--markdown/--set-attachments required) message content JSON (supports @file, - reads
+      stdin (one flag per call; use @file for others))
   - name: --dry-run
     shorthand: null
     type: bool
@@ -983,7 +984,8 @@ shortcuts:
   - name: --markdown
     shorthand: null
     type: string
-    description: markdown text (auto-wrapped as post format with style optimization; image URLs auto-resolved)
+    description: markdown text (auto-wrapped as post format with style optimization; image URLs auto-resolved) (supports @file,
+      - reads stdin (one flag per call; use @file for others))
   - name: --message-id
     shorthand: null
     type: string
@@ -1002,7 +1004,8 @@ shortcuts:
   - name: --text
     shorthand: null
     type: string
-    description: plain text message (auto-wrapped as JSON)
+    description: plain text message (auto-wrapped as JSON) (supports @file, - reads stdin (one flag per call; use @file for
+      others))
 - name: +messages-mget
   summary: Batch get messages by IDs; user/bot; fetches up to 50 om_ message IDs, formats sender names, expands thread replies
   description: Batch get messages by IDs; user/bot; fetches up to 50 om_ message IDs, formats sender names, expands thread
@@ -1110,7 +1113,8 @@ shortcuts:
   - name: --content
     shorthand: null
     type: string
-    description: (one of --content/--text/--markdown/--image/--file/--video/--audio required) message content JSON
+    description: (one of --content/--text/--markdown/--image/--file/--video/--audio required) message content JSON (supports
+      @file, - reads stdin (one flag per call; use @file for others))
   - name: --dry-run
     shorthand: null
     type: bool
@@ -1147,7 +1151,8 @@ shortcuts:
   - name: --markdown
     shorthand: null
     type: string
-    description: markdown text (auto-wrapped as post format with style optimization; image URLs auto-resolved)
+    description: markdown text (auto-wrapped as post format with style optimization; image URLs auto-resolved) (supports @file,
+      - reads stdin (one flag per call; use @file for others))
   - name: --message-id
     shorthand: null
     type: string
@@ -1165,7 +1170,8 @@ shortcuts:
   - name: --text
     shorthand: null
     type: string
-    description: plain text message (auto-wrapped as JSON)
+    description: plain text message (auto-wrapped as JSON) (supports @file, - reads stdin (one flag per call; use @file for
+      others))
   - name: --video
     shorthand: null
     type: string
@@ -1305,7 +1311,8 @@ shortcuts:
   - name: --content
     shorthand: null
     type: string
-    description: (one of --content/--text/--markdown/--image/--file/--video/--audio required) message content JSON
+    description: (one of --content/--text/--markdown/--image/--file/--video/--audio required) message content JSON (supports
+      @file, - reads stdin (one flag per call; use @file for others))
   - name: --dry-run
     shorthand: null
     type: bool
@@ -1342,7 +1349,8 @@ shortcuts:
   - name: --markdown
     shorthand: null
     type: string
-    description: markdown text (auto-wrapped as post format with style optimization; image URLs auto-resolved)
+    description: markdown text (auto-wrapped as post format with style optimization; image URLs auto-resolved) (supports @file,
+      - reads stdin (one flag per call; use @file for others))
   - name: --msg-type
     shorthand: null
     type: string
@@ -1352,7 +1360,8 @@ shortcuts:
   - name: --text
     shorthand: null
     type: string
-    description: plain text message (auto-wrapped as JSON)
+    description: plain text message (auto-wrapped as JSON) (supports @file, - reads stdin (one flag per call; use @file for
+      others))
   - name: --user-id
     shorthand: null
     type: string
