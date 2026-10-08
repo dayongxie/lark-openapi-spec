@@ -17219,6 +17219,18 @@
   "title": "获取自定义枚举列表",
   "version": "v1"
  },
+ "spark/v1/app.release/update": {
+  "apiName": "update",
+  "apiPath": "/open-apis/spark/v1/apps/:app_id/releases/:release_id",
+  "category": "飞书妙搭 / 妙搭应用发布",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app-release/update",
+  "httpMethod": "PUT",
+  "project": "spark",
+  "resource": "app.release",
+  "sha256": "0833eecd64b0c6266bf8ecca461ba0c72a56db141cb7f5948e58d27af8e8a0d6",
+  "title": "回写发布节点状态",
+  "version": "v1"
+ },
  "spark/v1/app.storage/download": {
   "apiName": "download",
   "apiPath": "/open-apis/spark/v1/apps/:app_id/storage",
@@ -17385,6 +17397,18 @@
   "resource": "app",
   "sha256": "8696561372dbed68eb72aa06359b68f18d487f031728c19e149e62fdadc599c5",
   "title": "创建妙搭应用",
+  "version": "v1"
+ },
+ "spark/v1/app/export": {
+  "apiName": "export",
+  "apiPath": "/open-apis/spark/v1/apps/export",
+  "category": "飞书妙搭 / 妙搭应用",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app/export",
+  "httpMethod": "POST",
+  "project": "spark",
+  "resource": "app",
+  "sha256": "daadfaa4e4bf7bc05979d92c80c12e0de94b6a21d57908a010723121808b0b14",
+  "title": "导出妙搭应用代码包",
   "version": "v1"
  },
  "spark/v1/app/get_app_visibility": {

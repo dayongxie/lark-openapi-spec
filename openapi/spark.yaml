@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+954faa92
+  version: 1.0.0+00a9f403
   x-lark-project: spark
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -21,6 +21,7 @@ servers:
 tags:
 - name: app.available_scope
 - name: app.enum
+- name: app.release
 - name: app.storage
 - name: app.table
 - name: app.view
@@ -348,6 +349,133 @@ paths:
         msg: param is invalid
       x-lark-rate-limit:
         tier: 7
+  /open-apis/spark/v1/apps/{app_id}/releases/{release_id}:
+    put:
+      operationId: spark_app_release_update
+      summary: 回写发布节点状态
+      tags:
+      - app.release
+      description: 回写发布节点状态/审核链接：翻转指定 PENDING 节点的裁决结果，或仅回填审核详情页链接
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/app-release/update
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: 妙搭应用唯一标识
+        example: app_4ka4egt4j2y6p
+      - name: release_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: 目标发布运行 ID，取自出站 webhook payload 的 data.release_id
+        example: '7683140375070166555'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                node_task_id:
+                  type: string
+                  description: 目标节点任务 ID，取自出站 webhook payload 的 data.node_task_id
+                  example: evt_7683140375070395931
+                action:
+                  type: string
+                  description: 裁决动作，取值：approve 放行 / reject 拒绝并终止 / cancel 外部撤回；不传则不翻转节点状态，只处理 Result
+                  example: approve
+                result:
+                  type: object
+                  properties:
+                    approval_url:
+                      type: string
+                      description: 审核详情页链接：外部审核平台的审核单地址，妙搭展示给开发者查看审核进度。\n必须是合法 HTTP/HTTPS URL，最大 2048 字符；可与 Action 同传（裁决时一并回填），\n也可单独传（仅回写链接、不改状态）；多次调用以最后一次为准，覆盖已有值
+                      example: https://www.xxx.com/approval?id=xxx
+                    operator:
+                      type: string
+                      description: 操作人 open_id
+                      example: abcdefgh
+                    message:
+                      type: string
+                      description: 审批意见 / 拒绝原因 / 审核中说明
+                      example: 当前封禁期，禁止发布
+                  description: 节点回写结果。PRD 明确这是「预留可扩展结构」，后续新增回写内容（驳回原因、扫描报告等）\n直接在本结构里追加子字段即可。\n\n技术方案里写的是 map<string,string>；这里落成具名
+                    struct：\nmap 无法表达 approval_url 的类型 / 长度 / URL 合法性约束，也无法在开平文档里自动生成字段说明，\n而「可扩展」在 thrift 里由 optional 新字段天然保证，不需要退化成无类型
+                    map。
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      app_id:
+                        type: string
+                        description: 应用id
+                        example: app_4ka4egt4j2y6p
+                      release_id:
+                        type: string
+                        description: 发布id
+                        example: '7683140375070166555'
+                      node_task_id:
+                        type: string
+                        description: 节点任务id
+                        example: evt_7683140375070395931
+                      node:
+                        type: string
+                        description: 被操作节点的节点名，取值：build 编译构建 / deploy 产物部署
+                        example: build
+                      node_status:
+                        type: string
+                        description: 该节点当前状态，取值：PENDING（仅回写链接、未裁决）/ APPROVED / REJECTED / CANCELED。仅反映本节点，不代表整条流水线的最终状态
+                        example: PENDING
+                      result:
+                        type: object
+                        properties:
+                          approval_url:
+                            type: string
+                            description: 审核详情页链接：外部审核平台的审核单地址，妙搭展示给开发者查看审核进度。\n必须是合法 HTTP/HTTPS URL，最大 2048 字符；可与 Action 同传（裁决时一并回填），\n也可单独传（仅回写链接、不改状态）；多次调用以最后一次为准，覆盖已有值
+                            example: https://www.xxx.com/approval?id=xxx
+                          operator:
+                            type: string
+                            description: 操作人 open_id
+                            example: abcdefgh
+                          message:
+                            type: string
+                            description: 审批意见 / 拒绝原因 / 审核中说明
+                            example: 当前封禁期，禁止发布
+                        description: 节点回写结果。PRD 明确这是「预留可扩展结构」，后续新增回写内容（驳回原因、扫描报告等）\n直接在本结构里追加子字段即可。\n\n技术方案里写的是 map<string,string>；这里落成具名
+                          struct：\nmap 无法表达 approval_url 的类型 / 长度 / URL 合法性约束，也无法在开平文档里自动生成字段说明，\n而「可扩展」在 thrift 里由 optional
+                          新字段天然保证，不需要退化成无类型 map。
+                    required:
+                    - app_id
+                    - release_id
+                    - node_task_id
+                    - node
+                    - node_status
+      x-lark-access-tokens:
+      - tenant
+      x-lark-scopes:
+      - spark:app:publish
+      x-lark-error-mappings:
+      - code: 3340001
+        httpCode: 400
+        msg: param is invalid
+      x-lark-rate-limit:
+        tier: 2
   /open-apis/spark/v1/apps/{app_id}/storage:
     get:
       operationId: spark_app_storage_download
@@ -1794,6 +1922,76 @@ paths:
         msg: param is invalid
       x-lark-rate-limit:
         tier: 8
+  /open-apis/spark/v1/apps/export:
+    post:
+      operationId: spark_app_export
+      summary: 导出妙搭应用代码包
+      tags:
+      - app
+      description: |-
+        【OpenAPI】导出妙搭应用源码归档（lark-cli `apps +export`；POST /open-apis/spark/v1/apps/export）。
+        把应用 git 仓库某次提交的快照打成 zip 直接下载，响应为裸二进制流（api.raw），不是签名 URL。
+        语义：导出的是「最后一次提交」快照，不是沙箱当前工作区；未 checkpoint 的改动不在归档里。
+        源应用定位：app_id 与 meta_token 恰传其一。app_id 是妙搭应用 ID（app_ 前缀）；
+        meta_token 是创意应用分享 URL /page/<token> 的页面标识（公开可分享，非凭据）。
+        两者都反查/校验到具体应用后按调用者的 DOWNLOAD 权限鉴权——持有 token ≠ 有权限。
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/app/export
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                app_id:
+                  type: string
+                  description: 妙搭应用唯一标识（app_ 前缀）。与 meta_token 恰传其一。
+                  example: app_4k6af8utt2s0n
+                meta_token:
+                  type: string
+                  description: 创意应用分享 URL /page/<token> 的页面标识（公开可分享，非凭据）。与 app_id 恰传其一。
+                  example: Mhztd0abc123
+                checkpoint_id:
+                  type: string
+                  description: 要导出的 checkpoint id；缺省时导出默认分支（sprint/default）最后一次提交。
+                  example: '7501234567890123456'
+                release_id:
+                  type: string
+                  description: 要导出代码的release_id；缺省时导出默认分支最新代码
+                  example: '7687553819701775556'
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      content_type:
+                        type: string
+                        description: 归档文件的 MIME 类型，用于标识文件格式，指导客户端正确处理下载内容。
+                        example: application/zip
+      x-lark-access-tokens:
+      - user
+      - tenant
+      x-lark-scopes:
+      - spark:app:read
+      x-lark-error-mappings:
+      - code: 3340001
+        httpCode: 400
+        msg: param is invalid
+      x-lark-rate-limit:
+        tier: 8
+      x-lark-file-download: true
   /open-apis/spark/v1/apps/{app_id}/access-scope:
     get:
       operationId: spark_app_get_app_visibility

@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-10-08）
+
+新增 2 · 移除 0 · 定义变更 0（全量共 1641 个接口）
+
+### 新增接口
+- `PUT /open-apis/spark/v1/apps/{app_id}/releases/{release_id}`「回写发布节点状态」（spark/v1/app.release/update）
+- `POST /open-apis/spark/v1/apps/export`「导出妙搭应用代码包」（spark/v1/app/export）
+
 ## explorer 全量轨道（2026-09-28）
 
 新增 0 · 移除 0 · 定义变更 1（全量共 1639 个接口）

@@ -13974,7 +13974,7 @@
     ],
     "id": "7620649199897824214",
     "name": "数据表",
-    "orderMark": "8",
+    "orderMark": "9",
     "parentId": "7613807342706412765",
     "type": 2
    },
@@ -14008,7 +14008,7 @@
     ],
     "id": "7620486901070630068",
     "name": "视图",
-    "orderMark": "7",
+    "orderMark": "8",
     "parentId": "7613807342706412765",
     "type": 2
    },
@@ -14066,7 +14066,7 @@
     ],
     "id": "7620649199897856982",
     "name": "枚举",
-    "orderMark": "6",
+    "orderMark": "7",
     "parentId": "7613807342706412765",
     "type": 2
    },
@@ -14196,7 +14196,7 @@
     ],
     "id": "7624199086187465665",
     "name": "文件存储",
-    "orderMark": "5",
+    "orderMark": "6",
     "parentId": "7613807342706412765",
     "type": 2
    },
@@ -14221,13 +14221,38 @@
     },
     "id": "7620858064161852623",
     "name": "执行 SQL",
-    "orderMark": "4",
+    "orderMark": "5",
     "parentId": "7613807342706412765",
     "type": 1
    },
    {
     "Score": 0,
     "children": [
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "export",
+        "project": "spark",
+        "resource": "app",
+        "version": "v1"
+       },
+       "apiKind": 3,
+       "apiPath": "/open-apis/spark/v1/apps/export",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app/export",
+       "httpMethod": "POST",
+       "supportAppTypes": [
+        "custom",
+        "isv"
+       ]
+      },
+      "id": "7692846107466206181",
+      "name": "导出妙搭应用代码包",
+      "orderMark": "1790735640651",
+      "parentId": "7620414549658258654",
+      "type": 1
+     },
      {
       "Score": 0,
       "apiSummary": {
@@ -14481,6 +14506,41 @@
     ],
     "id": "7620414549658258654",
     "name": "妙搭应用",
+    "orderMark": "4",
+    "parentId": "7613807342706412765",
+    "type": 2
+   },
+   {
+    "Score": 0,
+    "children": [
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "update",
+        "project": "spark",
+        "resource": "app.release",
+        "version": "v1"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/spark/v1/apps/:app_id/releases/:release_id",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/spark-v1/app-release/update",
+       "httpMethod": "PUT",
+       "supportAppTypes": [
+        "custom",
+        "isv"
+       ]
+      },
+      "id": "7692846107466222565",
+      "name": "回写发布节点状态",
+      "orderMark": "1790735491054",
+      "parentId": "7690560333960596409",
+      "type": 1
+     }
+    ],
+    "id": "7690560333960596409",
+    "name": "妙搭应用发布",
     "orderMark": "3",
     "parentId": "7613807342706412765",
     "type": 2
