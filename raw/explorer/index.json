@@ -2119,7 +2119,7 @@
   "httpMethod": "GET",
   "project": "approval",
   "resource": "task",
-  "sha256": "02686d8d152492904bee2f5685bf8a6d9a0c3ed467d483782b179f4a74e8c45f",
+  "sha256": "e8366927e0a048f9c68ce0ea1413b515ad9ee455c3bded31b9e5e8f85bc43c3f",
   "title": "查询审批任务列表",
   "version": "v4"
  },
@@ -16833,6 +16833,18 @@
   "resource": "device_record",
   "sha256": "e6bcc4b4dfdb2316765d9ba9aed4fccd85bfc8ad28ffad3be3e664be732ff60d",
   "title": "查询设备信息",
+  "version": "v2"
+ },
+ "security_and_compliance/v2/device_record/mine": {
+  "apiName": "mine",
+  "apiPath": "/open-apis/security_and_compliance/v2/device_records/mine",
+  "category": "安全合规 / 设备管理 V2 / 设备",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/security_and_compliance-v2/device_record/mine",
+  "httpMethod": "GET",
+  "project": "security_and_compliance",
+  "resource": "device_record",
+  "sha256": "f898c74a3c4bac54a6cf872fba3315ac178cabe161ab0add5b420db7b9342d64",
+  "title": "通过授权获取设备信息",
   "version": "v2"
  },
  "security_and_compliance/v2/device_record/update": {

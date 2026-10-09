@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-10-09）
+
+新增 1 · 移除 0 · 定义变更 1（全量共 1642 个接口）
+
+### 新增接口
+- `GET /open-apis/security_and_compliance/v2/device_records/mine`「通过授权获取设备信息」（security_and_compliance/v2/device_record/mine）
+
+### 定义变更
+- `GET /open-apis/approval/v4/tasks`「查询审批任务列表」（approval/v4/task/list）
+
 ## explorer 全量轨道（2026-10-08）
 
 新增 2 · 移除 0 · 定义变更 0（全量共 1641 个接口）
