@@ -17551,7 +17551,7 @@
   "httpMethod": "POST",
   "project": "spark",
   "resource": "directory.user",
-  "sha256": "245ba2c307380a73378876966e942bd3674e753377f88689ec758d83dd400a38",
+  "sha256": "9be7e2d20071e3aa87edb2e7ae3d50328a950e8be8f465d74c9d0ca0bcf64c88",
   "title": "妙搭和飞书用户 ID 转换",
   "version": "v1"
  },

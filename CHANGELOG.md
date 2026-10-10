@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-10-10）
+
+新增 0 · 移除 0 · 定义变更 1（全量共 1642 个接口）
+
+### 定义变更
+- `POST /open-apis/spark/v1/directory/user/id_convert`「妙搭和飞书用户 ID 转换」（spark/v1/directory.user/id_convert）
+
 ## explorer 全量轨道（2026-10-09）
 
 新增 1 · 移除 0 · 定义变更 1（全量共 1642 个接口）
