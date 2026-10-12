@@ -13519,7 +13519,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "message",
-  "sha256": "58ee10000bef010ee9a61f09da3f985dcfd19df4acc2e884232fb4c1372e843f",
+  "sha256": "d2862b3f8c44f6ccd8e97e9245d98efd356375b4f05193d7df9ee619880d1f3f",
   "title": "发送消息",
   "version": "v1"
  },
@@ -13543,7 +13543,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "message",
-  "sha256": "84e657440bfefbd4119d7ce9eaac18c9c7c7539a79d8721e340493e81d3131ab",
+  "sha256": "a6e7782dd356b08596f3fe3b8e4eb59b4e69f6a587ba240ffa9829310da5de92",
   "title": "转发消息",
   "version": "v1"
  },
@@ -13555,7 +13555,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "message",
-  "sha256": "1d1bbf5ecda314de336b23405b360e7615afa2c4b38db5f2978f46cf73428c6f",
+  "sha256": "8fea069f48a9d456844012bf3d85e40e487fea971c3ab63f61ab9fa9954ba352",
   "title": "获取指定消息的内容",
   "version": "v1"
  },
@@ -13567,7 +13567,7 @@
   "httpMethod": "GET",
   "project": "im",
   "resource": "message",
-  "sha256": "413af2c6e0ebbba7aa42cdc7d65608f9d8d9dba51045f2cb1f061b2e5833111a",
+  "sha256": "8d994536ea4502f53bc504f55f5bd79fbee082afb85fcb1233c29d955ff15ae6",
   "title": "获取会话历史消息",
   "version": "v1"
  },
@@ -13579,7 +13579,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "message",
-  "sha256": "bd74bc56e701c8986a88fdb93aafb8c9c51ae99db26a4eba0af9f036694fdb65",
+  "sha256": "250bf0c671cadb93d5bd5d1e82f350a38ac1585365987ed35e13bcde1633d333",
   "title": "合并转发消息",
   "version": "v1"
  },
@@ -13627,7 +13627,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "message",
-  "sha256": "980bf06c1c233436e0df23aef7bffb8edda5fd8e1376272e7ec745f24efab644",
+  "sha256": "c23238f29a17a5700d130f522fbc98d6c181b0f49da5ce3ba2676990c14822d4",
   "title": "回复消息",
   "version": "v1"
  },
@@ -13651,7 +13651,7 @@
   "httpMethod": "PUT",
   "project": "im",
   "resource": "message",
-  "sha256": "27251b4638b884628b7ff6ed0f4359cec79ce7a61d23b4936be697960efd91b8",
+  "sha256": "9f391d98481a3b7b7d0a458b0774cce4e52bb874a6fcddf7ae42c1cf3f9b30bd",
   "title": "编辑消息",
   "version": "v1"
  },
@@ -13735,7 +13735,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "thread",
-  "sha256": "3ee2e01899523ea81b517c8ca5ae18b5b25c04bc937e5b81ac948afd85c0be7a",
+  "sha256": "49e80dd7546b136874bd4be3e2a4768c1f6dcf171c502351c1f48cbdc6815d23",
   "title": "转发话题",
   "version": "v1"
  },

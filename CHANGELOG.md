@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-10-12）
+
+新增 0 · 移除 0 · 定义变更 8（全量共 1642 个接口）
+
+### 定义变更
+- `POST /open-apis/im/v1/messages`「发送消息」（im/v1/message/create）
+- `POST /open-apis/im/v1/messages/{message_id}/forward`「转发消息」（im/v1/message/forward）
+- `GET /open-apis/im/v1/messages/{message_id}`「获取指定消息的内容」（im/v1/message/get）
+- `GET /open-apis/im/v1/messages`「获取会话历史消息」（im/v1/message/list）
+- `POST /open-apis/im/v1/messages/merge_forward`「合并转发消息」（im/v1/message/merge_forward）
+- `POST /open-apis/im/v1/messages/{message_id}/reply`「回复消息」（im/v1/message/reply）
+- `PUT /open-apis/im/v1/messages/{message_id}`「编辑消息」（im/v1/message/update）
+- `POST /open-apis/im/v1/threads/{thread_id}/forward`「转发话题」（im/v1/thread/forward）
+
 ## explorer 全量轨道（2026-10-10）
 
 新增 0 · 移除 0 · 定义变更 1（全量共 1642 个接口）
