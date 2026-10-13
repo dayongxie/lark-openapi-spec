@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+3d5c0615
+  version: 1.0.0+10d8a98d
   x-lark-project: vc
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -677,6 +677,11 @@ paths:
                                         type: string
                                         description: 发送时间（毫秒级时间戳）
                                         example: '1712345678000'
+                                      count:
+                                        type: integer
+                                        description: 本条消息对应的表情次数，仅在 message_type 为 3（REACTION）时返回。例如，count 为 3 表示本条消息包含 3
+                                          次相同表情，不代表会议累计次数。历史消息可能不包含此字段，缺失时无法确定准确次数。
+                                        example: '1'
                                   description: 聊天消息内容（activity_event_type = chat_received 时填充）
                                 magic_share_started_items:
                                   type: array

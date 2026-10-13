@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+3a9c2305
+  version: 1.0.0+ffadeeaa
   x-lark-project: hire
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -22885,7 +22885,7 @@ paths:
       summary: 获取人才列表
       tags:
       - talent
-      description: 根据更新时间获取人才列表，仅支持获取默认字段信息，获取详细信息可调用「获取人才详细」接口
+      description: 查询人才列表，可按更新时间及人才库筛选；列表仅返回默认字段，详细信息请调用「获取人才详细」接口
       externalDocs:
         description: 飞书开放平台官方文档
         url: https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/talent/list
@@ -22979,6 +22979,13 @@ paths:
             ignore_empty_error: 忽略结果为空时的报错
         description: 请求控制参数
         example: ignore_empty_error
+      - name: talent_pool_id
+        in: query
+        required: false
+        schema:
+          type: string
+        description: 人才库 ID，用于筛选人才列表
+        example: '6891560630172518670'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）

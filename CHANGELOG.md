@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-10-13）
+
+新增 0 · 移除 0 · 定义变更 2（全量共 1642 个接口）
+
+### 定义变更
+- `GET /open-apis/hire/v1/talents`「获取人才列表」（hire/v1/talent/list）
+- `GET /open-apis/vc/v1/bots/events`「获取会议事件列表」（vc/v1/bot/events）
+
 ## explorer 全量轨道（2026-10-12）
 
 新增 0 · 移除 0 · 定义变更 8（全量共 1642 个接口）

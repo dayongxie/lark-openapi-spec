@@ -12583,7 +12583,7 @@
   "httpMethod": "GET",
   "project": "hire",
   "resource": "talent",
-  "sha256": "a11447f5f30ffbeda4292656aa083790f68121a6cadf8ac08ad52c9ed1358c50",
+  "sha256": "3d20b2929cb923010e1bfe8431c38bf8211c604acec5c570ba1437721b3b768f",
   "title": "获取人才列表",
   "version": "v1"
  },
@@ -18679,7 +18679,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "bot",
-  "sha256": "ed39c3541c3d11591b6137787dc53f25c8b4f92685150496d40ee84a7442c092",
+  "sha256": "be5a901879573daad8fb1fb3655bfae88288e5715426fbfdd24dc532ee786965",
   "title": "获取会议事件列表",
   "version": "v1"
  },
