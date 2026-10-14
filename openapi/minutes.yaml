@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+ea50847a
+  version: 1.0.0+a193bb66
   x-lark-project: minutes
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -192,6 +192,9 @@ paths:
       - code: 2091005
         httpCode: 403
         msg: permission deny
+      - code: 2091006
+        httpCode: 500
+        msg: service internal error
       x-lark-rate-limit:
         tier: 6
   /open-apis/minutes/v1/minutes/{minute_token}/transcript:
@@ -486,6 +489,9 @@ paths:
       - code: 2091005
         httpCode: 403
         msg: permission deny
+      - code: 2091006
+        httpCode: 500
+        msg: service internal error
       x-lark-rate-limit:
         tier: 6
   /open-apis/minutes/v1/minutes/{minute_token}/clip:
@@ -719,6 +725,9 @@ paths:
       - code: 2091005
         httpCode: 403
         msg: permission deny
+      - code: 2091006
+        httpCode: 500
+        msg: service internal error
       x-lark-rate-limit:
         tier: 6
   /open-apis/minutes/v1/minutes/search:

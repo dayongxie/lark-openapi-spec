@@ -15415,7 +15415,7 @@
   "httpMethod": "GET",
   "project": "minutes",
   "resource": "minute.statistics",
-  "sha256": "b6d01a30eaa5a9bc25743ee9dc1e4349c35c63d9b0d679fbfd6b19048c3c8a31",
+  "sha256": "293b9c823df862d5307618ea3f61688fe641b964de4dbd164e6b35387eea4a75",
   "title": "获取妙记统计数据",
   "version": "v1"
  },
@@ -15439,7 +15439,7 @@
   "httpMethod": "GET",
   "project": "minutes",
   "resource": "minute",
-  "sha256": "b93e027c2b2bd8b1b7f0e446d041704097d70d5e79e54c6f99124c6053ae8aca",
+  "sha256": "f42a99967515dd4bc52bbf2ef813d78ea8702d71b01e676492f60ffa636444ae",
   "title": "获取妙记AI产物",
   "version": "v1"
  },
@@ -15463,7 +15463,7 @@
   "httpMethod": "GET",
   "project": "minutes",
   "resource": "minute",
-  "sha256": "d54bed38931db322a7e8eca3141953c58b0c85205ec12aed9118766fe60bdea4",
+  "sha256": "66b76a33ea5d400728891276ef2aa0853b23364342d7986596e9838fa7451605",
   "title": "获取妙记信息",
   "version": "v1"
  },
@@ -18667,7 +18667,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "bot",
-  "sha256": "798f80f8b107a05cfcc0b2d3fbd25053316e1debe2ec9ba5fdaf19401731242c",
+  "sha256": "016dd55deee85fd15a6d61da686670c48f3d4cabc35ef4f845199b237b569a1b",
   "title": "会中倒计时",
   "version": "v1"
  },
@@ -18679,7 +18679,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "bot",
-  "sha256": "be5a901879573daad8fb1fb3655bfae88288e5715426fbfdd24dc532ee786965",
+  "sha256": "dd46e67c29322110bf9f2c3bdac8d5da985e34d13841ed112e3ef2d6b725236b",
   "title": "获取会议事件列表",
   "version": "v1"
  },
@@ -18691,7 +18691,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "bot",
-  "sha256": "d5b56aee45a8ae8c3555ea3685cbe98f074a033f69208ec46b81b5c9828d1ac1",
+  "sha256": "df7991217c2ef29f66c9b0c50dca55bbd452fb52d3ec551594e828864b1a012c",
   "title": "加入会议",
   "version": "v1"
  },
@@ -18703,7 +18703,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "bot",
-  "sha256": "17ead8c530a317b496bf03bba7ab761ee9c509ad7d1acf8972cbfa866b17d294",
+  "sha256": "3256c93b843ce36930b3b6308741a5ebba4815ce1bb40b85fcb6c5c37f3fd70d",
   "title": "离开会议",
   "version": "v1"
  },
@@ -18715,7 +18715,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "bot",
-  "sha256": "22d1b175d2209febc0d118a72a61dd1ca9bce33e5f3be2e9de3e2852c765e77b",
+  "sha256": "2b262f5fe65c3005d206d1e2d30d2bd01683590649d88da6cd2f4ec5700f9d8a",
   "title": "发送会中消息",
   "version": "v1"
  },
@@ -18727,7 +18727,7 @@
   "httpMethod": "GET",
   "project": "vc",
   "resource": "bot",
-  "sha256": "787cd33b57bf6d74ab70433d67b00be3a5bb8bf899f5aa8b9aa66313f1e3ce2c",
+  "sha256": "a45985664529dece0650bc714748844957b5e5c8386d401a36624c0d9e34bcdd",
   "title": "获取用户活跃会议列表",
   "version": "v1"
  },
@@ -18835,7 +18835,7 @@
   "httpMethod": "PATCH",
   "project": "vc",
   "resource": "meeting.recording",
-  "sha256": "3bac69df67e1ae53249a27f440e803cf9184d66c8c0032eb4b49995b7e6a09e8",
+  "sha256": "ce46ce54ec5c4562128bd9249cb2035c9c2d760c6454cd63cb407ee91e7f29e1",
   "title": "开始录制",
   "version": "v1"
  },
@@ -18847,7 +18847,7 @@
   "httpMethod": "PATCH",
   "project": "vc",
   "resource": "meeting.recording",
-  "sha256": "1a7296007a66b74478ad573395ad917bec044f838a42054375a4e369a3548cb8",
+  "sha256": "478bd2813fdae5266debc7629cea6876479bc9af5868b29bb3869ca0fe82e1bf",
   "title": "停止录制",
   "version": "v1"
  },
@@ -18859,7 +18859,7 @@
   "httpMethod": "PATCH",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "cc769ce59c0d3a7ac759f2882b0344099b75b9c5d18fce3716e58fe07ae9c94a",
+  "sha256": "2cfd9267790339cb3c6901b2dbb4aa65b8cdbf9299efffe3bc1fcfda3733f691",
   "title": "结束会议",
   "version": "v1"
  },
@@ -18883,7 +18883,7 @@
   "httpMethod": "PATCH",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "feddc879c2225b6aa7ce5eec20d165b18915fc0272e32e033d24a9145d97dde7",
+  "sha256": "ae4a42852340807e723e7c82e5b0bab4e2f9ecfc0cc7e9e00ffc8b06c2999cf7",
   "title": "邀请参会人",
   "version": "v1"
  },
@@ -18895,7 +18895,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "5fc5c19f11e90b956b7d0ffe6daf447bb8034a4bd020b047d6485744474155a4",
+  "sha256": "7dbd247bbaef07419f7a3e22dbdc75b01b632a3a29148ecdee866d2db351ef67",
   "title": "移除参会人",
   "version": "v1"
  },
@@ -18931,7 +18931,7 @@
   "httpMethod": "PATCH",
   "project": "vc",
   "resource": "meeting",
-  "sha256": "8047c9985669816e7594c7d9d1f72a0402d7084ffba24901f08444b2ca9a075a",
+  "sha256": "c7cd8d244fd7979fb2da8fc27c836b9bf979522d69171cb58346a1488a1ee076",
   "title": "设置主持人",
   "version": "v1"
  },

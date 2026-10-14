@@ -1,5 +1,26 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-10-14）
+
+新增 0 · 移除 0 · 定义变更 15（全量共 1642 个接口）
+
+### 定义变更
+- `GET /open-apis/minutes/v1/minutes/{minute_token}/statistics`「获取妙记统计数据」（minutes/v1/minute.statistics/get）
+- `GET /open-apis/minutes/v1/minutes/{minute_token}/artifacts`「获取妙记AI产物」（minutes/v1/minute/artifacts）
+- `GET /open-apis/minutes/v1/minutes/{minute_token}`「获取妙记信息」（minutes/v1/minute/get）
+- `POST /open-apis/vc/v1/bots/countdown`「会中倒计时」（vc/v1/bot/countdown）
+- `GET /open-apis/vc/v1/bots/events`「获取会议事件列表」（vc/v1/bot/events）
+- `POST /open-apis/vc/v1/bots/join`「加入会议」（vc/v1/bot/join）
+- `POST /open-apis/vc/v1/bots/leave`「离开会议」（vc/v1/bot/leave）
+- `POST /open-apis/vc/v1/bots/message`「发送会中消息」（vc/v1/bot/message）
+- `GET /open-apis/vc/v1/bots/user_active_meeting`「获取用户活跃会议列表」（vc/v1/bot/user_active_meeting）
+- `PATCH /open-apis/vc/v1/meetings/{meeting_id}/recording/start`「开始录制」（vc/v1/meeting.recording/start）
+- `PATCH /open-apis/vc/v1/meetings/{meeting_id}/recording/stop`「停止录制」（vc/v1/meeting.recording/stop）
+- `PATCH /open-apis/vc/v1/meetings/{meeting_id}/end`「结束会议」（vc/v1/meeting/end）
+- `PATCH /open-apis/vc/v1/meetings/{meeting_id}/invite`「邀请参会人」（vc/v1/meeting/invite）
+- `POST /open-apis/vc/v1/meetings/{meeting_id}/kickout`「移除参会人」（vc/v1/meeting/kickout）
+- `PATCH /open-apis/vc/v1/meetings/{meeting_id}/set_host`「设置主持人」（vc/v1/meeting/set_host）
+
 ## explorer 全量轨道（2026-10-13）
 
 新增 0 · 移除 0 · 定义变更 2（全量共 1642 个接口）

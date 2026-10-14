@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+10d8a98d
+  version: 1.0.0+1758f27d
   x-lark-project: vc
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -355,6 +355,9 @@ paths:
       - code: 121007
         httpCode: 400
         msg: meeting not exist
+      - code: 122003
+        httpCode: 400
+        msg: operator user not in meeting
       - code: 121008
         httpCode: 403
         msg: lark security forbidden
@@ -367,6 +370,9 @@ paths:
       - code: 121011
         httpCode: 400
         msg: countdown is in use
+      - code: 121019
+        httpCode: 429
+        msg: Too many requests. Please try again later.
       x-lark-rate-limit:
         tier: 3
   /open-apis/vc/v1/bots/events:
@@ -935,20 +941,35 @@ paths:
       x-lark-field-scopes:
       - contact:user.employee_id:readonly
       x-lark-error-mappings:
+      - code: 121001
+        httpCode: 500
+        msg: service internal error
       - code: 120001
         httpCode: 400
         msg: param is invalid
+      - code: 121005
+        httpCode: 403
+        msg: no permission
       - code: 120002
         httpCode: 403
-        msg: This agent is currently unable to join the meeting. Ask the meeting host to enable "AI Summary" and try again.
-          If it is already enabled, verify that "Allow agents to join meetings" is enabled in the current meeting's "Security"
-          settings.
+        msg: 'This user is temporarily unable to retrieve meeting events. Ask the meeting host to enable "AI Summary" and
+          try again. If it is already enabled, confirm that "Allow agents to join meetings" is enabled in the current meeting''s
+          "Security" settings. See: https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/events'
       - code: 120003
         httpCode: 403
         msg: user is not in the meeting
       - code: 120004
         httpCode: 403
         msg: bot is not in the meeting
+      - code: 121019
+        httpCode: 429
+        msg: Too many requests. Please try again later.
+      - code: 122001
+        httpCode: 400
+        msg: meeting status unexpected
+      - code: 122002
+        httpCode: 404
+        msg: meeting not exist
       x-lark-rate-limit:
         tier: 3
       x-lark-pagination: true
@@ -1077,6 +1098,9 @@ paths:
       - code: 121001
         httpCode: 500
         msg: internal service error
+      - code: 121023
+        httpCode: 400
+        msg: meeting source not support
       - code: 121002
         httpCode: 400
         msg: param is invalid
@@ -1098,6 +1122,9 @@ paths:
       - code: 121008
         httpCode: 400
         msg: meeting locked
+      - code: 121107
+        httpCode: 400
+        msg: participant status unexpected
       - code: 121009
         httpCode: 400
         msg: need password
@@ -1121,9 +1148,9 @@ paths:
         msg: lark security forbidden
       - code: 121016
         httpCode: 403
-        msg: This agent is currently unable to join the meeting. Ask the meeting host to enable "AI Summary" and try again.
-          If it is already enabled, verify that "Allow agents to join meetings" is enabled in the current meeting's "Security"
-          settings.
+        msg: 'This agent is temporarily unable to join the meeting. Ask the meeting host to enable "AI Summary" and try again.
+          If it is already enabled, confirm that "Allow agents to join meetings" is enabled in the current meeting''s "Security"
+          settings. See: https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/join'
       - code: 121017
         httpCode: 403
         msg: user is not in the meeting
@@ -1137,6 +1164,15 @@ paths:
         httpCode: 403
         msg: You are not permitted to start this scheduled meeting. Ask the organizer to allow participants to start the meeting
           before the organizer joins, then retry.
+      - code: 121022
+        httpCode: 403
+        msg: This feature is not in gray release
+      - code: 121111
+        httpCode: 403
+        msg: bot join or leave only supports app access token; user access token is not supported
+      - code: 121019
+        httpCode: 429
+        msg: Too many requests. Please try again later.
       x-lark-rate-limit:
         tier: 6
   /open-apis/vc/v1/bots/leave:
@@ -1233,13 +1269,21 @@ paths:
         msg: participant status unexpected
       - code: 121108
         httpCode: 403
-        msg: switch for allowing agents to join meetings is disabled
+        msg: 'This agent is temporarily unable to leave this meeting. Ask the meeting host to enable "AI Summary" and try
+          again. If it is already enabled, confirm that "Allow agents to join meetings" is enabled in the current meeting''s
+          "Security" settings. See: https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/leave'
       - code: 121109
         httpCode: 403
         msg: user is not in the meeting
       - code: 121110
         httpCode: 403
         msg: bot is not in the meeting
+      - code: 121111
+        httpCode: 403
+        msg: bot join or leave only supports app access token; user access token is not supported
+      - code: 121019
+        httpCode: 429
+        msg: Too many requests. Please try again later.
       x-lark-rate-limit:
         tier: 6
   /open-apis/vc/v1/bots/message:
@@ -1301,9 +1345,38 @@ paths:
       x-lark-scopes:
       - vc:meeting.message:write
       x-lark-error-mappings:
+      - code: 121001
+        httpCode: 500
+        msg: service internal error
       - code: 120001
         httpCode: 400
         msg: param is invalid
+      - code: 121005
+        httpCode: 403
+        msg: no permission
+      - code: 121009
+        httpCode: 403
+        msg: 'This user is temporarily unable to send meeting messages. Ask the meeting host to enable "AI Summary" and try
+          again. If it is already enabled, confirm that "Allow agents to join meetings" is enabled in the current meeting''s
+          "Security" settings. See: https://open.larkoffice.com/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/bot/message'
+      - code: 121010
+        httpCode: 403
+        msg: user is not in the meeting
+      - code: 121011
+        httpCode: 403
+        msg: bot is not in the meeting
+      - code: 121013
+        httpCode: 403
+        msg: meeting settings do not allow current identity to send this message
+      - code: 121019
+        httpCode: 429
+        msg: Too many requests. Please try again later.
+      - code: 122001
+        httpCode: 400
+        msg: meeting status unexpected
+      - code: 122002
+        httpCode: 404
+        msg: meeting not exist
       x-lark-rate-limit:
         tier: 3
   /open-apis/vc/v1/bots/user_active_meeting:
@@ -1415,6 +1488,9 @@ paths:
       - code: 121011
         httpCode: 403
         msg: bot is not in the meeting
+      - code: 121019
+        httpCode: 429
+        msg: Too many requests. Please try again later.
       x-lark-rate-limit:
         tier: 6
       x-lark-id-transform:
@@ -2297,6 +2373,12 @@ paths:
       - code: 122003
         httpCode: 400
         msg: operator user not in meeting
+      - code: 121019
+        httpCode: 429
+        msg: Too many requests. Please try again later.
+      - code: 124003
+        httpCode: 400
+        msg: The recording quota has been exhausted.
       x-lark-rate-limit:
         tier: 0
   /open-apis/vc/v1/meetings/{meeting_id}/recording/stop:
@@ -2355,6 +2437,9 @@ paths:
       - code: 122003
         httpCode: 400
         msg: operator user not in meeting
+      - code: 121019
+        httpCode: 429
+        msg: Too many requests. Please try again later.
       x-lark-rate-limit:
         tier: 0
   /open-apis/vc/v1/meetings/{meeting_id}/end:
@@ -2416,6 +2501,9 @@ paths:
       - code: 122003
         httpCode: 400
         msg: operator user not in meeting
+      - code: 121019
+        httpCode: 429
+        msg: Too many requests. Please try again later.
       x-lark-rate-limit:
         tier: 4
   /open-apis/vc/v1/meetings/{meeting_id}:
@@ -2853,6 +2941,9 @@ paths:
       - code: 122008
         httpCode: 400
         msg: meeting is locked
+      - code: 121019
+        httpCode: 429
+        msg: Too many requests. Please try again later.
       x-lark-rate-limit:
         tier: 4
       x-lark-id-transform:
@@ -3026,6 +3117,9 @@ paths:
       - code: 122005
         httpCode: 400
         msg: cannot operate self
+      - code: 121019
+        httpCode: 429
+        msg: Too many requests. Please try again later.
       x-lark-rate-limit:
         tier: 4
       x-lark-id-transform:
@@ -3563,6 +3657,9 @@ paths:
       - code: 122009
         httpCode: 400
         msg: participant status not expected
+      - code: 121019
+        httpCode: 429
+        msg: Too many requests. Please try again later.
       x-lark-rate-limit:
         tier: 4
       x-lark-id-transform:

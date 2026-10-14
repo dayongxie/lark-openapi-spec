@@ -1,8 +1,8 @@
 # Generated from lark-cli help output — DO NOT EDIT BY HAND.
 domain: base
 description: Table, field, record, view, dashboard, workflow, form, role & permission management
-cli_version: 1.0.97
-extracted_at: '2026-09-29T06:55:39Z'
+cli_version: 1.0.98
+extracted_at: '2026-10-14T06:10:08Z'
 note: 从 lark-cli --help 输出自动提取，仅供参考；字段语义以上游 CLI 为准。
 shortcuts:
 - name: +advperm-disable
@@ -3009,14 +3009,14 @@ shortcuts:
   - name: --format
     shorthand: null
     type: string
-    description: 'output format: markdown (default display) | json raw matrix (current inline behavior may be deprecated and
-      replaced by ndjson-like artifact output) | ndjson artifact (records file plus manifest summary and column schema/stats;
-      preferred with file I/O for analysis) (markdown|json|ndjson)'
-    default: markdown
+    description: 'output format: ndjson (default; records file plus manifest summary and column schema/stats) | json (inline
+      raw matrix) (ndjson|json)'
+    default: ndjson
   - name: --output
     shorthand: null
     type: string
-    description: 'preferred analysis output: relative .ndjson output path; implies --format ndjson when format is omitted'
+    description: 'preferred analysis output: relative .ndjson output path; omit to generate a filename automatically (requires
+      ndjson)'
   - name: --overwrite
     shorthand: null
     type: bool
@@ -3129,19 +3129,19 @@ shortcuts:
   - name: --limit
     shorthand: null
     type: int
-    description: maximum records to return; range 1-200, or 1-2000 for ndjson; omitted limit uses 2000 for ndjson
-    default: '100'
+    description: maximum records to return; ndjson defaults to 2000 (range 1-2000); json defaults to 100 (range 1-200)
+    default: '2000'
   - name: --format
     shorthand: null
     type: string
-    description: 'output format: markdown (default display) | json raw matrix (current inline behavior may be deprecated and
-      replaced by ndjson-like artifact output) | ndjson artifact (records file plus manifest summary and column schema/stats;
-      preferred with file I/O for analysis) (markdown|json|ndjson)'
-    default: markdown
+    description: 'output format: ndjson (default; records file plus manifest summary and column schema/stats) | json (inline
+      raw matrix) (ndjson|json)'
+    default: ndjson
   - name: --output
     shorthand: null
     type: string
-    description: 'preferred analysis output: relative .ndjson output path; implies --format ndjson when format is omitted'
+    description: 'preferred analysis output: relative .ndjson output path; omit to generate a filename automatically (requires
+      ndjson)'
   - name: --overwrite
     shorthand: null
     type: bool
@@ -3278,14 +3278,14 @@ shortcuts:
   - name: --format
     shorthand: null
     type: string
-    description: 'output format: markdown (default display) | json raw matrix (current inline behavior may be deprecated and
-      replaced by ndjson-like artifact output) | ndjson artifact (records file plus manifest summary and column schema/stats;
-      preferred with file I/O for analysis) (markdown|json|ndjson)'
-    default: markdown
+    description: 'output format: ndjson (default; records file plus manifest summary and column schema/stats) | json (inline
+      raw matrix) (ndjson|json)'
+    default: ndjson
   - name: --output
     shorthand: null
     type: string
-    description: 'preferred analysis output: relative .ndjson output path; implies --format ndjson when format is omitted'
+    description: 'preferred analysis output: relative .ndjson output path; omit to generate a filename automatically (requires
+      ndjson)'
   - name: --overwrite
     shorthand: null
     type: bool
