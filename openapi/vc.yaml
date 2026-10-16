@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+1758f27d
+  version: 1.0.0+f467e720
   x-lark-project: vc
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -1121,7 +1121,7 @@ paths:
         msg: callee is busy
       - code: 121008
         httpCode: 400
-        msg: meeting locked
+        msg: The meeting is locked. Ask the meeting host to unlock the meeting and try again.
       - code: 121107
         httpCode: 400
         msg: participant status unexpected
@@ -1173,6 +1173,14 @@ paths:
       - code: 121019
         httpCode: 429
         msg: Too many requests. Please try again later.
+      - code: 121024
+        httpCode: 403
+        msg: The agent belongs to a different tenant and is not allowed by the meeting access scope. Ask the meeting host
+          to update the access scope and try again.
+      - code: 121025
+        httpCode: 403
+        msg: The agent is not included in the meeting's permitted contacts, groups, calendar guests, users, or rooms. Ask
+          the meeting host to update the access scope and try again.
       x-lark-rate-limit:
         tier: 6
   /open-apis/vc/v1/bots/leave:
@@ -1263,7 +1271,7 @@ paths:
         msg: meeting not exist
       - code: 121106
         httpCode: 400
-        msg: meeting locked
+        msg: The meeting is locked. Ask the meeting host to unlock the meeting and try again.
       - code: 121107
         httpCode: 400
         msg: participant status unexpected

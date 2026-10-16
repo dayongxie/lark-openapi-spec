@@ -194,31 +194,7 @@
       },
       "id": "6995779366223822852",
       "name": "自建应用获取 app_access_token",
-      "orderMark": "7",
-      "parentId": "7182025466500890652",
-      "type": 1
-     },
-     {
-      "Score": 0,
-      "apiSummary": {
-       "apiIdentity": {
-        "apiName": "tenant_access_token_internal",
-        "project": "auth",
-        "resource": "auth",
-        "version": "v3"
-       },
-       "apiKind": 1,
-       "apiPath": "/open-apis/auth/v3/tenant_access_token/internal",
-       "debuggable": true,
-       "fullPath": "/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token_internal",
-       "httpMethod": "POST",
-       "supportAppTypes": [
-        "custom"
-       ]
-      },
-      "id": "6995779366223724548",
-      "name": "自建应用获取 tenant_access_token",
-      "orderMark": "5",
+      "orderMark": "8",
       "parentId": "7182025466500890652",
       "type": 1
      },
@@ -44972,6 +44948,30 @@
    {
     "Score": 0,
     "children": [
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "tenant_access_token_internal",
+        "project": "auth",
+        "resource": "auth",
+        "version": "v3"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/auth/v3/tenant_access_token/internal",
+       "debuggable": true,
+       "fullPath": "/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token_internal",
+       "httpMethod": "POST",
+       "supportAppTypes": [
+        "custom"
+       ]
+      },
+      "id": "6995779366223724548",
+      "name": "自建应用获取 tenant_access_token",
+      "orderMark": "1791970012370",
+      "parentId": "7306354036046741505",
+      "type": 1
+     },
      {
       "Score": 0,
       "apiSummary": {

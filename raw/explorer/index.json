@@ -2762,7 +2762,7 @@
  "auth/v3/auth/tenant_access_token_internal": {
   "apiName": "tenant_access_token_internal",
   "apiPath": "/open-apis/auth/v3/tenant_access_token/internal",
-  "category": "认证及授权 / 访问凭证管理",
+  "category": "历史版本（不推荐） / 身份与认证",
   "docPath": "/ukTMukTMukTM/ukDNz4SO0MjL5QzM/auth-v3/auth/tenant_access_token_internal",
   "httpMethod": "POST",
   "project": "auth",
@@ -13867,7 +13867,7 @@
   "httpMethod": "POST",
   "project": "im",
   "resource": "tag",
-  "sha256": "97e6a329888c3d6156f07b5aa057faf24549340e08344ac03dcf730b43016101",
+  "sha256": "f99639ecb2cd2ebc2e1672aca221218e70af036cb41a9a635feca5796fa02a73",
   "title": "创建标签",
   "version": "v2"
  },
@@ -18691,7 +18691,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "bot",
-  "sha256": "df7991217c2ef29f66c9b0c50dca55bbd452fb52d3ec551594e828864b1a012c",
+  "sha256": "ddd50e526947d7e1918bc9870d12ff095158a2233b1898565d9cc9fe31b121cf",
   "title": "加入会议",
   "version": "v1"
  },
@@ -18703,7 +18703,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "bot",
-  "sha256": "3256c93b843ce36930b3b6308741a5ebba4815ce1bb40b85fcb6c5c37f3fd70d",
+  "sha256": "eaf2c01b4583a8ff29e3c2ecce67b0b8b6eba81870d8dc2760ed29557b7ad2b1",
   "title": "离开会议",
   "version": "v1"
  },

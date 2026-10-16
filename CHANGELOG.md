@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-10-16）
+
+新增 0 · 移除 0 · 定义变更 3（全量共 1642 个接口）
+
+### 定义变更
+- `POST /open-apis/im/v2/tags`「创建标签」（im/v2/tag/create）
+- `POST /open-apis/vc/v1/bots/join`「加入会议」（vc/v1/bot/join）
+- `POST /open-apis/vc/v1/bots/leave`「离开会议」（vc/v1/bot/leave）
+
 ## explorer 全量轨道（2026-10-14）
 
 新增 0 · 移除 0 · 定义变更 15（全量共 1642 个接口）
