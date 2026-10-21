@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+70098e1c
+  version: 1.0.0+201acdb5
   x-lark-project: directory
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -1707,8 +1707,6 @@ paths:
                           type: string
                           description: 别名
                           example: jack
-                      required:
-                      - name
                       description: 姓名
                     mobile:
                       type: string
@@ -2393,6 +2391,18 @@ paths:
             open_department_id: department
         description: 部门ID类型
         example: open_department_id
+      - name: user_auth_type
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - user
+          - admin_user
+          x-enum-descriptions:
+            user: user
+            admin_user: admin_user
+        description: UAT鉴权身份，默认管理员
       requestBody:
         required: true
         content:
@@ -2424,8 +2434,6 @@ paths:
                           type: string
                           description: 别名
                           example: jack
-                      required:
-                      - name
                       description: 姓名
                     mobile:
                       type: string

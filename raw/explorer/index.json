@@ -2623,7 +2623,7 @@
   "httpMethod": "POST",
   "project": "attendance",
   "resource": "user_stats_data",
-  "sha256": "4c7cd6c759c9653540bcbb42920b9ffb940f24edb4ed64b7037fc9dd65f2c92e",
+  "sha256": "5bcb3568259c2cdae10b51f329dbbb303820f5c84355181e7981b5d8ba9f137c",
   "title": "查询统计数据",
   "version": "v1"
  },
@@ -2647,7 +2647,7 @@
   "httpMethod": "POST",
   "project": "attendance",
   "resource": "user_stats_view",
-  "sha256": "422766b6692892df90e357039bae41ecf027ae615df465669821864e1dc37aea",
+  "sha256": "e4748bbfe03f5c7030eec44ee48c93fb5126440946ee771bbd415b427379517a",
   "title": "查询统计设置",
   "version": "v1"
  },
@@ -2659,7 +2659,7 @@
   "httpMethod": "PUT",
   "project": "attendance",
   "resource": "user_stats_view",
-  "sha256": "61c90a224911c60958d9a9cd78e99aebb13cf7e80d8ff6134e2be031d1c399b7",
+  "sha256": "e6a653bcee2a2873379ab825e1925cae1d973545d11ce4b7c6178419d2faf8af",
   "title": "更新统计设置",
   "version": "v1"
  },
@@ -7495,7 +7495,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "employee",
-  "sha256": "ade0dae3e185d7d078f0eb84af2632102533a7d21e1524747b48ad83e8baad7f",
+  "sha256": "700b8fa1a86703c66d6f9da62c9e12ae3096481101de9cb61479391ea941acce",
   "title": "添加人员",
   "version": "v2"
  },
@@ -8839,7 +8839,7 @@
   "httpMethod": "POST",
   "project": "directory",
   "resource": "employee",
-  "sha256": "cd75427a3f85b7a5c6aace38117e7754ea21587c1d3350a364dc9718f52da735",
+  "sha256": "f9a8c9e2722818d37c5b030b5ed669a1079b08d588969395fe07acc064fca42f",
   "title": "创建员工",
   "version": "v1"
  },
@@ -8887,7 +8887,7 @@
   "httpMethod": "PATCH",
   "project": "directory",
   "resource": "employee",
-  "sha256": "ea2b3e8ae27175320f9f7f8533a56b8715948f0ea28ff452f28c97b79ffeb31e",
+  "sha256": "e59f1814a2d6862d21d70fc1c57add5821456c398887373f507990c335651069",
   "title": "更新员工信息",
   "version": "v1"
  },
@@ -15479,30 +15479,6 @@
   "title": "搜索妙记",
   "version": "v1"
  },
- "minutes/v1/minute/subscription": {
-  "apiName": "subscription",
-  "apiPath": "/open-apis/minutes/v1/minutes/subscription",
-  "category": "妙记 / 妙记信息",
-  "docPath": "/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute/subscription",
-  "httpMethod": "POST",
-  "project": "minutes",
-  "resource": "minute",
-  "sha256": "987db07bf6643fe48a719f9d56736b19b2fbbae5f99070413e9e81f92010ef29",
-  "title": "订阅妙记变更事件",
-  "version": "v1"
- },
- "minutes/v1/minute/unsubscription": {
-  "apiName": "unsubscription",
-  "apiPath": "/open-apis/minutes/v1/minutes/unsubscription",
-  "category": "妙记 / 妙记信息",
-  "docPath": "/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute/unsubscription",
-  "httpMethod": "POST",
-  "project": "minutes",
-  "resource": "minute",
-  "sha256": "0854479def0730b7351d8761b7bcb95d218f81e4b82baf40adcf4223fc3784ac",
-  "title": "取消订阅妙记变更事件",
-  "version": "v1"
- },
  "minutes/v1/minute/upload": {
   "apiName": "upload",
   "apiPath": "/open-apis/minutes/v1/minutes/upload",
@@ -18981,30 +18957,6 @@
   "resource": "note",
   "sha256": "e2b29fa9d49ac428fb450fd1d7e4c9a350eaf2bbaea753e7f6b17b24c02bfadd",
   "title": "获取纪要详情",
-  "version": "v1"
- },
- "vc/v1/note/subscription": {
-  "apiName": "subscription",
-  "apiPath": "/open-apis/vc/v1/notes/subscription",
-  "category": "视频会议 / 纪要",
-  "docPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/note/subscription",
-  "httpMethod": "POST",
-  "project": "vc",
-  "resource": "note",
-  "sha256": "f448c15bf62d4942884cf805128983e9593d3c2dfa3cc7b947d12953ceafb67a",
-  "title": "订阅纪要变更事件",
-  "version": "v1"
- },
- "vc/v1/note/unsubscription": {
-  "apiName": "unsubscription",
-  "apiPath": "/open-apis/vc/v1/notes/unsubscription",
-  "category": "视频会议 / 纪要",
-  "docPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/note/unsubscription",
-  "httpMethod": "POST",
-  "project": "vc",
-  "resource": "note",
-  "sha256": "b92837f7d408856d4b2e171b9c9f69fb94d6dd065b4fc05dcfe32e7298eba4a9",
-  "title": "取消订阅纪要变更事件",
   "version": "v1"
  },
  "vc/v1/participant_list/get": {

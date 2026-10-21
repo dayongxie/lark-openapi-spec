@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+e8e18d0e
+  version: 1.0.0+597b1d85
   x-lark-project: corehr
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -26667,6 +26667,20 @@ paths:
                           type: string
                           description: 数据驻留地，开通了飞书数据驻留服务的企业，该字段为必填
                           example: cn
+                        digital_worker_brand:
+                          type: string
+                          description: 数字员工品牌
+                          enum:
+                          - dot
+                          - doubao_tag
+                          x-enum-descriptions:
+                            dot: dot
+                            doubao_tag: 豆包标识
+                          example: dot
+                        digital_worker_identity_id:
+                          type: string
+                          description: 数字员工身份 ID
+                          example: dwid-001
                         custom_fields:
                           type: array
                           items:

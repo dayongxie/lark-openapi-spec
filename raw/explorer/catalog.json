@@ -11934,56 +11934,6 @@
       "orderMark": "5",
       "parentId": "7621095389333310417",
       "type": 1
-     },
-     {
-      "Score": 0,
-      "apiSummary": {
-       "apiIdentity": {
-        "apiName": "subscription",
-        "project": "vc",
-        "resource": "note",
-        "version": "v1"
-       },
-       "apiKind": 1,
-       "apiPath": "/open-apis/vc/v1/notes/subscription",
-       "debuggable": true,
-       "fullPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/note/subscription",
-       "httpMethod": "POST",
-       "supportAppTypes": [
-        "custom",
-        "isv"
-       ]
-      },
-      "id": "7646314141168291027",
-      "name": "订阅纪要变更事件",
-      "orderMark": "3",
-      "parentId": "7621095389333310417",
-      "type": 1
-     },
-     {
-      "Score": 0,
-      "apiSummary": {
-       "apiIdentity": {
-        "apiName": "unsubscription",
-        "project": "vc",
-        "resource": "note",
-        "version": "v1"
-       },
-       "apiKind": 1,
-       "apiPath": "/open-apis/vc/v1/notes/unsubscription",
-       "debuggable": true,
-       "fullPath": "/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/note/unsubscription",
-       "httpMethod": "POST",
-       "supportAppTypes": [
-        "custom",
-        "isv"
-       ]
-      },
-      "id": "7646314141168307411",
-      "name": "取消订阅纪要变更事件",
-      "orderMark": "2",
-      "parentId": "7621095389333310417",
-      "type": 1
      }
     ],
     "id": "7621095389333310417",
@@ -13703,56 +13653,6 @@
       "id": "7181729161035628545",
       "name": "获取妙记信息",
       "orderMark": "4",
-      "parentId": "7179079873313898500",
-      "type": 1
-     },
-     {
-      "Score": 0,
-      "apiSummary": {
-       "apiIdentity": {
-        "apiName": "subscription",
-        "project": "minutes",
-        "resource": "minute",
-        "version": "v1"
-       },
-       "apiKind": 1,
-       "apiPath": "/open-apis/minutes/v1/minutes/subscription",
-       "debuggable": true,
-       "fullPath": "/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute/subscription",
-       "httpMethod": "POST",
-       "supportAppTypes": [
-        "custom",
-        "isv"
-       ]
-      },
-      "id": "7644841241634016203",
-      "name": "订阅妙记变更事件",
-      "orderMark": "3",
-      "parentId": "7179079873313898500",
-      "type": 1
-     },
-     {
-      "Score": 0,
-      "apiSummary": {
-       "apiIdentity": {
-        "apiName": "unsubscription",
-        "project": "minutes",
-        "resource": "minute",
-        "version": "v1"
-       },
-       "apiKind": 1,
-       "apiPath": "/open-apis/minutes/v1/minutes/unsubscription",
-       "debuggable": true,
-       "fullPath": "/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute/unsubscription",
-       "httpMethod": "POST",
-       "supportAppTypes": [
-        "custom",
-        "isv"
-       ]
-      },
-      "id": "7644841241634032587",
-      "name": "取消订阅妙记变更事件",
-      "orderMark": "2",
       "parentId": "7179079873313898500",
       "type": 1
      }

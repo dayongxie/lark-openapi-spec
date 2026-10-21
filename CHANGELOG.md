@@ -1,5 +1,23 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-10-21）
+
+新增 0 · 移除 4 · 定义变更 6（全量共 1638 个接口）
+
+### 移除接口
+- `POST /open-apis/minutes/v1/minutes/subscription`「订阅妙记变更事件」（minutes/v1/minute/subscription）
+- `POST /open-apis/minutes/v1/minutes/unsubscription`「取消订阅妙记变更事件」（minutes/v1/minute/unsubscription）
+- `POST /open-apis/vc/v1/notes/subscription`「订阅纪要变更事件」（vc/v1/note/subscription）
+- `POST /open-apis/vc/v1/notes/unsubscription`「取消订阅纪要变更事件」（vc/v1/note/unsubscription）
+
+### 定义变更
+- `POST /open-apis/attendance/v1/user_stats_datas/query`「查询统计数据」（attendance/v1/user_stats_data/query）
+- `POST /open-apis/attendance/v1/user_stats_views/query`「查询统计设置」（attendance/v1/user_stats_view/query）
+- `PUT /open-apis/attendance/v1/user_stats_views/{user_stats_view_id}`「更新统计设置」（attendance/v1/user_stats_view/update）
+- `POST /open-apis/corehr/v2/employees`「添加人员」（corehr/v2/employee/create）
+- `POST /open-apis/directory/v1/employees`「创建员工」（directory/v1/employee/create）
+- `PATCH /open-apis/directory/v1/employees/{employee_id}`「更新员工信息」（directory/v1/employee/patch）
+
 ## explorer 全量轨道（2026-10-16）
 
 新增 0 · 移除 0 · 定义变更 3（全量共 1642 个接口）

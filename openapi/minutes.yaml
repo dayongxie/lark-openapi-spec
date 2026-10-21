@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+a193bb66
+  version: 1.0.0+2a98603d
   x-lark-project: minutes
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -947,102 +947,6 @@ paths:
           to: lark_id
         key: $.filter.participant_ids[*]
         section: 0
-  /open-apis/minutes/v1/minutes/subscription:
-    post:
-      operationId: minutes_minute_subscription
-      summary: 订阅妙记变更事件
-      tags:
-      - minute
-      externalDocs:
-        description: 飞书开放平台官方文档
-        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute/subscription
-      requestBody:
-        required: false
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                event_type:
-                  type: string
-                  description: 事件类型
-                  example: minutes.minute.generated_v1
-      responses:
-        '200':
-          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-      x-lark-access-tokens:
-      - user
-      - agent
-      x-lark-scopes:
-      - minutes:minutes.basic:read
-      x-lark-error-mappings:
-      - code: 2091001
-        httpCode: 400
-        msg: param is invalid
-      - code: 2091006
-        httpCode: 500
-        msg: service internal error
-      x-lark-rate-limit:
-        tier: 4
-  /open-apis/minutes/v1/minutes/unsubscription:
-    post:
-      operationId: minutes_minute_unsubscription
-      summary: 取消订阅妙记变更事件
-      tags:
-      - minute
-      externalDocs:
-        description: 飞书开放平台官方文档
-        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute/unsubscription
-      requestBody:
-        required: false
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                event_type:
-                  type: string
-                  description: 事件类型
-                  example: minutes.minute.generated_v1
-      responses:
-        '200':
-          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                  msg:
-                    type: string
-                  data:
-                    type: object
-      x-lark-access-tokens:
-      - user
-      - agent
-      x-lark-scopes:
-      - minutes:minutes.basic:read
-      x-lark-error-mappings:
-      - code: 2091001
-        httpCode: 400
-        msg: param is invalid
-      - code: 2091006
-        httpCode: 500
-        msg: service internal error
-      x-lark-rate-limit:
-        tier: 4
   /open-apis/minutes/v1/minutes/upload:
     post:
       operationId: minutes_minute_upload
