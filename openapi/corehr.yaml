@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+597b1d85
+  version: 1.0.0+292f1f84
   x-lark-project: corehr
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -26681,6 +26681,10 @@ paths:
                           type: string
                           description: 数字员工身份 ID
                           example: dwid-001
+                        digital_worker_geo:
+                          type: string
+                          description: 数字员工数据驻留地
+                          example: cn
                         custom_fields:
                           type: array
                           items:

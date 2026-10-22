@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+d6629019
+  version: 1.0.0+741a6191
   x-lark-project: drive
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -3255,6 +3255,8 @@ paths:
           - mindnote
           - shortcut
           - slides
+          - apps
+          - miaoda_apps
           x-enum-descriptions:
             file: 文件类型
             docx: docx文档类型
@@ -3265,6 +3267,8 @@ paths:
             mindnote: 思维笔记类型
             shortcut: 快捷方式类型
             slides: 幻灯片
+            apps: 妙搭创意设计
+            miaoda_apps: 妙搭应用开发
         description: 被删除文件的类型
         example: file
       - name: async
@@ -3845,6 +3849,8 @@ paths:
                   - mindnote
                   - folder
                   - slides
+                  - apps
+                  - miaoda_apps
                   x-enum-descriptions:
                     file: 普通文件类型
                     docx: 新版文档类型
@@ -3854,6 +3860,8 @@ paths:
                     mindnote: 思维笔记类型
                     folder: 文件夹类型
                     slides: 幻灯片类型
+                    apps: 妙搭创意设计
+                    miaoda_apps: 妙搭应用开发
                   example: docx
                 folder_token:
                   type: string
@@ -9018,15 +9026,6 @@ components:
           type: boolean
           description: 节点是否已加锁
       description: 返回的文档公共设置
-    Schema6:
-      type: object
-      properties:
-        code:
-          type: integer
-        msg:
-          type: string
-        data:
-          $ref: '#/components/schemas/Data7'
     RequestDocInfo:
       type: object
       properties:
@@ -9048,6 +9047,8 @@ components:
           - folder
           - synced_block
           - slides
+          - apps
+          - miaoda_apps
           x-enum-descriptions:
             doc: 飞书文档
             sheet: 飞书电子表格
@@ -9059,10 +9060,21 @@ components:
             folder: 飞书文件夹
             synced_block: 文档同步块
             slides: 文档幻灯片
+            apps: 妙搭创意模式应用
+            miaoda_apps: 妙搭应用开发模式应用
           example: docx
       required:
       - doc_token
       - doc_type
+    Schema6:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data7'
     Data7:
       type: object
       properties:

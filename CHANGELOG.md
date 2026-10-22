@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-10-22）
+
+新增 0 · 移除 0 · 定义变更 4（全量共 1638 个接口）
+
+### 定义变更
+- `POST /open-apis/corehr/v2/employees`「添加人员」（corehr/v2/employee/create）
+- `DELETE /open-apis/drive/v1/files/{file_token}`「删除文件或文件夹」（drive/v1/file/delete）
+- `POST /open-apis/drive/v1/files/{file_token}/move`「移动文件或文件夹」（drive/v1/file/move）
+- `POST /open-apis/drive/v1/metas/batch_query`「获取文件元数据」（drive/v1/meta/batch_query）
+
 ## explorer 全量轨道（2026-10-21）
 
 新增 0 · 移除 4 · 定义变更 6（全量共 1638 个接口）

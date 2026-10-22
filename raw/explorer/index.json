@@ -7495,7 +7495,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "employee",
-  "sha256": "700b8fa1a86703c66d6f9da62c9e12ae3096481101de9cb61479391ea941acce",
+  "sha256": "4b827fe0fede79900c937dc9d0202b0f04f694c0394c5d4297df7c52a7fd164a",
   "title": "添加人员",
   "version": "v2"
  },
@@ -9691,7 +9691,7 @@
   "httpMethod": "DELETE",
   "project": "drive",
   "resource": "file",
-  "sha256": "d9ba44b1ac593a2f47c93995c45523487a6efe06a60b497f9b56894a5f628588",
+  "sha256": "f678eb5f3ff2fab1b5e67fdffefe1ffc76ac9d07298ef79d2b5067ba3a26b19a",
   "title": "删除文件或文件夹",
   "version": "v1"
  },
@@ -9751,7 +9751,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "file",
-  "sha256": "761898a45b2f80742aff9fbb3ed837b647e39993e6a7aeb322654e4f7c8d37b1",
+  "sha256": "0f98ba6c17ae9ec3cb9b4002dab25c7363efb91e2b45f82e032e3be8cc38a00d",
   "title": "移动文件或文件夹",
   "version": "v1"
  },
@@ -9931,7 +9931,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "meta",
-  "sha256": "0b3ed4b44882e8dbba94e7cc2763ddedf1cf64aa251bd2e3dcaf5541a5c0810e",
+  "sha256": "88ee927507bc442c39324ce9e6bb737f86cc1922e7803a032870c728190ea52a",
   "title": "获取文件元数据",
   "version": "v1"
  },
