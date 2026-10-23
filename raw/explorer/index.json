@@ -4495,7 +4495,7 @@
   "httpMethod": "GET",
   "project": "compensation",
   "resource": "plan",
-  "sha256": "f0a0c1ef022e5d8ace37df8bad25b2e460135e74b2b9c4c980f609f38faee844",
+  "sha256": "9993d727463d663666950133decf9e13815ede34f0609f7fd513b928ea54648b",
   "title": "批量查询薪资方案",
   "version": "v1"
  },
@@ -17311,7 +17311,7 @@
   "httpMethod": "GET",
   "project": "spark",
   "resource": "app.table",
-  "sha256": "c036583cd4d062e0a96c051643d1e8c477b4d7c18c699b341463dc18ab0be219",
+  "sha256": "5d4fa284b8a9dab5e40280f5e603536700c75047deb1cafef61de8bb0408ff3c",
   "title": "获取数据表详细信息",
   "version": "v1"
  },
@@ -17323,7 +17323,7 @@
   "httpMethod": "GET",
   "project": "spark",
   "resource": "app.table",
-  "sha256": "c38573e5b152d8104763d55eb2fa2f9b7e9f639da48c0997beb618db8bd2610f",
+  "sha256": "2ed94ce4cbcaf8eac03d15cbdba133bd1c6faa5c9d8ff773fbe0dc25753b2ebf",
   "title": "获取数据表列表",
   "version": "v1"
  },
@@ -17335,7 +17335,7 @@
   "httpMethod": "GET",
   "project": "spark",
   "resource": "app.table",
-  "sha256": "b992524c25c1eabc9a1a12fedad183eba09888cae18ec2e569df1af9bd4d67a0",
+  "sha256": "40766ce18915d2746da68ffb39d85d1e4c921406b2e216d775ae457669d75f52",
   "title": "查询数据表数据记录",
   "version": "v1"
  },
@@ -17383,7 +17383,7 @@
   "httpMethod": "POST",
   "project": "spark",
   "resource": "app",
-  "sha256": "8696561372dbed68eb72aa06359b68f18d487f031728c19e149e62fdadc599c5",
+  "sha256": "e68274d70a03c20ad0e49071972e70c9ba4d93f17c74c5293278e2f85dc06368",
   "title": "创建妙搭应用",
   "version": "v1"
  },
@@ -17395,7 +17395,7 @@
   "httpMethod": "POST",
   "project": "spark",
   "resource": "app",
-  "sha256": "daadfaa4e4bf7bc05979d92c80c12e0de94b6a21d57908a010723121808b0b14",
+  "sha256": "6b44c5470b8f463b4dc6766b189c9fdec3f4bb13b6a0fafae9c52307889365c2",
   "title": "导出妙搭应用代码包",
   "version": "v1"
  },
@@ -17407,7 +17407,7 @@
   "httpMethod": "GET",
   "project": "spark",
   "resource": "app",
-  "sha256": "67f870211e6fef9ebebb1809761f996cee93abaf7169c255aaa07b87bc0e62cb",
+  "sha256": "b802a40b8eb3ea778a9f48a7c2713268e1dddfbdf7d4aa1792846ec3ab090526",
   "title": "获取妙搭应用可用范围",
   "version": "v1"
  },
@@ -17431,7 +17431,7 @@
   "httpMethod": "GET",
   "project": "spark",
   "resource": "app",
-  "sha256": "f6988650ffdd3a9e75b53fc7c76b4d16e1f8fe9ae47695f106953aeb879a562c",
+  "sha256": "8812893a5a88cb48ff48a9754fe62ece8cadadfdc105725d037a1eb9600e8637",
   "title": "批量获取妙搭应用",
   "version": "v1"
  },
@@ -17467,7 +17467,7 @@
   "httpMethod": "PATCH",
   "project": "spark",
   "resource": "app",
-  "sha256": "28bf95935c805b9d2b5230272964ca708175668b4ef492123b876d74838ce487",
+  "sha256": "4e59933eef4e6092e21607473343872d6172db9fd92bbdf869cbf0f709b72bab",
   "title": "更新妙搭应用信息",
   "version": "v1"
  },
@@ -17479,7 +17479,7 @@
   "httpMethod": "POST",
   "project": "spark",
   "resource": "app",
-  "sha256": "735c3f0ff09113007ef32b18c72aaad8a174e1e3e7c4e56f28d5190446b310ad",
+  "sha256": "d1035940d6c3e177a6a90aa513949d161823115affcedb652d784964e49dfc58",
   "title": "获取妙搭应用运营数据趋势",
   "version": "v1"
  },
@@ -17491,7 +17491,7 @@
   "httpMethod": "POST",
   "project": "spark",
   "resource": "app",
-  "sha256": "062cdecbdb52fea31e02f1e2121b502fa04b8c25c4a53958433ba20df39af83c",
+  "sha256": "abc400fbf77d5a7c81503a8d32f1e154113bf08fa48740e71dd61b2fc3674713",
   "title": "执行 SQL",
   "version": "v1"
  },
@@ -17503,7 +17503,7 @@
   "httpMethod": "PUT",
   "project": "spark",
   "resource": "app",
-  "sha256": "84cfafc0bd4a5185d26ee83d66592c1ce85524b504633be56d1c7366660e09b9",
+  "sha256": "b483cce2340fc03aa5b6ec4083d70578980672a9e0e5cadad440d56b24097f1c",
   "title": "更新妙搭应用可用范围",
   "version": "v1"
  },
@@ -17527,7 +17527,7 @@
   "httpMethod": "POST",
   "project": "spark",
   "resource": "directory.user",
-  "sha256": "9be7e2d20071e3aa87edb2e7ae3d50328a950e8be8f465d74c9d0ca0bcf64c88",
+  "sha256": "9505960ab87ba16f4f7ef9219bae2c2223d802faf1d4a4cccde2adcf676d4d31",
   "title": "妙搭和飞书用户 ID 转换",
   "version": "v1"
  },

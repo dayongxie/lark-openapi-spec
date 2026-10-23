@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+119d9df2
+  version: 1.0.0+a1001802
   x-lark-project: compensation
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -2284,6 +2284,10 @@ paths:
                                     description: 语言名称
                                     example: 中文名称
                               description: 多语言描述
+                            expiration_date:
+                              type: string
+                              description: 薪资方案失效时间
+                              example: '2026-01-01'
                           required:
                           - id
                           - tid
@@ -2309,6 +2313,7 @@ paths:
                     - has_more
       x-lark-access-tokens:
       - tenant
+      - user
       x-lark-scopes:
       - corehr:compensation_plan:read
       x-lark-field-scopes:

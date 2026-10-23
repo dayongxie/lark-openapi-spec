@@ -1,5 +1,24 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-10-23）
+
+新增 0 · 移除 0 · 定义变更 13（全量共 1638 个接口）
+
+### 定义变更
+- `GET /open-apis/compensation/v1/plans`「批量查询薪资方案」（compensation/v1/plan/list）
+- `GET /open-apis/spark/v1/apps/{app_id}/tables/{table_name}`「获取数据表详细信息」（spark/v1/app.table/get_table_detail）
+- `GET /open-apis/spark/v1/apps/{app_id}/tables`「获取数据表列表」（spark/v1/app.table/get_table_list）
+- `GET /open-apis/spark/v1/apps/{app_id}/tables/{table_name}/records`「查询数据表数据记录」（spark/v1/app.table/get_table_record_list）
+- `POST /open-apis/spark/v1/apps`「创建妙搭应用」（spark/v1/app/create）
+- `POST /open-apis/spark/v1/apps/export`「导出妙搭应用代码包」（spark/v1/app/export）
+- `GET /open-apis/spark/v1/apps/{app_id}/access-scope`「获取妙搭应用可用范围」（spark/v1/app/get_app_visibility）
+- `GET /open-apis/spark/v1/apps`「批量获取妙搭应用」（spark/v1/app/list）
+- `PATCH /open-apis/spark/v1/apps/{app_id}`「更新妙搭应用信息」（spark/v1/app/patch）
+- `POST /open-apis/spark/v1/apps/{app_id}/query_analytics_data`「获取妙搭应用运营数据趋势」（spark/v1/app/query_analytics_data）
+- `POST /open-apis/spark/v1/apps/{app_id}/sql_commands`「执行 SQL」（spark/v1/app/sql_commands）
+- `PUT /open-apis/spark/v1/apps/{app_id}/access-scope`「更新妙搭应用可用范围」（spark/v1/app/update_app_visibility）
+- `POST /open-apis/spark/v1/directory/user/id_convert`「妙搭和飞书用户 ID 转换」（spark/v1/directory.user/id_convert）
+
 ## explorer 全量轨道（2026-10-22）
 
 新增 0 · 移除 0 · 定义变更 4（全量共 1638 个接口）

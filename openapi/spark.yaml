@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+3c11d316
+  version: 1.0.0+a4e56be6
   x-lark-project: spark
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -1060,6 +1060,7 @@ paths:
                     - items
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - spark:app.table.record:read
       - spark:app.table.record:write
@@ -1417,6 +1418,7 @@ paths:
                     - columns
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - spark:app.table:read
       - spark:app.table:write
@@ -1583,6 +1585,7 @@ paths:
                     - items
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - spark:app.table:read
       - spark:app.table:write
@@ -1810,6 +1813,7 @@ paths:
                         description: 本次创建对分享范围的设置结果。分享范围设置失败不影响应用创建，创建接口仍返回成功。
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - spark:app:write
       x-lark-error-mappings:
@@ -1914,6 +1918,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - spark:app:read
       x-lark-error-mappings:
@@ -1983,6 +1988,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - spark:app:read
       x-lark-error-mappings:
@@ -2044,6 +2050,7 @@ paths:
                     $ref: '#/components/schemas/Data'
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - spark:app:read
       x-lark-field-scopes:
@@ -2114,6 +2121,7 @@ paths:
                     type: object
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - spark:app:write
       x-lark-field-scopes:
@@ -2516,6 +2524,7 @@ paths:
                         example: '{"app_id":"app_7d2f8a4b1c9e6035","name":"智能客服助手V2","description":"提供7×24小时智能对话服务，支持多轮交互与工单自动流转","icon_url":"https://example.com/app-icons/customer-service-v2.png","created_at":"2026-05-18T10:00:00Z","updated_at":"2026-06-20T15:45:00Z"}'
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - spark:app:write
       x-lark-error-mappings:
@@ -2681,6 +2690,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - spark:app:read
       x-lark-error-mappings:
@@ -2760,6 +2770,7 @@ paths:
                     - result
       x-lark-access-tokens:
       - user
+      - agent
       x-lark-scopes:
       - spark:app.sql_commands:write
       - spark:app:write
@@ -2907,6 +2918,7 @@ paths:
       x-lark-access-tokens:
       - user
       - tenant
+      - agent
       x-lark-scopes:
       - spark:directory.user.id_convert:read
       x-lark-error-mappings:
