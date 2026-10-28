@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+741a6191
+  version: 1.0.0+54620532
   x-lark-project: drive
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -7814,6 +7814,11 @@ paths:
                   type: string
                   description: reaction 类型
                   example: like
+                notify:
+                  type: boolean
+                  description: 是否发送本次添加 reaction 的通知。仅 action 为 add 时生效；不传或为 true 时沿用现有通知策略，为 false 时不发送主动通知，但仍更新 reaction
+                    展示和协同状态。重复添加已存在的 reaction 不会补发通知。
+                  example: 'false'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）

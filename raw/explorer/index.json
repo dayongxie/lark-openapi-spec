@@ -10123,7 +10123,7 @@
   "httpMethod": "POST",
   "project": "drive",
   "resource": "comment_reaction",
-  "sha256": "ce5ed9285d696e0cc12585713dd5c15530b8c2c03baaa71c988845ad24cc95fd",
+  "sha256": "207960701fd54f7287c5795f5b29c78c53d64d56d9f0de809ab0d547ab11f12a",
   "title": "添加/取消表情回应",
   "version": "v2"
  },
@@ -12763,7 +12763,7 @@
   "httpMethod": "POST",
   "project": "hire",
   "resource": "tripartite_agreement",
-  "sha256": "9a7f865910d3da8ec6bb33c3561e14fb9edd14a2fa3834efa02ff4d9f35a5909",
+  "sha256": "a7f416e21e219953028056152edd4b688bb2fd7563890b28f043cf4c74f4b0ac",
   "title": "创建三方协议",
   "version": "v1"
  },
@@ -12799,7 +12799,7 @@
   "httpMethod": "PUT",
   "project": "hire",
   "resource": "tripartite_agreement",
-  "sha256": "8b51fddf778e6d41a5af315159ecb51dd6a6b3f1cdbb521b710fd896ccbf83cb",
+  "sha256": "0e388633d2e4a4f4f376f3bd4810b0f88001ba8c2852843efc0168fc400a0ce9",
   "title": "更新三方协议",
   "version": "v1"
  },
@@ -18667,7 +18667,7 @@
   "httpMethod": "POST",
   "project": "vc",
   "resource": "bot",
-  "sha256": "ddd50e526947d7e1918bc9870d12ff095158a2233b1898565d9cc9fe31b121cf",
+  "sha256": "1557dde77288465df6237cae7bffecc04084dcc80115f3ddf90c09be23891390",
   "title": "加入会议",
   "version": "v1"
  },

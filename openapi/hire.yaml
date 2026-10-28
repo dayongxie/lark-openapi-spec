@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+ffadeeaa
+  version: 1.0.0+85fbbf98
   x-lark-project: hire
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -25295,6 +25295,10 @@ paths:
                   type: string
                   description: 三方协议创建时间，毫秒时间戳
                   example: '1698292282660'
+                detail_url:
+                  type: string
+                  description: 三方协议详情跳转链接
+                  example: https://example.com/tripartite-agreement/detail
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -25552,6 +25556,10 @@ paths:
                   type: string
                   description: 三方协议修改时间戳，不可小于创建时间或者当前修改时间
                   example: '1698292282661'
+                detail_url:
+                  type: string
+                  description: 三方协议详情跳转链接
+                  example: https://example.com/tripartite-agreement/detail
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）

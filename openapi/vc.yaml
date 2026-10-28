@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+2dee0f00
+  version: 1.0.0+877576f6
   x-lark-project: vc
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -1023,6 +1023,14 @@ paths:
                   x-enum-descriptions:
                     '1': 仅加入已存在会议
                     '2': 发起并加入日程会议；会议已存在时加入同一会议
+                enable_lobby:
+                  type: boolean
+                  description: |-
+                    是否允许 Agent Employee 进入会中等候室，默认 false。
+                    - 不传或为 false：保持原有入会行为和响应，不返回 join_status 和 lobby_meeting。
+                    - 为 true：仅对使用 AAT 的 Agent Employee 普通入会场景生效，根据会议策略直接入会或进入会中等候室。
+                    - 不扩展 TAT 机器人、发起会议或会前等候室能力。
+                  example: 'true'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -1057,7 +1065,7 @@ paths:
                             type: string
                             description: 会议主题，用于标识会议内容，支持中英文及特殊字符，长度不超过128个字符
                             example: Q4季度产品规划评审会
-                        description: 机器人加入的会议详情信息，包含会议唯一标识、会议号、开始时间及会议主题等核心数据
+                        description: 已正式加入会议时返回的会议信息。进入会中等候室时不返回，与 lobby_meeting 互斥。
                         example: '{"id":"mtg_1716187200_9c8d7e6f","meeting_no":"98765432","start_time":"2024-05-20 14:00:00","topic":"AI产品技术研讨会"}'
                       join_user:
                         type: object
@@ -1086,8 +1094,31 @@ paths:
                               '6': pstn用户
                               '7': sip用户
                             example: '1'
-                        description: 成功入会的机器人用户信息，包含用户唯一标识及用户类型
+                        description: 本次入会请求对应的机器人或 Agent 用户身份。AE 正式入会和进入会中等候室时均返回；该字段本身不代表已正式入会。
                         example: '{"id":"ou_8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b3a","user_type":1}'
+                      join_status:
+                        type: integer
+                        description: |-
+                          本次入会请求成功后的状态。仅对开启 enable_lobby 的 AE 普通入会请求返回；未开启时保持原有响应，不返回该字段。
+                          - 1：已正式进入会议，返回 meeting。
+                          - 2：已进入会中等候室，尚未正式入会，返回 lobby_meeting。
+                          主持人准入后由服务端自动入会，调用方无需再次调用本接口，正式入会后通过 vc.meeting.joined_v1 通知。
+                        enum:
+                        - 1
+                        - 2
+                        x-enum-descriptions:
+                          '1': 已正式进入会议
+                          '2': 已进入会中等候室，尚未正式入会
+                        example: '1'
+                      lobby_meeting:
+                        type: object
+                        properties:
+                          meeting_id:
+                            type: string
+                            description: 当前会中等候室所属的会议 ID。
+                            example: '7340000000000000001'
+                        description: 已进入会中等候室时返回的会议标识信息，仅包含 meeting_id。正式入会时不返回，与 meeting 互斥。
+                        example: '{"meeting_id":"7340000000000000001"}'
       x-lark-access-tokens:
       - user
       - tenant

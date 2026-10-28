@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-10-28）
+
+新增 0 · 移除 0 · 定义变更 4（全量共 1638 个接口）
+
+### 定义变更
+- `POST /open-apis/drive/v2/files/{file_token}/comments/reaction`「添加/取消表情回应」（drive/v2/comment_reaction/update_reaction）
+- `POST /open-apis/hire/v1/tripartite_agreements`「创建三方协议」（hire/v1/tripartite_agreement/create）
+- `PUT /open-apis/hire/v1/tripartite_agreements/{tripartite_agreement_id}`「更新三方协议」（hire/v1/tripartite_agreement/update）
+- `POST /open-apis/vc/v1/bots/join`「加入会议」（vc/v1/bot/join）
+
 ## explorer 全量轨道（2026-10-23）
 
 新增 0 · 移除 0 · 定义变更 13（全量共 1638 个接口）
