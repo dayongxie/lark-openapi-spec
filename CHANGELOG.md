@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-10-29）
+
+新增 3 · 移除 0 · 定义变更 2（全量共 1641 个接口）
+
+### 新增接口
+- `DELETE /open-apis/bot/v3/bot_menu`「删除千人千面菜单」（bot/v3/bot_menu/delete_bot_menu）
+- `GET /open-apis/bot/v3/bot_menu`「获取千人千面菜单」（bot/v3/bot_menu/get_bot_menu）
+- `POST /open-apis/bot/v3/bot_menu`「创建千人千面菜单」（bot/v3/bot_menu/set_bot_menu）
+
+### 定义变更
+- `POST /open-apis/corehr/v2/locations/{location_id}/addresses`「添加地点地址」（corehr/v2/location.address/create）
+- `DELETE /open-apis/drive/v1/files/{file_token}`「删除文件或文件夹」（drive/v1/file/delete）
+
 ## explorer 全量轨道（2026-10-28）
 
 新增 0 · 移除 0 · 定义变更 4（全量共 1638 个接口）

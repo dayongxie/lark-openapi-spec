@@ -19043,6 +19043,91 @@
     "orderMark": "1781072834541",
     "parentId": "6955017385440313372",
     "type": 2
+   },
+   {
+    "Score": 0,
+    "children": [
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "set_bot_menu",
+        "project": "bot",
+        "resource": "bot_menu",
+        "version": "v3"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/bot/v3/bot_menu",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/bot-v3/bot_menu/set_bot_menu",
+       "httpMethod": "POST",
+       "supportAppTypes": [
+        "custom",
+        "isv"
+       ]
+      },
+      "id": "7570924844655640595",
+      "name": "创建千人千面菜单",
+      "orderMark": "3",
+      "parentId": "7568392440201232387",
+      "type": 1
+     },
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "get_bot_menu",
+        "project": "bot",
+        "resource": "bot_menu",
+        "version": "v3"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/bot/v3/bot_menu",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/bot-v3/bot_menu/get_bot_menu",
+       "httpMethod": "GET",
+       "supportAppTypes": [
+        "custom",
+        "isv"
+       ]
+      },
+      "id": "7570924844655591443",
+      "name": "获取千人千面菜单",
+      "orderMark": "2",
+      "parentId": "7568392440201232387",
+      "type": 1
+     },
+     {
+      "Score": 0,
+      "apiSummary": {
+       "apiIdentity": {
+        "apiName": "delete_bot_menu",
+        "project": "bot",
+        "resource": "bot_menu",
+        "version": "v3"
+       },
+       "apiKind": 1,
+       "apiPath": "/open-apis/bot/v3/bot_menu",
+       "debuggable": true,
+       "fullPath": "/uAjLw4CM/ukTMukTMukTM/bot-v3/bot_menu/delete_bot_menu",
+       "httpMethod": "DELETE",
+       "supportAppTypes": [
+        "custom",
+        "isv"
+       ]
+      },
+      "id": "7570924844655607827",
+      "name": "删除千人千面菜单",
+      "orderMark": "1",
+      "parentId": "7568392440201232387",
+      "type": 1
+     }
+    ],
+    "id": "7568392440201232387",
+    "name": "机器人菜单",
+    "orderMark": "1762346392294",
+    "parentId": "6955017385440313372",
+    "type": 2
    }
   ],
   "id": "6955017385440313372",

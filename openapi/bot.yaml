@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+5bb9d23c
+  version: 1.0.0+cb04a48c
   x-lark-project: bot
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -19,8 +19,199 @@ servers:
 - url: https://open.larksuite.com
   description: Lark（国际版）
 tags:
+- name: bot_menu
 - name: bot
 paths:
+  /open-apis/bot/v3/bot_menu:
+    delete:
+      operationId: bot_bot_menu_delete_bot_menu
+      summary: 删除千人千面菜单
+      tags:
+      - bot_menu
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/bot-v3/bot_menu/delete_bot_menu
+      parameters:
+      - name: user_id_type
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - open_id
+          - union_id
+          - user_id
+          x-enum-descriptions:
+            open_id: open_id
+            union_id: union_id
+            user_id: user_id
+          x-lark-id-types:
+            open_id: user
+            union_id: user
+            user_id: user
+        description: 用户 ID 类型。默认值为 open_id。
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: 用户 ID。类型由路径参数 user_id_type 决定。
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                  msg:
+                    type: string
+                  data:
+                    type: object
+      x-lark-access-tokens:
+      - tenant
+      x-lark-scopes:
+      - application:bot.menu:write
+      x-lark-field-scopes:
+      - contact:user.employee_id:readonly
+      x-lark-rate-limit:
+        tier: 7
+      x-lark-id-transform:
+      - fromTo:
+          from: x_user_id
+          idType: ''
+          idTypeKey: user_id_type
+          idTypeSection: 2
+          to: lark_id
+        key: $.user_id
+        section: 0
+    get:
+      operationId: bot_bot_menu_get_bot_menu
+      summary: 获取千人千面菜单
+      tags:
+      - bot_menu
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/bot-v3/bot_menu/get_bot_menu
+      parameters:
+      - name: user_id
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: user_id_type
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - open_id
+          - union_id
+          - user_id
+          x-enum-descriptions:
+            open_id: 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。了解更多：如何获取 Open ID
+            union_id: union_id
+          x-lark-id-types:
+            open_id: user
+            union_id: user
+            user_id: user
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Schema'
+      x-lark-access-tokens:
+      - tenant
+      x-lark-scopes:
+      - application:bot.menu:readonly
+      x-lark-field-scopes:
+      - contact:user.employee_id:readonly
+      x-lark-rate-limit:
+        tier: 8
+      x-lark-id-transform:
+      - fromTo:
+          from: x_user_id
+          idType: ''
+          idTypeKey: user_id_type
+          idTypeSection: 2
+          to: lark_id
+        key: user_id
+        section: 2
+    post:
+      operationId: bot_bot_menu_set_bot_menu
+      summary: 创建千人千面菜单
+      tags:
+      - bot_menu
+      externalDocs:
+        description: 飞书开放平台官方文档
+        url: https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/bot-v3/bot_menu/set_bot_menu
+      parameters:
+      - name: user_id_type
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - open_id
+          - union_id
+          - user_id
+          x-enum-descriptions:
+            open_id: 标识一个用户在某个应用中的身份。同一个用户在不同应用中的 Open ID 不同。了解更多：如何获取 Open ID
+            union_id: 标识一个用户在某个应用开发商下的身份。同一用户在同一开发商下的应用中的 Union ID 是相同的，在不同开发商下的应用中的 Union ID 是不同的。通过 Union ID，应用开发商可以把同个用户在多个应用中的身份关联起来。了解更多：如何获取
+              Union ID？
+            user_id: 标识一个用户在某个租户内的身份。同一个用户在租户 A 和租户 B 内的 User ID 是不同的。在同一个租户内，一个用户的 User ID 在所有应用（包括商店应用）中都保持一致。User ID 主要用于在不同的应用间打通用户数据。了解更多：如何获取
+              User ID？
+          x-lark-id-types:
+            open_id: user
+            union_id: user
+            user_id: user
+        description: 用户 ID 类型。默认值为 open_id。
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: 用户 ID。类型由 user_id_type 决定。了解更多，参考用户身份概述。
+                bot_menu:
+                  allOf:
+                  - $ref: '#/components/schemas/BotMenu'
+                  description: 机器人菜单信息。
+      responses:
+        '200':
+          description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Schema'
+      x-lark-access-tokens:
+      - tenant
+      x-lark-scopes:
+      - application:bot.menu:write
+      x-lark-field-scopes:
+      - contact:user.employee_id:readonly
+      x-lark-rate-limit:
+        tier: 7
+      x-lark-id-transform:
+      - fromTo:
+          from: x_user_id
+          idType: ''
+          idTypeKey: user_id_type
+          idTypeSection: 2
+          to: lark_id
+        key: $.user_id
+        section: 0
   /open-apis/bot/v4/bot/search:
     post:
       operationId: bot_bot_search
@@ -169,4 +360,220 @@ paths:
         key: $.filter.chat_ids[*]
         section: 0
 components:
-  schemas: {}
+  schemas:
+    BotMenu:
+      type: object
+      properties:
+        bot_menu_id:
+          type: string
+          description: 机器人菜单 ID。可忽略。
+          example: '1'
+        bot_menu_items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+          description: 机器人菜单选项列表。最多支持五个选项。
+      description: 机器人菜单信息。
+    Item:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 选项默认名称。
+          example: 测试按钮
+        i18n_name:
+          type: string
+          x-lark-original-type: map
+          description: '选项的多语言配置。了解支持语种，参考配置卡片多语言。示例配置如下所示： "en_us": "New topic" 数据校验规则：2 ~60 个字符'
+        icon:
+          type: object
+          properties:
+            ud_icon:
+              type: object
+              properties:
+                token:
+                  type: string
+                  description: 图标库中图标的 token。枚举值参见图标库。
+                  example: add_outlined
+                color:
+                  type: string
+                  description: 图标的颜色。枚举值参见颜色枚举值。
+                  example: blue
+              description: 图标库中的图标。
+            file_key:
+              type: string
+              description: 自定义图标的图片 key。获取方式：调用上传图片接口，上传用于发送消息的图片，并在返回值中获取图片的 image_key。
+              example: img_v3_02xxxxxxxx
+          description: 菜单选项中的前缀图标设置。支持自定义图片或使用图标库中的图标。
+        tag:
+          type: string
+          description: 用户点击菜单项时上报的字段。不可超过 20 字符。（仅字节）
+          example: kkk111
+        behaviors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Behavior'
+          description: 用户点击菜单项后，执行的动作列表。 注意：你需至少为菜单项配置一个动作类型，或选择配置子菜单项。即必须 behaviors 和 children 参数中选择且只能选择一个传入。
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item2'
+          description: 为当前菜单项配置子菜单项。可参考 bot_menu 字段配置。 注意： - 你需至少为菜单项配置一个动作类型，或选择配置子菜单项。即必须在 behaviors 和 children 参数中选择且只能选择一个传入。
+            - 一个机器人菜单最多可配置三层菜单选项。总菜单选项数量不可超过 100 项，第一层菜单不可超过五项，第二层菜单不可超过 30 项，第三层菜单不可超过三项。
+      required:
+      - name
+      - i18n_name
+    Schema:
+      type: object
+      properties:
+        code:
+          type: integer
+        msg:
+          type: string
+        data:
+          $ref: '#/components/schemas/Data'
+    Data:
+      type: object
+      properties:
+        bot_menu:
+          allOf:
+          - $ref: '#/components/schemas/BotMenu'
+          description: 机器人菜单信息。
+    Item2:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 选项默认名称。
+          example: 测试按钮
+        i18n_name:
+          type: string
+          x-lark-original-type: map
+          description: '选项的多语言配置。了解支持语种，参考配置卡片多语言。示例配置如下所示： "en_us": "New topic" 数据校验规则：2 ~60 个字符'
+        icon:
+          type: object
+          properties:
+            ud_icon:
+              type: object
+              properties:
+                token:
+                  type: string
+                  description: 图标库中图标的 token。枚举值参见图标库。
+                  example: add_outlined
+                color:
+                  type: string
+                  description: 图标的颜色。枚举值参见颜色枚举值。
+                  example: blue
+              description: 图标库中的图标。
+            file_key:
+              type: string
+              description: 自定义图标的图片 key。获取方式：调用上传图片接口，上传用于发送消息的图片，并在返回值中获取图片的 image_key。
+              example: img_v3_02xxxxxxxx
+          description: 菜单选项中的前缀图标设置。支持自定义图片或使用图标库中的图标。
+        tag:
+          type: string
+          description: 用户点击菜单项时上报的字段。不可超过 20 字符。（仅字节）
+          example: kkk111
+        behaviors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Behavior'
+          description: 用户点击菜单项后，执行的动作列表。 注意：你需至少为菜单项配置一个动作类型，或选择配置子菜单项。即必须 behaviors 和 children 参数中选择且只能选择一个传入。
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item3'
+          description: 为当前菜单项配置子菜单项。可参考 bot_menu 字段配置。 注意： - 你需至少为菜单项配置一个动作类型，或选择配置子菜单项。即必须在 behaviors 和 children 参数中选择且只能选择一个传入。
+            - 一个机器人菜单最多可配置三层菜单选项。总菜单选项数量不可超过 100 项，第一层菜单不可超过五项，第二层菜单不可超过 30 项，第三层菜单不可超过三项。
+      required:
+      - name
+      - i18n_name
+    Behavior:
+      type: object
+      properties:
+        type:
+          type: string
+          description: 动作类型。可选值如下所示，支持同时配置以下所有类型。 - target：在客户端内打开链接 - event_key：向注册的事件回调地址发送回调事件 - send_message：将菜单项名称作为消息内容，以用户身份发送到会话中
+          enum:
+          - target
+          - event_key
+          - send_message
+          x-enum-descriptions:
+            target: 在客户端内打开链接
+            event_key: 向注册的事件回调地址发送回调事件
+            send_message: 将菜单项名称作为消息内容，以用户身份发送到会话中
+          example: target
+        target:
+          type: object
+          properties:
+            common_url:
+              type: string
+              description: 默认兜底链接。
+              example: https://www.google.com
+            ios_url:
+              type: string
+              description: iOS 端打开的链接。
+              example: https://www.google.com
+            android_url:
+              type: string
+              description: Android 端打开的链接。
+              example: https://www.google.com
+            pc_url:
+              type: string
+              description: PC 端打开的链接。
+              example: https://www.google.com
+            web_url:
+              type: string
+              description: 客户端为浏览器时打开的链接。
+              example: https://www.google.com
+          description: 在客户端内打开链接。当 type 为 target 时必填。
+        event_key:
+          type: string
+          description: 向注册的事件回调地址发送事件 key。当用户点击菜单项时，机器人自定义菜单事件（application.bot.menu_v6）将发送给事件订阅者，你可在事件结构体中找到 event_key 的值。当
+            type 为 event_key 时必填。
+          example: xxx
+        is_primary:
+          type: boolean
+          description: 当前动作类型是否是主要类型。当你为一个按钮配置多个动作类型时，你需选择一个动作作为主要类型。 注意： 若当前动作是主要类型，但客户端未能正常处理该动作类型，最终该菜单项将在机器人菜单中隐藏。
+    Item3:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 选项默认名称。
+          example: 测试按钮
+        i18n_name:
+          type: string
+          x-lark-original-type: map
+          description: '选项的多语言配置。了解支持语种，参考配置卡片多语言。示例配置如下所示： "en_us": "New topic" 数据校验规则：2 ~60 个字符'
+        icon:
+          type: object
+          properties:
+            ud_icon:
+              type: object
+              properties:
+                token:
+                  type: string
+                  description: 图标库中图标的 token。枚举值参见图标库。
+                  example: add_outlined
+                color:
+                  type: string
+                  description: 图标的颜色。枚举值参见颜色枚举值。
+                  example: blue
+              description: 图标库中的图标。
+            file_key:
+              type: string
+              description: 自定义图标的图片 key。获取方式：调用上传图片接口，上传用于发送消息的图片，并在返回值中获取图片的 image_key。
+              example: img_v3_02xxxxxxxx
+          description: 菜单选项中的前缀图标设置。支持自定义图片或使用图标库中的图标。
+        tag:
+          type: string
+          description: 用户点击菜单项时上报的字段。不可超过 20 字符。（仅字节）
+          example: kkk111
+        behaviors:
+          allOf:
+          - $ref: '#/components/schemas/Behavior'
+          description: 用户点击菜单项后，执行的动作列表。 注意：你需至少为菜单项配置一个动作类型，或选择配置子菜单项。即必须 behaviors 和 children 参数中选择且只能选择一个传入。
+      required:
+      - name
+      - i18n_name

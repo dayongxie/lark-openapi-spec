@@ -3695,6 +3695,42 @@
   "title": "更新画板主题",
   "version": "v1"
  },
+ "bot/v3/bot_menu/delete_bot_menu": {
+  "apiName": "delete_bot_menu",
+  "apiPath": "/open-apis/bot/v3/bot_menu",
+  "category": "机器人 / 机器人菜单",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/bot-v3/bot_menu/delete_bot_menu",
+  "httpMethod": "DELETE",
+  "project": "bot",
+  "resource": "bot_menu",
+  "sha256": "fc2fb1c45ea617897b1382b11ca3130c3f8175a01b9d5d1caf26b19543789350",
+  "title": "删除千人千面菜单",
+  "version": "v3"
+ },
+ "bot/v3/bot_menu/get_bot_menu": {
+  "apiName": "get_bot_menu",
+  "apiPath": "/open-apis/bot/v3/bot_menu",
+  "category": "机器人 / 机器人菜单",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/bot-v3/bot_menu/get_bot_menu",
+  "httpMethod": "GET",
+  "project": "bot",
+  "resource": "bot_menu",
+  "sha256": "4e144df1c9b49177b20077239c948346775ac3491b87360ed6fdecc9c99b17c0",
+  "title": "获取千人千面菜单",
+  "version": "v3"
+ },
+ "bot/v3/bot_menu/set_bot_menu": {
+  "apiName": "set_bot_menu",
+  "apiPath": "/open-apis/bot/v3/bot_menu",
+  "category": "机器人 / 机器人菜单",
+  "docPath": "/uAjLw4CM/ukTMukTMukTM/bot-v3/bot_menu/set_bot_menu",
+  "httpMethod": "POST",
+  "project": "bot",
+  "resource": "bot_menu",
+  "sha256": "79c3e8a5642f2263d8a460de43f623e6f5d3f8cdeb852113c2145b2b4a185152",
+  "title": "创建千人千面菜单",
+  "version": "v3"
+ },
  "bot/v4/bot/search": {
   "apiName": "search",
   "apiPath": "/open-apis/bot/v4/bot/search",
@@ -7879,7 +7915,7 @@
   "httpMethod": "POST",
   "project": "corehr",
   "resource": "location.address",
-  "sha256": "e2842e8afde3932e00929c125399c56616c7d17d1ea9186acf6af3ec6e8441c3",
+  "sha256": "46b12d8f57615fda7e80b8cf3bd5f95778c763de48d4dbabcf73f4f03269c430",
   "title": "添加地点地址",
   "version": "v2"
  },
@@ -9691,7 +9727,7 @@
   "httpMethod": "DELETE",
   "project": "drive",
   "resource": "file",
-  "sha256": "f678eb5f3ff2fab1b5e67fdffefe1ffc76ac9d07298ef79d2b5067ba3a26b19a",
+  "sha256": "c15c9ae8fed116a74f1bb0657fa87ff7ad7e3b5e696f03ddea24ee03908f03c3",
   "title": "删除文件或文件夹",
   "version": "v1"
  },
