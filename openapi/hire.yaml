@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+85fbbf98
+  version: 1.0.0+298741f3
   x-lark-project: hire
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -8809,6 +8809,10 @@ paths:
                                           description: 能力项关联配置
                                     description: 模块维度列表
                               description: 面试评价表模块列表
+                            biz_id:
+                              type: string
+                              description: 面试评价表业务ID
+                              example: '3453137186734393644'
                       page_token:
                         type: string
                       has_more:
@@ -10314,6 +10318,10 @@ paths:
                   type: string
                   description: 官网申请表ID
                   example: '7397638158859323692'
+                brand_id:
+                  type: string
+                  description: 职位品牌 ID
+                  example: '7316896731624212780'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -10771,6 +10779,10 @@ paths:
                   items:
                     type: string
                   description: 目标专业ID List
+                brand_id:
+                  type: string
+                  description: 职位品牌 ID
+                  example: '7316896731624212780'
       responses:
         '200':
           description: 调用成功（业务错误通过 code 字段表达；常见错误码见 x-lark-error-mappings）
@@ -11514,6 +11526,10 @@ paths:
                                   '1': 普通职位
                                   '2': 门店职位
                                 example: '1'
+                              brand:
+                                allOf:
+                                - $ref: '#/components/schemas/Brand'
+                                description: 职位品牌
                             description: 职位基本信息
                           recruiter:
                             type: object
@@ -12522,6 +12538,10 @@ paths:
                                     description: 目标专业英文名称
                                     example: archeology
                               description: 目标专业
+                            brand:
+                              allOf:
+                              - $ref: '#/components/schemas/Brand'
+                              description: 职位品牌
                         description: 列表
       x-lark-access-tokens:
       - user
@@ -28905,106 +28925,6 @@ paths:
         tier: 8
 components:
   schemas:
-    Address:
-      type: object
-      properties:
-        id:
-          type: string
-          description: 地址 ID
-          example: '6949805467799537964'
-        name:
-          type: object
-          properties:
-            zh_cn:
-              type: string
-              description: 中文
-              example: 测试
-            en_us:
-              type: string
-              description: 英文
-              example: test
-          description: 地址名称
-        district:
-          type: object
-          properties:
-            code:
-              type: string
-              description: 编码
-              example: '1111'
-            name:
-              type: object
-              properties:
-                zh_cn:
-                  type: string
-                  description: 中文
-                  example: 测试
-                en_us:
-                  type: string
-                  description: 英文
-                  example: test
-              description: 名称
-          description: 区域
-        city:
-          type: object
-          properties:
-            code:
-              type: string
-              description: 编码
-              example: '1111'
-            name:
-              type: object
-              properties:
-                zh_cn:
-                  type: string
-                  description: 中文
-                  example: 测试
-                en_us:
-                  type: string
-                  description: 英文
-                  example: test
-              description: 名称
-          description: 城市
-        state:
-          type: object
-          properties:
-            code:
-              type: string
-              description: 编码
-              example: '1111'
-            name:
-              type: object
-              properties:
-                zh_cn:
-                  type: string
-                  description: 中文
-                  example: 测试
-                en_us:
-                  type: string
-                  description: 英文
-                  example: test
-              description: 名称
-          description: 省
-        country:
-          type: object
-          properties:
-            code:
-              type: string
-              description: 编码
-              example: '1111'
-            name:
-              type: object
-              properties:
-                zh_cn:
-                  type: string
-                  description: 中文
-                  example: 测试
-                en_us:
-                  type: string
-                  description: 英文
-                  example: test
-              description: 名称
-          description: 国家
-      description: 面试地点
     Job:
       type: object
       properties:
@@ -29411,7 +29331,111 @@ components:
                 description: 目标专业英文名称
                 example: archeology
           description: 目标专业
+        brand:
+          allOf:
+          - $ref: '#/components/schemas/Brand'
+          description: 职位品牌
       description: 职位
+    Address:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 地址 ID
+          example: '6949805467799537964'
+        name:
+          type: object
+          properties:
+            zh_cn:
+              type: string
+              description: 中文
+              example: 测试
+            en_us:
+              type: string
+              description: 英文
+              example: test
+          description: 地址名称
+        district:
+          type: object
+          properties:
+            code:
+              type: string
+              description: 编码
+              example: '1111'
+            name:
+              type: object
+              properties:
+                zh_cn:
+                  type: string
+                  description: 中文
+                  example: 测试
+                en_us:
+                  type: string
+                  description: 英文
+                  example: test
+              description: 名称
+          description: 区域
+        city:
+          type: object
+          properties:
+            code:
+              type: string
+              description: 编码
+              example: '1111'
+            name:
+              type: object
+              properties:
+                zh_cn:
+                  type: string
+                  description: 中文
+                  example: 测试
+                en_us:
+                  type: string
+                  description: 英文
+                  example: test
+              description: 名称
+          description: 城市
+        state:
+          type: object
+          properties:
+            code:
+              type: string
+              description: 编码
+              example: '1111'
+            name:
+              type: object
+              properties:
+                zh_cn:
+                  type: string
+                  description: 中文
+                  example: 测试
+                en_us:
+                  type: string
+                  description: 英文
+                  example: test
+              description: 名称
+          description: 省
+        country:
+          type: object
+          properties:
+            code:
+              type: string
+              description: 编码
+              example: '1111'
+            name:
+              type: object
+              properties:
+                zh_cn:
+                  type: string
+                  description: 中文
+                  example: 测试
+                en_us:
+                  type: string
+                  description: 英文
+                  example: test
+              description: 名称
+          description: 国家
+      description: 面试地点
     InterviewRecord:
       type: object
       properties:
@@ -34048,6 +34072,36 @@ components:
       required:
       - talent_id
       - content
+    Brand:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 职位品牌 ID
+          example: '7316896731624212780'
+        zh_name:
+          type: string
+          description: 职位品牌中文名称
+          example: ByteDance
+        en_name:
+          type: string
+          description: 职位品牌英文名称
+          example: ByteDance
+        i18n_name:
+          type: string
+          description: 职位品牌国际化名称
+          example: ByteDance
+        active_status:
+          type: integer
+          description: 启用状态
+          enum:
+          - 1
+          - 2
+          x-enum-descriptions:
+            '1': 启用
+            '2': 未启用
+          example: '1'
+      description: 职位品牌
     Account:
       type: object
       properties:

@@ -9,7 +9,7 @@ info:
     ---
 
     本文档由 [lark-openapi-spec](https://github.com/dayongxie/lark-openapi-spec) 项目从飞书官方 API Explorer 数据自动生成，非官方发布物。权威说明以[飞书开放平台](https://open.feishu.cn/document)为准。
-  version: 1.0.0+46d481ef
+  version: 1.0.0+af16b863
   x-lark-project: im
   x-lark-track: full (official API Explorer)
   x-generator: lark-openapi-spec tools/build_openapi_full.py
@@ -1242,6 +1242,10 @@ paths:
                             tenant_key:
                               type: string
                               description: tenant key
+                            is_agent:
+                              type: boolean
+                              description: 是否为数字员工（Agent Employee）
+                              example: 'true'
                         description: member列表
                       page_token:
                         type: string
@@ -3822,11 +3826,15 @@ paths:
                         example: 736588c9260f175e
                       user_count:
                         type: string
-                        description: 群成员人数
+                        description: 群成员人数，包含数字员工（Agent Employee），不包含机器人
                         example: '10'
                       bot_count:
                         type: string
-                        description: 群机器人数
+                        description: 群机器人数，不包含数字员工（Agent Employee）
+                        example: '2'
+                      agent_count:
+                        type: string
+                        description: 群内数字员工（Agent Employee）数量，计入 user_count；人数不可见时为 "-1"，仅返回最小信息时为 "0"
                         example: '2'
                       restricted_mode_setting:
                         allOf:
@@ -9914,6 +9922,9 @@ components:
               description: 日文名
               example: グループチャット
           description: 该字段标识发送者多语种的名称
+        is_agent:
+          type: boolean
+          description: 发送者是否为agent employee
       required:
       - id
       - id_type

@@ -1,5 +1,27 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-10-30）
+
+新增 0 · 移除 0 · 定义变更 16（全量共 1641 个接口）
+
+### 定义变更
+- `GET /open-apis/hire/v1/interview_feedback_forms`「获取面试评价表列表」（hire/v1/interview_feedback_form/list）
+- `POST /open-apis/hire/v1/jobs/combined_create`「新建职位」（hire/v1/job/combined_create）
+- `POST /open-apis/hire/v1/jobs/{job_id}/combined_update`「更新职位」（hire/v1/job/combined_update）
+- `GET /open-apis/hire/v1/jobs/{job_id}`「获取职位信息」（hire/v1/job/get）
+- `GET /open-apis/hire/v1/jobs/{job_id}/get_detail`「获取职位详情」（hire/v1/job/get_detail）
+- `GET /open-apis/hire/v1/jobs`「获取职位列表」（hire/v1/job/list）
+- `GET /open-apis/im/v1/chats/{chat_id}/members`「获取群成员列表」（im/v1/chat.members/get）
+- `GET /open-apis/im/v1/chats/{chat_id}`「获取群信息」（im/v1/chat/get）
+- `POST /open-apis/im/v1/messages`「发送消息」（im/v1/message/create）
+- `POST /open-apis/im/v1/messages/{message_id}/forward`「转发消息」（im/v1/message/forward）
+- `GET /open-apis/im/v1/messages/{message_id}`「获取指定消息的内容」（im/v1/message/get）
+- `GET /open-apis/im/v1/messages`「获取会话历史消息」（im/v1/message/list）
+- `POST /open-apis/im/v1/messages/merge_forward`「合并转发消息」（im/v1/message/merge_forward）
+- `POST /open-apis/im/v1/messages/{message_id}/reply`「回复消息」（im/v1/message/reply）
+- `PUT /open-apis/im/v1/messages/{message_id}`「编辑消息」（im/v1/message/update）
+- `POST /open-apis/im/v1/threads/{thread_id}/forward`「转发话题」（im/v1/thread/forward）
+
 ## explorer 全量轨道（2026-10-29）
 
 新增 3 · 移除 0 · 定义变更 2（全量共 1641 个接口）
