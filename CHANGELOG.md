@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## explorer 全量轨道（2026-10-31）
+
+新增 0 · 移除 0 · 定义变更 3（全量共 1641 个接口）
+
+### 定义变更
+- `POST /open-apis/spark/v1/apps`「创建妙搭应用」（spark/v1/app/create）
+- `GET /open-apis/spark/v1/apps`「批量获取妙搭应用」（spark/v1/app/list）
+- `PATCH /open-apis/spark/v1/apps/{app_id}`「更新妙搭应用信息」（spark/v1/app/patch）
+
 ## explorer 全量轨道（2026-10-30）
 
 新增 0 · 移除 0 · 定义变更 16（全量共 1641 个接口）

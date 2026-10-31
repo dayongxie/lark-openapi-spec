@@ -17419,7 +17419,7 @@
   "httpMethod": "POST",
   "project": "spark",
   "resource": "app",
-  "sha256": "e68274d70a03c20ad0e49071972e70c9ba4d93f17c74c5293278e2f85dc06368",
+  "sha256": "cf5faa705ec5d966a4e243bc46f4d14601d1aa745e06bc0d5198c9eaeeafc170",
   "title": "创建妙搭应用",
   "version": "v1"
  },
@@ -17467,7 +17467,7 @@
   "httpMethod": "GET",
   "project": "spark",
   "resource": "app",
-  "sha256": "8812893a5a88cb48ff48a9754fe62ece8cadadfdc105725d037a1eb9600e8637",
+  "sha256": "4cb349d2694b8395f69f1edc2e2c8475171925b0441b4a2f1911488c48072c66",
   "title": "批量获取妙搭应用",
   "version": "v1"
  },
@@ -17503,7 +17503,7 @@
   "httpMethod": "PATCH",
   "project": "spark",
   "resource": "app",
-  "sha256": "4e59933eef4e6092e21607473343872d6172db9fd92bbdf869cbf0f709b72bab",
+  "sha256": "7fb29c32c35467b581a418cd06baea51494e503cdb68d07b312cdfd93fcb4429",
   "title": "更新妙搭应用信息",
   "version": "v1"
  },
